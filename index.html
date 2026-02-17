@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse Automate - AI Otomasyon Ajansı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #007BFF;
+            --success: #28A745;
+            --warning: #FFC107;
+            --dark: #343A40;
+            --light: #F8F9FA;
+            --text-dark: #1a1a1a;
+            --bg-dark: #0f1419;
+            --card-bg: #1a2332;
+            --border: #2a3f5f;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "⚡";
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), #0056cc);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(40, 167, 69, 0.05) 100%);
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #0056cc);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 123, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--light);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--success));
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 123, 255, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-card .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--success);
+            margin: 1.5rem 0;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #b0b0b0;
+        }
+
+        .service-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .service-card .btn-primary {
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .feature-item h4 {
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-study {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .case-study:hover {
+            border-color: var(--success);
+            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.15);
+        }
+
+        .case-study h4 {
+            color: var(--success);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .case-study .result {
+            background: rgba(40, 167, 69, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--success);
+        }
+
+        .case-study .result strong {
+            color: var(--success);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            transition: background 0.3s;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 123, 255, 0.1);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(0, 123, 255, 0.05);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 1.5rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            color: #e0e0e0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(0, 123, 255, 0.05);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary), #0056cc);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 20, 25, 0.8);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #808080;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #b0b0b0;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            color: #606060;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                padding: 0.8rem 0;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--bg-dark);
+                padding: 1rem;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card, .case-study, .feature-item {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Synapse Automate</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Hizmetler</a></li>
+                <li><a href="#about">Hakkımızda</a></li>
+                <li><a href="#cases">Vaka Çalışmaları</a></li>
+                <li><a href="#faq">SSS</a></li>
+                <li><a href="#contact" class="cta-button">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>İşletmenizi Akıllı Otomasyonla Güçlendirin</h1>
+            <p>Synapse Automate ile yapay zeka destekli otomasyon çözümleri sayesinde operasyonel verimliliğinizi artırın, maliyetlerinizi düşürün ve rekabet avantajı elde edin.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Şimdi Başlayın</a>
+                <a href="#services" class="btn-secondary">Hizmetleri Keşfet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Hizmet Paketlerimiz</h2>
+            <div class="services-grid">
+                <!-- Starter Package -->
+                <div class="service-card">
+                    <h3>Başlangıç Paketi</h3>
+                    <p style="color: #b0b0b0; margin-bottom: 1rem;">Otomasyona yeni başlayan işletmeler için ideal</p>
+                    <div class="price">$499<span style="font-size: 1rem; color: #b0b0b0;">/ay</span></div>
+                    <ul>
+                        <li>Otomasyon İhtiyaç Analizi</li>
+                        <li>Tek Süreç Otomasyonu</li>
+                        <li>Temel Raporlama</li>
+                        <li>E-posta Destek (2 saat/ay)</li>
+                    </ul>
+                    <button class="btn-primary">Seç</button>
+                </div>
+
+                <!-- Professional Package -->
+                <div class="service-card" style="border-color: var(--primary); box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);">
+                    <h3>Profesyonel Paketi</h3>
+                    <p style="color: #b0b0b0; margin-bottom: 1rem;">Büyümekte olan orta ölçekli işletmeler için</p>
+                    <div class="price">$1.499<span style="font-size: 1rem; color: #b0b0b0;">/ay</span></div>
+                    <ul>
+                        <li>Detaylı Otomasyon Stratejisi</li>
+                        <li>Üç Süreç Otomasyonu</li>
+                        <li>Gelişmiş Raporlama & Analiz</li>
+                        <li>Çalışan Eğitimi (4 saat)</li>
+                        <li>Öncelikli Destek (8 saat/ay)</li>
+                    </ul>
+                    <button class="btn-primary">Seç</button>
+                </div>
+
+                <!-- Enterprise Package -->
+                <div class="service-card">
+                    <h3>Kurumsal Paketi</h3>
+                    <p style="color: #b0b0b0; margin-bottom: 1rem;">Büyük ölçekli işletmeler için özel çözümler</p>
+                    <div class="price">Özel Teklif</div>
+                    <ul>
+                        <li>Kapsamlı Dijital Dönüşüm</li>
+                        <li>Sınırsız Otomasyon Çözümleri</li>
+                        <li>7/24 İzleme & Optimizasyon</li>
+                        <li>Özel Hesap Yöneticisi</li>
+                        <li>7/24 Teknik Destek</li>
+                    </ul>
+                    <button class="btn-primary">İletişim Kurun</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>Hakkımızda</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Misyon & Vizyon</h3>
+                    <p><strong>Misyon:</strong> Küçük ve orta ölçekli işletmelerin (KOBİ) operasyonel verimliliğini artırmak, maliyetlerini düşürmek ve rekabet güçlerini yükseltmek için yapay zeka destekli, yenilikçi ve erişilebilir otomasyon çözümleri sunmak.</p>
+                    <p><strong>Vizyon:</strong> Her ölçekten işletmenin, yapay zeka otomasyonunun gücünden faydalanarak daha akıllı, daha hızlı ve daha sürdürülebilir bir geleceğe ulaşmasını sağlayan lider otomasyon ajansı olmak.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <h4>🎯 Çözüm Odaklı</h4>
+                        <p>Müşterilerin sorunlarına pratik ve etkili çözümler sunuyoruz.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🚀 Yenilikçi</h4>
+                        <p>Yapay zeka ve otomasyonun geleceğini şekillendiriyoruz.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>🤝 İşbirlikçi</h4>
+                        <p>Müşterilerimizle ortak bir hedefe doğru ilerleriz.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>💼 Profesyonel</h4>
+                        <p>Uzmanlık ve yetkinlik vurgusu ile hizmet veriyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="cases">
+        <div class="container">
+            <h2>Vaka Çalışmaları</h2>
+            <div class="case-studies">
+                <div class="case-study">
+                    <h4>Diş Kliniği - AI Chatbot Çözümü</h4>
+                    <p>Yoğun telefon trafiği ve randevu yönetiminde yaşanan zorluklar çözüldü.</p>
+                    <div class="result">
+                        <strong>Sonuçlar:</strong>
+                        <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                            <li>📞 Telefon trafiğinde %40 azalma</li>
+                            <li>⏱️ Randevu alma %60 daha hızlı</li>
+                            <li>😊 Hasta memnuniyetinde %25 artış</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h4>Emlak Acentesi - Lead Generation</h4>
+                    <p>Potansiyel müşteri bulma ve nitelendirme süreçleri otomatize edildi.</p>
+                    <div class="result">
+                        <strong>Sonuçlar:</strong>
+                        <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                            <li>📈 Nitelikli lead %50 artış</li>
+                            <li>💰 Lead dönüşüm %30 iyileşme</li>
+                            <li>💸 Pazarlama maliyeti %20 tasarruf</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <h4>E-ticaret Mağazası - Müşteri Hizmetleri</h4>
+                    <p>Artan müşteri talepleri için AI destekli otomasyon sistemi kuruldu.</p>
+                    <div class="result">
+                        <strong>Sonuçlar:</strong>
+                        <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                            <li>⚡ Yanıt süresi %70 kısaldı</li>
+                            <li>💵 Hizmet maliyeti %30 azaldı</li>
+                            <li>⭐ Müşteri memnuniyeti %15 arttı</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>Sıkça Sorulan Sorular</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>AI Otomasyonu nedir ve işletmeme nasıl fayda sağlar?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>AI Otomasyonu, yapay zeka teknolojilerini kullanarak tekrarlayan, kural tabanlı veya karmaşık iş süreçlerini otomatikleştirme sürecidir. İşletmenize maliyet azaltma, verimlilik artışı, hata oranını düşürme, müşteri memnuniyetini yükseltme ve daha hızlı karar alma gibi somut faydalar sağlar.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Hangi sektörlere hizmet veriyorsunuz?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Çözümlerimiz, sağlık, emlak, e-ticaret, finans, üretim, perakende ve daha birçok sektördeki işletmelerin ihtiyaçlarına göre uyarlanabilir. Her sektörün kendine özgü dinamiklerini anlayarak özelleştirilmiş çözümler sunuyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>AI çözümlerinizin uygulanması ne kadar sürer?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Uygulama süresi, projenin kapsamına ve karmaşıklığına bağlı olarak değişir. Genellikle, keşif ve analizden canlıya geçişe kadar olan süreç 7 ila 13 hafta arasında tamamlanır. Detaylı bir analiz sonrası size özel bir zaman çizelgesi sunarız.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Mevcut sistemlerimizle entegrasyon mümkün mü?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, geliştirdiğimiz AI çözümleri mevcut CRM, ERP, muhasebe yazılımları ve diğer iş sistemlerinizle sorunsuz bir şekilde entegre edilebilir. Entegrasyon süreçlerini minimum kesintiyle tamamlamak için gerekli uzmanlığa sahibiz.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Yatırım Getirisi (ROI) ne kadar sürede görülür?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ROI, projenin türüne ve başlangıçtaki verimlilik seviyenize göre değişmekle birlikte, müşterilerimiz genellikle ilk 6-12 ay içinde somut yatırım getirileri görmeye başlarlar. Maliyet azaltma ve verimlilik artışı gibi alanlarda hızlı sonuçlar elde edilir.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Veri güvenliği ve gizliliği konusunda ne gibi önlemler alıyorsunuz?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Müşteri verilerinin güvenliği ve gizliliği bizim için en yüksek önceliktir. En güncel şifreleme tekniklerini, erişim kontrollerini ve endüstri standardı güvenlik protokollerini kullanıyoruz. Tüm çözümlerimiz GDPR ve KVKK gibi ilgili veri koruma düzenlemelerine uyumludur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Bize Ulaşın</h2>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Adınız</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-posta</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Şirket Adı</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Mesajınız</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Synapse Automate</h4>
+                <p>Yapay zeka destekli otomasyon çözümleriyle işletmeleri güçlendiriyoruz.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Hızlı Linkler</h4>
+                <a href="#services">Hizmetler</a>
+                <a href="#about">Hakkımızda</a>
+                <a href="#cases">Vaka Çalışmaları</a>
+                <a href="#faq">SSS</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>İletişim</h4>
+                <p>📧 info@synapseautomate.com</p>
+                <p>📞 +90 555 123 45 67</p>
+                <p>🌐 www.synapseautomate.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Synapse Automate. Tüm hakları saklıdır. | Gizlilik Politikası | Kullanım Şartları</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Form Submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Teşekkür ederiz! Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.');
+            document.querySelector('.contact-form').reset();
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (if needed)
+        const navLinks = document.getElementById('navLinks');
+        const logo = document.querySelector('.logo');
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
