@@ -995,7 +995,7 @@
         <div class="container">
             <h2>Bize Ulaşın</h2>
             <div class="contact-wrapper">
-                <form class="contact-form" action="https://formspree.io/f/xjvgwpvq" method="POST">
+                <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
                     <div class="form-group">
                         <label for="name">Adınız</label>
                         <input type="text" id="name" name="name" required>
@@ -1132,6 +1132,19 @@
     </div>
 
     <script>
+        // Form Submit - mailto ile
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var company = document.getElementById('company').value;
+            var message = document.getElementById('message').value;
+            var subject = 'Synapse Automate - ' + company + ' - Yeni İletişim Talebi';
+            var body = 'Ad: ' + name + '%0D%0AE-posta: ' + email + '%0D%0AŞirket: ' + company + '%0D%0A%0D%0AMesaj:%0D%0A' + message;
+            window.location.href = 'mailto:synapseautomate.ai@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+            alert('Mail uygulamanız açılacak. Mesajınızı gönderdikten sonra en kısa sürede size dönüş yapacağız!');
+        }
+
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
