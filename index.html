@@ -71,9 +71,15 @@
             gap: 0.5rem;
         }
 
+        .logo img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
         .logo::before {
-            content: "⚡";
-            font-size: 1.5rem;
+            content: "";
+            font-size: 0;
         }
 
         .nav-links {
@@ -575,7 +581,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">Synapse Automate</a>
+            <a href="#" class="logo"><img src="logo.png" alt="Synapse Automate Logo">Synapse Automate</a>
             <ul class="nav-links">
                 <li><a href="#services">Hizmetler</a></li>
                 <li><a href="#about">Hakkımızda</a></li>
