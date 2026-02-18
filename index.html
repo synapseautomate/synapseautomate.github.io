@@ -387,242 +387,98 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background 0.3s;
-        }
-
-        .faq-question:hover {
-            background: rgba(0, 123, 255, 0.1);
-        }
-
-        .faq-question span:first-child {
             font-weight: 600;
-            color: var(--primary);
-        }
-
-        .faq-toggle {
-            color: var(--success);
-            transition: transform 0.3s;
+            color: var(--light);
         }
 
         .faq-answer {
+            padding: 0 1.5rem;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 0 1.5rem;
+            transition: all 0.3s ease-out;
+            color: #b0b0b0;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 0 1.5rem 1.5rem 1.5rem;
+            padding: 1.5rem;
+            max-height: 500px;
+            border-top: 1px solid var(--border);
         }
 
-        .faq-item.active .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer p {
-            color: #b0b0b0;
-            line-height: 1.8;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        /* Contact Section */
+        .contact-grid {
             display: grid;
-            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
         }
 
         .form-group {
-            display: flex;
-            flex-direction: column;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
+            display: block;
             margin-bottom: 0.5rem;
             color: var(--light);
-            font-weight: 600;
         }
 
-        .form-group input,
-        .form-group textarea {
+        .form-group input, .form-group textarea {
+            width: 100%;
             padding: 0.8rem;
-            background: var(--card-bg);
+            background: #0f1419;
             border: 1px solid var(--border);
             border-radius: 5px;
-            color: #e0e0e0;
+            color: white;
             font-family: inherit;
-            transition: border-color 0.3s;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
         }
 
         .form-submit {
+            width: 100%;
+            padding: 1rem;
             background: linear-gradient(135deg, var(--primary), #0056cc);
             color: white;
-            padding: 1rem;
-            border-radius: 5px;
             border: none;
-            font-weight: 600;
+            border-radius: 5px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 1rem;
         }
 
         .form-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 123, 255, 0.4);
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-button {
-            background: #25D366;
-            color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            text-align: center;
-            margin-top: 1rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .whatsapp-button:hover {
-            background: #20ba5a;
-            transform: translateY(-3px);
-        }
-
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .contact-info {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid var(--border);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
         }
 
         .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
             color: var(--primary);
-            margin-bottom: 1.5rem;
         }
 
         .contact-info p {
-            color: #b0b0b0;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-info p a {
-            color: #b0b0b0;
-            text-decoration: none;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .contact-info p a:hover {
-            color: var(--primary);
-        }
-
-        .footer-section p a {
-            color: #b0b0b0;
-            text-decoration: none;
-            cursor: pointer;
-            display: inline;
-            transition: color 0.3s;
-        }
-
-        .footer-section p a:hover {
-            color: var(--primary);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background-color: var(--card-bg);
-            margin: 5% auto;
-            padding: 2rem;
-            border: 1px solid var(--border);
-            width: 90%;
-            max-width: 700px;
-            border-radius: 10px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-bottom: 1.5rem;
-        }
-
-        .modal-header h2 {
-            color: var(--primary);
-            margin: 0;
-            font-size: 1.8rem;
-        }
-
-        .close-modal {
-            color: #aaa;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close-modal:hover {
-            color: var(--primary);
-        }
-
-        .modal-body {
-            color: #b0b0b0;
-            line-height: 1.8;
-        }
-
-        .modal-body h3 {
-            color: var(--success);
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .modal-body p {
-            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
         }
 
         /* Footer */
         footer {
-            background: rgba(15, 20, 25, 0.95);
-            padding: 3rem 2rem;
+            background: #0a0e12;
+            padding: 4rem 2rem 2rem;
             border-top: 1px solid var(--border);
         }
 
@@ -630,22 +486,21 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-section h4 {
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .footer-section p,
         .footer-section a {
+            display: block;
             color: #b0b0b0;
             text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
+            margin-bottom: 0.8rem;
             transition: color 0.3s;
         }
 
@@ -654,115 +509,65 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid var(--border);
+            text-align: center;
             padding-top: 2rem;
-            color: #606060;
-            text-align: center;
+            border-top: 1px solid var(--border);
+            color: #666;
+            font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 5% auto;
+            padding: 0;
+            border: 1px solid var(--border);
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .close-modal {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                padding: 0.8rem 0;
-            }
-
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .logo {
-                font-size: 1.4rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-links.active {
-                display: flex;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background: var(--bg-dark);
-                padding: 1rem;
-                gap: 0.5rem;
-            }
-
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .service-card, .case-study, .feature-item {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3) { animation-delay: 0.3s; }
-
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-2 {
-            margin-top: 2rem;
-        }
-
-        .mb-2 {
-            margin-bottom: 2rem;
+            .hero h1 { font-size: 2.5rem; }
+            .about-content, .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -771,7 +576,7 @@
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">Synapse Automate</a>
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links">
                 <li><a href="#services">Hizmetler</a></li>
                 <li><a href="#about">Hakkımızda</a></li>
                 <li><a href="#cases">Vaka Çalışmaları</a></li>
@@ -782,7 +587,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <header class="hero">
         <div class="hero-content">
             <h1>İşletmenizi Akıllı Otomasyonla Güçlendirin</h1>
             <p>Synapse Automate ile yapay zeka destekli otomasyon çözümleri sayesinde operasyonel verimliliğinizi artırın, maliyetlerinizi düşürün ve rekabet avantajı elde edin.</p>
@@ -791,75 +596,50 @@
                 <a href="#services" class="btn-secondary">Hizmetleri Keşfet</a>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- Services Section -->
     <section id="services">
         <div class="container">
             <h2>Hizmetlerimiz</h2>
-
-            <!-- Yeni Hizmet Kategorileri -->
             <div class="services-grid">
                 <div class="service-card">
                     <h3>AI Otomasyon Çözümleri</h3>
                     <p>İşletmelerin tekrarlayan görevlerini otomatikleştirerek verimliliği artırın. Süreç otomasyonu, raporlama, e-posta otomasyonu ve daha fazlası.</p>
-                    <a href="https://wa.me/905522029850?text=Merhaba,%20AI%20Otomasyon%20%C3%87%C3%B6z%C3%BCleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" class="btn-primary" target="_blank">Detaylı Bilgi Al</a>
-                </div>
-                <div class="service-card">
-                    <h3>AI Chatbot Kurulumu</h3>
-                    <p>Müşterilerinize 7/24 kesintisiz hizmet sunan akıllı chatbotlar ile randevu alma, müşteri hizmetleri ve sipariş takibi gibi süreçleri otomatikleştirin.</p>
-                    <a href="https://wa.me/905522029850?text=Merhaba,%20AI%20Chatbot%20Kurulumu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" class="btn-primary" target="_blank">Detaylı Bilgi Al</a>
-                </div>
-                <div class="service-card">
-                    <h3>AI Destekli Müşteri Bulma (Lead Generation)</h3>
-                    <p>Yapay zeka algoritmaları sayesinde işletmeniz için en nitelikli müşteri adaylarını bulun ve satış süreçlerinizi hızlandırın.</p>
-                    <a href="https://wa.me/905522029850?text=Merhaba,%20AI%20Destekli%20M%C3%BC%C5%9Fteri%20Bulma%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" class="btn-primary" target="_blank">Detaylı Bilgi Al</a>
-                </div>
-            </div>
-
-            <h2 style="margin-top: 4rem;">Fiyat Paketlerimiz</h2>
-
-            <!-- Mevcut Fiyat Paketleri -->
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Başlangıç Paketi</h3>
-                    <p style="color: #b0b0b0; margin-bottom: 1rem;">Otomasyona yeni başlayan işletmeler için ideal</p>
-                    <div class="price">$499<span style="font-size: 1rem; color: #b0b0b0;">/ay</span></div>
+                    <div class="price">$499/ay</div>
                     <ul>
                         <li>Otomasyon İhtiyaç Analizi</li>
                         <li>Tek Süreç Otomasyonu</li>
                         <li>Temel Raporlama</li>
                         <li>E-posta Destek (2 saat/ay)</li>
                     </ul>
-                    <a href="https://wa.me/905522029850?text=Merhaba,%20Ba%C5%9Flang%C4%B1%C3%A7%20Paketi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" class="btn-primary" target="_blank">Seç</a>
+                    <a href="#contact" class="btn-primary">Seç</a>
                 </div>
 
-                <div class="service-card" style="border-color: var(--primary); box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);">
-                    <h3>Profesyonel Paketi</h3>
-                    <p style="color: #b0b0b0; margin-bottom: 1rem;">Büyümekte olan orta ölçekli işletmeler için</p>
-                    <div class="price">$1.499<span style="font-size: 1rem; color: #b0b0b0;">/ay</span></div>
+                <div class="service-card">
+                    <h3>AI Chatbot Kurulumu</h3>
+                    <p>Müşterilerinize 7/24 kesintisiz hizmet sunan akıllı chatbotlar ile randevu alma, müşteri hizmetleri ve sipariş takibi gibi süreçleri otomatikleştirin.</p>
+                    <div class="price">$1.499/ay</div>
                     <ul>
                         <li>Detaylı Otomasyon Stratejisi</li>
                         <li>Üç Süreç Otomasyonu</li>
                         <li>Gelişmiş Raporlama & Analiz</li>
                         <li>Çalışan Eğitimi (4 saat)</li>
-                        <li>Öncelikli Destek (8 saat/ay)</li>
                     </ul>
-                    <a href="https://wa.me/905522029850?text=Merhaba,%20Profesyonel%20Paket%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" class="btn-primary" target="_blank">Seç</a>
+                    <a href="#contact" class="btn-primary">Seç</a>
                 </div>
 
                 <div class="service-card">
-                    <h3>Kurumsal Paketi</h3>
-                    <p style="color: #b0b0b0; margin-bottom: 1rem;">Büyük ölçekli işletmeler için özel çözümler</p>
+                    <h3>AI Destekli Lead Generation</h3>
+                    <p>Yapay zeka algoritmaları sayesinde işletmeniz için en nitelikli müşteri adaylarını bulun ve satış süreçlerinizi hızlandırın.</p>
                     <div class="price">Özel Teklif</div>
                     <ul>
                         <li>Kapsamlı Dijital Dönüşüm</li>
                         <li>Sınırsız Otomasyon Çözümleri</li>
                         <li>7/24 İzleme & Optimizasyon</li>
                         <li>Özel Hesap Yöneticisi</li>
-                        <li>7/24 Teknik Destek</li>
                     </ul>
-                    <a href="https://wa.me/905522029850?text=Merhaba,%20Kurumsal%20Paket%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" class="btn-primary" target="_blank">Seç</a>
+                    <a href="#contact" class="btn-primary">Seç</a>
                 </div>
             </div>
         </div>
@@ -868,36 +648,36 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2>Hakkımızda</h2>
+            <h2>Neden Synapse Automate?</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Neden Synapse Automate?</h3>
+                    <h3>Dijital Dönüşüm Ortağınız</h3>
                     <p>Synapse Automate, işletmelerin dijital dönüşüm yolculuğunda güvenilir bir ortağıdır. Yapay zeka ve otomasyon teknolojilerini kullanarak, işletmelerin operasyonel verimliliğini artırmak ve maliyetlerini düşürmek için çalışıyoruz.</p>
                     <p>Deneyimli bir ekip olarak, her müşterinin benzersiz ihtiyaçlarını anlayarak, özelleştirilmiş çözümler sunuyoruz. Başarımız, müşterilerimizin başarısıdır.</p>
                 </div>
                 <div class="about-features">
                     <div class="feature-item">
                         <h4>Uzman Ekip</h4>
-                        <p>AI ve otomasyon konusunda deneyimli profesyonellerden oluşan ekip</p>
+                        <p>AI ve otomasyon konusunda deneyimli profesyoneller.</p>
                     </div>
                     <div class="feature-item">
                         <h4>Hızlı Uygulama</h4>
-                        <p>Kısa sürede sonuç alınabilecek çevik metodoloji</p>
+                        <p>Kısa sürede sonuç alınabilecek çevik metodoloji.</p>
                     </div>
                     <div class="feature-item">
                         <h4>Güvenlik</h4>
-                        <p>Endüstri standardı güvenlik ve veri koruma</p>
+                        <p>Endüstri standardı güvenlik ve veri koruma.</p>
                     </div>
                     <div class="feature-item">
                         <h4>Destek</h4>
-                        <p>Uygulamadan sonra da sürekli teknik destek</p>
+                        <p>Uygulamadan sonra da sürekli teknik destek.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies Section -->
+    <!-- Case Studies -->
     <section id="cases">
         <div class="container">
             <h2>Vaka Çalışmaları</h2>
@@ -938,53 +718,24 @@
             <h2>Sıkça Sorulan Sorular</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Synapse Automate hizmetleri hangi sektörlere uygulanabilir?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Çözümlerimiz, sağlık, emlak, e-ticaret, finans, üretim, perakende ve daha birçok sektördeki işletmelerin ihtiyaçlarına göre uyarlanabilir. Her sektörün kendine özgü dinamiklerini anlayarak özelleştirilmiş çözümler sunuyoruz.</p>
-                    </div>
+                    <div class="faq-question">Synapse Automate hizmetleri hangi sektörlere uygulanabilir? <span>▼</span></div>
+                    <div class="faq-answer">Çözümlerimiz, sağlık, emlak, e-ticaret, finans, üretim, perakende ve daha birçok sektördeki işletmelerin ihtiyaçlarına göre uyarlanabilir.</div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>AI çözümlerinizin uygulanması ne kadar sürer?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Uygulama süresi, projenin kapsamına ve karmaşıklığına bağlı olarak değişir. Genellikle, keşif ve analizden canlıya geçişe kadar olan süreç 7 ila 13 hafta arasında tamamlanır. Detaylı bir analiz sonrası size özel bir zaman çizelgesi sunarız.</p>
-                    </div>
+                    <div class="faq-question">AI çözümlerinizin uygulanması ne kadar sürer? <span>▼</span></div>
+                    <div class="faq-answer">Uygulama süresi, projenin kapsamına bağlı olarak genellikle 7 ila 13 hafta arasında tamamlanır.</div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Mevcut sistemlerimizle entegrasyon mümkün mü?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Evet, geliştirdiğimiz AI çözümleri mevcut CRM, ERP, muhasebe yazılımları ve diğer iş sistemlerinizle sorunsuz bir şekilde entegre edilebilir. Entegrasyon süreçlerini minimum kesintiyle tamamlamak için gerekli uzmanlığa sahibiz.</p>
-                    </div>
+                    <div class="faq-question">Mevcut sistemlerimizle entegrasyon mümkün mü? <span>▼</span></div>
+                    <div class="faq-answer">Evet, geliştirdiğimiz AI çözümleri mevcut CRM, ERP ve diğer iş sistemlerinizle sorunsuz bir şekilde entegre edilebilir.</div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Yatırım Getirisi (ROI) ne kadar sürede görülür?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>ROI, projenin türüne ve başlangıçtaki verimlilik seviyenize göre değişmekle birlikte, müşterilerimiz genellikle ilk 6-12 ay içinde somut yatırım getirileri görmeye başlarlar. Maliyet azaltma ve verimlilik artışı gibi alanlarda hızlı sonuçlar elde edilir.</p>
-                    </div>
+                    <div class="faq-question">Yatırım Getirisi (ROI) ne kadar sürede görülür? <span>▼</span></div>
+                    <div class="faq-answer">Müşterilerimiz genellikle ilk 6-12 ay içinde somut yatırım getirileri görmeye başlarlar.</div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Veri güvenliği ve gizliliği konusunda ne gibi önlemler alıyorsunuz?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Müşteri verilerinin güvenliği ve gizliliği bizim için en yüksek önceliktir. En güncel şifreleme tekniklerini, erişim kontrollerini ve endüstri standardı güvenlik protokollerini kullanıyoruz. Tüm çözümlerimiz GDPR ve KVKK gibi ilgili veri koruma düzenlemelerine uyumludur.</p>
-                    </div>
+                    <div class="faq-question">Veri güvenliği ve gizliliği konusunda ne gibi önlemler alıyorsunuz? <span>▼</span></div>
+                    <div class="faq-answer">En güncel şifreleme tekniklerini kullanıyoruz ve tüm çözümlerimiz GDPR/KVKK uyumludur.</div>
                 </div>
             </div>
         </div>
@@ -993,39 +744,37 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Bize Ulaşın</h2>
-            <div class="contact-wrapper">
-                <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Adınız</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">E-posta</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="company">Şirket Adı</label>
-                        <input type="text" id="company" name="company" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Mesajınız</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-
-                    <button type="submit" class="form-submit">Gönder</button>
-                </form>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h3>Bize Ulaşın</h3>
+                    <form action="https://formspree.io/f/xpwqkgzq" method="POST">
+                        <div class="form-group">
+                            <label for="name">Adınız</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta</label>
+                            <input type="email" id="email" name="_replyto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Şirket Adı</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Gönder</button>
+                    </form>
+                </div>
 
                 <div class="contact-info">
                     <h3>İletişim Bilgileri</h3>
-                    <p><a href="mailto:synapseautomateHQ@gmail.com" style="color: #b0b0b0; text-decoration: none;">&#9993; synapseautomateHQ@gmail.com</a></p>
-                    <p><a href="tel:+905522029850" style="color: #b0b0b0; text-decoration: none;">&#9742; +90 552 202 98 50</a></p>
-                    <p><a href="https://synapseautomate.github.io" style="color: #b0b0b0; text-decoration: none;">&#127760; synapseautomate.github.io</a></p>
-                    <a href="mailto:synapseautomateHQ@gmail.com" class="btn-primary" style="margin-bottom: 1rem; display: block; text-align: center; font-size: 1.1rem; padding: 1rem 2rem;">&#128231; E-posta ile Ula&#351;&#305;n</a>
-                    <a href="https://wa.me/905522029850" target="_blank" style="display: block; text-align: center; background-color: #25D366; color: white; padding: 0.7rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: 600; transition: all 0.3s; font-size: 0.9rem;">WhatsApp ile Ula&#351;&#305;n</a>
+                    <p><span>✉</span> synapseautomateHQ@gmail.com</p>
+                    <p><span>☎</span> +90 552 202 98 50</p>
+                    <p><span>🌐</span> synapseautomate.github.io</p>
+                    <a href="mailto:synapseautomateHQ@gmail.com" class="btn-primary" style="margin-bottom: 1rem; display: block; text-align: center;">E-posta ile Ulaşın</a>
+                    <a href="https://wa.me/905522029850" target="_blank" style="display: block; text-align: center; background-color: #25D366; color: white; padding: 1rem; border-radius: 5px; text-decoration: none; font-weight: 700;">WhatsApp ile Ulaşın</a>
                 </div>
             </div>
         </div>
@@ -1038,7 +787,6 @@
                 <h4>Synapse Automate</h4>
                 <p>Yapay zeka destekli otomasyon çözümleriyle işletmeleri güçlendiriyoruz.</p>
             </div>
-
             <div class="footer-section">
                 <h4>Hızlı Linkler</h4>
                 <a href="#services">Hizmetler</a>
@@ -1046,105 +794,19 @@
                 <a href="#cases">Vaka Çalışmaları</a>
                 <a href="#faq">SSS</a>
             </div>
-
             <div class="footer-section">
                 <h4>İletişim</h4>
-                <p><a href="mailto:synapseautomateHQ@gmail.com" style="color: #b0b0b0; text-decoration: none; display: inline;">&#9993; synapseautomateHQ@gmail.com</a></p>
-                <p><a href="tel:+905522029850" style="color: #b0b0b0; text-decoration: none; display: inline;">&#9742; +90 552 202 98 50</a></p>
-                <p><a href="https://synapseautomate.github.io" style="color: #b0b0b0; text-decoration: none; display: inline;">&#127760; synapseautomate.github.io</a></p>
-                <p><a href="https://wa.me/905522029850" target="_blank" style="color: #25D366; text-decoration: none; display: inline;">WhatsApp</a></p>
+                <p>synapseautomateHQ@gmail.com</p>
+                <p>+90 552 202 98 50</p>
+                <a href="https://wa.me/905522029850" target="_blank" style="color: #25D366;">WhatsApp</a>
             </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2026 Synapse Automate. Tüm hakları saklıdır. | <a href="#" onclick="openPrivacyModal()" style="color: #b0b0b0; text-decoration: underline; cursor: pointer;">Gizlilik Politikası</a> | <a href="#" onclick="openTermsModal()" style="color: #b0b0b0; text-decoration: underline; cursor: pointer;">Kullanım Şartları</a></p>
+            <p>&copy; 2026 Synapse Automate. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
-    <!-- Privacy Policy Modal -->
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Gizlilik Politikası</h2>
-                <span class="close-modal" onclick="closePrivacyModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <h3>Kişisel Verilerin Korunması</h3>
-                <p>Synapse Automate, müşterilerimizin kişisel verilerinin korunmasını çok ciddiye almaktadır. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde ve hizmetlerimizi kullandığınızda toplanan bilgilerin nasıl işlendiğini açıklamaktadır.</p>
-
-                <h3>Toplanan Veriler</h3>
-                <p>Hizmetlerimizi sunmak için aşağıdaki bilgileri toplayabiliriz:</p>
-                <p>• Ad, soyadı ve iletişim bilgileri<br>
-                • E-posta adresi ve telefon numarası<br>
-                • Şirket bilgileri<br>
-                • Kullanım verileri ve analitikler</p>
-
-                <h3>KVKK Uyumu</h3>
-                <p>Tüm veri işleme faaliyetlerimiz, Kişisel Verilerin Korunması Kanunu (KVKK) ile uyumludur. Müşterilerimizin verileri, yalnızca belirtilen amaçlar doğrultusunda ve gerekli güvenlik önlemleri altında işlenmektedir.</p>
-
-                <h3>Veri Güvenliği</h3>
-                <p>Müşteri verilerini korumak için endüstri standardı şifreleme ve güvenlik protokolleri kullanmaktayız. Verileriniz, yetkisiz erişim, değiştirilme veya kayıp olmasına karşı korunmaktadır.</p>
-
-                <h3>Haklarınız</h3>
-                <p>KVKK kapsamında, kişisel verilerinize ilişkin aşağıdaki haklara sahipsiniz:</p>
-                <p>• Verilerinize erişim hakkı<br>
-                • Verilerinizin düzeltilmesi hakkı<br>
-                • Verilerinizin silinmesi hakkı<br>
-                • Veri işlemeye itiraz etme hakkı</p>
-
-                <p style="margin-top: 2rem; font-size: 0.9rem; color: #888;">Son güncelleme: 2026</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Terms of Service Modal -->
-    <div id="termsModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Kullanım Şartları</h2>
-                <span class="close-modal" onclick="closeTermsModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <h3>Hizmet Şartları</h3>
-                <p>Synapse Automate tarafından sağlanan hizmetleri kullanarak, aşağıdaki şartları kabul etmiş olursunuz.</p>
-
-                <h3>Hizmetin Kapsamı</h3>
-                <p>Synapse Automate, yapay zeka destekli otomasyon çözümleri, chatbot kurulumu ve müşteri bulma hizmetleri sunmaktadır. Hizmetlerin kapsamı, müşteri ile yapılan anlaşmada belirtilmektedir.</p>
-
-                <h3>Müşteri Sorumlulukları</h3>
-                <p>Müşteri, sağladığı bilgilerin doğru ve güncel olmasından sorumludur. Hizmet süresi boyunca, Synapse Automate ekibi ile işbirliği yapması ve gerekli bilgileri zamanında sağlaması gerekmektedir.</p>
-
-                <h3>Ödeme Şartları</h3>
-                <p>Hizmet paketleri için belirlenen ücretler, ayda bir kez fatura edilir. Ödeme, belirtilen tarihte yapılması gerekmektedir. Gecikmeli ödeme durumunda, hizmet geçici olarak durdurulabilir.</p>
-
-                <h3>Hizmet Garantisi</h3>
-                <p>Synapse Automate, hizmetlerin profesyonel bir şekilde sunulmasını garantilemektedir. Ancak, müşterinin sağladığı veriler veya sistem entegrasyonları nedeniyle ortaya çıkan sorunlardan sorumlu değildir.</p>
-
-                <h3>Gizlilik ve Güvenlik</h3>
-                <p>Müşteri verileri, en yüksek güvenlik standartları altında korunmaktadır. Synapse Automate, müşteri verilerini üçüncü taraflarla paylaşmamaktadır.</p>
-
-                <h3>Sözleşme Feshi</h3>
-                <p>Her iki taraf da, yazılı bildirim yoluyla sözleşmeyi feshedebilir. Fesih durumunda, o aya kadar olan hizmet ücreti ödenmesi gerekmektedir.</p>
-
-                <p style="margin-top: 2rem; font-size: 0.9rem; color: #888;">Son güncelleme: 2026</p>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Form Submit - mailto ile
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var company = document.getElementById('company').value;
-            var message = document.getElementById('message').value;
-            var subject = 'Synapse Automate - ' + company + ' - Yeni İletişim Talebi';
-            var body = 'Ad: ' + name + '%0D%0AE-posta: ' + email + '%0D%0AŞirket: ' + company + '%0D%0A%0D%0AMesaj:%0D%0A' + message;
-            window.location.href = 'mailto:synapseautomateHQ@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
-            alert('Mail uygulamanız açılacak. Mesajınızı gönderdikten sonra en kısa sürede size dönüş yapacağız!');
-        }
-
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
@@ -1153,61 +815,13 @@
             });
         });
 
-        // Modal Functions
-        function openPrivacyModal() {
-            document.getElementById('privacyModal').style.display = 'block';
-        }
-
-        function closePrivacyModal() {
-            document.getElementById('privacyModal').style.display = 'none';
-        }
-
-        function openTermsModal() {
-            document.getElementById('termsModal').style.display = 'block';
-        }
-
-        function closeTermsModal() {
-            document.getElementById('termsModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const privacyModal = document.getElementById('privacyModal');
-            const termsModal = document.getElementById('termsModal');
-            
-            if (event.target == privacyModal) {
-                privacyModal.style.display = 'none';
-            }
-            if (event.target == termsModal) {
-                termsModal.style.display = 'none';
-            }
-        }
-
-        // Smooth scroll for navigation links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && !href.includes('onclick')) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Mobile menu toggle (if needed)
-        const navLinks = document.getElementById('navLinks');
-        const logo = document.querySelector('.logo');
-
-        // Close mobile menu on link click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
