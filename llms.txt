@@ -1,0 +1,43 @@
+# Synapse Automate
+
+> Türkiye merkezli kurumsal AI otomasyonu, RevenueOS ve AI-native ürün platformu.
+
+Canonical site: https://synapseautomate.github.io/
+Contact: synapseautomate.ai@gmail.com | +90 552 202 98 50
+
+## Current focus
+- RevenueOS: inbound lead qualification, booking, follow-up, CRM and measurement.
+- Active vertical: Roofing / Ev Hizmetleri.
+- Founder Pilot: approved knowledge base, 30 FAQ, 8–12 intents, lead score, booking/human handoff, 3 follow-up messages, lead board and 30 test cases.
+- Safety boundary: no autonomous critical pricing, payment, contract or sensitive advice; human approval is required.
+
+## Core services
+- AI Chatbot & Customer Service
+- Sales & Lead Generation
+- Accounting & Finance Operations
+- HR & Recruitment
+- Marketing, Content & SEO
+- Legal & Compliance workflow support
+- AI Training & Consulting
+- RAG, custom AI and evaluations
+- AI Audit & Optimization
+- Process Mining
+- Voice AI & Call Center
+- Predictive Analytics
+
+## Products and ecosystem
+- RevenueOS — active primary commercial engine
+- AgentReady
+- Creative
+- MagnetFlow
+- VELA
+- TradeOps Lab — technical research/evaluation lab, not a separate commercial brand
+- Kilory — AI nutrition, activity and social motivation application
+- Kinetra Studios — planned AI product studio
+- Kinetra Group — planned umbrella combining product and B2B automation engines
+
+## Trust principles
+Security > accuracy > evidence > usability > aesthetics.
+No fabricated case studies, clients, metrics, guarantees or public links.
+Unknown information remains unverified.
+Cash collected means settled money only.
