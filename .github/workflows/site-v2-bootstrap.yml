@@ -1,0 +1,56 @@
+name: Install Corporate Site V2
+
+on:
+  push:
+    branches: [site-v2-corporate]
+    paths:
+      - '.github/workflows/site-v2-bootstrap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: site-v2-corporate
+
+      - name: Reassemble and verify package
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .bootstrap/payload.* | base64 -d > /tmp/site-v2.tar.xz
+          echo '1938c03dfeb0909e8119c39914a20f3870f79d1723124232b6e1f945517a8f52  /tmp/site-v2.tar.xz' | sha256sum -c -
+          rm -rf /tmp/site-v2
+          mkdir -p /tmp/site-v2
+          tar -xJf /tmp/site-v2.tar.xz -C /tmp/site-v2
+
+      - name: Run package QA before install
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd /tmp/site-v2
+          python3 scripts/site_qa.py
+
+      - name: Replace staging branch content
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a /tmp/site-v2/. .
+          python3 scripts/site_qa.py
+          git diff --check
+
+      - name: Commit verified corporate site
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'synapse-site-bot'
+          git config user.email 'synapse-site-bot@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet || git commit -m 'feat: launch corporate Synapse Automate site v2'
+          git push origin HEAD:site-v2-corporate
