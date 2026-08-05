@@ -1,0 +1,96 @@
+name: Publish Synapse Day 2 Site Patch
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: synapse-day2-site-patch
+  cancel-in-progress: false
+
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Locate and verify exactly one patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t ZIPS < <(find . -maxdepth 1 -type f -name 'SYNAPSE_D02_SITE_PATCH*.zip' -print | sort)
+          if [ "${#ZIPS[@]}" -ne 1 ]; then
+            echo "Expected exactly one D02 patch ZIP, found ${#ZIPS[@]}"
+            printf '%s\n' "${ZIPS[@]:-}"
+            exit 1
+          fi
+          echo "PATCH=${ZIPS[0]}" >> "$GITHUB_ENV"
+          unzip -t "${ZIPS[0]}"
+
+      - name: Extract patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .d02_patch
+          mkdir .d02_patch
+          unzip -q "$PATCH" -d .d02_patch
+          (cd .d02_patch && sha256sum -c MANIFEST.sha256)
+
+      - name: Apply Day 2 changes
+        run: python3 .d02_patch/tools/apply_day2_patch.py
+
+      - name: Day 2 QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .d02_patch/tools/day2_patch_qa.py
+          git diff --check
+
+      - name: Remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .d02_patch
+          rm -f "$PATCH"
+
+      - name: Rebuild manifest and run full site QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          root=Path('.')
+          lines=[]
+          for p in sorted(root.rglob('*')):
+              if not p.is_file():
+                  continue
+              rel=p.relative_to(root)
+              if rel.as_posix()=='BUILD_MANIFEST.sha256' or rel.parts[0] in {'.git','.github'} or p.suffix.lower()=='.zip':
+                  continue
+              lines.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  ./{rel.as_posix()}")
+          Path('BUILD_MANIFEST.sha256').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+          PY
+          if [ -f scripts/site_qa.py ]; then python3 scripts/site_qa.py; fi
+          git diff --check
+
+      - name: Commit and publish main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapse-day2-publisher"
+          git config user.email "synapse-day2-publisher@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "feat: publish Day 2 customer acquisition assets"
+          git push origin HEAD:main
