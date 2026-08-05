@@ -1,0 +1,120 @@
+name: Publish Synapse Corporate Site V3
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: synapse-corporate-site-v3
+  cancel-in-progress: false
+
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Locate and verify package
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t packages < <(find . -maxdepth 1 -type f -name 'SYNAPSE_AUTOMATE_CORPORATE_SITE_V3*.zip' -print)
+          if [ "${#packages[@]}" -ne 1 ]; then
+            echo "Expected exactly one V3 package, found ${#packages[@]}" >&2
+            printf '%s\n' "${packages[@]:-}" >&2
+            exit 1
+          fi
+          package="${packages[0]}"
+          echo 'c169afe1e8d4d95e37b29daaf2b6426db192c2baa78b9450f3e52b19fc12913d  '"$package" | sha256sum -c -
+          unzip -t "$package"
+          echo "package=$package" >> "$GITHUB_OUTPUT"
+
+      - name: Create rollback branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          rollback="rollback/pre-corporate-v3-${GITHUB_RUN_ID}"
+          git branch "$rollback" HEAD
+          git push origin "$rollback"
+          echo "Rollback branch: $rollback" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Extract and run source-completeness QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/synapse-site-v3
+          mkdir -p /tmp/synapse-site-v3
+          unzip -q "${{ steps.package.outputs.package }}" -d /tmp/synapse-site-v3
+          site_root=/tmp/synapse-site-v3/synapse_site_v3
+          test -f "$site_root/index.html"
+          test -f "$site_root/scripts/site_qa.py"
+          python3 "$site_root/scripts/site_qa.py"
+          python3 - <<'PY2'
+          from pathlib import Path
+          root = Path('/tmp/synapse-site-v3/synapse_site_v3')
+          binary = {'.png', '.jpg', '.jpeg', '.webp', '.gif', '.ico'}
+          bad = []
+          for path in root.rglob('*'):
+              if not path.is_file() or path.suffix.lower() in binary:
+                  continue
+              try:
+                  path.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  bad.append(str(path.relative_to(root)))
+          if bad:
+              raise SystemExit('Non-UTF-8 files: ' + ', '.join(bad))
+          print('UTF8 PASS')
+          PY2
+          pattern='sk-[A-Za-z0-9_-]{20,}|BEGIN (RSA|OPENSSH) PRIVATE KEY|api[_-]?key[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_-]{16,}'
+          ! grep -RInE "$pattern" "$site_root" --exclude-dir=.git
+
+      - name: Replace public site content
+        shell: bash
+        run: |
+          set -euo pipefail
+          package="${{ steps.package.outputs.package }}"
+          site_root=/tmp/synapse-site-v3/synapse_site_v3
+
+          # Preserve repository workflows. The site package never writes .github.
+          find . -mindepth 1 -maxdepth 1             ! -name .git             ! -name .github             ! -name "$(basename "$package")"             -exec rm -rf {} +
+
+          rsync -a --exclude='/.github/***' "$site_root/" ./
+          rm -f "$package"
+
+          python3 scripts/site_qa.py
+          pattern='sk-[A-Za-z0-9_-]{20,}|BEGIN (RSA|OPENSSH) PRIVATE KEY|api[_-]?key[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_-]{16,}'
+          ! grep -RInE "$pattern" . --exclude-dir=.git --exclude-dir=.github
+          git diff --check
+
+      - name: Commit and publish main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'synapse-site-bot'
+          git config user.email 'synapse-site-bot@users.noreply.github.com'
+
+          # Hard boundary: site publishing can never create/update workflow files.
+          git add -A -- . ':(exclude).github/**'
+          git reset -q HEAD -- .github 2>/dev/null || true
+
+          if git diff --cached --name-only | grep -q '^\.github/'; then
+            echo 'Safety stop: .github changes are staged.' >&2
+            git diff --cached --name-only >&2
+            exit 1
+          fi
+
+          if git diff --cached --quiet; then
+            echo 'No changes to publish.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          git commit -m 'fix: corporate site v3 source completeness and UI polish'
+          git push origin HEAD:main
+          echo "Published commit: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
