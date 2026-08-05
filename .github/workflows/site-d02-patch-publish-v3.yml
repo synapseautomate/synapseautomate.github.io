@@ -1,0 +1,148 @@
+name: Publish Synapse Day 2 Site Patch V3
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: synapse-day2-site-patch
+  cancel-in-progress: false
+
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Locate and verify existing V2 patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          PATCH='SYNAPSE_D02_SITE_PATCH_V2.zip'
+          test -f "$PATCH"
+          echo "PATCH=$PATCH" >> "$GITHUB_ENV"
+          unzip -t "$PATCH"
+
+      - name: Extract and verify patch manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .d02_patch
+          mkdir .d02_patch
+          unzip -q "$PATCH" -d .d02_patch
+          (cd .d02_patch && sha256sum -c MANIFEST.sha256)
+
+      - name: Apply Day 2 changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .d02_patch/tools/apply_day2_patch.py
+
+      - name: Normalize repository text files to LF
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path('.')
+          excluded={'.git','.github','.d02_patch'}
+          changed=[]
+          for p in root.rglob('*'):
+              if not p.is_file() or any(part in excluded for part in p.parts) or p.suffix.lower()=='.zip':
+                  continue
+              raw=p.read_bytes()
+              if b'\0' in raw:
+                  continue
+              try:
+                  text=raw.decode('utf-8')
+              except UnicodeDecodeError:
+                  continue
+              # Normalize CRLF/CR to LF and strip spaces/tabs at EOL.
+              text=text.replace('\r\n','\n').replace('\r','\n')
+              final_newline=text.endswith('\n')
+              lines=[line.rstrip(' \t') for line in text.split('\n')]
+              # split('\n') keeps an empty last item when there is a final newline.
+              clean='\n'.join(lines)
+              if final_newline and not clean.endswith('\n'):
+                  clean+='\n'
+              out=clean.encode('utf-8')
+              if out != raw:
+                  p.write_bytes(out)
+                  changed.append(p.as_posix())
+          print(f'LF normalization: PASS — {len(changed)} file(s) normalized')
+          for p in changed[:50]:
+              print('  ',p)
+          PY
+          cat > .gitattributes <<'EOF'
+          * text=auto eol=lf
+          *.csv text eol=lf
+          *.md text eol=lf
+          *.json text eol=lf
+          *.html text eol=lf
+          *.css text eol=lf
+          *.js text eol=lf
+          *.py text eol=lf
+          *.xml text eol=lf
+          *.txt text eol=lf
+          EOF
+
+      - name: Day 2 QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .d02_patch/tools/day2_patch_qa.py
+          git diff --check
+
+      - name: Remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .d02_patch
+          rm -f SYNAPSE_D02_SITE_PATCH*.zip
+
+      - name: Rebuild manifest and run full site QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          root=Path('.')
+          lines=[]
+          for p in sorted(root.rglob('*')):
+              if not p.is_file():
+                  continue
+              rel=p.relative_to(root)
+              if rel.as_posix()=='BUILD_MANIFEST.sha256' or rel.parts[0] in {'.git','.github'} or p.suffix.lower()=='.zip':
+                  continue
+              lines.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  ./{rel.as_posix()}")
+          Path('BUILD_MANIFEST.sha256').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
+          PY
+          python3 scripts/site_qa.py
+          git diff --check
+
+      - name: Commit and publish main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'synapse-day2-publisher'
+          git config user.email 'synapse-day2-publisher@users.noreply.github.com'
+          git add -A -- . ':(exclude).github/**'
+          git reset -q HEAD -- .github 2>/dev/null || true
+          if git diff --cached --name-only | grep -q '^\.github/'; then
+            echo 'Safety stop: .github change staged unexpectedly.' >&2
+            exit 1
+          fi
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+            exit 0
+          fi
+          git commit -m 'feat: publish Day 2 customer acquisition assets v3'
+          git push origin HEAD:main
