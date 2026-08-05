@@ -4,13 +4,13 @@ Target repository: `synapseautomate/synapseautomate.github.io`
 Target branch: `main`
 Publishing source: GitHub Pages from `main` / root.
 
-## Replace-site deployment
-1. Back up the existing repository or create a release tag.
-2. Replace repository root contents with the contents of this package.
-3. Commit: `site: launch Synapse Automate corporate platform v2`
-4. Verify GitHub Pages deployment.
-5. Open desktop and mobile URLs; test navigation, mail, telephone and WhatsApp links.
-6. Submit `sitemap.xml` in Google Search Console and Bing Webmaster Tools.
+## Verified package deployment
+1. Keep `.github/` from the repository; site packages never overwrite workflow files.
+2. Create a rollback branch before replacing public content.
+3. Verify package SHA-256 and ZIP integrity.
+4. Run `python3 scripts/site_qa.py`, UTF-8 scan, secret scan and `git diff --check` before publish.
+5. Replace site files only after all checks pass.
+6. Verify desktop + mobile navigation, CTA/contact handoff and the styled/human site directories after Pages updates.
 
 ## QA
 
@@ -18,4 +18,4 @@ Publishing source: GitHub Pages from `main` / root.
 python3 scripts/site_qa.py
 ```
 
-Expected: `SITE QA: PASS — 24 HTML pages`
+Expected: `SITE QA: PASS — 32 HTML pages`.

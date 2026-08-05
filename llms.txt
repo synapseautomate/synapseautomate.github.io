@@ -1,20 +1,30 @@
 # Synapse Automate
 
-> Türkiye merkezli kurumsal AI otomasyonu, RevenueOS ve AI-native ürün platformu.
+> Türkiye merkezli kurumsal AI otomasyonu, RevenueOS ve AI-native ürün ekosistemi.
 
 Canonical site: https://synapseautomate.github.io/
 Contact: synapseautomate.ai@gmail.com | +90 552 202 98 50
 
-## Current focus
+## Primary commercial engine
 - RevenueOS: inbound lead qualification, booking, follow-up, CRM and measurement.
-- Active vertical: Roofing / Ev Hizmetleri.
-- Founder Pilot: approved knowledge base, 30 FAQ, 8–12 intents, lead score, booking/human handoff, 3 follow-up messages, lead board and 30 test cases.
-- Safety boundary: no autonomous critical pricing, payment, contract or sensitive advice; human approval is required.
+- Founder Pilot core: approved knowledge base, 30 FAQ, 8–12 intents/flows, lead score, booking/human handoff, 3 follow-up messages, lead board and 30 test cases.
+- Home Services / Roofing is one documented RevenueOS implementation pattern; sector coverage is not exclusive.
+
+## Sector coverage
+- Healthcare
+- Finance & Banking
+- E-Commerce
+- Real Estate
+- Legal Operations
+- Manufacturing & Logistics
+- Education
+- Property Management
+- Home Services / Roofing
 
 ## Core services
 - AI Chatbot & Customer Service
 - Sales & Lead Generation
-- Accounting & Finance Operations
+- Accounting & Finance Automation
 - HR & Recruitment
 - Marketing, Content & SEO
 - Legal & Compliance workflow support
@@ -26,18 +36,30 @@ Contact: synapseautomate.ai@gmail.com | +90 552 202 98 50
 - Predictive Analytics
 
 ## Products and ecosystem
-- RevenueOS — active primary commercial engine
-- AgentReady
-- Creative
-- MagnetFlow
-- VELA
+- RevenueOS — primary commercial engine
+- AgentReady — product architecture
+- Creative — product architecture
+- MagnetFlow — product architecture
+- VELA — product architecture
 - TradeOps Lab — technical research/evaluation lab, not a separate commercial brand
-- Kilory — AI nutrition, activity and social motivation application
+- Kilory — AI nutrition, activity, recipe, habit and social motivation application; investor presentation status: launch-ready
 - Kinetra Studios — planned AI product studio
 - Kinetra Group — planned umbrella combining product and B2B automation engines
 
 ## Trust principles
-Security > accuracy > evidence > usability > aesthetics.
-No fabricated case studies, clients, metrics, guarantees or public links.
-Unknown information remains unverified.
-Cash collected means settled money only.
+- Security > accuracy > evidence > usability > aesthetics.
+- No fabricated case studies, clients, metrics, guarantees or public links.
+- Unknown information remains unverified.
+- Critical pricing, payment, contract and sensitive advice require human approval.
+- Medical, legal and financial advice is not autonomously provided.
+- Minimum data, approved sources, retention/deletion rules and controlled handoff are required.
+
+## Authoritative pages
+- https://synapseautomate.github.io/hizmetler.html
+- https://synapseautomate.github.io/sektorler.html
+- https://synapseautomate.github.io/urunler.html
+- https://synapseautomate.github.io/urunler/revenueos.html
+- https://synapseautomate.github.io/kinetra-group.html
+- https://synapseautomate.github.io/kinetra-studios.html
+- https://synapseautomate.github.io/yatirimcilar.html
+- https://synapseautomate.github.io/ai-bilgi.html
