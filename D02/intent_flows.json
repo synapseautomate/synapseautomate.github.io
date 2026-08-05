@@ -1,0 +1,42 @@
+[
+  {
+    "intent": "WELCOME",
+    "human_gate": false
+  },
+  {
+    "intent": "QUALIFY",
+    "human_gate": false
+  },
+  {
+    "intent": "FAQ",
+    "human_gate": false
+  },
+  {
+    "intent": "SOURCE_CHECK",
+    "human_gate": true
+  },
+  {
+    "intent": "ELIGIBILITY",
+    "human_gate": true
+  },
+  {
+    "intent": "BOOKING",
+    "human_gate": true
+  },
+  {
+    "intent": "FOLLOW_UP",
+    "human_gate": true
+  },
+  {
+    "intent": "MEDICAL_OR_URGENT",
+    "human_gate": true
+  },
+  {
+    "intent": "PRIVACY_OR_PAYMENT",
+    "human_gate": true
+  },
+  {
+    "intent": "ERROR_OR_UNCLEAR",
+    "human_gate": true
+  }
+]

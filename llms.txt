@@ -63,3 +63,11 @@ Contact: synapseautomate.ai@gmail.com | +90 552 202 98 50
 - https://synapseautomate.github.io/kinetra-studios.html
 - https://synapseautomate.github.io/yatirimcilar.html
 - https://synapseautomate.github.io/ai-bilgi.html
+
+
+## Day 2 public assets (2026-08-05)
+- Dental / aesthetic / wellness: https://synapseautomate.github.io/sektorler/dis-estetik-wellness.html
+- Customer request loss scenario calculator: https://synapseautomate.github.io/araclar/gelir-kacagi-hesaplayici.html
+- Process readiness score: https://synapseautomate.github.io/araclar/surec-hazirlik-skoru.html
+- 24-hour process analysis: https://synapseautomate.github.io/cozumler/musteri-talebi-surec-analizi.html
+- Site & catalog readiness analysis: https://synapseautomate.github.io/cozumler/site-katalog-uyumlulugu.html

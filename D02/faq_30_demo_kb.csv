@@ -1,0 +1,31 @@
+﻿faq_id,question,approved_demo_answer,source_type
+1,Bu sistem tıbbi tavsiye verir mi?,"Hayır. Tanı, tedavi, ilaç, klinik uygunluk ve sağlıkla ilgili kritik kararlar sağlık profesyoneline devredilir.",SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+2,Randevu talebini otomatik alabilir mi?,Talep bilgilerini minimum veriyle toplayabilir ve onaylı takvim veya insan akışına aktarabilir. Kesin randevu işletmenin onaylı sürecine göre oluşur.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+3,Fiyat sorularına cevap verir mi?,"Yalnız işletmenin onayladığı ve güncel tuttuğu fiyat kaynağından. İndirim, özel fiyat veya ödeme kararı otomatik verilmez.",SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+4,"WhatsApp, web ve e-posta ile çalışabilir mi?","İşletmenin izinli kanalları ve teknik koşulları uygunsa manuel, hibrit veya onaylı entegrasyonla tasarlanabilir.",SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+5,Acil veya şiddetli şikâyet mesajlarında ne olur?,Sistem tıbbi öneri üretmez; tanımlı insan veya klinik prosedürüne aktarır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+6,Çok dilli talep alınabilir mi?,Onaylı içerik ve operasyon kapasitesi olan dillerde desteklenebilir; desteklenmeyen dil insan operatöre devredilir.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+7,Hangi veriler toplanır?,İlk temas için yalnız gerekli minimum bilgiler alınır. Gereksiz hassas sağlık veya kimlik verisi istenmez.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+8,Sonuç veya tedavi garantisi verir mi?,"Hayır. Sağlık, estetik veya ticari sonuç garantisi verilmez.",SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+9,İlk kurulum ne kadar sürer?,Dar ve onaylı bir süreç için 72 saatlik ilk kurulum hedeflenebilir; kapsam gerçek iş akışına göre yazılı doğrulanır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+10,Başarı nasıl ölçülür?,"İlk yanıt süresi, tamamlanan talep alanları, randevu veya insan devri, takip disiplini ve hata oranı gibi baz çizgiye dayalı ölçüler kullanılır.",SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+11,Müşteri verisi nasıl ele alınır?,"Canlı projede erişim, saklama, silme ve yetkilendirme kapsamı yazılı belirlenir. Demo ve testlerde sentetik veya redakte veri tercih edilir.",SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+12,Süreç Analizi ne verir?,"Mevcut talep akışı, veri kaynakları, insan onayı gereken noktalar, ölçülebilir kayıplar ve en küçük güvenli ilk uygulama kapsamı çıkarılır.",SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+13,Randevu değiştirilebilir mi?,Değişiklik talebi onaylı takvim veya insana aktarılır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+14,Randevu iptal edilebilir mi?,İptal talebi işletmenin onaylı politikasına göre işlenir.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+15,Geç kalırsam ne olur?,Geç kalma politikası kaynaktan doğrulanır; sistem varsayım üretmez.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+16,İndirim yapıyor musunuz?,İndirim veya özel fiyat otomatik vaat edilmez.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+17,Hangi ödeme yöntemleri var?,Yalnız onaylı ödeme yöntemleri paylaşılır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+18,Konumunuz nerede?,Yalnız doğrulanmış adres kaynağı paylaşılır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+19,Otopark var mı?,Kaynakta doğrulanmadıysa bilinmiyor olarak bırakılır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+20,Hangi ilçelere hizmet veriyorsunuz?,Yalnız onaylı şube ve hizmet bölgesi listesi kullanılır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+21,İngilizce destek var mı?,Yalnız operasyon kapasitesi doğrulanmış diller vaat edilir.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+22,Diş temizliği ne kadar sürer?,Yalnız klinik tarafından onaylı genel aralık varsa paylaşılır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+23,Fotoğraftan tanı koyar mısınız?,Hayır. Sistem tanı koymaz.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+24,Hangi ilacı kullanmalıyım?,Sistem ilaç veya tedavi tavsiyesi vermez.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+25,Sonuç garantisi veriyor musunuz?,Tedavi veya estetik sonuç garantisi otomatik verilmez.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+26,TC kimlik numaramı yazmalı mıyım?,İlk talep aşamasında gereksiz hassas veri istenmez.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+27,Verilerimi silebilir miyim?,Silme talebi yetkili kişiye aktarılır ve kayıt altına alınır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+28,Verilerim ne kadar saklanır?,Saklama süresi onaylı politikadan alınır; kaynak yoksa bilinmiyor kalır.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+29,Mesajlarım yapay zekâ tarafından mı yanıtlanıyor?,Kritik ve hassas konular insan onayına devredilir.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
+30,Randevum kesinleşti mi?,Takvim veya operatör onayı alınmadan kesinleşti denmez.,SYNTHETIC_DEMO_OR_SYSTEM_POLICY
