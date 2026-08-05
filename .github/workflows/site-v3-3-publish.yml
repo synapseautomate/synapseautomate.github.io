@@ -1,0 +1,100 @@
+name: Publish Synapse Corporate Site V3.3
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: synapse-corporate-site-publish
+  cancel-in-progress: false
+
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Locate and verify package
+        shell: bash
+        run: |
+          set -euo pipefail
+          PACKAGE="SYNAPSE_AUTOMATE_CORPORATE_SITE_V3_3.zip"
+          test -f "$PACKAGE"
+          unzip -t "$PACKAGE"
+          rm -rf /tmp/synapse-v33
+          mkdir -p /tmp/synapse-v33
+          unzip -q -o "$PACKAGE" -d /tmp/synapse-v33
+          cd /tmp/synapse-v33
+          sha256sum -c BUILD_MANIFEST.sha256
+
+      - name: Run source completeness and customer-language QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd /tmp/synapse-v33
+          python3 scripts/site_qa.py
+
+      - name: Safety and encoding checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd /tmp/synapse-v33
+          python3 - <<'PY'
+          from pathlib import Path
+          bad=[]
+          for p in Path('.').rglob('*'):
+              if not p.is_file():
+                  continue
+              try:
+                  text=p.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              for i,line in enumerate(text.splitlines(),1):
+                  if line.rstrip(' \t') != line:
+                      bad.append(f'{p}:{i}')
+          if bad:
+              raise SystemExit('Trailing whitespace:\n'+'\n'.join(bad[:50]))
+          print('UTF-8 / trailing whitespace: PASS')
+          PY
+          pattern='sk-[A-Za-z0-9_-]{20,}|api[_-]?key[[:space:]]*[:=]|BEGIN (RSA|OPENSSH) PRIVATE KEY'
+          ! grep -RInE "$pattern" --exclude-dir=.git .
+          echo "Secret scan: PASS"
+
+      - name: Create rollback branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROLLBACK="rollback/pre-corporate-v33-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git push origin "HEAD:refs/heads/${ROLLBACK}"
+          echo "Rollback branch: ${ROLLBACK}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Replace public site content
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github -exec rm -rf {} +
+          cp -a /tmp/synapse-v33/. .
+          python3 scripts/site_qa.py
+          git diff --check
+
+      - name: Commit and publish main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapse-site-bot"
+          git config user.email "synapse-site-bot@users.noreply.github.com"
+          git add -A -- ':!.github/**'
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No public-site changes to commit." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "feat: publish customer-first corporate site v3.3"
+          git push origin HEAD:main
+          echo "Corporate Site V3.3 published to main." >> "$GITHUB_STEP_SUMMARY"
