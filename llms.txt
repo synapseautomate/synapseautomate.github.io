@@ -1,14 +1,14 @@
 # Synapse Automate
 
-> Türkiye merkezli kurumsal AI otomasyonu, RevenueOS ve AI-native ürün ekosistemi.
+> Türkiye merkezli kurumsal AI otomasyonu, RevenueOS ve yapay zekâ odaklı ürün ekosistemi.
 
 Canonical site: https://synapseautomate.github.io/
 Contact: synapseautomate.ai@gmail.com | +90 552 202 98 50
 
 ## Primary commercial engine
-- RevenueOS: inbound lead qualification, booking, follow-up, CRM and measurement.
-- Founder Pilot core: approved knowledge base, 30 FAQ, 8–12 intents/flows, lead score, booking/human handoff, 3 follow-up messages, lead board and 30 test cases.
-- Home Services / Roofing is one documented RevenueOS implementation pattern; sector coverage is not exclusive.
+- Müşteri Talebi ve Satış Takibi (RevenueOS): gelen potansiyel müşteri ön değerlendirmesi, randevu planlama, takip, müşteri takip sistemi and measurement.
+- 72 Saatlik İlk Kurulum core: approved knowledge base, 30 FAQ, 8–12 intents/flows, potansiyel müşteri puanlama, randevu planlama/yetkili personele aktarım, 3 takip messages, potansiyel müşteri takip tablosu and 30 test cases.
+- Home Services / Çatı ve Tadilat is one documented RevenueOS implementation pattern; sector coverage is not exclusive.
 
 ## Sector coverage
 - Healthcare
@@ -19,40 +19,40 @@ Contact: synapseautomate.ai@gmail.com | +90 552 202 98 50
 - Manufacturing & Logistics
 - Education
 - Property Management
-- Home Services / Roofing
+- Home Services / Çatı ve Tadilat
 
 ## Core services
-- AI Chatbot & Customer Service
-- Sales & Lead Generation
+- Yapay Zekâ Destekli Müşteri Asistanı & Customer Service
+- Sales & Müşteri Adayı Kazanımı
 - Accounting & Finance Automation
 - HR & Recruitment
 - Marketing, Content & SEO
-- Legal & Compliance workflow support
+- Legal & Compliance iş akışı support
 - AI Training & Consulting
-- RAG, custom AI and evaluations
-- AI Audit & Optimization
+- kurum içi bilgiye dayalı yapay zekâ, custom AI and kalite testiuations
+- AI Analiz & Optimization
 - Process Mining
 - Voice AI & Call Center
 - Predictive Analytics
 
 ## Products and ecosystem
 - RevenueOS — primary commercial engine
-- AgentReady — product architecture
-- Creative — product architecture
-- MagnetFlow — product architecture
-- VELA — product architecture
-- TradeOps Lab — technical research/evaluation lab, not a separate commercial brand
+- Web ve Katalog Hazırlık Sistemi (AgentReady) — product architecture
+- İçerik Üretim Sistemi (Creative) — product architecture
+- Etkileşimli Teklif Sistemi (MagnetFlow) — product architecture
+- Teklif ve İş Takip Sistemi (VELA) — product architecture
+- TradeOps Lab — technical research/kalite testiuation lab, not a separate commercial brand
 - Kilory — AI nutrition, activity, recipe, habit and social motivation application; investor presentation status: launch-ready
 - Kinetra Studios — planned AI product studio
-- Kinetra Group — planned umbrella combining product and B2B automation engines
+- Kinetra Group — planned umbrella combining product and kurumsal automation engines
 
 ## Trust principles
 - Security > accuracy > evidence > usability > aesthetics.
 - No fabricated case studies, clients, metrics, guarantees or public links.
 - Unknown information remains unverified.
-- Critical pricing, payment, contract and sensitive advice require human approval.
+- Critical pricing, payment, contract and sensitive advice require insan onayı.
 - Medical, legal and financial advice is not autonomously provided.
-- Minimum data, approved sources, retention/deletion rules and controlled handoff are required.
+- Minimum data, approved sources, kullanıcı bağlılığı/deletion rules and controlled yetkili personele aktarım are required.
 
 ## Authoritative pages
 - https://synapseautomate.github.io/hizmetler.html
