@@ -1,0 +1,46 @@
+sector_key,sector,solution_key,solution,hub_url,status
+health,"Sağlık - Diş, Estetik, Wellness",revenueos,Müşteri Talebi ve Satış Takibi,https://synapseautomate.github.io/sektorler/saglik.html,mapping_v0
+health,"Sağlık - Diş, Estetik, Wellness",agentready,Site ve Katalog AI Uyumluluğu,https://synapseautomate.github.io/sektorler/saglik.html,mapping_v0
+health,"Sağlık - Diş, Estetik, Wellness",creative,İçerik ve Kreatif Üretim Sistemi,https://synapseautomate.github.io/sektorler/saglik.html,mapping_v0
+health,"Sağlık - Diş, Estetik, Wellness",magnetflow,Etkileşimli Teklif ve Hesaplayıcı,https://synapseautomate.github.io/sektorler/saglik.html,mapping_v0
+health,"Sağlık - Diş, Estetik, Wellness",vela,Sesli Not ve Saha İş Akışı,https://synapseautomate.github.io/sektorler/saglik.html,mapping_v0
+finance,Finans & Bankacılık,revenueos,Müşteri Talebi ve Satış Takibi,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,mapping_v0
+finance,Finans & Bankacılık,agentready,Site ve Katalog AI Uyumluluğu,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,mapping_v0
+finance,Finans & Bankacılık,creative,İçerik ve Kreatif Üretim Sistemi,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,mapping_v0
+finance,Finans & Bankacılık,magnetflow,Etkileşimli Teklif ve Hesaplayıcı,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,mapping_v0
+finance,Finans & Bankacılık,vela,Sesli Not ve Saha İş Akışı,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,mapping_v0
+ecommerce,E-Ticaret & Perakende,revenueos,Müşteri Talebi ve Satış Takibi,https://synapseautomate.github.io/sektorler/e-ticaret.html,mapping_v0
+ecommerce,E-Ticaret & Perakende,agentready,Site ve Katalog AI Uyumluluğu,https://synapseautomate.github.io/sektorler/e-ticaret.html,mapping_v0
+ecommerce,E-Ticaret & Perakende,creative,İçerik ve Kreatif Üretim Sistemi,https://synapseautomate.github.io/sektorler/e-ticaret.html,mapping_v0
+ecommerce,E-Ticaret & Perakende,magnetflow,Etkileşimli Teklif ve Hesaplayıcı,https://synapseautomate.github.io/sektorler/e-ticaret.html,mapping_v0
+ecommerce,E-Ticaret & Perakende,vela,Sesli Not ve Saha İş Akışı,https://synapseautomate.github.io/sektorler/e-ticaret.html,mapping_v0
+realestate,Emlak,revenueos,Müşteri Talebi ve Satış Takibi,https://synapseautomate.github.io/sektorler/emlak.html,mapping_v0
+realestate,Emlak,agentready,Site ve Katalog AI Uyumluluğu,https://synapseautomate.github.io/sektorler/emlak.html,mapping_v0
+realestate,Emlak,creative,İçerik ve Kreatif Üretim Sistemi,https://synapseautomate.github.io/sektorler/emlak.html,mapping_v0
+realestate,Emlak,magnetflow,Etkileşimli Teklif ve Hesaplayıcı,https://synapseautomate.github.io/sektorler/emlak.html,mapping_v0
+realestate,Emlak,vela,Sesli Not ve Saha İş Akışı,https://synapseautomate.github.io/sektorler/emlak.html,mapping_v0
+legal,Hukuk & Uyum,revenueos,Müşteri Talebi ve Satış Takibi,https://synapseautomate.github.io/sektorler/hukuk-uyum.html,mapping_v0
+legal,Hukuk & Uyum,agentready,Site ve Katalog AI Uyumluluğu,https://synapseautomate.github.io/sektorler/hukuk-uyum.html,mapping_v0
+legal,Hukuk & Uyum,creative,İçerik ve Kreatif Üretim Sistemi,https://synapseautomate.github.io/sektorler/hukuk-uyum.html,mapping_v0
+legal,Hukuk & Uyum,magnetflow,Etkileşimli Teklif ve Hesaplayıcı,https://synapseautomate.github.io/sektorler/hukuk-uyum.html,mapping_v0
+legal,Hukuk & Uyum,vela,Sesli Not ve Saha İş Akışı,https://synapseautomate.github.io/sektorler/hukuk-uyum.html,mapping_v0
+manufacturing,Üretim & Lojistik,revenueos,Müşteri Talebi ve Satış Takibi,https://synapseautomate.github.io/sektorler/uretim-lojistik.html,mapping_v0
+manufacturing,Üretim & Lojistik,agentready,Site ve Katalog AI Uyumluluğu,https://synapseautomate.github.io/sektorler/uretim-lojistik.html,mapping_v0
+manufacturing,Üretim & Lojistik,creative,İçerik ve Kreatif Üretim Sistemi,https://synapseautomate.github.io/sektorler/uretim-lojistik.html,mapping_v0
+manufacturing,Üretim & Lojistik,magnetflow,Etkileşimli Teklif ve Hesaplayıcı,https://synapseautomate.github.io/sektorler/uretim-lojistik.html,mapping_v0
+manufacturing,Üretim & Lojistik,vela,Sesli Not ve Saha İş Akışı,https://synapseautomate.github.io/sektorler/uretim-lojistik.html,mapping_v0
+education,Eğitim,revenueos,Müşteri Talebi ve Satış Takibi,https://synapseautomate.github.io/sektorler/egitim.html,mapping_v0
+education,Eğitim,agentready,Site ve Katalog AI Uyumluluğu,https://synapseautomate.github.io/sektorler/egitim.html,mapping_v0
+education,Eğitim,creative,İçerik ve Kreatif Üretim Sistemi,https://synapseautomate.github.io/sektorler/egitim.html,mapping_v0
+education,Eğitim,magnetflow,Etkileşimli Teklif ve Hesaplayıcı,https://synapseautomate.github.io/sektorler/egitim.html,mapping_v0
+education,Eğitim,vela,Sesli Not ve Saha İş Akışı,https://synapseautomate.github.io/sektorler/egitim.html,mapping_v0
+property,Gayrimenkul Yönetimi,revenueos,Müşteri Talebi ve Satış Takibi,https://synapseautomate.github.io/sektorler/gayrimenkul-yonetimi.html,mapping_v0
+property,Gayrimenkul Yönetimi,agentready,Site ve Katalog AI Uyumluluğu,https://synapseautomate.github.io/sektorler/gayrimenkul-yonetimi.html,mapping_v0
+property,Gayrimenkul Yönetimi,creative,İçerik ve Kreatif Üretim Sistemi,https://synapseautomate.github.io/sektorler/gayrimenkul-yonetimi.html,mapping_v0
+property,Gayrimenkul Yönetimi,magnetflow,Etkileşimli Teklif ve Hesaplayıcı,https://synapseautomate.github.io/sektorler/gayrimenkul-yonetimi.html,mapping_v0
+property,Gayrimenkul Yönetimi,vela,Sesli Not ve Saha İş Akışı,https://synapseautomate.github.io/sektorler/gayrimenkul-yonetimi.html,mapping_v0
+home,Ev Hizmetleri / Roofing,revenueos,Müşteri Talebi ve Satış Takibi,https://synapseautomate.github.io/sektorler/ev-hizmetleri-roofing.html,mapping_v0
+home,Ev Hizmetleri / Roofing,agentready,Site ve Katalog AI Uyumluluğu,https://synapseautomate.github.io/sektorler/ev-hizmetleri-roofing.html,mapping_v0
+home,Ev Hizmetleri / Roofing,creative,İçerik ve Kreatif Üretim Sistemi,https://synapseautomate.github.io/sektorler/ev-hizmetleri-roofing.html,mapping_v0
+home,Ev Hizmetleri / Roofing,magnetflow,Etkileşimli Teklif ve Hesaplayıcı,https://synapseautomate.github.io/sektorler/ev-hizmetleri-roofing.html,mapping_v0
+home,Ev Hizmetleri / Roofing,vela,Sesli Not ve Saha İş Akışı,https://synapseautomate.github.io/sektorler/ev-hizmetleri-roofing.html,mapping_v0

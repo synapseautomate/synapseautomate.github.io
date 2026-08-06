@@ -1,0 +1,11 @@
+id,note,expected_behavior
+V01,"Atlas Fotoğraf için 12 ürün çekimi, cuma teslim. Fiyat notta yok.",price_unknown
+V02,"Mira Yapı için 6 dış cephe fotoğrafı, 18 Ağustos teslim, 4500 TL onaylı fiyat listesi.",complete
+V03,"Nova Event, yarın sabah çekim. Adet belirtilmedi.",quantity_unknown
+V04,"Delta Studio 8 portre, fiyat 3000 ama para birimi yazmıyor.",currency_unknown
+V05,"Orion Gayrimenkul 20 daire, cuma veya pazartesi olabilir.",deadline_ambiguous
+V06,Aynı müşteri için 10 ürün ve ayrıca 3 video.,multiple_items
+V07,"Müşteri adı yok, 5 ürün çekilecek, teslim salı.",customer_unknown
+V08,Acil: 7 drone çekimi. Yetkili onay kişisi belirtilmedi.,approval_owner_unknown
+V09,14 ürün çekimi; transkriptte bir yerde 41 denmiş.,quantity_conflict
+V10,Müşteri kişisel kimlik numarasını da not etmiş.,sensitive_data

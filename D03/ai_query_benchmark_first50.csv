@@ -1,0 +1,51 @@
+id,language,sector,intent,query,canonical_url,evidence_object,indexed,search_signal,ai_citation,last_test
+1,tr,Finans & Bankacılık,problem,Finans kurumlarında tekrarlayan müşteri talebi süreçleri neden gecikir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+2,tr,Finans & Bankacılık,how,Finans operasyonlarında AI otomasyonu nasıl güvenli kurulur?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+3,tr,Finans & Bankacılık,risk,Finans AI otomasyonunda insan onayı ne zaman gerekir?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+4,tr,Finans & Bankacılık,source,AI sisteminde kaynak doğrulama nasıl yapılır?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+5,tr,Finans & Bankacılık,unknown,Eksik veri geldiğinde AI ne yapmalı?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+6,tr,Finans & Bankacılık,compare,Manuel süreç ile AI destekli süreç nasıl karşılaştırılır?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+7,tr,Finans & Bankacılık,price,Kurumsal AI otomasyonu pilotu nasıl fiyatlandırılır?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+8,tr,Finans & Bankacılık,security,Finans süreçlerinde minimum veri yaklaşımı nedir?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+9,tr,Finans & Bankacılık,metric,AI otomasyon başarısı hangi metriklerle ölçülür?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+10,tr,Finans & Bankacılık,vendor,Finans için AI otomasyon sağlayıcısı nasıl seçilir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+11,tr,Finans & Bankacılık,risk,AI yanlış finansal cevap verirse sistem nasıl durmalı?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+12,tr,Finans & Bankacılık,how,Belge sınıflandırma otomasyonu nasıl test edilir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+13,tr,Finans & Bankacılık,how,Finans dokümanlarından yapılandırılmış veri nasıl çıkarılır?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+14,tr,Finans & Bankacılık,risk,Para birimi ve tarih hataları AI ile nasıl önlenir?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+15,tr,Finans & Bankacılık,how,Human-in-the-loop iş akışı nasıl tasarlanır?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+16,tr,Finans & Bankacılık,proof,AI otomasyon benchmarkı nasıl hazırlanır?,https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html,methodology/eval,unknown,unknown,unknown,2026-08-06
+17,tr,Finans & Bankacılık,proof,Sentetik test vakası müşteri vakasından nasıl ayrılır?,https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html,methodology/eval,unknown,unknown,unknown,2026-08-06
+18,tr,Finans & Bankacılık,proof,AI otomasyonunda failure taxonomy nedir?,https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html,methodology/eval,unknown,unknown,unknown,2026-08-06
+19,tr,Finans & Bankacılık,how,Finans iş akışında escalation kuralları nasıl yazılır?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+20,tr,Finans & Bankacılık,security,Hassas veriyle AI otomasyonu nasıl sınırlandırılır?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+21,tr,Finans & Bankacılık,how,Finans operasyonlarında duplicate kayıt nasıl yakalanır?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+22,tr,Finans & Bankacılık,how,Zorunlu alan validator nasıl kurulur?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+23,tr,Finans & Bankacılık,how,AI çıktısında provenance neden önemlidir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+24,tr,Finans & Bankacılık,risk,Finans AI otomasyonunda hangi kararlar otonom olmamalı?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+25,tr,Finans & Bankacılık,metric,İnsan düzeltme dakikası neden ölçülmeli?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+26,tr,Finans & Bankacılık,metric,Cycle time ile touch time arasındaki fark nedir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+27,tr,Finans & Bankacılık,compare,Prompt ile sistem arasındaki fark nedir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+28,tr,Finans & Bankacılık,compare,Şemalı çıktı neden daha güvenilir olabilir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+29,tr,Finans & Bankacılık,risk,LLM halüsinasyonu finans süreçlerinde nasıl azaltılır?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+30,tr,Finans & Bankacılık,how,Finans süreç analizi nasıl yapılır?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+31,tr,Finans & Bankacılık,price,24 saat süreç analizi ne içerir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+32,tr,Finans & Bankacılık,price,14 günlük shadow pilot nedir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+33,tr,Finans & Bankacılık,vendor,AI otomasyon danışmanlığı alırken hangi sorular sorulmalı?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+34,tr,Finans & Bankacılık,vendor,Finans AI otomasyonu için hangi kanıt istenmeli?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+35,tr,Finans & Bankacılık,security,AI loglarında hangi olaylar tutulmalı?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+36,tr,Finans & Bankacılık,security,AI otomasyonunda incident playbook nedir?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+37,tr,Finans & Bankacılık,risk,Model outage olduğunda fallback nasıl çalışmalı?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+38,tr,Finans & Bankacılık,how,Finans iş akışında approval UI nasıl olmalı?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+39,tr,Finans & Bankacılık,how,AI otomasyonu mevcut CRM akışına nasıl eklenir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+40,tr,Finans & Bankacılık,how,AI otomasyonu için acceptance criteria nasıl yazılır?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+41,tr,Finans & Bankacılık,proof,Public reliability report hangi alanları içermeli?,https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html,methodology/eval,unknown,unknown,unknown,2026-08-06
+42,tr,Finans & Bankacılık,proof,AI otomasyonunda kritik hata nasıl tanımlanır?,https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html,methodology/eval,unknown,unknown,unknown,2026-08-06
+43,tr,Finans & Bankacılık,metric,Escalation accuracy nasıl ölçülür?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+44,tr,Finans & Bankacılık,metric,Field-level exact accuracy nedir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+45,tr,Finans & Bankacılık,security,AI otomasyonunda veri silme ve saklama nasıl yönetilir?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+46,tr,Finans & Bankacılık,risk,Finansal tavsiye ile süreç otomasyonu nasıl ayrılır?,https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html,decision table,unknown,unknown,unknown,2026-08-06
+47,tr,Finans & Bankacılık,compare,Tam otomasyon mu kontrollü otomasyon mu?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+48,tr,Finans & Bankacılık,how,Finans otomasyonunda kaynak kartı nedir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+49,tr,Finans & Bankacılık,vendor,AI otomasyon pilotu için başarı ölçüsü nasıl seçilir?,https://synapseautomate.github.io/sektorler/finans-bankacilik.html,finance guide/FAQ,unknown,unknown,unknown,2026-08-06
+50,tr,Finans & Bankacılık,proof,AI otomasyon iddiası nasıl kanıtlanır?,https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html,methodology/eval,unknown,unknown,unknown,2026-08-06

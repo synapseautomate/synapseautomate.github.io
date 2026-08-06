@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-06",
+  "html_count": 60,
+  "has_robots": true,
+  "has_sitemap": true,
+  "finance_page": true,
+  "tools": [
+    "araclar/otomasyon-deger-hesaplayici.html",
+    "araclar/finans-surec-kontrol-listesi.html",
+    "araclar/site-ai-uyumluluk-taramasi.html",
+    "araclar/surec-hazirlik-skoru.html",
+    "araclar/kreatif-fikir-mini-formu.html",
+    "araclar/etkilesimli-teklif-sablonu.html",
+    "araclar/gelir-kacagi-hesaplayici.html"
+  ],
+  "notes": [
+    "Search Console/Bing ownership cannot be verified by CI without account access.",
+    "Indexed/search/AI citation metrics remain unknown until platform verification and live observation."
+  ]
+}

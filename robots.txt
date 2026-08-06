@@ -4,3 +4,16 @@ Disallow: /scripts/
 Disallow: /BUILD_MANIFEST.sha256
 Disallow: /README.md
 Sitemap: https://synapseautomate.github.io/sitemap.xml
+
+# Day 3: search / AI retrieval access
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

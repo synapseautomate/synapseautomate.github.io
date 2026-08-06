@@ -1,0 +1,11 @@
+date,metric,value,status,source
+2026-08-06,site_views,0,unverified_or_not_measured,enter_real_data_only
+2026-08-06,organic_clicks,0,unverified_or_not_measured,enter_real_data_only
+2026-08-06,form_submits,0,unverified_or_not_measured,enter_real_data_only
+2026-08-06,qualified_inbound,0,unverified_or_not_measured,enter_real_data_only
+2026-08-06,payments,0,unverified_or_not_measured,enter_real_data_only
+2026-08-06,cash_collected,0,unverified_or_not_measured,enter_real_data_only
+2026-08-06,ai_referral_sessions,0,unverified_or_not_measured,enter_real_data_only
+2026-08-06,critical_errors,0,unverified_or_not_measured,enter_real_data_only
+2026-08-06,published_posts,0,unverified_or_not_measured,enter_real_data_only
+2026-08-06,public_comments,0,unverified_or_not_measured,enter_real_data_only

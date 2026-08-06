@@ -1,73 +1,15 @@
 # Synapse Automate
 
-> Türkiye merkezli kurumsal AI otomasyonu, RevenueOS ve yapay zekâ odaklı ürün ekosistemi.
+> Kurumsal AI otomasyonu: kaynak, deterministik kural, insan onayı ve ölçüm.
 
-Canonical site: https://synapseautomate.github.io/
-Contact: synapseautomate.ai@gmail.com | +90 552 202 98 50
+Canonical home: https://synapseautomate.github.io/
+Organization profile: https://synapseautomate.github.io/bilgi.html
+Finance & Banking: https://synapseautomate.github.io/sektorler/finans-bankacilik.html
+Evidence methodology: https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html
+Free finance checklist: https://synapseautomate.github.io/araclar/finans-surec-kontrol-listesi.html
+AI-readiness scan: https://synapseautomate.github.io/araclar/site-ai-uyumluluk-taramasi.html
+Human approval guide: https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html
 
-## Primary commercial engine
-- Müşteri Talebi ve Satış Takibi (RevenueOS): gelen potansiyel müşteri ön değerlendirmesi, randevu planlama, takip, müşteri takip sistemi and measurement.
-- 72 Saatlik İlk Kurulum core: approved knowledge base, 30 FAQ, 8–12 intents/flows, potansiyel müşteri puanlama, randevu planlama/yetkili personele aktarım, 3 takip messages, potansiyel müşteri takip tablosu and 30 test cases.
-- Home Services / Çatı ve Tadilat is one documented RevenueOS implementation pattern; sector coverage is not exclusive.
+Important limits: No medical, legal, or financial advice. No sales/ROI/search-ranking/AI-citation guarantee. Synthetic examples are labeled. Critical actions require human approval.
 
-## Sector coverage
-- Healthcare
-- Finance & Banking
-- E-Commerce
-- Real Estate
-- Legal Operations
-- Manufacturing & Logistics
-- Education
-- Property Management
-- Home Services / Çatı ve Tadilat
-
-## Core services
-- Yapay Zekâ Destekli Müşteri Asistanı & Customer Service
-- Sales & Müşteri Adayı Kazanımı
-- Accounting & Finance Automation
-- HR & Recruitment
-- Marketing, Content & SEO
-- Legal & Compliance iş akışı support
-- AI Training & Consulting
-- kurum içi bilgiye dayalı yapay zekâ, custom AI and kalite testiuations
-- AI Analiz & Optimization
-- Process Mining
-- Voice AI & Call Center
-- Predictive Analytics
-
-## Products and ecosystem
-- RevenueOS — primary commercial engine
-- Web ve Katalog Hazırlık Sistemi (AgentReady) — product architecture
-- İçerik Üretim Sistemi (Creative) — product architecture
-- Etkileşimli Teklif Sistemi (MagnetFlow) — product architecture
-- Teklif ve İş Takip Sistemi (VELA) — product architecture
-- TradeOps Lab — technical research/kalite testiuation lab, not a separate commercial brand
-- Kilory — AI nutrition, activity, recipe, habit and social motivation application; investor presentation status: launch-ready
-- Kinetra Studios — planned AI product studio
-- Kinetra Group — planned umbrella combining product and kurumsal automation engines
-
-## Trust principles
-- Security > accuracy > evidence > usability > aesthetics.
-- No fabricated case studies, clients, metrics, guarantees or public links.
-- Unknown information remains unverified.
-- Critical pricing, payment, contract and sensitive advice require insan onayı.
-- Medical, legal and financial advice is not autonomously provided.
-- Minimum data, approved sources, kullanıcı bağlılığı/deletion rules and controlled yetkili personele aktarım are required.
-
-## Authoritative pages
-- https://synapseautomate.github.io/hizmetler.html
-- https://synapseautomate.github.io/sektorler.html
-- https://synapseautomate.github.io/urunler.html
-- https://synapseautomate.github.io/urunler/revenueos.html
-- https://synapseautomate.github.io/kinetra-group.html
-- https://synapseautomate.github.io/kinetra-studios.html
-- https://synapseautomate.github.io/yatirimcilar.html
-- https://synapseautomate.github.io/ai-bilgi.html
-
-
-## Day 2 public assets (2026-08-05)
-- Dental / aesthetic / wellness: https://synapseautomate.github.io/sektorler/dis-estetik-wellness.html
-- Customer request loss scenario calculator: https://synapseautomate.github.io/araclar/gelir-kacagi-hesaplayici.html
-- Process readiness score: https://synapseautomate.github.io/araclar/surec-hazirlik-skoru.html
-- 24-hour process analysis: https://synapseautomate.github.io/cozumler/musteri-talebi-surec-analizi.html
-- Site & catalog readiness analysis: https://synapseautomate.github.io/cozumler/site-katalog-uyumlulugu.html
+This file is a convenience index, not a ranking or citation guarantee.

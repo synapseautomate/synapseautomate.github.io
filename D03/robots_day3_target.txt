@@ -1,0 +1,18 @@
+# Synapse Automate search-crawler policy — Day 3
+# Search/retrieval crawlers are explicitly allowed. Training-crawler policy is intentionally not changed here.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://synapseautomate.github.io/sitemap.xml
