@@ -1,0 +1,109 @@
+name: Publish Synapse D03 Navigation + Function Root Fix
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: synapse-site-publish
+  cancel-in-progress: false
+
+jobs:
+  verify-and-publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Locate exactly one fix package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t zips < <(find . -maxdepth 1 -type f -name 'SYNAPSE_D03_NAV_FUNCTION_FIX_V1*.zip' | sort)
+          if [ "${#zips[@]}" -ne 1 ]; then
+            echo "Expected exactly one fix package, found ${#zips[@]}"
+            printf '%s\n' "${zips[@]:-}"
+            exit 1
+          fi
+          echo "FIX_ZIP=${zips[0]}" >> "$GITHUB_ENV"
+
+      - name: Extract, apply and QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .d03_root_fix
+          mkdir .d03_root_fix
+          unzip -q "$FIX_ZIP" -d .d03_root_fix
+          python3 .d03_root_fix/apply_fix.py .
+          python3 .d03_root_fix/qa_fix.py .
+          git diff --check
+
+      - name: Remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .d03_root_fix
+          rm -f "$FIX_ZIP"
+
+      - name: Commit root fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapse-mobile"
+          git config user.email "synapse-mobile@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No content change."
+          else
+            git commit -m "D03: fix navigation, discovery and interactive tools"
+            git push origin HEAD:main
+          fi
+
+      - name: Build public Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude 'D01/' \
+            --exclude 'D02/' \
+            --exclude 'D03/' \
+            --exclude '__pycache__/' \
+            --exclude '*.zip' \
+            --exclude '*.sha256' \
+            --exclude '*.py' \
+            --exclude 'README*.md' \
+            --exclude 'DEPLOYMENT.md'
+          test -f _site/index.html
+          test -f _site/kaynaklar.html
+          test -f _site/araclar/site-ai-uyumluluk-taramasi.html
+          test -f _site/demolar/vela-saha-akisi.html
+          echo "PUBLIC ARTIFACT QA: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        timeout-minutes: 15
+        uses: actions/deploy-pages@v4
