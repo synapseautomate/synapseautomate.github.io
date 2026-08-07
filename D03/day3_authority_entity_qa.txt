@@ -1,0 +1,12 @@
+DAY 3 AUTHORITY / ENTITY QA
+Public HTML pages: 49
+Critical findings: 0
+Warnings: 7
+
+sektorler/finans.html: missing meta description
+sektorler/finans.html: H1 count = 0
+site-haritasi.html: missing meta description
+orphan candidate (0 inbound HTML links): ai-bilgi.html
+orphan candidate (0 inbound HTML links): bilgi.html
+orphan candidate (0 inbound HTML links): kullanim-kosullari.html
+orphan candidate (0 inbound HTML links): site-haritasi.html
