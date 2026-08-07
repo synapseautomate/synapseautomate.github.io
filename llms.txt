@@ -1,15 +1,63 @@
 # Synapse Automate
 
-> Kurumsal AI otomasyonu: kaynak, deterministik kural, insan onayı ve ölçüm.
+> Kurumsal yapay zekâ otomasyonu, insan denetimli dijital süreçler ve ölçülebilir iş akışları için Synapse Automate'in resmi web kaynak dizini.
 
-Canonical home: https://synapseautomate.github.io/
-Organization profile: https://synapseautomate.github.io/bilgi.html
-Finance & Banking: https://synapseautomate.github.io/sektorler/finans-bankacilik.html
-Evidence methodology: https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html
-Free finance checklist: https://synapseautomate.github.io/araclar/finans-surec-kontrol-listesi.html
-AI-readiness scan: https://synapseautomate.github.io/araclar/site-ai-uyumluluk-taramasi.html
-Human approval guide: https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html
+Canonical site: https://synapseautomate.github.io/
 
-Important limits: No medical, legal, or financial advice. No sales/ROI/search-ranking/AI-citation guarantee. Synthetic examples are labeled. Critical actions require human approval.
+## Primary pages
+- [Synapse Automate | Kurumsal Yapay Zekâ Otomasyonu ve Müşteri Talebi ve Satış Takip Sistemi](https://synapseautomate.github.io/): Türkiye merkezli kurumsal yapay zekâ otomasyonu, Müşteri Talebi ve Satış Takip Sistemi, yapay zekâ odaklı ürünler, sektör çözümleri ve insan denetimli dijital operasyon sistemleri.
+- [Kurumsal Yapay Zekâ ve Otomasyon Hizmetleri | Synapse Automate](https://synapseautomate.github.io/hizmetler.html): yapay zekâ chatbot, satış, finans, İK, pazarlama, hukuk, eğitim, kurum içi bilgiye dayalı yapay zekâ/kalite testleri, denetim, süreç madenciliği, voice yapay zekâ ve tahmine dayalı analitik.
+- [Sektör Çözümleri | Synapse Automate](https://synapseautomate.github.io/sektorler.html): Sağlık, finans, e-ticaret, emlak, hukuk, üretim-lojistik, eğitim, gayrimenkul yönetimi ve ev hizmetleri için insan denetimli yapay zekâ otomasyonu.
+- [Çözüm Sistemleri | Synapse Automate](https://synapseautomate.github.io/urunler.html): Müşteri Talebi ve Satış Takip Sistemi, Web ve Katalog Hazırlık Sistemi, İçerik Üretim Sistemi, Etkileşimli Teklif Sistemi, Teklif ve İş Takip Sistemi, Kilory, Teknik Araştırma ve Kalite Laboratuvarı ve Kinetra Studios ürün ve platform mimarisi.
+- [Ücretsiz AI Araçları, Rehberler & Demolar | Synapse Automate](https://synapseautomate.github.io/kaynaklar.html): Synapse Automate ücretsiz araçları, kurumsal AI rehberleri, kontrollü demoları ve kanıt metodolojileri.
+- [Hakkımızda | Synapse Automate](https://synapseautomate.github.io/hakkimizda.html): Synapse Automate’in güvenlik, doğruluk, kanıt, insan onayı ve başarı ölçütü bazlı yapay zekâ otomasyon yaklaşımı.
+- [Kurumsal Teknik Bilgi | Synapse Automate](https://synapseautomate.github.io/ai-bilgi.html): Synapse Automate’in makine-okunabilir yapay zekâ profili, hizmetleri, sektörleri, ürünleri, güvenlik ilkeleri ve doğrulanabilir bilgi kaynakları.
+- [24 Saat Süreç Analizi | Synapse Automate](https://synapseautomate.github.io/surec-analizi.html): Tek bir tekrarlı iş akışını süreç haritası, kayıp noktaları, kaynaklar, insan onayı ve başarı ölçüleriyle görünür hale getiren analiz.
+- [Site ve Katalog AI Uyumluluğu | Ücretsiz Örnek Tarama](https://synapseautomate.github.io/araclar/site-ai-uyumluluk-taramasi.html): Site ve katalog içeriğini erişilebilirlik, yapılandırılmış veri, doğrulanabilirlik ve işlem adımları açısından değerlendiren 7 kategorili örnek tarama.
+- [24 Saat Müşteri Talebi Süreç Analizi | Synapse Automate](https://synapseautomate.github.io/cozumler/musteri-talebi-surec-analizi.html): Gelen müşteri taleplerinde geç cevap, eksik bilgi ve unutulan takip noktalarını 24 saatte süreç, kaynak, insan onayı ve ölçüm açısından görünür hale getirin.
 
-This file is a convenience index, not a ranking or citation guarantee.
+## Sector solutions
+- [Diş, Estetik ve Wellness Müşteri Talebi Otomasyonu | Synapse Automate](https://synapseautomate.github.io/sektorler/dis-estetik-wellness.html): Diş, estetik ve wellness işletmelerinde randevu, onaylı SSS, talep nitelendirme ve insan devri; tıbbi tavsiye vermeyen kontrollü müşteri iletişim sistemi.
+- [E-Ticaret Yapay Zekâ Otomasyonu | Synapse Automate](https://synapseautomate.github.io/sektorler/e-ticaret.html): Sipariş otomasyonu, stok yönetimi, fiyat karar desteği ve kişiselleştirilmiş öneriler için insan denetimli yapay zekâ destekli operasyonlar.
+- [Eğitimde Yapay Zekâ Otomasyonu | Synapse Automate](https://synapseautomate.github.io/sektorler/egitim.html): Kişisel öğrenme planı, değerlendirme desteği, öğrenci takibi ve içerik taslağı iş akışları; eğitimci kontrolüyle.
+- [Emlak Satış ve Potansiyel müşteri Otomasyonu | Synapse Automate](https://synapseautomate.github.io/sektorler/emlak.html): Müşteri talebi önceliklendirme, sanal tur desteği, değerleme desteği ve sözleşme iş akışları için kontrollü yapay zekâ sistemleri.
+- [Finans & Bankacılık AI Otomasyonu | Synapse Automate](https://synapseautomate.github.io/sektorler/finans-bankacilik.html): Finans süreçlerinde kaynak, kural, insan onayı ve ölçümü tek akışta görünür kılan kontrollü AI otomasyonu yaklaşımı. Finansal tavsiye verilmez.
+- [Finans & Bankacılık | Synapse Automate](https://synapseautomate.github.io/sektorler/finans.html)
+- [Gayrimenkul Yönetiminde Yapay Zekâ Otomasyonu | Synapse Automate](https://synapseautomate.github.io/sektorler/gayrimenkul-yonetimi.html): Kira yönetimi, bakım talebi, kiracı iletişimi ve finansal raporlama süreçleri için kontrollü otomasyon.
+- [Hukuk Operasyonlarında Yapay Zekâ Otomasyonu | Synapse Automate](https://synapseautomate.github.io/sektorler/hukuk.html): Sözleşme inceleme desteği, araştırma, uyum kontrolleri ve doküman sınıflandırma için insan onaylı yapay zekâ destekli iş akışları.
+- [Sağlık Operasyonlarında Yapay Zekâ Otomasyonu | Synapse Automate](https://synapseautomate.github.io/sektorler/saglik.html): Randevu, dokümantasyon, stok tahmini ve telesağlık iş akışı desteği; tıbbi tavsiye vermeyen, insan denetimli otomasyon.
+- [Üretim ve Lojistik Yapay Zekâ Otomasyonu | Synapse Automate](https://synapseautomate.github.io/sektorler/uretim-lojistik.html): Tedarik zinciri optimizasyonu, kalite kontrol, talep tahmini ve rota planlama için kontrollü yapay zekâ destekli karar desteği.
+
+## Products
+- [Web ve Katalog Hazırlık Sistemi | Synapse Automate](https://synapseautomate.github.io/urunler/agentready.html): Site ve katalogları yapay zekâ asistanları için bulunabilir, doğrulanabilir ve kontrollü işlem yapılabilir hale getirir.
+- [İçerik Üretim Sistemi | Synapse Automate](https://synapseautomate.github.io/urunler/creative.html): Ürün linki veya fotoğrafını görsel, video, açıklama ve test fikrine dönüştüren kontrollü üretim akışı.
+- [Kilory | yapay zekâ Beslenme, Aktivite ve Sosyal Motivasyon](https://synapseautomate.github.io/urunler/kilory.html): Kilory; Yapay zekâ destekli öğün analizi, tarif, beslenme ve egzersiz koçluğu, barkod, alışkanlık, alışveriş ve sosyal topluluk özelliklerini birleştiren yayına hazır ürün.
+- [Etkileşimli Teklif Sistemi | Synapse Automate](https://synapseautomate.github.io/urunler/magnetflow.html): Teklifi soru akışı, hesaplama aracı, puanlama aracı ve mini uygulama ve satışa veya başvuruya yönlendiren akış deneyimine dönüştürür.
+- [Müşteri Talebi ve Satış Takip Sistemi | Synapse Automate](https://synapseautomate.github.io/urunler/revenueos.html): Müşteri Talebi ve Satış Takip Sistemi; gelen potansiyel müşteri ön değerlendirmesi, randevu planlama, takip, müşteri takip sistemi ve ölçümü insan onaylı hibrit gelir operasyonunda birleştirir.
+- [Teklif ve İş Takip Sistemi | Synapse Automate](https://synapseautomate.github.io/urunler/vela.html): Sesli not veya fotoğrafı kontrollü teklif, iş emri, ödeme ve takip akışına dönüştürür.
+
+## Guides
+- [AI Otomasyonunda İnsan Onayı | Synapse Automate](https://synapseautomate.github.io/rehberler/ai-otomasyonunda-insan-onayi.html): AI otomasyonunda hangi durumların otomatik ilerleyebileceğini ve hangi kritik kararlarda insan onayı gerektiğini açıklayan karar rehberi.
+- [Yapay Zekâ Projesinde Başarı Nasıl Ölçülür? | Synapse Automate](https://synapseautomate.github.io/rehberler/ai-pilot-kpi.html): yapay zekâ otomasyon ilk uygulamalarında baz çizgi, yanıt süresi, hata, insan edit süresi, maliyet ve gelir başarı ölçütlerinı doğru ölçme rehberi.
+- [Finans AI Otomasyonu: Güvenli Başlangıç Rehberi](https://synapseautomate.github.io/rehberler/finans-ai-otomasyonu-guvenli-baslangic.html): Finans süreçlerinde AI otomasyonuna kaynak, deterministik kural, insan onayı ve ölçüm disipliniyle başlamak için 5 adımlı rehber.
+- [Kurumsal Yapay Zekâ Otomasyonu Rehberi | Synapse Automate](https://synapseautomate.github.io/rehberler/kurumsal-ai-otomasyonu.html): Kurumsal yapay zekâ otomasyonunu görev seçimi, veri, insan onayı gerektiren adım, ilk uygulama, başarı ölçütü, güvenlik ve ölçekleme açısından açıklayan kapsamlı rehber.
+- [Ev Hizmetlerinde Müşteri Talebi Yönetimi | Synapse Automate](https://synapseautomate.github.io/rehberler/roofing-lead-yonetimi.html): Roofing ve ev hizmetlerinde potansiyel müşteri yakalama, bölge, aciliyet, hizmet, bütçe ön değerlendirme, takip ve randevu planlama süreçlerini iyileştirme rehberi.
+
+## Tools
+- [Etkileşimli Teklif Şablonu | Synapse Automate](https://synapseautomate.github.io/araclar/etkilesimli-teklif-sablonu.html): Karar vericiye durumu, kanıt ihtiyacını ve tek sonraki adımı gösteren düşük sürtünmeli teklif akışı örneği.
+- [Finans Süreç Kontrol Listesi | Synapse Automate](https://synapseautomate.github.io/araclar/finans-surec-kontrol-listesi.html): Finans süreçlerinde kaynak, kural, insan onayı, veri ve ölçüm boşluklarını 8 adımda görünür yapan ücretsiz kontrol listesi.
+- [Müşteri Talebi Kayıp Senaryosu Hesaplayıcısı | Synapse Automate](https://synapseautomate.github.io/araclar/gelir-kacagi-hesaplayici.html): Aylık müşteri talebi, mevcut satış oranı, ortalama değer ve takip kaybı varsayımlarıyla şeffaf bir kayıp senaryosu hesaplayın.
+- [Kreatif Fikir Mini Formu | Synapse Automate](https://synapseautomate.github.io/araclar/kreatif-fikir-mini-formu.html): Doğrulanmış tek bir ürün gerçeğinden, uydurma iddia üretmeden üç kurumsal içerik açısı çıkaran ücretsiz mini form.
+- [Otomasyon Operasyon Değeri Hesaplayıcısı | Synapse Automate](https://synapseautomate.github.io/araclar/otomasyon-deger-hesaplayici.html): İşlem hacmi, dakika, saatlik maliyet ve azaltılabilir manuel oranla şeffaf operasyon değeri senaryosu hesaplayın.
+- [Süreç Otomasyon Hazırlık Skoru | Synapse Automate](https://synapseautomate.github.io/araclar/surec-hazirlik-skoru.html): Sekiz soruda süreç tekrarı, veri, kaynak, insan onayı, hata örnekleri ve baz çizgi hazır mı görün.
+
+## Solutions
+- [Ev Hizmetlerinde Müşteri Talebi ve Takip | Synapse Automate](https://synapseautomate.github.io/cozumler/roofing-ev-hizmetleri.html): Dağınık gelen talepleri bölge, aciliyet, hizmet uyumu, bütçe ve zamanlamaya göre nitelendiren insan denetimli müşteri talebi ve satış takip akışı.
+- [Site ve Katalog AI Hazırlık Analizi | Synapse Automate](https://synapseautomate.github.io/cozumler/site-katalog-uyumlulugu.html): Ürün ve hizmet sayfalarını erişilebilirlik, yapılandırılmış veri, fiyat/stok, politika, işlem adımı ve doğrulanabilirlik açısından kanıta dayalı inceleyin.
+
+## Verification notes
+- Canonical HTML pages are the source of truth.
+- Public claims should be verified against the linked canonical page.
+- Unknown or unavailable information should not be inferred.
+- Pricing, legal, medical, financial, contractual, payment and other sensitive decisions require the relevant authoritative source and, where applicable, human approval.
+- This discovery file improves machine-readable navigation; it does not guarantee ranking, citation, recommendation or indexing.

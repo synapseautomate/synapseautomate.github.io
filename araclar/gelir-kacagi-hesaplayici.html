@@ -1,9 +1,33 @@
 <!doctype html><html lang="tr" class="no-js"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Müşteri Talebi Kayıp Senaryosu Hesaplayıcısı | Synapse Automate</title><meta name="description" content="Aylık müşteri talebi, mevcut satış oranı, ortalama değer ve takip kaybı varsayımlarıyla şeffaf bir kayıp senaryosu hesaplayın.">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="theme-color" content="#06111f"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-<link rel="preload" href="../assets/styles-v33.css" as="style"><link rel="stylesheet" href="../assets/styles-v33.css"><link rel="canonical" href="https://synapseautomate.github.io/araclar/gelir-kacagi-hesaplayici.html">
+<link rel="preload" href="../assets/styles-v33.css" as="style"><link rel="stylesheet" href="../assets/styles-v33.css"><!-- SYNAPSE_AI_DISCOVERY_V2_START -->
+<link rel="canonical" href="https://synapseautomate.github.io/araclar/gelir-kacagi-hesaplayici.html">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site context">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://synapseautomate.github.io/araclar/gelir-kacagi-hesaplayici.html#webpage",
+      "url": "https://synapseautomate.github.io/araclar/gelir-kacagi-hesaplayici.html",
+      "name": "Müşteri Talebi Kayıp Senaryosu Hesaplayıcısı | Synapse Automate",
+      "isPartOf": {
+        "@id": "https://synapseautomate.github.io/#website"
+      },
+      "about": {
+        "@id": "https://synapseautomate.github.io/#organization"
+      },
+      "inLanguage": "tr",
+      "description": "Aylık müşteri talebi, mevcut satış oranı, ortalama değer ve takip kaybı varsayımlarıyla şeffaf bir kayıp senaryosu hesaplayın."
+    }
+  ]
+}
+</script>
+<!-- SYNAPSE_AI_DISCOVERY_V2_END -->
 </head><body><a class="skip" href="#main">İçeriğe geç</a><div class="progress" aria-hidden="true"></div>
 <header class="site-header"><div class="container nav"><a class="brand" href="../index.html" aria-label="Synapse Automate ana sayfa"><img src="../assets/synapse-logo.png" alt="Synapse Automate"></a><button class="menu-button" aria-label="Menüyü aç" aria-expanded="false">☰</button><nav class="nav-links" aria-label="Ana menü"><a href="../hizmetler.html">Hizmetler</a><a href="../urunler.html">Çözümler</a><a href="../sektorler.html">Sektörler</a><a href="../kaynaklar.html">Ücretsiz AI Araçları</a><a href="../hakkimizda.html">Hakkımızda</a></nav><a class="nav-cta" href="../iletisim.html">Süreç Analizi İste</a></div></header>
 <main id="main"><div class="container breadcrumb"><a href="../index.html">Ana Sayfa</a> / <span>Müşteri Talebi Kayıp Senaryosu Hesaplayıcısı</span></div><section class="page-hero"><div class="container"><div class="kicker">Synapse Automate</div><h1>Müşteri Talebi Kayıp Senaryosu Hesaplayıcısı</h1><p class="lead">Kayıp talep varsayımını gizli bir yatırım geri dönüşü iddiasına çevirmeden, kendi sayılarınızla görünür hale getirin.</p></div></section><section class="section-tight"><div class="container"><div class="featured"><div><div class="kicker">Şeffaf senaryo</div><h2>Aylık talep kaybını dört görünür varsayımla hesaplayın.</h2><p class="lead">Bu araç gerçekleşmiş gelir veya tasarruf iddiası değildir. Kendi baz çizginizi görmeniz için senaryo hesaplar.</p><form class="form" id="lossForm"><label>Aylık gelen talep<input id="leads" type="number" min="0" value="100"></label><label>Ortalama işlem/satış değeri (TL)<input id="ticket" type="number" min="0" value="5000"></label><label>Mevcut talep → satış oranı (%)<input id="close" type="number" min="0" max="100" value="20"></label><label>Cevapsız/unutulan talep tahmini (%)<input id="lost" type="number" min="0" max="100" value="15"></label></form></div><div class="price-box"><div class="micro">Aylık senaryo kaybı</div><div class="price" id="monthlyLoss">-</div><p class="price-note" id="annualLoss">-</p><ul><li>Formül: talep × kayıp oranı × mevcut satış oranı × ortalama değer.</li><li>Sonuç garanti değildir; yalnız görünür varsayımlardan oluşan senaryodur.</li><li>Gerçek karar için kanal, satış döngüsü, kapasite ve baz çizgi ayrıca doğrulanır.</li></ul><a class="btn btn-primary" href="../iletisim.html?konu=Gelir-Kacagi">Süreç Analizi İste</a></div></div></div></section><script>function recalc(){const n=+document.getElementById('leads').value||0,t=+document.getElementById('ticket').value||0,c=(+document.getElementById('close').value||0)/100,l=(+document.getElementById('lost').value||0)/100;const m=n*l*c*t;const fmt=new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',maximumFractionDigits:0});document.getElementById('monthlyLoss').textContent=fmt.format(m);document.getElementById('annualLoss').textContent='12 aylık aynı varsayım senaryosu: '+fmt.format(m*12);}document.querySelectorAll('#lossForm input').forEach(x=>x.addEventListener('input',recalc));recalc();</script></main>

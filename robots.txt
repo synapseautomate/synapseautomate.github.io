@@ -17,4 +17,20 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+# BEGIN SYNAPSE AI DISCOVERY V2
+# Public corporate pages are intentionally crawlable for answer/search discovery.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Google-Extended is a Google control token for Gemini training/grounding.
+# It does not control ordinary Google Search ranking.
+User-agent: Google-Extended
+Allow: /
+
+# END SYNAPSE AI DISCOVERY V2
+
 Sitemap: https://synapseautomate.github.io/sitemap.xml
