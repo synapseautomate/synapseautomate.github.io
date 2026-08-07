@@ -1,0 +1,514 @@
+name: Synapse AI Discovery and Entity Layer V2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: synapse-ai-discovery
+  cancel-in-progress: false
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Create rollback branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          rollback="rollback/pre-ai-discovery-v2-${GITHUB_RUN_ID}"
+          git branch "$rollback"
+          git push origin "$rollback"
+          echo "Rollback branch: $rollback" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Apply conservative AI discovery layer
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import quote
+          import json
+          import re
+          import textwrap
+
+          ROOT = Path(".").resolve()
+          BASE = "https://synapseautomate.github.io/"
+          MANAGED_START = "<!-- SYNAPSE_AI_DISCOVERY_V2_START -->"
+          MANAGED_END = "<!-- SYNAPSE_AI_DISCOVERY_V2_END -->"
+
+          EXCLUDED_DIRS = {
+              ".git", ".github", "_site", "__pycache__",
+              "D01", "D02", "D03"
+          }
+
+          def is_google_verification(name: str) -> bool:
+              return bool(re.fullmatch(r"google[a-z0-9_-]+\.html", name.lower()))
+
+          def is_public_html(path: Path) -> bool:
+              rel = path.relative_to(ROOT)
+              if any(part in EXCLUDED_DIRS for part in rel.parts):
+                  return False
+              if path.name.lower() == "404.html":
+                  return False
+              if is_google_verification(path.name):
+                  return False
+              return True
+
+          pages = sorted(
+              p for p in ROOT.rglob("*.html")
+              if p.is_file() and is_public_html(p)
+          )
+          if not pages:
+              raise SystemExit("No public HTML pages found")
+
+          class MetaParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.title_parts = []
+                  self.in_title = False
+                  self.description = ""
+                  self.lang = ""
+              def handle_starttag(self, tag, attrs):
+                  d = dict(attrs)
+                  t = tag.lower()
+                  if t == "html":
+                      self.lang = d.get("lang", "")
+                  elif t == "title":
+                      self.in_title = True
+                  elif t == "meta" and d.get("name", "").lower() == "description":
+                      self.description = d.get("content", "").strip()
+              def handle_endtag(self, tag):
+                  if tag.lower() == "title":
+                      self.in_title = False
+              def handle_data(self, data):
+                  if self.in_title:
+                      self.title_parts.append(data)
+
+          def parse_meta(html: str):
+              p = MetaParser()
+              try:
+                  p.feed(html)
+              except Exception:
+                  pass
+              title = " ".join("".join(p.title_parts).split())
+              desc = " ".join((p.description or "").split())
+              lang = (p.lang or "tr").strip() or "tr"
+              return title, desc, lang
+
+          def rel_to_url(rel: str) -> str:
+              return BASE if rel == "index.html" else BASE + quote(rel, safe="/-._~")
+
+          def friendly_title(rel: str) -> str:
+              if rel == "index.html":
+                  return "Synapse Automate"
+              stem = rel.rsplit("/", 1)[-1].removesuffix(".html")
+              return stem.replace("-", " ").title()
+
+          def schema_type(rel: str) -> str:
+              if rel in {
+                  "hizmetler.html", "sektorler.html",
+                  "urunler.html", "kaynaklar.html"
+              }:
+                  return "CollectionPage"
+              if rel in {"hakkimizda.html", "ai-bilgi.html", "bilgi.html"}:
+                  return "AboutPage"
+              return "WebPage"
+
+          ORG_ID = BASE + "#organization"
+          SITE_ID = BASE + "#website"
+
+          page_inventory = {}
+
+          for page in pages:
+              rel = page.relative_to(ROOT).as_posix()
+              url = rel_to_url(rel)
+              html = page.read_text(encoding="utf-8")
+              title, desc, lang = parse_meta(html)
+              title = title or friendly_title(rel)
+
+              # Idempotency: remove only our own previous managed block.
+              html = re.sub(
+                  re.escape(MANAGED_START) + r".*?" + re.escape(MANAGED_END),
+                  "",
+                  html,
+                  flags=re.S
+              )
+
+              # Eliminate duplicate canonicals; V2 owns the single canonical.
+              html = re.sub(
+                  r'<link\b[^>]*\brel\s*=\s*["\'][^"\']*\bcanonical\b[^"\']*["\'][^>]*>\s*',
+                  "",
+                  html,
+                  flags=re.I
+              )
+
+              # Preserve an intentional noindex. Otherwise V2 owns one robots meta.
+              noindex = bool(re.search(
+                  r'<meta\b[^>]*\bname\s*=\s*["\']robots["\'][^>]*\bcontent\s*=\s*["\'][^"\']*\bnoindex\b',
+                  html,
+                  flags=re.I
+              ))
+              if not noindex:
+                  html = re.sub(
+                      r'<meta\b[^>]*\bname\s*=\s*["\']robots["\'][^>]*>\s*',
+                      "",
+                      html,
+                      flags=re.I
+                  )
+
+              page_node = {
+                  "@type": schema_type(rel),
+                  "@id": url + "#webpage",
+                  "url": url,
+                  "name": title,
+                  "isPartOf": {"@id": SITE_ID},
+                  "about": {"@id": ORG_ID},
+                  "inLanguage": lang
+              }
+              if desc:
+                  page_node["description"] = desc
+
+              graph = []
+              if rel == "index.html":
+                  graph.extend([
+                      {
+                          "@type": "Organization",
+                          "@id": ORG_ID,
+                          "name": "Synapse Automate",
+                          "url": BASE,
+                          "email": "synapseautomate.ai@gmail.com"
+                      },
+                      {
+                          "@type": "WebSite",
+                          "@id": SITE_ID,
+                          "name": "Synapse Automate",
+                          "url": BASE,
+                          "publisher": {"@id": ORG_ID},
+                          "inLanguage": "tr"
+                      }
+                  ])
+              graph.append(page_node)
+
+              managed_parts = [
+                  MANAGED_START,
+                  f'<link rel="canonical" href="{url}">'
+              ]
+              if not noindex:
+                  managed_parts.append(
+                      '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">'
+                  )
+              managed_parts.extend([
+                  '<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site context">',
+                  '<script type="application/ld+json">',
+                  json.dumps(
+                      {"@context": "https://schema.org", "@graph": graph},
+                      ensure_ascii=False,
+                      indent=2
+                  ),
+                  '</script>',
+                  MANAGED_END
+              ])
+              managed = "\n".join(managed_parts)
+
+              if "</head>" not in html:
+                  raise SystemExit(f"{rel}: missing </head>")
+              html = html.replace("</head>", managed + "\n</head>", 1)
+              page.write_text(html, encoding="utf-8")
+
+              page_inventory[rel] = {
+                  "title": title,
+                  "description": desc,
+                  "url": url
+              }
+
+          # robots.txt: preserve existing policy, normalize sitemap directive,
+          # and add only explicit discovery permissions for major answer/search systems.
+          robots_path = ROOT / "robots.txt"
+          robots = (
+              robots_path.read_text(encoding="utf-8")
+              if robots_path.exists()
+              else "User-agent: *\nAllow: /\n"
+          )
+
+          robots = re.sub(
+              r"# BEGIN SYNAPSE AI DISCOVERY V2.*?# END SYNAPSE AI DISCOVERY V2\s*",
+              "",
+              robots,
+              flags=re.S
+          )
+          robots_lines = [
+              line for line in robots.splitlines()
+              if not line.strip().lower().startswith("sitemap:")
+          ]
+          robots = "\n".join(robots_lines).rstrip()
+
+          ai_block = textwrap.dedent("""
+              # BEGIN SYNAPSE AI DISCOVERY V2
+              # Public corporate pages are intentionally crawlable for answer/search discovery.
+
+              User-agent: OAI-SearchBot
+              Allow: /
+
+              User-agent: PerplexityBot
+              Allow: /
+
+              # Google-Extended is a Google control token for Gemini training/grounding.
+              # It does not control ordinary Google Search ranking.
+              User-agent: Google-Extended
+              Allow: /
+
+              # END SYNAPSE AI DISCOVERY V2
+          """).strip()
+
+          robots = (
+              robots
+              + "\n\n" + ai_block
+              + "\n\nSitemap: https://synapseautomate.github.io/sitemap.xml\n"
+          )
+          robots_path.write_text(robots, encoding="utf-8")
+
+          # llms.txt follows the llmstxt.org proposal:
+          # H1, blockquote summary, then curated link sections.
+          primary = [
+              "index.html",
+              "hizmetler.html",
+              "sektorler.html",
+              "urunler.html",
+              "kaynaklar.html",
+              "hakkimizda.html",
+              "ai-bilgi.html",
+              "surec-analizi.html",
+              "araclar/site-ai-uyumluluk-taramasi.html",
+              "cozumler/musteri-talebi-surec-analizi.html",
+          ]
+
+          def line_for(rel: str):
+              info = page_inventory[rel]
+              suffix = f": {info['description']}" if info["description"] else ""
+              return f"- [{info['title']}]({info['url']}){suffix}"
+
+          llms = [
+              "# Synapse Automate",
+              "",
+              "> Kurumsal yapay zekâ otomasyonu, insan denetimli dijital süreçler ve ölçülebilir iş akışları için Synapse Automate'in resmi web kaynak dizini.",
+              "",
+              "Canonical site: https://synapseautomate.github.io/",
+              "",
+              "## Primary pages",
+          ]
+
+          for rel in primary:
+              if rel in page_inventory:
+                  llms.append(line_for(rel))
+
+          sections = [
+              ("## Sector solutions", "sektorler/"),
+              ("## Products", "urunler/"),
+              ("## Guides", "rehberler/"),
+              ("## Tools", "araclar/"),
+              ("## Solutions", "cozumler/"),
+          ]
+          primary_set = set(primary)
+          for heading, prefix in sections:
+              rels = sorted(
+                  rel for rel in page_inventory
+                  if rel.startswith(prefix) and rel not in primary_set
+              )
+              if rels:
+                  llms.extend(["", heading])
+                  llms.extend(line_for(rel) for rel in rels)
+
+          llms.extend([
+              "",
+              "## Verification notes",
+              "- Canonical HTML pages are the source of truth.",
+              "- Public claims should be verified against the linked canonical page.",
+              "- Unknown or unavailable information should not be inferred.",
+              "- Pricing, legal, medical, financial, contractual, payment and other sensitive decisions require the relevant authoritative source and, where applicable, human approval.",
+              "- This discovery file improves machine-readable navigation; it does not guarantee ranking, citation, recommendation or indexing.",
+              "",
+          ])
+
+          (ROOT / "llms.txt").write_text("\n".join(llms), encoding="utf-8")
+
+          print(f"AI DISCOVERY V2 APPLY: PASS — {len(pages)} public HTML pages")
+          PY
+
+      - name: Run strict QA
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.parse import quote
+          import json
+          import re
+
+          ROOT = Path(".").resolve()
+          BASE = "https://synapseautomate.github.io/"
+          EXCLUDED = {".git", ".github", "_site", "__pycache__", "D01", "D02", "D03"}
+          errors = []
+
+          def err(msg):
+              errors.append(msg)
+
+          def verification(name):
+              return bool(re.fullmatch(r"google[a-z0-9_-]+\.html", name.lower()))
+
+          pages = []
+          for p in ROOT.rglob("*.html"):
+              if any(part in EXCLUDED for part in p.parts):
+                  continue
+              if p.name.lower() == "404.html" or verification(p.name):
+                  continue
+              pages.append(p)
+
+          for p in pages:
+              rel = p.relative_to(ROOT).as_posix()
+              expected = BASE if rel == "index.html" else BASE + quote(rel, safe="/-._~")
+              html = p.read_text(encoding="utf-8")
+
+              if html.count("SYNAPSE_AI_DISCOVERY_V2_START") != 1:
+                  err(f"{rel}: managed start count != 1")
+              if html.count("SYNAPSE_AI_DISCOVERY_V2_END") != 1:
+                  err(f"{rel}: managed end count != 1")
+
+              canonicals = re.findall(
+                  r'<link\b[^>]*\brel\s*=\s*["\'][^"\']*\bcanonical\b[^"\']*["\'][^>]*\bhref\s*=\s*["\']([^"\']+)["\']',
+                  html,
+                  flags=re.I
+              )
+              if not canonicals:
+                  # href may appear before rel; fallback parse within link tags.
+                  tags = re.findall(r'<link\b[^>]*>', html, flags=re.I)
+                  canonicals = []
+                  for tag in tags:
+                      if re.search(r'\brel\s*=\s*["\'][^"\']*\bcanonical\b', tag, flags=re.I):
+                          m = re.search(r'\bhref\s*=\s*["\']([^"\']+)["\']', tag, flags=re.I)
+                          if m:
+                              canonicals.append(m.group(1))
+
+              if canonicals != [expected]:
+                  err(f"{rel}: canonical mismatch/duplicate: {canonicals!r}")
+
+              block_match = re.search(
+                  r'<!-- SYNAPSE_AI_DISCOVERY_V2_START -->(.*?)<!-- SYNAPSE_AI_DISCOVERY_V2_END -->',
+                  html,
+                  flags=re.S
+              )
+              if not block_match:
+                  err(f"{rel}: managed block missing")
+                  continue
+
+              block = block_match.group(1)
+              m = re.search(
+                  r'<script type="application/ld\+json">\s*(.*?)\s*</script>',
+                  block,
+                  flags=re.S
+              )
+              if not m:
+                  err(f"{rel}: managed JSON-LD missing")
+              else:
+                  try:
+                      data = json.loads(m.group(1))
+                      if data.get("@context") != "https://schema.org":
+                          err(f"{rel}: JSON-LD context invalid")
+                      graph = data.get("@graph")
+                      if not isinstance(graph, list) or not graph:
+                          err(f"{rel}: JSON-LD graph empty")
+                  except Exception as exc:
+                      err(f"{rel}: JSON-LD parse error: {exc}")
+
+              if 'href="/llms.txt"' not in block:
+                  err(f"{rel}: llms link missing")
+
+          robots_path = ROOT / "robots.txt"
+          if not robots_path.exists():
+              err("robots.txt missing")
+          else:
+              robots = robots_path.read_text(encoding="utf-8")
+              for agent in ["OAI-SearchBot", "PerplexityBot", "Google-Extended"]:
+                  if f"User-agent: {agent}" not in robots:
+                      err(f"robots.txt missing {agent}")
+              if robots.count("Sitemap: https://synapseautomate.github.io/sitemap.xml") != 1:
+                  err("robots.txt sitemap directive count != 1")
+
+          llms_path = ROOT / "llms.txt"
+          if not llms_path.exists():
+              err("llms.txt missing")
+          else:
+              text = llms_path.read_text(encoding="utf-8")
+              if not text.startswith("# Synapse Automate\n\n> "):
+                  err("llms.txt H1/blockquote structure invalid")
+              if "## Primary pages" not in text:
+                  err("llms.txt primary section missing")
+              if "Canonical HTML pages are the source of truth." not in text:
+                  err("llms.txt verification note missing")
+              if len(text.encode("utf-8")) > 150_000:
+                  err("llms.txt unexpectedly large")
+
+          # Google ownership verification file must remain untouched/present if it exists.
+          verification_files = [
+              p for p in ROOT.glob("google*.html")
+              if verification(p.name)
+          ]
+          for p in verification_files:
+              body = p.read_text(encoding="utf-8", errors="replace").strip()
+              if "google-site-verification:" not in body:
+                  err(f"{p.name}: Google verification content changed")
+
+          if errors:
+              print("AI DISCOVERY V2 QA: FAIL")
+              for e in errors:
+                  print("-", e)
+              raise SystemExit(1)
+
+          print(f"AI DISCOVERY V2 QA: PASS — {len(pages)} pages")
+          PY
+
+          git diff --check
+
+      - name: Commit verified discovery layer
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapse-mobile"
+          git config user.email "synapse-mobile@users.noreply.github.com"
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No AI discovery changes to commit."
+          else
+            git commit -m "SEO: install verified AI discovery and entity layer V2"
+            git push origin HEAD:main
+          fi
+
+      - name: Summary
+        shell: bash
+        run: |
+          echo "## Synapse AI Discovery V2" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Rollback branch created before modification" >> "$GITHUB_STEP_SUMMARY"
+          echo "- OAI-SearchBot explicitly allowed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- PerplexityBot explicitly allowed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Google-Extended explicitly allowed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- One canonical URL per public page" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Conservative Organization/WebSite/WebPage JSON-LD installed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- llms.txt generated from actual page titles/descriptions" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Google verification files excluded from modification" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Existing Synapse IndexNow workflow will publish and notify automatically after this main-branch push" >> "$GITHUB_STEP_SUMMARY"
+          echo "- No ranking, citation, recommendation, indexing or revenue guarantee is claimed" >> "$GITHUB_STEP_SUMMARY"
