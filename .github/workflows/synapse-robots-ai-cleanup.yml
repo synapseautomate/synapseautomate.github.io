@@ -1,0 +1,139 @@
+name: Synapse Robots AI Cleanup
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Normalize robots.txt
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path("robots.txt")
+          text = p.read_text(encoding="utf-8") if p.exists() else ""
+
+          # Preserve the core public-site directives and explicit non-public paths.
+          disallows = []
+          for line in text.splitlines():
+              s = line.strip()
+              if s.lower().startswith("disallow:"):
+                  path = s.split(":", 1)[1].strip()
+                  if path and path not in disallows:
+                      disallows.append(path)
+
+          lines = [
+              "User-agent: *",
+              "Allow: /",
+          ]
+          for path in disallows:
+              lines.append(f"Disallow: {path}")
+
+          lines += [
+              "",
+              "# Synapse Automate — search and AI retrieval access",
+              "User-agent: OAI-SearchBot",
+              "Allow: /",
+              "",
+              "User-agent: ChatGPT-User",
+              "Allow: /",
+              "",
+              "User-agent: Claude-SearchBot",
+              "Allow: /",
+              "",
+              "User-agent: Claude-User",
+              "Allow: /",
+              "",
+              "User-agent: PerplexityBot",
+              "Allow: /",
+              "",
+              "# Google-Extended controls Gemini model usage/grounding; it does not control ordinary Google Search ranking.",
+              "User-agent: Google-Extended",
+              "Allow: /",
+              "",
+              "Sitemap: https://synapseautomate.github.io/sitemap.xml",
+              "",
+          ]
+
+          p.write_text("\n".join(lines), encoding="utf-8")
+          print("ROBOTS NORMALIZE: PASS")
+          PY
+
+      - name: QA robots.txt
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          text = Path("robots.txt").read_text(encoding="utf-8")
+          agents = [
+              "OAI-SearchBot",
+              "ChatGPT-User",
+              "Claude-SearchBot",
+              "Claude-User",
+              "PerplexityBot",
+              "Google-Extended",
+          ]
+
+          for agent in agents:
+              count = text.count(f"User-agent: {agent}")
+              if count != 1:
+                  raise SystemExit(f"{agent}: expected exactly 1 block, found {count}")
+
+          if text.count("Sitemap: https://synapseautomate.github.io/sitemap.xml") != 1:
+              raise SystemExit("Sitemap directive count is not exactly 1")
+
+          if text.count("User-agent: *") != 1:
+              raise SystemExit("Wildcard user-agent count is not exactly 1")
+
+          print("ROBOTS QA: PASS")
+          PY
+
+          git diff --check
+
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapse-mobile"
+          git config user.email "synapse-mobile@users.noreply.github.com"
+          git add robots.txt
+
+          if git diff --cached --quiet; then
+            echo "robots.txt already normalized."
+          else
+            git commit -m "SEO: normalize AI crawler policy"
+            git push origin HEAD:main
+          fi
+
+      - name: Summary
+        shell: bash
+        run: |
+          echo "## Robots AI Cleanup" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Duplicate crawler blocks removed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- OAI-SearchBot allowed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- ChatGPT-User allowed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Claude-SearchBot allowed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Claude-User allowed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- PerplexityBot allowed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Google-Extended allowed" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Single sitemap directive preserved" >> "$GITHUB_STEP_SUMMARY"
