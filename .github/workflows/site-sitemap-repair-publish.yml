@@ -1,0 +1,243 @@
+name: Repair and Publish XML Sitemap
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: synapse-site-publish
+  cancel-in-progress: false
+
+jobs:
+  repair-sitemap:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Generate standards-compliant XML sitemap
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.parse import quote
+          import subprocess
+          import xml.etree.ElementTree as ET
+          import re
+
+          ROOT = Path(".").resolve()
+          BASE = "https://synapseautomate.github.io/"
+          NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
+          ET.register_namespace("", NS)
+
+          excluded_dirs = {
+              ".git", ".github", "_site", "__pycache__",
+              "D01", "D02", "D03"
+          }
+
+          def is_public_html(p: Path) -> bool:
+              rel = p.relative_to(ROOT)
+              if any(part in excluded_dirs for part in rel.parts):
+                  return False
+              name = p.name.lower()
+              if name == "404.html":
+                  return False
+              if re.fullmatch(r"google[a-z0-9_-]+\.html", name):
+                  return False
+              return True
+
+          pages = sorted(
+              p for p in ROOT.rglob("*.html")
+              if p.is_file() and is_public_html(p)
+          )
+
+          if not pages:
+              raise SystemExit("No public HTML pages found")
+
+          urlset = ET.Element(ET.QName(NS, "urlset"))
+          seen = set()
+
+          for p in pages:
+              rel = p.relative_to(ROOT).as_posix()
+
+              if rel == "index.html":
+                  loc = BASE
+              else:
+                  # Repository public URLs are UTF-8-safe, but quote any
+                  # unexpected path characters while preserving slashes.
+                  loc = BASE + quote(rel, safe="/-._~")
+
+              if loc in seen:
+                  continue
+              seen.add(loc)
+
+              try:
+                  lastmod = subprocess.check_output(
+                      ["git", "log", "-1", "--format=%cs", "--", rel],
+                      text=True
+                  ).strip()
+              except Exception:
+                  lastmod = ""
+
+              node = ET.SubElement(urlset, ET.QName(NS, "url"))
+              ET.SubElement(node, ET.QName(NS, "loc")).text = loc
+              if re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod or ""):
+                  ET.SubElement(node, ET.QName(NS, "lastmod")).text = lastmod
+
+          tree = ET.ElementTree(urlset)
+          ET.indent(tree, space="  ")
+          tree.write(
+              "sitemap.xml",
+              encoding="utf-8",
+              xml_declaration=True
+          )
+
+          print(f"Generated sitemap.xml with {len(seen)} public URLs")
+          PY
+
+      - name: Validate sitemap and robots
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          sitemap = Path("sitemap.xml")
+          raw = sitemap.read_text(encoding="utf-8")
+
+          if not raw.startswith('<?xml version='):
+              raise SystemExit("Missing XML declaration")
+
+          root = ET.parse(sitemap).getroot()
+          ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+
+          if root.tag != "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset":
+              raise SystemExit("Invalid sitemap root element")
+
+          locs = [
+              x.text.strip()
+              for x in root.findall("sm:url/sm:loc", ns)
+              if x.text and x.text.strip()
+          ]
+
+          if not locs:
+              raise SystemExit("Sitemap contains no URLs")
+
+          if len(locs) != len(set(locs)):
+              raise SystemExit("Duplicate URLs found")
+
+          bad = [u for u in locs if not u.startswith("https://synapseautomate.github.io/")]
+          if bad:
+              raise SystemExit("Unexpected sitemap URL(s): " + repr(bad[:5]))
+
+          forbidden = [
+              u for u in locs
+              if "/D01/" in u or "/D02/" in u or "/D03/" in u
+              or "/.github/" in u or "google" in u.rsplit("/", 1)[-1].lower()
+              or u.endswith("/404.html")
+          ]
+          if forbidden:
+              raise SystemExit("Internal/non-indexable URLs leaked: " + repr(forbidden[:5]))
+
+          print(f"SITEMAP XML QA: PASS — {len(locs)} URLs")
+          print("First URLs:")
+          for u in locs[:8]:
+              print(" -", u)
+          PY
+
+          touch robots.txt
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p = Path("robots.txt")
+          lines = p.read_text(encoding="utf-8").splitlines()
+
+          # Remove stale/duplicate Sitemap directives and append canonical one.
+          kept = [ln for ln in lines if not ln.strip().lower().startswith("sitemap:")]
+          while kept and not kept[-1].strip():
+              kept.pop()
+
+          if not any(ln.strip().lower().startswith("user-agent:") for ln in kept):
+              kept = ["User-agent: *", "Allow: /"] + ([""] + kept if kept else [])
+
+          kept += ["", "Sitemap: https://synapseautomate.github.io/sitemap.xml"]
+          p.write_text("\n".join(kept).rstrip() + "\n", encoding="utf-8")
+          print("ROBOTS SITEMAP DIRECTIVE: PASS")
+          PY
+
+          grep -q '^Sitemap: https://synapseautomate.github.io/sitemap.xml$' robots.txt
+          git diff --check
+
+      - name: Commit sitemap repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapse-mobile"
+          git config user.email "synapse-mobile@users.noreply.github.com"
+          git add sitemap.xml robots.txt
+
+          if git diff --cached --quiet; then
+            echo "Sitemap already correct."
+          else
+            git commit -m "SEO: repair XML sitemap and robots discovery"
+            git push origin HEAD:main
+          fi
+
+      - name: Build clean public Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude 'D01/' \
+            --exclude 'D02/' \
+            --exclude 'D03/' \
+            --exclude '__pycache__/' \
+            --exclude '*.zip' \
+            --exclude '*.sha256' \
+            --exclude '*.py' \
+            --exclude 'README*.md' \
+            --exclude 'DEPLOYMENT.md'
+
+          test -f _site/index.html
+          test -f _site/sitemap.xml
+          test -f _site/robots.txt
+
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          ET.parse("_site/sitemap.xml")
+          print("PUBLIC SITEMAP ARTIFACT QA: PASS")
+          PY
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
