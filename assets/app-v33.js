@@ -24,3 +24,26 @@ if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
  for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,dist=Math.hypot(dx,dy);if(dist<150){ctx.strokeStyle=`rgba(67,227,208,${.13*(1-dist/150)})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}}
  for(const p of pts){ctx.fillStyle='rgba(0,180,216,.55)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();}requestAnimationFrame(draw)};draw();
 }
+
+/* D03_FREE_AI_TOOLS_NAV_GUARD */
+(() => {
+  const ensureFreeToolsLink = () => {
+    document.querySelectorAll('.nav-links, .navlinks').forEach(nav => {
+      let link = Array.from(nav.querySelectorAll('a')).find(a => /kaynaklar\.html(?:$|[?#])/.test(a.getAttribute('href') || ''));
+      if (link) {
+        link.textContent = 'Ücretsiz AI Araçları';
+        link.classList.add('nav-free-tools');
+        return;
+      }
+      link = document.createElement('a');
+      link.href = '/kaynaklar.html';
+      link.textContent = 'Ücretsiz AI Araçları';
+      link.className = 'nav-free-tools';
+      const sector = Array.from(nav.querySelectorAll('a')).find(a => /sektorler\.html/.test(a.getAttribute('href') || ''));
+      if (sector && sector.nextSibling) nav.insertBefore(link, sector.nextSibling);
+      else nav.appendChild(link);
+    });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ensureFreeToolsLink);
+  else ensureFreeToolsLink();
+})();

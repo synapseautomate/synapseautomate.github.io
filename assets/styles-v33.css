@@ -173,3 +173,8 @@ textarea{min-height:130px;resize:vertical}
 .term-note{font-size:.86rem;color:#8fa8b8;margin-top:8px}
 @media(max-width:900px){.nav-links{gap:12px}}
 @media(max-width:760px){.page-hero h1,.hero h1{letter-spacing:-.035em}.card,.glass-card{overflow-wrap:anywhere}.nav{min-height:78px}.brand img{max-width:250px}.footer-grid{grid-template-columns:1fr}.section,.section-tight{overflow:hidden}}
+
+/* D03-FREE-AI-TOOLS-STYLE */
+.nav-links .nav-free-tools,.navlinks .nav-free-tools{color:#73eadc;font-weight:800}
+.free-ai-tools-discovery .featured{position:relative;overflow:hidden}
+.free-ai-tools-discovery .featured::after{content:"";position:absolute;width:240px;height:240px;right:-80px;top:-100px;border-radius:50%;background:radial-gradient(circle,rgba(49,220,198,.18),rgba(49,220,198,0) 70%);pointer-events:none}
