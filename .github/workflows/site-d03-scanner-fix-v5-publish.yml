@@ -1,0 +1,110 @@
+name: Publish Synapse Scanner UX Fix V5
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: synapse-site-publish
+  cancel-in-progress: false
+
+jobs:
+  verify-and-publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Locate exactly one V5 package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t zips < <(find . -maxdepth 1 -type f -name 'SYNAPSE_D03_SCANNER_FIX_V5*.zip' | sort)
+          if [ "${#zips[@]}" -ne 1 ]; then
+            echo "Expected exactly one V5 package, found ${#zips[@]}"
+            printf '%s\n' "${zips[@]:-}"
+            exit 1
+          fi
+          echo "SCANNER_ZIP=${zips[0]}" >> "$GITHUB_ENV"
+
+      - name: Apply V5 and QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .scanner_v5
+          mkdir .scanner_v5
+          unzip -q "$SCANNER_ZIP" -d .scanner_v5
+          python3 .scanner_v5/apply.py .
+          python3 .scanner_v5/qa.py .
+          git diff --check
+
+      - name: Remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .scanner_v5
+          rm -f "$SCANNER_ZIP"
+
+      - name: Commit V5 scanner UX
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapse-mobile"
+          git config user.email "synapse-mobile@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No content change."
+          else
+            git commit -m "D03: make scanner result immediate and unmistakable"
+            git push origin HEAD:main
+          fi
+
+      - name: Build public artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude 'D01/' \
+            --exclude 'D02/' \
+            --exclude 'D03/' \
+            --exclude '__pycache__/' \
+            --exclude '*.zip' \
+            --exclude '*.sha256' \
+            --exclude '*.py' \
+            --exclude 'README*.md' \
+            --exclude 'DEPLOYMENT.md'
+
+          test -f _site/araclar/site-ai-uyumluluk-taramasi.html
+          test -f _site/assets/day3/scanner-v5.js
+          grep -q 'scanner-v5.js?v=20260807-1' _site/araclar/site-ai-uyumluluk-taramasi.html
+          grep -q 'cloneNode(true)' _site/assets/day3/scanner-v5.js
+          echo "SCANNER V5 PUBLIC QA: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
