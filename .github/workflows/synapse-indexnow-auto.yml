@@ -1,0 +1,262 @@
+name: Synapse IndexNow Auto Notify
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.html'
+      - 'sitemap.xml'
+      - 'robots.txt'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: synapse-indexnow
+  cancel-in-progress: false
+
+jobs:
+  indexnow:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Ensure IndexNow ownership key exists
+        shell: bash
+        env:
+          INDEXNOW_KEY: "b92e13eb5417ef94e6aa9a04c7d7333a"
+          INDEXNOW_KEYFILE: "b92e13eb5417ef94e6aa9a04c7d7333a.txt"
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$INDEXNOW_KEY" > "$INDEXNOW_KEYFILE"
+
+          if [ "$(cat "$INDEXNOW_KEYFILE")" != "$INDEXNOW_KEY" ]; then
+            echo "IndexNow key file QA failed."
+            exit 1
+          fi
+
+          git config user.name "synapse-mobile"
+          git config user.email "synapse-mobile@users.noreply.github.com"
+          git add "$INDEXNOW_KEYFILE"
+
+          if git diff --cached --quiet; then
+            echo "IndexNow key file already committed."
+          else
+            git commit -m "SEO: add IndexNow ownership key"
+            git push origin HEAD:main
+          fi
+
+      - name: Build clean GitHub Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+
+          rsync -a ./ _site/             --exclude '.git/'             --exclude '.github/'             --exclude '_site/'             --exclude 'D01/'             --exclude 'D02/'             --exclude 'D03/'             --exclude '__pycache__/'             --exclude '*.zip'             --exclude '*.sha256'             --exclude '*.py'             --exclude 'README*.md'             --exclude 'DEPLOYMENT.md'
+
+          test -f "_site/b92e13eb5417ef94e6aa9a04c7d7333a.txt"
+          test "$(cat "_site/b92e13eb5417ef94e6aa9a04c7d7333a.txt")" = "b92e13eb5417ef94e6aa9a04c7d7333a"
+
+          echo "INDEXNOW PUBLIC ARTIFACT QA: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify live IndexNow key
+        shell: bash
+        env:
+          INDEXNOW_KEY: "b92e13eb5417ef94e6aa9a04c7d7333a"
+          INDEXNOW_KEYFILE: "b92e13eb5417ef94e6aa9a04c7d7333a.txt"
+        run: |
+          set -euo pipefail
+
+          key_url="https://synapseautomate.github.io/$INDEXNOW_KEYFILE"
+          echo "Checking $key_url"
+
+          ok=0
+          for i in $(seq 1 20); do
+            body="$(curl -fsSL --max-time 15 "$key_url" 2>/dev/null || true)"
+            if [ "$body" = "$INDEXNOW_KEY" ]; then
+              ok=1
+              break
+            fi
+            echo "Key not live yet; retry $i/20"
+            sleep 6
+          done
+
+          if [ "$ok" -ne 1 ]; then
+            echo "IndexNow ownership key is not publicly reachable."
+            exit 1
+          fi
+
+          echo "INDEXNOW LIVE KEY QA: PASS"
+
+      - name: Build URL notification list
+        shell: bash
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          CURRENT_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.parse import quote
+          import json
+          import os
+          import subprocess
+
+          BASE = "https://synapseautomate.github.io/"
+          ROOT = Path(".").resolve()
+
+          excluded_dirs = {
+              ".git", ".github", "_site", "__pycache__",
+              "D01", "D02", "D03"
+          }
+
+          def public_html(path: str) -> bool:
+              p = Path(path)
+              if p.suffix.lower() != ".html":
+                  return False
+              if any(part in excluded_dirs for part in p.parts):
+                  return False
+              if p.name.lower() == "404.html":
+                  return False
+              if p.name.lower().startswith("google") and p.name.lower().endswith(".html"):
+                  return False
+              return True
+
+          def to_url(path: str) -> str:
+              return BASE if path == "index.html" else BASE + quote(path, safe="/-._~")
+
+          event = os.environ.get("GITHUB_EVENT_NAME", "")
+          files = []
+
+          if event == "workflow_dispatch":
+              for p in ROOT.rglob("*.html"):
+                  rel = p.relative_to(ROOT).as_posix()
+                  if public_html(rel):
+                      files.append(rel)
+          else:
+              before = os.environ.get("BEFORE_SHA", "")
+              sha = os.environ.get("CURRENT_SHA", "")
+
+              if before and set(before) != {"0"}:
+                  cmd = ["git", "diff", "--name-only", before, sha, "--"]
+              else:
+                  cmd = ["git", "show", "--pretty=", "--name-only", sha]
+
+              try:
+                  changed = subprocess.check_output(cmd, text=True).splitlines()
+              except Exception:
+                  changed = []
+
+              files.extend(x.strip() for x in changed if x.strip() and public_html(x.strip()))
+
+          urls = sorted(set(to_url(x) for x in files))
+
+          if len(urls) > 10000:
+              raise SystemExit("More than 10,000 URLs detected; aborting.")
+
+          Path("indexnow-urls.json").write_text(
+              json.dumps(urls, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+
+          print(f"Prepared {len(urls)} IndexNow URL(s)")
+          for u in urls[:20]:
+              print(" -", u)
+          if len(urls) > 20:
+              print(f" ... and {len(urls)-20} more")
+          PY
+
+      - name: Submit changed URLs to IndexNow
+        shell: bash
+        env:
+          INDEXNOW_KEY: "b92e13eb5417ef94e6aa9a04c7d7333a"
+          INDEXNOW_KEYFILE: "b92e13eb5417ef94e6aa9a04c7d7333a.txt"
+        run: |
+          set -euo pipefail
+
+          count="$(python3 - <<'PY'
+          import json
+          print(len(json.load(open("indexnow-urls.json", encoding="utf-8"))))
+          PY
+          )"
+
+          if [ "$count" -eq 0 ]; then
+            echo "No public HTML URLs changed; nothing to submit."
+            exit 0
+          fi
+
+          python3 - <<'PY'
+          import json
+          import os
+
+          key = os.environ["INDEXNOW_KEY"]
+          keyfile = os.environ["INDEXNOW_KEYFILE"]
+          urls = json.load(open("indexnow-urls.json", encoding="utf-8"))
+
+          payload = {
+              "host": "synapseautomate.github.io",
+              "key": key,
+              "keyLocation": f"https://synapseautomate.github.io/{keyfile}",
+              "urlList": urls,
+          }
+
+          with open("indexnow-payload.json", "w", encoding="utf-8") as f:
+              json.dump(payload, f, ensure_ascii=False)
+          PY
+
+          http_code="$(curl -sS             -o indexnow-response.txt             -w '%{http_code}'             --max-time 30             -X POST 'https://api.indexnow.org/indexnow'             -H 'Content-Type: application/json; charset=utf-8'             --data-binary @indexnow-payload.json)"
+
+          echo "IndexNow HTTP status: $http_code"
+
+          case "$http_code" in
+            200|202)
+              echo "INDEXNOW SUBMISSION: ACCEPTED"
+              ;;
+            429)
+              echo "IndexNow rate limit reached; do not resubmit repeatedly."
+              exit 1
+              ;;
+            *)
+              echo "IndexNow submission failed."
+              cat indexnow-response.txt || true
+              exit 1
+              ;;
+          esac
+
+      - name: Final summary
+        shell: bash
+        run: |
+          echo "## Synapse IndexNow" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Ownership key: published and verified" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Endpoint: api.indexnow.org" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Accepted statuses: HTTP 200 or 202" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Future main-branch HTML changes: automatic" >> "$GITHUB_STEP_SUMMARY"
+          echo "- IndexNow notifies participating search engines; it does not guarantee indexing." >> "$GITHUB_STEP_SUMMARY"
