@@ -1,0 +1,29 @@
+name: Synapse Finance Banking Landing
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finance-landing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build finance and banking landing
+        run: python3 scripts/synapse_finance_banking_landing.py
+
+      - name: Commit finance landing
+        run: |
+          git config user.name "synapse-finance-landing"
+          git config user.email "synapse-finance-landing@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No finance landing changes needed."
+          else
+            git commit -m "feat: complete finance and banking landing"
+            git push
+          fi
