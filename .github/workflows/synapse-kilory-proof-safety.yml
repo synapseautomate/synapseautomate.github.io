@@ -1,0 +1,29 @@
+name: Synapse Kilory Proof and Claim Safety
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  kilory-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Kilory pre-release proof package
+        run: python3 scripts/synapse_kilory_proof_safety.py
+
+      - name: Commit Kilory proof package
+        run: |
+          git config user.name "synapse-kilory-proof"
+          git config user.email "synapse-kilory-proof@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No Kilory changes needed."
+          else
+            git commit -m "feat: add Kilory pre-release proof and claim safety"
+            git push
+          fi
