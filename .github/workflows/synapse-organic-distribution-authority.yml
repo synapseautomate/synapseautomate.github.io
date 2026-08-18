@@ -1,0 +1,27 @@
+name: Synapse Organic Distribution and Authority
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  authority-distribution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build organic distribution and authority discovery layer
+        run: python3 scripts/synapse_organic_distribution_authority.py
+      - name: Commit authority discovery layer
+        run: |
+          git config user.name "synapse-authority-distribution"
+          git config user.email "synapse-authority-distribution@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No authority distribution changes needed."
+          else
+            git commit -m "feat: add organic distribution and authority discovery layer"
+            git push
+          fi
