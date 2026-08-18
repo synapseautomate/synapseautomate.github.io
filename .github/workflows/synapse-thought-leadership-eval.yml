@@ -1,0 +1,29 @@
+name: Synapse Thought Leadership and Free Eval
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  authority-cluster:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build thought leadership and free eval cluster
+        run: python3 scripts/synapse_thought_leadership_eval.py
+
+      - name: Commit authority cluster
+        run: |
+          git config user.name "synapse-authority-cluster"
+          git config user.email "synapse-authority-cluster@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No authority cluster changes needed."
+          else
+            git commit -m "feat: add thought leadership and free eval cluster"
+            git push
+          fi
