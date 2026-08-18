@@ -69,3 +69,5 @@ Canonical site: https://synapseautomate.github.io/
 Official LinkedIn: https://www.linkedin.com/company/synapseautomate/
 - Kilory pre-release evidence: https://synapseautomate.github.io/kanit/kilory-yayin-oncesi-kanit-paketi.html
 - Finance & banking process analysis (no financial advice): https://synapseautomate.github.io/sektorler/finans.html
+- AI automation thought-leadership guide: https://synapseautomate.github.io/rehberler/ai-otomasyonunda-yanlis-baslangiclar.html
+- Free AI automation risk assessment: https://synapseautomate.github.io/araclar/ai-otomasyon-risk-degerlendirmesi.html

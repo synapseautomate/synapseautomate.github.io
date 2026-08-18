@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AI Otomasyonunda 7 Yanlış Başlangıç | Synapse Automate</title>
+<meta name="description" content="AI otomasyonunda süreç, veri, insan onayı, yetki ve ölçüm kurulmadan yapılan 7 yanlış başlangıç. Daha kontrollü bir pilot için uygulanabilir çerçeve.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://synapseautomate.github.io/rehberler/ai-otomasyonunda-yanlis-baslangiclar.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Synapse Automate">
+<meta property="og:title" content="AI Otomasyonunda En Sık Yapılan 7 Yanlış Başlangıç">
+<meta property="og:description" content="Daha fazla AI değil; daha görünür süreç, veri, insan onayı ve ölçüm.">
+<meta property="og:url" content="https://synapseautomate.github.io/rehberler/ai-otomasyonunda-yanlis-baslangiclar.html">
+<meta name="theme-color" content="#06111f">
+<style>
+:root{--bg:#06111f;--bg2:#081827;--panel:#10263a;--panel2:#0c1d2e;--line:#284962;--text:#eef7fb;--muted:#a9bbc6;--cyan:#57ded5;--blue:#5ca9ff;--warn:#ffd37a;--good:#7ce3a1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2) 45%,var(--bg));color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+a{color:#8ee6ef;text-decoration:none}a:hover{text-decoration:underline}.container{width:min(1120px,calc(100% - 32px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(6,17,31,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.nav{min-height:72px;display:flex;align-items:center;gap:20px}.brand{font-weight:850;color:#fff;font-size:1.15rem;letter-spacing:.02em}.navlinks{display:flex;gap:18px;margin-left:auto}.cta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:linear-gradient(90deg,var(--cyan),#38b8dd);color:#03121f;font-weight:850;border:0;cursor:pointer}
+.breadcrumb{padding:20px 0;color:var(--muted);font-size:.92rem}.hero{padding:54px 0 34px}.kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);font-weight:850}h1{font-size:clamp(2.25rem,5vw,4rem);line-height:1.05;margin:.35em 0}h2{font-size:clamp(1.6rem,3vw,2.4rem);line-height:1.15}h3{line-height:1.25}.lead{font-size:1.15rem;max-width:930px;color:#cedce4}
+.section{padding:50px 0}.section-tight{padding:28px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:22px}.head p{max-width:580px;color:var(--muted)}.grid{display:grid;gap:18px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:22px}.card h3{margin-top:0}.tag{display:inline-block;padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:var(--cyan);font-size:.82rem}
+.quote{border-left:4px solid var(--cyan);padding:16px 20px;background:rgba(87,222,213,.07);border-radius:0 14px 14px 0}.muted{color:var(--muted)}
+.checks{display:grid;gap:12px}.check{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:14px}.check input{width:20px;height:20px;margin-top:3px}
+.scorebox{position:sticky;top:92px;background:linear-gradient(180deg,#12314b,#0d2033);border:1px solid var(--line);border-radius:20px;padding:24px}.score{font-size:3rem;font-weight:900;line-height:1}.result{margin-top:14px;padding:14px;border-radius:14px;background:#0a1a29;border:1px solid var(--line)}.risk{color:var(--warn)}.ready{color:var(--good)}
+.band{background:linear-gradient(120deg,#0f2d43,#0b1f31);border:1px solid var(--line);border-radius:22px;padding:28px}.bandrow{display:flex;gap:24px;justify-content:space-between;align-items:center}footer{border-top:1px solid var(--line);padding:38px 0;margin-top:38px;color:var(--muted)}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:760px){.navlinks{display:none}.nav{justify-content:space-between}.g2,.g3{grid-template-columns:1fr}.head,.bandrow{display:block}.scorebox{position:static}.cta{font-size:.85rem}.hero{padding-top:34px}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://synapseautomate.github.io/#organization","name":"Synapse Automate","url":"https://synapseautomate.github.io/","sameAs":["https://github.com/synapseautomate","https://www.linkedin.com/company/synapseautomate/"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI Otomasyonunda En Sık Yapılan 7 Yanlış Başlangıç","description":"AI otomasyon projelerinde veri, süreç, insan onayı, ölçüm ve yetki sınırları kurulmadan yapılan başlangıçların neden riskli olduğunu açıklayan rehber.","mainEntityOfPage":"https://synapseautomate.github.io/rehberler/ai-otomasyonunda-yanlis-baslangiclar.html","author":{"@id":"https://synapseautomate.github.io/#organization"},"publisher":{"@id":"https://synapseautomate.github.io/#organization"},"datePublished":"2026-08-18","dateModified":"2026-08-18"}</script>
+</head>
+<body>
+<header><div class="container nav">
+<a class="brand" href="../index.html">Synapse Automate</a>
+<nav class="navlinks"><a href="../hizmetler.html">Hizmetler</a><a href="../urunler.html">Ürünler</a><a href="../sektorler.html">Sektörler</a><a href="../kaynaklar.html">Kaynaklar</a></nav>
+<a class="cta" href="../iletisim.html?konu=surec-analizi">Süreç Analizi İste</a>
+</div></header>
+<main>
+<div class="container breadcrumb"><a href="../index.html">Ana Sayfa</a> / <a href="../kaynaklar.html">Kaynaklar</a> / 7 Yanlış Başlangıç</div>
+
+<section class="hero"><div class="container">
+<div class="kicker">Thought leadership • operasyon disiplini</div>
+<h1>AI otomasyonunda en sık yapılan 7 yanlış başlangıç.</h1>
+<p class="lead">Bir iş akışına AI eklemek onu otomatik olarak daha iyi hale getirmez. Süreç, veri, yetki, insan onayı ve ölçüm görünür değilse yalnızca daha hızlı belirsizlik üretebilirsiniz.</p>
+<div class="quote"><strong>Temel ilke:</strong> “Ne otomatikleşecek?” sorusundan önce “hangi karar, hangi veriyle, hangi yetki altında ve hangi ölçümle çalışacak?” sorusu cevaplanmalıdır.</div>
+</div></section>
+
+<section class="section-tight"><div class="container">
+<div class="grid g2">
+<div class="card"><span class="tag">1</span><h3>Problemi değil aracı seçerek başlamak</h3><p>“Chatbot yapalım”, “agent kuralım” veya “AI ekleyelim” başlangıç noktası değildir. Önce tekrar eden iş, gecikme, hata ve karar noktası tanımlanmalıdır.</p></div>
+<div class="card"><span class="tag">2</span><h3>Kaynağı görünmez bırakmak</h3><p>AI çıktısının hangi veri, belge veya kurala dayandığı bilinmiyorsa kullanıcı doğru ile tahmini ayıramaz. Kaynak ve güven seviyesi görünür olmalıdır.</p></div>
+<div class="card"><span class="tag">3</span><h3>İnsan onayını sonradan eklemek</h3><p>Finansal etki, müşteri iletişimi, fiyatlama, sağlık, hukuk veya itibar riski taşıyan adımlarda insan onayı tasarımın başından itibaren yer almalıdır.</p></div>
+<div class="card"><span class="tag">4</span><h3>“Unknown” ile uydurma değeri ayırmamak</h3><p>Eksik bilgi varsa sistem bunu açıkça söylemelidir. Uydurma bir değer üretmek, eksik veriyle çalışmaktan daha tehlikelidir.</p></div>
+<div class="card"><span class="tag">5</span><h3>Baz çizgi olmadan başarı ilan etmek</h3><p>Başlangıçtaki süre, hata, tekrar işleme veya müdahale oranı ölçülmeden pilot sonrası iyileşme iddiası güvenilir değildir.</p></div>
+<div class="card"><span class="tag">6</span><h3>Yetki ile erişimi karıştırmak</h3><p>Bir sisteme erişebilmek, o sistem adına karar verme yetkisi olduğu anlamına gelmez. Okuma, önerme, yazma ve dış eylem yetkileri ayrı ele alınmalıdır.</p></div>
+<div class="card"><span class="tag">7</span><h3>Pilotu geniş kapsamla başlatmak</h3><p>İlk pilot tek, ölçülebilir ve geri alınabilir bir akışta başlamalıdır. Küçük ama kanıtlanabilir kapsam, büyük ve belirsiz kapsamdan daha değerlidir.</p></div>
+<div class="card"><span class="tag">Kontrol</span><h3>Doğru başlangıç neye benzer?</h3><p>Girdi → doğrulama → kaynak → AI taslağı → kural kapısı → insan onayı → kayıtlı çıktı. Her adımın sahibi ve ölçümü bellidir.</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="head"><div><div class="kicker">Kendini test et</div><h2>Süreciniz bu hatalardan kaçına açık?</h2></div><p>Ücretsiz değerlendirme aracı 10 kontrol sorusuyla sürecinizin risk ve hazırlık görünümünü verir. Sonuç teşhis değildir; pilot öncesi konuşmayı yapılandırır.</p></div>
+<div class="band"><div class="bandrow"><div><h3>AI Otomasyon Risk Değerlendirmesi</h3><p class="muted">Kaynak, yetki, insan onayı, veri minimizasyonu ve ölçüm hazırlığını kontrol edin.</p></div><a class="btn" href="../araclar/ai-otomasyon-risk-degerlendirmesi.html">Ücretsiz Değerlendirmeyi Aç</a></div></div>
+</div></section>
+
+<section class="section-tight"><div class="container">
+<div class="grid g2">
+<div class="card"><h3>Finans ve bankacılıkta örnek</h3><p>Finansal kararların kendisini değil, karar öncesi kontrol ve inceleme akışını otomatikleştirmek daha güvenli başlangıçtır.</p><p><a href="../sektorler/finans.html">Finans &amp; Bankacılık süreç çerçevesini incele →</a></p></div>
+<div class="card"><h3>Tek sonraki adım</h3><p>Bir süreci seçin. Girdi, karar, çıktı, risk, yetki ve ölçümünü birlikte haritalayalım.</p><p><a href="../iletisim.html?konu=surec-analizi">Süreç Analizi İste →</a></p></div>
+</div>
+</div></section>
+</main>
+<footer><div class="container foot"><span>© 2026 Synapse Automate</span><span>İnsan denetimli, ölçülebilir AI otomasyonu.</span></div></footer>
+</body></html>
