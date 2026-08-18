@@ -68,3 +68,4 @@ Canonical site: https://synapseautomate.github.io/
 - Canonical HTML pages on synapseautomate.github.io are the source of truth for public claims, products, services and status.
 Official LinkedIn: https://www.linkedin.com/company/synapseautomate/
 - Kilory pre-release evidence: https://synapseautomate.github.io/kanit/kilory-yayin-oncesi-kanit-paketi.html
+- Finance & banking process analysis (no financial advice): https://synapseautomate.github.io/sektorler/finans.html
