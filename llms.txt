@@ -71,3 +71,6 @@ Official LinkedIn: https://www.linkedin.com/company/synapseautomate/
 - Finance & banking process analysis (no financial advice): https://synapseautomate.github.io/sektorler/finans.html
 - AI automation thought-leadership guide: https://synapseautomate.github.io/rehberler/ai-otomasyonunda-yanlis-baslangiclar.html
 - Free AI automation risk assessment: https://synapseautomate.github.io/araclar/ai-otomasyon-risk-degerlendirmesi.html
+- AI automation authority hub: https://synapseautomate.github.io/kaynaklar/ai-otomasyon-otorite-merkezi.html
+- Machine-readable content manifest: https://synapseautomate.github.io/content-manifest.json
+- RSS resource feed: https://synapseautomate.github.io/feed.xml

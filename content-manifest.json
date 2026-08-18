@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-08-18",
+  "organization": {
+    "name": "Synapse Automate",
+    "canonical": "https://synapseautomate.github.io/",
+    "linkedin": "https://www.linkedin.com/company/synapseautomate/",
+    "github": "https://github.com/synapseautomate"
+  },
+  "authority_hub": "https://synapseautomate.github.io/kaynaklar/ai-otomasyon-otorite-merkezi.html",
+  "discovery": {
+    "sitemap": "https://synapseautomate.github.io/sitemap.xml",
+    "rss": "https://synapseautomate.github.io/feed.xml",
+    "llms": "https://synapseautomate.github.io/llms.txt"
+  },
+  "claim_boundaries": [
+    "No ranking guarantee",
+    "No financial advice",
+    "No autonomous financial transaction claim",
+    "No unverified health outcome claim",
+    "Critical decisions remain human-controlled where stated"
+  ],
+  "resources": [
+    {
+      "title": "AI Otomasyonunda 7 Yanlış Başlangıç",
+      "url": "https://synapseautomate.github.io/rehberler/ai-otomasyonunda-yanlis-baslangiclar.html",
+      "type": "thought-leadership",
+      "summary": "Süreç, veri, yetki, insan onayı ve ölçüm kurulmadan yapılan yaygın başlangıç hataları."
+    },
+    {
+      "title": "AI Otomasyon Risk Değerlendirmesi",
+      "url": "https://synapseautomate.github.io/araclar/ai-otomasyon-risk-degerlendirmesi.html",
+      "type": "free-tool",
+      "summary": "10 kontrol sorusuyla pilot öncesi hazırlık ve risk görünümü."
+    },
+    {
+      "title": "Finans ve Bankacılıkta AI Otomasyonu",
+      "url": "https://synapseautomate.github.io/sektorler/finans.html",
+      "type": "industry",
+      "summary": "İnsan denetimli risk ön değerlendirme, anomali sinyalleri, segmentasyon ve raporlama akışları."
+    },
+    {
+      "title": "Kilory Yayın Öncesi Kanıt Paketi",
+      "url": "https://synapseautomate.github.io/kanit/kilory-yayin-oncesi-kanit-paketi.html",
+      "type": "evidence",
+      "summary": "Kilory için özellik matrisi, claim sınırları, gizlilik ve yayın kapıları."
+    },
+    {
+      "title": "AI Otomasyon Kanıt Metodolojisi",
+      "url": "https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html",
+      "type": "methodology",
+      "summary": "İddia, kaynak, ölçüm ve insan onayı arasındaki kanıt yaklaşımı."
+    }
+  ]
+}
