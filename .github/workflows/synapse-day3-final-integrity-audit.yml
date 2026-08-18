@@ -1,0 +1,17 @@
+name: Synapse Day 3 Final Integrity Audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  final-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Day 3 final integrity audit
+        run: python3 scripts/synapse_day3_final_integrity_audit.py
