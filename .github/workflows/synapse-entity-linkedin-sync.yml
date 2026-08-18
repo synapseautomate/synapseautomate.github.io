@@ -1,0 +1,29 @@
+name: Synapse Entity LinkedIn Sync
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sync verified LinkedIn entity
+        run: python3 scripts/synapse_entity_linkedin_sync.py
+
+      - name: Commit entity sync
+        run: |
+          git config user.name "synapse-entity-sync"
+          git config user.email "synapse-entity-sync@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No entity changes needed."
+          else
+            git commit -m "feat: sync verified LinkedIn entity across site"
+            git push
+          fi
