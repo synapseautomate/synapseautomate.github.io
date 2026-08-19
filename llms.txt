@@ -74,3 +74,6 @@ Official LinkedIn: https://www.linkedin.com/company/synapseautomate/
 - AI automation authority hub: https://synapseautomate.github.io/kaynaklar/ai-otomasyon-otorite-merkezi.html
 - Machine-readable content manifest: https://synapseautomate.github.io/content-manifest.json
 - RSS resource feed: https://synapseautomate.github.io/feed.xml
+- E-commerce & retail process analysis: https://synapseautomate.github.io/sektorler/e-ticaret.html
+- Kinetra Studios 48-72 hour prototype line: https://synapseautomate.github.io/kinetra-studios/48-72-saat-prototip-hatti.html
+- 20-minute workflow capture tool: https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html

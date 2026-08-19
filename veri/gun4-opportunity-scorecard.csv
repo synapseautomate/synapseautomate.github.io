@@ -1,0 +1,31 @@
+rank,score,top10,kategori,is_akisi,neden,owner,human_gate
+1,36,EVET,E-Ticaret,Pazaryeri feed hata triage,"Para yakınlığı=5/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=2/5.",E-ticaret operasyonu,Değişiklik/yayın insanda
+2,36,EVET,E-Ticaret,Ürün katalog veri kalite kontrolü,"Para yakınlığı=5/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=2/5.",E-ticaret içerik operasyonu,Yayın insanda
+3,35,EVET,E-Ticaret,Sipariş istisna triage,"Para yakınlığı=5/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=3/5.",E-ticaret operasyonu,İade/ödeme/müşteri mesajı insanda
+4,34,EVET,Muhasebe,Fatura-PO eşleştirme ön kontrolü,"Para yakınlığı=5/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=3/5.",Muhasebe sorumlusu,Muhasebe kaydı/onay insanda
+5,34,EVET,E-Ticaret,Müşteri talebi önceliklendirme,"Para yakınlığı=5/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=3/5.",Müşteri deneyimi,Yanıt/taahhüt insanda
+6,34,EVET,E-Ticaret,Stok tükenme sinyali,"Para yakınlığı=5/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=3/5.",E-ticaret yöneticisi,Sipariş/tedarik kararı insanda
+7,33,EVET,Muhasebe,Cari mutabakat fark triage,"Para yakınlığı=5/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=3/5.",Muhasebe uzmanı,Düzeltme/kayıt insanda
+8,33,EVET,Satın Alma,Tedarikçi teklif karşılaştırma,"Para yakınlığı=5/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=3/5.",Satın alma yöneticisi,Tedarikçi seçimi insanda
+9,32,EVET,E-Ticaret,Sepet terk neden analizi,"Para yakınlığı=5/5, veri erişimi=4/5, ölçülebilirlik=5/5; risk=2/5.",E-ticaret yöneticisi,Deney/yayın kararı insanda
+10,32,EVET,E-Ticaret,İade talebi ön sınıflandırma,"Para yakınlığı=5/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=4/5.",Müşteri deneyimi,İade kararı/ödeme insanda
+11,31,HAYIR,E-Ticaret,Kargo gecikme müşteri kuyruğu,"Para yakınlığı=4/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=3/5.",Müşteri deneyimi,Müşteri mesajı insanda
+12,31,HAYIR,Satın Alma,Satın alma talebi ön kontrolü,"Para yakınlığı=4/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=2/5.",Satın alma operasyonu,Bütçe/onay insanda
+13,31,HAYIR,Satın Alma,Sipariş onay yönlendirme,"Para yakınlığı=4/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=2/5.",Satın alma operasyonu,Onay insanda
+14,31,HAYIR,Muhasebe,Tahsilat önceliklendirme,"Para yakınlığı=5/5, veri erişimi=4/5, ölçülebilirlik=5/5; risk=4/5.",Finans/muhasebe,Müşteri iletişimi insanda
+15,31,HAYIR,İhracat,İhracat evrak ön kontrolü,"Para yakınlığı=5/5, veri erişimi=4/5, ölçülebilirlik=5/5; risk=3/5.",İhracat operasyon sorumlusu,Gönderim öncesi son onay
+16,29,HAYIR,Muhasebe,Aylık rapor veri toplama,"Para yakınlığı=4/5, veri erişimi=4/5, ölçülebilirlik=5/5; risk=3/5.",Finans yöneticisi,Son rapor/yayın insanda
+17,29,HAYIR,E-Ticaret,Fiyat karar destek özeti,"Para yakınlığı=5/5, veri erişimi=4/5, ölçülebilirlik=5/5; risk=5/5.",E-ticaret yöneticisi,Fiyat değişikliği insanda
+18,29,HAYIR,İhracat,Gümrük belge eşleştirme,"Para yakınlığı=5/5, veri erişimi=4/5, ölçülebilirlik=5/5; risk=4/5.",Dış ticaret uzmanı,Beyan/onay insanda
+19,29,HAYIR,E-Ticaret,Kampanya uygunluk kontrolü,"Para yakınlığı=4/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=4/5.",E-ticaret/pazarlama,Yayın/fiyat onayı insanda
+20,29,HAYIR,Muhasebe,Masraf fişi sınıflandırma,"Para yakınlığı=4/5, veri erişimi=4/5, ölçülebilirlik=5/5; risk=3/5.",Muhasebe operasyonu,Kayıt onayı insanda
+21,29,HAYIR,İhracat,Sevkiyat istisna triage,"Para yakınlığı=4/5, veri erişimi=4/5, ölçülebilirlik=5/5; risk=3/5.",Lojistik sorumlusu,Taşıyıcı/müşteri aksiyonu onaylı
+22,29,HAYIR,E-Ticaret,Sipariş sonrası kalite sinyali,"Para yakınlığı=4/5, veri erişimi=4/5, ölçülebilirlik=5/5; risk=3/5.",E-ticaret operasyonu,Tedarikçi/ürün kararı insanda
+23,29,HAYIR,İhracat,İhracat müşteri doküman paketi hazırlama,"Para yakınlığı=4/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=2/5.",İhracat operasyonu,Gönderim insanda
+24,28,HAYIR,E-Ticaret,Ürün açıklaması veri-temelli taslak,"Para yakınlığı=3/5, veri erişimi=5/5, ölçülebilirlik=4/5; risk=2/5.",İçerik yöneticisi,Yayın insanda
+25,27,HAYIR,E-Ticaret,Ürün yorum konu sınıflandırma,"Para yakınlığı=3/5, veri erişimi=5/5, ölçülebilirlik=4/5; risk=2/5.",Ürün/e-ticaret yöneticisi,Aksiyon insanda
+26,26,HAYIR,Satın Alma,Tedarikçi teslimat gecikme sinyali,"Para yakınlığı=4/5, veri erişimi=4/5, ölçülebilirlik=4/5; risk=3/5.",Tedarik planlama,Tedarikçi aksiyonu insanda
+27,25,HAYIR,Muhasebe,Vergi evrak checklist,"Para yakınlığı=4/5, veri erişimi=5/5, ölçülebilirlik=5/5; risk=5/5.",Muhasebe,Vergi/hukuki yorum insanda
+28,24,HAYIR,İhracat,Müşteri ülke/teslim şartı kontrolü,"Para yakınlığı=4/5, veri erişimi=4/5, ölçülebilirlik=4/5; risk=4/5.",İhracat operasyonu,Ticari/hukuki karar insanda
+29,23,HAYIR,Satın Alma,Sözleşme alan çıkarımı,"Para yakınlığı=4/5, veri erişimi=4/5, ölçülebilirlik=4/5; risk=5/5.",Satın alma + hukuk,Hukuki yorum insanda
+30,22,HAYIR,E-Ticaret,Kişiselleştirilmiş öneri karar desteği,"Para yakınlığı=4/5, veri erişimi=3/5, ölçülebilirlik=4/5; risk=4/5.",E-ticaret yöneticisi,Kural/yayın insanda

@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "intent": "nasıl yapılır",
+    "question": "pazaryeri feed hata triage nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 2,
+    "intent": "nasıl yapılır",
+    "question": "pazaryeri feed hata triage için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 3,
+    "intent": "nasıl yapılır",
+    "question": "ürün katalog veri kalite kontrolü nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 4,
+    "intent": "nasıl yapılır",
+    "question": "ürün katalog veri kalite kontrolü için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 5,
+    "intent": "nasıl yapılır",
+    "question": "sipariş istisna triage nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 6,
+    "intent": "nasıl yapılır",
+    "question": "sipariş istisna triage için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 7,
+    "intent": "nasıl yapılır",
+    "question": "fatura-po eşleştirme ön kontrolü nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 8,
+    "intent": "nasıl yapılır",
+    "question": "fatura-po eşleştirme ön kontrolü için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 9,
+    "intent": "nasıl yapılır",
+    "question": "müşteri talebi önceliklendirme nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 10,
+    "intent": "nasıl yapılır",
+    "question": "müşteri talebi önceliklendirme için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 11,
+    "intent": "nasıl yapılır",
+    "question": "stok tükenme sinyali nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 12,
+    "intent": "nasıl yapılır",
+    "question": "stok tükenme sinyali için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 13,
+    "intent": "nasıl yapılır",
+    "question": "cari mutabakat fark triage nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 14,
+    "intent": "nasıl yapılır",
+    "question": "cari mutabakat fark triage için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 15,
+    "intent": "nasıl yapılır",
+    "question": "tedarikçi teklif karşılaştırma nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 16,
+    "intent": "nasıl yapılır",
+    "question": "tedarikçi teklif karşılaştırma için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 17,
+    "intent": "nasıl yapılır",
+    "question": "sepet terk neden analizi nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 18,
+    "intent": "nasıl yapılır",
+    "question": "sepet terk neden analizi için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 19,
+    "intent": "nasıl yapılır",
+    "question": "i̇ade talebi ön sınıflandırma nasıl otomatikleştirilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 20,
+    "intent": "nasıl yapılır",
+    "question": "i̇ade talebi ön sınıflandırma için insan onaylı AI akışı nasıl kurulur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 21,
+    "intent": "risk",
+    "question": "pazaryeri feed hata triage otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 22,
+    "intent": "risk",
+    "question": "pazaryeri feed hata triage AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 23,
+    "intent": "risk",
+    "question": "ürün katalog veri kalite kontrolü otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 24,
+    "intent": "risk",
+    "question": "ürün katalog veri kalite kontrolü AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 25,
+    "intent": "risk",
+    "question": "sipariş istisna triage otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 26,
+    "intent": "risk",
+    "question": "sipariş istisna triage AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 27,
+    "intent": "risk",
+    "question": "fatura-po eşleştirme ön kontrolü otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 28,
+    "intent": "risk",
+    "question": "fatura-po eşleştirme ön kontrolü AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 29,
+    "intent": "risk",
+    "question": "müşteri talebi önceliklendirme otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 30,
+    "intent": "risk",
+    "question": "müşteri talebi önceliklendirme AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 31,
+    "intent": "risk",
+    "question": "stok tükenme sinyali otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 32,
+    "intent": "risk",
+    "question": "stok tükenme sinyali AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 33,
+    "intent": "risk",
+    "question": "cari mutabakat fark triage otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 34,
+    "intent": "risk",
+    "question": "cari mutabakat fark triage AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 35,
+    "intent": "risk",
+    "question": "tedarikçi teklif karşılaştırma otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 36,
+    "intent": "risk",
+    "question": "tedarikçi teklif karşılaştırma AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 37,
+    "intent": "risk",
+    "question": "sepet terk neden analizi otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 38,
+    "intent": "risk",
+    "question": "sepet terk neden analizi AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 39,
+    "intent": "risk",
+    "question": "i̇ade talebi ön sınıflandırma otomasyonunda en büyük riskler nelerdir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 40,
+    "intent": "risk",
+    "question": "i̇ade talebi ön sınıflandırma AI hatası nasıl kontrol edilir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 41,
+    "intent": "fiyat",
+    "question": "pazaryeri feed hata triage otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 42,
+    "intent": "fiyat",
+    "question": "pazaryeri feed hata triage süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 43,
+    "intent": "fiyat",
+    "question": "ürün katalog veri kalite kontrolü otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 44,
+    "intent": "fiyat",
+    "question": "ürün katalog veri kalite kontrolü süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 45,
+    "intent": "fiyat",
+    "question": "sipariş istisna triage otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 46,
+    "intent": "fiyat",
+    "question": "sipariş istisna triage süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 47,
+    "intent": "fiyat",
+    "question": "fatura-po eşleştirme ön kontrolü otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 48,
+    "intent": "fiyat",
+    "question": "fatura-po eşleştirme ön kontrolü süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 49,
+    "intent": "fiyat",
+    "question": "müşteri talebi önceliklendirme otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 50,
+    "intent": "fiyat",
+    "question": "müşteri talebi önceliklendirme süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 51,
+    "intent": "fiyat",
+    "question": "stok tükenme sinyali otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 52,
+    "intent": "fiyat",
+    "question": "stok tükenme sinyali süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 53,
+    "intent": "fiyat",
+    "question": "cari mutabakat fark triage otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 54,
+    "intent": "fiyat",
+    "question": "cari mutabakat fark triage süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 55,
+    "intent": "fiyat",
+    "question": "tedarikçi teklif karşılaştırma otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 56,
+    "intent": "fiyat",
+    "question": "tedarikçi teklif karşılaştırma süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 57,
+    "intent": "fiyat",
+    "question": "sepet terk neden analizi otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 58,
+    "intent": "fiyat",
+    "question": "sepet terk neden analizi süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 59,
+    "intent": "fiyat",
+    "question": "i̇ade talebi ön sınıflandırma otomasyonu fiyatı nasıl belirlenir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 60,
+    "intent": "fiyat",
+    "question": "i̇ade talebi ön sınıflandırma süreç analizi ne kadar kapsamlı olmalı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 61,
+    "intent": "hangi çözüm",
+    "question": "pazaryeri feed hata triage için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 62,
+    "intent": "hangi çözüm",
+    "question": "pazaryeri feed hata triage için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 63,
+    "intent": "hangi çözüm",
+    "question": "ürün katalog veri kalite kontrolü için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 64,
+    "intent": "hangi çözüm",
+    "question": "ürün katalog veri kalite kontrolü için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 65,
+    "intent": "hangi çözüm",
+    "question": "sipariş istisna triage için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 66,
+    "intent": "hangi çözüm",
+    "question": "sipariş istisna triage için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 67,
+    "intent": "hangi çözüm",
+    "question": "fatura-po eşleştirme ön kontrolü için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 68,
+    "intent": "hangi çözüm",
+    "question": "fatura-po eşleştirme ön kontrolü için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 69,
+    "intent": "hangi çözüm",
+    "question": "müşteri talebi önceliklendirme için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 70,
+    "intent": "hangi çözüm",
+    "question": "müşteri talebi önceliklendirme için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 71,
+    "intent": "hangi çözüm",
+    "question": "stok tükenme sinyali için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 72,
+    "intent": "hangi çözüm",
+    "question": "stok tükenme sinyali için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 73,
+    "intent": "hangi çözüm",
+    "question": "cari mutabakat fark triage için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 74,
+    "intent": "hangi çözüm",
+    "question": "cari mutabakat fark triage için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 75,
+    "intent": "hangi çözüm",
+    "question": "tedarikçi teklif karşılaştırma için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 76,
+    "intent": "hangi çözüm",
+    "question": "tedarikçi teklif karşılaştırma için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 77,
+    "intent": "hangi çözüm",
+    "question": "sepet terk neden analizi için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 78,
+    "intent": "hangi çözüm",
+    "question": "sepet terk neden analizi için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 79,
+    "intent": "hangi çözüm",
+    "question": "i̇ade talebi ön sınıflandırma için hangi AI otomasyon yaklaşımı uygundur?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 80,
+    "intent": "hangi çözüm",
+    "question": "i̇ade talebi ön sınıflandırma için agent mı kural tabanlı akış mı?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 81,
+    "intent": "karşılaştırma",
+    "question": "pazaryeri feed hata triage manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 82,
+    "intent": "karşılaştırma",
+    "question": "pazaryeri feed hata triage için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 83,
+    "intent": "karşılaştırma",
+    "question": "ürün katalog veri kalite kontrolü manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 84,
+    "intent": "karşılaştırma",
+    "question": "ürün katalog veri kalite kontrolü için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 85,
+    "intent": "karşılaştırma",
+    "question": "sipariş istisna triage manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 86,
+    "intent": "karşılaştırma",
+    "question": "sipariş istisna triage için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 87,
+    "intent": "karşılaştırma",
+    "question": "fatura-po eşleştirme ön kontrolü manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 88,
+    "intent": "karşılaştırma",
+    "question": "fatura-po eşleştirme ön kontrolü için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 89,
+    "intent": "karşılaştırma",
+    "question": "müşteri talebi önceliklendirme manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 90,
+    "intent": "karşılaştırma",
+    "question": "müşteri talebi önceliklendirme için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 91,
+    "intent": "karşılaştırma",
+    "question": "stok tükenme sinyali manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 92,
+    "intent": "karşılaştırma",
+    "question": "stok tükenme sinyali için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 93,
+    "intent": "karşılaştırma",
+    "question": "cari mutabakat fark triage manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 94,
+    "intent": "karşılaştırma",
+    "question": "cari mutabakat fark triage için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 95,
+    "intent": "karşılaştırma",
+    "question": "tedarikçi teklif karşılaştırma manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 96,
+    "intent": "karşılaştırma",
+    "question": "tedarikçi teklif karşılaştırma için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 97,
+    "intent": "karşılaştırma",
+    "question": "sepet terk neden analizi manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 98,
+    "intent": "karşılaştırma",
+    "question": "sepet terk neden analizi için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 99,
+    "intent": "karşılaştırma",
+    "question": "i̇ade talebi ön sınıflandırma manuel süreç ile AI destekli süreç farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  },
+  {
+    "id": 100,
+    "intent": "karşılaştırma",
+    "question": "i̇ade talebi ön sınıflandırma için tam otomasyon ve insan denetimi farkı nedir?",
+    "direct_answer": "Önce girdi, karar, çıktı, veri kaynağı, insan onayı ve başarı ölçüsü tanımlanır; AI yalnız sınırları belirlenmiş adımda taslak/sinyal üretir.",
+    "evidence_object": "İş akışı envanteri + opportunity score + pilot ölçüm kaydı",
+    "boundary": "Kritik karar, fiyat/ödeme, müşteri taahhüdü ve dış eylem insan onayında kalır.",
+    "canonical_url": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
+  }
+]

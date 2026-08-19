@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-18",
+  "day": 4,
+  "rule": "Only real measured values. Unmeasured stays 0.",
+  "metrics": {
+    "views": 0,
+    "clicks": 0,
+    "forms": 0,
+    "qualified_inbound": 0,
+    "confirmed_payments": 0,
+    "delivery_minutes": 0,
+    "tests_run": 0,
+    "critical_errors": 0
+  }
+}
