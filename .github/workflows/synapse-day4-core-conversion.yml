@@ -1,0 +1,29 @@
+name: Synapse Day 4 Core Conversion and Ecommerce
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  day4-core:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Day 4 core conversion assets
+        run: python3 scripts/synapse_day4_core_conversion.py
+
+      - name: Commit Day 4 core assets
+        run: |
+          git config user.name "synapse-day4-core"
+          git config user.email "synapse-day4-core@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No Day 4 changes needed."
+          else
+            git commit -m "feat: build Day 4 workflow conversion and ecommerce assets"
+            git push
+          fi
