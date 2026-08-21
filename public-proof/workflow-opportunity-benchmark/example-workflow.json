@@ -1,0 +1,17 @@
+{
+  "evidence_status": "synthetic_workflow_level_example",
+  "workflow": {
+    "kategori": "İhracat",
+    "is_akisi": "İhracat evrak ön kontrolü",
+    "girdi": "Fatura, çeki listesi, GTİP/ürün bilgisi",
+    "karar": "Eksik/uyumsuz alan var mı?",
+    "cikti": "İnceleme listesi",
+    "ekonomik_sonuc": "Gecikme ve tekrar işleme azalması",
+    "owner": "İhracat operasyon sorumlusu",
+    "human_gate": "Gönderim öncesi son onay"
+  },
+  "human_control": {
+    "rule": "critical decisions and external actions remain human-controlled",
+    "source": "https://synapseautomate.github.io/rehberler/ai-otomasyon-is-akisi-karar-tablosu.html"
+  }
+}

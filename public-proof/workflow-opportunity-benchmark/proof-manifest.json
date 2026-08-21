@@ -1,0 +1,26 @@
+{
+  "name": "Synapse Automate Workflow Opportunity Benchmark",
+  "version": "1.0",
+  "updated": "2026-08-21",
+  "publisher": "Synapse Automate",
+  "evidence_status": "synthetic_and_workflow_level_not_customer_performance_data",
+  "workflow_count": 30,
+  "top_opportunity_count": 10,
+  "canonical": {
+    "decision_table": "https://synapseautomate.github.io/rehberler/ai-otomasyon-is-akisi-karar-tablosu.html",
+    "free_mapping_tool": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html",
+    "process_analysis": "https://synapseautomate.github.io/surec-analizi.html",
+    "public_inventory_csv": "https://synapseautomate.github.io/veri/gun4-workflow-inventory-public.csv",
+    "methodology": "https://synapseautomate.github.io/veri/gun4-workflow-opportunity-methodology.md"
+  },
+  "source_integrity": {
+    "public_inventory_sha256": "382de10ba00ef7a5eae196051f2d1cba4af61f24d7680bff917827dc3c067e31",
+    "methodology_sha256": "ef5d8f766cdd0204303caa9173de935e2599c53ac9e951dc746b13cfbd95f35b",
+    "decision_page_sha256": "ca52d27c0127383a9f04683f9be3abd53ddd092b7f5310779cc39720578ce6d8"
+  },
+  "claims": {
+    "roi_guarantee": false,
+    "customer_case_study": false,
+    "autonomous_critical_actions": false
+  }
+}
