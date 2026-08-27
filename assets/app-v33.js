@@ -13,8 +13,7 @@ E-posta: ${fd.get('email')||''}
 Telefon: ${fd.get('telefon')||''}
 Konu: ${fd.get('konu')||''}
 
-Mesaj:
-${fd.get('mesaj')||''}`
+Mesaj:\n${fd.get('mesaj')||''}`
 );location.href=`mailto:synapseautomate.ai@gmail.com?subject=${subject}&body=${body}`;});}
 const canvas=document.querySelector('#hero-canvas');
 if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -46,4 +45,35 @@ if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ensureFreeToolsLink);
   else ensureFreeToolsLink();
+})();
+
+/* PRODUCT_TOWER_FEATURED_BADGE */
+(() => {
+  const mountProductTowerBadge = () => {
+    if (document.querySelector('[data-product-tower-badge]')) return;
+    const footerContainer = document.querySelector('.footer .container');
+    if (!footerContainer) return;
+    const wrap = document.createElement('div');
+    wrap.setAttribute('data-product-tower-badge','');
+    wrap.style.cssText = 'margin-top:24px;display:flex;align-items:center;justify-content:flex-start;';
+    const link = document.createElement('a');
+    link.href = 'https://www.product-tower.com';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('aria-label','Featured on Product-Tower');
+    const img = document.createElement('img');
+    img.src = 'https://www.product-tower.com/api/badge/synapse-automate/featured?theme=light';
+    img.alt = 'Featured on Product-Tower';
+    img.width = 150;
+    img.height = 40;
+    img.loading = 'lazy';
+    img.style.cssText = 'display:block;width:150px;height:40px;object-fit:contain;';
+    link.appendChild(img);
+    wrap.appendChild(link);
+    const copyright = footerContainer.querySelector('.copyright');
+    if (copyright) footerContainer.insertBefore(wrap,copyright);
+    else footerContainer.appendChild(wrap);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountProductTowerBadge);
+  else mountProductTowerBadge();
 })();
