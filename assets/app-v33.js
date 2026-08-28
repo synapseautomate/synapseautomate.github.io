@@ -7,14 +7,19 @@ addEventListener('scroll',()=>{const d=document.documentElement;{const max=d.scr
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const form=document.querySelector('#contact-form');
-if(form){form.addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(form);const subject=encodeURIComponent('Synapse Automate — '+(fd.get('konu')||'AI otomasyon talebi'));const body=encodeURIComponent(
-`Ad / Şirket: ${fd.get('ad')||''}
-E-posta: ${fd.get('email')||''}
-Telefon: ${fd.get('telefon')||''}
-Konu: ${fd.get('konu')||''}
-
-Mesaj:\n${fd.get('mesaj')||''}`
-);location.href=`mailto:synapseautomate.ai@gmail.com?subject=${subject}&body=${body}`;});}
+if(form){
+  form.action='https://formsubmit.co/synapseautomate.ai@gmail.com';
+  form.method='POST';
+  const addHidden=(name,value)=>{if(form.querySelector(`input[name="${name}"]`))return;const i=document.createElement('input');i.type='hidden';i.name=name;i.value=value;form.prepend(i);};
+  addHidden('_subject','Yeni Synapse Automate İletişim Talebi');
+  addHidden('_template','table');
+  addHidden('_next','https://synapseautomate.github.io/talep-alindi.html');
+  addHidden('_honey','');
+  const honey=form.querySelector('input[name="_honey"]');if(honey)honey.style.display='none';
+  const submit=form.querySelector('button[type="submit"]');if(submit)submit.textContent='Talebi Gönder';
+  const note=submit&&submit.parentElement?submit.parentElement.querySelector('small'):null;if(note)note.textContent='Talebiniz doğrudan Synapse Automate ekibine iletilir. Ücretli çalışma yalnız kapsam ve ticari koşullar açıkça onaylandıktan sonra başlar.';
+  const consent=form.querySelector('.consent label');if(consent){const link=consent.querySelector('a');consent.childNodes.forEach(n=>{if(n.nodeType===Node.TEXT_NODE)n.textContent=' Bu bilgilerin iletişim talebimin yanıtlanması amacıyla iletilmesini onaylıyorum. ';});if(link){consent.appendChild(link);consent.appendChild(document.createTextNode('.'));}}
+}
 const canvas=document.querySelector('#hero-canvas');
 if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
  const ctx=canvas.getContext('2d');let w,h,dpr,pts=[];
