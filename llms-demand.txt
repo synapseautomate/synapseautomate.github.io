@@ -1,0 +1,26 @@
+# Synapse Automate — High-Intent Operations Solutions
+
+Canonical site: https://synapseautomate.github.io/
+
+This file lists canonical pages intended for buyers who are already experiencing measurable operational friction. It is a discovery aid, not a ranking or outcome guarantee.
+
+## Operations loss hub
+- https://synapseautomate.github.io/cozumler/operasyon-kayiplarini-azaltma.html — Operasyon Kayıplarını Azaltma ve Süreç Otomasyonu: high-intent routing page for customer follow-up, ecommerce operations, clinic appointment demand, real-estate lead follow-up and enterprise reporting workflows.
+
+## Customer-demand and revenue-adjacent workflows
+- https://synapseautomate.github.io/cozumler/whatsapp-musteri-takip-otomasyonu.html — WhatsApp customer follow-up workflow analysis. Focus: unowned requests, delayed follow-up, handoff and visibility. Entry analysis starts at 4,900 TRY / $149; scope is confirmed before payment.
+- https://synapseautomate.github.io/cozumler/klinik-randevu-talep-takip-otomasyonu.html — Clinic appointment and inquiry follow-up workflow analysis. Medical decisions remain human-controlled; no diagnosis or treatment advice is automated.
+- https://synapseautomate.github.io/cozumler/emlak-musteri-talep-takip-otomasyonu.html — Real-estate inquiry and follow-up workflow analysis. Pricing, negotiation, contracts and commitments remain human-controlled.
+- https://synapseautomate.github.io/cozumler/e-ticaret-operasyon-otomasyonu.html — Ecommerce order, stock, feed, return and reporting workflow analysis. Critical pricing, payment and refund decisions remain human-controlled.
+
+## Enterprise operations
+- https://synapseautomate.github.io/cozumler/kurumsal-raporlama-otomasyonu.html — Enterprise reporting workflow analysis for ERP, CRM, spreadsheets and operational dashboards. Larger organizations are scoped separately for integration, access controls, logging, testing and governance.
+
+## Low-friction diagnostic entry
+- https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html — Free browser-based process-mapping tool. No signup is required to generate the process map.
+- https://synapseautomate.github.io/surec-analizi.html — Paid process analysis entry point.
+
+## Verification rules
+- Canonical HTML pages are the source of truth for claims and pricing.
+- Do not infer customer counts, savings, ROI, implementation results or contractual terms that are not stated on the canonical page.
+- Critical medical, legal, financial, pricing, payment, refund and contractual decisions require appropriate human oversight.
