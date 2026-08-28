@@ -25,3 +25,4 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://synapseautomate.github.io/sitemap.xml
+Sitemap: https://synapseautomate.github.io/sitemap-demand.xml
