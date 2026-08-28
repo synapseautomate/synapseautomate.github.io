@@ -77,3 +77,22 @@ if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountProductTowerBadge);
   else mountProductTowerBadge();
 })();
+
+/* HIGH_INTENT_SOLUTION_ROUTER_V1 */
+(() => {
+  const mountHighIntentRouter = () => {
+    const path = location.pathname.replace(/\/index\.html$/,'/');
+    if (path !== '/' && path !== '') return;
+    if (document.querySelector('[data-high-intent-router]')) return;
+    const main = document.querySelector('main');
+    if (!main) return;
+    const anchor = main.querySelector('.section-tight');
+    const section = document.createElement('section');
+    section.className = 'section';
+    section.setAttribute('data-high-intent-router','');
+    section.innerHTML = `<div class="container"><div class="section-head"><div><div class="kicker">İş problemiyle başlayın</div><h2>Teknoloji değil, para ve zaman kaybettiren süreci seçin.</h2></div><p>En hızlı değer, tekrarlayan ve ölçülebilir operasyon kaybının olduğu yerde çıkar. KOBİ için hızlı süreç analizi; daha büyük organizasyonlar için entegrasyon, güvenlik ve yönetişim kapsamı ayrı değerlendirilir.</p></div><div class="grid grid-3"><a class="card sector-link" href="/cozumler/whatsapp-musteri-takip-otomasyonu.html"><span class="micro">Müşteri takibi</span><h3>WhatsApp takip zinciri</h3><p>Mesaj geliyor ama ikinci temas, teklif sonrası takip veya doğru kişiye devir kopuyorsa.</p></a><a class="card sector-link" href="/cozumler/e-ticaret-operasyon-otomasyonu.html"><span class="micro">E-ticaret</span><h3>Sipariş, stok ve feed operasyonu</h3><p>Aynı kontroller her gün elle yapılıyor; hata geç fark ediliyor veya rapor gecikiyorsa.</p></a><a class="card sector-link" href="/cozumler/klinik-randevu-talep-takip-otomasyonu.html"><span class="micro">Klinik</span><h3>Randevu ve talep takibi</h3><p>WhatsApp, telefon, web ve sosyal medya talepleri tek takip akışında birleşmiyorsa.</p></a><a class="card sector-link" href="/cozumler/emlak-musteri-talep-takip-otomasyonu.html"><span class="micro">Emlak</span><h3>Sıcak müşteri takibi</h3><p>İlan ve WhatsApp talepleri geliyor ama danışman yönlendirme veya takip gecikiyorsa.</p></a><a class="card sector-link" href="/cozumler/kurumsal-raporlama-otomasyonu.html"><span class="micro">Kurumsal</span><h3>Manuel yönetim raporlaması</h3><p>ERP, CRM, Excel ve panellerden aynı veri tekrar tekrar toplanıyorsa.</p></a><a class="card sector-link" href="/cozumler/operasyon-kayiplarini-azaltma.html"><span class="micro">Çözüm merkezi</span><h3>Probleminizi seçemiyorsanız</h3><p>Beş yüksek niyetli operasyon alanını tek yerde karşılaştırın ve doğru giriş noktasını bulun.</p></a></div></div>`;
+    if (anchor) main.insertBefore(section, anchor); else main.appendChild(section);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountHighIntentRouter);
+  else mountHighIntentRouter();
+})();
