@@ -1,0 +1,26 @@
+{
+  "suite": "Synapse Automate Day 5 Reliability Regression v1",
+  "run_date": "2026-09-07",
+  "data_class": "synthetic_non_sensitive",
+  "cases": 100,
+  "passed": 100,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "human_gated_cases": 64,
+  "action_counts": {
+    "AUTO_PROCEED": 36,
+    "HUMAN_REVIEW": 29,
+    "HUMAN_APPROVAL": 20,
+    "BLOCK_AND_ESCALATE": 15
+  },
+  "mutation_checks": {
+    "total": 5,
+    "detected": 5,
+    "missed": 0
+  },
+  "claims": [
+    "This is a deterministic policy regression over synthetic cases.",
+    "It is not a claim of production accuracy, ROI, compliance, or legal/medical/financial advice.",
+    "No customer data or sensitive data is included."
+  ]
+}
