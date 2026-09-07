@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-07",
+  "day": 5,
+  "rule": "Only real measured values. Unmeasured stays 0.",
+  "metrics": {
+    "views": 0,
+    "clicks": 0,
+    "forms": 0,
+    "qualified_inbound": 0,
+    "confirmed_payments": 0,
+    "delivery_minutes": 0,
+    "tests_run": 105,
+    "critical_errors": 0,
+    "regression_cases": 100,
+    "regression_passed": 100,
+    "regression_failed": 0,
+    "mutation_checks": 5,
+    "mutation_detected": 5
+  },
+  "note": "LinkedIn and funnel metrics remain 0 until physically published/measured. Synthetic regression is not a production accuracy, compliance, or ROI claim."
+}
