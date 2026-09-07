@@ -1,6 +1,7 @@
 {
   "date": "2026-09-07",
   "day": 5,
+  "status": "complete",
   "rule": "Only real measured values. Unmeasured stays 0.",
   "metrics": {
     "views": 0,
@@ -17,5 +18,11 @@
     "mutation_checks": 5,
     "mutation_detected": 5
   },
-  "note": "LinkedIn and funnel metrics remain 0 until physically published/measured. Synthetic regression is not a production accuracy, compliance, or ROI claim."
+  "publication": {
+    "linkedin_company_post": "completed_manual",
+    "company_page_comments": 5,
+    "mobile_qa": "pass"
+  },
+  "analytics_state": "Metricool connected; same-day LinkedIn analytics query returned no rows yet. Commercial zeros are placeholders for unmeasured data, not performance claims.",
+  "note": "Synthetic regression is not a production accuracy, compliance or ROI claim."
 }
