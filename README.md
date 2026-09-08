@@ -1,30 +1,24 @@
-# Synapse Automate Corporate Website
+# Synapse Automate
 
-Public corporate website for Synapse Automate.
+Official website repository for **Synapse Automate**, part of the Kinetra Group portfolio.
 
-- Customer-facing content uses plain Turkish first; technical product aliases are secondary labels.
-- Critical commercial, legal, financial and sensitive decisions remain human-approved.
-- No fabricated case studies, metrics, guarantees or customer data are published.
-- Search/AI resources (`sitemap.xml`, `llms.txt`, structured data) are kept outside the primary customer navigation.
+Synapse Automate designs human-supervised, measurable AI automation for real business operations. The public website focuses on clear scope, verified sources, explicit approval boundaries and testable delivery.
 
-Production: https://synapseautomate.github.io/
+## Website
 
-## Start here
+**Production:** https://synapseautomate.github.io/
 
-**Free tool:** [Sürecini 20 Dakikada Haritala](https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html)
+## Useful resources
 
-**Paid next step:** [Süreç Analizi — 4.900 TL / $149 başlangıç](https://synapseautomate.github.io/surec-analizi.html)
+- [Sürecini 20 Dakikada Haritala](https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html)
+- [AI Otomasyonunda Güvenilirlik Testi](https://synapseautomate.github.io/rehberler/ai-otomasyon-guvenilirlik-testi.html)
+- [Süreç Analizi](https://synapseautomate.github.io/surec-analizi.html)
 
-The paid analysis reviews one repeating workflow for bottlenecks, data access, human approval and economic impact before custom development begins. No ROI or outcome guarantee is made.
+## Delivery principles
 
-<!-- SYNAPSE_PUBLIC_PROOF_START -->
-## Public proof: 30 Workflow Opportunity Benchmark
+- Human approval remains mandatory for critical commercial, legal, financial and sensitive decisions.
+- Claims, metrics and outcomes are not presented as verified unless supported by evidence.
+- Customer data, secrets and credentials are not published in this repository.
+- Search and AI discovery resources are maintained separately from the primary customer navigation.
 
-Synapse Automate’in **30 tekrarlı operasyon iş akışını** para yakınlığı, veri erişimi, ölçülebilirlik, risk ve insan onayıyla değerlendiren public proof paketi:
-
-**[`public-proof/workflow-opportunity-benchmark/`](public-proof/workflow-opportunity-benchmark/)**
-
-Canlı canonical karar tablosu: https://synapseautomate.github.io/rehberler/ai-otomasyon-is-akisi-karar-tablosu.html
-
-> Evidence boundary: sentetik ve iş-akışı seviyesindedir; müşteri performans verisi veya ROI garantisi değildir.
-<!-- SYNAPSE_PUBLIC_PROOF_END -->
+© 2026 Synapse Automate
