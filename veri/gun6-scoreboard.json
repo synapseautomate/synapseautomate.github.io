@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-08",
+  "day": 6,
+  "rule": "Only real measured values become performance metrics. Missing analytics is not zero performance.",
+  "commercial": {
+    "linkedin_impressions": {"value": null, "measured": false},
+    "linkedin_clicks": {"value": null, "measured": false},
+    "linkedin_reactions": {"value": null, "measured": false},
+    "linkedin_comments_received": {"value": null, "measured": false},
+    "site_pricing_guide_visits": {"value": null, "measured": false},
+    "process_analysis_form_starts": {"value": null, "measured": false},
+    "process_analysis_forms": {"value": null, "measured": false},
+    "qualified_inbound": {"value": null, "measured": false},
+    "confirmed_payments": {"value": null, "measured": false}
+  },
+  "evidence": {
+    "offer_packages": 3,
+    "pricing_surfaces_consistency_qa": "PASS",
+    "linkedin_carousel_pages": 7,
+    "native_video_seconds": 36,
+    "short_video_seconds": 20,
+    "linkedin_comment_targets": 5,
+    "kinetra_scored_concepts": 5,
+    "kinetra_opportunity_briefs": 3,
+    "kinetra_bakeoff_cases": 30,
+    "kinetra_prompt_variants": 3
+  },
+  "note": "Metricool returned no usable LinkedIn rows at the morning check. This is recorded as unmeasured, not as zero demand."
+}
