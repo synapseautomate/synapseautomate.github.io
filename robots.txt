@@ -3,26 +3,55 @@ Allow: /
 Disallow: /scripts/
 Disallow: /BUILD_MANIFEST.sha256
 Disallow: /README.md
+Disallow: /D02/
+Disallow: /D03/
+Disallow: /D05/
+Disallow: /D06/
+Disallow: /SYNAPSE_D03_NAV_FUNCTION_FIX_V1.zip
 
 # Synapse Automate — search and AI retrieval access
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /D02/
+Disallow: /D03/
+Disallow: /D05/
+Disallow: /D06/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /D02/
+Disallow: /D03/
+Disallow: /D05/
+Disallow: /D06/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /D02/
+Disallow: /D03/
+Disallow: /D05/
+Disallow: /D06/
 
 User-agent: Claude-User
 Allow: /
+Disallow: /D02/
+Disallow: /D03/
+Disallow: /D05/
+Disallow: /D06/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /D02/
+Disallow: /D03/
+Disallow: /D05/
+Disallow: /D06/
 
 # Google-Extended controls Gemini model usage/grounding; it does not control ordinary Google Search ranking.
 User-agent: Google-Extended
 Allow: /
+Disallow: /D02/
+Disallow: /D03/
+Disallow: /D05/
+Disallow: /D06/
 
 Sitemap: https://synapseautomate.github.io/sitemap.xml
 Sitemap: https://synapseautomate.github.io/sitemap-demand.xml
