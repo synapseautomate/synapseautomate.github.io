@@ -127,3 +127,29 @@ if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyBrandCopy);
   else applyBrandCopy();
 })();
+
+/* PUBLIC_SURFACE_ROUTING_V1 */
+(() => {
+  const cleanPublicSurface = () => {
+    document.querySelectorAll('a').forEach(a => {
+      const href=a.getAttribute('href') || '';
+      if (/yatirimcilar\.html(?:$|[?#])/.test(href)) {
+        a.remove();
+        return;
+      }
+      if (/urunler\/kilory\.html(?:$|[?#])/.test(href) || /kanit\/kilory-yayin-oncesi-kanit-paketi\.html(?:$|[?#])/.test(href)) {
+        a.href='https://kilory.fit/';
+        a.removeAttribute('target');
+        a.rel='noopener';
+        return;
+      }
+      if (/kinetra-studios\/48-72-saat-prototip-hatti\.html(?:$|[?#])/.test(href)) {
+        a.href='/kinetra-studios.html';
+      }
+    });
+    const badge=document.querySelector('[data-product-tower-badge]');
+    if(badge) badge.remove();
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cleanPublicSurface);
+  else cleanPublicSurface();
+})();
