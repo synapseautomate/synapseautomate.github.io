@@ -1,0 +1,38 @@
+{
+  "currency_note": "Fiyatlar başlangıç seviyesidir. Kapsam, vergi/kur, ödeme ve fatura uygunluğu tahsilat öncesi yazılı olarak doğrulanır.",
+  "offers": [
+    {
+      "id": "process_analysis",
+      "name": "Süreç Analizi",
+      "price_try": 4900,
+      "price_usd": 149,
+      "billing": "one_time",
+      "purpose": "Tekrarlayan sürecin darboğaz, veri, insan onayı, risk ve ekonomik sonuç açısından incelenmesi.",
+      "output": "3-10 bulgu, kanıt/gözlem, öncelik, etki değerlendirmesi ve 7 günlük uygulama planı"
+    },
+    {
+      "id": "pilot",
+      "name": "Kontrollü Pilot",
+      "price_try": 24900,
+      "price_usd": 750,
+      "billing": "one_time",
+      "purpose": "Analizde doğrulanan tek iş akışını sınırlı kapsamda, ölçülebilir başarı kriteri ve insan kontrolüyle test etmek.",
+      "output": "Yazılı kapsam, test vakaları, insan onayı noktaları, ölçüm ve pilot sonuç özeti"
+    },
+    {
+      "id": "recurring",
+      "name": "Aylık Operasyon ve İyileştirme",
+      "price_try": 14900,
+      "price_usd": 449,
+      "billing": "monthly",
+      "purpose": "Canlı ve değer üreten akışın izlenmesi, hata takibi, küçük iyileştirmeler ve aylık performans değerlendirmesi.",
+      "output": "İzleme, hata/istisna takibi, kontrollü iyileştirmeler ve aylık raporlama"
+    }
+  ],
+  "not_included_by_default": [
+    "Sınırsız özel geliştirme",
+    "Belirsiz kapsamlı entegrasyonlar",
+    "Hukuki, tıbbi veya finansal nihai karar verme",
+    "Sonuç, gelir veya ROI garantisi"
+  ]
+}
