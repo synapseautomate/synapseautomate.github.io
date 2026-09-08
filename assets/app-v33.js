@@ -101,3 +101,29 @@ if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountHighIntentRouter);
   else mountHighIntentRouter();
 })();
+
+/* BRAND_ARCHITECTURE_HYGIENE_V1 */
+(() => {
+  const replacements = new Map([
+    ['Kinetra Group çatısı altında planlanan yapay zekâ odaklı teknoloji yapısı.','Synapse Automate, Kinetra Group portföyünün bir parçasıdır.'],
+    ['Kinetra Group altında planlanan yapı; tüketici ürünleri ile kurumsal otomasyon çözümlerini ortak teknoloji, güvenlik ve dağıtım disipliniyle birleştirmeyi hedefler.','Kinetra Group; tüketici teknolojileri ile kurumsal yapay zekâ otomasyonunu ortak ürün kalitesi, güvenilir sistemler ve küresel ölçek disiplini altında bir araya getirir.'],
+    ['Kuruluş öncesi Kinetra Group yapısının kurumsal otomasyon markası olarak planlanmıştır.','Kinetra Group portföyünde kurumsal yapay zekâ otomasyonu odağını taşır.'],
+    ['Kuruluş öncesi grup vizyonu','Teknoloji portföyü'],
+    ['Planlanan ürün stüdyosu','Tüketici teknolojisi ürün stüdyosu'],
+    ['Gün 4 doğrulama varlığı.','Prototipten üretim kalitesine uzanan kontrollü geliştirme hattı.'],
+    ['yapay zekâ destekli uygulama stüdyosu; fikirden doğrulanmış ilk çalışan ürün sürümüne uzanan standartlaştırılmış ürün geliştirme modeli.','Günlük hayatta yer edinmek üzere tasarlanmış tüketici teknolojileri geliştiren ürün stüdyosu.'],
+    ['yapay zekâ destekli beslenme, aktivite, tarif, alışkanlık ve sosyal motivasyon deneyimini birleştiren yayına hazır ürün.','Beslenme, günlük rutinler ve topluluğu tek yerde buluşturan tüketici ürünü.']
+  ]);
+  const applyBrandCopy = () => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes=[]; let node;
+    while ((node=walker.nextNode())) nodes.push(node);
+    nodes.forEach(textNode => {
+      let value=textNode.nodeValue;
+      replacements.forEach((next,prev)=>{ if(value.includes(prev)) value=value.split(prev).join(next); });
+      if(value!==textNode.nodeValue) textNode.nodeValue=value;
+    });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyBrandCopy);
+  else applyBrandCopy();
+})();
