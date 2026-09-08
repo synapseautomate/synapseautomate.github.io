@@ -1,0 +1,26 @@
+name: Synapse Offer Consistency QA
+
+on:
+  push:
+    paths:
+      - 'surec-analizi.html'
+      - 'rehberler/ai-otomasyon-fiyatlari.html'
+      - 'sektorler/hukuk.html'
+      - 'veri/offer-ladder.json'
+      - 'scripts/qa_offer_public_pages.py'
+      - '.github/workflows/synapse-offer-consistency.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run public offer QA
+        run: python scripts/qa_offer_public_pages.py
