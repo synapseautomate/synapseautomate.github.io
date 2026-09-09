@@ -1,0 +1,8 @@
+category,definition,default_severity,detectability,owner,primary_fix
+input,Missing conflicting malformed or stale input,major,high,Process owner,Validation and required-field rules
+context,Missing unverified or wrong source context,major,medium-high,Knowledge owner,Source verification and retrieval constraints
+reasoning,Decision path conflicts with the defined policy or evidence,major,medium,AI workflow owner,Decision tests and explicit policy rules
+tool,Integration or tool action fails times out or targets the wrong system,major,high,Integration owner,Tool validation retries and action guards
+format,Output violates required schema structure or field contract,minor-major,high,AI workflow owner,Schema validation and deterministic formatting
+policy,Unsafe unauthorized or prohibited action is allowed,critical,high when tested,Governance owner,Hard policy gate block and escalation
+human-process,Required review approval rejection or escalation path is bypassed or ineffective,critical,medium,Process owner,Human gate design audit and approval logging
