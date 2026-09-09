@@ -1,0 +1,36 @@
+name: Synapse Day 7 Workflow Benchmark
+
+on:
+  push:
+    paths:
+      - 'public-proof/workflow-benchmark-v1/**'
+      - 'public-proof/reliability-regression-v1/test_cases.csv'
+      - '.github/workflows/synapse-day7-workflow-benchmark.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run pinned strategy benchmark
+        run: python public-proof/workflow-benchmark-v1/run_benchmark.py
+
+      - name: Verify public summary matches generated summary
+        run: diff -u public-proof/workflow-benchmark-v1/benchmark_summary.csv public-proof/workflow-benchmark-v1/benchmark_summary.generated.csv
+
+      - name: Basic public-proof safety scan
+        run: |
+          ! grep -RniE '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|password[[:space:]]*=|secret[[:space:]]*=|api[_-]?key[[:space:]]*=)' public-proof/workflow-benchmark-v1
+          grep -qi 'synthetic' public-proof/workflow-benchmark-v1/README.md
+          grep -qi 'not production accuracy' public-proof/workflow-benchmark-v1/README.md
