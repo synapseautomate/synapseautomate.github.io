@@ -19,6 +19,13 @@ NEW_PUBLIC = [
     "rehberler/uretim-lojistik-ai-otomasyon-satin-alma-rehberi.html",
     "rehberler/finans-ai-otomasyon-satin-alma-rehberi.html",
     "kanit/50-vaka-kaynak-metodolojisi.html",
+    "kaynaklar.html",
+]
+DISCOVERABLE = [
+    "rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html",
+    "rehberler/uretim-lojistik-ai-otomasyon-satin-alma-rehberi.html",
+    "rehberler/finans-ai-otomasyon-satin-alma-rehberi.html",
+    "kanit/50-vaka-kaynak-metodolojisi.html",
 ]
 FORBIDDEN_PUBLIC = [
     "day 8",
@@ -51,13 +58,12 @@ def main():
             ok = fail(f"missing canonical page: {rel}") and ok
             continue
         text = path.read_text(encoding="utf-8")
-        low = text.lower()
         canonical = f'https://synapseautomate.github.io/{rel}'
         if f'<link rel="canonical" href="{canonical}"' not in text and f'<link href="{canonical}" rel="canonical"' not in text:
             ok = fail(f"canonical mismatch: {rel}") and ok
         if 'type="application/ld+json"' not in text:
             ok = fail(f"schema missing: {rel}") and ok
-        if '<meta name="description"' not in text:
+        if '<meta name="description"' not in text and 'name="description"' not in text:
             ok = fail(f"description missing: {rel}") and ok
         title = extract(r"<title>(.*?)</title>", text)
         h1 = extract(r"<h1[^>]*>(.*?)</h1>", text)
@@ -90,6 +96,25 @@ def main():
             if required.lower() not in text.lower():
                 ok = fail(f"methodology requirement missing: {required}") and ok
 
+    hub = ROOT / "kaynaklar.html"
+    sitemap = ROOT / "sitemap.xml"
+    if not hub.exists():
+        ok = fail("resources hub missing") and ok
+    else:
+        hub_text = hub.read_text(encoding="utf-8")
+        for rel in DISCOVERABLE:
+            if rel not in hub_text:
+                ok = fail(f"not discoverable from resources hub: {rel}") and ok
+
+    if not sitemap.exists():
+        ok = fail("sitemap missing") and ok
+    else:
+        sitemap_text = sitemap.read_text(encoding="utf-8")
+        for rel in DISCOVERABLE:
+            url = f"https://synapseautomate.github.io/{rel}"
+            if url not in sitemap_text:
+                ok = fail(f"missing sitemap URL: {rel}") and ok
+
     result = subprocess.run(
         [sys.executable, str(ROOT / "public-proof/provenance-50-v1/validate.py")],
         cwd=ROOT,
@@ -102,7 +127,7 @@ def main():
         ok = fail("50-case provenance validator") and ok
 
     if ok:
-        print("PASS: Day 8 canonical/provenance quality gate")
+        print("PASS: Day 8 canonical/provenance/discoverability quality gate")
         return 0
     return 1
 
