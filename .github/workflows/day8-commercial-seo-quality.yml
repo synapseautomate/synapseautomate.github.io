@@ -12,6 +12,8 @@ on:
       - 'rehberler/finans-ai-otomasyon-satin-alma-rehberi.html'
       - 'kanit/50-vaka-kaynak-metodolojisi.html'
       - 'public-proof/provenance-50-v1/**'
+      - 'kaynaklar.html'
+      - 'sitemap.xml'
       - 'scripts/day8_quality_gate.py'
       - '.github/workflows/day8-commercial-seo-quality.yml'
   workflow_dispatch:
@@ -31,5 +33,5 @@ jobs:
           python-version: '3.12'
       - name: Run 50-case provenance validation
         run: python public-proof/provenance-50-v1/validate.py
-      - name: Run canonical and public-facing quality gate
+      - name: Run canonical, discoverability and public-facing quality gate
         run: python scripts/day8_quality_gate.py
