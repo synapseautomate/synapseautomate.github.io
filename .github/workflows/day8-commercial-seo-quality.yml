@@ -1,0 +1,35 @@
+name: Day 8 Commercial SEO Quality
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'sektorler/e-ticaret.html'
+      - 'sektorler/uretim-lojistik.html'
+      - 'sektorler/finans.html'
+      - 'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html'
+      - 'rehberler/uretim-lojistik-ai-otomasyon-satin-alma-rehberi.html'
+      - 'rehberler/finans-ai-otomasyon-satin-alma-rehberi.html'
+      - 'kanit/50-vaka-kaynak-metodolojisi.html'
+      - 'public-proof/provenance-50-v1/**'
+      - 'scripts/day8_quality_gate.py'
+      - '.github/workflows/day8-commercial-seo-quality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run 50-case provenance validation
+        run: python public-proof/provenance-50-v1/validate.py
+      - name: Run canonical and public-facing quality gate
+        run: python scripts/day8_quality_gate.py
