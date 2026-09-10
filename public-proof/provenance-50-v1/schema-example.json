@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Synapse Automate 50-Case Provenance Record",
+  "type": "object",
+  "required": [
+    "case_id",
+    "cluster",
+    "source_type",
+    "source_verified",
+    "input_complete",
+    "conflicting_input",
+    "risk_level",
+    "external_action",
+    "adversarial_pattern",
+    "unknown_rule",
+    "expected_route",
+    "provenance_dataset",
+    "customer_data"
+  ],
+  "properties": {
+    "case_id": {"type": "string", "pattern": "^PV-[0-9]{3}$"},
+    "cluster": {"enum": ["e_ticaret", "uretim_lojistik", "finans_operasyon"]},
+    "source_type": {"type": "string"},
+    "source_verified": {"type": "boolean"},
+    "input_complete": {"type": "boolean"},
+    "conflicting_input": {"type": "boolean"},
+    "risk_level": {"enum": ["low", "medium", "high"]},
+    "external_action": {"type": "boolean"},
+    "adversarial_pattern": {"type": "boolean"},
+    "unknown_rule": {"const": "unknown_or_unverified_never_autofilled"},
+    "expected_route": {"enum": ["AUTO_PROCEED", "HUMAN_REVIEW", "HUMAN_APPROVAL", "BLOCK_AND_ESCALATE"]},
+    "provenance_dataset": {"const": "synthetic"},
+    "customer_data": {"const": false}
+  }
+}
