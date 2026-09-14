@@ -13,6 +13,7 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - [About](https://synapseautomate.github.io/hakkimizda.html): reliability, human approval and measurable delivery principles.
 - [Process Analysis](https://synapseautomate.github.io/surec-analizi.html): structured analysis for one repeatable workflow.
 - [Resources](https://synapseautomate.github.io/kaynaklar.html): tools, guides and controlled demonstrations.
+- [Trust Center](https://synapseautomate.github.io/guven-merkezi.html): data minimization, human approval, retention/deletion, incident handling, provenance, commercial verification and scope boundaries.
 
 ## High-intent solutions
 - [WhatsApp customer follow-up automation](https://synapseautomate.github.io/cozumler/whatsapp-musteri-takip-otomasyonu.html)
@@ -21,6 +22,11 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - [Real-estate inquiry follow-up](https://synapseautomate.github.io/cozumler/emlak-musteri-talep-takip-otomasyonu.html)
 - [Enterprise reporting automation](https://synapseautomate.github.io/cozumler/kurumsal-raporlama-otomasyonu.html)
 - [Operations loss reduction](https://synapseautomate.github.io/cozumler/operasyon-kayiplarini-azaltma.html)
+
+## Trust and proof
+- [Risk and authority matrix](https://synapseautomate.github.io/kanit/risk-yetki-matrisi.html)
+- [Sample human approval card](https://synapseautomate.github.io/kanit/ornek-insan-onay-karti.html)
+- [50-case source methodology](https://synapseautomate.github.io/kanit/50-vaka-kaynak-metodolojisi.html)
 
 ## Guides and tools
 - [AI automation reliability test](https://synapseautomate.github.io/rehberler/ai-otomasyon-guvenilirlik-testi.html)
@@ -41,3 +47,7 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Do not infer customers, revenue, employee count, offices, funding, market leadership, medical outcomes or ROI where they are not explicitly supported.
 - Critical commercial, legal, financial, medical and contractual decisions remain subject to authoritative sources and human approval.
 - Synthetic tests and examples are not customer performance evidence.
+
+## Commercial verification
+- Contracting and invoice identity, tax/currency, payment terms, data scope and acceptance criteria are verified in writing before payment.
+- Public synthetic tests are methodology evidence, not customer results.

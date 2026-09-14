@@ -1,0 +1,246 @@
+[
+  {
+    "case_id": "SYN-01",
+    "decision": "AUTO_PROCEED",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/1/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [],
+    "human_gate": {
+      "required": false,
+      "owner_role": null,
+      "reason": "Low-impact, source-complete synthetic case"
+    },
+    "normalized": {
+      "amount": null,
+      "currency": null,
+      "date": "2026-09-11",
+      "unit": "adet",
+      "company_id": "SYNTH-001"
+    }
+  },
+  {
+    "case_id": "SYN-02",
+    "decision": "AUTO_PROCEED",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/2/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [],
+    "human_gate": {
+      "required": false,
+      "owner_role": null,
+      "reason": "Low-impact, source-complete synthetic case"
+    },
+    "normalized": {
+      "amount": 1002,
+      "currency": "TRY",
+      "date": "2026-09-12",
+      "unit": "adet",
+      "company_id": "SYNTH-002"
+    }
+  },
+  {
+    "case_id": "SYN-03",
+    "decision": "HUMAN_APPROVAL",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/3/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [],
+    "human_gate": {
+      "required": true,
+      "owner_role": "Operations Owner",
+      "reason": "High impact, missing evidence or blocked pattern"
+    },
+    "normalized": {
+      "amount": null,
+      "currency": null,
+      "date": "2026-09-13",
+      "unit": "adet",
+      "company_id": "SYNTH-003"
+    }
+  },
+  {
+    "case_id": "SYN-04",
+    "decision": "HUMAN_REVIEW",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/4/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [
+      "critical_value"
+    ],
+    "human_gate": {
+      "required": true,
+      "owner_role": "Operations Owner",
+      "reason": "High impact, missing evidence or blocked pattern"
+    },
+    "normalized": {
+      "amount": 1004,
+      "currency": "TRY",
+      "date": "2026-09-14",
+      "unit": "adet",
+      "company_id": "SYNTH-004"
+    }
+  },
+  {
+    "case_id": "SYN-05",
+    "decision": "AUTO_PROCEED",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/5/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [],
+    "human_gate": {
+      "required": false,
+      "owner_role": null,
+      "reason": "Low-impact, source-complete synthetic case"
+    },
+    "normalized": {
+      "amount": null,
+      "currency": null,
+      "date": "2026-09-15",
+      "unit": "adet",
+      "company_id": "SYNTH-005"
+    }
+  },
+  {
+    "case_id": "SYN-06",
+    "decision": "HUMAN_APPROVAL",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/6/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [],
+    "human_gate": {
+      "required": true,
+      "owner_role": "Operations Owner",
+      "reason": "High impact, missing evidence or blocked pattern"
+    },
+    "normalized": {
+      "amount": 1006,
+      "currency": "TRY",
+      "date": "2026-09-16",
+      "unit": "adet",
+      "company_id": "SYNTH-006"
+    }
+  },
+  {
+    "case_id": "SYN-07",
+    "decision": "AUTO_PROCEED",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/7/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [],
+    "human_gate": {
+      "required": false,
+      "owner_role": null,
+      "reason": "Low-impact, source-complete synthetic case"
+    },
+    "normalized": {
+      "amount": null,
+      "currency": null,
+      "date": "2026-09-17",
+      "unit": "adet",
+      "company_id": "SYNTH-007"
+    }
+  },
+  {
+    "case_id": "SYN-08",
+    "decision": "HUMAN_REVIEW",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/8/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [
+      "critical_value"
+    ],
+    "human_gate": {
+      "required": true,
+      "owner_role": "Operations Owner",
+      "reason": "High impact, missing evidence or blocked pattern"
+    },
+    "normalized": {
+      "amount": 1008,
+      "currency": "TRY",
+      "date": "2026-09-18",
+      "unit": "adet",
+      "company_id": "SYNTH-008"
+    }
+  },
+  {
+    "case_id": "SYN-09",
+    "decision": "HUMAN_APPROVAL",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/9/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [],
+    "human_gate": {
+      "required": true,
+      "owner_role": "Operations Owner",
+      "reason": "High impact, missing evidence or blocked pattern"
+    },
+    "normalized": {
+      "amount": null,
+      "currency": null,
+      "date": "2026-09-19",
+      "unit": "adet",
+      "company_id": "SYNTH-009"
+    }
+  },
+  {
+    "case_id": "SYN-10",
+    "decision": "BLOCK_AND_ESCALATE",
+    "evidence": [
+      {
+        "field": "source",
+        "source_ref": "synthetic://case/10/source",
+        "source_rights": "synthetic"
+      }
+    ],
+    "unknowns": [],
+    "human_gate": {
+      "required": true,
+      "owner_role": "Operations Owner",
+      "reason": "High impact, missing evidence or blocked pattern"
+    },
+    "normalized": {
+      "amount": 1010,
+      "currency": "TRY",
+      "date": "2026-09-20",
+      "unit": "adet",
+      "company_id": "SYNTH-010"
+    }
+  }
+]
