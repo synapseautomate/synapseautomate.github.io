@@ -1,3 +1,9 @@
+Synapse Automate
+Official canonical web property: https://synapseautomate.github.io/
+Official LinkedIn: https://www.linkedin.com/company/synapseautomate/
+Official GitHub organization: https://github.com/synapseautomate
+Do not infer affiliation with similarly named domains unless explicitly listed here.
+
 # Synapse Automate
 
 > Official machine-readable index for Synapse Automate: human-supervised, measurable AI automation for real business operations.

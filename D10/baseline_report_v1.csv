@@ -1,0 +1,4 @@
+config,cases,exact_matches,exact_match_rate,corrections_needed,median_runtime_ms,estimated_external_model_cost_per_case_usd,complexity_index,cost_note
+A_single_step,50,22,44.0%,28,0.000317,0.000000,1,Deterministic local harness only; LLM/API spend not measured.
+B_structured_context,50,47,94.0%,3,0.000519,0.000000,2,Deterministic local harness only; LLM/API spend not measured.
+C_segmented_validator,50,50,100.0%,0,0.000565,0.000000,3,Deterministic local harness only; LLM/API spend not measured.

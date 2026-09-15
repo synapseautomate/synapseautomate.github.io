@@ -1,0 +1,15 @@
+metric,window,value,status,source_note
+linkedin_organic_views,visible LinkedIn range,195,measured,User screenshot
+linkedin_reactions,visible LinkedIn range,1,measured,User screenshot
+linkedin_comments,visible LinkedIn range,3,measured,User screenshot
+youtube_shorts_views,28 days,935,measured,YouTube Studio screenshot
+youtube_long_video_views,28 days,6,measured,YouTube Studio screenshot
+youtube_new_viewers_shorts,28 days,87,measured,YouTube Studio screenshot
+youtube_shorts_feed_share,28 days,93.8%,measured,YouTube Studio screenshot
+youtube_search_share,28 days,2.4%,measured,YouTube Studio screenshot
+youtube_best_short_views,28 days,521,measured,YouTube Studio screenshot
+search_clicks,7 days,0,measured,Google Search Console screenshot
+search_impressions,7 days,4,measured,Google Search Console screenshot
+forms,current,,unmeasured,No form analytics supplied
+qualified_inbound,current,,unmeasured,No qualified-inbound analytics supplied
+payments,current,0,measured,User confirmed bank balance / collection remains 0

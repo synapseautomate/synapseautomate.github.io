@@ -1,0 +1,101 @@
+id,cluster,intent,query,canonical_url,local_file_exists,live_ai_citation_measured
+Q001,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu,/sektorler/e-ticaret.html,true,false
+Q002,e_ticaret,cost,e-ticaret ai otomasyon maliyeti,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q003,e_ticaret,safety,e-ticaret ai insan onayı,/guven-merkezi.html,true,false
+Q004,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q005,gayrimenkul,safety,emlak ai yetki sınırı,/guven-merkezi.html,true,false
+Q006,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q007,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi,/rehberler/roofing-lead-yonetimi.html,true,false
+Q008,general,price,ai otomasyon fiyatları,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q009,general,proof,ai otomasyon güvenilirlik testi,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q010,general,approval,ai otomasyon insan onayı,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
+Q011,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu örnek 11,/sektorler/e-ticaret.html,true,false
+Q012,e_ticaret,cost,e-ticaret ai otomasyon maliyeti örnek 12,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q013,e_ticaret,safety,e-ticaret ai insan onayı örnek 13,/guven-merkezi.html,true,false
+Q014,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu örnek 14,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q015,gayrimenkul,safety,emlak ai yetki sınırı örnek 15,/guven-merkezi.html,true,false
+Q016,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu örnek 16,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q017,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi örnek 17,/rehberler/roofing-lead-yonetimi.html,true,false
+Q018,general,price,ai otomasyon fiyatları örnek 18,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q019,general,proof,ai otomasyon güvenilirlik testi örnek 19,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q020,general,approval,ai otomasyon insan onayı örnek 20,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
+Q021,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu örnek 21,/sektorler/e-ticaret.html,true,false
+Q022,e_ticaret,cost,e-ticaret ai otomasyon maliyeti örnek 22,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q023,e_ticaret,safety,e-ticaret ai insan onayı örnek 23,/guven-merkezi.html,true,false
+Q024,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu örnek 24,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q025,gayrimenkul,safety,emlak ai yetki sınırı örnek 25,/guven-merkezi.html,true,false
+Q026,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu örnek 26,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q027,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi örnek 27,/rehberler/roofing-lead-yonetimi.html,true,false
+Q028,general,price,ai otomasyon fiyatları örnek 28,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q029,general,proof,ai otomasyon güvenilirlik testi örnek 29,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q030,general,approval,ai otomasyon insan onayı örnek 30,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
+Q031,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu örnek 31,/sektorler/e-ticaret.html,true,false
+Q032,e_ticaret,cost,e-ticaret ai otomasyon maliyeti örnek 32,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q033,e_ticaret,safety,e-ticaret ai insan onayı örnek 33,/guven-merkezi.html,true,false
+Q034,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu örnek 34,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q035,gayrimenkul,safety,emlak ai yetki sınırı örnek 35,/guven-merkezi.html,true,false
+Q036,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu örnek 36,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q037,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi örnek 37,/rehberler/roofing-lead-yonetimi.html,true,false
+Q038,general,price,ai otomasyon fiyatları örnek 38,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q039,general,proof,ai otomasyon güvenilirlik testi örnek 39,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q040,general,approval,ai otomasyon insan onayı örnek 40,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
+Q041,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu örnek 41,/sektorler/e-ticaret.html,true,false
+Q042,e_ticaret,cost,e-ticaret ai otomasyon maliyeti örnek 42,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q043,e_ticaret,safety,e-ticaret ai insan onayı örnek 43,/guven-merkezi.html,true,false
+Q044,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu örnek 44,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q045,gayrimenkul,safety,emlak ai yetki sınırı örnek 45,/guven-merkezi.html,true,false
+Q046,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu örnek 46,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q047,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi örnek 47,/rehberler/roofing-lead-yonetimi.html,true,false
+Q048,general,price,ai otomasyon fiyatları örnek 48,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q049,general,proof,ai otomasyon güvenilirlik testi örnek 49,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q050,general,approval,ai otomasyon insan onayı örnek 50,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
+Q051,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu örnek 51,/sektorler/e-ticaret.html,true,false
+Q052,e_ticaret,cost,e-ticaret ai otomasyon maliyeti örnek 52,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q053,e_ticaret,safety,e-ticaret ai insan onayı örnek 53,/guven-merkezi.html,true,false
+Q054,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu örnek 54,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q055,gayrimenkul,safety,emlak ai yetki sınırı örnek 55,/guven-merkezi.html,true,false
+Q056,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu örnek 56,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q057,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi örnek 57,/rehberler/roofing-lead-yonetimi.html,true,false
+Q058,general,price,ai otomasyon fiyatları örnek 58,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q059,general,proof,ai otomasyon güvenilirlik testi örnek 59,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q060,general,approval,ai otomasyon insan onayı örnek 60,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
+Q061,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu örnek 61,/sektorler/e-ticaret.html,true,false
+Q062,e_ticaret,cost,e-ticaret ai otomasyon maliyeti örnek 62,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q063,e_ticaret,safety,e-ticaret ai insan onayı örnek 63,/guven-merkezi.html,true,false
+Q064,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu örnek 64,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q065,gayrimenkul,safety,emlak ai yetki sınırı örnek 65,/guven-merkezi.html,true,false
+Q066,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu örnek 66,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q067,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi örnek 67,/rehberler/roofing-lead-yonetimi.html,true,false
+Q068,general,price,ai otomasyon fiyatları örnek 68,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q069,general,proof,ai otomasyon güvenilirlik testi örnek 69,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q070,general,approval,ai otomasyon insan onayı örnek 70,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
+Q071,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu örnek 71,/sektorler/e-ticaret.html,true,false
+Q072,e_ticaret,cost,e-ticaret ai otomasyon maliyeti örnek 72,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q073,e_ticaret,safety,e-ticaret ai insan onayı örnek 73,/guven-merkezi.html,true,false
+Q074,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu örnek 74,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q075,gayrimenkul,safety,emlak ai yetki sınırı örnek 75,/guven-merkezi.html,true,false
+Q076,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu örnek 76,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q077,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi örnek 77,/rehberler/roofing-lead-yonetimi.html,true,false
+Q078,general,price,ai otomasyon fiyatları örnek 78,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q079,general,proof,ai otomasyon güvenilirlik testi örnek 79,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q080,general,approval,ai otomasyon insan onayı örnek 80,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
+Q081,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu örnek 81,/sektorler/e-ticaret.html,true,false
+Q082,e_ticaret,cost,e-ticaret ai otomasyon maliyeti örnek 82,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q083,e_ticaret,safety,e-ticaret ai insan onayı örnek 83,/guven-merkezi.html,true,false
+Q084,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu örnek 84,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q085,gayrimenkul,safety,emlak ai yetki sınırı örnek 85,/guven-merkezi.html,true,false
+Q086,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu örnek 86,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q087,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi örnek 87,/rehberler/roofing-lead-yonetimi.html,true,false
+Q088,general,price,ai otomasyon fiyatları örnek 88,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q089,general,proof,ai otomasyon güvenilirlik testi örnek 89,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q090,general,approval,ai otomasyon insan onayı örnek 90,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
+Q091,e_ticaret,problem,e-ticaret sipariş istisnası otomasyonu örnek 91,/sektorler/e-ticaret.html,true,false
+Q092,e_ticaret,cost,e-ticaret ai otomasyon maliyeti örnek 92,/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html,true,false
+Q093,e_ticaret,safety,e-ticaret ai insan onayı örnek 93,/guven-merkezi.html,true,false
+Q094,gayrimenkul,problem,gayrimenkul bakım talebi otomasyonu örnek 94,/sektorler/gayrimenkul-yonetimi.html,true,false
+Q095,gayrimenkul,safety,emlak ai yetki sınırı örnek 95,/guven-merkezi.html,true,false
+Q096,ev_hizmetleri,problem,ev hizmetleri müşteri talebi takip otomasyonu örnek 96,/cozumler/roofing-ev-hizmetleri.html,true,false
+Q097,ev_hizmetleri,vendor,roofing ai otomasyon ajansı seçimi örnek 97,/rehberler/roofing-lead-yonetimi.html,true,false
+Q098,general,price,ai otomasyon fiyatları örnek 98,/rehberler/ai-otomasyon-fiyatlari.html,true,false
+Q099,general,proof,ai otomasyon güvenilirlik testi örnek 99,/kanit/workflow-guven-benchmark-v1.html,true,false
+Q100,general,approval,ai otomasyon insan onayı örnek 100,/rehberler/ai-otomasyonunda-insan-onayi.html,true,false
