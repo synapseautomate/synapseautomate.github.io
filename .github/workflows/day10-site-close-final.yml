@@ -1,0 +1,174 @@
+name: Day 10 Site Close FINAL
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout selected branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Guard exact fresh snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          check_sha() {
+            file="$1"; expected="$2"
+            test -f "$file" || { echo "Guard failed: missing $file. Nothing applied."; exit 21; }
+            actual="$(sha256sum "$file" | awk '{print $1}')"
+            if [ "$actual" != "$expected" ]; then
+              echo "Guard failed: $file changed after the fresh ZIP. Nothing applied."
+              echo "expected=$expected"
+              echo "actual=$actual"
+              exit 21
+            fi
+          }
+          check_sha "araclar/surecini-20-dakikada-haritala.html" "acf380b178c1ee4fc3f09eb790b6466e010523657deecc94aa201b1e2d2c53d6"
+          check_sha "surec-analizi.html" "752da4ce4f86cbd3cfed29d6047dc7739c86ad3e3a4ef21556f90ad9c3cbbfc0"
+          check_sha "cozumler/roofing-ev-hizmetleri.html" "3eb7e5ab40689e2531c60e0dfc553f73d932c99119f5038c83fcf657aba35636"
+          mkdir -p /tmp/day10-before/araclar /tmp/day10-before/cozumler
+          cp araclar/surecini-20-dakikada-haritala.html /tmp/day10-before/araclar/
+          cp surec-analizi.html /tmp/day10-before/
+          cp cozumler/roofing-ev-hizmetleri.html /tmp/day10-before/cozumler/
+          echo "PASS: exact fresh snapshot guard"
+
+      - name: Apply measurement-only Day 10 close
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          root=Path('.')
+
+          def replace_once(path, old, new, label):
+              p=root/path
+              s=p.read_text(encoding='utf-8')
+              count=s.count(old)
+              if count != 1:
+                  raise SystemExit(f'{label}: expected 1 anchor, found {count}')
+              p.write_text(s.replace(old,new,1), encoding='utf-8')
+
+          # Free process-map tool: preserve the published UTM chain in its FormSubmit
+          # request and in both links that continue to the paid Process Analysis page.
+          tool=Path('araclar/surecini-20-dakikada-haritala.html')
+          p=root/tool
+          s=p.read_text(encoding='utf-8')
+          if 'synapse-d10-attribution' in s:
+              raise SystemExit('tool already contains final Day 10 attribution patch')
+          script='''<script id="synapse-d10-attribution">(function(){var p=new URLSearchParams(location.search),v={source:p.get('utm_source')||p.get('src')||'direct',medium:p.get('utm_medium')||'',campaign:p.get('utm_campaign')||'',content:p.get('utm_content')||'',src:p.get('src')||'process-map'};var f=document.querySelector('form[action*="formsubmit.co"]');if(f){[['Kaynak',v.source],['Medya',v.medium],['Kampanya',v.campaign],['Icerik',v.content],['Giris_Sayfasi',location.pathname]].forEach(function(x){var i=document.createElement('input');i.type='hidden';i.name=x[0];i.value=(x[1]||'').slice(0,160);f.appendChild(i);});}document.querySelectorAll('a[href]').forEach(function(a){var u;try{u=new URL(a.getAttribute('href'),location.href);}catch(e){return;}if(!/\\/surec-analizi\\.html$/.test(u.pathname))return;[['utm_source',p.get('utm_source')],['utm_medium',p.get('utm_medium')],['utm_campaign',p.get('utm_campaign')],['utm_content',p.get('utm_content')],['src',v.src]].forEach(function(x){if(x[1])u.searchParams.set(x[0],x[1]);});a.href=u.pathname+u.search;});})();</script>'''
+          if s.count('</body>') != 1:
+              raise SystemExit('tool: unexpected body-close anchor count')
+          p.write_text(s.replace('</body>', script+'</body>', 1), encoding='utf-8')
+
+          # Paid Process Analysis form: add medium, content/asset and source-detail.
+          paid=Path('surec-analizi.html')
+          old='<input id="lead-source" name="Kaynak" type="hidden" value="direct"/><input id="lead-campaign" name="Kampanya" type="hidden" value=""/><input id="lead-landing" name="Giris_Sayfasi" type="hidden" value="/surec-analizi.html"/>'
+          new='<input id="lead-source" name="Kaynak" type="hidden" value="direct"/><input id="lead-medium" name="Medya" type="hidden" value=""/><input id="lead-campaign" name="Kampanya" type="hidden" value=""/><input id="lead-content" name="Icerik" type="hidden" value=""/><input id="lead-src" name="Kaynak_Detayi" type="hidden" value=""/><input id="lead-landing" name="Giris_Sayfasi" type="hidden" value="/surec-analizi.html"/>'
+          replace_once(paid, old, new, 'paid hidden attribution fields')
+          old_script="<script>(function(){var p=new URLSearchParams(location.search);var src=p.get('utm_source')||p.get('src')||'direct';var cmp=p.get('utm_campaign')||'';var a=document.getElementById('lead-source'),b=document.getElementById('lead-campaign'),c=document.getElementById('lead-landing');if(a)a.value=src.slice(0,80);if(b)b.value=cmp.slice(0,120);if(c)c.value=location.pathname.slice(0,160);})();</script>"
+          new_script="<script id=\"synapse-d10-attribution\">(function(){var p=new URLSearchParams(location.search),v={source:p.get('utm_source')||p.get('src')||'direct',medium:p.get('utm_medium')||'',campaign:p.get('utm_campaign')||'',content:p.get('utm_content')||'',src:p.get('src')||''};[['lead-source',v.source,80],['lead-medium',v.medium,80],['lead-campaign',v.campaign,120],['lead-content',v.content,120],['lead-src',v.src,80],['lead-landing',location.pathname,160]].forEach(function(x){var e=document.getElementById(x[0]);if(e)e.value=(x[1]||'').slice(0,x[2]);});})();</script>"
+          replace_once(paid, old_script, new_script, 'paid attribution script')
+
+          # Roofing: remove accidental e-commerce campaign attribution from the nav CTA
+          # and label nav vs hero placements without changing customer-visible copy.
+          roof=Path('cozumler/roofing-ev-hizmetleri.html')
+          replace_once(roof,
+              '../surec-analizi.html?src=day10-offer&utm_source=site&utm_medium=proof&utm_campaign=ecommerce-revenue"',
+              '../surec-analizi.html?src=home-services&utm_source=site&utm_medium=sector&utm_campaign=home-services-revenue&utm_content=nav-cta"',
+              'roofing nav attribution')
+          replace_once(roof,
+              '../surec-analizi.html?src=home-services&utm_source=site&utm_medium=sector&utm_campaign=home-services-revenue"',
+              '../surec-analizi.html?src=home-services&utm_source=site&utm_medium=sector&utm_campaign=home-services-revenue&utm_content=hero-cta"',
+              'roofing hero attribution')
+          print('PASS: final Day 10 patch applied')
+          PY
+
+      - name: Quality gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/day10_full_quality_gate.py
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          import re
+
+          root=Path('.')
+          before=Path('/tmp/day10-before')
+          targets=[
+              ('araclar/surecini-20-dakikada-haritala.html', before/'araclar/surecini-20-dakikada-haritala.html'),
+              ('surec-analizi.html', before/'surec-analizi.html'),
+              ('cozumler/roofing-ev-hizmetleri.html', before/'cozumler/roofing-ev-hizmetleri.html'),
+          ]
+
+          class VisibleText(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.skip=0; self.parts=[]
+              def handle_starttag(self, tag, attrs):
+                  if tag in ('script','style'): self.skip += 1
+              def handle_endtag(self, tag):
+                  if tag in ('script','style') and self.skip: self.skip -= 1
+              def handle_data(self, data):
+                  if not self.skip and data.strip(): self.parts.append(' '.join(data.split()))
+
+          def visible_text(html):
+              p=VisibleText(); p.feed(html); return ' '.join(p.parts)
+          def styles(html):
+              return re.findall(r'<style[^>]*>(.*?)</style>', html, flags=re.I|re.S)
+
+          for rel,bp in targets:
+              old=bp.read_text(encoding='utf-8')
+              new=(root/rel).read_text(encoding='utf-8')
+              if visible_text(old) != visible_text(new):
+                  raise SystemExit(f'FAIL: customer-visible copy changed in {rel}')
+              if styles(old) != styles(new):
+                  raise SystemExit(f'FAIL: CSS changed in {rel}')
+
+          tool=(root/'araclar/surecini-20-dakikada-haritala.html').read_text(encoding='utf-8')
+          paid=(root/'surec-analizi.html').read_text(encoding='utf-8')
+          roof=(root/'cozumler/roofing-ev-hizmetleri.html').read_text(encoding='utf-8')
+          for token in ['synapse-d10-attribution','Kaynak','Medya','Kampanya','Icerik','Giris_Sayfasi','utm_content']:
+              if token not in tool: raise SystemExit(f'FAIL: tool attribution missing {token}')
+          for token in ['lead-medium','lead-content','lead-src','synapse-d10-attribution']:
+              if token not in paid: raise SystemExit(f'FAIL: paid attribution missing {token}')
+          if 'ecommerce-revenue' in roof: raise SystemExit('FAIL: roofing still carries e-commerce campaign attribution')
+          if roof.count('home-services-revenue') != 2: raise SystemExit('FAIL: roofing CTA campaign count')
+          if 'utm_content=nav-cta' not in roof or 'utm_content=hero-cta' not in roof:
+              raise SystemExit('FAIL: roofing placement attribution missing')
+          if roof.count('<details>') != 12: raise SystemExit('FAIL: roofing visible FAQ count')
+          if roof.count('"@type": "Question"') != 12: raise SystemExit('FAIL: roofing FAQ schema count')
+          print('PASS: technical + editorial + invisible-change QA')
+          PY
+          git diff --check
+          if grep -E -n 'ghp_[A-Za-z0-9]{20,}|AIza[0-9A-Za-z_-]{20,}|BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|sk-[A-Za-z0-9]{20,}' \
+            araclar/surecini-20-dakikada-haritala.html surec-analizi.html cozumler/roofing-ev-hizmetleri.html; then
+            echo "FAIL: secret-like token found"
+            exit 1
+          fi
+          echo "PASS: secret scan"
+
+      - name: Commit site close and remove temporary workflows
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add araclar/surecini-20-dakikada-haritala.html surec-analizi.html cozumler/roofing-ev-hizmetleri.html
+          git rm -f --ignore-unmatch \
+            .github/workflows/site-measurement-consistency-once.yml \
+            .github/workflows/site-measurement-consistency-once-v2.yml \
+            .github/workflows/day10-site-close-final.yml
+          if git diff --cached --quiet; then
+            echo "No staged change; nothing to commit."
+            exit 0
+          fi
+          git commit -m "Day 10: close attribution measurement gap"
+          git push origin "HEAD:${{ github.ref_name }}"
