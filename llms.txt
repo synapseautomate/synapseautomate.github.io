@@ -41,6 +41,9 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - [Map your process in 20 minutes](https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html)
 - [Automation readiness score](https://synapseautomate.github.io/araclar/surec-hazirlik-skoru.html)
 - [AI automation risk assessment](https://synapseautomate.github.io/araclar/ai-otomasyon-risk-degerlendirmesi.html)
+- [Structured extraction: source, deterministic rules and human approval](https://synapseautomate.github.io/rehberler/yapilandirilmis-cikarim-kaynak-dogrulama-insan-onayi.html)
+- [Health / dental / wellness appointment automation safe-start guide](https://synapseautomate.github.io/rehberler/saglik-randevu-otomasyonu-guvenli-baslangic.html)
+- [Health / dental / wellness process checklist](https://synapseautomate.github.io/araclar/saglik-randevu-surec-kontrol-listesi.html)
 
 ## Portfolio boundary
 - Synapse Automate focuses on enterprise AI automation.

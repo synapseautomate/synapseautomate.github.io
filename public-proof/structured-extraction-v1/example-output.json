@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "record_id": "synthetic-A104",
+  "source": {
+    "source_id": "mail-001",
+    "source_type": "email",
+    "source_ref": "synthetic://mail-001"
+  },
+  "fields": {
+    "request_type": "return",
+    "order_id": "A-104",
+    "priority": null,
+    "summary": "Beden uymadi nedeniyle iade talebi; teslim tarihi kaynakta yok."
+  },
+  "unknowns": ["priority"],
+  "decision": {
+    "route": "HUMAN_REVIEW",
+    "reason": "Eksik alan ve parasal sonuç ihtimali nedeniyle insan incelemesi.",
+    "human_owner": "Operations reviewer"
+  },
+  "provenance": [
+    {
+      "field": "order_id",
+      "source_ref": "synthetic://mail-001",
+      "evidence": "Siparis #A-104"
+    }
+  ]
+}

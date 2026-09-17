@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Synapse Structured Extraction v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "source",
+    "fields",
+    "unknowns",
+    "decision",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "source_ref"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "source_type": {
+          "enum": [
+            "email",
+            "pdf",
+            "xlsx",
+            "csv",
+            "json",
+            "text"
+          ]
+        },
+        "source_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_type",
+        "order_id",
+        "priority",
+        "summary"
+      ],
+      "properties": {
+        "request_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "priority": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route",
+        "reason",
+        "human_owner"
+      ],
+      "properties": {
+        "route": {
+          "enum": [
+            "AUTO_PROCEED",
+            "HUMAN_REVIEW",
+            "HUMAN_APPROVAL",
+            "BLOCK_AND_ESCALATE"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "human_owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "source_ref",
+          "evidence"
+        ],
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

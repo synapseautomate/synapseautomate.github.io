@@ -1,0 +1,150 @@
+[
+  {
+    "id": "T01",
+    "source": {
+      "source_id": "mail-001",
+      "source_type": "email",
+      "source_ref": "synthetic://mail-001"
+    },
+    "input": "Sipariş #A-104. Müşteri iade nedeni: beden uymadı. Teslim tarihi belirtilmedi.",
+    "expected": {
+      "order_id": "A-104",
+      "request_type": "return",
+      "unknowns": [
+        "priority"
+      ],
+      "route": "HUMAN_REVIEW"
+    }
+  },
+  {
+    "id": "T02",
+    "source": {
+      "source_id": "mail-002",
+      "source_type": "email",
+      "source_ref": "synthetic://mail-002"
+    },
+    "input": "Sipariş #B-205. Adres alanı eksik. Kargoya verilmeden önce kontrol gerekli.",
+    "expected": {
+      "order_id": "B-205",
+      "request_type": "address_exception",
+      "unknowns": [
+        "priority"
+      ],
+      "route": "HUMAN_REVIEW"
+    }
+  },
+  {
+    "id": "T03",
+    "source": {
+      "source_id": "csv-003",
+      "source_type": "csv",
+      "source_ref": "synthetic://csv-003"
+    },
+    "input": "request_type,order_id,priority,summary\\nstock_exception,C-9,high,SKU stock mismatch",
+    "expected": {
+      "order_id": "C-9",
+      "request_type": "stock_exception",
+      "unknowns": [],
+      "route": "HUMAN_REVIEW"
+    }
+  },
+  {
+    "id": "T04",
+    "source": {
+      "source_id": "json-004",
+      "source_type": "json",
+      "source_ref": "synthetic://json-004"
+    },
+    "input": "{\"request_type\":\"faq\",\"priority\":\"low\",\"summary\":\"Kargo takip linki nerede?\"}",
+    "expected": {
+      "order_id": null,
+      "request_type": "faq",
+      "unknowns": [
+        "order_id"
+      ],
+      "route": "AUTO_PROCEED"
+    }
+  },
+  {
+    "id": "T05",
+    "source": {
+      "source_id": "txt-005",
+      "source_type": "text",
+      "source_ref": "synthetic://txt-005"
+    },
+    "input": "Ödeme iadesi talep ediliyor. Sipariş #P-88. Son onay gerekli.",
+    "expected": {
+      "order_id": "P-88",
+      "request_type": "refund",
+      "unknowns": [
+        "priority"
+      ],
+      "route": "HUMAN_APPROVAL"
+    }
+  },
+  {
+    "id": "T06",
+    "source": {
+      "source_id": "broken-006",
+      "source_type": "pdf",
+      "source_ref": "synthetic://broken-006"
+    },
+    "input": "<CORRUPT>",
+    "expected_error": "PARSE_FAILED"
+  },
+  {
+    "id": "T07",
+    "source": {
+      "source_id": "dup-007",
+      "source_type": "text",
+      "source_ref": "synthetic://dup-007"
+    },
+    "input": "DUPLICATE",
+    "expected_error": "DUPLICATE_INPUT"
+  },
+  {
+    "id": "T08",
+    "source": {
+      "source_id": "contradict-008",
+      "source_type": "text",
+      "source_ref": "synthetic://contradict-008"
+    },
+    "input": "Sipariş #X-1 öncelik yüksek. Aynı kayıtta öncelik düşük.",
+    "expected": {
+      "order_id": "X-1",
+      "request_type": null,
+      "unknowns": [
+        "request_type",
+        "priority"
+      ],
+      "route": "HUMAN_REVIEW"
+    }
+  },
+  {
+    "id": "T09",
+    "source": {
+      "source_id": "money-009",
+      "source_type": "email",
+      "source_ref": "synthetic://money-009"
+    },
+    "input": "Sipariş #M-2 için 3.200 TL iade yapın.",
+    "expected": {
+      "order_id": "M-2",
+      "request_type": "refund",
+      "unknowns": [
+        "priority"
+      ],
+      "route": "HUMAN_APPROVAL"
+    }
+  },
+  {
+    "id": "T10",
+    "source": {
+      "source_id": "empty-010",
+      "source_type": "text",
+      "source_ref": "synthetic://empty-010"
+    },
+    "input": "",
+    "expected_error": "EMPTY_INPUT"
+  }
+]
