@@ -1,0 +1,4 @@
+case_id,scenario,source_state,automated_step,human_gate,safe_output,note
+FIN-01,Duplicate payment anomaly,ledger rows present; duplicate candidate,flag duplicate candidate + evidence refs,payment/reversal approval,HUMAN_REVIEW,Synthetic; not financial advice
+FIN-02,Missing FX source,amount present; approved FX source missing,mark FX field unknown,any conversion/booking action,STOP_ESCALATE,Synthetic; no rate invented
+FIN-03,Segment report preparation,approved aggregated input,compute deterministic grouping + draft summary,release/external distribution,HUMAN_APPROVAL,Synthetic; reporting support only

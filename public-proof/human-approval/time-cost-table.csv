@@ -1,0 +1,7 @@
+step,measured_minutes,measurement_source,status
+input_triage,,,unmeasured
+source_check,,,unmeasured
+structured_extraction,,,unmeasured
+deterministic_validation,,,unmeasured
+human_review,,,unmeasured
+final_action,,,unmeasured

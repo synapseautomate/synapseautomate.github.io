@@ -1,0 +1,3 @@
+timestamp,case_id,actor_role,action,reason,external_write,synthetic
+2026-09-18T09:00:00Z,SYN-ECO-12,operations_reviewer,EDIT,delivery confirmation requested,false,true
+2026-09-18T09:04:00Z,SYN-ECO-12,operations_reviewer,ESCALATE,source evidence incomplete,false,true

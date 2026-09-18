@@ -60,3 +60,19 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 ## Commercial verification
 - Contracting and invoice identity, tax/currency, payment terms, data scope and acceptance criteria are verified in writing before payment.
 - Public synthetic tests are methodology evidence, not customer results.
+## Human approval and finance operations (2026-09-18)
+- Human approval decision table: /rehberler/insan-onayi-escalation-karar-tablosu.html
+- Approval states: AUTO_PROCEED / HUMAN_REVIEW / HUMAN_APPROVAL / STOP_ESCALATE.
+- Finance operations guide: /rehberler/finans-ai-otomasyonu-guvenli-baslangic.html
+- Finance checklist: /araclar/finans-surec-kontrol-listesi.html
+- Commercial success metric: time to approved result + critical-error rate, not automation percentage.
+
+- İnsan onayı karar tablosu: https://synapseautomate.github.io/rehberler/insan-onayi-escalation-karar-tablosu.html
+- İnsan onay kartı örneği: https://synapseautomate.github.io/kanit/ornek-insan-onay-karti.html
+- Finans AI güvenli başlangıç: https://synapseautomate.github.io/rehberler/finans-ai-otomasyonu-guvenli-baslangic.html
+- Finans süreç kontrol listesi: https://synapseautomate.github.io/araclar/finans-surec-kontrol-listesi.html
+
+## Flagship standard
+- Enterprise AI Workflow Reliability Standard 2026: https://synapseautomate.github.io/standards/enterprise-ai-workflow-reliability-standard-2026.html
+- Scope: source integrity, unknown preservation, structured parse gate, deterministic validation, human authority, least agency, observability, regression/adversarial testing, incident recovery, approved-result measurement.
+- Evidence boundary: current public proof is synthetic/reproducible; no production accuracy, certification, compliance or ROI claim.

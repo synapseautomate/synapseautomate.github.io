@@ -1,0 +1,29 @@
+{
+  "case_id": "SYN-ECO-12",
+  "source": {
+    "id": "order:A-104",
+    "verified": true
+  },
+  "extracted": {
+    "request_type": "refund",
+    "amount": "3200 TRY",
+    "reason": "size_mismatch"
+  },
+  "unknowns": [
+    "delivery_confirmation"
+  ],
+  "rule_result": {
+    "state": "HUMAN_APPROVAL",
+    "reason": "CONSEQUENTIAL_ACTION"
+  },
+  "proposed_action": "Prepare refund review only",
+  "authority_owner": "Authorized operations reviewer",
+  "allowed_actions": [
+    "EDIT",
+    "REJECT",
+    "ESCALATE",
+    "APPROVE_FOR_MANUAL_EXECUTION"
+  ],
+  "external_write": false,
+  "synthetic": true
+}

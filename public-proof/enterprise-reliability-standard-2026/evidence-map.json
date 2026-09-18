@@ -1,0 +1,26 @@
+{
+  "standard": "Synapse Automate Enterprise AI Workflow Reliability Standard 2026",
+  "version": "1.0-draft",
+  "evidence_boundary": "Synthetic and reproducible public proof only. No production accuracy, compliance or ROI claim.",
+  "controls": {
+    "R1_source_provenance": ["public-proof/provenance-50-v1", "public-proof/structured-extraction-v1"],
+    "R2_unknown_preservation": ["public-proof/provenance-50-v1", "public-proof/reliability-regression-v1"],
+    "R3_structured_parse_gate": ["public-proof/structured-extraction-v1"],
+    "R4_deterministic_validation": ["public-proof/human-approval", "public-proof/reliability-regression-v1"],
+    "R5_human_authority": ["public-proof/human-approval"],
+    "R6_least_agency": ["public-proof/human-approval", "public-proof/reliability-regression-v1"],
+    "R7_observability": ["public-proof/human-approval/action-log-sample.csv"],
+    "R8_regression_adversarial": ["public-proof/reliability-regression-v1"],
+    "R9_incident_recovery": ["public-proof/human-approval/incident-tabletop.md"],
+    "R10_business_measurement": ["public-proof/human-approval/time-cost-table.csv"]
+  },
+  "verified_local_results": {
+    "deterministic_cases": "10/10 PASS",
+    "critical_rule_families": "5/5 positive+negative coverage",
+    "structured_extraction": "10/10 PASS",
+    "ingestion": "10/10 PASS (5 normal + 5 broken)",
+    "provenance": "50/50 PASS",
+    "regression": "100/100 PASS",
+    "mutation_detection": "5/5 detected"
+  }
+}
