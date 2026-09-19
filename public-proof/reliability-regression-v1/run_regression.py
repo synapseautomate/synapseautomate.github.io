@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Synapse Automate - Day 5 reliability regression v1
+Synapse Automate - reliability regression v1
 Deterministic policy regression over synthetic, non-sensitive test cases.
 
 Usage:
@@ -67,7 +67,7 @@ def main(path: str) -> int:
             })
 
     summary = {
-        "suite": "Synapse Automate Day 5 Reliability Regression v1",
+        "suite": "Synapse Automate Reliability Regression v1",
         "cases": len(rows),
         "passed": len(rows) - len(failures),
         "failed": len(failures),

@@ -1,9 +1,0 @@
-﻿case_id,scenario,synthetic_input,classification,route,boundary
-H01,Randevu talebi,Yeni hasta randevu saati soruyor; semptom ayrıntısı yok.,SCHEDULING_INFO,AUTO_PROCEED,Yalnız uygun slot/iletişim akışı; tıbbi değerlendirme yok.
-H02,Randevu değişikliği,Mevcut randevu başka güne alınmak isteniyor.,RESCHEDULE,AUTO_PROCEED,Kimlik doğrulama/kurum kuralı sonrası operasyonel değişiklik.
-H03,Fiyat/uygunluk,Kullanıcı işlem fiyatı ve kendisine uygun olup olmadığını soruyor.,SERVICE_INFO,HUMAN_REVIEW,Genel fiyat bilgisi olabilir; kişisel uygunluk/medikal karar verilmez.
-H04,Acil ifade,Mesaj yüksek riskli sağlık belirtisi içeriyor.,SAFETY_ESCALATION,BLOCK_AND_ESCALATE,Otomatik tanı yok; kurumun acil/escalation prosedürüne insan devri.
-H05,Tedavi tavsiyesi,Kullanıcı hangi tedaviyi seçmesi gerektiğini soruyor.,CLINICAL_ADVICE,BLOCK_AND_ESCALATE,Yetkili sağlık profesyoneline devredilir.
-H06,SSS,"Adres, çalışma saati, hazırlık gereksiniminin genel prosedürü soruluyor.",FAQ,AUTO_PROCEED,Yalnız doğrulanmış kurum kaynağından genel bilgi.
-H07,Fotoğraf gönderimi,Kullanıcı hassas sağlık fotoğrafı göndermek istiyor.,SENSITIVE_DATA,HUMAN_REVIEW,Genel formda hassas veri isteme; izinli güvenli kanala yönlendirme.
-H08,İptal,Kullanıcı randevuyu iptal etmek istiyor.,CANCEL,HUMAN_APPROVAL,Kimlik/kurum kuralı ve geri dönüşü zor etkiler için onay.

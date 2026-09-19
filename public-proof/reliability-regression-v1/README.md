@@ -1,8 +1,8 @@
-# Synapse Automate - Day 5 Reliability Regression v1
+# Synapse Automate - Reliability Regression v1
 
 **Run date:** 2026-09-07  
 **Data:** 100 synthetic, non-sensitive cases  
-**Purpose:** Turn the Day 5 reliability standard into a public, rerunnable proof artifact.
+**Purpose:** Provide a public, rerunnable proof artifact for deterministic reliability controls.
 
 ## What this proves
 

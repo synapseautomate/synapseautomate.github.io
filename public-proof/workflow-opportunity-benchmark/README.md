@@ -9,8 +9,8 @@
 - **Canlı karar tablosu:** https://synapseautomate.github.io/rehberler/ai-otomasyon-is-akisi-karar-tablosu.html
 - **Ücretsiz süreç haritalama aracı:** https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html
 - **Ücretli Süreç Analizi:** https://synapseautomate.github.io/surec-analizi.html
-- **30 satırlık public CSV:** https://synapseautomate.github.io/veri/gun4-workflow-inventory-public.csv
-- **Puanlama metodolojisi:** https://synapseautomate.github.io/veri/gun4-workflow-opportunity-methodology.md
+- **30 satırlık public CSV:** https://synapseautomate.github.io/veri/workflow-opportunity-inventory-public.csv
+- **Puanlama metodolojisi:** https://synapseautomate.github.io/veri/workflow-opportunity-methodology.md
 
 ## Kapsam
 
@@ -54,7 +54,7 @@ acı + sıklık + (2 × para yakınlığı) + (2 × veri erişimi)
 + ölçülebilirlik + dağınıklık - risk - satış çevrimi
 ```
 
-Detaylı metodoloji: [`veri/gun4-workflow-opportunity-methodology.md`](../../veri/gun4-workflow-opportunity-methodology.md)
+Detaylı metodoloji: [`veri/workflow-opportunity-methodology.md`](../../veri/workflow-opportunity-methodology.md)
 
 ## İnsan denetimi sınırı
 
@@ -74,9 +74,9 @@ Bkz. [`USAGE.md`](USAGE.md) ve [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md).
 
 Bu klasör kanıt vitrini; kaynak veriyi kopyalamaz:
 
-- [`veri/gun4-workflow-inventory-public.csv`](../../veri/gun4-workflow-inventory-public.csv)
-- [`veri/gun4-opportunity-scorecard.csv`](../../veri/gun4-opportunity-scorecard.csv)
-- [`veri/gun4-workflow-opportunity-methodology.md`](../../veri/gun4-workflow-opportunity-methodology.md)
+- [`veri/workflow-opportunity-inventory-public.csv`](../../veri/workflow-opportunity-inventory-public.csv)
+- [`veri/workflow-opportunity-scorecard.csv`](../../veri/workflow-opportunity-scorecard.csv)
+- [`veri/workflow-opportunity-methodology.md`](../../veri/workflow-opportunity-methodology.md)
 - [`rehberler/ai-otomasyon-is-akisi-karar-tablosu.html`](../../rehberler/ai-otomasyon-is-akisi-karar-tablosu.html)
 
 Makinece okunabilir manifest: [`proof-manifest.json`](proof-manifest.json)

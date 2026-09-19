@@ -1,8 +1,0 @@
-metric,value,status,decision_note
-form_submissions,0,measured,Day 10 end baseline
-qualified_inbound,0,measured,Day 10 end baseline
-payment,0,measured,bank confirmed 0
-day10_document_impressions,,unmeasured,needs native LinkedIn 24h analytics
-day10_document_clicks,,unmeasured,needs native LinkedIn 24h analytics
-day10_document_ctr,,unmeasured,derive only if clicks and impressions available
-active_bottleneck,,pending,lock after 24h analytics

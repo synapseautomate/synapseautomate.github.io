@@ -1,6 +1,6 @@
 # Data Dictionary
 
-`veri/gun4-workflow-inventory-public.csv` alanları:
+`veri/workflow-opportunity-inventory-public.csv` alanları:
 
 | Alan | Anlamı | Public güvenlik kuralı |
 |---|---|---|

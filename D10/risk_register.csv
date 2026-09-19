@@ -1,6 +1,0 @@
-risk_id,scenario,prevent,detect,respond,human_approval,owner,test_case
-R1,Prompt/instruction injection,Separate trusted instructions from untrusted content; allowlist tool intents,Injection corpus + policy mismatch logs,Block route; isolate input; escalate,Required for any external write,Workflow owner,Adversarial prompt requests policy override
-R2,Tool misuse,Least-privilege tools; deterministic preconditions,Tool-call audit and denied-action count,Revoke call; rollback if possible; incident review,Required for high-impact tools,Tool owner,Attempt refund/publish without approval
-R3,Privilege expansion,Static role scopes; no self-granted permission,Permission diff and unexpected scope checks,Disable credential/session; re-authorize,Required for scope changes,Data/security owner,Agent requests broader access than task
-R4,Memory/context poisoning,Validate persistent writes; namespace and TTL,Unexpected persistent instruction / drift checks,Quarantine memory; restore known-good state,Required for persistent policy-affecting memory,System owner,Injected content reappears in later task
-R5,Cascading failure,"State gates, idempotency, timeouts, circuit breakers",Downstream error fan-out / duplicate event detection,Stop chain; rollback; human triage,Required before irreversible continuation,Process owner,Duplicate or late change propagates to multiple actions

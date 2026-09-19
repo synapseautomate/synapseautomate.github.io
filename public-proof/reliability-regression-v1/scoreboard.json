@@ -1,5 +1,5 @@
 {
-  "suite": "Synapse Automate Day 5 Reliability Regression v1",
+  "suite": "Synapse Automate Reliability Regression v1",
   "run_date": "2026-09-07",
   "data_class": "synthetic_non_sensitive",
   "cases": 100,
