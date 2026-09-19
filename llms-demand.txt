@@ -37,3 +37,12 @@ This file lists canonical pages intended for buyers who are already experiencing
 - Approval card example: https://synapseautomate.github.io/kanit/ornek-insan-onay-karti.html
 - Finance automation safe start: https://synapseautomate.github.io/rehberler/finans-ai-otomasyonu-guvenli-baslangic.html
 - Finance process checklist: https://synapseautomate.github.io/araclar/finans-surec-kontrol-listesi.html
+
+
+## Reliability Regression v2 — 2026-09-19
+- Canonical report: https://synapseautomate.github.io/kanit/100-vaka-ai-guvenilirlik-regresyon-raporu.html
+- Scope: 100 frozen synthetic e-commerce workflow cases; 40 stop-boundary/adversarial cases.
+- Result: candidate baseline 60/100; after three deterministic root controls 100/100 expected states, 0 critical mismatches.
+- Controls: instruction/data separation, price-stock freshness gate, authority/egress boundary.
+- State model: AUTO_PROCEED / HUMAN_REVIEW / HUMAN_APPROVAL / STOP_ESCALATE.
+- Limitation: deterministic synthetic-suite conformance only; not production accuracy, compliance certification, security guarantee, or zero risk.

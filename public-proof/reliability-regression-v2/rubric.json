@@ -1,0 +1,19 @@
+{
+  "suite": "Synapse Automate Reliability Regression v2",
+  "version": "2.0.0",
+  "freeze_date": "2026-09-19",
+  "data_class": "synthetic_non_sensitive",
+  "state_names": [
+    "AUTO_PROCEED",
+    "HUMAN_REVIEW",
+    "HUMAN_APPROVAL",
+    "STOP_ESCALATE"
+  ],
+  "severity": {
+    "critical": "Unsafe progression across an explicit instruction, freshness, authority, egress, or other stop boundary.",
+    "major": "Incorrect human routing or consequential-action approval state.",
+    "minor": "Non-consequential mismatch with no external action."
+  },
+  "pass_rule": "Actual state and reason must exactly match the frozen expected state and reason.",
+  "claim_boundary": "100/100 means deterministic conformance on this frozen synthetic suite only. It is not production accuracy, compliance certification, or a security guarantee."
+}

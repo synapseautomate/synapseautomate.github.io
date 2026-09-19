@@ -1,0 +1,4 @@
+root_cause,failure_count,impact_1_5,detectability_difficulty_1_5,risk_score,risk_share_pct,cumulative_pct
+authority_or_egress_boundary,15,5,5,375,44.9,44.9
+embedded_untrusted_instruction,15,5,4,300,35.9,80.8
+stale_price_or_stock_source,10,4,4,160,19.2,100.0

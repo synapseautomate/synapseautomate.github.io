@@ -1,0 +1,190 @@
+{
+  "run_date": "2026-09-19",
+  "cases": 20,
+  "passed": 20,
+  "failed": 0,
+  "critical_errors": 0,
+  "note": "Execution time covers local deterministic policy evaluation only; no network/model latency.",
+  "results": [
+    {
+      "case_id": "HOLD-001",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0021
+    },
+    {
+      "case_id": "HOLD-002",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0008
+    },
+    {
+      "case_id": "HOLD-003",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0005
+    },
+    {
+      "case_id": "HOLD-004",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0003
+    },
+    {
+      "case_id": "HOLD-005",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0008
+    },
+    {
+      "case_id": "HOLD-006",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0004
+    },
+    {
+      "case_id": "HOLD-007",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0003
+    },
+    {
+      "case_id": "HOLD-008",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0003
+    },
+    {
+      "case_id": "HOLD-009",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0006
+    },
+    {
+      "case_id": "HOLD-010",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0004
+    },
+    {
+      "case_id": "HOLD-011",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0003
+    },
+    {
+      "case_id": "HOLD-012",
+      "pass": true,
+      "actual_state": "STOP_ESCALATE",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0004
+    },
+    {
+      "case_id": "HOLD-013",
+      "pass": true,
+      "actual_state": "HUMAN_APPROVAL",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0007
+    },
+    {
+      "case_id": "HOLD-014",
+      "pass": true,
+      "actual_state": "HUMAN_APPROVAL",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0005
+    },
+    {
+      "case_id": "HOLD-015",
+      "pass": true,
+      "actual_state": "HUMAN_APPROVAL",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0004
+    },
+    {
+      "case_id": "HOLD-016",
+      "pass": true,
+      "actual_state": "HUMAN_APPROVAL",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0004
+    },
+    {
+      "case_id": "HOLD-017",
+      "pass": true,
+      "actual_state": "HUMAN_REVIEW",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.001
+    },
+    {
+      "case_id": "HOLD-018",
+      "pass": true,
+      "actual_state": "HUMAN_REVIEW",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0006
+    },
+    {
+      "case_id": "HOLD-019",
+      "pass": true,
+      "actual_state": "HUMAN_REVIEW",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0005
+    },
+    {
+      "case_id": "HOLD-020",
+      "pass": true,
+      "actual_state": "HUMAN_REVIEW",
+      "correction": "none",
+      "error": "none",
+      "log_integrity": true,
+      "execution_ms": 0.0005
+    }
+  ]
+}

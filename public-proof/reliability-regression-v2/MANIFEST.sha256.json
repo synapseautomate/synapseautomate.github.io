@@ -1,0 +1,19 @@
+{
+  "suite_version": "2.0.0",
+  "frozen_at": "2026-09-19",
+  "files": {
+    "cases.csv": "d232ed461943fb66821a0bdcf23bc2e8eb499688f01a259c09f5df8c7ef2d3e8",
+    "rubric.json": "fea2f9f892916b41439985747a2c863f548548be5887b356488e95d80f71af6b",
+    "run_regression.py": "be20d31420d6b8f10e1052de3ca23e12ffa49dd1f26a823fbe5759ef13dad688",
+    "scoreboard.json": "ed10d090aaf8ff9ae6e74d3349fe31c28741116e96d64a20e0b6955006a3dc3d",
+    "failure_pareto_v1.csv": "348c2ce632b638b3e09a159ed48540693a2b92e04c6ca529639d7009cf1f3a9a",
+    "heldout_20.csv": "89e30dc6e7211de10e1afbf141b49967010e77abcdb52033cec19d9b23125f2b",
+    "heldout_20_results.json": "e26ce90efbda88407140479baa76a82db970ce295357dfcf8c4660c8cc804637",
+    "README.md": "92046cdb17ae160c0be93e36aa0c76b471b30a4ccbbe42bc6386e5ff4b13b7b5",
+    "CHANGELOG.md": "d200366f65acab4e70ad324ed1ef4c00fe4a6c9f52927b85e04b5ab574f2d261",
+    "root_fix_comparison.md": "3a78ee4001121ddf248ff19d01e7baabe0d82af900336239a29fc10dfeba7026",
+    "knowledge_base_template.md": "ba8669f728ce68284d4d5183ece1238e5ef94bdd4603ba13a1aa0b7e0484a2ab",
+    "release_note.md": "7d4f197c810c48cec1fd4c8f44b3e4d42aa9c3e5938adaf51e5190dbe97cd245",
+    "VERSION": "c28fcca53637bc88e124af1725df13cb98c69dedefd62fb3cdbe1cdb6b760624"
+  }
+}
