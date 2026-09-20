@@ -1,0 +1,65 @@
+name: Synapse Readiness Funnel Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify signed payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          PAYLOAD=".github/workflows/synapse-readiness-funnel-payload.zip"
+          test -f "$PAYLOAD"
+          echo "56258df2b623d959e50c98032c3e6092623bfa1c78cd957ef033f1c6fac3ba36  $PAYLOAD" | sha256sum -c -
+          rm -rf /tmp/synapse-readiness-release
+          mkdir -p /tmp/synapse-readiness-release
+          unzip -q "$PAYLOAD" -d /tmp/synapse-readiness-release
+
+      - name: Safe preflight
+        run: python3 /tmp/synapse-readiness-release/preflight.py "$GITHUB_WORKSPACE"
+
+      - name: Apply verified release
+        run: python3 /tmp/synapse-readiness-release/apply.py "$GITHUB_WORKSPACE"
+
+      - name: Brand and funnel quality gate
+        run: python3 /tmp/synapse-readiness-release/qa.py "$GITHUB_WORKSPACE"
+
+      - name: Commit verified release
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapseautomate"
+          git config user.email "synapseautomate.ai@gmail.com"
+          git add index.html urunler.html kaynaklar.html surec-analizi.html sitemap.xml llms.txt             araclar/site-ai-uyumluluk-taramasi.html             araclar/emlak-ai-surec-kontrol-listesi.html             rehberler/site-katalog-ai-hazirlik-rehberi.html             rehberler/emlak-ai-otomasyon-hazirlik-rehberi.html             rehberler/ai-otomasyon-hazirlik-kontrolu.html             rehberler/ai-surec-denetimi.html             rehberler/workflow-hazirlik-hesaplayici.html             rehberler/site-ai-hazirlik.html             rehberler/katalog-ai-hazirlik.html             rehberler/prompt-injection-is-akisi-kontrolu.html             rehberler/ai-data-provenance.html             rehberler/eski-fiyat-stok-ai-riski.html             rehberler/ai-tool-yetki-sinirlari.html             rehberler/ai-insan-onayi-is-akisi.html             kanit/site-katalog-ai-hazirlik-metodolojisi.html             kanit/site-katalog-ai-hazirlik-ornek-rapor.html             kanit/emlak-ai-3-sentetik-vaka.html             public-proof/site-catalog-readiness-v1
+          if git diff --cached --quiet; then
+            echo "No release changes to commit."
+          else
+            git commit -m "Release readiness scan and frictionless analysis funnel"
+            git push
+          fi
+
+      - name: Clean one-shot release files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git pull --rebase
+          rm -f .github/workflows/synapse-readiness-funnel-release.yml
+          rm -f .github/workflows/synapse-readiness-funnel-payload.zip
+          git add -A .github/workflows
+          if git diff --cached --quiet; then
+            echo "Release files already clean."
+          else
+            git commit -m "Clean one-shot readiness release files"
+            git push
+          fi
