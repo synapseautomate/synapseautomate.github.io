@@ -85,3 +85,10 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Controls: instruction/data separation, price-stock freshness gate, authority/egress boundary.
 - State model: AUTO_PROCEED / HUMAN_REVIEW / HUMAN_APPROVAL / STOP_ESCALATE.
 - Limitation: deterministic synthetic-suite conformance only; not production accuracy, compliance certification, security guarantee, or zero risk.
+## Site & Katalog AI Hazırlık
+- Ücretsiz tarama: https://synapseautomate.github.io/araclar/site-ai-uyumluluk-taramasi.html
+- Metodoloji: https://synapseautomate.github.io/kanit/site-katalog-ai-hazirlik-metodolojisi.html
+- Sentetik örnek rapor: https://synapseautomate.github.io/kanit/site-katalog-ai-hazirlik-ornek-rapor.html
+- Emlak hazırlık rehberi: https://synapseautomate.github.io/rehberler/emlak-ai-otomasyon-hazirlik-rehberi.html
+- Sınır: hazırlık taraması bir AI görünürlük/sıralama, üretim doğruluğu veya güvenlik garantisi değildir.
+

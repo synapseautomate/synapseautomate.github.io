@@ -1,0 +1,41 @@
+{
+  "synthetic": true,
+  "categories": [
+    {
+      "name": "Kaynak ve doğrulanabilirlik",
+      "status": "Hazır",
+      "evidence": "Yetkili ürün kaynağı tanımlı; kritik alanlarda source ID mevcut."
+    },
+    {
+      "name": "Güncellik ve çelişki",
+      "status": "Eksik kontrol",
+      "evidence": "Stok güncellik eşiği tanımlı değil; çelişkili kaynakta sistem ilerliyor."
+    },
+    {
+      "name": "Yapılandırılmış katalog",
+      "status": "Geliştirilmeli",
+      "evidence": "Ürün kimliği tutarlı; zorunlu alan eksikliği görünür hata üretmiyor."
+    },
+    {
+      "name": "Erişim ve retrieval",
+      "status": "Geliştirilmeli",
+      "evidence": "Context seçimi var; eski context escalation testi eksik."
+    },
+    {
+      "name": "Yetki ve dış aksiyon",
+      "status": "Hazır",
+      "evidence": "Okuma ve yazma yetkileri ayrılmış; write allowlist mevcut."
+    },
+    {
+      "name": "İnsan onayı ve düzeltme",
+      "status": "Hazır",
+      "evidence": "Fiyat yayınlama ve bağlayıcı mesaj insan onayı gerektiriyor."
+    },
+    {
+      "name": "Test, ölçüm ve değişiklik kontrolü",
+      "status": "Eksik kontrol",
+      "evidence": "Frozen regression seti ve kritik hata tanımı yok."
+    }
+  ],
+  "priority": "Güncellik ve çelişki"
+}

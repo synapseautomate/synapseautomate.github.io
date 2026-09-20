@@ -1,0 +1,1 @@
+{"case_id": "SYN-DEL-001", "input_hash": "17f8454cc502920ef29db9ccf086eb7df8706daaa0f49a43917e038657cce0fb", "config_version": "1.0.0", "output": "gap:guncellik", "validation": "PASS", "human_action": "none", "raw_sensitive_data": false}

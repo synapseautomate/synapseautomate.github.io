@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "scope": "synthetic deterministic readiness controls",
+  "categories": [
+    {
+      "id": "kaynak",
+      "name": "Kaynak ve doğrulanabilirlik",
+      "next_safe_step": "Yetkili kaynakları, kaynak kimliğini ve kritik alanların provenance kaydını tanımlayın."
+    },
+    {
+      "id": "guncellik",
+      "name": "Güncellik ve çelişki",
+      "next_safe_step": "Fiyat, stok ve politika gibi değişken alanlar için güncellik eşiği ve çelişki durumunda durma kuralı ekleyin."
+    },
+    {
+      "id": "yapi",
+      "name": "Yapılandırılmış katalog",
+      "next_safe_step": "Temel ürün/hizmet alanlarını tutarlı alan adları, kimlikler ve açık zorunlu alanlarla yapılandırın."
+    },
+    {
+      "id": "retrieval",
+      "name": "Erişim ve retrieval",
+      "next_safe_step": "Her kullanım durumunda yalnız ilgili context paketini seçin; bütün dokümanı kör yüklemeyin."
+    },
+    {
+      "id": "yetki",
+      "name": "Yetki ve dış aksiyon",
+      "next_safe_step": "Okuma, önerme ve uygulama yetkilerini ayırın; write/egress izinlerini minimum kapsamla sınırlandırın."
+    },
+    {
+      "id": "insan",
+      "name": "İnsan onayı ve düzeltme",
+      "next_safe_step": "Yüksek etkili kararlarda kaynağı, önerilen değişikliği ve sonucu görmeden onay verilememesini sağlayın."
+    },
+    {
+      "id": "olcum",
+      "name": "Test, ölçüm ve değişiklik kontrolü",
+      "next_safe_step": "Frozen test seti, kritik hata metriği ve değişiklik sonrası regression kuralı ekleyin."
+    }
+  ],
+  "interpretation": {
+    "ready": "all defined controls present in self-report",
+    "develop": "partial controls",
+    "gap": "one or more control gaps"
+  },
+  "limitations": [
+    "Not production accuracy",
+    "Not a security certification",
+    "Not an AI/search ranking guarantee",
+    "Self-report inputs can be wrong"
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "R01",
+    "query_topic": "catalog",
+    "available": [
+      "CAT-001"
+    ],
+    "expected": "USE",
+    "source": "CAT-001"
+  },
+  {
+    "id": "R02",
+    "query_topic": "returns",
+    "available": [
+      "POL-001"
+    ],
+    "expected": "USE",
+    "source": "POL-001"
+  },
+  {
+    "id": "R03",
+    "query_topic": "catalog",
+    "available": [
+      "CAT-OLD"
+    ],
+    "expected": "ESCALATE",
+    "source": null
+  },
+  {
+    "id": "R04",
+    "query_topic": "catalog",
+    "available": [
+      "CAT-001",
+      "CAT-CONFLICT"
+    ],
+    "expected": "ESCALATE",
+    "source": null
+  },
+  {
+    "id": "R05",
+    "query_topic": "authority",
+    "available": [
+      "AUTH-001"
+    ],
+    "expected": "USE",
+    "source": "AUTH-001"
+  },
+  {
+    "id": "R06",
+    "query_topic": "unknown",
+    "available": [
+      "CAT-001"
+    ],
+    "expected": "ESCALATE",
+    "source": null
+  },
+  {
+    "id": "R07",
+    "query_topic": "catalog",
+    "available": [
+      "CAT-001",
+      "CAT-OLD"
+    ],
+    "expected": "USE",
+    "source": "CAT-001"
+  },
+  {
+    "id": "R08",
+    "query_topic": "returns",
+    "available": [],
+    "expected": "ESCALATE",
+    "source": null
+  }
+]

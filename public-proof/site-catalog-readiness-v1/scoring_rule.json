@@ -1,0 +1,7 @@
+{
+  "rule": "category_status",
+  "ready": "both answers yes",
+  "develop": "sum >= 2 of 4 but not full",
+  "gap": "sum < 2 of 4",
+  "note": "No total vanity score is published."
+}

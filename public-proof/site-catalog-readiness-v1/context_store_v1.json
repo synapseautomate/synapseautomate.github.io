@@ -1,0 +1,54 @@
+[
+  {
+    "source_id": "CAT-001",
+    "topic": "catalog",
+    "version": "2026-09-20",
+    "status": "current",
+    "facts": {
+      "price_source": "ERP",
+      "stock_source": "WMS",
+      "max_age_minutes": 15
+    }
+  },
+  {
+    "source_id": "POL-001",
+    "topic": "returns",
+    "version": "2026-09-18",
+    "status": "current",
+    "facts": {
+      "human_approval_required": true
+    }
+  },
+  {
+    "source_id": "CAT-OLD",
+    "topic": "catalog",
+    "version": "2026-07-01",
+    "status": "stale",
+    "facts": {
+      "max_age_minutes": 1440
+    }
+  },
+  {
+    "source_id": "CAT-CONFLICT",
+    "topic": "catalog",
+    "version": "2026-09-20",
+    "status": "conflict",
+    "facts": {
+      "price_source": "manual_sheet"
+    }
+  },
+  {
+    "source_id": "AUTH-001",
+    "topic": "authority",
+    "version": "2026-09-20",
+    "status": "current",
+    "facts": {
+      "write_allowlist": [
+        "catalog_draft"
+      ],
+      "egress_allowlist": [
+        "crm.internal"
+      ]
+    }
+  }
+]
