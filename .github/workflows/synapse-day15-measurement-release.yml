@@ -1,0 +1,71 @@
+name: Synapse Day15 Measurement Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify signed payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          PAYLOAD=".github/workflows/synapse-day15-measurement-release-payload.zip"
+          test -f "$PAYLOAD"
+          echo "2b00ebb16ea223a7a77bb69183b9b3468fde8b8825b210cf4dd4232be5c54f1c  $PAYLOAD" | sha256sum -c -
+          rm -rf /tmp/synapse-day15-measurement
+          mkdir -p /tmp/synapse-day15-measurement
+          unzip -q "$PAYLOAD" -d /tmp/synapse-day15-measurement
+
+      - name: Safe preflight
+        run: python3 /tmp/synapse-day15-measurement/preflight.py "$GITHUB_WORKSPACE"
+
+      - name: Apply measurement release
+        run: python3 /tmp/synapse-day15-measurement/apply.py "$GITHUB_WORKSPACE"
+
+      - name: Schema audit
+        run: python3 /tmp/synapse-day15-measurement/audit_schema.py "$GITHUB_WORKSPACE"
+
+      - name: Form attribution audit
+        run: python3 /tmp/synapse-day15-measurement/audit_forms.py "$GITHUB_WORKSPACE"
+
+      - name: Reliability and brand quality gate
+        run: python3 /tmp/synapse-day15-measurement/qa.py "$GITHUB_WORKSPACE"
+
+      - name: Commit verified release
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapseautomate"
+          git config user.email "synapseautomate.ai@gmail.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No release changes to commit."
+          else
+            git commit -m "Add revenue-chain measurement and attribution layer"
+            git push
+          fi
+
+      - name: Clean one-shot release files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git pull --rebase
+          rm -f .github/workflows/synapse-day15-measurement-release.yml
+          rm -f .github/workflows/synapse-day15-measurement-release-payload.zip
+          git add -A .github/workflows
+          if git diff --cached --quiet; then
+            echo "Release files already clean."
+          else
+            git commit -m "Clean one-shot Day15 measurement release"
+            git push
+          fi
