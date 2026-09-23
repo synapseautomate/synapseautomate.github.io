@@ -92,3 +92,10 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Emlak hazırlık rehberi: https://synapseautomate.github.io/rehberler/emlak-ai-otomasyon-hazirlik-rehberi.html
 - Sınır: hazırlık taraması bir AI görünürlük/sıralama, üretim doğruluğu veya güvenlik garantisi değildir.
 
+## Ölçüm ve Attribution
+- Gelir zinciri ölçüm sözlüğü: https://synapseautomate.github.io/kanit/gelir-zinciri-olcum-sozlugu.html
+- Kanal karşılaştırma kartı: https://synapseautomate.github.io/kanit/kanal-karsilastirma-karti.html
+- AI görünürlük ölçüm şablonu: https://synapseautomate.github.io/kanit/ai-gorunurluk-olcum-sablonu.html
+- Hukuk & Uyum rehberi: https://synapseautomate.github.io/rehberler/hukuk-uyum-ai-otomasyon-rehberi.html
+- Sınır: AI görünürlüğü, sıralama, üretim doğruluğu veya gelir garantisi verilmez.
+

@@ -1,0 +1,63 @@
+{
+  "version": "1.0.0",
+  "scope": "Synapse Automate revenue-chain measurement",
+  "pii_policy": "No raw customer content, secrets, health/legal/payment data or identity fields are event payloads.",
+  "executive_events": [
+    {
+      "name": "asset_view",
+      "meaning": "A canonical page or asset was viewed.",
+      "decision_use": "Denominator for owned-site reach; not a success metric alone."
+    },
+    {
+      "name": "tool_start",
+      "meaning": "A visitor made the first meaningful interaction with a diagnostic tool.",
+      "decision_use": "Measures whether the promise produces action."
+    },
+    {
+      "name": "tool_complete",
+      "meaning": "A diagnostic tool produced its result after required inputs.",
+      "decision_use": "Measures value delivery before form friction."
+    },
+    {
+      "name": "lead_form_submit",
+      "meaning": "The paid-analysis request form was submitted.",
+      "decision_use": "Commercial-intent event; source/asset/cluster travel with the form."
+    },
+    {
+      "name": "paid_conversion",
+      "meaning": "Payment was confirmed by an authorized human process.",
+      "decision_use": "Revenue source of truth. Manual until a payment system is connected."
+    }
+  ],
+  "diagnostic_events": [
+    {
+      "name": "cta_click",
+      "meaning": "A CTA was clicked; diagnostic only, not executive dashboard."
+    }
+  ],
+  "attribution_fields": [
+    "source",
+    "medium",
+    "campaign",
+    "content",
+    "asset",
+    "cluster",
+    "referrer_class",
+    "landing",
+    "first_touch",
+    "last_touch"
+  ],
+  "referral_classes": [
+    "direct",
+    "search_google",
+    "search_bing",
+    "ai_chatgpt",
+    "ai_perplexity",
+    "ai_copilot",
+    "ai_gemini",
+    "social_linkedin",
+    "social_youtube",
+    "referral_other"
+  ],
+  "collector_status": "Vendor-neutral browser instrumentation. Events push to dataLayer/gtag when a collector is installed; form attribution is captured immediately in submitted form fields."
+}

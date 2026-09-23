@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "files_scanned": 113,
+  "type_counts": {
+    "Organization": 57,
+    "Service": 19,
+    "Article": 7,
+    "VideoObject": 0,
+    "BreadcrumbList": 0
+  },
+  "jsonld_parse_errors": [],
+  "note": "Presence audit only; schema must still match visible page content."
+}

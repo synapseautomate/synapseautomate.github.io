@@ -1,0 +1,80 @@
+{
+  "version": "1.0.0",
+  "forms": [
+    {
+      "file": "surec-analizi.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "iletisim.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "araclar/surec-hazirlik-skoru.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "araclar/kreatif-fikir-mini-formu.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "araclar/gelir-kacagi-hesaplayici.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "araclar/surecini-20-dakikada-haritala.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "araclar/otomasyon-deger-hesaplayici.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "cozumler/rpa-danismanlik.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "cozumler/whatsapp-musteri-takip-otomasyonu.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "cozumler/klinik-randevu-talep-takip-otomasyonu.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "cozumler/sigorta-acentesi-yenileme-takip-otomasyonu.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "cozumler/ai-otomasyon-ajansi-istanbul.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "cozumler/e-ticaret-operasyon-otomasyonu.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "cozumler/kurumsal-raporlama-otomasyonu.html",
+      "forms": 1,
+      "instrumented": true
+    },
+    {
+      "file": "cozumler/emlak-musteri-talep-takip-otomasyonu.html",
+      "forms": 1,
+      "instrumented": true
+    }
+  ]
+}

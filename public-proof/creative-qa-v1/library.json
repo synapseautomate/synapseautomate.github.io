@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "checks": [
+    "source_support",
+    "claim_scope",
+    "license_or_permission",
+    "logo_integrity",
+    "color_shape_dimension_consistency",
+    "product_accuracy",
+    "no_internal_execution_language",
+    "mobile_readability"
+  ],
+  "fail_closed_on": [
+    "unsupported financial guarantee",
+    "legal advice claim",
+    "security guarantee",
+    "production accuracy claim from synthetic tests",
+    "unlicensed third-party creative"
+  ]
+}

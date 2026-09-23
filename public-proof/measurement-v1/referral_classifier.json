@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "contains": "google.",
+      "class": "search_google"
+    },
+    {
+      "contains": "bing.com",
+      "class": "search_bing"
+    },
+    {
+      "contains": "chatgpt.com|openai.com",
+      "class": "ai_chatgpt"
+    },
+    {
+      "contains": "perplexity.ai",
+      "class": "ai_perplexity"
+    },
+    {
+      "contains": "copilot.microsoft.com",
+      "class": "ai_copilot"
+    },
+    {
+      "contains": "gemini.google.com",
+      "class": "ai_gemini"
+    },
+    {
+      "contains": "linkedin.com",
+      "class": "social_linkedin"
+    },
+    {
+      "contains": "youtube.com|youtu.be",
+      "class": "social_youtube"
+    }
+  ],
+  "fallback": "direct when referrer is empty; otherwise referral_other"
+}
