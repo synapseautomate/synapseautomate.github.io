@@ -1,0 +1,65 @@
+name: Synapse GA4 Collector Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify signed payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          PAYLOAD=".github/workflows/synapse-ga4-collector-payload.zip"
+          test -f "$PAYLOAD"
+          echo "ae3511ad6ebc10561823a5ce670569f9b33704ed7d34ca1139b1f3f1680957ca  $PAYLOAD" | sha256sum -c -
+          rm -rf /tmp/synapse-ga4-collector
+          mkdir -p /tmp/synapse-ga4-collector
+          unzip -q "$PAYLOAD" -d /tmp/synapse-ga4-collector
+
+      - name: Safe preflight
+        run: python3 /tmp/synapse-ga4-collector/preflight.py "$GITHUB_WORKSPACE"
+
+      - name: Apply GA4 collector
+        run: python3 /tmp/synapse-ga4-collector/apply.py "$GITHUB_WORKSPACE"
+
+      - name: Collector and privacy quality gate
+        run: python3 /tmp/synapse-ga4-collector/qa.py "$GITHUB_WORKSPACE"
+
+      - name: Commit verified collector
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "synapseautomate"
+          git config user.email "synapseautomate.ai@gmail.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No collector changes to commit."
+          else
+            git commit -m "Connect GA4 revenue-chain collector"
+            git push
+          fi
+
+      - name: Clean one-shot release files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git pull --rebase
+          rm -f .github/workflows/synapse-ga4-collector-release.yml
+          rm -f .github/workflows/synapse-ga4-collector-payload.zip
+          git add -A .github/workflows
+          if git diff --cached --quiet; then
+            echo "Release files already clean."
+          else
+            git commit -m "Clean one-shot GA4 collector release"
+            git push
+          fi
