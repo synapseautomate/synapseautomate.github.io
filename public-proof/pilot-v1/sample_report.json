@@ -1,0 +1,19 @@
+{
+  "status": "synthetic_sample",
+  "version": "v1",
+  "sample_count": 3,
+  "customer": null,
+  "outcome_claim": false,
+  "metrics": [
+    "time_to_approved_result",
+    "human_correction_minutes",
+    "critical_major_minor",
+    "escalation_accuracy"
+  ],
+  "states": [
+    "AUTO_PROCEED",
+    "HUMAN_REVIEW",
+    "HUMAN_APPROVAL",
+    "STOP_ESCALATE"
+  ]
+}

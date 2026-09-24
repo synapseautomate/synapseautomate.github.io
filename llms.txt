@@ -99,3 +99,8 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Hukuk & Uyum rehberi: https://synapseautomate.github.io/rehberler/hukuk-uyum-ai-otomasyon-rehberi.html
 - Sınır: AI görünürlüğü, sıralama, üretim doğruluğu veya gelir garantisi verilmez.
 
+## Kontrollü pilot ve partner-ready teslimat
+- https://synapseautomate.github.io/pilot/kontrollu-ai-is-akisi-pilotu.html — 14 günlük kontrollü AI iş akışı pilot kapsamı: 7 gün shadow + 7 gün kontrollü kullanım, human gate ve limitations.
+- https://synapseautomate.github.io/kanit/partner-ready-pilot-ornek-raporu.html — Kaynak, baseline, human action ve limitation alanlarını gösteren sentetik örnek rapor.
+- https://synapseautomate.github.io/rehberler/uretim-lojistik-ai-otomasyon-rehberi.html — Üretim ve lojistik AI iş akışı güvenilirlik rehberi.
+- https://synapseautomate.github.io/araclar/uretim-lojistik-ai-surec-kontrol-listesi.html — Form öncesi değer veren ücretsiz kontrol listesi.

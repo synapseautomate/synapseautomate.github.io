@@ -1,0 +1,4 @@
+scenario,monthly_cases,delivery_hours,revision_hours,internal_hour_cost_tl,software_cost_tl,revenue_tl,total_cost_tl,gross_margin_tl,gross_margin_pct
+Low volume negative margin,20,18,8,850,1800,24900,23900,1000,4.0
+Base,50,18,5,850,1800,24900,21350,3550,14.3
+Efficient,80,16,3,850,1800,24900,17950,6950,27.9

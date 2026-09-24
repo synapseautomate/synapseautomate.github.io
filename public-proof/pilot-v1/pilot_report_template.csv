@@ -1,0 +1,1 @@
+case_id,source_id,baseline_minutes,pilot_minutes,correction_minutes,severity,expected_state,human_action,limitation,decision

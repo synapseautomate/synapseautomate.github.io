@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "status": "template",
+  "offer": {
+    "name": "Kontrollü AI İş Akışı Pilotu",
+    "price_try": 24900,
+    "price_usd": 750,
+    "duration_days": 14
+  },
+  "scope": {
+    "workflows": 1,
+    "max_cases": 50,
+    "external_autonomous_action": false
+  },
+  "required_fields": [
+    "workflow_owner",
+    "source",
+    "baseline_metric",
+    "success_metric",
+    "human_gate",
+    "exclusions",
+    "support_owner"
+  ],
+  "proof_links": [
+    "/pilot/kontrollu-ai-is-akisi-pilotu.html",
+    "/kanit/partner-ready-pilot-ornek-raporu.html"
+  ]
+}
