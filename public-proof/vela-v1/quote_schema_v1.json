@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "customer": {
+    "company": "",
+    "contact_role": ""
+  },
+  "quote": {
+    "currency": "TRY",
+    "items": [
+      {
+        "description": "",
+        "quantity": 1,
+        "unit_price": 0,
+        "tax_rate": 0
+      }
+    ],
+    "subtotal": 0,
+    "tax_total": 0,
+    "total": 0
+  },
+  "payment": {
+    "terms": "",
+    "due_date": "",
+    "method": ""
+  },
+  "warnings": [
+    "Fiyat/vergi/fatura koşulları bağlayıcı teklif öncesi insan onayından geçmelidir.",
+    "Banka hesabı değişikliği otomatik uygulanmaz."
+  ],
+  "human_approval_required": true
+}
