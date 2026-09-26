@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-08-18",
+  "generated_at": "2026-09-26",
   "organization": {
     "name": "Synapse Automate",
     "canonical": "https://synapseautomate.github.io/",
@@ -50,6 +50,12 @@
       "url": "https://synapseautomate.github.io/kanit/ai-otomasyon-kanit-metodolojisi.html",
       "type": "methodology",
       "summary": "İddia, kaynak, ölçüm ve insan onayı arasındaki kanıt yaklaşımı."
+    },
+    {
+      "title": "Gayrimenkul Bakım Talebi Sentetik Önce/Sonra",
+      "url": "https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html",
+      "type": "evidence",
+      "summary": "12 sabit sentetik bakım talebi vakasında konu bazlı yönlendirme ile kontrollü insan-onaylı yaklaşımın açık metodolojiyle karşılaştırması."
     }
   ]
 }

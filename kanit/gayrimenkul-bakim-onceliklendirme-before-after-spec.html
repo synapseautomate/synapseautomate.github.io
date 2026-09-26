@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gayrimenkul Bakım Talebi Önce/Sonra — Sentetik Spec | Synapse Automate</title>
+<meta name="description" content="12 sabit sentetik bakım talebi vakasında konu bazlı yönlendirme ile kaynak, risk eşiği ve insan onayı eklenmiş kontrollü yaklaşımın before/after karşılaştırması.">
+<link rel="canonical" href="https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#06111f">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Synapse Automate">
+<meta property="og:title" content="Bakım talebi kontrol katmanı: sentetik önce/sonra">
+<meta property="og:description" content="12 sabit sentetik vaka: karar eşleşmesi 8/12 → 12/12, kritik kaçırma 4 → 0. Müşteri sonucu veya üretim doğruluğu iddiası değildir.">
+<meta property="og:url" content="https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html">
+<meta property="og:image" content="https://synapseautomate.github.io/assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bakım talebi kontrol katmanı: sentetik önce/sonra">
+<meta name="twitter:description" content="12 sabit sentetik vaka üzerinde açık metodoloji ve dondurulmuş test seti.">
+<meta name="twitter:image" content="https://synapseautomate.github.io/assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/styles-v33.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://synapseautomate.github.io/#organization",
+      "name":"Synapse Automate",
+      "url":"https://synapseautomate.github.io/",
+      "logo":"https://synapseautomate.github.io/assets/og-synapse.png",
+      "sameAs":["https://github.com/synapseautomate","https://www.linkedin.com/company/synapseautomate/"]
+    },
+    {
+      "@type":"TechArticle",
+      "@id":"https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html#article",
+      "headline":"Gayrimenkul bakım talebi kontrol katmanı — sentetik before/after",
+      "description":"12 sabit sentetik bakım talebi vakasında konu bazlı yönlendirme ile kontrollü yaklaşımın karar sınırı karşılaştırması.",
+      "datePublished":"2026-09-26",
+      "dateModified":"2026-09-26",
+      "author":{"@id":"https://synapseautomate.github.io/#organization"},
+      "publisher":{"@id":"https://synapseautomate.github.io/#organization"},
+      "mainEntityOfPage":"https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html",
+      "image":"https://synapseautomate.github.io/assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png",
+      "about":["Gayrimenkul yönetimi","Bakım talebi önceliklendirme","İnsan onayı","Sentetik test"]
+    },
+    {
+      "@type":"Dataset",
+      "name":"Gayrimenkul bakım talebi sentetik/spec test seti v1",
+      "description":"12 sentetik bakım talebi vakası; beklenen, başlangıç ve kontrollü durumları içerir. Gerçek müşteri veya üretim verisi değildir.",
+      "url":"https://synapseautomate.github.io/veri/gayrimenkul-bakim-triage-spec-v1.csv",
+      "creator":{"@id":"https://synapseautomate.github.io/#organization"},
+      "datePublished":"2026-09-26",
+      "license":"https://synapseautomate.github.io/kullanim-kosullari.html",
+      "distribution":{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://synapseautomate.github.io/veri/gayrimenkul-bakim-triage-spec-v1.csv"}
+    }
+  ]
+}
+</script>
+<style>
+.proof-hero{padding:72px 0 44px}.proof-hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:42px;align-items:center}.proof-hero h1{font-size:clamp(2.8rem,5.7vw,5.3rem)}.proof-label{display:inline-flex;align-items:center;gap:10px;padding:8px 13px;border-radius:999px;border:1px solid rgba(67,227,208,.34);background:rgba(67,227,208,.07);color:var(--mint);font-size:.78rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}.proof-label::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 14px rgba(67,227,208,.7)}
+.proof-visual{padding:14px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(155deg,rgba(16,40,61,.72),rgba(7,23,38,.84));box-shadow:var(--shadow)}.proof-visual img{width:100%;border-radius:20px}.truth-note{margin-top:14px;color:#9eb4c3;font-size:.86rem}.truth-note strong{color:#fff}.metrics4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric-big{padding:24px;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.025)}.metric-big span{display:block;color:#90aabd;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.metric-big strong{display:block;font-size:2.25rem;line-height:1.1;margin:8px 0 4px}.metric-big small{color:#9fb5c4}.metric-big.good strong{color:var(--green)}.metric-big.warn strong{color:#ffbe4d}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}.compare-card{padding:30px;border-radius:28px;border:1px solid var(--line);background:#081827}.compare-card.after{border-color:rgba(67,227,208,.38);background:linear-gradient(155deg,rgba(0,245,160,.06),rgba(8,24,39,.96))}.compare-card h3{font-size:1.75rem}.compare-card .state{display:inline-flex;margin-bottom:18px;padding:6px 10px;border-radius:999px;font-size:.72rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;background:rgba(245,158,11,.10);color:#ffbd45}.compare-card.after .state{background:rgba(0,245,160,.09);color:#63ffd0}.compare-card ul{margin:20px 0 0}.compare-card li{margin:8px 0}
+.control-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.control{padding:24px;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.025)}.control b{display:flex;width:42px;height:42px;align-items:center;justify-content:center;border-radius:13px;background:rgba(0,180,216,.11);color:var(--mint);margin-bottom:22px}.control p{color:var(--muted);margin:0}.result-table td:first-child{font-weight:800;color:#fff}.state-chip{display:inline-flex;padding:5px 9px;border-radius:999px;font-size:.72rem;font-weight:800;white-space:nowrap}.state-auto{background:rgba(0,180,216,.10);color:#89ebff}.state-stop{background:rgba(255,107,107,.10);color:#ff9b9b}.state-review{background:rgba(245,158,11,.11);color:#ffc45e}.miss{color:#ff9b9b;font-weight:850}.match{color:#62ffd1;font-weight:850}
+.limit-box{padding:28px;border-radius:26px;border:1px solid rgba(245,158,11,.32);background:linear-gradient(150deg,rgba(245,158,11,.07),rgba(8,24,39,.8))}.limit-box h2{font-size:2rem}.limit-box p{color:#c6d5df;margin-bottom:0}.share-box{display:grid;grid-template-columns:1fr auto;align-items:center;gap:26px;padding:34px;border-radius:30px;border:1px solid rgba(67,227,208,.26);background:linear-gradient(135deg,rgba(67,227,208,.07),rgba(0,180,216,.05))}.share-box h2{font-size:2.3rem}.share-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.share-status{display:block;margin-top:10px;color:#8faabd;font-size:.82rem}.source-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.source-links a{display:inline-flex;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:#071727;text-decoration:none;color:#cfe1eb;font-size:.84rem;font-weight:750}.source-links a:hover{border-color:var(--mint)}
+@media(max-width:980px){.proof-hero-grid{grid-template-columns:1fr}.metrics4,.control-grid{grid-template-columns:repeat(2,1fr)}.share-box{grid-template-columns:1fr}.share-actions{justify-content:flex-start}}@media(max-width:680px){.proof-hero{padding-top:48px}.metrics4,.control-grid,.compare{grid-template-columns:1fr}.metric-big strong{font-size:2rem}.share-box{padding:24px}.share-box h2{font-size:1.85rem}.proof-visual{padding:8px;border-radius:22px}.proof-visual img{border-radius:16px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">İçeriğe geç</a><div aria-hidden="true" class="progress"></div>
+<header class="site-header"><div class="container nav"><a aria-label="Synapse Automate ana sayfa" class="brand" href="../index.html"><img alt="Synapse Automate" src="../assets/synapse-logo.png"></a><button aria-expanded="false" aria-label="Menüyü aç" class="menu-button">☰</button><nav aria-label="Ana menü" class="nav-links"><a href="../hizmetler.html">Hizmetler</a><a href="../urunler.html">Çözümler</a><a href="../sektorler.html">Sektörler</a><a href="../kaynaklar.html">Kaynaklar</a><a href="../hakkimizda.html">Hakkımızda</a></nav><a class="nav-cta" href="../surec-analizi.html?utm_source=site&utm_medium=proof&utm_campaign=real_estate_spec_before_after&utm_content=nav">Süreç Analizi İste</a></div></header>
+<main id="main">
+<div class="container breadcrumb"><a href="../index.html">Ana Sayfa</a> / <a href="../kaynaklar.html">Kaynaklar</a> / <span>Sentetik önce/sonra</span></div>
+<section class="proof-hero"><div class="container proof-hero-grid"><div><div class="proof-label">Sentetik / spec kanıt</div><h1>Bakım talebinde hızdan önce <span class="gradient-text">yanlış otomasyonu durdurun.</span></h1><p class="lead">12 sabit sentetik gayrimenkul bakım vakasında iki yaklaşımı aynı beklenen kararlarla karşılaştırdık. Kontrol katmanı, bu test setinde kritik kaçırmayı <strong>4’ten 0’a</strong> indirdi; rutin dört talebin otomatik yönlendirilmesini ise korudu.</p><div class="actions"><a class="btn btn-primary" href="#sonuc">Sonucu gör</a><a class="btn btn-secondary" href="../veri/gayrimenkul-bakim-triage-spec-v1.csv" data-synapse-event="proof_dataset_open" data-synapse-label="Gayrimenkul spec CSV">Test setini aç</a></div><p class="truth-note"><strong>Sınır:</strong> Bu bir müşteri sonucu, üretim doğruluğu, tasarruf veya güvenlik garantisi değildir. Yalnız dondurulmuş 12 sentetik/spec vakadaki karar davranışını gösterir.</p></div><div class="proof-visual"><img src="../assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png" alt="12 sentetik bakım talebi vakasında başlangıç ve kontrollü yaklaşımın karşılaştırma kartı" width="1200" height="1500"></div></div></section>
+<section class="section-tight" id="sonuc"><div class="container"><div class="section-head"><div><div class="kicker">Sonuç</div><h2>Aynı 12 vaka. Daha görünür karar sınırı.</h2></div><p>Ölçüm yalnız tam durum eşleşmesi ve kritik kaçırma üzerindedir; süre, maliyet veya gelir çıkarımı yapılmaz. Burada “kritik kaçırma”, insan incelemesi veya durdur/yükselt beklenen bir vakanın otomatik ilerlemesidir.</p></div><div class="metrics4"><div class="metric-big warn"><span>Başlangıç eşleşmesi</span><strong>8/12</strong><small>beklenen durumla tam eşleşme</small></div><div class="metric-big good"><span>Kontrollü eşleşme</span><strong>12/12</strong><small>aynı dondurulmuş test seti</small></div><div class="metric-big good"><span>Kritik kaçırma</span><strong>4 → 0</strong><small>insan/eskalasyon gereken vakada otomatik ilerleme</small></div><div class="metric-big"><span>Rutin otomatik</span><strong>4/4 → 4/4</strong><small>düşük etkili açık talepler korundu</small></div></div></div></section>
+<section class="section"><div class="container"><div class="section-head"><div><div class="kicker">Önce / sonra</div><h2>Fark model büyüklüğü değil, kontrol tasarımı.</h2></div><p>Bu sentetik/spec karşılaştırmada değişen şey test vakaları değil; belirsizliği ve yüksek etkiyi ele alma biçimi.</p></div><div class="compare"><article class="compare-card"><span class="state">Başlangıç</span><h3>Konu bazlı otomatik yönlendirme</h3><p>Talep konusu ve dar bir açık acil kelime listesiyle yönlendirilir.</p><ul><li>Dolaylı güvenlik belirtisi ayrı değerlendirilmez.</li><li>Eksik girdide tahminin önünde zorunlu kapı yoktur.</li><li>“Bakım” etiketi yüksek etkiyi gölgeleyebilir.</li></ul></article><article class="compare-card after"><span class="state">Kontrollü</span><h3>Kaynak + risk eşiği + insan onayı</h3><p>Aynı talep önce güvenlik, yeterli kaynak ve etki sınırlarından geçer.</p><ul><li>Güvenlik belirtisi otomatik kapatmayı durdurur.</li><li>Eksik girdi insan incelemesine gider.</li><li>Yüksek etkili durumda eylem yerine durdurma ve yükseltme uygulanır.</li></ul></article></div></div></section>
+<section class="section-tight"><div class="container"><div class="section-head"><div><div class="kicker">Müdahale</div><h2>Dört küçük kontrol, tek net amaç.</h2></div><p>“Daha çok otomasyon” yerine yanlış yetkiyi erken durdurmak.</p></div><div class="control-grid"><article class="control"><b>01</b><h3>Güvenlik sinyali</h3><p>Gaz, elektrik, yapısal risk, mahsur kalma veya benzeri yüksek etki belirtileri ayrı değerlendirilir.</p></article><article class="control"><b>02</b><h3>Eksik kaynak</h3><p>Metin yoksa veya içerik doğrulanamıyorsa tahmin yerine insan incelemesi seçilir.</p></article><article class="control"><b>03</b><h3>Etki eşiği</h3><p>Yüksek etkili talep, sıradan iş emri gibi otomatik kapatılamaz.</p></article><article class="control"><b>04</b><h3>İnsan yetkisi</h3><p>Güvenlik ve bağlayıcı karar noktalarında son eylem yetkili insanda kalır.</p></article></div></div></section>
+<section class="section" id="metodoloji"><div class="container"><div class="section-head"><div><div class="kicker">Metodoloji</div><h2>Beklenen karar önce sabitlendi.</h2></div><p>Sonuçları güzel göstermek için vaka veya beklenen durum sonradan değiştirilmedi.</p></div><div class="table-wrap result-table"><table><thead><tr><th>Vaka</th><th>Kısa durum</th><th>Beklenen</th><th>Başlangıç</th><th>Kontrollü</th></tr></thead><tbody>
+<tr><td>GM01</td><td>Su elektrik prizine yaklaşıyor</td><td><span class="state-chip state-stop">DURDUR / YÜKSELT</span></td><td class="match">Eşleşti</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM02</td><td>Karbonmonoksit alarmı sustu</td><td><span class="state-chip state-stop">DURDUR / YÜKSELT</span></td><td class="miss">Kaçırdı</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM03</td><td>Hafif silikon/nem bakımı</td><td><span class="state-chip state-auto">RUTİN DEVAM</span></td><td class="match">Eşleşti</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM04</td><td>Asansör kapısı kapanmıyor</td><td><span class="state-chip state-stop">DURDUR / YÜKSELT</span></td><td class="match">Eşleşti</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM05</td><td>Büyüyen tavan çatlağı</td><td><span class="state-chip state-stop">DURDUR / YÜKSELT</span></td><td class="miss">Kaçırdı</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM06</td><td>Periyodik klima filtresi</td><td><span class="state-chip state-auto">RUTİN DEVAM</span></td><td class="match">Eşleşti</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM07</td><td>Kombi yanında gaz kokusu</td><td><span class="state-chip state-stop">DURDUR / YÜKSELT</span></td><td class="match">Eşleşti</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM08</td><td>Sigorta + yanık kokusu</td><td><span class="state-chip state-stop">DURDUR / YÜKSELT</span></td><td class="match">Eşleşti</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM09</td><td>Çocuk kapı arkasında kilitli</td><td><span class="state-chip state-stop">DURDUR / YÜKSELT</span></td><td class="miss">Kaçırdı</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM10</td><td>Yavaş damlatan musluk</td><td><span class="state-chip state-auto">RUTİN DEVAM</span></td><td class="match">Eşleşti</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM11</td><td>Duman dedektörü düşük pil</td><td><span class="state-chip state-auto">RUTİN DEVAM</span></td><td class="match">Eşleşti</td><td class="match">Eşleşti</td></tr>
+<tr><td>GM12</td><td>Metin yok, içerik doğrulanamıyor</td><td><span class="state-chip state-review">İNSAN İNCELEMESİ</span></td><td class="miss">Kaçırdı</td><td class="match">Eşleşti</td></tr>
+</tbody></table></div><div class="source-links"><a href="../veri/gayrimenkul-bakim-triage-spec-v1.csv" data-synapse-event="proof_dataset_open" data-synapse-label="Dondurulmuş CSV">Dondurulmuş test seti · CSV</a><a href="../veri/gayrimenkul-bakim-triage-metodoloji-v1.md" data-synapse-event="proof_method_open" data-synapse-label="Metodoloji dosyası">Metodoloji dosyası · MD</a><a href="ai-otomasyon-kanit-metodolojisi.html">Genel kanıt standardı</a></div></div></section>
+<section class="section-tight"><div class="container"><div class="limit-box"><div class="kicker">Ne iddia etmiyoruz?</div><h2>Bu sonuç üretime genellenemez.</h2><p>12 vaka, dondurulmuş sentetik/spec bir test setidir. Gerçek bina, kiracı, müşteri, üretim sistemi, güvenlik sonucu, tasarruf, gelir veya yatırım getirisi ölçülmemiştir. Kontrollü yaklaşımın yeni veya dağılım dışı vakalarda aynı sonucu vereceği söylenemez. Gerçek pilotta başarı ölçüsü, gerçek başlangıç değeri ve yetkili insan onayıyla yeniden tanımlanmalıdır.</p></div></div></section>
+<section class="section"><div class="container"><div class="share-box"><div><div class="kicker">Paylaşım döngüsü</div><h2>Bu karar sınırı ekibinizde tartışılmaya değer mi?</h2><p class="lead" style="margin-bottom:0">Bu çalışma ekip içi karar tartışması için açıkça paylaşılabilir. Kartı veya metodolojiyi ekip içinde paylaşabilir, kendi sürecinizde hangi talebin otomatik ilerlememesi gerektiğini işaretleyebilirsiniz.</p><span class="share-status" id="share-status" aria-live="polite"></span></div><div class="share-actions"><button class="btn btn-primary" id="share-proof" type="button" data-synapse-event="proof_share_click" data-synapse-label="Ekibinle paylaş">Ekibinle paylaş</button><a class="btn btn-secondary" href="../assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png" data-synapse-event="proof_card_open" data-synapse-label="Sonuç kartı">Sonuç kartını aç</a></div></div></div></section>
+<section class="section-tight"><div class="container"><div class="band"><div class="band-grid"><div><div class="kicker">Kendi süreciniz</div><h2>Önce tek karar sınırını ölçün.</h2><p class="lead" style="margin-bottom:0">Süreç Analizi; tek iş akışında mevcut durum, hata noktası, insan yetkisi ve ölçüm planını netleştirir. Ücretsiz özel geliştirme içermez.</p></div><a class="btn btn-primary" href="../surec-analizi.html?utm_source=site&utm_medium=proof&utm_campaign=real_estate_spec_before_after&utm_content=bottom_cta" data-synapse-event="proof_analysis_click" data-synapse-label="Süreç Analizi">Süreç Analizi İste</a></div></div></div></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><a class="brand" href="../index.html"><img src="../assets/synapse-logo.png" alt="Synapse Automate"></a><p style="color:#8fa8b8;max-width:360px">İnsan denetimli, ölçülebilir iş akışı otomasyonu.</p></div><div><h4>Kanıt</h4><a href="ai-otomasyon-kanit-metodolojisi.html">Kanıt metodolojisi</a><a href="../guven-merkezi.html">Güven Merkezi</a></div><div><h4>Sektör</h4><a href="../sektorler/gayrimenkul-yonetimi.html">Gayrimenkul Yönetimi</a><a href="../sektorler.html">Tüm sektörler</a></div><div><h4>Başlangıç</h4><a href="../surec-analizi.html">Süreç Analizi</a><a href="../iletisim.html">İletişim</a></div></div><div class="container copyright"><span>© 2026 Synapse Automate</span><span>Sentetik testler müşteri sonucu veya üretim doğruluğu değildir.</span></div></footer>
+<script src="../assets/app-v33.js"></script><script data-synapse-measurement="v1" src="/assets/js/synapse-measurement-v1.js" defer></script>
+<script>
+(function(){
+  var btn=document.getElementById('share-proof'), status=document.getElementById('share-status');
+  if(!btn)return;
+  btn.addEventListener('click',async function(){
+    var payload={title:'Bakım talebi kontrol katmanı — sentetik önce/sonra',text:'12 sabit sentetik vaka üzerinde açık metodoloji ve karar sınırı karşılaştırması.',url:location.href};
+    try{
+      if(navigator.share){await navigator.share(payload);status.textContent='Paylaşım penceresi açıldı.';if(window.SynapseMeasurement)window.SynapseMeasurement.emit('proof_share_complete',{event_label:'native_share'});}
+      else if(navigator.clipboard){await navigator.clipboard.writeText(location.href);status.textContent='Bağlantı kopyalandı.';if(window.SynapseMeasurement)window.SynapseMeasurement.emit('proof_share_complete',{event_label:'copy_link'});}
+      else{status.textContent='Bağlantıyı tarayıcı adres çubuğundan kopyalayabilirsiniz.';}
+    }catch(e){if(e&&e.name!=='AbortError')status.textContent='Paylaşım açılamadı; bağlantıyı tarayıcıdan kopyalayabilirsiniz.';}
+  });
+})();
+</script>
+</body>
+</html>

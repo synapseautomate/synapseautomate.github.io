@@ -104,3 +104,9 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - https://synapseautomate.github.io/kanit/partner-ready-pilot-ornek-raporu.html — Kaynak, baseline, human action ve limitation alanlarını gösteren sentetik örnek rapor.
 - https://synapseautomate.github.io/rehberler/uretim-lojistik-ai-otomasyon-rehberi.html — Üretim ve lojistik AI iş akışı güvenilirlik rehberi.
 - https://synapseautomate.github.io/araclar/uretim-lojistik-ai-surec-kontrol-listesi.html — Form öncesi değer veren ücretsiz kontrol listesi.
+## Gayrimenkul bakım talebi sentetik önce/sonra — 2026-09-26
+- Canonical proof: https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html
+- Frozen synthetic/spec dataset: https://synapseautomate.github.io/veri/gayrimenkul-bakim-triage-spec-v1.csv
+- Scope: 12 fixed synthetic maintenance-request cases; same expected state for baseline and controlled comparison.
+- Fixed-set result: decision match 8/12 -> 12/12; critical misses 4 -> 0; routine auto-routing 4/4 -> 4/4.
+- Limitation: synthetic/spec methodology evidence only; not customer performance, production accuracy, safety, savings, ROI, compliance or generalization evidence.
