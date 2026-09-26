@@ -1,0 +1,206 @@
+name: Synapse Day 18 Premium Proof Fix
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: synapse-day18-premium-proof-fix
+  cancel-in-progress: false
+
+jobs:
+  release:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate and unpack payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f payload.zip
+          rm -rf _release_payload
+          mkdir _release_payload
+          python3 - <<'PY'
+          from pathlib import PurePosixPath
+          from zipfile import ZipFile
+
+          expected = {
+              'kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html',
+              'assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png',
+          }
+          with ZipFile('payload.zip') as z:
+              infos = [i for i in z.infolist() if not i.is_dir()]
+              names = {i.filename.lstrip('./') for i in infos}
+              if names != expected:
+                  raise SystemExit(f'Payload file set mismatch: {sorted(names)}')
+              for info in infos:
+                  raw = info.filename.lstrip('./')
+                  p = PurePosixPath(raw)
+                  if p.is_absolute() or '..' in p.parts:
+                      raise SystemExit(f'Unsafe payload path: {raw}')
+                  mode = (info.external_attr >> 16) & 0o170000
+                  if mode == 0o120000:
+                      raise SystemExit(f'Symlink not allowed: {raw}')
+              z.extractall('_release_payload')
+          print('PAYLOAD VALIDATION: PASS')
+          PY
+          rsync -a _release_payload/ ./
+          rm -rf _release_payload
+
+      - name: Premium proof quality gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import urlsplit, unquote
+          import csv, re, struct
+
+          root = Path('.').resolve()
+          proof = Path('kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html')
+          card = Path('assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png')
+          csv_path = Path('veri/gayrimenkul-bakim-triage-spec-v1.csv')
+          for p in (proof, card, csv_path, Path('assets/styles-v33.css'), Path('assets/js/synapse-measurement-v1.js')):
+              if not p.is_file():
+                  raise SystemExit(f'Missing required file: {p}')
+
+          with csv_path.open(encoding='utf-8', newline='') as f:
+              rows = list(csv.DictReader(f))
+          if len(rows) != 12:
+              raise SystemExit(f'Expected 12 cases, got {len(rows)}')
+          before = sum(r['baseline_match'] == 'yes' for r in rows)
+          controlled = sum(r['controlled_match'] == 'yes' for r in rows)
+          miss_before = sum(r['critical_if_missed'] == 'yes' and r['baseline_state'] == 'AUTO_PROCEED' for r in rows)
+          miss_after = sum(r['critical_if_missed'] == 'yes' and r['controlled_state'] == 'AUTO_PROCEED' for r in rows)
+          routine_after = sum(r['expected_state'] == 'AUTO_PROCEED' and r['controlled_state'] == 'AUTO_PROCEED' for r in rows)
+          if (before, controlled, miss_before, miss_after, routine_after) != (8, 12, 4, 0, 4):
+              raise SystemExit('Frozen test result changed unexpectedly')
+
+          text = proof.read_text(encoding='utf-8')
+          required = [
+              'Sentetik test · 12 dondurulmuş vaka',
+              '4’ten 0’a',
+              '8/12',
+              '12/12',
+              'gerçek müşteri sonucu',
+              'üretim doğruluğu',
+              'güvenlik garantisi',
+              'data-synapse-event="proof_share_click"',
+              'og:image:width',
+              'content="1200"',
+              'og:image:height',
+              'content="630"',
+              '.result-table tr{display:block',
+          ]
+          for needle in required:
+              if needle not in text:
+                  raise SystemExit(f'Missing premium proof requirement: {needle}')
+
+          for bad in ['Day 18', 'Gün 18', 'QA PASS', 'Run Workflow', 'release.yml', 'payload.zip', 'proof-visual']:
+              if bad.lower() in text.lower():
+                  raise SystemExit(f'Internal/legacy presentation leaked into public proof: {bad}')
+
+          main = re.search(r'<main\b[^>]*>(.*?)</main>', text, flags=re.S|re.I)
+          if not main:
+              raise SystemExit('Main element not found')
+          if re.search(r'<img[^>]+gayrimenkul-bakim-triage-sonuc-karti\.png', main.group(1), flags=re.I):
+              raise SystemExit('Share/OG card must not be embedded as an in-page hero visual')
+          if '<img' in main.group(1).lower():
+              raise SystemExit('Unexpected decorative image in premium proof main content')
+
+          class Refs(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.refs=[]
+              def handle_starttag(self, tag, attrs):
+                  d=dict(attrs)
+                  for attr in ('href','src'):
+                      if attr in d: self.refs.append(d[attr])
+          parser=Refs(); parser.feed(text)
+          for value in parser.refs:
+              if not value or value.startswith(('#','mailto:','tel:','javascript:','http://','https://','data:')):
+                  continue
+              path=urlsplit(value).path
+              if not path: continue
+              target=(root/path.lstrip('/')) if path.startswith('/') else (root/proof.parent/unquote(path)).resolve()
+              if not target.exists():
+                  raise SystemExit(f'Broken local reference: {value}')
+
+          with card.open('rb') as f:
+              sig=f.read(24)
+          if sig[:8] != b'\x89PNG\r\n\x1a\n':
+              raise SystemExit('Result card is not valid PNG')
+          w,h=struct.unpack('>II',sig[16:24])
+          if (w,h) != (1200,630):
+              raise SystemExit(f'Unexpected result-card dimensions: {(w,h)}')
+
+          print('PREMIUM PROOF QUALITY GATE: PASS')
+          print(f'Frozen result verified: {before}/12 -> {controlled}/12; critical miss {miss_before} -> {miss_after}; routine auto {routine_after}/4')
+          PY
+          git diff --check
+
+      - name: Commit fix and remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f payload.zip .github/workflows/release.yml
+          git config user.name "synapse-proof-release"
+          git config user.email "synapse-proof-release@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No repository changes to commit."
+          else
+            git commit -m "fix: refine proof page presentation"
+            git push origin HEAD:main
+          fi
+
+      - name: Build clean public Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude 'D01/' \
+            --exclude 'D02/' \
+            --exclude 'D03/' \
+            --exclude '__pycache__/' \
+            --exclude '*.zip' \
+            --exclude '*.sha256' \
+            --exclude '*.py' \
+            --exclude 'README*.md' \
+            --exclude 'DEPLOYMENT.md'
+          test -f _site/index.html
+          test -f _site/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html
+          test -f _site/assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png
+          ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
+          echo "PUBLIC ARTIFACT QA: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
