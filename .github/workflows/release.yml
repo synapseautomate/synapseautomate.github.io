@@ -1,0 +1,245 @@
+name: Synapse Day 18 Proof Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: synapse-day18-proof-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate and unpack payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f payload.zip
+          rm -rf _release_payload
+          mkdir _release_payload
+          python3 - <<'PY'
+          from pathlib import Path, PurePosixPath
+          from zipfile import ZipFile
+
+          expected = {
+              'kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html',
+              'assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png',
+              'veri/gayrimenkul-bakim-triage-spec-v1.csv',
+              'veri/gayrimenkul-bakim-triage-metodoloji-v1.md',
+              'veri/gayrimenkul-bakim-triage-eval-v1.py',
+              'sektorler/gayrimenkul-yonetimi.html',
+              'content-manifest.json',
+              'feed.xml',
+              'llms.txt',
+              'sitemap.xml',
+          }
+
+          with ZipFile('payload.zip') as z:
+              infos = [i for i in z.infolist() if not i.is_dir()]
+              names = {i.filename.lstrip('./') for i in infos}
+              if names != expected:
+                  print('Expected:', sorted(expected))
+                  print('Found:', sorted(names))
+                  raise SystemExit('Payload file set mismatch')
+              for info in infos:
+                  raw = info.filename.lstrip('./')
+                  p = PurePosixPath(raw)
+                  if p.is_absolute() or '..' in p.parts:
+                      raise SystemExit(f'Unsafe payload path: {raw}')
+                  mode = (info.external_attr >> 16) & 0o170000
+                  if mode == 0o120000:
+                      raise SystemExit(f'Symlink not allowed: {raw}')
+              z.extractall('_release_payload')
+
+          print('PAYLOAD VALIDATION: PASS')
+          PY
+          rsync -a _release_payload/ ./
+          rm -rf _release_payload
+
+      - name: Day 18 proof QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import urlsplit, unquote
+          import csv, json, struct, xml.etree.ElementTree as ET
+
+          root = Path('.').resolve()
+          proof = Path('kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html')
+          sector = Path('sektorler/gayrimenkul-yonetimi.html')
+          csv_path = Path('veri/gayrimenkul-bakim-triage-spec-v1.csv')
+          method = Path('veri/gayrimenkul-bakim-triage-metodoloji-v1.md')
+          evaluator = Path('veri/gayrimenkul-bakim-triage-eval-v1.py')
+          card = Path('assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png')
+
+          for p in [proof, sector, csv_path, method, evaluator, card, Path('content-manifest.json'), Path('feed.xml'), Path('llms.txt'), Path('sitemap.xml')]:
+              if not p.is_file():
+                  raise SystemExit(f'Missing expected file: {p}')
+
+          # Frozen-set result is recomputed directly from the public CSV.
+          with csv_path.open(encoding='utf-8', newline='') as f:
+              rows = list(csv.DictReader(f))
+          if len(rows) != 12:
+              raise SystemExit(f'Expected 12 cases, got {len(rows)}')
+          before = sum(r['baseline_match'] == 'yes' for r in rows)
+          controlled = sum(r['controlled_match'] == 'yes' for r in rows)
+          miss_before = sum(r['critical_if_missed'] == 'yes' and r['baseline_state'] == 'AUTO_PROCEED' for r in rows)
+          miss_after = sum(r['critical_if_missed'] == 'yes' and r['controlled_state'] == 'AUTO_PROCEED' for r in rows)
+          routine_before = sum(r['expected_state'] == 'AUTO_PROCEED' and r['baseline_state'] == 'AUTO_PROCEED' for r in rows)
+          routine_after = sum(r['expected_state'] == 'AUTO_PROCEED' and r['controlled_state'] == 'AUTO_PROCEED' for r in rows)
+          got = (before, controlled, miss_before, miss_after, routine_before, routine_after)
+          if got != (8, 12, 4, 0, 4, 4):
+              raise SystemExit(f'Frozen result mismatch: {got}')
+
+          text = proof.read_text(encoding='utf-8')
+          combined = text + Path('assets/js/synapse-measurement-v1.js').read_text(encoding='utf-8')
+          required = [
+              'Sentetik / spec kanıt',
+              'Bu bir müşteri sonucu',
+              'üretim doğruluğu',
+              'tasarruf',
+              'güvenlik garantisi',
+              '4’ten 0’a',
+              '8/12',
+              '12/12',
+              '4/4 → 4/4',
+              'insan incelemesi veya durdur/yükselt',
+              'data-synapse-event="proof_share_click"',
+              'synapse-measurement-v1.js',
+              'G-HQSRRJ5HMZ',
+          ]
+          for needle in required:
+              if needle not in combined:
+                  raise SystemExit(f'Missing proof/measurement requirement: {needle}')
+          for bad in ['Day 18', 'Gün 18', 'QA PASS', 'Run Workflow', 'release.yml', 'payload.zip']:
+              if bad.lower() in text.lower():
+                  raise SystemExit(f'Internal language leaked to public proof: {bad}')
+
+          # Validate local references on both changed HTML pages without third-party packages.
+          class Refs(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.refs=[]
+              def handle_starttag(self, tag, attrs):
+                  d=dict(attrs)
+                  for attr in ('href','src'):
+                      if attr in d: self.refs.append(d[attr])
+
+          for rel in [proof, sector]:
+              parser=Refs(); parser.feed(rel.read_text(encoding='utf-8'))
+              for value in parser.refs:
+                  if not value or value.startswith(('#','mailto:','tel:','javascript:','http://','https://','data:')):
+                      continue
+                  path=urlsplit(value).path
+                  if not path:
+                      continue
+                  target=(root/path.lstrip('/')) if path.startswith('/') else (root/rel.parent/unquote(path)).resolve()
+                  if not target.exists():
+                      raise SystemExit(f'Broken local reference in {rel}: {value}')
+
+          # JSON/XML and discovery surfaces.
+          json.load(Path('content-manifest.json').open(encoding='utf-8'))
+          ET.parse('feed.xml'); ET.parse('sitemap.xml')
+          canonical='https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html'
+          if Path('sitemap.xml').read_text(encoding='utf-8').count(canonical) != 1:
+              raise SystemExit('Canonical proof URL must appear exactly once in sitemap.xml')
+          if '../kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html' not in sector.read_text(encoding='utf-8'):
+              raise SystemExit('Sector page is missing proof link')
+          if '`kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html`' not in method.read_text(encoding='utf-8'):
+              raise SystemExit('Methodology file has stale proof path')
+
+          # Card dimensions are part of the mobile/social QA contract.
+          with card.open('rb') as f:
+              sig=f.read(24)
+          if sig[:8] != b'\x89PNG\r\n\x1a\n':
+              raise SystemExit('Proof card is not a valid PNG')
+          w,h=struct.unpack('>II',sig[16:24])
+          if (w,h) != (1200,1500):
+              raise SystemExit(f'Unexpected proof-card size: {(w,h)}')
+
+          print('DAY 18 PROOF QA: PASS')
+          print(f'Frozen result: {before}/12 -> {controlled}/12; critical miss {miss_before} -> {miss_after}; routine {routine_before}/4 -> {routine_after}/4')
+          PY
+
+          eval_output="$(python3 veri/gayrimenkul-bakim-triage-eval-v1.py)"
+          printf '%s\n' "$eval_output"
+          grep -qx 'cases=12' <<<"$eval_output"
+          grep -qx 'before_match=8/12' <<<"$eval_output"
+          grep -qx 'controlled_match=12/12' <<<"$eval_output"
+          grep -qx 'critical_miss=4->0' <<<"$eval_output"
+          grep -qx 'routine_auto=4/4->4/4' <<<"$eval_output"
+          git diff --check
+
+      - name: Commit release and remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f payload.zip .github/workflows/release.yml
+          git config user.name "synapse-day18-release"
+          git config user.email "synapse-day18-release@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No repository changes to commit."
+          else
+            git commit -m "feat: publish synthetic real-estate maintenance proof"
+            git push origin HEAD:main
+          fi
+
+      - name: Build clean public Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude 'D01/' \
+            --exclude 'D02/' \
+            --exclude 'D03/' \
+            --exclude '__pycache__/' \
+            --exclude '*.zip' \
+            --exclude '*.sha256' \
+            --exclude '*.py' \
+            --exclude 'README*.md' \
+            --exclude 'DEPLOYMENT.md'
+
+          test -f _site/index.html
+          test -f _site/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html
+          test -f _site/assets/day18/gayrimenkul-bakim-triage-sonuc-karti.png
+          test -f _site/veri/gayrimenkul-bakim-triage-spec-v1.csv
+          test -f _site/veri/gayrimenkul-bakim-triage-metodoloji-v1.md
+          test ! -f _site/veri/gayrimenkul-bakim-triage-eval-v1.py
+          ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
+          echo "PUBLIC ARTIFACT QA: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
