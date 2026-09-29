@@ -30,6 +30,7 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - [Operations loss reduction](https://synapseautomate.github.io/cozumler/operasyon-kayiplarini-azaltma.html)
 
 ## Trust and proof
+- [Monitoring, incident response and monthly support boundaries](https://synapseautomate.github.io/rehberler/otomasyon-izleme-ve-olay-yonetimi.html): public methodology, blank status template and FAQ.
 - [Risk and authority matrix](https://synapseautomate.github.io/kanit/risk-yetki-matrisi.html)
 - [Sample human approval card](https://synapseautomate.github.io/kanit/ornek-insan-onay-karti.html)
 - [50-case source methodology](https://synapseautomate.github.io/kanit/50-vaka-kaynak-metodolojisi.html)
