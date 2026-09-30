@@ -1,0 +1,215 @@
+name: Synapse Enterprise Buyer Readiness Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  release:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate and apply enterprise buyer payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PYQA'
+          from pathlib import Path
+          from zipfile import ZipFile
+          from hashlib import sha256
+          from stat import S_IFMT,S_IFLNK
+          allowed=['README.md', 'araclar/egitim-ai-surec-kontrol-listesi.html', 'araclar/hukuk-uyum-ai-surec-kontrol-listesi.html', 'araclar/otomasyon-hata-maliyeti-hesaplayici.html', 'araclar/site-ai-uyumluluk-taramasi.html', 'araclar/surecini-20-dakikada-haritala.html', 'araclar/uretim-lojistik-ai-surec-kontrol-listesi.html', 'assets/day21/kurumsal-ai-satin-alma-kontrol-listesi-cover.png', 'content-manifest.json', 'cozumler/ai-otomasyon-ajansi-istanbul.html', 'cozumler/e-ticaret-operasyon-otomasyonu.html', 'cozumler/emlak-musteri-talep-takip-otomasyonu.html', 'cozumler/klinik-randevu-talep-takip-otomasyonu.html', 'cozumler/roofing-ev-hizmetleri.html', 'cozumler/rpa-danismanlik.html', 'cozumler/sigorta-acentesi-yenileme-takip-otomasyonu.html', 'cozumler/whatsapp-musteri-takip-otomasyonu.html', 'docs/CHANGELOG.md', 'docs/README.md', 'docs/data-flow-and-roles-v1.md', 'docs/enterprise-buyer-pack-v1.md', 'docs/incident-and-support-v1.md', 'docs/model-and-fallback-policy-v1.md', 'guven-merkezi.html', 'index.html', 'kanit/site-katalog-ai-hazirlik-metodolojisi.html', 'kanit/site-katalog-ai-hazirlik-ornek-rapor.html', 'karsilastirma-testi.html', 'kaynaklar.html', 'llms.txt', 'pilot/kontrollu-ai-is-akisi-pilotu.html', 'rehberler/ai-otomasyon-fiyatlari.html', 'rehberler/ai-otomasyon-guvenilirlik-testi.html', 'rehberler/ai-otomasyon-is-akisi-karar-tablosu.html', 'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html', 'rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html', 'rehberler/otomasyon-izleme-ve-olay-yonetimi.html', 'sektorler/e-ticaret.html', 'sektorler/gayrimenkul-yonetimi.html', 'sektorler/hukuk.html', 'sektorler/uretim-lojistik.html', 'sitemap.xml', 'surec-analizi.html', 'teklif/e-ticaret-surec-analizi.html', 'urunler.html', 'urunler/agentready.html', 'urunler/creative.html', 'urunler/magnetflow.html', 'urunler/revenueos.html', 'urunler/vela.html']
+          expected={'README.md': '3b89cda1cf8e6adffe5e1c7836d7445b1317647d620a9062025d8ccd1e356d1c', 'araclar/egitim-ai-surec-kontrol-listesi.html': '024f339f0d5734ae4547cfbe070bcacfb5f07a44c8c4871bab08bd659950cbac', 'araclar/hukuk-uyum-ai-surec-kontrol-listesi.html': 'f48eaff91b1c8a26ddb5fb00d8a5bb045cf56b2f77869d635c981724dc6efe69', 'araclar/otomasyon-hata-maliyeti-hesaplayici.html': '0ae7ae35f6f1b480379d702b936fe6921e529352f261f69841187aae25603959', 'araclar/site-ai-uyumluluk-taramasi.html': 'be40cb00c0b70d92f51afc4bad51b27c049e9049574cb7492b54a08654549fdc', 'araclar/surecini-20-dakikada-haritala.html': '04d9a0bd9ea9f6b3649c4e7d745e5d0771bb8a5251530ee566b7b0cf60d13f62', 'araclar/uretim-lojistik-ai-surec-kontrol-listesi.html': '7e25c1cb39da659bc8e4f253b90538163f0fe67ce025286aeff6c0c8b389ca14', 'assets/day21/kurumsal-ai-satin-alma-kontrol-listesi-cover.png': 'f87571b49fad45b998e471c15e2c60d223b58beb6d4a3ffc20721a45cba6ae1d', 'content-manifest.json': '0ca4589a018072c2d2220ff01c5fb79f5ff733e973ea6801ca981140b53c8dae', 'cozumler/ai-otomasyon-ajansi-istanbul.html': '3b5e585e83714d699845288ab93c889af581dc9bd5eb06e51b42ee8e7d8e3809', 'cozumler/e-ticaret-operasyon-otomasyonu.html': '0a1708f9342f190ee04f8590ab6aa66d470378f60372635f5291a077d2d88d7e', 'cozumler/emlak-musteri-talep-takip-otomasyonu.html': 'ee6abc818a2b536b810be717805816fed25aa9984f8bb7c537f4ac8f0519f56d', 'cozumler/klinik-randevu-talep-takip-otomasyonu.html': 'ba5882169d30d8ba25e79768e54868ed591af2c502fd9e25539bbf3e10c31db8', 'cozumler/roofing-ev-hizmetleri.html': '0535d3092d7d8ff5d26e7ab98ab827de9262e86a7e847fa2a6b5fba8b48e1951', 'cozumler/rpa-danismanlik.html': '55a017416d958984fa0fc8d3ec3721053603e223d5c77f4a73707826a92eab50', 'cozumler/sigorta-acentesi-yenileme-takip-otomasyonu.html': 'fd02db35fd6c02664c4cb9e67dd94fb66068a77a3a47fee73a9fdd62bfbd9e97', 'cozumler/whatsapp-musteri-takip-otomasyonu.html': '12e887fcf6c1b332696adf62f28925bb13998a8b4713a30cd5a312eeaabb3cd9', 'docs/CHANGELOG.md': 'bdc9e3a30f8eed62e774003920d60777b2e45aa8c5e61f8035ab565103c2407b', 'docs/README.md': '4e460e70813b0538c3557942c81ffe1d5289c509b29fd02610b0b2ed6577e0aa', 'docs/data-flow-and-roles-v1.md': 'bc53b72c98e72dcdf28d57576216ad69a130a12fef0120f861228c97a77dc118', 'docs/enterprise-buyer-pack-v1.md': 'bb5ab6d5b972dcc0690db49a83d0d53788648ef75e3f473f7628ee29464c82d4', 'docs/incident-and-support-v1.md': '34789b8186f1502d6b8f02a49b5cac6726f1b4b1ee4783fae0cd240221998ddf', 'docs/model-and-fallback-policy-v1.md': '6de579f3fd1c959987405bf1728f920e988df5fd124ff8ffb21c7db4c713c675', 'guven-merkezi.html': 'cf23949541fbe9bb1bdbc244bc97d0d1ca9efe0704508300025d90c94aa01699', 'index.html': '5bde8f79923db2c6296f9ce5ac5406c847d3976aff98d634cbec9a032aac502c', 'kanit/site-katalog-ai-hazirlik-metodolojisi.html': '4be00fd267d102e5e7106cee09378d961925b8d25764a531ee775f6ef606838e', 'kanit/site-katalog-ai-hazirlik-ornek-rapor.html': '21afc5decd693aaf7a5f6f96e3554456c90a21e4f8ba1a7937d9d9a7502576aa', 'karsilastirma-testi.html': '9c74f0c6db7cee30ea085be2fa283b98cc9b8c283712425a52f051c7fd9267e8', 'kaynaklar.html': 'f2b8bd2e7045d99a0444528cb30a6d3574ddece2a191f205e2f72b2f72d41e8a', 'llms.txt': '80c3aa9a4c0b1116606706dfd7d5fdb41c78125ff13b0d85b7060e8dddf4fad1', 'pilot/kontrollu-ai-is-akisi-pilotu.html': 'fcc8bfd97b66e20785f20149615a2886c1a0eb3ff367017bb85f5d8324e569f3', 'rehberler/ai-otomasyon-fiyatlari.html': 'b96decb5fe8d4c421fd7ce08196a8a7d9aa4ae2f5456772deff43d8d962d2df6', 'rehberler/ai-otomasyon-guvenilirlik-testi.html': '554fef36c66937f00ffdda661147efa163549b6f903f467c945a1780bf048166', 'rehberler/ai-otomasyon-is-akisi-karar-tablosu.html': 'b37e35e7a6cc12da1e58d61154baaed7efc5d55a31f53f248a128b327a02ad4b', 'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html': 'c126ce24e9481dd226c76b29cdcf344f36df265ef1a1d4fb02feed497f7e7bdf', 'rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html': '10c3f0deaf0a791fb4420c41e31032117329aae7a7437c96cdc4644d96c65df1', 'rehberler/otomasyon-izleme-ve-olay-yonetimi.html': '2deac202d00bb28db39641ba1e756bd05d0b950d09126d55f2eefc59ed0c1573', 'sektorler/e-ticaret.html': 'de30f160095b349548e90e8101a1eb10cccb96a066fb3042dc0cf0f2301e6112', 'sektorler/gayrimenkul-yonetimi.html': 'ae5ff42117ad9e8c4426489e0cd61b18eea62165b8211cd5d4bc553ed59d716b', 'sektorler/hukuk.html': 'd9279be7dfa99fd17f6aeee62ffc75156c5664300bc7f6fd1993eddfea140a6f', 'sektorler/uretim-lojistik.html': '708340023ab547f808e8ef911f13dd8c27d6875d8a395c3d7345bdf565d3911a', 'sitemap.xml': '30679a7b0ff4784656385659d31dba469b4a63c91ae825ef8490f4410127a3af', 'surec-analizi.html': 'c6d8e6ff88c03fdbd866543653ad528bd008fb2ed3b9c03281a04de885ebb869', 'teklif/e-ticaret-surec-analizi.html': '059bbc0533cf8af68efc0e3edd2e2f450d031225c08a0f864d98c933e5625127', 'urunler.html': 'ae01447f624038e69e9339a64405d8f13ef67b42da6b9aef6cbed55fb8d5f7c9', 'urunler/agentready.html': 'f05da2c0e0320e51c04c0df99b4460f528ffa9ac40771ebcac731e67f5f7809a', 'urunler/creative.html': '646565e0ffa0812982220d161ce3fc3c3644e874832a64cc98dcf13e685d4939', 'urunler/magnetflow.html': '08d667ae497bedfc12d302788aafc4c5f55f438feaf4d8d7bcd9faa7175f0d39', 'urunler/revenueos.html': 'f5bad9dc5d09de7557226cb90dccd78429e2d6bd52e5842e44f623ea91a844eb', 'urunler/vela.html': '5a8189f0c1340f17c0da9e6edd35dd43e84ab9ae5845a7da9eaad9fa38af1052'}
+          baseline={'README.md': '3ee6cf7d97616c13d41aaeb2823f7b9e6378592f1a42af42728257e8596e7ec7', 'araclar/egitim-ai-surec-kontrol-listesi.html': 'b810aa8a7396cbdfaff481e34a3636ea93b172ba301fde60d2c145d0552c9750', 'araclar/hukuk-uyum-ai-surec-kontrol-listesi.html': '4bc403e1a791a441aea584be200db0197122e468d7d4beca723ad751bb90684a', 'araclar/otomasyon-hata-maliyeti-hesaplayici.html': '3b273c83149abf023d400ddddf5e47d730dc39325b5591342cf357c1e5c3c686', 'araclar/site-ai-uyumluluk-taramasi.html': '1ade7536e63e36a9cd7c6f41a9d00393bfd269cf4a79589543b221f89fdc397d', 'araclar/surecini-20-dakikada-haritala.html': '6e27225d7e38d8c6adf1b21146b3a4283aa511c16e8367d1ff37f936ed2d281e', 'araclar/uretim-lojistik-ai-surec-kontrol-listesi.html': 'ff308124cd5f31768caf660865bc1904b5b1c3b8f8c01347bc44499e9a4a6230', 'content-manifest.json': '35ee48570a23d8097a2444843081abb9f6675f67fde60f77faf333a48524a19a', 'cozumler/ai-otomasyon-ajansi-istanbul.html': '19d2597a820b15ac9856d948914cce2113cd76f2110c8acadf658005646d9fcf', 'cozumler/e-ticaret-operasyon-otomasyonu.html': '6c7f14b2ffc103ac6788cdfe96a0082098527281ceedc6159f3d624a6298b568', 'cozumler/emlak-musteri-talep-takip-otomasyonu.html': 'c1d38964864f474cb1e1c408f5c7fa968abae17f0b5858b34c6fe2b31ecad8cb', 'cozumler/klinik-randevu-talep-takip-otomasyonu.html': 'c897d3671b804370642674a1df40cb5b158ccb1800acf7a2636c028e7852231e', 'cozumler/roofing-ev-hizmetleri.html': '9d162b6b6e95b504cb40986d723df2a13846296683b42e592b4a7f32ec3a602a', 'cozumler/rpa-danismanlik.html': 'cd5fd29d07edafeaed1cb8a3de8b6aa4e08d36ef7e2be6d8a26ff571feea4e25', 'cozumler/sigorta-acentesi-yenileme-takip-otomasyonu.html': 'd6caba813bb5ae4bffb6559f09ba9c6b5ac82ffd0556966b9ecebda0bd74aa1a', 'cozumler/whatsapp-musteri-takip-otomasyonu.html': 'a37bea6db0b5149c8c73202e4c0dc0bca1a65242b36f41e6747ae8b9331cf79c', 'guven-merkezi.html': '39d942c2481f9e0ed6f0d8fd4b8ae8f2abbf63d92ec6615ca074c3fcb960ac74', 'index.html': 'c1ffa270bac9a9224a09a3ba5d5b3867ed7d747a08a526db73de94a0c6d283f6', 'kanit/site-katalog-ai-hazirlik-metodolojisi.html': '20380ad2bcf5487cebaec2c747a920a2541f92f871ac349a93f1120b2a791507', 'kanit/site-katalog-ai-hazirlik-ornek-rapor.html': 'e8e7da18fd0de7bd9b96688482152aa0557e7e3f51cdcb51998068b3dd41208a', 'karsilastirma-testi.html': '2d458566da2eea539d219c1b3cea346cf9699e57d5602491d8695590418dc15a', 'kaynaklar.html': 'c4969dc341a84ccd0570caa39097aa7de9010f0bedf35cec2afc263be21f4b17', 'llms.txt': 'adedfa75a73d739f71d485998f2cf150645443a4e3782b1b0905e6e1f897fb80', 'pilot/kontrollu-ai-is-akisi-pilotu.html': 'ae8a989184459c48ab74d7431d6ba8ce4439ec8c9896ecaf672729634ef2dfe6', 'rehberler/ai-otomasyon-fiyatlari.html': '3c1f7337ead338679562167de0cc5d4963aefc95d41a3c00e436403516b94f92', 'rehberler/ai-otomasyon-guvenilirlik-testi.html': '4667fb4ed8b75d730aa3466ddb7ac7a6d31d5bf0a4d73b637cdd78fb3f4b443d', 'rehberler/ai-otomasyon-is-akisi-karar-tablosu.html': 'eb42bae6b5811a08ef614689103d845f04d3d7b4d4a01aaead8e66a4e5cf24c8', 'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html': '2dd6377f70362fb15ae18fed236d6efdc5bb213fd83764f9aaa9c56351ab0049', 'rehberler/otomasyon-izleme-ve-olay-yonetimi.html': 'e24d4ef1560c6d7363c1499fac5a9ce28e75d0aecd8b1cc3c7a35b92d6d981a2', 'sektorler/e-ticaret.html': 'd4e079a4a7556b0a7e54b1e7a11ca890f312a2825a6b0780b1f96c5fda5e84ab', 'sektorler/gayrimenkul-yonetimi.html': '775f2c610bfcd20833dee2cdbd026a8b287b398cda414cc069c3e2cd7583458e', 'sektorler/hukuk.html': '7dad1b68759af61e48e16da2a2fcde02a063038cae098955d213b33759d91020', 'sektorler/uretim-lojistik.html': 'bba437697dbd616acfd42096a6ff2c34f9204cce26645c64320e12f01d93a7fd', 'sitemap.xml': '8769319fafa8d2c011bc0fa64e65033eb5cc62729ba5016d99219116a9bf9621', 'surec-analizi.html': '48a8e880f6e37c78485852f7c2996d4eaaa544942eac083c08eeeacdcf817976', 'teklif/e-ticaret-surec-analizi.html': '369c1f07aea9597f35066780cd3bd32b8d5df14d5cfb0989709f2889b49e3172', 'urunler.html': '8bd4d777aaab4788c5f3b0fc922ee897edd2db1643a49d9b0cd276b2177eddf9', 'urunler/agentready.html': '1bc81baf67b5f9fce65c942b24ad002adbc670eb5dc2bd96397a89f7a0fcec2b', 'urunler/creative.html': '53136e6fd4ddfde4ae9fb65ddc545b6cdec7319d555d2ae077b6b73667580ed3', 'urunler/magnetflow.html': '2f50bb18bebe4431fb72e70b7f078c933ea4b2bca092e5e8184ff374e305e2d1', 'urunler/revenueos.html': '94007032461b7f22a3b2d1c9b31b420507d589b3476ed472c588c2919a731b99', 'urunler/vela.html': '7b75ad0f37fe69319aadaff6d76cf29ea32a509714301c97a6dbd1aeeec6da0b'}
+          payload_sha='c210446b6b30fcf63096c6bcbb413eba5fb86cef15a67ce8de703145466623d7'
+          zpath=Path('payload.zip')
+          def sha(b): return sha256(b).hexdigest()
+          if not zpath.is_file() or sha(zpath.read_bytes()) != payload_sha:
+              raise SystemExit('Wrong or missing Day 21 payload.zip')
+          with ZipFile(zpath) as z:
+              entries=[e for e in z.infolist() if not e.is_dir()]
+              names=[e.filename for e in entries]
+              if len(entries)!=len(allowed) or set(names)!=set(allowed) or len(names)!=len(set(names)):
+                  raise SystemExit('Unexpected payload members')
+              for e in entries:
+                  p=Path(e.filename)
+                  if e.filename.startswith('/') or '..' in p.parts or S_IFMT(e.external_attr>>16)==S_IFLNK:
+                      raise SystemExit('Unsafe ZIP member: '+e.filename)
+                  data=z.read(e)
+                  if sha(data)!=expected[e.filename]:
+                      raise SystemExit('Payload checksum mismatch: '+e.filename)
+                  dst=Path(e.filename)
+                  if e.filename in baseline:
+                      if not dst.is_file():
+                          raise SystemExit('Expected live file missing: '+e.filename)
+                      live=sha(dst.read_bytes())
+                      if live not in (baseline[e.filename], expected[e.filename]):
+                          raise SystemExit('Live file differs from guarded baseline: '+e.filename)
+                  elif dst.exists() and (not dst.is_file() or sha(dst.read_bytes())!=expected[e.filename]):
+                      raise SystemExit('Unexpected pre-existing new file: '+e.filename)
+              for e in entries:
+                  dst=Path(e.filename); dst.parent.mkdir(parents=True,exist_ok=True); dst.write_bytes(z.read(e))
+          print('PAYLOAD + BASELINE GUARD: PASS')
+          PYQA
+
+      - name: Buyer pack, pricing and discovery QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PYQA'
+          from pathlib import Path
+          from urllib.parse import urlsplit,unquote
+          from hashlib import sha256
+          from xml.etree import ElementTree as ET
+          import json,re
+          root=Path('.').resolve()
+          rel='rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html'
+          page=Path(rel)
+          s=page.read_text(encoding='utf-8')
+          if not re.search(r'<html[^>]+lang=["\']tr["\']',s,re.I): raise SystemExit('Buyer page language invalid')
+          for mark in ('Veri akışı','Roller & yetki','Gizlilik','Olay yönetimi','Destek','4.900 TL','24.900 TL','14.900 TL','müşteri sonucu','surecini-20-dakikada-haritala.html'):
+              if mark not in s: raise SystemExit('Missing buyer-pack commitment: '+mark)
+          for forbidden in ('Day 21','Gün 21','QA PASS','Run Workflow','release.yml','payload.zip','Nike','Red Bull'):
+              if forbidden.lower() in s.lower(): raise SystemExit('Internal/unwanted public phrase: '+forbidden)
+          if re.search(r'\$\s?\d',s): raise SystemExit('USD equivalent remains on Turkish buyer page')
+          blocks=re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',s,re.S|re.I)
+          objs=[json.loads(b) for b in blocks]
+          types=[]; faq=None
+          for o in objs:
+              xs=o.get('@graph',[]) if isinstance(o,dict) and '@graph' in o else ([o] if isinstance(o,dict) else o)
+              for x in xs:
+                  if isinstance(x,dict):
+                      types.append(x.get('@type'))
+                      if x.get('@type')=='FAQPage': faq=x
+          if 'Article' not in types or 'FAQPage' not in types: raise SystemExit('Article/FAQ schema missing')
+          visible=len(re.findall(r'<summary\b',s,re.I))
+          if not faq or visible!=5 or len(faq.get('mainEntity',[]))!=5: raise SystemExit('FAQ visible/schema mismatch')
+          for q in faq['mainEntity']:
+              if q['name'] not in s or q['acceptedAnswer']['text'] not in s: raise SystemExit('FAQ content mismatch')
+          # No numeric USD equivalents anywhere on Turkish HTML after the Day 20 trust correction.
+          bad=[]
+          for f in Path('.').rglob('*.html'):
+              txt=f.read_text(encoding='utf-8',errors='ignore')
+              if re.search(r'\$\s?\d',txt): bad.append(str(f))
+          if bad: raise SystemExit('Ambiguous USD equivalents remain: '+', '.join(bad[:10]))
+          # Canonical commercial prices remain intact.
+          offer=Path('surec-analizi.html').read_text(encoding='utf-8')
+          for price in ('4.900 TL','24.900 TL','14.900 TL'):
+              if price not in offer: raise SystemExit('Canonical price missing: '+price)
+          if re.search(r'\$\s?\d',offer): raise SystemExit('USD equivalent remains on Turkish offer page')
+          # Discovery/indexability.
+          url='https://synapseautomate.github.io/'+rel
+          sm=Path('sitemap.xml').read_text(encoding='utf-8'); ET.fromstring(sm)
+          if sm.count('<loc>'+url+'</loc>')!=1: raise SystemExit('Sitemap canonical not unique')
+          ll=Path('llms.txt').read_text(encoding='utf-8')
+          if ll.count(url)!=1 or ll.endswith('\n\n') or not ll.endswith('\n'): raise SystemExit('llms discovery/EOF invalid')
+          cm=json.loads(Path('content-manifest.json').read_text(encoding='utf-8'))
+          if 'kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html' not in json.dumps(cm,ensure_ascii=False): raise SystemExit('Content manifest missing buyer pack')
+          # Public buyer docs v1.
+          for f in ('docs/README.md','docs/enterprise-buyer-pack-v1.md','docs/data-flow-and-roles-v1.md','docs/incident-and-support-v1.md','docs/model-and-fallback-policy-v1.md','docs/CHANGELOG.md'):
+              if not Path(f).is_file(): raise SystemExit('Missing buyer doc: '+f)
+          # Critical previously closed work must remain intact.
+          keep={
+            'assets/reports/Synapse_MVPde_Neyi_Izliyoruz.pdf':'ab8efa086762a6ede708f74ce04aa74f6d4e6f5bcd15dfb1123d9da30808dcc6',
+            'kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html':'1af2163729cbc82d355727c67b74caa7d3a51246a2d6dd112246a7a28f3c90c7',
+            'assets/js/synapse-measurement-v1.js':'a5d40b8e98db20c58950f1ea5be5600bb62c3ca4eb31213a86c23fde472000fd'
+          }
+          for f,h in keep.items():
+              if not Path(f).is_file() or sha256(Path(f).read_bytes()).hexdigest()!=h: raise SystemExit('Closed asset changed unexpectedly: '+f)
+          if 'G-HQSRRJ5HMZ' not in Path('assets/js/synapse-measurement-v1.js').read_text(encoding='utf-8'): raise SystemExit('GA4 identity missing')
+          # Cover and local resources.
+          cover=Path('assets/day21/kurumsal-ai-satin-alma-kontrol-listesi-cover.png')
+          if not cover.is_file() or cover.stat().st_size<10000: raise SystemExit('Buyer cover missing')
+          if 'assets/day21/kurumsal-ai-satin-alma-kontrol-listesi-cover.png' not in s: raise SystemExit('Buyer cover metadata missing')
+          for value in re.findall(r'\b(?:href|src)=["\']([^"\']+)',s,re.I):
+              if not value or value.startswith(('#','https:','http:','mailto:','tel:','data:')): continue
+              path=unquote(urlsplit(value).path)
+              dest=root/path.lstrip('/') if path.startswith('/') else (root/page.parent/path)
+              if not dest.resolve().is_file(): raise SystemExit('Broken buyer-page resource: '+value)
+          robots=Path('robots.txt').read_text(encoding='utf-8')
+          if 'Disallow: /rehberler/' in robots or 'Disallow: /docs/' in robots: raise SystemExit('Buyer content blocked by robots')
+          print('BUYER PACK + PRICING + DISCOVERY + GA4: PASS')
+          PYQA
+          # Preserve binary treatment for public PDFs. Day 20 already added this on live;
+          # append only if an older checkout does not contain it.
+          if ! grep -qxF '*.pdf -text -diff' .gitattributes; then
+            printf '\n*.pdf -text -diff\n' >> .gitattributes
+          fi
+          git diff --check
+
+      - name: Commit release and remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f payload.zip .github/workflows/release.yml
+          python3 - <<'PYQA'
+          import subprocess
+          allowed=set(['README.md', 'araclar/egitim-ai-surec-kontrol-listesi.html', 'araclar/hukuk-uyum-ai-surec-kontrol-listesi.html', 'araclar/otomasyon-hata-maliyeti-hesaplayici.html', 'araclar/site-ai-uyumluluk-taramasi.html', 'araclar/surecini-20-dakikada-haritala.html', 'araclar/uretim-lojistik-ai-surec-kontrol-listesi.html', 'assets/day21/kurumsal-ai-satin-alma-kontrol-listesi-cover.png', 'content-manifest.json', 'cozumler/ai-otomasyon-ajansi-istanbul.html', 'cozumler/e-ticaret-operasyon-otomasyonu.html', 'cozumler/emlak-musteri-talep-takip-otomasyonu.html', 'cozumler/klinik-randevu-talep-takip-otomasyonu.html', 'cozumler/roofing-ev-hizmetleri.html', 'cozumler/rpa-danismanlik.html', 'cozumler/sigorta-acentesi-yenileme-takip-otomasyonu.html', 'cozumler/whatsapp-musteri-takip-otomasyonu.html', 'docs/CHANGELOG.md', 'docs/README.md', 'docs/data-flow-and-roles-v1.md', 'docs/enterprise-buyer-pack-v1.md', 'docs/incident-and-support-v1.md', 'docs/model-and-fallback-policy-v1.md', 'guven-merkezi.html', 'index.html', 'kanit/site-katalog-ai-hazirlik-metodolojisi.html', 'kanit/site-katalog-ai-hazirlik-ornek-rapor.html', 'karsilastirma-testi.html', 'kaynaklar.html', 'llms.txt', 'pilot/kontrollu-ai-is-akisi-pilotu.html', 'rehberler/ai-otomasyon-fiyatlari.html', 'rehberler/ai-otomasyon-guvenilirlik-testi.html', 'rehberler/ai-otomasyon-is-akisi-karar-tablosu.html', 'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html', 'rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html', 'rehberler/otomasyon-izleme-ve-olay-yonetimi.html', 'sektorler/e-ticaret.html', 'sektorler/gayrimenkul-yonetimi.html', 'sektorler/hukuk.html', 'sektorler/uretim-lojistik.html', 'sitemap.xml', 'surec-analizi.html', 'teklif/e-ticaret-surec-analizi.html', 'urunler.html', 'urunler/agentready.html', 'urunler/creative.html', 'urunler/magnetflow.html', 'urunler/revenueos.html', 'urunler/vela.html']+['.gitattributes','payload.zip','.github/workflows/release.yml'])
+          out=subprocess.check_output(['git','status','--porcelain=v1','-uall'],text=True)
+          seen=set()
+          for line in out.splitlines():
+              path=line[3:]
+              if ' -> ' in path: path=path.split(' -> ',1)[1]
+              seen.add(path)
+          unexpected=seen-allowed
+          if unexpected: raise SystemExit('Unexpected working-tree changes: '+', '.join(sorted(unexpected)))
+          print('WORKTREE SCOPE: PASS')
+          PYQA
+          git config user.name "synapse-enterprise-readiness-release"
+          git config user.email "synapse-enterprise-readiness-release@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "docs: publish enterprise buyer readiness pack v1"
+            git push origin HEAD:main
+          fi
+
+      - name: Build clean public Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a ./ _site/             --exclude '.git/'             --exclude '.github/'             --exclude '_site/'             --exclude 'D01/' --exclude 'D02/' --exclude 'D03/'             --exclude '__pycache__/' --exclude '*.zip'             --exclude '*.sha256' --exclude '*.py'             --exclude 'README*.md' --exclude 'DEPLOYMENT.md'
+          test -f _site/index.html
+          test -f _site/rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html
+          test -f _site/assets/day21/kurumsal-ai-satin-alma-kontrol-listesi-cover.png
+          test -f _site/araclar/surecini-20-dakikada-haritala.html
+          test -f _site/surec-analizi.html
+          test -f _site/rehberler/otomasyon-izleme-ve-olay-yonetimi.html
+          test -f _site/assets/reports/Synapse_MVPde_Neyi_Izliyoruz.pdf
+          test -f _site/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html
+          ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
+          echo "CLEAN PUBLIC PAGES ARTIFACT: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
