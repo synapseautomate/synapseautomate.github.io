@@ -14,6 +14,14 @@ Synapse Automate designs human-supervised, measurable AI automation for real bus
 - [AI Otomasyonunda Güvenilirlik Testi](https://synapseautomate.github.io/rehberler/ai-otomasyon-guvenilirlik-testi.html)
 - [Süreç Analizi](https://synapseautomate.github.io/surec-analizi.html)
 
+## Public docs
+
+- [Enterprise Buyer Pack v1](docs/enterprise-buyer-pack-v1.md)
+- [Data Flow & Roles v1](docs/data-flow-and-roles-v1.md)
+- [Incident & Support v1](docs/incident-and-support-v1.md)
+- [Model & Fallback Policy v1](docs/model-and-fallback-policy-v1.md)
+- [Public Docs Changelog](docs/CHANGELOG.md)
+
 ## Delivery principles
 
 - Human approval remains mandatory for critical commercial, legal, financial and sensitive decisions.

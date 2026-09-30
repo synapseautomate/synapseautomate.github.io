@@ -111,3 +111,8 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Scope: 12 fixed synthetic maintenance-request cases; same expected state for baseline and controlled comparison.
 - Fixed-set result: decision match 8/12 -> 12/12; critical misses 4 -> 0; routine auto-routing 4/4 -> 4/4.
 - Limitation: synthetic/spec methodology evidence only; not customer performance, production accuracy, safety, savings, ROI, compliance or generalization evidence.
+## Enterprise purchase-readiness — 2026-09-30
+- Buyer pack canonical: https://synapseautomate.github.io/rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html
+- Scope: data flow, roles, privacy boundary, human authority, incident response, recurring support boundary, pricing starting points and purchase checklist.
+- Public GitHub docs: https://github.com/synapseautomate/synapseautomate.github.io/tree/main/docs
+- Claim boundary: no customer result, production accuracy, security/compliance certification, uptime or ROI guarantee is implied.

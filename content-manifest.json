@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-26",
+  "generated_at": "2026-09-30",
   "organization": {
     "name": "Synapse Automate",
     "canonical": "https://synapseautomate.github.io/",
@@ -56,6 +56,12 @@
       "url": "https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html",
       "type": "evidence",
       "summary": "12 sabit sentetik bakım talebi vakasında konu bazlı yönlendirme ile kontrollü insan-onaylı yaklaşımın açık metodolojiyle karşılaştırması."
+    },
+    {
+      "title": "Kurumsal AI Otomasyonu Satın Alma Kontrol Listesi",
+      "url": "https://synapseautomate.github.io/rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html",
+      "type": "buyer-guide",
+      "summary": "Veri akışı, roller, gizlilik, olay yönetimi, destek, fiyat başlangıçları ve insan onayı sınırlarını tek kurumsal satın alma paketi içinde toplar."
     }
   ]
 }
