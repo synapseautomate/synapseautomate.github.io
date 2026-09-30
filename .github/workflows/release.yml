@@ -1,0 +1,158 @@
+name: Synapse 404 Root Path Hotfix
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  release:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate and apply 404 hotfix
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f payload.zip
+          python3 - <<'PYQA'
+          from pathlib import Path
+          from zipfile import ZipFile
+          from hashlib import sha256
+          import re
+          expected_hash='e674e9666c52bd5b57375554b14cc1295631baccc81509d7ed7f2cb8bebebc4b'
+          with ZipFile('payload.zip') as z:
+              names=[n for n in z.namelist() if not n.endswith('/')]
+              if names != ['404.html']:
+                  raise SystemExit('Unexpected payload contents: '+repr(names))
+              data=z.read('404.html')
+              if sha256(data).hexdigest()!=expected_hash:
+                  raise SystemExit('404 payload hash mismatch')
+              Path('404.html').write_bytes(data)
+
+          s=Path('404.html').read_text(encoding='utf-8')
+          required=[
+              'name="robots"','noindex,follow',
+              'href="/assets/styles-v33.css"',
+              'src="/assets/synapse-logo.png"',
+              'src="/assets/app-v33.js"',
+              'src="/assets/js/synapse-measurement-v1.js"',
+              'href="/surec-analizi.html"',
+              'Aradığınız sayfa burada değil.',
+              'Ana Sayfaya Dön','Kaynakları Aç'
+          ]
+          for item in required:
+              if item not in s:
+                  raise SystemExit('Missing 404 requirement: '+item)
+          forbidden=[
+              'href="assets/','src="assets/','href="site.webmanifest"',
+              'Day 21','Gün 21','QA PASS','Run Workflow','payload.zip','release.yml'
+          ]
+          for item in forbidden:
+              if item.lower() in s.lower():
+                  raise SystemExit('Forbidden/relative 404 content: '+item)
+          # All root-relative local resources referenced by the 404 must exist.
+          refs=re.findall(r'\b(?:href|src)=["\'](/[^"\'#?]+)',s,re.I)
+          missing=[]
+          for ref in refs:
+              if ref=='/':
+                  continue
+              p=Path(ref.lstrip('/'))
+              if not p.exists():
+                  missing.append(ref)
+          if missing:
+              raise SystemExit('404 local references missing: '+', '.join(sorted(set(missing))))
+          # CSS must contain responsive nav behavior used by this page.
+          css=Path('assets/styles-v33.css').read_text(encoding='utf-8')
+          for mark in ('@media(max-width:980px)', '.nav-links.open{display:flex}', '.menu-button{display:grid'):
+              if mark not in css:
+                  raise SystemExit('Responsive navigation CSS missing: '+mark)
+          print('404 ROOT-PATH + CONTENT + RESOURCE QA: PASS')
+          PYQA
+          git diff --check
+
+      - name: Commit hotfix and remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f payload.zip .github/workflows/release.yml
+          python3 - <<'PYQA'
+          import subprocess
+          allowed={'404.html','payload.zip','.github/workflows/release.yml'}
+          out=subprocess.check_output(['git','status','--porcelain=v1','-uall'],text=True)
+          seen=set()
+          for line in out.splitlines():
+              path=line[3:]
+              if ' -> ' in path:
+                  path=path.split(' -> ',1)[1]
+              seen.add(path)
+          unexpected=seen-allowed
+          if unexpected:
+              raise SystemExit('Unexpected working-tree changes: '+', '.join(sorted(unexpected)))
+          print('WORKTREE SCOPE: PASS')
+          PYQA
+          git config user.name "synapse-404-hotfix"
+          git config user.email "synapse-404-hotfix@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "fix: make 404 assets root-safe"
+            git push origin HEAD:main
+          fi
+
+      - name: Build clean public Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude '__pycache__/' \
+            --exclude '*.zip' \
+            --exclude '*.sha256' \
+            --exclude '*.py' \
+            --exclude 'README*.md' \
+            --exclude 'DEPLOYMENT.md'
+          test -f _site/index.html
+          test -f _site/404.html
+          test -f _site/assets/styles-v33.css
+          test -f _site/assets/synapse-logo.png
+          test -f _site/rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html
+          grep -q 'href="/assets/styles-v33.css"' _site/404.html
+          grep -q 'noindex,follow' _site/404.html
+          ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
+          echo "CLEAN PUBLIC PAGES ARTIFACT: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
