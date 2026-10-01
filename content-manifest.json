@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-09-30",
+  "generated_at": "2026-10-01",
   "organization": {
     "name": "Synapse Automate",
     "canonical": "https://synapseautomate.github.io/",
@@ -62,6 +62,12 @@
       "url": "https://synapseautomate.github.io/rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html",
       "type": "buyer-guide",
       "summary": "Veri akışı, roller, gizlilik, olay yönetimi, destek, fiyat başlangıçları ve insan onayı sınırlarını tek kurumsal satın alma paketi içinde toplar."
+    },
+    {
+      "title": "E-Ticaret Kontrollü Pilot - Sentetik Örnek Rapor",
+      "url": "https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html",
+      "type": "evidence",
+      "summary": "Aynı karar çekirdeğinin iki ayrı e-ticaret yapılandırmasında 12 dondurulmuş sentetik vakayla doğrulandığı, veri ayrımı ve pilot ölçüm şablonunu açıklayan teknik örnek raporu."
     }
   ]
 }

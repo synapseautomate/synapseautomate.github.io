@@ -1,0 +1,188 @@
+{
+  "schema": "synapse-ecommerce-pilot-spec-v1",
+  "claim_boundary": "Synthetic/spec evidence only. Not customer production accuracy, security attestation, ROI, or SLA evidence.",
+  "core_policy_order": [
+    "required_fields",
+    "untrusted_instruction",
+    "source_conflict",
+    "source_freshness",
+    "currency_scope",
+    "action_scope",
+    "approval_threshold",
+    "approved_auto_action"
+  ],
+  "configs": {
+    "CONFIG_A": {
+      "label": "Örnek yapı A",
+      "namespace": "spec-a",
+      "allowed_currencies": [
+        "TRY"
+      ],
+      "max_source_age_min": 20,
+      "human_approval_threshold": 500,
+      "autonomous_actions": [
+        "queue"
+      ]
+    },
+    "CONFIG_B": {
+      "label": "Örnek yapı B",
+      "namespace": "spec-b",
+      "allowed_currencies": [
+        "TRY",
+        "EUR"
+      ],
+      "max_source_age_min": 45,
+      "human_approval_threshold": 1500,
+      "autonomous_actions": [
+        "queue",
+        "tag"
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "A-01",
+      "config": "CONFIG_A",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 5,
+      "currency": "TRY",
+      "action": "queue",
+      "amount": 150,
+      "expected": "AUTO_QUEUE"
+    },
+    {
+      "id": "A-02",
+      "config": "CONFIG_A",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 5,
+      "currency": "TRY",
+      "action": "queue",
+      "amount": 780,
+      "expected": "HUMAN_APPROVAL"
+    },
+    {
+      "id": "A-03",
+      "config": "CONFIG_A",
+      "missing_required": true,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 5,
+      "currency": "TRY",
+      "action": "queue",
+      "amount": 100,
+      "expected": "STOP_MISSING_FIELD"
+    },
+    {
+      "id": "A-04",
+      "config": "CONFIG_A",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 30,
+      "currency": "TRY",
+      "action": "queue",
+      "amount": 100,
+      "expected": "STOP_STALE_SOURCE"
+    },
+    {
+      "id": "A-05",
+      "config": "CONFIG_A",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 5,
+      "currency": "EUR",
+      "action": "queue",
+      "amount": 100,
+      "expected": "STOP_CURRENCY_SCOPE"
+    },
+    {
+      "id": "A-06",
+      "config": "CONFIG_A",
+      "missing_required": false,
+      "embedded_instruction": true,
+      "source_conflict": false,
+      "source_age_min": 5,
+      "currency": "TRY",
+      "action": "queue",
+      "amount": 100,
+      "expected": "STOP_UNTRUSTED_INSTRUCTION"
+    },
+    {
+      "id": "B-01",
+      "config": "CONFIG_B",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 10,
+      "currency": "TRY",
+      "action": "queue",
+      "amount": 780,
+      "expected": "AUTO_QUEUE"
+    },
+    {
+      "id": "B-02",
+      "config": "CONFIG_B",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 10,
+      "currency": "TRY",
+      "action": "queue",
+      "amount": 1900,
+      "expected": "HUMAN_APPROVAL"
+    },
+    {
+      "id": "B-03",
+      "config": "CONFIG_B",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": true,
+      "source_age_min": 10,
+      "currency": "TRY",
+      "action": "queue",
+      "amount": 100,
+      "expected": "STOP_SOURCE_CONFLICT"
+    },
+    {
+      "id": "B-04",
+      "config": "CONFIG_B",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 10,
+      "currency": "EUR",
+      "action": "queue",
+      "amount": 400,
+      "expected": "AUTO_QUEUE"
+    },
+    {
+      "id": "B-05",
+      "config": "CONFIG_B",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 10,
+      "currency": "TRY",
+      "action": "refund",
+      "amount": 200,
+      "expected": "HUMAN_APPROVAL"
+    },
+    {
+      "id": "B-06",
+      "config": "CONFIG_B",
+      "missing_required": false,
+      "embedded_instruction": false,
+      "source_conflict": false,
+      "source_age_min": 50,
+      "currency": "TRY",
+      "action": "queue",
+      "amount": 100,
+      "expected": "STOP_STALE_SOURCE"
+    }
+  ]
+}

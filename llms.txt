@@ -116,3 +116,4 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Scope: data flow, roles, privacy boundary, human authority, incident response, recurring support boundary, pricing starting points and purchase checklist.
 - Public GitHub docs: https://github.com/synapseautomate/synapseautomate.github.io/tree/main/docs
 - Claim boundary: no customer result, production accuracy, security/compliance certification, uptime or ROI guarantee is implied.
+- E-Ticaret Kontrollü Pilot - Sentetik Örnek Rapor: https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html
