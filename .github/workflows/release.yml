@@ -1,0 +1,194 @@
+name: Synapse TR EN Authority Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  release:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate and apply TR EN authority payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PYQA'
+          from pathlib import Path
+          from zipfile import ZipFile
+          from hashlib import sha256
+          from stat import S_IFLNK
+          import json, re
+          from urllib.parse import urlsplit, unquote
+          from xml.etree import ElementTree as ET
+
+          root=Path('.')
+          payload=Path('payload.zip')
+          if not payload.is_file(): raise SystemExit('payload.zip missing')
+          allowed=['README.md', 'assets/video/ecommerce-config-isolation-en.srt', 'content-manifest.json', 'en/ecommerce-process-analysis.html', 'en/proof/ecommerce-controlled-pilot-synthetic-report.html', 'kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html', 'llms.txt', 'sitemap.xml', 'veri/e-ticaret-tr-en-claim-parity-v1.json']
+          expected={'README.md': '80d25b5090662aa87c89fa55f281189865aec9d216a2794e96764698fa1429e4', 'assets/video/ecommerce-config-isolation-en.srt': 'aaea99434c71e1c981757473b974a9f0a9b9e36a2e06bff59c4e0705e6542e6f', 'content-manifest.json': 'a22a745a4ef3c3e0b285916c9e5e7e44c07d94d168239a8753cafca8a9fa0703', 'en/ecommerce-process-analysis.html': '1312a73f6a2cdb5ff5d7ac9d7de781ecae590a933b7f0185fcc784b03f7a68a0', 'en/proof/ecommerce-controlled-pilot-synthetic-report.html': 'de0586ee78f4c8124a1e3e06c470092286e64997d6c2f0d150359a29bcc9f219', 'kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html': '6afb40a1459bc90e55443c14504b7a9391f9e4a63cd26cb741e0fabb4e7a9167', 'llms.txt': '224bbf982790a02335a990a3c370b432fbb2094915500e074d0988e3d66589da', 'sitemap.xml': 'd84fcaa6a11a012fe1ae404256b0f6fe73e3c7103aacd272b54c227a7feb4a18', 'veri/e-ticaret-tr-en-claim-parity-v1.json': 'c7b600c04a3bd6b2f7981f8ddc678438d3404feb81389a988dfb315574ded284'}
+          baseline={'README.md': '3b89cda1cf8e6adffe5e1c7836d7445b1317647d620a9062025d8ccd1e356d1c', 'assets/video/ecommerce-config-isolation-en.srt': None, 'content-manifest.json': 'cb97e486b8a48b42c257750039ce730a89ef65d27ee5a03c9fbbf3548acb963c', 'en/ecommerce-process-analysis.html': None, 'en/proof/ecommerce-controlled-pilot-synthetic-report.html': None, 'kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html': '039c6077bcc265277ecc1e4fa7fd3aaa5a771645ce404814ad4b84df422e6398', 'llms.txt': 'e14987fd25bfe642cac7cfbc536c4a1b35d194f1448cd2515f4a594309a69af8', 'sitemap.xml': 'dceec4763590857565be95e0257fc76b87bcd497a82a16c59d72ffd3e1a78c9b', 'veri/e-ticaret-tr-en-claim-parity-v1.json': None}
+          protect={'urunler.html': 'f25bb8871093933f8e78bf9673cab635c8888809724ca83b0e2f30cb28aad965', 'urunler/revenueos.html': 'b13f7a613d6e93143dc8b8c4db42e1bfebb5c0be213abc0b7ded663ffbf5dc2e', '404.html': 'd5455f47106a462b776a8deda69d5d80483653e90c3ddcbe05ddab9a4509aca9', 'assets/reports/Synapse_MVPde_Neyi_Izliyoruz.pdf': 'ab8efa086762a6ede708f74ce04aa74f6d4e6f5bcd15dfb1123d9da30808dcc6', 'kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html': '1af2163729cbc82d355727c67b74caa7d3a51246a2d6dd112246a7a28f3c90c7', 'assets/js/synapse-measurement-v1.js': 'a5d40b8e98db20c58950f1ea5be5600bb62c3ca4eb31213a86c23fde472000fd', 'rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html': '10c3f0deaf0a791fb4420c41e31032117329aae7a7437c96cdc4644d96c65df1', 'assets/ecommerce/pilot-config-isolation-spec-cases.json': 'e012b8762452f46c3ca7e5cc4caf5536891a5745ad48a2b8354296c5a29d7a82', 'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html': 'a1196c85019ed381d79d59c0544e25e00b0aa7679c252b268a6b582a051d83c0', 'sektorler/e-ticaret.html': '243c3c4e4e8baeb6999a2aac479b18f43289f95856659a6b0f34c90b2679225f', 'surec-analizi.html': 'c6d8e6ff88c03fdbd866543653ad528bd008fb2ed3b9c03281a04de885ebb869'}
+          for f,h in baseline.items():
+              p=root/f
+              if h is None:
+                  if p.exists(): raise SystemExit('New localized path already exists unexpectedly: '+f)
+              else:
+                  if not p.is_file(): raise SystemExit('Expected baseline file missing: '+f)
+                  if sha256(p.read_bytes()).hexdigest()!=h:
+                      raise SystemExit('Baseline mismatch for '+f+'; refresh the live repo before release')
+          for f,h in protect.items():
+              p=root/f
+              if not p.is_file() or sha256(p.read_bytes()).hexdigest()!=h:
+                  raise SystemExit('Previously closed asset changed unexpectedly: '+f)
+
+          with ZipFile(payload) as z:
+              names=[x for x in z.namelist() if not x.endswith('/')]
+              if sorted(names)!=sorted(allowed): raise SystemExit('Payload path set mismatch: '+repr(names))
+              for info in z.infolist():
+                  if info.filename.endswith('/'): continue
+                  pp=Path(info.filename)
+                  if pp.is_absolute() or '..' in pp.parts: raise SystemExit('Unsafe payload path: '+info.filename)
+                  mode=(info.external_attr>>16)&0o170000
+                  if mode==S_IFLNK: raise SystemExit('Symlink not allowed: '+info.filename)
+                  data=z.read(info.filename)
+                  if sha256(data).hexdigest()!=expected[info.filename]: raise SystemExit('Payload hash mismatch: '+info.filename)
+              z.extractall('.')
+          for f,h in expected.items():
+              if sha256((root/f).read_bytes()).hexdigest()!=h: raise SystemExit('Applied hash mismatch: '+f)
+
+          tr=root/'kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html'
+          en=root/'en/proof/ecommerce-controlled-pilot-synthetic-report.html'
+          cta=root/'en/ecommerce-process-analysis.html'
+          ts=tr.read_text(encoding='utf-8'); es=en.read_text(encoding='utf-8'); cs=cta.read_text(encoding='utf-8')
+          tr_url='https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html'
+          en_url='https://synapseautomate.github.io/en/proof/ecommerce-controlled-pilot-synthetic-report.html'
+          cta_url='https://synapseautomate.github.io/en/ecommerce-process-analysis.html'
+          if 'hreflang="en"' not in ts or en_url not in ts: raise SystemExit('TR reciprocal hreflang missing')
+          if 'hreflang="tr-TR"' not in es or tr_url not in es: raise SystemExit('EN reciprocal hreflang missing')
+          for phrase in ('4.900 TL','24.900 TL','12/12','Canlı müşteri ölçümü'):
+              if phrase not in ts: raise SystemExit('TR proof fact missing: '+phrase)
+          if re.search(r'\$\s?\d',ts): raise SystemExit('USD price leaked into TR proof')
+          for phrase in ('$149','$750','$449','12/12','Live customer measurement','not FX conversions'):
+              if phrase not in es: raise SystemExit('EN proof fact missing: '+phrase)
+          if re.search(r'\b\d{1,3}(?:\.\d{3})+\s*TL\b',es): raise SystemExit('TRY price leaked into EN proof')
+          for phrase in ('$149','$750','$449','not an FX conversion','Collection gate'):
+              if phrase not in cs: raise SystemExit('EN offer fact missing: '+phrase)
+          if re.search(r'\b\d{1,3}(?:\.\d{3})+\s*TL\b',cs): raise SystemExit('TRY price leaked into EN offer')
+          if 'https://formsubmit.co/synapseautomate.ai@gmail.com' not in cs: raise SystemExit('Single inbound form destination changed')
+
+          bench=json.loads((root/'veri/e-ticaret-tr-en-claim-parity-v1.json').read_text(encoding='utf-8'))
+          if bench['shared_facts']!={'frozen_cases':12,'expected_route_matches':'12/12','live_customer_measurement':None,'evidence_type':'synthetic technical acceptance test'}:
+              raise SystemExit('TR/EN parity facts changed')
+          if bench['pricing']['policy'].lower().find('not fx equivalents')<0: raise SystemExit('Price separation policy missing')
+          if bench['external_ai_answer_observation']['tr'] is not None or bench['external_ai_answer_observation']['en'] is not None:
+              raise SystemExit('Unverified external AI visibility must remain unclaimed')
+
+          bad=('Day 23','Gün 23','QA PASS','Run Workflow','release.yml','payload.zip','Nike','Red Bull','SATIN ALMA PAKETİ')
+          for p in (tr,en,cta,root/'llms.txt'):
+              s=p.read_text(encoding='utf-8')
+              for term in bad:
+                  if term.lower() in s.lower(): raise SystemExit('Internal/unwanted public phrase: '+term+' in '+str(p))
+              for value in re.findall(r'\b(?:href|src)=["\']([^"\']+)',s,re.I):
+                  if not value or value.startswith(('#','https:','http:','mailto:','tel:','data:')): continue
+                  path=unquote(urlsplit(value).path)
+                  dest=root/path.lstrip('/') if path.startswith('/') else p.parent/path
+                  if not dest.resolve().is_file(): raise SystemExit('Broken local resource '+value+' in '+str(p))
+
+          sm=(root/'sitemap.xml').read_text(encoding='utf-8'); ET.fromstring(sm)
+          for u in (en_url,cta_url):
+              if sm.count(u)!=1: raise SystemExit('Sitemap localized URL must be unique: '+u)
+          ll=(root/'llms.txt').read_text(encoding='utf-8')
+          if ll.count(en_url)!=1 or not ll.endswith('\n') or ll.endswith('\n\n'): raise SystemExit('llms localized discovery/EOF invalid')
+          cm=json.loads((root/'content-manifest.json').read_text(encoding='utf-8'))
+          for u in (en_url,cta_url):
+              if sum(1 for x in cm.get('resources',[]) if x.get('url')==u)!=1: raise SystemExit('Content manifest localized entry invalid: '+u)
+          srt=(root/'assets/video/ecommerce-config-isolation-en.srt').read_text(encoding='utf-8')
+          if '00:00:27,115' not in srt or 'customer result' not in srt.lower(): raise SystemExit('English subtitle boundary/timing invalid')
+          if 'G-HQSRRJ5HMZ' not in (root/'assets/js/synapse-measurement-v1.js').read_text(encoding='utf-8'): raise SystemExit('GA4 identity missing')
+          print('TR/EN AUTHORITY + CLAIM PARITY: PASS')
+          print('Shared proof: 12 frozen synthetic cases; 12/12 expected routes; live customer measurement remains blank')
+          PYQA
+          git diff --check
+
+      - name: Commit release and remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f payload.zip .github/workflows/release.yml
+          python3 - <<'PYQA'
+          import subprocess
+          allowed=set(['README.md', 'assets/video/ecommerce-config-isolation-en.srt', 'content-manifest.json', 'en/ecommerce-process-analysis.html', 'en/proof/ecommerce-controlled-pilot-synthetic-report.html', 'kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html', 'llms.txt', 'sitemap.xml', 'veri/e-ticaret-tr-en-claim-parity-v1.json']+['payload.zip','.github/workflows/release.yml'])
+          out=subprocess.check_output(['git','status','--porcelain=v1','-uall'],text=True)
+          seen=set()
+          for line in out.splitlines():
+              path=line[3:]
+              if ' -> ' in path: path=path.split(' -> ',1)[1]
+              seen.add(path)
+          unexpected=seen-allowed
+          if unexpected: raise SystemExit('Unexpected working-tree changes: '+', '.join(sorted(unexpected)))
+          print('WORKTREE SCOPE: PASS')
+          PYQA
+          git config user.name "synapse-tr-en-authority-release"
+          git config user.email "synapse-tr-en-authority-release@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "content: add e-commerce TR EN authority layer"
+            git push origin HEAD:main
+          fi
+
+      - name: Build clean public Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude 'D01/' --exclude 'D02/' --exclude 'D03/' \
+            --exclude '__pycache__/' --exclude '*.zip' \
+            --exclude '*.sha256' --exclude '*.py' \
+            --exclude 'README*.md' --exclude 'DEPLOYMENT.md'
+          test -f _site/index.html
+          test -f _site/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html
+          test -f _site/en/proof/ecommerce-controlled-pilot-synthetic-report.html
+          test -f _site/en/ecommerce-process-analysis.html
+          test -f _site/assets/video/ecommerce-config-isolation-en.srt
+          test -f _site/veri/e-ticaret-tr-en-claim-parity-v1.json
+          ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
+          echo "CLEAN PUBLIC PAGES ARTIFACT: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
