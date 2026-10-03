@@ -4,6 +4,14 @@ Official website repository for **Synapse Automate**, part of the Kinetra Group 
 
 Synapse Automate designs human-supervised, measurable AI automation for real business operations. The public website focuses on clear scope, verified sources, explicit approval boundaries and testable delivery.
 
+## TR / EN summary
+
+**TR:** Synapse Automate, tekrar eden iş akışlarında insan denetimli ve ölçülebilir AI otomasyonu tasarlar. Kamuya açık kanıtlar sentetik/metodoloji kanıtıdır; müşteri sonucu, üretim doğruluğu, güvenlik sertifikası veya ROI iddiası olarak sunulmaz. E-ticaret için Türkçe kanıt: https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html
+
+**EN:** Synapse Automate designs human-supervised, measurable AI automation for repeatable business workflows. Public evidence is synthetic/methodology evidence, not a claim of customer outcomes, production accuracy, security certification or ROI. E-commerce English evidence: https://synapseautomate.github.io/en/proof/ecommerce-controlled-pilot-synthetic-report.html
+
+International starting list prices are published independently from Turkish list prices and are **not FX equivalents**. Contracting, tax, payment, invoicing, data scope and acceptance criteria are confirmed in writing before collection.
+
 ## Website
 
 **Production:** https://synapseautomate.github.io/

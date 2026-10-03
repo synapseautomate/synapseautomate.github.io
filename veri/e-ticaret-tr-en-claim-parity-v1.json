@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "scope": "E-commerce synthetic proof TR/EN claim parity",
+  "canonical_pages": {
+    "tr": "https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html",
+    "en": "https://synapseautomate.github.io/en/proof/ecommerce-controlled-pilot-synthetic-report.html"
+  },
+  "shared_facts": {
+    "frozen_cases": 12,
+    "expected_route_matches": "12/12",
+    "live_customer_measurement": null,
+    "evidence_type": "synthetic technical acceptance test"
+  },
+  "pricing": {
+    "tr": {
+      "process_analysis": "4.900 TL",
+      "controlled_pilot": "24.900 TL",
+      "monthly_management": "14.900 TL/month"
+    },
+    "en": {
+      "process_analysis": "$149",
+      "controlled_pilot": "$750",
+      "monthly_management": "$449/month"
+    },
+    "policy": "Independent market list prices; not FX equivalents. Contracting/tax/payment/invoice eligibility confirmed before collection."
+  },
+  "query_checks": [
+    {
+      "locale": "tr-TR",
+      "query": "e-ticaret otomasyonu iki mağaza yapılandırma izolasyonu",
+      "expected_canonical": "https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html",
+      "must_not_mix": "USD list prices"
+    },
+    {
+      "locale": "en",
+      "query": "ecommerce automation configuration isolation controlled pilot",
+      "expected_canonical": "https://synapseautomate.github.io/en/proof/ecommerce-controlled-pilot-synthetic-report.html",
+      "must_not_mix": "TRY list prices"
+    }
+  ],
+  "external_ai_answer_observation": {
+    "tr": null,
+    "en": null,
+    "note": "External AI-answer visibility is not claimed until directly observed and recorded."
+  }
+}

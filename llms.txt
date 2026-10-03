@@ -117,3 +117,11 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Public GitHub docs: https://github.com/synapseautomate/synapseautomate.github.io/tree/main/docs
 - Claim boundary: no customer result, production accuracy, security/compliance certification, uptime or ROI guarantee is implied.
 - E-Ticaret Kontrollü Pilot - Sentetik Örnek Rapor: https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html
+
+## E-commerce TR / EN canonical evidence — 2026-10-03
+- Turkish canonical proof: https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html
+- English canonical proof: https://synapseautomate.github.io/en/proof/ecommerce-controlled-pilot-synthetic-report.html
+- International Process Analysis: https://synapseautomate.github.io/en/ecommerce-process-analysis.html
+- Shared evidence: 12 frozen synthetic cases; 12/12 expected route matches; no live customer measurement is claimed.
+- Pricing language boundary: Turkish pages use TRY list prices; English international pages use independent USD list prices. They are not FX equivalents.
+- Claim boundary: synthetic/technical acceptance evidence only; not customer performance, production accuracy, SLA, security certification or ROI.

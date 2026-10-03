@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-01",
+  "generated_at": "2026-10-03",
   "organization": {
     "name": "Synapse Automate",
     "canonical": "https://synapseautomate.github.io/",
@@ -68,6 +68,18 @@
       "url": "https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html",
       "type": "evidence",
       "summary": "Aynı karar çekirdeğinin iki ayrı e-ticaret yapılandırmasında 12 dondurulmuş sentetik vakayla doğrulandığı, veri ayrımı ve pilot ölçüm şablonunu açıklayan teknik örnek raporu."
+    },
+    {
+      "title": "E-commerce Controlled Pilot - Synthetic Evidence Report",
+      "url": "https://synapseautomate.github.io/en/proof/ecommerce-controlled-pilot-synthetic-report.html",
+      "type": "evidence",
+      "summary": "English canonical counterpart for the 12-case e-commerce configuration-isolation synthetic acceptance test, with human approval boundaries and international offer context."
+    },
+    {
+      "title": "E-commerce Process Analysis",
+      "url": "https://synapseautomate.github.io/en/ecommerce-process-analysis.html",
+      "type": "offer",
+      "summary": "International-language front door for the same Process Analysis -> Controlled Pilot -> Monthly Management commercial path, with independent USD list prices and collection gate."
     }
   ]
 }

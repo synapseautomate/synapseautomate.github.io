@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:05,200
+Two e-commerce stores can use the same automation core,
+but they should not share the same decision boundaries.
+
+2
+00:00:05,200 --> 00:00:10,900
+We ran the same 12 frozen synthetic cases
+under two separate store configurations.
+
+3
+00:00:10,900 --> 00:00:15,600
+Result: 12 out of 12 expected decision routes matched.
+
+4
+00:00:15,600 --> 00:00:21,900
+The important point is not the score.
+Store thresholds must not leak into each other.
+
+5
+00:00:21,900 --> 00:00:27,115
+This is not a customer result. It is a synthetic acceptance test
+for configuration isolation. Methodology is public on the site.
