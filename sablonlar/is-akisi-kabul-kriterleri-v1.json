@@ -1,0 +1,25 @@
+{
+  "schema": "synapse.workflow.acceptance.v1",
+  "version": "1.0.0",
+  "status": "public-safe-template",
+  "source": "Synapse Automate public methodology",
+  "right": "public-reference-and-adaptation",
+  "expiry": null,
+  "customer_scope": "none",
+  "purpose": "Define frozen acceptance cases without embedding customer data.",
+  "fields": {
+    "case_id": "synthetic-or-redacted identifier",
+    "input_class": "category only; no sensitive payload",
+    "expected_state": [
+      "AUTO_PROCEED",
+      "HUMAN_REVIEW",
+      "HUMAN_APPROVAL",
+      "STOP_ESCALATE"
+    ],
+    "human_gate": "role or gate name",
+    "stop_condition": "explicit condition",
+    "evidence_note": "source or observation reference"
+  },
+  "boundary": "Do not add customer records, credentials, secrets or confidential business rules to this public template.",
+  "canonical_documentation": "https://synapseautomate.github.io/sablonlar/"
+}

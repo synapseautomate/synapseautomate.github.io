@@ -9,3 +9,9 @@
 - Türkçe kamu fiyat sunumunda TL ve USD tutarlarının açıklamasız eşdeğer görünmesi kaldırıldı.
 
 Müşteri, üretim doğruluğu, ROI, mevzuat uyumu veya sertifikasyon iddiası eklenmedi.
+
+## 2026-10-06
+- Added public-safe reusable template library.
+- Added data/template-rights guidance and machine-readable rights registry.
+- Explicitly separated customer data/confidential configuration from reusable delivery IP.
+- No customer confidential material or customer outcome claims were added.

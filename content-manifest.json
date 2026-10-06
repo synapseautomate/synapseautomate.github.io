@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "generated_at": "2026-10-03",
+  "version": "1.1",
+  "generated_at": "2026-10-06",
   "organization": {
     "name": "Synapse Automate",
     "canonical": "https://synapseautomate.github.io/",
@@ -18,7 +18,9 @@
     "No financial advice",
     "No autonomous financial transaction claim",
     "No unverified health outcome claim",
-    "Critical decisions remain human-controlled where stated"
+    "Critical decisions remain human-controlled where stated",
+    "No public customer-confidential material in reusable template library",
+    "Unmeasured delivery-hour savings are not claimed as ROI"
   ],
   "resources": [
     {
@@ -80,6 +82,19 @@
       "url": "https://synapseautomate.github.io/en/ecommerce-process-analysis.html",
       "type": "offer",
       "summary": "International-language front door for the same Process Analysis -> Controlled Pilot -> Monthly Management commercial path, with independent USD list prices and collection gate."
+    },
+    {
+      "title": "Otomasyon Şablonu, Veri ve Yeniden Kullanım Hakları",
+      "url": "https://synapseautomate.github.io/rehberler/otomasyon-sablonlari-veri-haklari.html",
+      "type": "trust-guide",
+      "summary": "Müşteri verisi, müşteriye özgü yapılandırma ve yeniden kullanılabilir delivery IP arasındaki sınırları; kaynak/sürüm/hak/geçerlilik metadata yaklaşımıyla açıklar."
+    },
+    {
+      "title": "Güvenli Otomasyon Şablon Kütüphanesi",
+      "url": "https://synapseautomate.github.io/sablonlar/",
+      "type": "template-library",
+      "summary": "Kabul kriterleri, olay eskalasyonu ve izleme sinyalleri için müşteri gizli materyali içermeyen public-safe şablonlar."
     }
-  ]
+  ],
+  "template_rights_registry": "https://synapseautomate.github.io/veri/sablon-kutuphanesi-hak-kaydi-v1.json"
 }

@@ -13,3 +13,7 @@ Canonical sayfa: https://synapseautomate.github.io/rehberler/kurumsal-ai-otomasy
 ## İddia sınırı
 
 Bu dokümanlar müşteri sonucu, üretim doğruluğu, mevzuat uyumu veya güvenlik sertifikası, çalışma süresi ya da ROI iddiası içermez. Sentetik/spec kanıtlar açıkça etiketlenir.
+
+## Data & template rights
+- [Data Rights & Reusable Template Rights v1](data-rights-and-template-rights-v1.md)
+- [Safe Template Library](../sablonlar/README.md)

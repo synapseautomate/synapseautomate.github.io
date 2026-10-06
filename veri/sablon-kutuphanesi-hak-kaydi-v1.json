@@ -1,0 +1,39 @@
+{
+  "registry": "synapse.public-template-rights.v1",
+  "version": "1.0.0",
+  "generated_at": "2026-10-06",
+  "canonical": "https://synapseautomate.github.io/sablonlar/",
+  "default_policy": {
+    "customer_data_in_public_library": false,
+    "customer_confidential_material_in_public_library": false,
+    "unknown_rights_allowed": false,
+    "contract_overrides_public_methodology": true
+  },
+  "assets": [
+    {
+      "path": "/sablonlar/is-akisi-kabul-kriterleri-v1.json",
+      "source": "Synapse Automate public methodology",
+      "version": "1.0.0",
+      "right": "public-reference-and-adaptation",
+      "expiry": null,
+      "customer_scope": "none"
+    },
+    {
+      "path": "/sablonlar/olay-eskalasyon-v1.json",
+      "source": "Synapse Automate public methodology",
+      "version": "1.0.0",
+      "right": "public-reference-and-adaptation",
+      "expiry": null,
+      "customer_scope": "none"
+    },
+    {
+      "path": "/sablonlar/izleme-sinyal-sozlesmesi-v1.json",
+      "source": "Synapse Automate public methodology",
+      "version": "1.0.0",
+      "right": "public-reference-and-adaptation",
+      "expiry": null,
+      "customer_scope": "none"
+    }
+  ],
+  "disclaimer": "Public methodology registry only. Real project ownership, licensing, retention and deletion terms are defined in written scope or contract."
+}

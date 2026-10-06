@@ -125,3 +125,13 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Shared evidence: 12 frozen synthetic cases; 12/12 expected route matches; no live customer measurement is claimed.
 - Pricing language boundary: Turkish pages use TRY list prices; English international pages use independent USD list prices. They are not FX equivalents.
 - Claim boundary: synthetic/technical acceptance evidence only; not customer performance, production accuracy, SLA, security certification or ROI.
+
+## Reusable templates & data rights — 2026-10-06
+- Canonical rights guide: https://synapseautomate.github.io/rehberler/otomasyon-sablonlari-veri-haklari.html
+- Safe template library: https://synapseautomate.github.io/sablonlar/
+- Rights registry: https://synapseautomate.github.io/veri/sablon-kutuphanesi-hak-kaydi-v1.json
+- Public-safe reusable layer: generic workflow schemas, acceptance criteria, human approval/stop boundaries, incident escalation structures and monitoring signal contracts.
+- Excluded from reusable public templates: customer records, credentials, confidential customer documents, undisclosed customer rules and unpermissioned customer cases.
+- Rights metadata fields: source, version, right, expiry/review status and customer scope. Unknown rights are a stop condition.
+- Commercial boundary: actual project ownership/licensing, retention and deletion are defined in written scope or contract.
+- Evidence boundary: template standardization is not a claim of delivery-hour savings, ROI, production accuracy, compliance certification or customer outcomes.

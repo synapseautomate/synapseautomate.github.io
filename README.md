@@ -29,6 +29,8 @@ International starting list prices are published independently from Turkish list
 - [Incident & Support v1](docs/incident-and-support-v1.md)
 - [Model & Fallback Policy v1](docs/model-and-fallback-policy-v1.md)
 - [Public Docs Changelog](docs/CHANGELOG.md)
+- [Data Rights & Reusable Template Rights v1](docs/data-rights-and-template-rights-v1.md)
+- [Safe Template Library](sablonlar/README.md)
 
 ## Delivery principles
 
@@ -38,3 +40,7 @@ International starting list prices are published independently from Turkish list
 - Search and AI discovery resources are maintained separately from the primary customer navigation.
 
 © 2026 Synapse Automate
+
+## Reusable delivery IP boundary
+
+Public reusable templates contain generic delivery structures only. Customer data, credentials, confidential customer configuration and unpermissioned customer material are excluded. Real project ownership and licensing are defined in written scope or contract.

@@ -1,0 +1,20 @@
+{
+  "schema": "synapse.monitoring.signal-contract.v1",
+  "version": "1.0.0",
+  "status": "public-safe-template",
+  "source": "Synapse Automate public methodology",
+  "right": "public-reference-and-adaptation",
+  "expiry": null,
+  "customer_scope": "none",
+  "purpose": "Define what is measured and how unknown values are represented.",
+  "fields": {
+    "metric": "signal name",
+    "source": "authoritative source",
+    "unknown_policy": "use null/dash when unmeasured; never convert missing to zero",
+    "review_threshold": "condition for human review",
+    "owner": "accountable role",
+    "retention_note": "scope-specific retention rule"
+  },
+  "boundary": "This template does not imply uptime, SLA or production monitoring performance.",
+  "canonical_documentation": "https://synapseautomate.github.io/sablonlar/"
+}

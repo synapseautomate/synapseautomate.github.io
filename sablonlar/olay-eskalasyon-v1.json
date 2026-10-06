@@ -1,0 +1,25 @@
+{
+  "schema": "synapse.incident.escalation.v1",
+  "version": "1.0.0",
+  "status": "public-safe-template",
+  "source": "Synapse Automate public methodology",
+  "right": "public-reference-and-adaptation",
+  "expiry": null,
+  "customer_scope": "none",
+  "purpose": "Define detection, containment, ownership and safe reopen criteria.",
+  "fields": {
+    "signal": "observable event",
+    "severity": [
+      "LOW",
+      "MEDIUM",
+      "HIGH",
+      "CRITICAL"
+    ],
+    "containment": "first bounded action",
+    "owner": "human accountable role",
+    "handoff_context": "minimum context for review",
+    "reopen_criteria": "conditions required before resuming"
+  },
+  "boundary": "Do not encode customer secrets, live endpoints or credentials.",
+  "canonical_documentation": "https://synapseautomate.github.io/sablonlar/"
+}
