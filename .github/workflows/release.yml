@@ -1,0 +1,213 @@
+name: Synapse Template Rights Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  release:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate and apply template rights payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PYQA'
+          from pathlib import Path
+          from zipfile import ZipFile
+          from hashlib import sha256
+          from stat import S_IFLNK
+          from urllib.parse import urlsplit, unquote
+          from xml.etree import ElementTree as ET
+          import json, re
+
+          root=Path('.')
+          payload=Path('payload.zip')
+          if not payload.is_file(): raise SystemExit('payload.zip missing')
+          allowed=['README.md', 'content-manifest.json', 'docs/CHANGELOG.md', 'docs/README.md', 'docs/data-rights-and-template-rights-v1.md', 'llms.txt', 'rehberler/otomasyon-sablonlari-veri-haklari.html', 'sablonlar/README.md', 'sablonlar/index.html', 'sablonlar/is-akisi-kabul-kriterleri-v1.json', 'sablonlar/izleme-sinyal-sozlesmesi-v1.json', 'sablonlar/olay-eskalasyon-v1.json', 'sitemap.xml', 'veri/sablon-kutuphanesi-hak-kaydi-v1.json']
+          expected={'README.md': '799fba9235756a3cc1d7286aba9afe7662a4663dc49c46efa1d8c0c9a19f8f25', 'content-manifest.json': 'b0988d52512577d478c6f0b60c63e6ba647a16cdda6f25bdff33fe4b218e4b0f', 'docs/CHANGELOG.md': '5c7dc89cec41e00cee1630c8e2f2f51a0abadf269c6e19bc11c7ec85bdaa6681', 'docs/README.md': '8fbe124e7a42de6ff42e197d6b11bd1365a5e34d73d787b2db58174989a10eab', 'docs/data-rights-and-template-rights-v1.md': '54008867e01aaf4ae0e5e3f5a725d5ed8217d9ef5ef18285e2710834c18a2449', 'llms.txt': '967866b7986b64702bc0ced43fe3db279c65a738d4a694b8a4c59d3d0929d038', 'rehberler/otomasyon-sablonlari-veri-haklari.html': '9cf3fc976ba114cd7825bd34e85deb48ef3bcdef8d9a03fb6d5b37a6efbc8408', 'sablonlar/README.md': 'e35e6f527d02ab59936332184034062d57275611438755ad444cbc00af4eb20f', 'sablonlar/index.html': '43500d502658b5b1be9187301c70b81dcdafd8e1ca79fd14a6456ad89680124c', 'sablonlar/is-akisi-kabul-kriterleri-v1.json': '64a78e2951077687b731a3c7c45a9eb1ae27bb28b9788e7626bc1023aca0dc28', 'sablonlar/izleme-sinyal-sozlesmesi-v1.json': '4e0c6fb3b8121f6b77dfc9802279a4b497dbb91de5cd2116dd9d2f0170f71a9d', 'sablonlar/olay-eskalasyon-v1.json': 'eb893489c9fe7eb5fabf886b322ec7f9c485b3b2b636ba8afc9e55963fa42ac0', 'sitemap.xml': '4911cb5ade2bdc8fd9a8fa2640a40c509475191fd8064030c068d663f7bc90ab', 'veri/sablon-kutuphanesi-hak-kaydi-v1.json': 'c2160ba0980a42d15c1eb55cba9022413f9ac78508c8740e451e9e1a401aa10d'}
+          baseline={'README.md': '80d25b5090662aa87c89fa55f281189865aec9d216a2794e96764698fa1429e4', 'content-manifest.json': 'a22a745a4ef3c3e0b285916c9e5e7e44c07d94d168239a8753cafca8a9fa0703', 'llms.txt': '224bbf982790a02335a990a3c370b432fbb2094915500e074d0988e3d66589da', 'sitemap.xml': 'd84fcaa6a11a012fe1ae404256b0f6fe73e3c7103aacd272b54c227a7feb4a18', 'docs/CHANGELOG.md': 'bdc9e3a30f8eed62e774003920d60777b2e45aa8c5e61f8035ab565103c2407b', 'docs/README.md': '4e460e70813b0538c3557942c81ffe1d5289c509b29fd02610b0b2ed6577e0aa', 'docs/data-rights-and-template-rights-v1.md': None, 'rehberler/otomasyon-sablonlari-veri-haklari.html': None, 'sablonlar/README.md': None, 'sablonlar/index.html': None, 'sablonlar/is-akisi-kabul-kriterleri-v1.json': None, 'sablonlar/izleme-sinyal-sozlesmesi-v1.json': None, 'sablonlar/olay-eskalasyon-v1.json': None, 'veri/sablon-kutuphanesi-hak-kaydi-v1.json': None}
+          protect={'assets/video/ecommerce-config-isolation-en.srt': 'aaea99434c71e1c981757473b974a9f0a9b9e36a2e06bff59c4e0705e6542e6f', 'en/ecommerce-process-analysis.html': '1312a73f6a2cdb5ff5d7ac9d7de781ecae590a933b7f0185fcc784b03f7a68a0', 'en/proof/ecommerce-controlled-pilot-synthetic-report.html': 'de0586ee78f4c8124a1e3e06c470092286e64997d6c2f0d150359a29bcc9f219', 'kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html': '6afb40a1459bc90e55443c14504b7a9391f9e4a63cd26cb741e0fabb4e7a9167', 'veri/e-ticaret-tr-en-claim-parity-v1.json': 'c7b600c04a3bd6b2f7981f8ddc678438d3404feb81389a988dfb315574ded284', 'urunler.html': 'f25bb8871093933f8e78bf9673cab635c8888809724ca83b0e2f30cb28aad965', 'urunler/revenueos.html': 'b13f7a613d6e93143dc8b8c4db42e1bfebb5c0be213abc0b7ded663ffbf5dc2e', '404.html': 'd5455f47106a462b776a8deda69d5d80483653e90c3ddcbe05ddab9a4509aca9', 'assets/reports/Synapse_MVPde_Neyi_Izliyoruz.pdf': 'ab8efa086762a6ede708f74ce04aa74f6d4e6f5bcd15dfb1123d9da30808dcc6', 'assets/ecommerce/pilot-config-isolation-spec-cases.json': 'e012b8762452f46c3ca7e5cc4caf5536891a5745ad48a2b8354296c5a29d7a82', 'assets/js/synapse-measurement-v1.js': 'a5d40b8e98db20c58950f1ea5be5600bb62c3ca4eb31213a86c23fde472000fd', 'rehberler/kurumsal-ai-otomasyonu-satin-alma-kontrol-listesi.html': '10c3f0deaf0a791fb4420c41e31032117329aae7a7437c96cdc4644d96c65df1', 'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html': 'a1196c85019ed381d79d59c0544e25e00b0aa7679c252b268a6b582a051d83c0', 'sektorler/e-ticaret.html': '243c3c4e4e8baeb6999a2aac479b18f43289f95856659a6b0f34c90b2679225f', 'surec-analizi.html': 'c6d8e6ff88c03fdbd866543653ad528bd008fb2ed3b9c03281a04de885ebb869'}
+
+          for f,h in baseline.items():
+              p=root/f
+              if h is None:
+                  if p.exists(): raise SystemExit('New template-rights path already exists unexpectedly: '+f)
+              else:
+                  if not p.is_file(): raise SystemExit('Expected baseline file missing: '+f)
+                  if sha256(p.read_bytes()).hexdigest()!=h:
+                      raise SystemExit('Baseline mismatch for '+f+'; refresh against the current live repo before release')
+
+          for f,h in protect.items():
+              p=root/f
+              if not p.is_file() or sha256(p.read_bytes()).hexdigest()!=h:
+                  raise SystemExit('Previously closed asset changed unexpectedly: '+f)
+
+          with ZipFile(payload) as z:
+              names=[i.filename for i in z.infolist() if not i.filename.endswith('/')]
+              if sorted(names)!=sorted(allowed): raise SystemExit('Payload path set mismatch: '+repr(names))
+              for info in z.infolist():
+                  if info.filename.endswith('/'): continue
+                  pp=Path(info.filename)
+                  if pp.is_absolute() or '..' in pp.parts: raise SystemExit('Unsafe payload path: '+info.filename)
+                  mode=(info.external_attr>>16)&0o170000
+                  if mode==S_IFLNK: raise SystemExit('Symlink not allowed: '+info.filename)
+                  data=z.read(info.filename)
+                  if sha256(data).hexdigest()!=expected[info.filename]:
+                      raise SystemExit('Payload hash mismatch: '+info.filename)
+              z.extractall('.')
+
+          for f,h in expected.items():
+              if sha256((root/f).read_bytes()).hexdigest()!=h:
+                  raise SystemExit('Applied hash mismatch: '+f)
+
+          guide=root/'rehberler/otomasyon-sablonlari-veri-haklari.html'
+          library=root/'sablonlar/index.html'
+          for p in (guide,library):
+              s=p.read_text(encoding='utf-8')
+              bad=('Day 24','Gün 24','QA PASS','Run Workflow','release.yml','payload.zip','Nike','Red Bull','SATIN ALMA PAKETİ','9.900 TL')
+              for term in bad:
+                  if term.lower() in s.lower(): raise SystemExit('Internal/unwanted public phrase: '+term+' in '+str(p))
+              if re.search(r'\$\s?\d',s): raise SystemExit('USD price leaked into Turkish template-rights page: '+str(p))
+              for value in re.findall(r'(?:href|src)=["']([^"']+)',s,re.I):
+                  if not value or value.startswith(('#','https:','http:','mailto:','tel:','data:')): continue
+                  path=unquote(urlsplit(value).path)
+                  dest=root/path.lstrip('/') if path.startswith('/') else p.parent/path
+                  if path.endswith('/'): dest=dest/'index.html'
+                  if not dest.resolve().exists(): raise SystemExit('Broken local resource '+value+' in '+str(p))
+
+          gs=guide.read_text(encoding='utf-8')
+          for phrase in ('Şablon hız kazandırır','Müşteri verisini taşımaz','Süreç Analizi · 4.900 TL','kaynak','sürüm','müşteri kapsamı'):
+              if phrase.lower() not in gs.lower(): raise SystemExit('Rights guide fact missing: '+phrase)
+          if 'hukuki görüş' not in gs.lower() and 'hukuki tavsiye' not in gs.lower(): raise SystemExit('Legal-boundary note missing')
+
+          ls=library.read_text(encoding='utf-8')
+          for phrase in ('İş akışı kabul kriterleri','Olay ve eskalasyon','İzleme sinyali sözleşmesi','müşteri gizli'):
+              if phrase.lower() not in ls.lower(): raise SystemExit('Template library boundary missing: '+phrase)
+
+          template_paths=[
+              root/'sablonlar/is-akisi-kabul-kriterleri-v1.json',
+              root/'sablonlar/olay-eskalasyon-v1.json',
+              root/'sablonlar/izleme-sinyal-sozlesmesi-v1.json']
+          for p in template_paths:
+              d=json.loads(p.read_text(encoding='utf-8'))
+              if d.get('customer_scope')!='none': raise SystemExit('Public template customer_scope must remain none: '+str(p))
+              if d.get('status')!='public-safe-template': raise SystemExit('Public-safe status missing: '+str(p))
+              if d.get('canonical_documentation')!='https://synapseautomate.github.io/sablonlar/': raise SystemExit('Single canonical template documentation URL missing: '+str(p))
+              raw=p.read_text(encoding='utf-8').lower()
+              for secretish in ('customer_name','password','secret_key','bearer ','@example.com'):
+                  if secretish in raw: raise SystemExit('Customer/secret-like content in public template: '+str(p))
+
+          rr=json.loads((root/'veri/sablon-kutuphanesi-hak-kaydi-v1.json').read_text(encoding='utf-8'))
+          if rr['default_policy']!={'customer_data_in_public_library':False,'customer_confidential_material_in_public_library':False,'unknown_rights_allowed':False,'contract_overrides_public_methodology':True}:
+              raise SystemExit('Rights default policy changed')
+          if len(rr.get('assets',[]))!=3: raise SystemExit('Rights registry asset count invalid')
+          for asset in rr['assets']:
+              for key in ('source','version','right','expiry','customer_scope'):
+                  if key not in asset: raise SystemExit('Rights metadata field missing: '+key)
+              if asset['customer_scope']!='none': raise SystemExit('Customer-scoped asset cannot enter public template registry')
+
+          sm=(root/'sitemap.xml').read_text(encoding='utf-8'); ET.fromstring(sm)
+          urls=('https://synapseautomate.github.io/rehberler/otomasyon-sablonlari-veri-haklari.html','https://synapseautomate.github.io/sablonlar/')
+          for u in urls:
+              if sm.count(u)!=1: raise SystemExit('Sitemap canonical URL must be unique: '+u)
+          cm=json.loads((root/'content-manifest.json').read_text(encoding='utf-8'))
+          for u in urls:
+              if sum(1 for x in cm.get('resources',[]) if x.get('url')==u)!=1: raise SystemExit('Content manifest entry invalid: '+u)
+          ll=(root/'llms.txt').read_text(encoding='utf-8')
+          if 'Reusable templates & data rights' not in ll or not ll.endswith('
+') or ll.endswith('
+
+'):
+              raise SystemExit('llms template-rights discovery/EOF invalid')
+          if 'G-HQSRRJ5HMZ' not in (root/'assets/js/synapse-measurement-v1.js').read_text(encoding='utf-8'):
+              raise SystemExit('GA4 identity missing')
+          print('TEMPLATE RIGHTS + SAFE LIBRARY: PASS')
+          print('Customer confidential material in public templates: 0')
+          print('Gross hourly value improvement: UNMEASURED; no savings/ROI claim')
+          PYQA
+          git diff --check
+
+      - name: Commit content and remove transport files
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f payload.zip .github/workflows/release.yml
+          python3 - <<'PYQA'
+          import subprocess
+          allowed=set(['README.md', 'content-manifest.json', 'docs/CHANGELOG.md', 'docs/README.md', 'docs/data-rights-and-template-rights-v1.md', 'llms.txt', 'rehberler/otomasyon-sablonlari-veri-haklari.html', 'sablonlar/README.md', 'sablonlar/index.html', 'sablonlar/is-akisi-kabul-kriterleri-v1.json', 'sablonlar/izleme-sinyal-sozlesmesi-v1.json', 'sablonlar/olay-eskalasyon-v1.json', 'sitemap.xml', 'veri/sablon-kutuphanesi-hak-kaydi-v1.json']+['payload.zip','.github/workflows/release.yml'])
+          out=subprocess.check_output(['git','status','--porcelain=v1','-uall'],text=True)
+          seen=set()
+          for line in out.splitlines():
+              path=line[3:]
+              if ' -> ' in path: path=path.split(' -> ',1)[1]
+              seen.add(path)
+          unexpected=seen-allowed
+          if unexpected: raise SystemExit('Unexpected working-tree changes: '+', '.join(sorted(unexpected)))
+          print('WORKTREE SCOPE: PASS')
+          PYQA
+          git config user.name "synapse-template-rights-release"
+          git config user.email "synapse-template-rights-release@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "trust: add reusable template and data-rights boundaries"
+            git push origin HEAD:main
+          fi
+
+      - name: Build clean public Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude 'D01/' --exclude 'D02/' --exclude 'D03/' \
+            --exclude '__pycache__/' --exclude '*.zip' \
+            --exclude '*.sha256' --exclude '*.py' \
+            --exclude 'README*.md' --exclude 'DEPLOYMENT.md'
+          test -f _site/index.html
+          test -f _site/rehberler/otomasyon-sablonlari-veri-haklari.html
+          test -f _site/sablonlar/index.html
+          test -f _site/sablonlar/is-akisi-kabul-kriterleri-v1.json
+          test -f _site/sablonlar/olay-eskalasyon-v1.json
+          test -f _site/sablonlar/izleme-sinyal-sozlesmesi-v1.json
+          test -f _site/veri/sablon-kutuphanesi-hak-kaydi-v1.json
+          ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
+          echo "CLEAN PUBLIC PAGES ARTIFACT: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
