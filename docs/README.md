@@ -17,3 +17,8 @@ Bu dokümanlar müşteri sonucu, üretim doğruluğu, mevzuat uyumu veya güvenl
 ## Data & template rights
 - [Data Rights & Reusable Template Rights v1](data-rights-and-template-rights-v1.md)
 - [Safe Template Library](../sablonlar/README.md)
+
+## Versioning & recurring value
+- [Public Versioning & Review Policy v1](public-versioning-and-review-v1.md)
+- [Customer Success Value Review v1](customer-success-value-review-v1.md)
+- Canonical release notes: https://synapseautomate.github.io/degisiklikler.html

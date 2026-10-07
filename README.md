@@ -44,3 +44,11 @@ International starting list prices are published independently from Turkish list
 ## Reusable delivery IP boundary
 
 Public reusable templates contain generic delivery structures only. Customer data, credentials, confidential customer configuration and unpermissioned customer material are excluded. Real project ownership and licensing are defined in written scope or contract.
+
+## Public versioning & freshness
+- Release notes: https://synapseautomate.github.io/degisiklikler.html
+- Review policy: https://synapseautomate.github.io/guven/versiyonlama-inceleme-politikasi.html
+- 7/14-day value review template: https://synapseautomate.github.io/rehberler/7-14-gun-deger-gozden-gecirme.html
+- Machine-readable version registry: https://synapseautomate.github.io/veri/public-content-version-registry-v1.json
+
+Internal editorial review is not presented as external expert review. Public knowledge assets carry review dates and a stale/deprecation policy.

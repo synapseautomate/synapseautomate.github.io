@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-10-07",
+  "policy_url": "https://synapseautomate.github.io/guven/versiyonlama-inceleme-politikasi.html",
+  "default_review_mode": "internal-editorial",
+  "external_expert_review_claimed": false,
+  "stale_behavior": {
+    "when_review_due_passes": "review-required",
+    "when_source_or_claim_changes": "re-review-before-new-claim",
+    "when_foundational_assumption_invalid": "deprecate-or-redirect"
+  },
+  "assets": [
+    {
+      "url": "https://synapseautomate.github.io/degisiklikler.html",
+      "version": "1.1.0",
+      "owner": "Synapse Automate",
+      "review_mode": "internal-editorial",
+      "external_expert_reviewed": false,
+      "updated_at": "2026-10-07",
+      "review_due_at": "2026-11-07",
+      "status": "current",
+      "customer_scope": "none"
+    },
+    {
+      "url": "https://synapseautomate.github.io/guven/versiyonlama-inceleme-politikasi.html",
+      "version": "1.0.0",
+      "owner": "Synapse Automate",
+      "review_mode": "internal-editorial",
+      "external_expert_reviewed": false,
+      "updated_at": "2026-10-07",
+      "review_due_at": "2026-11-07",
+      "status": "current",
+      "customer_scope": "none"
+    },
+    {
+      "url": "https://synapseautomate.github.io/rehberler/7-14-gun-deger-gozden-gecirme.html",
+      "version": "1.0.0",
+      "owner": "Synapse Automate",
+      "review_mode": "internal-editorial",
+      "external_expert_reviewed": false,
+      "updated_at": "2026-10-07",
+      "review_due_at": "2026-11-07",
+      "status": "current",
+      "customer_scope": "none"
+    },
+    {
+      "url": "https://synapseautomate.github.io/rehberler/otomasyon-sablonlari-veri-haklari.html",
+      "version": "1.0.0",
+      "owner": "Synapse Automate",
+      "review_mode": "internal-editorial",
+      "external_expert_reviewed": false,
+      "updated_at": "2026-10-06",
+      "review_due_at": "2026-11-06",
+      "status": "current",
+      "customer_scope": "none"
+    },
+    {
+      "url": "https://synapseautomate.github.io/kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html",
+      "version": "1.0.0",
+      "owner": "Synapse Automate",
+      "review_mode": "internal-editorial",
+      "external_expert_reviewed": false,
+      "updated_at": "2026-10-03",
+      "review_due_at": "2026-11-03",
+      "status": "current",
+      "customer_scope": "none"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "version": "1.1",
-  "generated_at": "2026-10-06",
+  "version": "2026-10-07-v25",
+  "generated_at": "2026-10-07",
   "organization": {
     "name": "Synapse Automate",
     "canonical": "https://synapseautomate.github.io/",
@@ -94,7 +94,26 @@
       "url": "https://synapseautomate.github.io/sablonlar/",
       "type": "template-library",
       "summary": "Kabul kriterleri, olay eskalasyonu ve izleme sinyalleri için müşteri gizli materyali içermeyen public-safe şablonlar."
+    },
+    {
+      "title": "Sürüm Notları ve Değişiklik Kaydı",
+      "url": "https://synapseautomate.github.io/degisiklikler.html",
+      "type": "trust-changelog",
+      "summary": "Kamu dokümantasyonunda ne değişti, neden değişti, kim onayladı ve ne zaman yeniden gözden geçirileceğini görünür tutar."
+    },
+    {
+      "title": "Versiyonlama ve İnceleme Politikası",
+      "url": "https://synapseautomate.github.io/guven/versiyonlama-inceleme-politikasi.html",
+      "type": "trust-policy",
+      "summary": "İç editoryal inceleme ile gerçek dış uzman incelemesini ayırır; review due ve deprecation davranışını tanımlar."
+    },
+    {
+      "title": "7/14 Gün Değer Gözden Geçirme",
+      "url": "https://synapseautomate.github.io/rehberler/7-14-gun-deger-gozden-gecirme.html",
+      "type": "customer-success-template",
+      "summary": "Recurring çalışmayı gerçek kullanım, kabul edilen sonuç, insan yükü ve kritik hata sinyalleriyle değerlendiren şablon."
     }
   ],
-  "template_rights_registry": "https://synapseautomate.github.io/veri/sablon-kutuphanesi-hak-kaydi-v1.json"
+  "template_rights_registry": "https://synapseautomate.github.io/veri/sablon-kutuphanesi-hak-kaydi-v1.json",
+  "public_version_registry": "https://synapseautomate.github.io/veri/public-content-version-registry-v1.json"
 }

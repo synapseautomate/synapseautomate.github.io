@@ -135,3 +135,12 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Rights metadata fields: source, version, right, expiry/review status and customer scope. Unknown rights are a stop condition.
 - Commercial boundary: actual project ownership/licensing, retention and deletion are defined in written scope or contract.
 - Evidence boundary: template standardization is not a claim of delivery-hour savings, ROI, production accuracy, compliance certification or customer outcomes.
+
+## Versioning, review & recurring value — 2026-10-07
+- Canonical release notes: https://synapseautomate.github.io/degisiklikler.html
+- Review policy: https://synapseautomate.github.io/guven/versiyonlama-inceleme-politikasi.html
+- 7/14-day value review template: https://synapseautomate.github.io/rehberler/7-14-gun-deger-gozden-gecirme.html
+- Public version registry: https://synapseautomate.github.io/veri/public-content-version-registry-v1.json
+- Reviewer boundary: current public content uses internal editorial review; external expert review is not claimed unless a real reviewer and public permission exist.
+- Stale behavior: review due -> re-review, review-required status or deprecation/redirect.
+- Retention boundary: no customer retention, renewal, savings or ROI result is claimed without measured evidence.
