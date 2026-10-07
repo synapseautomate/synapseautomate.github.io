@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-07-v25",
+  "version": "2026-10-07-discovery-v1",
   "generated_at": "2026-10-07",
   "organization": {
     "name": "Synapse Automate",
@@ -7,11 +7,15 @@
     "linkedin": "https://www.linkedin.com/company/synapseautomate/",
     "github": "https://github.com/synapseautomate"
   },
-  "authority_hub": "https://synapseautomate.github.io/kaynaklar/ai-otomasyon-otorite-merkezi.html",
+  "authority_hub": "https://synapseautomate.github.io/kaynaklar.html",
   "discovery": {
     "sitemap": "https://synapseautomate.github.io/sitemap.xml",
     "rss": "https://synapseautomate.github.io/feed.xml",
-    "llms": "https://synapseautomate.github.io/llms.txt"
+    "llms": "https://synapseautomate.github.io/llms.txt",
+    "resource_center": "https://synapseautomate.github.io/kaynaklar.html",
+    "trust_center": "https://synapseautomate.github.io/guven-merkezi.html",
+    "human_sitemap": "https://synapseautomate.github.io/site-haritasi.html",
+    "technical_evidence": "https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html"
   },
   "claim_boundaries": [
     "No ranking guarantee",
@@ -40,12 +44,6 @@
       "url": "https://synapseautomate.github.io/sektorler/finans.html",
       "type": "industry",
       "summary": "İnsan denetimli risk ön değerlendirme, anomali sinyalleri, segmentasyon ve raporlama akışları."
-    },
-    {
-      "title": "Kilory Yayın Öncesi Kanıt Paketi",
-      "url": "https://synapseautomate.github.io/kanit/kilory-yayin-oncesi-kanit-paketi.html",
-      "type": "evidence",
-      "summary": "Kilory için özellik matrisi, claim sınırları, gizlilik ve yayın kapıları."
     },
     {
       "title": "AI Otomasyon Kanıt Metodolojisi",
@@ -112,8 +110,40 @@
       "url": "https://synapseautomate.github.io/rehberler/7-14-gun-deger-gozden-gecirme.html",
       "type": "customer-success-template",
       "summary": "Recurring çalışmayı gerçek kullanım, kabul edilen sonuç, insan yükü ve kritik hata sinyalleriyle değerlendiren şablon."
+    },
+    {
+      "title": "Kaynak Merkezi",
+      "url": "https://synapseautomate.github.io/kaynaklar.html",
+      "type": "discovery-hub",
+      "summary": "Araçlar, rehberler, açık kanıt, sektör paketleri, güven politikaları ve şablonlar için ana kullanıcı yolu."
+    },
+    {
+      "title": "Güven Merkezi",
+      "url": "https://synapseautomate.github.io/guven-merkezi.html",
+      "type": "trust-hub",
+      "summary": "Kaynak, yetki, insan onayı, olay yönetimi, veri hakları ve versiyonlama sınırlarını tek merkezde toplar."
+    },
+    {
+      "title": "Teknik Kanıt İndeksi",
+      "url": "https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html",
+      "type": "technical-evidence-index",
+      "summary": "Public-safe benchmark, regresyon, provenance, ölçüm, pilot ve şema artifact'larına kullanıcıya dönük indeks."
+    },
+    {
+      "title": "Site Haritası",
+      "url": "https://synapseautomate.github.io/site-haritasi.html",
+      "type": "human-sitemap",
+      "summary": "Güncel public çözüm, sektör, araç, rehber, kanıt, güven, şablon ve uluslararası yüzeyleri kategorik gösterir."
     }
   ],
   "template_rights_registry": "https://synapseautomate.github.io/veri/sablon-kutuphanesi-hak-kaydi-v1.json",
-  "public_version_registry": "https://synapseautomate.github.io/veri/public-content-version-registry-v1.json"
+  "public_version_registry": "https://synapseautomate.github.io/veri/public-content-version-registry-v1.json",
+  "deprecated_routes": [
+    "/urunler/agentready.html",
+    "/urunler/creative.html",
+    "/urunler/magnetflow.html",
+    "/urunler/revenueos.html",
+    "/urunler/vela.html",
+    "/demolar/vela-saha-akisi.html"
+  ]
 }

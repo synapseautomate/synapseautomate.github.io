@@ -1,6 +1,9 @@
 name: Deploy Current Main to GitHub Pages
 
-on:
+'on':
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -56,6 +59,12 @@ jobs:
           test -f _site/araclar/finans-surec-kontrol-listesi.html
           test -f _site/araclar/site-ai-uyumluluk-taramasi.html
           test -f _site/demolar/vela-saha-akisi.html
+          test -f _site/kaynaklar.html
+          test -f _site/guven-merkezi.html
+          test -f _site/site-haritasi.html
+          test -f _site/kanit/teknik-kanit-indeksi.html
+          test -f _site/degisiklikler.html
+          test -f _site/sablonlar/index.html
           test -f _site/kanit/ai-otomasyon-kanit-metodolojisi.html
           test -f _site/assets/day3/day3.css
           test -f _site/sitemap.xml
@@ -64,6 +73,9 @@ jobs:
           # Public artifact must not contain transport/internal files.
           ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
 
+          grep -q 'name="robots" content="noindex,follow"' _site/urunler/revenueos.html
+          grep -q 'https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html' _site/sitemap.xml
+          ! grep -q 'https://synapseautomate.github.io/urunler/revenueos.html' _site/sitemap.xml
           echo "PAGES PUBLIC ARTIFACT QA: PASS"
 
       - name: Upload Pages artifact
