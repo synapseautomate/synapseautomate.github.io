@@ -22,3 +22,12 @@ Bu dokümanlar müşteri sonucu, üretim doğruluğu, mevzuat uyumu veya güvenl
 - [Public Versioning & Review Policy v1](public-versioning-and-review-v1.md)
 - [Customer Success Value Review v1](customer-success-value-review-v1.md)
 - Canonical release notes: https://synapseautomate.github.io/degisiklikler.html
+
+## Public discovery
+- Resource Center: https://synapseautomate.github.io/kaynaklar.html
+- Trust Center: https://synapseautomate.github.io/guven-merkezi.html
+- Human-readable site map: https://synapseautomate.github.io/site-haritasi.html
+- Technical evidence index: https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html
+- Safe template library: https://synapseautomate.github.io/sablonlar/
+
+Legacy product URLs are retained only for backward compatibility and are not active Synapse offers.

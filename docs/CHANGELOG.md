@@ -23,3 +23,13 @@ Müşteri, üretim doğruluğu, ROI, mevzuat uyumu veya sertifikasyon iddiası e
 - Added machine-readable public content version/freshness registry and stale-content checker.
 - Added 7/14-day value review template for recurring work.
 - No external expert review, customer retention, ROI, production performance or renewal outcome is claimed.
+
+## 1.2.0 — 2026-10-07
+
+- Added a single visible Resource Center that connects tools, guides, evidence, trust and templates.
+- Rebuilt the Trust Center around authority, human approval, incident handling, rights and review boundaries.
+- Replaced the placeholder human sitemap with a categorized public site map and added a technical evidence index.
+- Deprecated legacy Synapse product routes from active indexing while preserving backward-compatible URLs.
+- Standardized the clean Synapse logo and removed stale product references from current public surfaces.
+- Added automatic Pages deployment on main updates with discovery/deprecation QA checks.
+- No customer outcome, production accuracy, compliance certification, security guarantee, savings or ROI claim was added.

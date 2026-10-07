@@ -52,3 +52,11 @@ Public reusable templates contain generic delivery structures only. Customer dat
 - Machine-readable version registry: https://synapseautomate.github.io/veri/public-content-version-registry-v1.json
 
 Internal editorial review is not presented as external expert review. Public knowledge assets carry review dates and a stale/deprecation policy.
+
+## Public discovery
+- Resource Center: https://synapseautomate.github.io/kaynaklar.html
+- Trust Center: https://synapseautomate.github.io/guven-merkezi.html
+- Human-readable site map: https://synapseautomate.github.io/site-haritasi.html
+- Technical evidence index: https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html
+
+Legacy Synapse product paths are retained only for backward compatibility and are no longer active offer surfaces.
