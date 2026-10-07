@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# trigger: discovery-qa-v1
 from __future__ import annotations
 import json, re, sys, urllib.parse, xml.etree.ElementTree as ET
 from pathlib import Path
