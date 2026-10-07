@@ -45,7 +45,8 @@ def all_files():
     return out
 
 FILES=all_files()
-HTML=sorted(p for p in FILES if p.endswith(".html"))
+NON_PAGE_HTML={"google9226ec2349a9441e.html"}
+HTML=sorted(p for p in FILES if p.endswith(".html") and p not in NON_PAGE_HTML)
 
 def meta(content, name):
     pats=[
@@ -180,9 +181,9 @@ else:
 orphans=[p for p,d in data.items() if d["indexable"] and p!="index.html" and inbound.get(p,0)==0]
 missing_sitemap=[p for p,d in data.items() if d["indexable"] and p not in sitemap_paths and p not in {"404.html","talep-alindi.html"}]
 for p in sorted(orphans):
-    warnings.append({"type":"indexable_orphan","page":p})
+    errors.append({"type":"indexable_orphan","page":p})
 for p in sorted(missing_sitemap):
-    warnings.append({"type":"indexable_missing_sitemap","page":p})
+    errors.append({"type":"indexable_missing_sitemap","page":p})
 
 report={
     "html_pages":len(HTML),
