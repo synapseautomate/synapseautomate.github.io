@@ -1,0 +1,209 @@
+name: Synapse Public Versioning Release
+
+'on':
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  release:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate and apply versioning payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PYQA'
+          from pathlib import Path
+          from zipfile import ZipFile
+          from hashlib import sha256
+          from stat import S_IFLNK
+          from urllib.parse import urlsplit, unquote
+          from xml.etree import ElementTree as ET
+          from html.parser import HTMLParser
+          from datetime import date
+          import json, subprocess
+
+          root=Path('.')
+          payload=Path('payload.zip')
+          allowed=['README.md', 'content-manifest.json', 'degisiklikler.html', 'docs/CHANGELOG.md', 'docs/README.md', 'docs/customer-success-value-review-v1.md', 'docs/public-versioning-and-review-v1.md', 'guven/versiyonlama-inceleme-politikasi.html', 'llms.txt', 'rehberler/7-14-gun-deger-gozden-gecirme.html', 'scripts/check-public-content-freshness.py', 'sitemap.xml', 'veri/public-content-version-registry-v1.json']
+          expected={'README.md': '4e90f6acb91c88a9138427a20751d61794b35d9eb38d7f67db3215e2e4f487a5', 'content-manifest.json': '62369c109740b321241e9667b4f1317d401fda47950041bf522caf77076eaa0f', 'degisiklikler.html': '27a52e2fedbe8a8c54d1cebd763bfb48a1ebd7c819867451fbe12e10ba464e9d', 'docs/CHANGELOG.md': 'c5564147463204c430611330a0327e3e042180fdbe5360c1a5d85940d4a84271', 'docs/README.md': 'd9c0cb6f19d7d2b4bfb7a1ed8460e425c39b725688472c08dc06e2a489fc04bf', 'docs/customer-success-value-review-v1.md': '1d485721c1857fb2bde57e5984411403cde2183f82b7b98384804474ff8c65fe', 'docs/public-versioning-and-review-v1.md': '39c5bc383132b0abae124f1d6b79010e45cae831266f93898604b101a4297329', 'guven/versiyonlama-inceleme-politikasi.html': '616c597d01feb304581f2366f555bf9db54d02fd1e0668791f8651b5425d6113', 'llms.txt': '61b8073c1aa5962dabc6dba6860a712479a51f4382c9c0905309a06dc4419210', 'rehberler/7-14-gun-deger-gozden-gecirme.html': '3e1c210f7736326daec7abc279896d5ccf319de19c82901a91bc6948a6d017e2', 'scripts/check-public-content-freshness.py': '78efa1b87c3b6114f3ee4a3a4e5232567704acfc8500062796b9e204da952c03', 'sitemap.xml': 'db28f42d84dc320f8ace54c18bfd3df3acba5f7a66f9b84d57c19682620920dd', 'veri/public-content-version-registry-v1.json': '7dabfef06fe7eaf29b269e236a4b428e5a935f747ef8687edb7803350f2aeec7'}
+          baseline={'README.md': '799fba9235756a3cc1d7286aba9afe7662a4663dc49c46efa1d8c0c9a19f8f25', 'content-manifest.json': 'b0988d52512577d478c6f0b60c63e6ba647a16cdda6f25bdff33fe4b218e4b0f', 'docs/CHANGELOG.md': '5c7dc89cec41e00cee1630c8e2f2f51a0abadf269c6e19bc11c7ec85bdaa6681', 'docs/README.md': '8fbe124e7a42de6ff42e197d6b11bd1365a5e34d73d787b2db58174989a10eab', 'llms.txt': '967866b7986b64702bc0ced43fe3db279c65a738d4a694b8a4c59d3d0929d038', 'sitemap.xml': '4911cb5ade2bdc8fd9a8fa2640a40c509475191fd8064030c068d663f7bc90ab', 'degisiklikler.html': None, 'docs/customer-success-value-review-v1.md': None, 'docs/public-versioning-and-review-v1.md': None, 'guven/versiyonlama-inceleme-politikasi.html': None, 'rehberler/7-14-gun-deger-gozden-gecirme.html': None, 'scripts/check-public-content-freshness.py': None, 'veri/public-content-version-registry-v1.json': None}
+          protect={'rehberler/otomasyon-sablonlari-veri-haklari.html': '9cf3fc976ba114cd7825bd34e85deb48ef3bcdef8d9a03fb6d5b37a6efbc8408', 'sablonlar/index.html': '43500d502658b5b1be9187301c70b81dcdafd8e1ca79fd14a6456ad89680124c', 'veri/sablon-kutuphanesi-hak-kaydi-v1.json': 'c2160ba0980a42d15c1eb55cba9022413f9ac78508c8740e451e9e1a401aa10d', 'assets/video/ecommerce-config-isolation-en.srt': 'aaea99434c71e1c981757473b974a9f0a9b9e36a2e06bff59c4e0705e6542e6f', 'en/ecommerce-process-analysis.html': '1312a73f6a2cdb5ff5d7ac9d7de781ecae590a933b7f0185fcc784b03f7a68a0', 'en/proof/ecommerce-controlled-pilot-synthetic-report.html': 'de0586ee78f4c8124a1e3e06c470092286e64997d6c2f0d150359a29bcc9f219', 'kanit/e-ticaret-kontrollu-pilot-ornek-raporu.html': '6afb40a1459bc90e55443c14504b7a9391f9e4a63cd26cb741e0fabb4e7a9167', 'veri/e-ticaret-tr-en-claim-parity-v1.json': 'c7b600c04a3bd6b2f7981f8ddc678438d3404feb81389a988dfb315574ded284', 'assets/js/synapse-measurement-v1.js': 'a5d40b8e98db20c58950f1ea5be5600bb62c3ca4eb31213a86c23fde472000fd'}
+
+          if not payload.is_file(): raise SystemExit('payload.zip missing')
+          if subprocess.run(['git','rev-parse','-q','--verify','refs/tags/public-docs-v1.1.0'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL).returncode==0:
+              raise SystemExit('Tag public-docs-v1.1.0 already exists; refusing duplicate release')
+
+          for f,h in baseline.items():
+              p=root/f
+              if h is None:
+                  if p.exists(): raise SystemExit('New versioning path already exists unexpectedly: '+f)
+              else:
+                  if not p.is_file(): raise SystemExit('Expected baseline file missing: '+f)
+                  if sha256(p.read_bytes()).hexdigest()!=h:
+                      raise SystemExit('Baseline mismatch for '+f+'; refresh against current repo before release')
+
+          for f,h in protect.items():
+              p=root/f
+              if not p.is_file() or sha256(p.read_bytes()).hexdigest()!=h:
+                  raise SystemExit('Previously closed asset changed unexpectedly: '+f)
+
+          with ZipFile(payload) as z:
+              names=[i.filename for i in z.infolist() if not i.filename.endswith('/')]
+              if sorted(names)!=sorted(allowed): raise SystemExit('Payload path set mismatch: '+repr(names))
+              for info in z.infolist():
+                  if info.filename.endswith('/'): continue
+                  pp=Path(info.filename)
+                  if pp.is_absolute() or '..' in pp.parts: raise SystemExit('Unsafe payload path: '+info.filename)
+                  if ((info.external_attr>>16)&0o170000)==S_IFLNK: raise SystemExit('Symlink not allowed: '+info.filename)
+                  data=z.read(info.filename)
+                  if sha256(data).hexdigest()!=expected[info.filename]: raise SystemExit('Payload hash mismatch: '+info.filename)
+              z.extractall('.')
+
+          for f,h in expected.items():
+              if sha256((root/f).read_bytes()).hexdigest()!=h: raise SystemExit('Applied hash mismatch: '+f)
+
+          class LinkParser(HTMLParser):
+              def __init__(self): super().__init__(); self.refs=[]
+              def handle_starttag(self,tag,attrs):
+                  for k,v in attrs:
+                      if k in ('href','src') and v: self.refs.append(v)
+
+          public=[root/'degisiklikler.html',root/'guven/versiyonlama-inceleme-politikasi.html',root/'rehberler/7-14-gun-deger-gozden-gecirme.html']
+          forbidden=('day 25','gün 25','qa pass','run workflow','release.yml','payload.zip','nike','red bull','satın alma paketi · v1')
+          for p in public:
+              s=p.read_text(encoding='utf-8')
+              low=s.lower()
+              for term in forbidden:
+                  if term in low: raise SystemExit('Internal/unwanted public phrase: '+term+' in '+str(p))
+              if 'src="/assets/brand/synapse-logo-clean.png"' not in s: raise SystemExit('Canonical clean logo missing: '+str(p))
+              if '$149' in s or '$750' in s or '$449' in s: raise SystemExit('USD price leaked into Turkish versioning page: '+str(p))
+              parser=LinkParser(); parser.feed(s)
+              for value in parser.refs:
+                  if value.startswith(('#','https:','http:','mailto:','tel:','data:')): continue
+                  path=unquote(urlsplit(value).path)
+                  dest=root/path.lstrip('/') if path.startswith('/') else p.parent/path
+                  if path.endswith('/'): dest=dest/'index.html'
+                  if not dest.resolve().exists(): raise SystemExit('Broken local resource '+value+' in '+str(p))
+
+          rn=(root/'degisiklikler.html').read_text(encoding='utf-8')
+          for phrase in ('Ne değişti?','Neden değişti?','Kim onayladı?','1.1.0','Dış uzman incelemesi','İddia edilmiyor'):
+              if phrase.lower() not in rn.lower(): raise SystemExit('Release-notes requirement missing: '+phrase)
+          pol=(root/'guven/versiyonlama-inceleme-politikasi.html').read_text(encoding='utf-8')
+          for phrase in ('İç editoryal inceleme','Dış uzman incelemesi','iddia edilmiyor','Tazelik davranışı'):
+              if phrase.lower() not in pol.lower(): raise SystemExit('Review policy requirement missing: '+phrase)
+          val=(root/'rehberler/7-14-gun-deger-gozden-gecirme.html').read_text(encoding='utf-8')
+          for phrase in ('7. gün','14. gün','Gerçek kullanım','Kabul edilen sonuç','Kritik hata','Değer kanıtı yok'):
+              if phrase.lower() not in val.lower(): raise SystemExit('Value-review requirement missing: '+phrase)
+
+          reg=json.loads((root/'veri/public-content-version-registry-v1.json').read_text(encoding='utf-8'))
+          if reg.get('external_expert_review_claimed') is not False: raise SystemExit('External expert review must remain unclaimed')
+          if len(reg.get('assets',[]))<5: raise SystemExit('Version registry asset count too small')
+          for a in reg['assets']:
+              for k in ('url','version','owner','review_mode','external_expert_reviewed','updated_at','review_due_at','status','customer_scope'):
+                  if k not in a: raise SystemExit('Registry field missing: '+k)
+              if a['external_expert_reviewed'] is not False: raise SystemExit('Unverified expert review flag: '+a['url'])
+              if a['customer_scope']!='none': raise SystemExit('Customer-scoped content in public version registry')
+          subprocess.run(['python3','scripts/check-public-content-freshness.py'],check=True)
+
+          ET.fromstring((root/'sitemap.xml').read_text(encoding='utf-8'))
+          urls=['https://synapseautomate.github.io/degisiklikler.html','https://synapseautomate.github.io/guven/versiyonlama-inceleme-politikasi.html','https://synapseautomate.github.io/rehberler/7-14-gun-deger-gozden-gecirme.html']
+          sm=(root/'sitemap.xml').read_text(encoding='utf-8')
+          for u in urls:
+              if sm.count(u)!=1: raise SystemExit('Sitemap canonical URL must be unique: '+u)
+          cm=json.loads((root/'content-manifest.json').read_text(encoding='utf-8'))
+          for u in urls:
+              if sum(1 for x in cm.get('resources',[]) if x.get('url')==u)!=1: raise SystemExit('Content manifest entry invalid: '+u)
+          ll=(root/'llms.txt').read_text(encoding='utf-8')
+          if '## Versioning, review & recurring value — 2026-10-07' not in ll: raise SystemExit('llms discovery section missing')
+          if not ll.endswith(chr(10)) or ll.endswith(chr(10)+chr(10)): raise SystemExit('llms EOF invalid')
+          if 'G-HQSRRJ5HMZ' not in (root/'assets/js/synapse-measurement-v1.js').read_text(encoding='utf-8'):
+              raise SystemExit('GA4 identity missing')
+          print('PUBLIC VERSIONING + FRESHNESS: PASS')
+          print('External expert review claimed: 0')
+          print('Retention / ROI / renewal result: UNMEASURED')
+          PYQA
+          git diff --check
+
+      - name: Commit public versioning release
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f payload.zip .github/workflows/release.yml
+          python3 - <<'PYQA'
+          import subprocess
+          allowed=set(['README.md', 'content-manifest.json', 'degisiklikler.html', 'docs/CHANGELOG.md', 'docs/README.md', 'docs/customer-success-value-review-v1.md', 'docs/public-versioning-and-review-v1.md', 'guven/versiyonlama-inceleme-politikasi.html', 'llms.txt', 'rehberler/7-14-gun-deger-gozden-gecirme.html', 'scripts/check-public-content-freshness.py', 'sitemap.xml', 'veri/public-content-version-registry-v1.json']+['payload.zip','.github/workflows/release.yml'])
+          out=subprocess.check_output(['git','status','--porcelain=v1','-uall'],text=True)
+          seen=set()
+          for line in out.splitlines():
+              path=line[3:]
+              if ' -> ' in path: path=path.split(' -> ',1)[1]
+              seen.add(path)
+          unexpected=seen-allowed
+          if unexpected: raise SystemExit('Unexpected working-tree changes: '+', '.join(sorted(unexpected)))
+          print('WORKTREE SCOPE: PASS')
+          PYQA
+          git config user.name "synapse-versioning-release"
+          git config user.email "synapse-versioning-release@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 1
+          fi
+          git commit -m "trust: add public versioning and value review"
+          git tag -a public-docs-v1.1.0 -m "Public docs v1.1.0: versioning, freshness and value review"
+          git push --atomic origin HEAD:main refs/tags/public-docs-v1.1.0
+
+      - name: Build clean public Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir _site
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude 'D01/' --exclude 'D02/' --exclude 'D03/' \
+            --exclude '__pycache__/' --exclude '*.zip' \
+            --exclude '*.sha256' --exclude '*.py' \
+            --exclude 'README*.md' --exclude 'DEPLOYMENT.md'
+          test -f _site/index.html
+          test -f _site/degisiklikler.html
+          test -f _site/guven/versiyonlama-inceleme-politikasi.html
+          test -f _site/rehberler/7-14-gun-deger-gozden-gecirme.html
+          test -f _site/veri/public-content-version-registry-v1.json
+          ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
+          echo "CLEAN PUBLIC PAGES ARTIFACT: PASS"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
