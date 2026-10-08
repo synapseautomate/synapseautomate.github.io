@@ -43,3 +43,10 @@ Müşteri, üretim doğruluğu, ROI, mevzuat uyumu veya sertifikasyon iddiası e
 - Benchmark datasets and pinned result values were not changed.
 - No customer outcome, production accuracy, ROI, uptime/SLA, compliance certification or external expert-review claim was added.
 
+## 1.3.1 — 2026-10-08
+
+- Made human-readable evidence pages the primary path from the Technical Evidence Index.
+- Explicitly labeled Markdown, JSON and CSV destinations as raw technical files with visible extensions.
+- Added an explanatory note that raw files can open as plain text/data in the browser.
+- Added the 1.1.0 packaging note to the human-readable Workflow Decision Benchmark page.
+- Benchmark datasets, rules and pinned result values were not changed.

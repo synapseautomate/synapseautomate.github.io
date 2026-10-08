@@ -63,6 +63,7 @@ jobs:
           test -f _site/guven-merkezi.html
           test -f _site/site-haritasi.html
           test -f _site/kanit/teknik-kanit-indeksi.html
+          test -f _site/kanit/workflow-guven-benchmark-v1.html
           test -f _site/public-proof/workflow-benchmark-v1/benchmark_summary.csv
           test -f _site/public-proof/workflow-benchmark-v1/release_note.md
           test -f _site/public-proof/workflow-benchmark-v1/manifest.json
