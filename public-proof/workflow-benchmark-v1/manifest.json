@@ -1,0 +1,89 @@
+{
+  "name": "Workflow Decision Benchmark",
+  "version": "1.1.0",
+  "updated": "2026-10-08",
+  "benchmark_result_date": "2026-09-09",
+  "publisher": "Synapse Automate",
+  "evidence_status": "synthetic_deterministic_control_policy_benchmark",
+  "change_type": "packaging_and_discoverability_only",
+  "live_entrypoint": "https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html",
+  "github_directory": "https://github.com/synapseautomate/synapseautomate.github.io/tree/main/public-proof/workflow-benchmark-v1",
+  "source_dataset": {
+    "path": "../reliability-regression-v1/test_cases.csv",
+    "git_blob_sha": "080842f6f2f2a9b442301bec80c7396962bdd53d",
+    "cases": 100
+  },
+  "pinned_summary": {
+    "approach_a_policy_matches": "36/100",
+    "approach_b_policy_matches": "100/100",
+    "expected_human_or_safety_gates": "64",
+    "approach_b_gates_captured": "64/64",
+    "adversarial_cases": "15",
+    "approach_b_adversarial_blocked": "15/15"
+  },
+  "claims": {
+    "production_accuracy": false,
+    "customer_outcome": false,
+    "roi_or_savings": false,
+    "uptime_or_sla": false,
+    "compliance_or_security_certification": false,
+    "external_expert_review": false
+  },
+  "files": {
+    "README.md": {
+      "git_blob_sha": "75d1ce672761899779f7e2c8766f170a98bd0a0f",
+      "surface": "github_only",
+      "role": "package documentation"
+    },
+    "CHANGELOG.md": {
+      "git_blob_sha": "9a50092da5df83be49caee15d40896a5d7b831ff",
+      "surface": "pages_and_github",
+      "role": "version history"
+    },
+    "VERSION": {
+      "git_blob_sha": "9084fa2f716a7117829f3f32a5f4cef400e02903",
+      "surface": "pages_and_github",
+      "role": "package version"
+    },
+    "release_note.md": {
+      "git_blob_sha": "005daac3cdf8e2a135fc50aba9e8db1563df373e",
+      "surface": "pages_and_github",
+      "role": "release boundary"
+    },
+    "benchmark_summary.csv": {
+      "git_blob_sha": "1e88b03b69822206651041e0ec1850bbc09399c6",
+      "surface": "pages_and_github",
+      "role": "pinned summary"
+    },
+    "failure_taxonomy_v1.csv": {
+      "git_blob_sha": "d96c255bfa22db8587163a5d8ea84171975ffe2c",
+      "surface": "pages_and_github",
+      "role": "failure taxonomy"
+    },
+    "before_after_examples.md": {
+      "git_blob_sha": "cb6e36b9bb44ff5f10b220aa26206e53206a2e56",
+      "surface": "pages_and_github",
+      "role": "synthetic examples"
+    },
+    "run_benchmark.py": {
+      "git_blob_sha": "0d1970964f96d3cd4cbcddc0ec987dc3ea6d441c",
+      "surface": "github_only",
+      "role": "reproducible evaluator"
+    },
+    "templates/automation_scorecard.md": {
+      "git_blob_sha": "0ce2fdc4d7b31ba92aed2404348ac03c92bddbee",
+      "surface": "pages_and_github",
+      "role": "reusable template"
+    },
+    "templates/roi_evidence_template.md": {
+      "git_blob_sha": "874fe1e75019ffe493844cc788085b9da9db3b24",
+      "surface": "pages_and_github",
+      "role": "measurement template"
+    },
+    "templates/workflow_brief_generator.md": {
+      "git_blob_sha": "25957eef26046c447783d9ae18fb0c627ff87877",
+      "surface": "pages_and_github",
+      "role": "reusable template"
+    }
+  }
+}

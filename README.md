@@ -22,6 +22,16 @@ International starting list prices are published independently from Turkish list
 - [AI Otomasyonunda Güvenilirlik Testi](https://synapseautomate.github.io/rehberler/ai-otomasyon-guvenilirlik-testi.html)
 - [Süreç Analizi](https://synapseautomate.github.io/surec-analizi.html)
 
+## Open proof
+
+- [Live Technical Evidence Index](https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html)
+- [GitHub Public Proof Index](public-proof/README.md)
+- [Workflow Decision Benchmark](public-proof/workflow-benchmark-v1/README.md)
+- [Reliability Regression v2](public-proof/reliability-regression-v2/README.md)
+- [Workflow Opportunity Benchmark](public-proof/workflow-opportunity-benchmark/README.md)
+
+These packages expose synthetic, methodology and control-policy evidence. They are not presented as customer outcomes, production accuracy, ROI, uptime/SLA, compliance certification or external expert review.
+
 ## Public docs
 
 - [Enterprise Buyer Pack v1](docs/enterprise-buyer-pack-v1.md)

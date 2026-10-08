@@ -33,3 +33,13 @@ Müşteri, üretim doğruluğu, ROI, mevzuat uyumu veya sertifikasyon iddiası e
 - Standardized the clean Synapse logo and removed stale product references from current public surfaces.
 - Added automatic Pages deployment on main updates with discovery/deprecation QA checks.
 - No customer outcome, production accuracy, compliance certification, security guarantee, savings or ROI claim was added.
+
+## 1.3.0 — 2026-10-08
+
+- Reworked the Technical Evidence Index into an open-proof roundup that separates control-policy, regression and workflow-prioritization evidence.
+- Added a GitHub-level Public Proof Index for technical readers.
+- Versioned the Workflow Decision Benchmark package as 1.1.0 with an explicit packaging-only release note and machine-readable manifest.
+- Added Pages artifact checks for the headline public-proof files linked from the live evidence index.
+- Benchmark datasets and pinned result values were not changed.
+- No customer outcome, production accuracy, ROI, uptime/SLA, compliance certification or external expert-review claim was added.
+

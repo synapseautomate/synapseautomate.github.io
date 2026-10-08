@@ -1,6 +1,6 @@
 {
-  "version": "2026-10-07-discovery-v1",
-  "generated_at": "2026-10-07",
+  "version": "2026-10-08-open-proof-v1",
+  "generated_at": "2026-10-08",
   "organization": {
     "name": "Synapse Automate",
     "canonical": "https://synapseautomate.github.io/",
@@ -15,7 +15,8 @@
     "resource_center": "https://synapseautomate.github.io/kaynaklar.html",
     "trust_center": "https://synapseautomate.github.io/guven-merkezi.html",
     "human_sitemap": "https://synapseautomate.github.io/site-haritasi.html",
-    "technical_evidence": "https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html"
+    "technical_evidence": "https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html",
+    "github_public_proof": "https://github.com/synapseautomate/synapseautomate.github.io/tree/main/public-proof"
   },
   "claim_boundaries": [
     "No ranking guarantee",
@@ -127,7 +128,7 @@
       "title": "Teknik Kanıt İndeksi",
       "url": "https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html",
       "type": "technical-evidence-index",
-      "summary": "Public-safe benchmark, regresyon, provenance, ölçüm, pilot ve şema artifact'larına kullanıcıya dönük indeks."
+      "summary": "Public-safe benchmark, regresyon, provenance, ölçüm ve pilot artifact'larını; ne gösterir / ne göstermez sınırları ve makine-okunur manifestlerle kullanıcıya açar."
     },
     {
       "title": "Site Haritası",

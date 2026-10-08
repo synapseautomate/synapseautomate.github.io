@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.0 - 2026-10-08
+
+- Added explicit package version metadata.
+- Added a machine-readable manifest with Git blob identifiers for the public benchmark artifacts.
+- Added a release note that separates packaging/discovery changes from benchmark-result changes.
+- Linked the benchmark to the live Technical Evidence Index and the GitHub public-proof directory.
+- Dataset, decision rules and pinned benchmark summary values were not changed.
+- No production accuracy, customer outcome, ROI, SLA or compliance claim was added.
+
 ## 1.0.0 - 2026-09-09
 
 - Pinned the 100-case synthetic reliability dataset from `reliability-regression-v1`.

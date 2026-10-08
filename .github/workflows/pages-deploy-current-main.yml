@@ -63,6 +63,11 @@ jobs:
           test -f _site/guven-merkezi.html
           test -f _site/site-haritasi.html
           test -f _site/kanit/teknik-kanit-indeksi.html
+          test -f _site/public-proof/workflow-benchmark-v1/benchmark_summary.csv
+          test -f _site/public-proof/workflow-benchmark-v1/release_note.md
+          test -f _site/public-proof/workflow-benchmark-v1/manifest.json
+          test -f _site/public-proof/reliability-regression-v2/heldout_20_results.json
+          test -f _site/public-proof/workflow-opportunity-benchmark/proof-manifest.json
           test -f _site/degisiklikler.html
           test -f _site/sablonlar/index.html
           test -f _site/kanit/ai-otomasyon-kanit-metodolojisi.html

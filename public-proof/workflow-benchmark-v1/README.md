@@ -1,8 +1,20 @@
 # Workflow Decision Benchmark v1
 
-Version: **1.0.0**  
-Date: **2026-09-09**  
+Version: **1.1.0**  
+Benchmark dataset/result date: **2026-09-09**  
+Packaging/review update: **2026-10-08**  
 Status: **public, synthetic, non-sensitive**
+
+## Release boundary
+
+Version 1.1.0 does **not** change the dataset, decision rules or pinned summary values from the 1.0.0 benchmark. This packaging update adds explicit version metadata, a machine-readable manifest, a release note and clearer discovery paths.
+
+- Live technical evidence index: https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html
+- Public proof repository index: ../README.md
+- Release note: release_note.md
+- Manifest: manifest.json
+
+No new model evaluation, customer result, production accuracy, ROI or compliance claim is introduced by this packaging update.
 
 ## What this benchmark is
 
@@ -84,3 +96,6 @@ This is a public proof of a **control policy and test discipline**, not a claim 
 - `failure_taxonomy_v1.csv` - error categories, severity and owners
 - `before_after_examples.md` - three synthetic before/after cases
 - `CHANGELOG.md` - version history
+- `VERSION` - current public package version
+- `release_note.md` - scope and claim boundary for the current package
+- `manifest.json` - machine-readable package inventory with Git blob identifiers
