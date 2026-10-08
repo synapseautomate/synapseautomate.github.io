@@ -14,7 +14,7 @@ Version 1.1.0 does **not** change the dataset, decision rules or pinned summary 
 - Release note: release_note.md
 - Manifest: manifest.json
 
-No new model evaluation, customer result, production accuracy, ROI or compliance claim is introduced by this packaging update.
+No new model evaluation or customer result is introduced by this packaging update. This benchmark is **not production accuracy**, **not ROI evidence**, **not an SLA result**, and **not a compliance certification**.
 
 ## What this benchmark is
 
