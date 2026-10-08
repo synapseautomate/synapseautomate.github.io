@@ -27,7 +27,7 @@ jobs:
         run: python public-proof/workflow-benchmark-v1/run_benchmark.py
 
       - name: Verify public summary matches generated summary
-        run: diff -u public-proof/workflow-benchmark-v1/benchmark_summary.csv public-proof/workflow-benchmark-v1/benchmark_summary.generated.csv
+        run: diff --strip-trailing-cr -u public-proof/workflow-benchmark-v1/benchmark_summary.csv public-proof/workflow-benchmark-v1/benchmark_summary.generated.csv
 
       - name: Basic public-proof safety scan
         run: |
