@@ -1,5 +1,5 @@
 {
-  "currency_note": "Fiyatlar başlangıç seviyesidir. Kapsam, vergi/kur, ödeme ve fatura uygunluğu tahsilat öncesi yazılı olarak doğrulanır.",
+  "currency_note": "TRY ve USD liste fiyatları birbirinden bağımsızdır; kur dönüşümü değildir. Seçilen para birimi, kapsam, vergi, ödeme ve fatura uygunluğu tahsilat öncesi yazılı olarak doğrulanır.",
   "offers": [
     {
       "id": "process_analysis",

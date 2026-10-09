@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,7 +24,7 @@ for name, path in pages.items():
         continue
     text = path.read_text(encoding="utf-8")
     texts[name] = text
-    if '<meta name="viewport"' not in text:
+    if not re.search(r'<meta\b[^>]*\bname=["\']viewport["\'][^>]*>', text, re.I):
         errors.append(f"missing viewport: {name}")
     if "overflow-x:hidden" not in text:
         errors.append(f"missing horizontal overflow guard: {name}")
@@ -41,6 +42,10 @@ if "4.900 TL" not in texts.get("sektorler/hukuk.html", "") or "$149" not in text
     errors.append("legal page missing Process Analysis starting price")
 if "ai-otomasyon-fiyatlari.html" not in texts.get("sektorler/hukuk.html", ""):
     errors.append("legal page missing pricing guide link")
+
+for name in ["surec-analizi.html", "rehberler/ai-otomasyon-fiyatlari.html", "sektorler/hukuk.html"]:
+    if "kur dönüşümü değildir" not in texts.get(name, "").lower():
+        errors.append(f"independent TRY/USD price boundary missing: {name}")
 
 forbidden = [
     "Day 6",

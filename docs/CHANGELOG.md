@@ -66,4 +66,7 @@ Müşteri, üretim doğruluğu, ROI, mevzuat uyumu veya sertifikasyon iddiası e
 - The thank-you page emits GA4 `generate_lead` only when the matching FormSubmit redirect returns in the same browser session within 30 minutes.
 - Direct visits to the thank-you URL do not count as leads, and reloads do not double-count.
 - Existing `lead_form_submit` remains a diagnostic submit-attempt event; it is not treated as a confirmed conversion.
+- Aligned Process Analysis, pricing-guide and legal-sector price surfaces with the canonical offer ladder: 4,900 TL / $149, 24,900 TL / $750, and 14,900 TL / $449 monthly.
+- TRY and USD are explicitly independent list prices, never an FX conversion.
+- Hardened offer QA so viewport detection is attribute-order agnostic and the independent-currency boundary is machine-checked.
 
