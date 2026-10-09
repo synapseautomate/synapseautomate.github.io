@@ -7,6 +7,7 @@ on:
       - 'sektorler/e-ticaret.html'
       - 'sektorler/uretim-lojistik.html'
       - 'sektorler/finans.html'
+      - 'sektorler/finans-bankacilik.html'
       - 'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html'
       - 'rehberler/uretim-lojistik-ai-otomasyon-satin-alma-rehberi.html'
       - 'rehberler/finans-ai-otomasyon-satin-alma-rehberi.html'

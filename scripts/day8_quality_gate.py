@@ -12,6 +12,7 @@ PAGES = [
     "sektorler/uretim-lojistik.html",
     "rehberler/uretim-lojistik-ai-otomasyon-satin-alma-rehberi.html",
     "sektorler/finans.html",
+    "sektorler/finans-bankacilik.html",
     "rehberler/finans-ai-otomasyon-satin-alma-rehberi.html",
 ]
 NEW_PUBLIC = [
@@ -47,10 +48,34 @@ def extract(pattern, text):
     return re.sub(r"\s+", " ", m.group(1)).strip() if m else ""
 
 
+def canonical_href(text):
+    return (
+        extract(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)', text)
+        or extract(r'<link[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']canonical["\']', text)
+    )
+
+
+def robots_value(text):
+    return (
+        extract(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']+)', text)
+        or extract(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']robots["\']', text)
+    ).lower()
+
+
+def local_path_from_canonical(url):
+    prefix = "https://synapseautomate.github.io/"
+    if not url.startswith(prefix):
+        return None
+    rel = url[len(prefix):]
+    return rel or "index.html"
+
+
 def main():
     ok = True
     titles = set()
     h1s = set()
+    sitemap = ROOT / "sitemap.xml"
+    sitemap_text = sitemap.read_text(encoding="utf-8") if sitemap.exists() else ""
 
     for rel in PAGES:
         path = ROOT / rel
@@ -58,11 +83,31 @@ def main():
             ok = fail(f"missing canonical page: {rel}") and ok
             continue
         text = path.read_text(encoding="utf-8")
-        canonical = f'https://synapseautomate.github.io/{rel}'
-        if f'<link rel="canonical" href="{canonical}"' not in text and f'<link href="{canonical}" rel="canonical"' not in text:
-            ok = fail(f"canonical mismatch: {rel}") and ok
-        if 'type="application/ld+json"' not in text:
-            ok = fail(f"schema missing: {rel}") and ok
+        expected_canonical = f"https://synapseautomate.github.io/{rel}"
+        actual_canonical = canonical_href(text)
+        robots = robots_value(text)
+        is_deprecated_bridge = "noindex" in robots and actual_canonical and actual_canonical != expected_canonical
+
+        if is_deprecated_bridge:
+            target_rel = local_path_from_canonical(actual_canonical)
+            if not target_rel:
+                ok = fail(f"deprecated bridge canonical must stay on canonical site: {rel}") and ok
+            elif not (ROOT / target_rel).exists():
+                ok = fail(f"deprecated bridge target missing: {rel} -> {target_rel}") and ok
+            if expected_canonical in sitemap_text:
+                ok = fail(f"deprecated bridge must not be in sitemap: {rel}") and ok
+            if actual_canonical not in sitemap_text:
+                ok = fail(f"deprecated bridge canonical target missing from sitemap: {rel}") and ok
+            if "follow" not in robots:
+                ok = fail(f"deprecated bridge must remain followable: {rel}") and ok
+        else:
+            if actual_canonical != expected_canonical:
+                ok = fail(f"canonical mismatch: {rel}") and ok
+            if 'type="application/ld+json"' not in text:
+                ok = fail(f"schema missing: {rel}") and ok
+            if len(re.sub(r"<[^>]+>", " ", text)) < 1200:
+                ok = fail(f"thin content: {rel}") and ok
+
         if '<meta name="description"' not in text and 'name="description"' not in text:
             ok = fail(f"description missing: {rel}") and ok
         title = extract(r"<title>(.*?)</title>", text)
@@ -73,8 +118,6 @@ def main():
         if not h1 or h1 in h1s:
             ok = fail(f"missing/duplicate h1: {rel}") and ok
         h1s.add(h1)
-        if len(re.sub(r"<[^>]+>", " ", text)) < 1200:
-            ok = fail(f"thin content: {rel}") and ok
 
     for rel in NEW_PUBLIC:
         path = ROOT / rel
@@ -97,7 +140,6 @@ def main():
                 ok = fail(f"methodology requirement missing: {required}") and ok
 
     hub = ROOT / "kaynaklar.html"
-    sitemap = ROOT / "sitemap.xml"
     if not hub.exists():
         ok = fail("resources hub missing") and ok
     else:
