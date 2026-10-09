@@ -17,6 +17,22 @@ on:
       - 'sitemap.xml'
       - 'scripts/day8_quality_gate.py'
       - '.github/workflows/day8-commercial-seo-quality.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'sektorler/e-ticaret.html'
+      - 'sektorler/uretim-lojistik.html'
+      - 'sektorler/finans.html'
+      - 'sektorler/finans-bankacilik.html'
+      - 'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html'
+      - 'rehberler/uretim-lojistik-ai-otomasyon-satin-alma-rehberi.html'
+      - 'rehberler/finans-ai-otomasyon-satin-alma-rehberi.html'
+      - 'kanit/50-vaka-kaynak-metodolojisi.html'
+      - 'public-proof/provenance-50-v1/**'
+      - 'kaynaklar.html'
+      - 'sitemap.xml'
+      - 'scripts/day8_quality_gate.py'
+      - '.github/workflows/day8-commercial-seo-quality.yml'
   workflow_dispatch:
 
 permissions:
