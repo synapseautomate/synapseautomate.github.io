@@ -156,3 +156,11 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Legacy product paths AgentReady, Creative, MagnetFlow, RevenueOS and Vela are retained only for backward compatibility and are noindex with the current offer as canonical. They are not active Synapse offers.
 - Kilory belongs to the Kinetra Studios product portfolio and is not part of the Synapse Automate commercial offer.
 - Evidence boundary: synthetic/spec/methodology artifacts remain explicitly separate from customer outcomes, production accuracy, compliance certification or ROI claims.
+## Sector packaging & primary free tool — 2026-10-09
+- Primary free diagnostic: https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html
+- Finance & Banking canonical sector page: https://synapseautomate.github.io/sektorler/finans-bankacilik.html
+- Legacy /sektorler/finans.html is backward-compatible only and is noindex with the current Finance & Banking page as canonical.
+- Property Management Process Analysis: https://synapseautomate.github.io/teklif/gayrimenkul-yonetimi-surec-analizi.html
+- Property Management synthetic maintenance proof: https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html
+- Traffic, form and paid-conversion results are not inferred from instrumentation alone; unobserved outcome metrics remain unmeasured.
+

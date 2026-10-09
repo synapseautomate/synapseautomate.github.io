@@ -50,3 +50,12 @@ Müşteri, üretim doğruluğu, ROI, mevzuat uyumu veya sertifikasyon iddiası e
 - Added an explanatory note that raw files can open as plain text/data in the browser.
 - Added the 1.1.0 packaging note to the human-readable Workflow Decision Benchmark page.
 - Benchmark datasets, rules and pinned result values were not changed.
+
+## 1.4.0 — 2026-10-09
+
+- Consolidated the legacy Finance sector URL into the current Finance & Banking canonical and removed the legacy URL from the sitemap.
+- Made the 20-minute workflow map the primary free diagnostic entry point from the Resource Center.
+- Added a dedicated Property Management Process Analysis offer and linked sector -> synthetic proof -> offer -> generic intake.
+- Added a public-safe 12-month Kinetra portfolio decision framework that separates Synapse commercial validation, Studios portfolio discipline and Kilory product readiness.
+- Traffic, form and paid-conversion outcomes remain unmeasured unless observed through connected analytics or authorized payment evidence.
+

@@ -1,6 +1,6 @@
 {
-  "version": "2026-10-08-open-proof-v1",
-  "generated_at": "2026-10-08",
+  "version": "2026-10-09-sector-packaging-v1",
+  "generated_at": "2026-10-09",
   "organization": {
     "name": "Synapse Automate",
     "canonical": "https://synapseautomate.github.io/",
@@ -16,7 +16,8 @@
     "trust_center": "https://synapseautomate.github.io/guven-merkezi.html",
     "human_sitemap": "https://synapseautomate.github.io/site-haritasi.html",
     "technical_evidence": "https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html",
-    "github_public_proof": "https://github.com/synapseautomate/synapseautomate.github.io/tree/main/public-proof"
+    "github_public_proof": "https://github.com/synapseautomate/synapseautomate.github.io/tree/main/public-proof",
+    "flagship_free_tool": "https://synapseautomate.github.io/araclar/surecini-20-dakikada-haritala.html"
   },
   "claim_boundaries": [
     "No ranking guarantee",
@@ -135,6 +136,12 @@
       "url": "https://synapseautomate.github.io/site-haritasi.html",
       "type": "human-sitemap",
       "summary": "Güncel public çözüm, sektör, araç, rehber, kanıt, güven, şablon ve uluslararası yüzeyleri kategorik gösterir."
+    },
+    {
+      "title": "Gayrimenkul Yönetimi Süreç Analizi",
+      "url": "https://synapseautomate.github.io/teklif/gayrimenkul-yonetimi-surec-analizi.html",
+      "type": "offer",
+      "summary": "Bakım talebi, kiracı iletişimi, tedarikçi yönlendirme veya raporlama gibi tek bir gayrimenkul yönetimi akışında darboğaz, veri, insan onayı ve ölçüm sınırını netleştiren 4.900 TL Süreç Analizi giriş yüzeyi."
     }
   ],
   "template_rights_registry": "https://synapseautomate.github.io/veri/sablon-kutuphanesi-hak-kaydi-v1.json",
@@ -145,6 +152,7 @@
     "/urunler/magnetflow.html",
     "/urunler/revenueos.html",
     "/urunler/vela.html",
-    "/demolar/vela-saha-akisi.html"
+    "/demolar/vela-saha-akisi.html",
+    "/sektorler/finans.html"
   ]
 }

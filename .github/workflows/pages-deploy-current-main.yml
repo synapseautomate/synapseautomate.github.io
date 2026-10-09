@@ -64,6 +64,7 @@ jobs:
           test -f _site/site-haritasi.html
           test -f _site/kanit/teknik-kanit-indeksi.html
           test -f _site/kanit/workflow-guven-benchmark-v1.html
+          test -f _site/teklif/gayrimenkul-yonetimi-surec-analizi.html
           test -f _site/public-proof/workflow-benchmark-v1/benchmark_summary.csv
           test -f _site/public-proof/workflow-benchmark-v1/release_note.md
           test -f _site/public-proof/workflow-benchmark-v1/manifest.json
@@ -80,7 +81,11 @@ jobs:
           ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
 
           grep -q 'name="robots" content="noindex,follow"' _site/urunler/revenueos.html
+          grep -q 'name="robots" content="noindex,follow"' _site/sektorler/finans.html
+          grep -q 'https://synapseautomate.github.io/sektorler/finans-bankacilik.html' _site/sektorler/finans.html
           grep -q 'https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html' _site/sitemap.xml
+          grep -q 'https://synapseautomate.github.io/teklif/gayrimenkul-yonetimi-surec-analizi.html' _site/sitemap.xml
+          ! grep -q 'https://synapseautomate.github.io/sektorler/finans.html' _site/sitemap.xml
           ! grep -q 'https://synapseautomate.github.io/urunler/revenueos.html' _site/sitemap.xml
           echo "PAGES PUBLIC ARTIFACT QA: PASS"
 
