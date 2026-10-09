@@ -65,6 +65,8 @@ jobs:
           test -f _site/kanit/teknik-kanit-indeksi.html
           test -f _site/kanit/workflow-guven-benchmark-v1.html
           test -f _site/teklif/gayrimenkul-yonetimi-surec-analizi.html
+          test -f _site/surec-analizi.html
+          test -f _site/talep-alindi.html
           test -f _site/public-proof/workflow-benchmark-v1/benchmark_summary.csv
           test -f _site/public-proof/workflow-benchmark-v1/release_note.md
           test -f _site/public-proof/workflow-benchmark-v1/manifest.json
@@ -85,6 +87,11 @@ jobs:
           grep -q 'https://synapseautomate.github.io/sektorler/finans-bankacilik.html' _site/sektorler/finans.html
           grep -q 'https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html' _site/sitemap.xml
           grep -q 'https://synapseautomate.github.io/teklif/gayrimenkul-yonetimi-surec-analizi.html' _site/sitemap.xml
+          grep -q 'data-synapse-lead="process_analysis"' _site/surec-analizi.html
+          grep -q 'submitted=process_analysis' _site/surec-analizi.html
+          grep -q 'data-synapse-success="process_analysis"' _site/talep-alindi.html
+          grep -q "emit('generate_lead'" _site/assets/js/synapse-measurement-v1.js
+          grep -q 'name="robots" content="noindex,follow"' _site/talep-alindi.html
           ! grep -q 'https://synapseautomate.github.io/sektorler/finans.html' _site/sitemap.xml
           ! grep -q 'https://synapseautomate.github.io/urunler/revenueos.html' _site/sitemap.xml
           echo "PAGES PUBLIC ARTIFACT QA: PASS"

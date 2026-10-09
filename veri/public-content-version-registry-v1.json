@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.3.1",
   "generated_at": "2026-10-09",
   "policy_url": "https://synapseautomate.github.io/guven/versiyonlama-inceleme-politikasi.html",
   "default_review_mode": "internal-editorial",
@@ -12,7 +12,7 @@
   "assets": [
     {
       "url": "https://synapseautomate.github.io/degisiklikler.html",
-      "version": "1.4.0",
+      "version": "1.4.1",
       "owner": "Synapse Automate",
       "review_mode": "internal-editorial",
       "external_expert_reviewed": false,
@@ -166,6 +166,28 @@
     },
     {
       "url": "https://synapseautomate.github.io/kinetra-group.html",
+      "version": "1.1.0",
+      "owner": "Synapse Automate",
+      "review_mode": "internal-editorial",
+      "external_expert_reviewed": false,
+      "updated_at": "2026-10-09",
+      "review_due_at": "2026-11-09",
+      "status": "current",
+      "customer_scope": "none"
+    },
+    {
+      "url": "https://synapseautomate.github.io/surec-analizi.html",
+      "version": "1.1.0",
+      "owner": "Synapse Automate",
+      "review_mode": "internal-editorial",
+      "external_expert_reviewed": false,
+      "updated_at": "2026-10-09",
+      "review_due_at": "2026-11-09",
+      "status": "current",
+      "customer_scope": "none"
+    },
+    {
+      "url": "https://synapseautomate.github.io/talep-alindi.html",
       "version": "1.1.0",
       "owner": "Synapse Automate",
       "review_mode": "internal-editorial",

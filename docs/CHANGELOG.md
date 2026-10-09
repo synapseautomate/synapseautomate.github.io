@@ -59,3 +59,11 @@ Müşteri, üretim doğruluğu, ROI, mevzuat uyumu veya sertifikasyon iddiası e
 - Added a public-safe 12-month Kinetra portfolio decision framework that separates Synapse commercial validation, Studios portfolio discipline and Kilory product readiness.
 - Traffic, form and paid-conversion outcomes remain unmeasured unless observed through connected analytics or authorized payment evidence.
 
+## 1.4.1 — 2026-10-09
+
+- Added confirmed lead measurement for the Process Analysis form.
+- The form now marks a short-lived pending lead only after native form validation passes and the submit event fires.
+- The thank-you page emits GA4 `generate_lead` only when the matching FormSubmit redirect returns in the same browser session within 30 minutes.
+- Direct visits to the thank-you URL do not count as leads, and reloads do not double-count.
+- Existing `lead_form_submit` remains a diagnostic submit-attempt event; it is not treated as a confirmed conversion.
+

@@ -2,6 +2,7 @@
 'use strict';
 var GA_ID='G-HQSRRJ5HMZ';
 var KEY='synapse_attribution_v1';
+var LEAD_PENDING_KEY='synapse_lead_pending_v1';
 
 /* Google Analytics 4 collector. No advertising signals are enabled here. */
 window.dataLayer=window.dataLayer||[];
@@ -27,7 +28,9 @@ var last=touch(),first=last;try{var s=localStorage.getItem(KEY);if(s){var x=JSON
 function emit(name,meta){var payload=Object.assign({event_version:'1',page_path:location.pathname,source:last.source,medium:last.medium,campaign:last.campaign,content:last.content,asset:last.asset,cluster:last.cluster,referrer_class:last.referrer_class},meta||{});try{window.gtag('event',name,payload)}catch(e){}try{window.dispatchEvent(new CustomEvent('synapse:event',{detail:Object.assign({event:name},payload)}))}catch(e){}return Object.assign({event:name},payload)}
 function hidden(form,name,value){var x=form.querySelector('input[name="'+name.replace(/"/g,'')+'"]');if(!x){x=document.createElement('input');x.type='hidden';x.name=name;form.appendChild(x)}x.value=clean(value,240)}
 function enrich(form){hidden(form,'Attribution_Source',last.source);hidden(form,'Attribution_Medium',last.medium);hidden(form,'Attribution_Campaign',last.campaign);hidden(form,'Attribution_Content',last.content);hidden(form,'Attribution_Asset',last.asset);hidden(form,'Attribution_Cluster',last.cluster);hidden(form,'Attribution_Referrer',last.referrer_class);hidden(form,'Attribution_First_Touch',JSON.stringify(first));hidden(form,'Attribution_Last_Touch',JSON.stringify(last))}
-function init(){document.querySelectorAll('form').forEach(function(f){enrich(f);f.addEventListener('submit',function(){enrich(f);emit('lead_form_submit',{form_action:clean(f.getAttribute('action')||'',160)})},{capture:true})});emit('asset_view');document.querySelectorAll('[data-synapse-event]').forEach(function(el){el.addEventListener('click',function(){emit(el.getAttribute('data-synapse-event'),{event_label:clean(el.getAttribute('data-synapse-label')||el.textContent,100)})})})}
+function markLeadPending(form){var kind=clean(form.getAttribute('data-synapse-lead')||'',80);if(!kind)return;try{sessionStorage.setItem(LEAD_PENDING_KEY,JSON.stringify({kind:kind,ts:Date.now()}))}catch(e){}}
+function emitConfirmedLead(){try{var p=new URLSearchParams(location.search),kind=clean(p.get('submitted')||'',80),pageKind=clean(document.body&&document.body.getAttribute('data-synapse-success')||'',80);if(!kind||kind!==pageKind)return;var raw=sessionStorage.getItem(LEAD_PENDING_KEY);if(!raw)return;var pending=JSON.parse(raw),age=Date.now()-Number(pending&&pending.ts||0);if(!pending||pending.kind!==kind||age<0||age>1800000)return;sessionStorage.removeItem(LEAD_PENDING_KEY);emit('generate_lead',{lead_type:kind,confirmation:'formsubmit_redirect'});var u=new URL(location.href);u.searchParams.delete('submitted');history.replaceState({},'',u.pathname+(u.searchParams.toString()?'?'+u.searchParams.toString():'')+u.hash)}catch(e){}}
+function init(){document.querySelectorAll('form').forEach(function(f){enrich(f);f.addEventListener('submit',function(){enrich(f);markLeadPending(f);emit('lead_form_submit',{form_action:clean(f.getAttribute('action')||'',160)})},{capture:true})});emit('asset_view');emitConfirmedLead();document.querySelectorAll('[data-synapse-event]').forEach(function(el){el.addEventListener('click',function(){emit(el.getAttribute('data-synapse-event'),{event_label:clean(el.getAttribute('data-synapse-label')||el.textContent,100)})})})}
 window.SynapseMeasurement={emit:emit,enrichForm:enrich,attribution:function(){return{first:first,last:last}},referrerClass:refClass,collector:function(){return{provider:'ga4',measurement_id:GA_ID}}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
