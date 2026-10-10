@@ -28,3 +28,44 @@ jobs:
           python scripts/day8_quality_gate.py
           python scripts/qa_offer_public_pages.py
           python scripts/day28_release_gate.py
+
+      - name: Build staged public artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          rsync -a ./ _site/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '_site/' \
+            --exclude 'D01/' \
+            --exclude 'D02/' \
+            --exclude 'D03/' \
+            --exclude '__pycache__/' \
+            --exclude 'scripts/' \
+            --exclude 'docs/' \
+            --exclude '*.zip' \
+            --exclude '*.sha256' \
+            --exclude '*.py' \
+            --exclude 'README*.md' \
+            --exclude 'DEPLOYMENT.md'
+          python scripts/day28_release_gate.py --artifact _site
+
+      - name: Mobile visual and local media QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory _site >/tmp/synapse-qa-http.log 2>&1 &
+          sleep 3
+          node scripts/day28_browser_smoke.mjs
+
+      - name: Upload mobile QA captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preflight-mobile-screenshots
+          path: /tmp/synapse-mobile-qa/
+          if-no-files-found: ignore

@@ -62,6 +62,8 @@ jobs:
             --exclude 'D02/' \
             --exclude 'D03/' \
             --exclude '__pycache__/' \
+            --exclude 'scripts/' \
+            --exclude 'docs/' \
             --exclude '*.zip' \
             --exclude '*.sha256' \
             --exclude '*.py' \
