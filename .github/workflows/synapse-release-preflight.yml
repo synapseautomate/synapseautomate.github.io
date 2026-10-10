@@ -1,0 +1,30 @@
+name: Synapse Release Preflight
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate syntax
+        run: python -m py_compile scripts/day28_release_gate.py scripts/day28_indexnow_notify.py
+      - name: Test release contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/site_integrity.py
+          python scripts/day8_quality_gate.py
+          python scripts/qa_offer_public_pages.py
+          python scripts/day28_release_gate.py

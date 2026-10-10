@@ -29,6 +29,20 @@ jobs:
           ref: main
           fetch-depth: 1
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Pre-publish release quality gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/site_integrity.py
+          python scripts/day8_quality_gate.py
+          python scripts/qa_offer_public_pages.py
+          python scripts/day28_release_gate.py
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
@@ -96,6 +110,27 @@ jobs:
           ! grep -q 'https://synapseautomate.github.io/urunler/revenueos.html' _site/sitemap.xml
           echo "PAGES PUBLIC ARTIFACT QA: PASS"
 
+      - name: Verify staged artifact
+        run: python scripts/day28_release_gate.py --artifact _site
+
+      - name: Test mobile layouts in real Chromium
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory _site >/tmp/synapse-qa-http.log 2>&1 &
+          sleep 3
+          node scripts/day28_browser_smoke.mjs
+
+      - name: Upload browser QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-mobile-screenshots
+          path: /tmp/synapse-mobile-qa/
+          if-no-files-found: ignore
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -104,3 +139,22 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Post-publish live smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          for route in / /kaynaklar.html /surec-analizi.html /cozumler/roofing-ev-hizmetleri.html /sitemap.xml; do
+            ok=0
+            for attempt in $(seq 1 12); do
+              if curl --fail --silent --show-error --max-time 15 "https://synapseautomate.github.io$route" > /tmp/synapse-live-page.html; then
+                ok=1
+                break
+              fi
+              sleep 5
+            done
+            test "$ok" -eq 1
+            test -s /tmp/synapse-live-page.html
+            echo "Live route PASS: $route"
+          done
+          echo "Post-publish HTTP smoke PASS"
