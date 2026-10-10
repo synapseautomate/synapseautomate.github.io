@@ -70,3 +70,12 @@ Müşteri, üretim doğruluğu, ROI, mevzuat uyumu veya sertifikasyon iddiası e
 - TRY and USD are explicitly independent list prices, never an FX conversion.
 - Hardened offer QA so viewport detection is attribute-order agnostic and the independent-currency boundary is machine-checked.
 
+## 1.5.0 — 2026-10-10
+
+- Consolidated Pages publish behind fail-closed source, canonical, offer, artifact hygiene and real Chromium mobile checks.
+- IndexNow now notifies only after the canonical Pages deployment completes successfully; it can no longer mutate main or launch its own deployment.
+- Added a static IndexNow ownership file and removed duplicate manual Pages redeploy workflow.
+- Added an Ev Hizmetleri / roofing synthetic request-routing example (explicitly not real customer proof) and a dedicated Process Analysis offer.
+- Connected existing sector + guide + synthetic example + offer + public site map; updated sitemap and version registry.
+- No private GA4/GSC numbers, customer claims, made-up ROI, SLA promises or unverifiable outcomes were published.
+

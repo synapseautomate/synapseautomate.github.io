@@ -22,6 +22,8 @@ CORE = (
     "cozumler/roofing-ev-hizmetleri.html",
     "guven-merkezi.html",
     "talep-alindi.html",
+    "kanit/ev-hizmetleri-talep-yonlendirme-ornek-akis.html",
+    "teklif/ev-hizmetleri-surec-analizi.html",
 )
 class Scan(HTMLParser):
     def __init__(self):

@@ -6,7 +6,9 @@ const base = process.env.SMOKE_BASE || "http://127.0.0.1:8765";
 const paths = [
   "/", "/kaynaklar.html", "/surec-analizi.html",
   "/rehberler/ai-otomasyon-fiyatlari.html",
-  "/cozumler/roofing-ev-hizmetleri.html"
+  "/cozumler/roofing-ev-hizmetleri.html",
+  "/kanit/ev-hizmetleri-talep-yonlendirme-ornek-akis.html",
+  "/teklif/ev-hizmetleri-surec-analizi.html"
 ];
 const sizes = [{width: 360,height: 740}, {width: 390,height: 844}];
 const browser = await chromium.launch({headless:true, args:["--no-sandbox"]});
