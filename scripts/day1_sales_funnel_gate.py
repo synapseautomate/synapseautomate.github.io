@@ -10,10 +10,19 @@ offer=(ROOT/'teklif/e-ticaret-surec-analizi.html').read_text('utf-8')
 intake=(ROOT/'surec-analizi.html').read_text('utf-8')
 thanks=(ROOT/'talep-alindi.html').read_text('utf-8')
 tracker=(ROOT/'assets/js/synapse-measurement-v1.js').read_text('utf-8')
+
+ecommerce_sector=(ROOT/'sektorler/e-ticaret.html').read_text('utf-8')
+ecommerce_guide=(ROOT/'rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html').read_text('utf-8')
+solutions_hub=(ROOT/'urunler.html').read_text('utf-8')
 errors=[]
 def check(ok,msg):
     if not ok: errors.append(msg)
 check('href="teklif/e-ticaret-surec-analizi.html"' in home,'Home primary offer link missing')
+sector_offer='../teklif/e-ticaret-surec-analizi.html'
+for name,html in [('Ecommerce sector',ecommerce_sector),('Buyer guide',ecommerce_guide)]:
+    check(sector_offer in html,name+' has no direct offer link')
+    check('href="../surec-analizi.html?src=ecommerce-' not in html,name+' bypasses offer and sends buyer straight to intake')
+check('href="teklif/e-ticaret-surec-analizi.html"' in solutions_hub,'Solutions hub has no e-commerce offer path')
 check('href="../teklif/e-ticaret-surec-analizi.html"' in solution,'Sector offer link missing')
 check(not re.search(r'<form\b',solution,re.I),'Duplicate E-commerce FormSubmit form still present')
 check('href="../surec-analizi.html?' in offer,'Offer to central intake link missing')

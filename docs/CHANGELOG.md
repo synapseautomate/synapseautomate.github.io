@@ -79,3 +79,10 @@ Müşteri, üretim doğruluğu, ROI, mevzuat uyumu veya sertifikasyon iddiası e
 - Connected existing sector + guide + synthetic example + offer + public site map; updated sitemap and version registry.
 - No private GA4/GSC numbers, customer claims, made-up ROI, SLA promises or unverifiable outcomes were published.
 
+## 1.5.1 — 2026-10-13
+
+- Unified e-commerce sector and buyer-guide CTAs to the existing scoped Process Analysis offer before the single intake form.
+- Added a prominent buyer path from the Solutions hub to the same offer; kept generic intake available for other sectors.
+- Added automated link-click checks and revenue-funnel simulation to canonical Pages deployment as well as PR checks, without sending an email or GA4 QA traffic.
+- These are buyer journey improvements, not measured business outcomes.
+

@@ -42,6 +42,7 @@ jobs:
           python scripts/day8_quality_gate.py
           python scripts/qa_offer_public_pages.py
           python scripts/day28_release_gate.py
+          python scripts/day1_sales_funnel_gate.py
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -83,6 +84,7 @@ jobs:
           test -f _site/teklif/gayrimenkul-yonetimi-surec-analizi.html
           test -f _site/kanit/ev-hizmetleri-talep-yonlendirme-ornek-akis.html
           test -f _site/teklif/ev-hizmetleri-surec-analizi.html
+          test -f _site/teklif/e-ticaret-surec-analizi.html
           test -f _site/surec-analizi.html
           test -f _site/talep-alindi.html
           test -f _site/public-proof/workflow-benchmark-v1/benchmark_summary.csv
@@ -107,6 +109,8 @@ jobs:
           grep -q 'https://synapseautomate.github.io/teklif/gayrimenkul-yonetimi-surec-analizi.html' _site/sitemap.xml
           grep -q 'https://synapseautomate.github.io/kanit/ev-hizmetleri-talep-yonlendirme-ornek-akis.html' _site/sitemap.xml
           grep -q 'https://synapseautomate.github.io/teklif/ev-hizmetleri-surec-analizi.html' _site/sitemap.xml
+          grep -q 'teklif/e-ticaret-surec-analizi.html' _site/sektorler/e-ticaret.html
+          grep -q 'teklif/e-ticaret-surec-analizi.html' _site/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html
           grep -q 'data-synapse-lead="process_analysis"' _site/surec-analizi.html
           grep -q 'submitted=process_analysis' _site/surec-analizi.html
           grep -q 'data-synapse-success="process_analysis"' _site/talep-alindi.html
@@ -128,6 +132,7 @@ jobs:
           python3 -m http.server 8765 --bind 127.0.0.1 --directory _site >/tmp/synapse-qa-http.log 2>&1 &
           sleep 3
           node scripts/day28_browser_smoke.mjs
+          node scripts/day1_browser_funnel.mjs
 
       - name: Upload browser QA screenshots
         if: always()

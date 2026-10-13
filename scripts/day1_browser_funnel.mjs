@@ -17,6 +17,15 @@ try {
   await page.goto(base+'/talep-alindi.html?submitted=process_analysis',{waitUntil:'networkidle'});
   let events=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('__day1_test_events')||'[]'));
   expect(events.filter(x=>x==='generate_lead').length===0,'Direct thank-you visit generated a false lead');
+  for(const path of ['/sektorler/e-ticaret.html','/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html','/urunler.html']) {
+    await page.goto(base+path,{waitUntil:'domcontentloaded'});
+    const anchor=page.locator('a[href*="teklif/e-ticaret-surec-analizi.html"]').first();
+    expect(await anchor.count()===1,path+': offer link missing');
+    if(await anchor.count()){
+      await anchor.click();
+      expect(new URL(page.url()).pathname==='/teklif/e-ticaret-surec-analizi.html',path+': offer link broken');
+    }
+  }
   await page.goto(base+'/',{waitUntil:'domcontentloaded'});
   const homePrimary=page.locator('.hero .actions .btn-primary').first();
   expect((await homePrimary.getAttribute('href'))==='teklif/e-ticaret-surec-analizi.html','Home primary CTA missing e-commerce offer');
