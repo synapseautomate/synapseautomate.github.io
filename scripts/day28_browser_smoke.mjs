@@ -7,6 +7,8 @@ const paths = [
   "/", "/kaynaklar.html", "/surec-analizi.html",
   "/rehberler/ai-otomasyon-fiyatlari.html",
   "/cozumler/roofing-ev-hizmetleri.html",
+  "/cozumler/e-ticaret-operasyon-otomasyonu.html",
+  "/teklif/e-ticaret-surec-analizi.html",
   "/kanit/ev-hizmetleri-talep-yonlendirme-ornek-akis.html",
   "/teklif/ev-hizmetleri-surec-analizi.html"
 ];

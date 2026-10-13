@@ -62,6 +62,7 @@ jobs:
           python3 -m http.server 8765 --bind 127.0.0.1 --directory _site >/tmp/synapse-qa-http.log 2>&1 &
           sleep 3
           node scripts/day28_browser_smoke.mjs
+          node scripts/day1_browser_funnel.mjs
 
       - name: Upload mobile QA captures
         if: always()
