@@ -9,6 +9,9 @@ const paths = [
   "/cozumler/roofing-ev-hizmetleri.html",
   "/cozumler/e-ticaret-operasyon-otomasyonu.html",
   "/teklif/e-ticaret-surec-analizi.html",
+  "/sektorler/e-ticaret.html",
+  "/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html",
+  "/urunler.html",
   "/kanit/ev-hizmetleri-talep-yonlendirme-ornek-akis.html",
   "/teklif/ev-hizmetleri-surec-analizi.html"
 ];
