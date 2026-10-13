@@ -1,5 +1,5 @@
 # SYNAPSE_GUN_01_DEVIR — PDF uyumlu kesin operasyon devri
-**Gün:** 01 / 13.10.2026 | **Sonraki gün:** 02 / 14.10.2026 | **Sahip:** SYNAPSE hesap sahibi
+**Denetim tarihi:** 2026-10-13 | **Gün:** 01 / 13.10.2026 | **Sonraki gün:** 02 / 14.10.2026 | **Sahip:** SYNAPSE hesap sahibi
 **Gün 01 statüsü:** CLOSED — yalnız durum tespiti, kanıt ve kayıt işi tamamlandı; ticari satış, ödeme ve site yayınına onay anlamına gelmez.
 
 ## 1. Referanslar ve kalıcı bağlantılar
@@ -47,4 +47,4 @@ Bu adımlar **Gün 01'in tamamlanmış durum tespitini geri açmaz**; ilgili sat
 **Görev adı:** Müşteri problemi ve ürün kararı. 10 alıcı niyetli arama ifadesi + 5 gerçek alternatif ve fiyat/kapsam kaynakları; tek sayfalık ICP/problem brifi; sipariş/stok birincil hipotezi ile haftalık Sheets/Excel ve sipariş hata kontrolünü kanıta göre kıyasla. Bir cümle ürün vaadi, kapsam dışı maddeler, 990/4.900/24.900 TL test hipotezleri; B2B tercihi ve sapmasını ayrı kaydet. Satış, yayın veya hesap işlemi yok.
 **Öncelik:** Kanıtlı ICP/ürün kararını üret, ardından sonraki günlerin teknik ürün ve ödeme kapılarına devir yap.
 
-**Son söz:** Gün 01 operasyonel denetim CLOSED; satışa çıkış NOT READY. Bilinmeyenler korunmuş, açık blokajlar Gizlenmemiştir.
+**Onay listesi:** `ONAY_EYLEMLERI.md` — main merge, canlı yayın, ödeme, müşteri iletişimi ayrı onay gerektirir.\n\n**Son söz:** Gün 01 operasyonel denetim CLOSED; satışa çıkış NOT READY. Bilinmeyenler korunmuş, açık blokajlar Gizlenmemiştir.
