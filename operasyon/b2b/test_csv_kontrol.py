@@ -38,4 +38,20 @@ class CsvKontrolTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/"bad.csv";p.write_text("sku,stok_adedi\nSKU,5\n",encoding="utf-8")
             with self.assertRaises(ValueError):audit(p)
+    def test_empty_order(self):
+        _,issues=self.check([self.row(siparis_kodu="")])
+        self.assertEqual([i["kural"] for i in issues],["R06"])
+    def test_negative_order_quantity(self):
+        _,issues=self.check([self.row(siparis_adedi="-1")])
+        self.assertEqual([i["kural"] for i in issues],["R07"])
+    def test_malformed_extra_column(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/"bad.csv"
+            p.write_text(",".join(FIELDS)+"\nA,SKU,2,5,bekliyor,extra\n",encoding="utf-8")
+            with self.assertRaises(ValueError):audit(p)
+    def test_duplicate_header(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/"bad.csv"
+            p.write_text(",".join(FIELDS)+",sku\nA,SKU,2,5,bekliyor,SKU\n",encoding="utf-8")
+            with self.assertRaises(ValueError):audit(p)
 if __name__=="__main__":unittest.main()
