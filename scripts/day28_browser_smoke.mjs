@@ -18,6 +18,7 @@ try {
   for(const path of paths) {
     for(const viewport of sizes) {
       const page = await browser.newPage({viewport,deviceScaleFactor:1});
+      await page.route(/https?:\/\/(?:www\.)?(?:googletagmanager\.com|google-analytics\.com|analytics\.google\.com)\//, route => route.abort());
       const url = base+path, label=path.replace(/[^a-z0-9]/gi,"_") || "home";
       try {
         const response = await page.goto(url,{waitUntil:"networkidle",timeout:25000});

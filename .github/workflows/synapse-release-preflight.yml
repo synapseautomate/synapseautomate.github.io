@@ -28,6 +28,7 @@ jobs:
           python scripts/day8_quality_gate.py
           python scripts/qa_offer_public_pages.py
           python scripts/day28_release_gate.py
+          python scripts/day1_sales_funnel_gate.py
 
       - name: Build staged public artifact
         shell: bash
