@@ -1,0 +1,6 @@
+tarih,metrik,deger,birim,kanit_durumu,kanit_url,sahip
+2026-10-13,onceki_27_gun_dogrulanmis_satis,0,adet,kullanici_beyani,,hesap_sahibi
+2026-10-13,yeni_donem_satis,bilinmiyor,adet,hesap_verisi_yok,,hesap_sahibi
+2026-10-13,trafik,bilinmiyor,oturum,GA4_paneli_yok,https://github.com/synapseautomate/synapseautomate.github.io/blob/main/assets/js/synapse-measurement-v1.js,hesap_sahibi
+2026-10-13,odeme_dogrulama,hayir,durum,checkout_kaniti_yok,https://synapseautomate.github.io/surec-analizi.html,hesap_sahibi
+2026-10-13,kritik_satis_blokaji,4,adet,denetim_siniflandirmasi,,operator
