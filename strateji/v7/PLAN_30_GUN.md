@@ -75,7 +75,7 @@
 | Düşük | 70 | %4 | %15 | 0,42 ≈ **0–1** |
 | **V7 çalışma senaryosu** | **180** | **%6** | **%20** | **2,16 ≈ 1–3** |
 | Güçlü sinyal | 300 | %7 | %25 | 5,25 ≈ **4–6** |
-**Uyarı:** Bu oranlar/ziyaret sayıları geçmiş verilere dayanmıyor; **keyfî planlama varsayımlarıdır**, istatistiksel satış tahmini veya piyasa benchmarkı değildir. Nitelikli trafik ve mevcut takipçi sayısı henüz bilinmiyor; hukuk/fatura/ödeme kapısı açılmazsa üç senaryoda **tahsil edilmiş satış 0** olur. “En yüksek temel beklenti” için yöntem seçimi vardır ama sayısal üstünlük **ölçülmüş değil**.
+**Uyarı:** Bu oranlar/ziyaret sayıları geçmiş verilere dayanmıyor; **keyfî planlama varsayımlarıdır**, istatistiksel satış tahmini veya piyasa benchmarkı değildir. Güncel nitelikli trafik, gerçek LinkedIn erişimi, CTA, yeni dönem satış ve takipçi sayısı: **BİLİNMİYOR** (yetkili hesap paneli kanıtı yok). Hukuk/fatura/ödeme kapısı açılmazsa üç senaryoda **tahsil edilmiş satış 0** olur. “En yüksek temel beklenti” için yöntem seçimi vardır ama sayısal üstünlük **ölçülmüş değil**.
 
 **Hedef değişken:** Günde “kaç paylaşım?” değil, haftada “kaç nitelikli gönüllü talep?” Arz edilen ürün ana kanal sayfasında sınanabilir; 990 TL düşük giriş, 4.900 TL B2B ağırlık, pilot pasif tutulur.
 
