@@ -4,8 +4,8 @@
 **Önceki kayıtlar:** V6 Gün 01 / PR #10; Gün 02 / PR #11; V7 / PR #12. Hepsi taslak, geçmiş satış sonucu sayılmaz.
 
 ## Yönetim kararı
-**V8 = alıcı tarafından yayımlanmış proje ihtiyaçları (talep-öncelikli) + ücretsiz premium LinkedIn Services inbound + kendi markamız altında tek self-serve dijital ürün ödeme hattı.**
-V7 yalnız organik içeriğin keşfedilmesini bekliyordu; V8, **hâlihazırda iş yaptırmak isteyen müşteri niyetinin açıkça beyan edildiği ilanları** düzenli süzer. Bu alıcı talebi, soğuk pazarlamaya dönüşmeden, ilan sahibinin açıkça başvuru davet ettiği durumlarda **ayrı kullanıcı onaylı platform içi teklif** olabilir. Başvuru yoksa hiçbir bireysel temas yok.
+**V8 = Upwork Project Catalog'da alıcının kendisinin satın alabileceği tek paketli hizmet (RFP/soğuk teklif yok) + ücretsiz LinkedIn Services inbound + kendi markamız altında tek self-serve dijital ürün ödeme hattı.**
+V7 çoğunlukla organik içeriğin keşfedilmesini bekliyordu. V8, **başka bir alıcı niyeti yüzeyi olan Upwork Project Catalog'da doğrudan satın alınabilir, sınırlı kapsamlı hizmet** tasarlar; müşteri siparişi veya görüşmeyi kendi başlatır. Ücretsiz onaylı açık proje talebi başka yerde bulunursa ayrıca değerlendirilebilir; toplu başvuru ve istenmeyen iletişim yok.
 
 ### Tek ürün ve yüksek dönüşüm için iki teslim biçimi
 - **Temel motor:** `SYNAPSE CSV Integrity` (geçici isim), sipariş.csv + stok.csv için yerel açıklanabilir kontroller; alan/doğruluk sözleşmesi ve gerçek QA olmadan “çalışıyor” iddiası yok.
@@ -16,12 +16,14 @@ V7 yalnız organik içeriğin keşfedilmesini bekliyordu; V8, **hâlihazırda i�
 - **Kapsam dışı:** ERP/mağaza bağlantısı, otomatik stok değişimi, garantili zarar/tasarruf/ROI, zorunlu kişisel veri yükleme, gerçek müşteri verisini izinsiz alma.
 
 ## Üç alıcı kazanma hattı — önem sırasına göre
-### Hat 1 — doğrudan açık talep / 30 günün satış motoru
-1. **Contra Job Feed (https://contra.com/):** CSV data quality, e-commerce product/SKU, inventory reconciliation, Excel duplicate checks gibi **alıcı tarafından yayımlanmış** açık ihtiyaçları her iş günü incele. Resmî doküman ücretsiz iş başvurusuna olanak veriyor. Fakat ilanların gerçekten bulunacağı veya hesabın Türkiye'den kabul edileceği doğrulanmadı.
-2. **Eleme kriteri:** ilan müşterisi ihtiyacı açıkladı mı; veri lisanslı/izinli mi; ürünün beş çekirdek kuralından biriyle %70 veya fazlası karşılanabilir mi; bütçe ve süre makul mü; platform ilk temas/ödeme şartına uyuluyor mu? Bütün maddeler kanıtlı değilse **BAŞVURMA**.
-3. **Başvuru yalnız izinle:** kullanıcı tek tek ilan URL'si, özel teknik yanıt taslağı ve fiyat onayı verir. İlk temas **platformun davet ettiği açık RFP yanıtı**, soğuk DM değil. Hizmet platformu müşterisini platform dışı ödemeye yönlendirme yok.
-4. **Günlük kapasite:** 10 uygun ilan okumayı HEDEFLE (gerçek sayı yoksa “0 bulundu” veya “bulunamadı” kaydet), 1–2 çok uyumlu ilana **onaylı** yanıt dışında toplu teklif yok. Kalite > adet.
-5. **Geçerlilik sınırı:** 14 gün içinde 5 nitelikli ilan bile bulunmuyorsa bu kanalın beklenen katkısını **sıfıra çek**, projeksiyonu yeniden hesapla. Genel veri girişi / $5 işler için markayı ucuzlatma.
+### Hat 1 — Upwork Project Catalog: alıcı doğrudan hizmeti satın alır
+1. **Upwork Project Catalog (https://www.upwork.com/services):** Alıcının istediği işi kapsam, teslim süresi ve fiyatı belli **tek bir paketli B2B veri kalite/CSV eşleme hizmeti** olarak sunma hipotezi. Müşteri katalogdan doğrudan sipariş verebilir veya kendisi mesaj başlatabilir. Soğuk iletişim/bid yok.
+2. **Tek hizmet:** "E-commerce inventory and orders CSV reconciliation audit — local and explainable." Ürünün aynı motorunu kullanır; yeni ürün geliştirme yok. Gösterilen örnekler **SENTETİK**. Yalnız fiilen test edilmiş yetenekler ve desteklenen dosyalar belirtilir.
+3. **Açık maliyet:** Upwork Freelancer Basic ücretsiz olabilir; Project Catalog oluşturma genel freelancer hesabına bağlıdır ve Upwork incelemesi/uygunluğu gerekir. Ücretli Connects ile genel iş ilanı başvurusu **YOK**. Upwork freelancer hizmet bedeli sözleşmeye göre **%0–15**; müşteri ayrıca kendi işlem/başlatma ücretini ödeyebilir. Türkiye için gerçek kişi TRY banka çekim bilgisi resmi yardım sayfasında var, ancak hesabın onaylanması ve vergisel statü **doğrulanmadı**.
+4. **Kritik yayın özelliği:** Upwork, katalog projesini onayladığında **otomatik görünür/aktif** hâle getirebilir. Bu yüzden **kullanıcı her ilanı ve platform aktivasyonunu ayrı açıkça onaylamadan incelemeye bile gönderme**. Sadece metin/görsel/FAQ/revizyon/teslim taslakları hazırlanır.
+5. **Kanal ölçümü:** katalog ürün gösterimi, alıcı tarafından başlatılan iletişim, doğrudan sipariş, platformda ödemenin escrow/fonlanma ve tamamlanma durumu. **Gerçek satış** ancak ödenmiş/teslim-kabul koşulları gerçekleşmiş ve yerel yasal statü uygunsa kaydedilir.
+6. **Contra (sadece ücretsiz ikincil):** Kamuya açık profil, müşteri tarafından gönderilen teklif talepleri ve **ücretsiz hesapta erişilebilen davet/özel eşleşmeli işler**. Pro olmadan tüm Job Feed'e erişilemiyor; en baştan 12 açık proje görüp ücretsiz başvurulacağı varsayılmaz. Uygun gerçek teklif gelmezse katkısı **0** kabul edilir.
+7. **Açık RFP fırsatı doğarsa:** sadece müşterinin açık başvuru istediği, platform kurallarının ve **0 TL peşin** şartının sağlandığı belirli iş için ayrı kullanıcı onaylı yanıt; toplu soğuk teklif ve kişilere DM **YOK**. Uygun fiyatlı genel veri girişi için premium marka konumlandırması bozulmaz.
 
 ### Hat 2 — inbound marka vitrini
 1. **LinkedIn Company Service Page (ücretsiz):** doğru şirket/hesap statüsüyle bir hizmet kategorisi; kurum sayfasında 500 veya altı çalışan koşulu ve admin yetkisi mevcutsa. Premium olmadan ek otomatik talep eşleştirmesi garanti değil.
@@ -34,7 +36,7 @@ V7 yalnız organik içeriğin keşfedilmesini bekliyordu; V8, **hâlihazırda i�
 **İlk araştırma tercihi Paddle:** Resmî Merchant of Record dijital yazılım ödeme modeli; **%5 + $0,50/işlem**, kayıtlı şirket olmayan kişi/sole trader için işyeri doğrulaması gerekmez ama kimlik ve alan adı incelemesi gerekir. Türkiye görünür desteklenmeyen ülkeler listesinde yok. Hesap kabulü, vergi ikameti, para birimi ve ürün uygunluğu **henüz doğrulanmadı**. Sayfa barındırma domain onayı gerekir, genellikle 5–7 iş günü manuel inceleme olabilir.
 **Yedek Lemon Squeezy:** Türkiye'deki bankalara payout destekli; Merchant of Record, dijital ürünlerde mağaza incelemesi ve KYC/KYB yapıyor; **hizmet teslimlerini normalde kabul etmiyor**, bu nedenle yalnız yazılım dosyası hatlarına uygundur. Test modu var, dosya indirmeleri test modunda kapalı olabileceği için gerçek teslim başarısını ayrıca doğrula.
 **Türkiye odaklı teknik yedek Payhip + iyzico:** Payhip ücretsiz planı **$0/ay + %5 satış komisyonu**; Türkiye'de iyzico bağlantısı resmî destekleniyor, iyzico işlem bedeli ek. Payhip, iyzico ile satışlarda platform komisyonunu **ay sonunda kayıtlı karttan tahsil ediyor**; 0 peşin kuralı, banka/kart koşulları ve marka sunumu birlikte değerlendirilmeden aktive edilmeyecek. Shopier kullanılmayacak.
-**Kurumsal hizmet:** Contra içinden gelen talep için platformun resmî on-platform sözleşme/tahsilat şartlarını koru; LinkedIn taleplerinde yalnız resmî ve yasal açıdan uygun bir işlem yolu varsa satış kabul et. MoR araçların satış vergisi yönetmesi Türkiye'deki satıcı gelir vergisi ve belge yükümlülüklerini silmez.
+**Kurumsal hizmet:** Upwork Project Catalog ve Contra gibi hizmet platformlarından gelen talepte sözleşme/ödeme yolunu platform içinde tut; LinkedIn taleplerinde yalnız resmî ve yasal açıdan uygun bir işlem yolu varsa satış kabul et. MoR araçların satış vergisi yönetmesi Türkiye'deki satıcı gelir vergisi ve belge yükümlülüklerini silmez.
 
 ## Türkiye için önce bir engeli kaldır: yasal tahsilat yolu
 **P0 / Gün 1 karar kapısı:** Mevcut kayıtlarda şirket yok, fatura yetkisi yok. Satış ve tahsilat “aktif” sayılmaz. Resmî inceleme rotaları:
@@ -52,21 +54,21 @@ V7 yalnız organik içeriğin keşfedilmesini bekliyordu; V8, **hâlihazırda i�
 | 04 | 17.10 | Ücretsiz tarayıcı demo/yerel önizleme prototipi; gizlilik kontrolü; ana ürün sayfası *taslak*. |
 | 05 | 18.10 | Altı viewport QA, iki bağımsız test, fiyat/kapsam/dijital teslim taslağı; hesap sahibi hukuki kapıları inceler. |
 | 06 | 19.10 | İlk koşullu yayın onay paketi: çalışan demo varsa ve yayına uygun host/gizlilik kontrol edilmişse **ayrı** onay; satış açık değil. |
-| 07 | 20.10 | LinkedIn Services sayfası, Contra profesyonel portföyü ve 1 gerçek örnek ekran; **yalnız kullanıcı onaylı** aktivasyon. |
-| 08 | 21.10 | Dar problem çözen 1 SEO sayfası, Google teknik QA; açık RFP izleme şablonu. |
-| 09 | 22.10 | İlk gerçek alıcı ilanları: yalnız onaylı ilan/kapsam varsa 1–2 platform içi RFP yanıtı; sıfır soğuk mesaj. |
-| 10 | 23.10 | 10. gün: uygun RFP sayısı + gönüllü inbound + demo + hukuk/ödeme durumu; satış yoksa net kayıt. |
+| 07 | 20.10 | LinkedIn Services sayfası, Upwork katalog hizmeti taslağı ve 1 gerçek örnek ekran; **yalnız kullanıcı onaylı** aktivasyon. |
+| 08 | 21.10 | Dar problem çözen 1 SEO sayfası, Google teknik QA; katalog içerik/SEO görünürlük ve talep metriği şablonu. |
+| 09 | 22.10 | Upwork katalog için onaylı/yasal ilan incelemesi; uygun hesap, ürün ve kullanıcı onayı olmadan gönderim yok. |
+| 10 | 23.10 | 10. gün: katalog görünürlüğü/isteğe bağlı alıcı teması + gönüllü inbound + demo + hukuk/ödeme durumu; satış yoksa net kayıt. |
 | 11 | 24.10 | Gerçek sentetik ekran 60 sn video, alt yazı, ürün çıktısı; yayın onayı. |
 | 12 | 25.10 | Bir çok iyi LinkedIn eğitim içeriği: stok zamanından doğan yanlış pozitif; organik/izinli. |
-| 13 | 26.10 | Kontra iş keşfi ve uyumlu ilan taslakları; düşük fiyatlı veri girişi işlerine başvurma. |
-| 14 | 27.10 | 14. gün kanal kararı: uygun RFP <5 ise RFP satış tahminini sıfıra indir; nitelikli talep kaynaklarına dön. |
+| 13 | 26.10 | Upwork katalog içerik ve FAQ netleştirme; ücretsiz Contra eşleşmesi varsa ancak kullanıcı onaylı değerlendirme. |
+| 14 | 27.10 | 14. gün kanal kararı: katalog hesabı/ilan onaylı değilse katalog satış tahminini sıfıra indir; nitelikli talep kaynaklarına dön. |
 | 15 | 28.10 | Demo sürtünme ve açık CTA/kaynak kullanıcı sorularını sadeleştir; gerçek veriye dayan. |
 | 16 | 29.10 | Ücretsiz/özgün “Sipariş CSV kontrol şablonu” rehberi; telif, açık örnek ve bağlı ürün. |
 | 17 | 30.10 | LinkedIn Product Page uygunluk/inceleme; Product Page reklam veya satış yerine ücretsiz kanıt vitrini. |
 | 18 | 31.10 | Bir profesyonel içerik daha; ilan-satış dönüşümleri azsa içerik üretimini kıs. |
 | 19 | 01.11 | B2B inbound talepler için 1 veri şeması/1 çıktı kabul taslağı; gerçek kişisel veri yok. |
 | 20 | 02.11 | Şirket/fatura/ödeme P0 yeniden gözden geçir; uygunluk yoksa resmi satış açma. |
-| 21 | 03.11 | 21. gün: kaynak bazlı RFP/lead/checkout/ödeme metriği, komisyon ve gelir raporu. |
+| 21 | 03.11 | 21. gün: kaynak bazlı katalog görüntüleme/lead/checkout/ödeme metriği, komisyon ve gelir raporu. |
 | 22 | 04.11 | En iyi kanalda 1 değişkenli teklif/CTA testi (yeterli veri varsa). |
 | 23 | 05.11 | Satın alma öncesi güven rehberi: lisans, yerel veri, destek, format, sınırlar. |
 | 24 | 06.11 | Bütün platform/kamu URL'lerini yeniden kontrol; yeni sahte yorum yok, gerçek vaka izni varsa ayrı. |
@@ -77,35 +79,38 @@ V7 yalnız organik içeriğin keşfedilmesini bekliyordu; V8, **hâlihazırda i�
 | 29 | 11.11 | Kazanan açık talep kanalı ve organik sayfayı iyileştir; müşteri iletişimi ayrı onaylı. |
 | 30 | 12.11 | Kesin sipariş/ödeme, net gelir, nitelikli talep, P0 ve sonraki ay devir raporu. |
 
-## Model: V8'in tahmin değil, izlenecek KOŞULLU satış hedefi
-Bu rakamlar SYNAPSE geçmişine **kalibre edilmiş değildir**. Alıcı kanalları ve koşullar gerçekleşmedikçe temel beklenti olarak sunulamaz. Her satırda kanallar arası **benzersiz alıcı** varsayılır; yinelenen talep iki kez sayılmaz.
-`Satış = uygun ilanlara kullanıcı onaylı teklif × kabul oranı + benzersiz inbound talep × kapanış oranı + self-serve nitelikli ziyaret × gerçek ödeme oranı`
-| Senaryo | Gerçek nitelikli onaylı RFP başvurusu × kabul | Benzersiz inbound × kapanış | Self-serve nitelikli ziyaret × satın alma | Hesaplanan değer | Yorumu |
+## Model: V8'in istatistiksel tahmin değil, koşullu HEDEFLERİ
+**Bu rakamlar hiçbir SYNAPSE geçmiş verisine kalibre edilmedi.** Gösterilen Upwork katalog görüntülemeleri, alıcı talepleri ve site trafiği BUGÜN YOK veya BİLİNMİYOR. Alıcılar kanallar arasında benzersiz sayılır; aynı müşteri tekrar sayılmaz. Başvuru kredisine harcama planlanmaz.
+**Formül:** `tamamlanmış satış = Upwork katalog nitelikli gösterim × gerçek satın alma oranı + LinkedIn gönüllü nitelikli talep × yasal kapanma oranı + ürün sayfası nitelikli ziyaret × canlı ürün satın alma oranı`.
+| Durum | Katalog nitelikli gösterim × satın alma | LinkedIn inbound × kabul | Site alıcı nitelikli ziyaret × satın alma | Hesap değeri | Kullanımı |
 |---|---|---|---|---:|---|
-| **Gerçek olumsuz alt sınır** | 0 | 0 | 0 | **0** | Hukuk/ödeme bloke, hesap/ürün reddi ya da sıfır talep halinde. |
-| **Zayıf, yalnız operasyon koşulları sağlanırsa** | 6 × %10 | 3 × %10 | 60 × %1 | **1,5** | HEDEF 1–2; **garanti veya sağlam zayıf sınır değildir**. |
-| **V8 çalışma HEDEFİ** | 12 × %15 | 8 × %20 | 100 × %2 | **5,4** | HEDEF 4–6; **ölçülmüş temel beklenti değildir**. |
-| **Güçlü sinyal HEDEFİ** | 20 × %20 | 12 × %25 | 240 × %2 | **11,8** | HEDEF 9–12; bunların gerçekten oluşacağını gösteren veri yok. |
+| **Gerçek alt sınır** | 0 | 0 | 0 | **0** | Yasal/ödeme kapısı veya trafik/hesap görünürlüğü yoksa. |
+| **Zayıf KOŞULLU hedef** | 100 × %0,5 | 3 × %10 | 50 × %1 | **1,30** | Hedef 1–2; **garanti veya istatistiksel alt sınır değil**. |
+| **V8 çalışma KOŞULLU hedefi** | 250 × %1 | 8 × %20 | 100 × %1,5 | **5,60** | Hedef 4–6; mevcut veriden hesaplanmış temel beklenti **değil**. |
+| **Güçlü KOŞULLU hedef** | 450 × %1,5 | 12 × %25 | 200 × %1,5 | **12,75** | Hedef 10–13; gerçek talebe dayalı değil. |
 
-**Dürüst açıklama:** Marka itibarı, bütçe 0 ve soğuk iletişim yasağı altında **zayıf senaryoda kesin 1 satış garantisi** olan bir büyüme planı bulunmuyor. Aynı trafik verileri yokken V7'den istatistiksel olarak daha yüksek “temel beklenti” iddiası da kanıtlanmış değil. V8, gelire dönüşme şansını artırması **makul** olan satın alma niyeti yüksek farklı kaynakları ekliyor. Başarı satın alma kanıtıyla belirlenecek.
+**Yönetici yorumu:** Bu kaynakların gerçekten bu sayıları yaratacağını gösterecek bir SYNAPSE veri seti yok. Gerçek zayıf senaryo alt sınırını **0'ın üzerine garantiyle çıkaramayız**. Bu planı tercih etme gerekçesi, müşterinin talep başlattığı **iki pazar yeri/ürün sayfası** + ödeme denetimli kendi dijital ürününün V7'ye göre daha erken satış şansı yaratmasıdır. Upwork katalog hesabı onaylanmazsa ilgili kanal için projeksiyonda **0** kullan; 14. gün gerçek verilere göre yeniden hesapla.
 
 ## Kontrol sayacı (gerçek/izinli kanıtlarla)
-- Ücretli satış, iade, net tahsilat, ücretli paket indirme: **BİLİNMİYOR** (hesap kanıtı yok).
+- Ücretli satış, iade, net tahsilat, Upwork katalog siparişi, ücretli paket indirme: **BİLİNMİYOR** (hesap kanıtı yok).
 - Önceki 27 günde 0 satış: **kullanıcı beyanı**, yeni dönemin sonucu değil.
-- Günlük kaydet: uygun açık RFP sayısı, izinli teklif adedi, platform teklif cevabı, benzersiz inbound, sentetik demo görüntüleme, gerçek checkout/ödeme, iade/komisyon, P0. Her biri tarih/URL/sahip/kanıt seviyesiyle.
+- Günlük kaydet: Upwork katalog görüntüleme/sipariş, açık ücretsiz davetli RFP sayısı (varsa), benzersiz inbound, sentetik demo görüntüleme, gerçek checkout/ödeme, iade/komisyon, P0. Her biri tarih/URL/sahip/kanıt seviyesiyle.
 
 ## Kullanıcı onayına kesin bağlı
 - Strateji V8'i V6/V7 yerine uygulama yönü olarak benimseme (bu **yayın onayı değildir**).
 - Belirli demo/sayfa içeriğinin canlı uygun hosta aktarılması, DNS/depo main merge.
-- LinkedIn Services / LinkedIn Product Page / Contra profesyonel hesap aktivasyonu.
-- Tek tek belirli alıcı RFP ilanına platformdan teklif sunma. **Otomatik toplu başvuru yok**.
+- LinkedIn Services / LinkedIn Product Page / Upwork Project Catalog / isteğe bağlı Contra hesap ve ilan aktivasyonu.
+- Upwork Project Catalog projesini incelemeye gönderme (otomatik yayımlanabileceği için), belirli ücretsiz alıcı RFP ilanına yanıt sunma. **Otomatik toplu başvuru yok**.
 - Payhip/iyzico, Paddle veya Lemon Squeezy'ye kimlik, IBAN, vergi belgeleri, ödeme bilgisi vermek: hesabın sahibi resmî panelinden.
 - Canlı ödeme/ürün/ilan/post/dijital indirme aktivasyonu, gerçek müşteri veri kullanımı.
 **Tüm taslaklar kullanıcı onayına dek kapalıdır.**
 
 ## Resmî kaynaklar (14.10.2026)
-- Contra job application: https://help.contra.com/en/articles/9322973-applying-to-jobs-on-contra
-- Contra free proposals: https://contra.com/blog/contra-vs-upwork
+- Upwork Project Catalog, alıcının doğrudan satın alması: https://support.upwork.com/hc/en-us/articles/360058234233-How-to-get-started-with-Project-Catalog-as-a-freelancer
+- Upwork katalog projesi onaydan sonra otomatik görünür: https://support.upwork.com/hc/en-us/articles/360057397533-How-to-create-a-project-in-Project-Catalog
+- Upwork Freelancer Basic ve ücretler: https://support.upwork.com/hc/en-us/articles/40444316172051-What-s-the-difference-between-Freelancer-Basic-and-Freelancer-Plus ; https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee
+- Türkiye TRY bireysel banka çekimi: https://support.upwork.com/hc/en-us/articles/211063888-How-to-withdraw-earnings-with-Direct-to-Local-Bank
+- Contra üyelikte Pro iş ilanı kısıtı: https://contra.com/pro ; ücretsiz iş eşleşmesi koşulu: https://contra.com/community/Q7ksLWeY-quick-question-do-you-get-clients
 - LinkedIn free Company Services: https://www.linkedin.com/help/linkedin/answer/a7436041
 - LinkedIn Product Page sınırlı uygunluk: https://www.linkedin.com/help/linkedin/answer/a548627
 - Paddle merchant verification: https://www.paddle.com/help/start/account-verification/what-is-account-verification
