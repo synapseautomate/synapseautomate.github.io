@@ -1,40 +1,49 @@
-# SYNAPSE / LinkedIn — ilk marka yayını · editoryal sürüm 2
-**Durum:** İÇ TASLAK. Metin ve görsel için ayrı onay bekleniyor. Henüz yayımlanmadı.
+# SYNAPSE / V8 GÜN 07 — LinkedIn tek grafik / onay taslağı
+**PDF kaynak:** “Bir CSV farkı gerçek stok hatası mı?” (20.10.2026 plan günü). **YAYIN YOK — AÇIK ONAY BEKLENİYOR.**
 
-## Yayımlanacak metin
+## LinkedIn metni (tek grafik ile)
+**Sayılar farklı. Peki stok gerçekten eksik mi?**
 
-**Sorun her zaman büyük değildir. Etkisi olabilir.**
+Sipariş tablosundaki miktar ile stok dosyasındaki sayı uyuşmadığında, ilk refleks “stok hatası” demek olabilir.
 
-Bir sipariş satırı iki kez görünür. Bir ürün kodu stok listesinde karşılık bulmaz. Bir kontrol, günün en yoğun anına kalır.
+Ama aynı sayı, farklı bir bağlamda bambaşka bir anlama gelebilir.
 
-Tek başına küçük görünen bu ayrıntılar, operasyonun dikkatini asıl işten uzaklaştırabilir.
+**Önce üç soruyu soralım:**
 
-SYNAPSE Automate'in yaklaşımı basit bir vaat değil, somut bir çalışma biçimi: **Veriyi kontrol et. Şüpheli satırı görünür kıl. Kararı insanda bırak.**
+**01 / Ne zaman?** Sipariş tarihi ile stok görüntüsünün alındığı an aynı mı?
 
-Tamamen sentetik sipariş ve stok verileriyle hazırladığımız teknik örnekte, mükerrer kayıt ve eşleşmeyen ürün kodu gibi durumlar incelenebilir bir rapora dönüştürülüyor. Bu bir müşteri vakası değil; nasıl çalıştığımızı açıklayan sınırlı bir demo.
+**02 / Nerede?** Siparişin karşılandığı depo ile stok kaydının deposu aynı mı?
 
-Çünkü iyi otomasyon, yalnızca daha fazla işlem yapmak değildir. **Nereye dikkat edilmesi gerektiğini de açıkça gösterebilmektir.**
+**03 / Ne kadarı ayrıldı?** Rezerve edilmiş miktar hesaba katıldı mı?
+
+Bu bilgiler doğrulanmadan sayılar arasındaki fark, kesin stok kaybı kanıtı değildir.
+
+SYNAPSE Automate'in yerel CSV kontrol yaklaşımı, açıklanabilir bulguları inceleme listesine taşır. **Siparişi veya stoğu sizin yerinize değiştirmez.**
+
+*Görsel tamamen sentetik bir senaryoyu anlatır; gerçek müşteri verisi veya vaka sonucu değildir.*
 
 **Tekrar eden işleri azaltın. Önemli işlere odaklanın.**
 
-Süreçlerinizi konuşmak için: https://synapseautomate.github.io/hizmetler.html
+#SYNAPSEAutomate #Operasyon #StokYonetimi
 
-#SYNAPSEAutomate #Operasyon #IsSurecleri
+**CTA kararı:** PDF'nin “Örnek kural şemasını incele” bağlantısı ancak URL gerçekten test edilip onaylanırsa eklenir. Şu an CTA bağlantısı YOK.
 
-## Görsel için yaratıcı yön
-- **Ana fikir:** “GÖZDEN KAÇAN, GÖRÜNÜR OLSUN.”
-- **Kare 1 / 1080×1350:** koyu premium zemin, büyük tipografi; tek güçlü mesaj. Alt satır: “Sipariş × Stok / Sentetik kontrol örneği”.
-- **Kare 2 / 1080×1350:** üç katmanlı hikâye: Kaynak satır → Kural etiketi → İnsan incelemesi. Gerçek motor çıktısı ile eşleşmeyen rakam gösterme.
-- **Kare 3 / 1080×1350:** “Kontrol otomatik. Nihai karar insanda.” CTA: “Süreçlerinizi konuşalım”.
-- **Güven etiketi:** “SENTETİK DEMO — GERÇEK MÜŞTERİ VERİSİ DEĞİL” okunabilir boyutta.
-- **Kimlik:** yalnızca repo içindeki kanonik logo; Nike/Red Bull logosu, sloganı, tipografik taklidi veya görseli kullanılmaz.
-- **Görsel QA:** 320–390 px küçültmede metin okunabilirliği, kontrast, kırpma ve platform önizlemesi ayrıca doğrulanmalı.
+## Tek grafik yaratıcı üretim spesifikasyonu
+**1080 × 1350, LinkedIn tek grafik.** Özgün, koyu lacivert premium SYNAPSE sistemi, tek vurgu rengi, gerçek repo logosu. Nike veya Red Bull kimliğini kopyalama.
 
-## İddia ve kaynak denetimi
-- “İşletme için X saat tasarruf” **YOK** — ölçüm yok.
-- “Müşterimizde X sonuç” **YOK** — müşteri kanıtı yok.
-- “Tüm stok sorunlarını tespit eder” **YOK** — stok tarihi, depo ve rezervasyon bağlamı gerekir.
-- Sentetik rapor yalnızca örnek; kaynak: Gün 04–05 yerel test paketi (25/25 test sonucu önceki denetim kayıtlarında). Canlı kullanıcı verisi yok.
-- Gönderi satış/fatura/ödeme altyapısı aktifmiş gibi konuşmaz.
+**Üst bölüm:** “FARK VAR. KAYIP KESİN Mİ?” (5 kelime). İnce alt başlık “Sipariş × Stok / Sentetik örnek”.
 
-**LI-G07-01 / Metin: ONAY BEKLİYOR. LI-G07-02 / Görsel: ONAY BEKLİYOR. YAYIN: YOK.**
+**İki sütun:**
+- **GÖZLENEN FARK**: “Sipariş miktarı: 12” ve “Stok görünümü: 8”. Tamamen **SENTETİK** etiketli, örnek sayıların gerçek motor sonucu olmadığı açıklanır.
+- **KONTROL EDİLECEK BAĞLAM**: “Stok anı”, “Depo eşleşmesi”, “Rezerve miktar”.
+
+**Alt hüküm:** “Fark bir bulgudur. Kayıp kararı değildir.”
+
+**Güven şeridi:** “SENTETİK ÖRNEK · GERÇEK MÜŞTERİ VERİSİ DEĞİL”. Alt sağda orijinal logo. 320 px küçük görünümde okunabilirlik, satır kesilmesi, kontrast, güven etiketi ve LinkedIn panel önizlemesi ayrı QA gerektirir.
+
+**Instagram:** Uygun kurumsal hesap varsa ayrı, özgün 3 slaytlık 4:5 tasarım; otomatik kırpma veya otomatik yayın yok. Instagram erişimi/uygunluğu doğrulanmadı.
+
+## İddia / platform kapısı
+Gerçek satış, tasarruf, müşteri, ROI, kesin stok açığı veya test edilmemiş canlı link iddiası YOK. Yerel CSV kontrol motorunun sınırları korunur. 320 px render ve platform kırpma testi henüz PASS sayılmadı.
+
+**LI-G07-01 metin:** onay bekliyor. **LI-G07-02 görsel:** üretim/QA bekliyor. **IG-G07-01:** uygun hesap + ayrı onay bekliyor. **Yayınlanan gönderi:** 0.
