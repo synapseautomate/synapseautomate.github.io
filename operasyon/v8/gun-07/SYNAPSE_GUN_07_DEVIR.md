@@ -17,3 +17,13 @@ Denetim 2026-10-15. **İç taslak hazır, yayın onayı BEKLENİYOR.**
 **İki QA turu:** Teknik Chromium altı genişlik PASS, canlı Safari/HTTP/çerez BLOCKED. Editoryal fiyat, sahte müşteri, ödeme iddiası yok; sentetik etiket PASS. **Tam yayına hazır QA PASS değildir.**
 
 **Ayrı onaylar:** WEB-G07-01 demo sayfası PR merge: BEKLENİYOR; LI-G07-01 metin: BEKLENİYOR; LI-G07-02 görsel: BEKLENİYOR. LinkedIn post URL YOK; yeni canlı demo URL YOK; trafik ve talep BİLİNMİYOR. Dış yayın yapılmadı.
+
+## 15.10.2026 — premium görsel QA ek kanıtı
+- PDF Gün 07 ile uyumlu tek grafik, **1080×1350 PNG** olarak yerel üretildi; **320×400** küçültme ayrıca alındı.
+- **Kanonik SYNAPSE logo artık nihai kompozisyonda** (önceki logo eksik P0 görsel düzeltildi).
+- Kullanıcıya sunulan kanıt paketi: `SYNAPSE_G07_MARKALI_GORSEL_QA.zip` (sohbet eki; GitHub PR içine ikili dosya yüklenmedi).
+- PNG SHA256: `4f06e9a80c9309710aae3d1de0ae8f3d538e95f10f133cc063e8f428b4003b9c`.
+- **Yerel görsel incelemesi PASS**: logo görünür, ana mesaj okunabilir, sentetik etiket mevcut, öğeler taşmıyor.
+- **LinkedIn panel önizlemesi NOT_TESTED**; yayın onayı NOT_GRANTED; canlı paylaşım YOK.
+- IBAN kullanıcı tercihi olup vergi/fatura uygunluğu kanıtı değildir. Kullanıcı mevcut iletişim bağlantılarının doğru yönlendirdiğini teyit etti; canlı HTTP testi değildir.
+- Nihai karar: P0/P1 açık, yayına hazır değil; PR draft ve yayından bağımsız.
