@@ -42,3 +42,11 @@ Repo: https://github.com/synapseautomate/synapseautomate.github.io
 Dalı: `feat/v8-g07-stock-context-public-20261015`.
 Canlı yayın URL'si: **Henüz yok**. PR bağlantısı PR oluşturulunca işlenecek.
 Yayımlanmış ziyaretçi, lead veya dönüşüm metriği: **BİLİNMİYOR**. Sosyal yayınlar kullanıcının beyanı düzeyinde kayıtlı.
+
+## 2026-10-15 — PR #23 teknik ve editoryal QA sonuçları (feature HEAD)
+
+- **Taslak PR:** https://github.com/synapseautomate/synapseautomate.github.io/pull/23 ; HEAD: `47f99d3c001cecf5ff355157759ea5ade4a3f9cb` (bu satır eklendiği andaki sürüm; yeni belge commit'i HEAD'i değiştirir).
+- **1. tur / statik teknik denetim: 19/19 PASS.** GitHub commit ağacında yeni dosyalar ve yedi yerel link/görsel hedefi bulundu; canonical, description, OG, tek H1, gerçek logo, iki gelen kaynak bağlantısı, sitemap tekil URL, örnek CSV yedi kolon ve sentetik sınır doğrulandı. Sayfada veri toplayan form, checkout, veya kullanıcıya gösterilen iç gün/QA notu bulunmuyor.
+- **2. tur / geriye dönük içerik denetimi: 6/6 PASS.** `kaynaklar.html`, `cozumler/e-ticaret-operasyon-otomasyonu.html` ve `sitemap.xml` yeni ekleme parçaları çıkarılınca `main` sürümleriyle **birebir aynı**; `index.html`, `hizmetler.html` ve `gizlilik.html` aynı blob SHA'larını koruyor. PR dosya listesi 6 dosya: 3 eklenen kaynak/belge, 3 var olan dosyaya yalnız ekleme; silinen dosya yok.
+- **QA kapsamı sınırı:** Bu rakamlar GitHub kaynak/bağlantı denetimleridir. Yayımlanmamış PR'yi gerçek iPhone Safari üzerinden, canlı HTTP veya 404 sunucu cevabı üzerinden PASS göstermeyin. Geçmişteki benzer yerel HTML viewport kayıtları **bu commit için** birebir mobil test kanıtı değildir.
+- **P0 kararı:** HOST-01 ve LEGAL-01 açık; PDF Gün 07 yalnız PR'yi öngörüyor. **Live GO verilmedi.**
