@@ -47,3 +47,11 @@ Metrik kaynakları: önceki Gün 04–05 yerel test raporu; PR #22 commit kayıt
 - **Yayın sonrası takip:** Her iki gerçek gönderinin URL'si, görüntülenme/erişim, kaydetme, profil/site tıklaması ve nitelikli gönüllü talep yalnız platformdan alındıktan sonra yazılır; yoksa **BİLİNMİYOR**.
 - **WEB-G07-01:** PR #22 taslak, main'e merge ve yeni web yayını yok; bu durum sosyal yayından bağımsızdır.
 - **Gün 07 kapanış kararı: CLOSED DEĞİL / OPERASYONEL HOLD.** LEGAL-01 ve HOST-01 P0; MOBILE-01, PRIVACY-01, LINK-01 ve canlı sosyal önizleme/kanıt P1 kontrol listesi açık. Paylaşımlar yapılmış olsa da PDF'nin P0/P1, QA, yayın onayı ve URL/kanıt kapıları kapanmadı.
+
+
+## Canlı bilgi sayfası güncellemesi — 2026-10-15 (PR #22'den BAĞIMSIZ)
+- Kullanıcının, var olan `synapseautomate.github.io` adresinde içerikleri bozmadan yayın yapılmasına yönelik açık talimatı sonrasında yalnız **PR #23** birleştirildi. PR #22 hâlâ taslak, merge edilmedi.
+- Yeni bilgi sayfası: https://synapseautomate.github.io/kanit/stok-farki-baglam-kontrolu.html . Doğal girişler: Kaynak Merkezi > Açık Kanıt ve E-ticaret Operasyon Otomasyonu > Stok farkı örneği.
+- GitHub squash commit: `3e93a293913344750be455ac595f732655ac9353`; önceki main: `7d51dbb2c4d167c96a3f1a7fd968ea0e16588f44`. Merge commit'inin Pages deploy ve QA işleri PASS. Operasyon yayını kanıt kaydı `main` dalında: `operasyon/v8/gun-07/G07_WEB_YAYIN_KARAR_VE_GERI_ALMA.md`.
+- **Bu ayrı yayın, PR #22 içindeki yerel/demo `demo-taslak.html` sayfasının canlıya çıktığı anlamına gelmez.** Buradaki WEB-G07-01 izni/yayını hâlâ YOK; eski tablo kayıtları sadece PR #22'ye aittir.
+- GitHub Pages ticari barındırma kısıtı ile fatura/vergi teyidi (P0); gerçek Safari, GA4/çerez ve bağımsız canlı HTTP QA (P1) **AÇIK**. Kullanıcı gerçek dış platform sosyal linklerini şu anda takip etmek istemiyor. **GÜN 07 CLOSED DEĞİL.**
