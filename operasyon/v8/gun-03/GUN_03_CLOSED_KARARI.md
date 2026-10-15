@@ -1,0 +1,2 @@
+# Gün 03 CLOSED kararı
+Plan tarihi 16.10.2026; fiili tarih 15.10.2026 (1 gün erken). CSV v0.1 şema, 5 kural, 3 sentetik senaryo, README, kabul matrisi ve devir hazır. Yerel kanıt paketindeki testler 9/9 OK. R05 güvenli önkoşullar olmadığından uygulanmaz; gerçek ürün kabulü, hukuk, satış ve yayın OPEN. Main merge/yayın yok. Gün 03 belge ve sentetik test kapsamı CLOSED.
