@@ -38,3 +38,12 @@ PR #22 taslaktır, merge yok. Onaylı merge olursa SHA ve ekran setini kaydet; h
 2. Editoryal: Yanlış müşteri/satış/fiyat vaadi yok; sentetik veri açık. İddia denetimi PASS. Sosyal panel/görsel son önizleme BLOCKED.
 
 Metrik kaynakları: önceki Gün 04–05 yerel test raporu; PR #22 commit kayıtları; kullanıcının iletişim/IBAN beyanı. SHA: PR #22 HEAD GitHub'dan yeniden okunmalı; tekil sabit SHA'yı yanlış güncel göstermemek için burada dondurulmadı. Yapılmayanlar: merge, yayın, gerçek ödeme, gerçek Safari, GA4/çerez ve canlı HTTP testleri. 
+
+
+## Sosyal medya gerçekleşme güncellemesi — 2026-10-15 (kullanıcı beyanı)
+- Hesap sahibi, **Gün 07 LinkedIn tek görselini** paylaştığını bildirdi: **KULLANICI BEYANIYLA YAYINLANDI**, gönderi permalink'i, yayın ekranı, kırpma/erişim ve metrik bağımsız doğrulanmadı. Önceki 'Yayınlanan gönderi 0' ifadesi kayıt oluşturulduğu andaki tarihsel durumdur, güncel sayı sayılmamalıdır.
+- Hesap sahibi, **Gün 07 Instagram'a özgü üç görselli karuseli** paylaştığını bildirdi ve SYNAPSE kurumsal hesabına ait önceki ekran görüntüsünü gösterdi: **KULLANICI BEYANIYLA YAYINLANDI**, yeni karuselin permalink'i ve üçlü sırası canlı panelde doğrulanmadı. Instagram için ayrı bir kullanıcı yayın eylemi gerçekleştiği bildirilmiştir; asistan hesapta yayın yapmadı.
+- LinkedIn ve Instagram metni, görselleri ve nihai platform önizlemesi daha önce taslakta sabitlenmiş içerik sürümleriyle birebir kıyaslanmadı. Bu nedenle taslak içi QA, kullanıcı yayınını otomatik doğrulamaz.
+- **Yayın sonrası takip:** Her iki gerçek gönderinin URL'si, görüntülenme/erişim, kaydetme, profil/site tıklaması ve nitelikli gönüllü talep yalnız platformdan alındıktan sonra yazılır; yoksa **BİLİNMİYOR**.
+- **WEB-G07-01:** PR #22 taslak, main'e merge ve yeni web yayını yok; bu durum sosyal yayından bağımsızdır.
+- **Gün 07 kapanış kararı: CLOSED DEĞİL / OPERASYONEL HOLD.** LEGAL-01 ve HOST-01 P0; MOBILE-01, PRIVACY-01, LINK-01 ve canlı sosyal önizleme/kanıt P1 kontrol listesi açık. Paylaşımlar yapılmış olsa da PDF'nin P0/P1, QA, yayın onayı ve URL/kanıt kapıları kapanmadı.
