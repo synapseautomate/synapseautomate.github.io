@@ -1,16 +1,40 @@
-# LinkedIn · ilk marka gönderisi (İÇ TASLAK, ONAY BEKLİYOR)
-Format: 1080×1350 px, orijinal SYNAPSE logo; görsel: Gün 05 sentetik demo. **SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL**. Kaynak: Gün 04/05 25/25 sentetik test.
+# SYNAPSE / LinkedIn — ilk marka yayını · editoryal sürüm 2
+**Durum:** İÇ TASLAK. Metin ve görsel için ayrı onay bekleniyor. Henüz yayımlanmadı.
 
-Bir Excel tablosundaki küçük bir tutarsızlık, operasyon sırasında büyük zaman kaybına dönüşebilir.
+## Yayımlanacak metin
 
-Sipariş ve stok listelerinde boş ürün kodları, tekrarlanan satırlar veya eşleşmeyen kayıtlar gözden kaçabilir. SYNAPSE Automate olarak tekrar eden kontrolleri daha anlaşılır ve yönetilebilir hâle getirmeye odaklanıyoruz.
+**Sorun her zaman büyük değildir. Etkisi olabilir.**
 
-Paylaştığımız örnek, tamamen **sentetik verilerle** hazırlanmış bir CSV kontrol demosudur. Bir müşteri projesi, gerçek işletme sonucu veya kusursuzluk garantisi değildir. Stok tarihi, depo ve rezervasyon farkları insan incelemesi gerektirebilir.
+Bir sipariş satırı iki kez görünür. Bir ürün kodu stok listesinde karşılık bulmaz. Bir kontrol, günün en yoğun anına kalır.
+
+Tek başına küçük görünen bu ayrıntılar, operasyonun dikkatini asıl işten uzaklaştırabilir.
+
+SYNAPSE Automate'in yaklaşımı basit bir vaat değil, somut bir çalışma biçimi: **Veriyi kontrol et. Şüpheli satırı görünür kıl. Kararı insanda bırak.**
+
+Tamamen sentetik sipariş ve stok verileriyle hazırladığımız teknik örnekte, mükerrer kayıt ve eşleşmeyen ürün kodu gibi durumlar incelenebilir bir rapora dönüştürülüyor. Bu bir müşteri vakası değil; nasıl çalıştığımızı açıklayan sınırlı bir demo.
+
+Çünkü iyi otomasyon, yalnızca daha fazla işlem yapmak değildir. **Nereye dikkat edilmesi gerektiğini de açıkça gösterebilmektir.**
 
 **Tekrar eden işleri azaltın. Önemli işlere odaklanın.**
 
-Hizmetler: https://synapseautomate.github.io/hizmetler.html
+Süreçlerinizi konuşmak için: https://synapseautomate.github.io/hizmetler.html
 
-#SYNAPSEAutomate #IsSurecleri #Otomasyon #Operasyon
+#SYNAPSEAutomate #Operasyon #IsSurecleri
 
-**LI-G07-01 metin ONAY BEKLİYOR. LI-G07-02 görsel ONAY BEKLİYOR. YAYIN YOK.**
+## Görsel için yaratıcı yön
+- **Ana fikir:** “GÖZDEN KAÇAN, GÖRÜNÜR OLSUN.”
+- **Kare 1 / 1080×1350:** koyu premium zemin, büyük tipografi; tek güçlü mesaj. Alt satır: “Sipariş × Stok / Sentetik kontrol örneği”.
+- **Kare 2 / 1080×1350:** üç katmanlı hikâye: Kaynak satır → Kural etiketi → İnsan incelemesi. Gerçek motor çıktısı ile eşleşmeyen rakam gösterme.
+- **Kare 3 / 1080×1350:** “Kontrol otomatik. Nihai karar insanda.” CTA: “Süreçlerinizi konuşalım”.
+- **Güven etiketi:** “SENTETİK DEMO — GERÇEK MÜŞTERİ VERİSİ DEĞİL” okunabilir boyutta.
+- **Kimlik:** yalnızca repo içindeki kanonik logo; Nike/Red Bull logosu, sloganı, tipografik taklidi veya görseli kullanılmaz.
+- **Görsel QA:** 320–390 px küçültmede metin okunabilirliği, kontrast, kırpma ve platform önizlemesi ayrıca doğrulanmalı.
+
+## İddia ve kaynak denetimi
+- “İşletme için X saat tasarruf” **YOK** — ölçüm yok.
+- “Müşterimizde X sonuç” **YOK** — müşteri kanıtı yok.
+- “Tüm stok sorunlarını tespit eder” **YOK** — stok tarihi, depo ve rezervasyon bağlamı gerekir.
+- Sentetik rapor yalnızca örnek; kaynak: Gün 04–05 yerel test paketi (25/25 test sonucu önceki denetim kayıtlarında). Canlı kullanıcı verisi yok.
+- Gönderi satış/fatura/ödeme altyapısı aktifmiş gibi konuşmaz.
+
+**LI-G07-01 / Metin: ONAY BEKLİYOR. LI-G07-02 / Görsel: ONAY BEKLİYOR. YAYIN: YOK.**
