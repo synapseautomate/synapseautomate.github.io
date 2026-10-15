@@ -1,5 +1,5 @@
-kaynak_satir;siparis_id;sku;kural;seviye;aciklama;manuel_aksiyon
-4;;;R03;İNCELEME GEREKİR;Sipariş SKU kodu stok dosyasında bulunamadı;Kaynak sipariş satırını elle inceleyin
-5;;;R02;İNCELEME GEREKİR;Sipariş kimliği ve SKU birlikte tekrar ediyor;Kaynak sipariş satırını elle inceleyin
-5;;;R03;İNCELEME GEREKİR;Sipariş SKU kodu stok dosyasında bulunamadı;Kaynak sipariş satırını elle inceleyin
-;;;R05;DEĞERLENDİRİLMEDİ;Depo stok zamanı ve rezervasyon bağlamı doğrulanmadı;Stok açığı kararı vermeyin
+kaynak_satir;siparis_id;sku;kural;durum;aciklama;sonraki_adim
+4;ORNEK-101;;R01;INSAN_INCELEMESI;Siparis satirinda SKU bulunmuyor;Urun kodunu kaynak kayitla dogrula
+6;ORNEK-102;SKU-A20;R02;INSAN_INCELEMESI;Siparis kimligi ve SKU eslesmesi tekrar ediyor;Tekrarin is kuralina gore gecerli olup olmadigini kontrol et
+8;ORNEK-103;SKU-X77;R03;INSAN_INCELEMESI;SKU stok listesinde bulunamadi;Dosya kapsamlarini ve urun eslesmesini kontrol et
+;;;R05;DEGERLENDIRILMEDI;Zaman depo ve rezervasyon bilgileri dogrulanmadi;Stok kaybi karari verme
