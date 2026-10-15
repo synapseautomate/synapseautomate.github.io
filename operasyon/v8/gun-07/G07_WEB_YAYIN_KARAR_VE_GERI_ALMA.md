@@ -62,3 +62,10 @@ Yayımlanmış ziyaretçi, lead veya dönüşüm metriği: **BİLİNMİYOR**. So
 - **QA sınırı:** GitHub'ın başarılı deploy bildirimi = son kullanıcının Safari/HTTP testi değildir. Bu ortamdan canlı Pages URL'sinin HTTP durumunu ve gerçek iPhone Safari görünümünü bağımsız teyit edemedik. `LINK-01`, `MOBILE-01` ve `PRIVACY-01` kanıt bekliyor. Gerçek form talebi ve analitik sonuç sayılmadı.
 - **Geri alma:** Sadece yayın commit'i `3e93a293913344750be455ac595f732655ac9353` hedeflenerek yeni bir düzeltme/revert PR'si hazırlanır; otomatik revert yapılmaz. Önceki çalışan commit `7d51dbb2c4d167c96a3f1a7fd968ea0e16588f44` korunmuştur. Revert provası yapılmadı.
 - **Uygunluk:** GitHub Pages'in ticari çevrim/sunum kısıtı (HOST-01) ve fatura/tahsilat uygunluğu (LEGAL-01) **P0 açık**. Kullanıcının adresi koruma isteği, resmî barındırma şartlarının karşılandığı anlamına gelmez. Bu yüzden **Gün 07 bütün olarak CLOSED değildir**; tamamlanan tek eylem yeni bilgilendirici içeriğin canlıya alınmasıdır.
+
+
+## Sahip kabul kaydı — 2026-10-15
+
+- Site sahibi yeni içerik sayfasını kendisi inceledi ve sohbet üzerinden **“PASS”** beyanında bulundu. **MÜŞTERİYE GÖRÜNEN WEB İÇERİĞİ: SAHİP ONAYIYLA PASS.** Bu, telefonda/gerçek Safari'de altı viewport, ağ/çerez/GA4, 404 veya hukuki platform uygunluğu testleri yapıldığı anlamına gelmez.
+- Önceki kullanıcı talimatı gereği SYNAPSE'nin mevcut GitHub Pages alan adı korunmuştur, taşıma veya ödeme entegrasyonu yapılmamıştır.
+- **Gün 07 kararı:** Web içeriği ve dağıtım görevi kabul edildi. PDF'nin kritik P0/P1 sıfır kapısı henüz doğrulanmadığından tüm gün için **CLOSED YOK / KOŞULLU KABUL**. HOST-01 ve LEGAL-01 (P0), PRIVACY-01, LINK-01 ve Safari/erişilebilirlik tam cihaz testi (P1) açık. Sosyal yayınlar kullanıcı beyanıyla yapılmıştır; ayrıca paylaşım URL'si istemek kapanış için şart olarak yeniden öne sürülmez.
