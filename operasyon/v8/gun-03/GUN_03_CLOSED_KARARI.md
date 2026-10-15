@@ -1,2 +1,5 @@
 # Gün 03 CLOSED kararı
 Plan tarihi 16.10.2026; fiili tarih 15.10.2026 (1 gün erken). CSV v0.1 şema, 5 kural, 3 sentetik senaryo, README, kabul matrisi ve devir hazır. Yerel kanıt paketindeki testler 9/9 OK. R05 güvenli önkoşullar olmadığından uygulanmaz; gerçek ürün kabulü, hukuk, satış ve yayın OPEN. Main merge/yayın yok. Gün 03 belge ve sentetik test kapsamı CLOSED.
+
+## Son QA güncellemesi (15.10.2026)
+Yerel `SYNAPSE_V8_GUN_03_NIHAI_CLOSED_17_TEST.zip` içinde referans `csv_validator.py`, 3 sentetik CSV çifti, 17 unittest, CLI JSON çıktıları, README, sözleşme, kabul matrisi, SHA256SUMS ve tam devir var. `python -m unittest discover -s tests -v` → **Ran 17 tests, OK**. SHA256SUMS yerel doğrulama geçti. R01/R04 hata-rule bağları, durum kümesi, çok satırlı CSV, bozuk tırnak ve fail-closed karşıt testleri eklendi. PR GitHub'da bu yerel kod dosyalarını henüz barındırmıyor; kodun doğrulanmış tam kopyası ZIP'tedir. Gün 03 sözleşme ve sentetik test teslimi CLOSED; gerçek ürün kabulü, yayın/satış OPEN.
