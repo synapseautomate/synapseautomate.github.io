@@ -1,10 +1,38 @@
-# SYNAPSE V8 Gun 08 — zero-context handoff
-Actual date 16 October 2026, planned PDF Day 08 21 October => 5 days EARLY, task day remains 08. V8 period 14 Oct–12 Nov.
-Repo https://github.com/synapseautomate/synapseautomate.github.io main a513b508c07ad26eb1b9493d01453f35e7845d24; 389 files, 144 HTML, 16 araclar, 36 rehberler, 29 kanit, 13 cozumler, 10 sektorler, 22 scripts, 23 assets. V8 PR #10–18 and #22 open draft, #19–21 and #23 merged. Previous V8 Day 01–07 handoffs read on their source PR branches, absent main. Live site and LinkedIn HTTP blocked; no Upwork seller panel.
-Day 08 service: Order and Inventory CSV Discrepancy Review for E-commerce Teams; 2 CSVs, R01 blank SKU, R02 duplicate, R03 unmatched SKU, R04 negative on-hand, R05 context-gated NOT EVALUATED, row/rule report + one page brief, no integrations or outcomes guarantee. English Catalog description/FAQ and owner approval files on this branch. Actual USD catalogue price UNKNOWN; 4900 TRY TEST, never FX translated. Historical original v0.1 log unavailable. Independent G08 synthetic fixture 8/8 unit tests PASS; original CLI NOT RETESTED.
-Upwork official approval AUTOMATICALLY activates: https://support.upwork.com/hc/en-us/articles/360057397533-How-to-create-a-project-in-Project-Catalog. Gallery official 4:3: https://support.upwork.com/hc/en-us/articles/1500011309082-How-to-add-images-and-video-to-your-Project-Catalog-project. Service fee 0–15% general: https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee. Other rules in platform register.
-Local downloadable ZIP contains original image/PDF/test scripts, metrics CSV and detailed handoff; binary assets NOT stored on this draft PR. Two QA rounds local: synthetic technical PASS, commercial/legal READY NO; real browsers 320/375/390/768/1024/1440, Safari, 200/404, analytics, FormSubmit, account status TEST EDİLEMEDİ.
-V8 actual impressions/visits/demos/leads/funded orders/paid sales/refunds/net income BİLİNMİYOR; new operator cash outlay 0 TRY. P0 seller tax/fatura/KYC, account/funding/fee, data protection, original product evidence, activation consent, hosting. P1 logo, real mobile/crop, links and form, scope/site price mismatch. No upload, review, sale, merge, post, DM, IBAN, payment or user identity action. Each separate ONAY BEKLİYOR, see approval checklist.
-Single safe next priority: Day09 LinkedIn Company Services unpaid eligibility/draft and separate owner gate; no activation or post.
-## Prior G07 public-release evidence distinction
-Full G07 handoff on draft PR #22 states owner REPORTED publishing one LinkedIn image and one Instagram carousel on 15 Oct 2026; no independent post permalinks or analytics were verified. That is USER-REPORTED G07 activity, not any new Day08 post, and does not justify a G08 reach/lead count. Same G07 handoff documents #23 MERGED and Pages deploy PASS as reported; GitHub merge and main source reverified here, but live HTTP 200 remains TEST EDİLEMEDİ. PR #22 stays DRAFT. All G08 social permissions remain ONAY BEKLİYOR.
+# SYNAPSE V8 Gün 08 — Güncel kesin devir ve kapanış kaydı
+
+**Plan günü:** Gün 08 (21 Ekim 2026 plan görevi); **fiilî icra ve kullanıcı teyidi:** 16 Ekim 2026. Takvim kayması görev numarasını değiştirmez.
+
+## Son karar — CLOSED (operasyonel)
+Kullanıcı Upwork hesabı açmamayı ve Upwork'ü kapsamdan tamamen çıkarmayı seçti. Ücretli platform, Connects, abonelik, ödeme, hesap açma, KYC, Project Catalog veya Upwork yayını **yoktur**. İlk hazırlanan Upwork katalog/galeri/FAQ dosyaları tarihsel çalışma ve arşivdir; aktif satış kanalı, canlı ilan veya bekleyen yayımlama talimatı değildir.
+
+Yerine SYNAPSE'nin **kendi sitesinde** kamuya açık, tek kapsamlı sipariş/stok CSV uyuşmazlık kontrolü hizmeti hazırlandı ve ana sayfadan erişim sağlandı:
+- Hizmet sayfası: https://synapseautomate.github.io/cozumler/siparis-stok-csv-kontrolu.html
+- Ana sayfa: https://synapseautomate.github.io/
+- Site PR #25: https://github.com/synapseautomate/synapseautomate.github.io/pull/25 — GitHub tarafından MERGED bildirildi, squash commit e97faf03ab56cf35e66632d7910e050d966742cb.
+- Kullanıcı hizmet sayfasını bizzat kontrol ettiğini ve **PASS** olduğunu bildirdi.
+- Kullanıcı hazırlanmış LinkedIn şirket paylaşım metnini yayımladığını bildirdi; gönderi permalink'i ve analitik bağımsız doğrulanmadı.
+- Gün 08 için Instagram, Facebook, X, YouTube veya başka bir platformda paylaşım **zorunlu değil**; yeni hesap açılmayacak. Önceki Gün 07 Instagram yayını Gün 08 kanıtı sayılmaz.
+
+## Kamuya açık hizmet sınırları
+Bir sipariş CSV + bir stok CSV; R01 eksik SKU, R02 yinelenen sipariş kimliği/SKU, R03 SKU+depo eşleşmeme, R04 negatif eldeki stok, R05 yalnız yeterli zaman/depo/rezervasyon tanımı varsa koşullu stok yeterliliği; aksi durumda DEĞERLENDİRİLMEDİ. Teslim: kural/satır bazlı bulgu CSV'si + tek sayfalık değerlendirme özeti. API/ERP entegrasyonu, canlı stok değiştirme, otomatik düzeltme, sürekli izleme ve ROI garantisi yok. Canlı sayfada Gün 08, iç operasyon notu, Upwork, gerçek olmayan müşteri sonucu veya fiyat vaadi yok.
+
+## Kalite ve kanıt ayrımı
+- GitHub main üzerinde sayfa ve anasayfa yönlendirmesi kod olarak okundu. Kod kontrolü: canonical, 850/540 px responsive kurallar, odak görünürlüğü, reduced-motion, beş kural kodu, logo referansı, mevcut CTA hedefi ve iç notların yokluğu PASS.
+- Mevcut logo yolu assets/brand/synapse-logo-clean.png ve iletişim hedefi surec-analizi.html repo içinde mevcut.
+- Kullanıcı gerçek sayfa görünümünü PASS olarak teyit etti; bu bağımsız cihaz matrisi, Lighthouse, ekran görüntüsü karşılaştırması veya 'sıfır grafiksel hata' garantisi değildir.
+- GitHub Pages gerçek HTTP/404, tüm 320/375/390/768/1024/1440 kırılımları, Safari ve klavye testi otomatik olarak doğrulanamadı; TEST EDİLEMEDİ.
+- LinkedIn yayını kullanıcı beyanıyla doğrulandı; permalink, gösterim, etkileşim, lead ve satış sayıları BİLİNMİYOR.
+- Sentetik örnek testleri 8/8 PASS; orijinal v0.1 CLI geçmiş logları bulunamadı ve yeniden çalıştırılmadı.
+- Yeni ücretli platform harcaması yapılmadı. 4.900 TL önceki test referansı yeni hizmet için otomatik ilan edilmiş fiyat değildir.
+
+## İki QA turu ve kalan riskler
+Tur A: kod, kapsam, sayfa/ana sayfa linki ve temel semantik kontrolü PASS; gerçek tarayıcı ve trafik metrikleri TEST EDİLEMEDİ.
+Tur B: müşteri yüzündeki içerik, marka/logo yolu, iç operasyon sızıntısı, sahte vaka/ROI vaadi yokluğu kod seviyesinde PASS; bağımsız grafiksel/piksel doğrulaması TEST EDİLEMEDİ.
+Bu sınırlar Gün 08'in operasyonel kapanışını engellemez, ancak bağımsız sıfır hata veya performans sertifikası olarak yorumlanamaz.
+
+## Kapanış kararı
+**GÜN 08 = CLOSED / kullanıcı teyitli operasyonel kapanış.**
+Başka platform paylaşımı, yeni hesap, ücretli işlem veya ek zorunlu yayın yok. İsteğe bağlı takip: LinkedIn kalıcı gönderi URL'sini arşive eklemek ve ileride gerçek cihaz/erişilebilirlik performans testlerini yapmak. Bunlar kapanış koşulu değildir.
+
+## Sonraki gün için sınır
+Gün 09 ayrı görevdir; Gün 08 kapanışına yeni platform aktivasyonu, tekrar paylaşım veya yeni masraf eklenmez. Önceki Upwork-merkezli devir notları bu güncel karar karşısında geçersizdir.
