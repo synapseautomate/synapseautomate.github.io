@@ -1,0 +1,3 @@
+# Gün 04 kaynak kanıtı
+Tam çalıştırılabilir yerel kod, test ve örnekler kullanıcıya verilen `SYNAPSE_V8_GUN_04_YEREL_CLI_KANIT.zip` içindedir; GitHub'daki bu PR yalnız karar/QA/devir metinlerini içerir.
+Komut: `python synapse_cli.py ornekler/demo_siparis.csv ornekler/demo_stok.csv --output demo_rapor.csv`; test: `python -m unittest discover -s tests -v`. Python 3.10+; standart kütüphane; GUI/Windows EXE değildir. Üretim ve satışa hazır değil.
