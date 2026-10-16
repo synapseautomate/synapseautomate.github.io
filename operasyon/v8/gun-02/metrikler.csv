@@ -1,0 +1,13 @@
+tarih,kanal,olcu,tanim,deger,birim,kaynak,kanit_guveni
+2026-10-15,SEO,gosterim,Arama sonucu gösterimi,BİLİNMİYOR,adet,Panel yok,YOK
+2026-10-15,Web,nitelikli_ziyaret,Alıcı niyetli ziyaret,BİLİNMİYOR,adet,Panel yok,YOK
+2026-10-15,Ürün,demo,Gerçek demo,BİLİNMİYOR,adet,Panel yok,YOK
+2026-10-15,Inbound,gonullu_talep,Alıcıdan gelen talep,BİLİNMİYOR,adet,Panel yok,YOK
+2026-10-15,Satış,izinli_teklif,İzinle gönderilmiş teklif,BİLİNMİYOR,adet,Panel yok,YOK
+2026-10-15,Platform,fonlanan_siparis,Platformda fonlanmış sipariş,BİLİNMİYOR,adet,Panel yok,YOK
+2026-10-15,Satış,tahsil_edilen_satis,Tahsil edilmiş ücretli satış,BİLİNMİYOR,adet,Panel yok,YOK
+2026-10-15,Satış,iade,İade,BİLİNMİYOR,adet,Panel yok,YOK
+2026-10-15,Satış,net_gelir,Net gelir,BİLİNMİYOR,TL,Panel yok,YOK
+2026-10-15,SEO,arama_hacmi,12 aday sorgunun hacmi,BİLİNMİYOR,adet,SEO panel yok,YOK
+2026-10-15,Operasyon,operator_harcamasi,Bu gün operatör harcaması,0,TL,Operatör eylem kaydı,YÜKSEK
+2026-10-15,Operasyon,operator_yayini,Bu gün operatör yayını,0,adet,Operatör eylem kaydı,YÜKSEK
