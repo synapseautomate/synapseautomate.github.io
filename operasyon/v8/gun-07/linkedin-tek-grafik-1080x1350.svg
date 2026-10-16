@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-labelledby="title desc">
+<title id="title">Fark var. Kayıp kesin mi? — SYNAPSE Automate</title>
+<desc id="desc">Sentetik sipariş ve stok miktarı farkı; tarih, depo ve rezervasyon bağlamı doğrulanmadan stok kaybı kararı verilmemeli.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#061523"/><stop offset="1" stop-color="#112B3A"/></linearGradient><linearGradient id="accent" x2="1"><stop stop-color="#64EED3"/><stop offset="1" stop-color="#A6F8D9"/></linearGradient></defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<path d="M0 185H1080M0 1165H1080" stroke="#315363" stroke-width="2"/>
+<rect x="68" y="68" width="218" height="38" rx="19" fill="#163D46"/>
+<text x="86" y="95" fill="#A5F6DE" font-size="19" font-family="Arial, sans-serif" font-weight="700" letter-spacing="2">SYNAPSE / 07</text>
+<text x="68" y="265" fill="#F3FAFC" font-family="Arial, sans-serif" font-size="94" font-weight="800" letter-spacing="-4">FARK VAR.</text>
+<text x="68" y="369" fill="#69EDD3" font-family="Arial, sans-serif" font-size="94" font-weight="800" letter-spacing="-4">KAYIP KESİN Mİ?</text>
+<text x="70" y="428" fill="#C3D9E0" font-family="Arial, sans-serif" font-size="29">Sipariş × Stok / Sentetik kontrol örneği</text>
+<rect x="68" y="494" width="944" height="266" rx="24" fill="#15313F" stroke="#315363" stroke-width="2"/>
+<text x="100" y="547" fill="#A7C4CC" font-size="21" font-family="Arial, sans-serif" font-weight="700" letter-spacing="2">GÖZLENEN SAYILAR</text>
+<text x="104" y="645" fill="#F1F8FB" font-family="Arial, sans-serif" font-size="64" font-weight="700">12</text>
+<text x="107" y="685" fill="#B8CED7" font-family="Arial, sans-serif" font-size="23">Sipariş miktarı</text>
+<path d="M482 574V712" stroke="#3D6570" stroke-width="2"/>
+<text x="553" y="645" fill="#F1F8FB" font-family="Arial, sans-serif" font-size="64" font-weight="700">8</text>
+<text x="555" y="685" fill="#B8CED7" font-family="Arial, sans-serif" font-size="23">Stok görünümü</text>
+<rect x="68" y="799" width="944" height="264" rx="24" fill="#0B2231" stroke="#315363" stroke-width="2"/>
+<text x="100" y="851" fill="#A7C4CC" font-size="21" font-family="Arial, sans-serif" font-weight="700" letter-spacing="2">KARARDAN ÖNCE 3 KONTROL</text>
+<text x="100" y="918" fill="#69EDD3" font-size="31" font-family="Arial, sans-serif" font-weight="700">01</text>
+<text x="167" y="918" fill="#F3FAFC" font-size="30" font-family="Arial, sans-serif">Stok hangi anda ölçüldü?</text>
+<text x="100" y="973" fill="#69EDD3" font-size="31" font-family="Arial, sans-serif" font-weight="700">02</text>
+<text x="167" y="973" fill="#F3FAFC" font-size="30" font-family="Arial, sans-serif">Depolar gerçekten aynı mı?</text>
+<text x="100" y="1028" fill="#69EDD3" font-size="31" font-family="Arial, sans-serif" font-weight="700">03</text>
+<text x="167" y="1028" fill="#F3FAFC" font-size="30" font-family="Arial, sans-serif">Rezerve stok hesaba katıldı mı?</text>
+<text x="68" y="1135" fill="#F3FAFC" font-size="32" font-family="Arial, sans-serif" font-weight="700">Fark bir bulgudur. Kayıp kararı değildir.</text>
+<text x="68" y="1217" fill="#A7C4CC" font-size="19" font-family="Arial, sans-serif" letter-spacing=".4">SENTETİK ÖRNEK · GERÇEK MÜŞTERİ VERİSİ DEĞİL</text>
+<text x="68" y="1290" fill="#69EDD3" font-size="30" font-family="Arial, sans-serif" font-weight="800" letter-spacing="2">SYNAPSE</text>
+<text x="260" y="1290" fill="#C3D9E0" font-size="19" font-family="Arial, sans-serif" letter-spacing="3">AUTOMATE</text>
+</svg>
