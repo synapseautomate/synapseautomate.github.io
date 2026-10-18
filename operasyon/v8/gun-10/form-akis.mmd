@@ -1,0 +1,11 @@
+flowchart TD
+A[Süreç analizi] --> B[HTML FormSubmit POST]
+C[İletişim] --> D{JS çalışıyor mu?}
+D -->|evet| E[app-v33.js action POST ekler]
+D -->|hayır| F[action yok, test gerekli]
+B --> G[FormSubmit teslim BİLİNMİYOR]
+E --> G
+G --> H[Teşekkür yönlendirmesi]
+H --> I{URL process_analysis + pending 30dk?}
+I -->|evet| J[generate_lead redirect sinyali]
+I -->|hayır| K[generate_lead yok]
