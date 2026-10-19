@@ -65,9 +65,16 @@ jobs:
             --exclude '__pycache__/' \
             --exclude 'scripts/' \
             --exclude 'docs/' \
+            --exclude 'operasyon/' \
+            --exclude 'tests/' \
+            --exclude 'node_modules/' \
+            --exclude '.env*' \
+            --exclude '.gitignore' \
             --exclude '*.zip' \
             --exclude '*.sha256' \
             --exclude '*.py' \
+            --exclude 'RULES.md' \
+            --exclude 'CONTRIBUTING.md' \
             --exclude 'README*.md' \
             --exclude 'DEPLOYMENT.md'
 
@@ -98,6 +105,15 @@ jobs:
           test -f _site/assets/day3/day3.css
           test -f _site/sitemap.xml
           test -f _site/robots.txt
+
+          # Explicitly exclude private operational source paths from publicly served files.
+          ! test -e _site/operasyon
+          ! test -e _site/RULES.md
+          ! test -e _site/CONTRIBUTING.md
+          ! test -e _site/tests
+          ! test -e _site/node_modules
+          ! test -e _site/.github
+          ! find _site -iname '*DEVIR*' -o -iname '*KANIT_KAYNAK_OPERASYON*' | grep -q .
 
           # Public artifact must not contain transport/internal files.
           ! find _site -type f \( -name '*.zip' -o -name '*.py' -o -name '*.sha256' \) | grep -q .
@@ -133,6 +149,7 @@ jobs:
           sleep 3
           node scripts/day28_browser_smoke.mjs
           node scripts/day1_browser_funnel.mjs
+          node scripts/qa_consent_local.mjs
 
       - name: Upload browser QA screenshots
         if: always()
@@ -155,7 +172,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for route in / /kaynaklar.html /surec-analizi.html /cozumler/roofing-ev-hizmetleri.html /sitemap.xml; do
+          for route in / /kaynaklar.html /surec-analizi.html /hizmetler.html /cozumler/roofing-ev-hizmetleri.html /sitemap.xml; do
             ok=0
             for attempt in $(seq 1 12); do
               if curl --fail --silent --show-error --max-time 15 "https://synapseautomate.github.io$route" > /tmp/synapse-live-page.html; then
