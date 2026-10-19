@@ -10,3 +10,11 @@ Açık P0: Form/gizlilik farkı, consent/GA4, vergi/KYC/ödeme, gerçek teslim. 
 Yapılmayan: FormSubmit POST, GA4/GSC/admin paneller, canlı browser, sosyal paylaşım, gerçek alıcı yanıtı, CRM yazma, ödeme, main merge. 0 TL harcama.
 Kaynak: KAYNAKLAR_VE_SURUMLER.md. SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL.
 Gün 11 için tek öncelik: kullanıcı/hukuk ayrı onay kapısıyla FormSubmit teslimi ve GA4/consent mekanizmasını güvenli sentetik testte doğrulamak; P0 kapanmadan CTA/site/ödeme açma. <30 nitelikli ziyarette ürün başarısızlığı hükmü yok.
+
+## 19.10.2026 — kamuya dönük site ve kreatif ek devri (yalnız iç taslak)
+- Tamamen ayrı web taslak PR: https://github.com/synapseautomate/synapseautomate.github.io/pull/28; base main `fb7cbbd77abf2abe5cb0b201cec83799e9338558`. CRM devir kontrollü hizmet sayfası, ana sayfa ve hizmetler yönlendirmesi, sitemap, statik iletişim formu/FormSubmit açıklama düzeltmesi.
+- Önceki LinkedIn genel müşteri takip içeriklerinin konu tekrarı önlendi; özgün karar sorusu: **Teklif onaylandı, CRM kaydı hazır mı?**
+- LinkedIn 1080x1350 altı kare tek PDF, alt metinler ve metin taslağı üretildi; 6/6 PDF sayfa ve özgün logo QA; **SYNAPSE şirket hesabı bağlı değil** (Metricool tek marka joinkilory) — gönderim YAPILMADI.
+- GitHub Actions PR #28: **Site Integrity QA PASS; Synapse Release Preflight PASS; Day 8 Commercial SEO Quality PASS**. Kaynak/routing başarılı olması gerçek responsive Safari/HTML canlı test PASS anlamına gelmez.
+- Kullanıcı site ve LinkedIn yayını istedi; ancak gerçek canlı HTTP/tarayıcı 320–1440 testleri TEST EDİLEMEDİ, GA4/KVKK, FormSubmit gerçek teslimi ve GitHub Pages ticari hosting uygunluğu P0 açık. Bu nedenle **PR draft**, main MERGE YOK, sosyal POST YOK, aktif satış YOK.
+- LinkedIn paylaşım tarihi ve doğru admin bağlantısı kullanıcı hesabında doğrulanmalı; 0 TL peşin/soğuk mesaj yasağı sürer. Bir sonraki tek adım yetkili tarayıcı/izin ve hesap doğrulaması.
