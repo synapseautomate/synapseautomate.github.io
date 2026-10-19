@@ -24,3 +24,13 @@
 - `synapse-public-preview-no-internal` 12180681388 indirilip ZIP içeriği açıldı: 280 dosya, kritik 6 rota tamam, operasyon iç dosya 0, devri dosya 0.
 - `preflight-mobile-screenshots` artefaktı 12180139149 (6 kritik genişlik dahil gerçek staging Chromium).
 - QA A sonucu: source/paket/dependency PASS; PROD network, gerçek GA4/GSC/posta verisi TEST_EDİLEMEDİ.
+
+## Gün 10 genişletilmiş QA A — 19.10.2026
+
+PR #28 GA4 rızaya bağlı: varsayılan dış istek yok; eski first/last atıf kaydı rıza yoksa temizlenir; URL UTM e-posta benzeri girdileri boş geçer, küçük harfe normalleştirir; first touch 30 gün TTL.
+
+qa_consent_local.mjs ile consent/grant/revoke ve UTM negatif tarayıcı testleri; day1_browser_funnel.mjs ile yalnız sentetik mock POST ve 30 dakikalık pending/refresh tekrar sayım testi. Son CI PR#28 kaydı alınmalı; canlı GA4/GSC/test posta paneli TEST EDİLEMEDİ.
+
+Public web yapı süreci operasyon klasörünü, tests/scripts/.github köklerini, CONTRIBUTING.md ve RULES.md dosyalarını dışlayacak şekilde düzenlendi. Daha önce preview artifaktında RULES.md ve CONTRIBUTING.md bulundu ve taslakta düzeltildi.
+
+11 yöntem için ayrı kabul tablosu: yontem-kabul-izleme.csv. Gerçek huni dönüşüm oranı veya ROI yazılmadı.

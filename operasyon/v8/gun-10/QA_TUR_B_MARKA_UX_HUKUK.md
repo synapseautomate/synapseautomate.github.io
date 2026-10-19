@@ -25,3 +25,11 @@
 - Site PR#28 browser smoke + Lighthouse olmayan Chromium staged PASS; canlı Safari, prod HTTP, ekran okuyucu, gerçek form teslimi TEST_EDİLEMEDİ.
 - Yalnız tanıtım/analiz yönlendirmesi, checkout ve canlı CRM yok. GitHub Pages'in online iş barındırmasına ilişkin resmî risk değerlendirmesi P0 kaldı.
 - Kullanıcı site merge istemini açıkça verdi ama hukuki/platform QA engeli kapanmadan MERGE YAPILMADI; geri alma, GitHub revert/hosting rollback ile mümkündür.
+
+## Gün 10 genişletilmiş QA B — 19.10.2026
+
+Instagram 6 benzersiz 1080x1350 PNG, 1080x1920 Story ve Facebook/X 1200x675 yatay görsel; gerçek marka logosu, sentetik etiket, Türkçe/alt metin ve 8px dizilim. Kontrol edilen minimum metin kontrastı 10.37:1, 6/6 dosya boyutu PASS.
+
+Instagram ve X/Facebook/Threads resmî hesaplar/önizleme veya yayın permalink'i TEST EDİLEMEDİ; dosyalar yayımlanmadı. YouTube çalışan CRM demo kanıtı yok, fake demo üretilemez.
+
+Staging Chromium 6 viewport testi ile gerçek üretim Safari ve Lighthouse ayrı kanıttır. Canlı HTTP, form posta teslimi, uzman KVKK ve barındırma ticari uygunluk AÇIK. P0/P1 nedeniyle teknik/ticari üretim yayını PASS değildir.

@@ -48,3 +48,21 @@ Cloudflare Pages .pages.dev canlı URL'si mevcut github.io host ile aynı değil
 - Cloudflare Pages alternatifi için gerçek yeni pages.dev alanı bilinmiyor ve GitHub canonical/form _next mutlak URL'leri eşlenmeden doğrudan üretim olarak açılması uygun değil.
 - LinkedIn kullanıcı yayın beyanı devam eder; tekil LinkedIn post URL'si yok, gerçek metrik BİLİNMİYOR.
 - Instagram altı görsellik 1080x1350 taslak ZIP hazırlanmıştır; kullanıcı yayın yetkisi ve özgün kanal QA olmadan yayın yapılmadı. YouTube çalışan CRM demo yokluğu nedeniyle konsept storyboard aşamasında.
+
+## Gün 10 ek devir — 19.10.2026
+
+Site Gün 10 yayını kullanıcı tarafından açıkça onaylandı; ayrı platformlarda paylaşım isteği de bildirildi, fakat hesap admin kanıtı ve ayrı paylaşım tarihi bilinmiyor.
+
+PR #28: https://github.com/synapseautomate/synapseautomate.github.io/pull/28 ; ana sayfa, Hizmetler, CRM devir sayfası ve sitemap kaynakta hazır. Staging CI ve Chromium 320/375/390/768/1024/1440 testleri geçti. Canlı yayına alma ve üretim bağlantısı YAPILMADI.
+
+GitHub Pages online business hosting sınırı: https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits ; alternatif Cloudflare Pages ücretsiz sınırlara ilişkin kaynak: https://developers.cloudflare.com/pages/platform/limits/ . Hesap, alan adı veya kart/KYC işlemi yapılmadı.
+
+Gerçek LinkedIn paylaşımı kullanıcı beyanı var, post permalink/metrik BİLİNMİYOR ve tekrar paylaşım yapılmadı.
+
+Instagram için 6 benzersiz 1080x1350 PNG ve 1080x1920 Story, Facebook/X için 1200x675 görsel ve kanallara özgü metinler yerel pakette üretildi. YAYINLANMADI. YouTube gerçek çalışan sentetik ürün kaydı olmadığı için video YAYINLANMADI.
+
+11 yöntem dosyası, 84 kaynaklı belirsizlik kaydı, ayrı QA tablosu ve kanal kararları PR #27'de mevcut. Sıfır gerçek satış iddiası yok; trafik/gelir BİLİNMİYOR.
+
+Prod riskleri: KVKK üçüncü taraf form/GA4 uzman teyidi, FormSubmit gerçek gelen posta teslimi, ticari platform uygunluğu, resmî sosyal hesaplar ve Safari/üretim URL HTTP kontrolleri.
+
+Sonraki tek kullanıcı zorunlu adım: uygun barındırma hesabında (ör. Cloudflare Pages) kart sürprizi olmadan resmî preview yayını başlatmak ve gerçek bağlantısını vermek; kullanıcıdan parola/IBAN/kimlik isteme.
