@@ -92,6 +92,10 @@ jobs:
           test -f _site/kanit/ev-hizmetleri-talep-yonlendirme-ornek-akis.html
           test -f _site/teklif/ev-hizmetleri-surec-analizi.html
           test -f _site/teklif/e-ticaret-surec-analizi.html
+          test -f _site/cozumler/satis-talep-teklif-takibi.html
+          grep -q 'cozumler/satis-talep-teklif-takibi.html' _site/index.html
+          grep -q 'cozumler/satis-talep-teklif-takibi.html' _site/hizmetler.html
+          grep -q 'satis-talep-teklif-takibi.html' _site/sitemap.xml
           test -f _site/surec-analizi.html
           test -f _site/talep-alindi.html
           test -f _site/public-proof/workflow-benchmark-v1/benchmark_summary.csv
@@ -172,7 +176,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for route in / /kaynaklar.html /surec-analizi.html /hizmetler.html /cozumler/roofing-ev-hizmetleri.html /sitemap.xml; do
+          for route in / /kaynaklar.html /surec-analizi.html /hizmetler.html /cozumler/satis-talep-teklif-takibi.html /cozumler/roofing-ev-hizmetleri.html /sitemap.xml; do
             ok=0
             for attempt in $(seq 1 12); do
               if curl --fail --silent --show-error --max-time 15 "https://synapseautomate.github.io$route" > /tmp/synapse-live-page.html; then
