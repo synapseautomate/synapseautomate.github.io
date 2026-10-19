@@ -52,8 +52,15 @@ jobs:
             --exclude '*.zip' \
             --exclude '*.sha256' \
             --exclude '*.py' \
+            --exclude 'RULES.md' \
+            --exclude 'CONTRIBUTING.md' \
             --exclude 'README*.md' \
             --exclude 'DEPLOYMENT.md'
+          ! test -e _site/RULES.md
+          ! test -e _site/CONTRIBUTING.md
+          ! test -e _site/operasyon
+          ! test -e _site/scripts
+          ! test -e _site/.github
           python scripts/day28_release_gate.py --artifact _site
 
       - name: Mobile visual and local media QA
