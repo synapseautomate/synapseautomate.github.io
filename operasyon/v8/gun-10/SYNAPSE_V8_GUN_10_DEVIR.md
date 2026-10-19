@@ -40,3 +40,11 @@
 
 ## Ek dağıtım riski: canonical ve FormSubmit yönü
 Cloudflare Pages .pages.dev canlı URL'si mevcut github.io host ile aynı değildir. Canonical/sitemap/OG/JSON-LD/form `_next` mutlak adresleri yeniden eşlenmeden alternatif barındırmayı kamuya açma. 280 dosyalık staging ZIP *production host-agnostic* değildir.
+
+## 19.10.2026 — son CI QA sürümü
+- PR#28 son denetlenen SHA: `4f585312efa0f23c77275d3c17c3c691ca87d5ff`; aynı SHA'da üç GitHub Actions sonuç SUCCESS: https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39240230043.
+- Yeni consent ve negatif veri minimizasyonu testi başarılı; staging kaynak QA 3/3, yayın/üretim hesabı ve canlı URL statüsü değişmedi.
+- Web kamu staging artefaktı `synapse-public-preview-no-internal` id `12181121810`, kamu dosyalarını arşivlemek için indirildi; gerçek kullanıcıya gönderilmiş site veya canlı dağıtım değildir.
+- Cloudflare Pages alternatifi için gerçek yeni pages.dev alanı bilinmiyor ve GitHub canonical/form _next mutlak URL'leri eşlenmeden doğrudan üretim olarak açılması uygun değil.
+- LinkedIn kullanıcı yayın beyanı devam eder; tekil LinkedIn post URL'si yok, gerçek metrik BİLİNMİYOR.
+- Instagram altı görsellik 1080x1350 taslak ZIP hazırlanmıştır; kullanıcı yayın yetkisi ve özgün kanal QA olmadan yayın yapılmadı. YouTube çalışan CRM demo yokluğu nedeniyle konsept storyboard aşamasında.
