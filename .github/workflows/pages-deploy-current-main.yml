@@ -73,6 +73,8 @@ jobs:
             --exclude '*.zip' \
             --exclude '*.sha256' \
             --exclude '*.py' \
+            --exclude 'RULES.md' \
+            --exclude 'CONTRIBUTING.md' \
             --exclude 'README*.md' \
             --exclude 'DEPLOYMENT.md'
 
@@ -106,6 +108,8 @@ jobs:
 
           # Explicitly exclude private operational source paths from publicly served files.
           ! test -e _site/operasyon
+          ! test -e _site/RULES.md
+          ! test -e _site/CONTRIBUTING.md
           ! test -e _site/tests
           ! test -e _site/node_modules
           ! test -e _site/.github
