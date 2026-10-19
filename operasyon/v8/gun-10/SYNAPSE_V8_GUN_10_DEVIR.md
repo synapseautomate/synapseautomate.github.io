@@ -1,26 +1,30 @@
-# SYNAPSE V8 GÜN10 / sıfır bağlamlı tam devir
-Fiili tarih 2026-10-18, plan tarihi 2026-10-23 (5 gün erken; gün numarası 10 korundu).
-Repo https://github.com/synapseautomate/synapseautomate.github.io; main SHA fb7cbbd77abf2abe5cb0b201cec83799e9338558; PR #26 merged, #24 draft açık. Önceki Gün01–08 devirleri #14–18/#22/#24 draft dallarında okundu; Gün09 tam devir yok.
-Gün08 son taslak devir: Upwork hesap/katalog kapsam dışı; LinkedIn önceki postu kullanıcı beyanı; canlı permalink/metrik bilinmiyor.
-Gün10 hizmet konusu satış-müşteri talebi-teklif takibi; takip sahibinin insan devri. Kaynak hizmetler.html ve cozumler/musteri-talebi-surec-analizi.html; gerçek CRM entegrasyon/demo/müşteri kanıtı yok.
-Form: surec-analizi.html HTML FormSubmit POST; iletisim.html JS ile action; app-v33.js; talep-alindi.html yalnız process_analysis pending+query generate_lead; gizlilik metni mailto çelişiyor P0. GA4 G-HQSRRJ5HMZ, localStorage first/last, asset_view/lead_form_submit/generate_lead; consent P0.
-Gösterim, nitelikli ziyaret, CTA, demo, inbound, teklif, fonlanan sipariş, tahsilat, iade ve net gelir BİLİNMİYOR; gerçek form POST testi 0 adet, sistem başarısı değil. İç envanter 5 belirsiz kanal. Tek darboğaz güvenilir panel ve teslim kanıtının yokluğu.
-Dosyalar: huni CSV, KPI CSV, 11 yöntem, form Mermaid, olay sözlüğü, negatif QA CSV, 2 QA turu, P0/P1 ve onay kapıları, kavramsal sentetik satış örneği. Yerel kapsamlı paket ayrıca SVG ve 6 statik preview render sağlar.
-Açık P0: Form/gizlilik farkı, consent/GA4, vergi/KYC/ödeme, gerçek teslim. P1: UTM/retention, gerçek mobil/HTTP, teşekkür metni. Teknik yayın HAYIR, ticari yayın HAYIR.
-Yapılmayan: FormSubmit POST, GA4/GSC/admin paneller, canlı browser, sosyal paylaşım, gerçek alıcı yanıtı, CRM yazma, ödeme, main merge. 0 TL harcama.
-Kaynak: KAYNAKLAR_VE_SURUMLER.md. SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL.
-Gün 11 için tek öncelik: kullanıcı/hukuk ayrı onay kapısıyla FormSubmit teslimi ve GA4/consent mekanizmasını güvenli sentetik testte doğrulamak; P0 kapanmadan CTA/site/ödeme açma. <30 nitelikli ziyarette ürün başarısızlığı hükmü yok.
-
-## 19.10.2026 — kamuya dönük site ve kreatif ek devri (yalnız iç taslak)
-- Tamamen ayrı web taslak PR: https://github.com/synapseautomate/synapseautomate.github.io/pull/28; base main `fb7cbbd77abf2abe5cb0b201cec83799e9338558`. CRM devir kontrollü hizmet sayfası, ana sayfa ve hizmetler yönlendirmesi, sitemap, statik iletişim formu/FormSubmit açıklama düzeltmesi.
-- Önceki LinkedIn genel müşteri takip içeriklerinin konu tekrarı önlendi; özgün karar sorusu: **Teklif onaylandı, CRM kaydı hazır mı?**
-- LinkedIn 1080x1350 altı kare tek PDF, alt metinler ve metin taslağı üretildi; 6/6 PDF sayfa ve özgün logo QA; **SYNAPSE şirket hesabı bağlı değil** (Metricool tek marka joinkilory) — gönderim YAPILMADI.
-- GitHub Actions PR #28: **Site Integrity QA PASS; Synapse Release Preflight PASS; Day 8 Commercial SEO Quality PASS**. Kaynak/routing başarılı olması gerçek responsive Safari/HTML canlı test PASS anlamına gelmez.
-- Kullanıcı site ve LinkedIn yayını istedi; ancak gerçek canlı HTTP/tarayıcı 320–1440 testleri TEST EDİLEMEDİ, GA4/KVKK, FormSubmit gerçek teslimi ve GitHub Pages ticari hosting uygunluğu P0 açık. Bu nedenle **PR draft**, main MERGE YOK, sosyal POST YOK, aktif satış YOK.
-- LinkedIn paylaşım tarihi ve doğru admin bağlantısı kullanıcı hesabında doğrulanmalı; 0 TL peşin/soğuk mesaj yasağı sürer. Bir sonraki tek adım yetkili tarayıcı/izin ve hesap doğrulaması.
-
-## Sonradan doğrulanan gerçek görsel QA / 19.10.2026
-- [PR #28 staging Chromium GitHub Actions](https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39230568739) `status: PASS`, toplam `tested: 26`, `issues: []`.
-- Yeni CRM devir sayfası staged HTTP'de gerçek Playwright ile **320 / 375 / 390 / 768 / 1024 / 1440 px** ekran görüntüsü, overflow, yerel görsel, H1/canonical, CTA minimum dokunma alanı ve içerik kutusu taşması negatif testleri **PASS**. Ekran kanıtı Actions artefaktı `preflight-mobile-screenshots`.
-- Ana sayfanın 390px staged screenshot'u yeni doğrudan CRM devir kartını gösteriyor. Site Integrity, Day8 SEO ve Release Preflight kontrolü **PASS**.
-- **Ayrım:** Staging Chromium PASS, üretim URL/Safari/Lighthouse/KVKK/FormSubmit gerçek teslimi PASS değildir. Canlı yayına alınmadı; LinkedIn SYNAPSE şirket admin erişimi doğrulanmadı.
+# SYNAPSE V8 Gün10 — sıfır bağlamlı tam son devir
+**19.10.2026 fiilî çalışma; 23.10.2026 PDF planı (4 gün erken, numara Gün 10 korundu).**
+## Repo ve dış yetkiler
+- Repo: https://github.com/synapseautomate/synapseautomate.github.io; main baz fb7cbbd77abf2abe5cb0b201cec83799e9338558 (en son kontrol).
+- İç dosya draft PR#27: https://github.com/synapseautomate/synapseautomate.github.io/pull/27
+- Kamu web draft PR#28: https://github.com/synapseautomate/synapseautomate.github.io/pull/28; head be2b2b040f95aeba64d2229984d09eff992a77ab; GitHub Actions 3/3 PASS, https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39237109324
+- Kullanıcı CRM sayfası, homepage, hizmetler, sitemap değişimi için onay verdi; ancak GitHub Pages ticari barındırma P0, gerçek FormSubmit inbox/KVKK hukuk onayı ve production QA beklemede; main MERGE YOK ve CANLI YAYIN YOK.
+- Gün08 son devri Upwork kapsam dışı. 01–08 dokunulmadı; Gün09 tam devir bulunamadı, PR#26 merged.
+## Kanıtlanmış konu ve artefakt
+- Gün10: satış, müşteri talebi, teklif sonrası takip ve CRM devir sahipliği. Tek alıcı rolü satış operasyon yöneticisi. Kaynak site hizmetler.html ve cozumler/musteri-talebi-surec-analizi.html.
+- Gerçek CRM entegrasyonu/çalışan dashboard/gerçek müşteri/ROI iddiası YOK; bütün görseller sentetik-kavramsal ve etiketli.
+- Yeni SEO landing route: cozumler/satis-talep-teklif-takibi.html; ana sayfa + Hizmetler + sitemap dallar arası link PR#28.
+- İletişim formu JS-off HTML POST fallback, gizlilik metni ve teşekkür yönlendirme 'gerçek teslim kanıtı değil' açıklaması PR#28'de düzeltildi.
+- Measurement PR#28: GA4 G-HQSRRJ5HMZ opt-in consent sonrası script, localStorage yalnız onayda, UTM normalization; kaydetme/takip hukuki uygunluğu henüz tasdik edilmedi.
+- Kaynak URL'leri: KAYNAKLAR_VE_SURUMLER.md. 11 ayrı yöntem: 060/067/068/144/147/148/229/230/231/232/236; kabul izi: yontem-kabul-izleme.csv.
+## Sosyal medya statüsü
+- LinkedIn: kullanıcı 'paylaştım' diye bildirdi (19.10.2026); permalink, yayının saati, gösterim, inbound, satış BİLİNMİYOR. Aynı postu tekrar göndermek YOK.
+- Instagram, YouTube, Facebook/X/Threads: bugünün özgün medya/gerçek hesap/çalışan demo kanıtı yok; paylaşım, planlama veya hesap değişimi yapılmadı. Yazılı storyboard taslakları dosyalarda.
+## QA ve ölçüm
+- QA A: staged CI 3/3 PASS; 6 ekran Chromium, 26 route/viewport gözlemi, onamsız → opt-in → revoke negatif test, sentetik FormSubmit mock ve çift sayım kontrolü.
+- QA B: asgari mobil/klavye hedefi ve marka metni PASS; canlı Safari, production HTTP, Lighthouse, GA4/GSC gerçek panel, alıcı posta kutusu ve KVKK hukuk TEST_EDİLEMEDİ.
+- Kaynaklı huni 6×14 = 84 kayıt. Gerçek ilgili ziyaret, gönüllü nitelikli talep, onaylı teklif, fonlu iş, tahsilat, iade, net gelir BİLİNMİYOR. Bu çalışmada gerçek FormSubmit POST test eylemi 0; trafik/satış 0 değil.
+- UTM ve double counting testleri yalnız staged/sentetik. <30 nitelikli ziyarette ürün başarısızlığı hükmü çıkarılmayacak.
+## Açık kusurlar ve tek sonraki adım
+- P0 hukuki: GitHub Pages ticari barındırma resmi uygunluk kararı; KVKK aydınlatma ve veri aktarımı; FormSubmit gerçek teslim; vergi/fatura/KYC ödeme.
+- P1: canlı Safari ve gerçek prod link/perf/hata ekran; analitik veri tutma süresi/hukuki rapor; marka hesap/admin doğrulama.
+- Teknik taslak CI GEÇTİ; ticari/canlı üretim YAYINA HAZIR HAYIR. Peşin 0 TL.
+- **Ertesi tek öncelik:** Hesap sahibinin resmî panelde uygun barındırma (ör. Cloudflare Pages statik) ve veri-hukuk/test yetkisini çözmesiyle, aynı PR#28 önizlemesini canlı doğru platformda üretim dışı test et; P0 kapanınca onaylı deployment, HTTP/GA4/sosyal URL arşivle.
+## Yapılmayanlar
+- main merge, canlı site dağıtımı, hesap açma, ücretli işlem, FormSubmit gerçek posta, gerçek müşteri DM, Instagram/YouTube diğer platform postları ve ödeme yapılmadı.
