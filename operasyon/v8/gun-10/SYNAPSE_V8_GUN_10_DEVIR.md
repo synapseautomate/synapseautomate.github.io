@@ -37,3 +37,6 @@
 - Instagram hazır 1080×1350 6 görselin ayrı paket kopyası yerelde; mevcut sentetik kaynak görselleri kullanır, yeni resmî gönderi/yeni müşteri demosu değildir; Instagram/Youtube/Facebook/Threads/X postları yapılmadı.
 - Gerçek kullanıcı onayının kapsamı: site güncellemesi ve ek kanallar için çalışma; fakat hesaplara fiilen bağlanma/yayın tarihi, veri aktarımları, resmî barındırma/uyum kapıları ayrıca doğrulanır.
 - Gün 10 son karar: staged teknik kaynak GEÇTİ, gerçek üretim sitesi ve sosyal diğer kanallar hâlâ YAYINLANMADI. Satışa açık / tahsilat var iddiası YOK.
+
+## Ek dağıtım riski: canonical ve FormSubmit yönü
+Cloudflare Pages .pages.dev canlı URL'si mevcut github.io host ile aynı değildir. Canonical/sitemap/OG/JSON-LD/form `_next` mutlak adresleri yeniden eşlenmeden alternatif barındırmayı kamuya açma. 280 dosyalık staging ZIP *production host-agnostic* değildir.
