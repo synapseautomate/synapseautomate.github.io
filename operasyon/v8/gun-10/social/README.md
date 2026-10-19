@@ -32,3 +32,12 @@ Bu klasör **iç QA** dosyasıdır; sosyal platforma otomatik yayın yapmaz.
 - Ses/müzik: yok; son QA'da altyazı/sessiz oynatma ve gerçek platform küçük önizlemesi ayrıca kontrol edilmeli.
 
 **Yayın yetkisi:** Kullanıcı Instagram ve YouTube hazırlığını istedi. Üretim/yükleme burada yalnız taslak, gerçek hesap postu yayınlanmadı. Her iki platformun ayrı kanala özel yayın kontrolü şarttır.
+
+## 19.10.2026 — gerçek çıktılar ve son yerel QA
+- Ayrı GitHub Actions medya QA çalışması **PASS**: https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39263203148 (Instagram kaynak logo + sentetik karusel / gerçek arayüz checkbox testi 0→100).
+- Nihai yerel dağıtım paketi: `SYNAPSE_IG_STORY_YOUTUBE_YAYIN_TASLAKLARI_FINAL.zip` (platforma yüklenmedi; çalışma oturumu teslimi, GitHub'da public asset değildir). İçerik: 6×1080×1350 Instagram PNG, 2×1080×1920 Story PNG, 1280×720 thumbnail, 1920×1080 / 30.447s H.264 sessiz YouTube video, isteğe bağlı Türkçe SRT, kapak açıklaması/alt metinler/iki QA turu.
+- Nihai video CI'nın gerçek web aracı ekran kaydına 3.5 saniye giriş ve 6 saniye açıklayıcı kapanış eklenerek üretildi; gerçek Chromium skor serisi 15/30/45/60/75/85/95/100; kayıtta hiçbir gerçek müşteri veya CRM entegrasyonu yok.
+- Yerel ikinci QA: kaynak logo, benzersiz dosya hash'leri, PNG boyutu, okunur kontrast paleti ve sahne örnekleri; Story üst UI bölgesi ile alt açıklama bölgesinin çakışma riski azaltıldı. Instagram/YouTube **canlı uygulama kırpma ve yayım testi** yapılmadı.
+- PR #29 üzerindeki *genel site* CI kontrolleri bu bağımsız medya QA'dan ayrıdır ve en son sorguda başarısızdı. Medya QA PASS, tüm repo/site QA PASS değildir.
+- Kullanıcı X'teki ilk gönderiyi yayımladığını belirtti, gerçek X permalink/analitik bilinmiyor. Instagram ve YouTube henüz kullanıcı tarafından yayımlanmadı.
+- Başlık/açıklama taslakları insanın hesabından paylaşması içindir; onaysız otomatik post, DM, ücretli reklam veya abonelik yok.
