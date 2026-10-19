@@ -18,3 +18,9 @@
 ## Kanıtlı hata giderimi
 - İlk Release Preflight başarısızlığı: eski sentetik test, izinsiz `generate_lead` istiyordu; event üretimi consent kapısı arkasında doğru olduğu için test opt-in ile yenilendi ve en son CI PASS.
 - Bu QA, formun gerçekten teslim edildiğini veya KVKK açısından uygun olduğunu söylemez.
+
+## Son CI artefakt kanıtı / 19.10.2026
+- Web PR#28 commit `16a5b533dda256963877c1226d76be1a2dad7d92`; üç GitHub Actions: Site Integrity PASS / Day8 SEO Quality PASS / Release Preflight PASS. https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39239458222
+- `synapse-public-preview-no-internal` 12180681388 indirilip ZIP içeriği açıldı: 280 dosya, kritik 6 rota tamam, operasyon iç dosya 0, devri dosya 0.
+- `preflight-mobile-screenshots` artefaktı 12180139149 (6 kritik genişlik dahil gerçek staging Chromium).
+- QA A sonucu: source/paket/dependency PASS; PROD network, gerçek GA4/GSC/posta verisi TEST_EDİLEMEDİ.
