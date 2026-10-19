@@ -45,6 +45,18 @@ try{
    output.push({name:filename,width,height,sha256:crypto.createHash('sha256').update(buffer).digest('hex'),clippedElements:0});
    await page.close();
  }
+  // YouTube thumbnail: genuine tool label, no fake dashboard or metrics.
+  const thumb=await browser.newPage({viewport:{width:1280,height:720},deviceScaleFactor:1});
+  const thumbHtml=fs.readFileSync('operasyon/v8/gun-10/social/yt-thumb-template.html','utf8').replaceAll('__LOGO__',logo);
+  await thumb.setContent(thumbHtml,{waitUntil:'load'});
+  await thumb.locator('.logo').evaluate(el=>el.decode());
+  const coverFile='SYNAPSE_YOUTUBE_KAPAK_1280x720.png';
+  const coverPath=path.join(dir,coverFile);
+  await thumb.locator('.cover').screenshot({path:coverPath,animations:'disabled'});
+  const coverBuf=fs.readFileSync(coverPath);
+  if(coverBuf.readUInt32BE(16)!==1280||coverBuf.readUInt32BE(20)!==720)throw Error('Invalid thumbnail size');
+  output.push({name:coverFile,width:1280,height:720,sha256:crypto.createHash('sha256').update(coverBuf).digest('hex'),clippedElements:0});
+  await thumb.close();
 }finally{await browser.close()}
 fs.writeFileSync(path.join(dir,'IG_STORY_QA.json'),JSON.stringify({result:'PASS',screens:output,officialLogo:'assets/brand/synapse-logo-clean.png',creativeSource:'conceptual original; not a working CRM dashboard'},null,2));
 fs.writeFileSync(path.join(dir,'ALT_METINLER.txt'),slides.map((x,i)=>String(i+1)+'. '+x[1].join(' ')+' — '+x[2]+' SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL').join('\n')+'\nStory: Dört soruyla gönüllü talebin değerlendirilebilirliği; sentetik çerçeve.\n');
