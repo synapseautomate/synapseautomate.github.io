@@ -66,3 +66,31 @@ Instagram için 6 benzersiz 1080x1350 PNG ve 1080x1920 Story, Facebook/X için 1
 Prod riskleri: KVKK üçüncü taraf form/GA4 uzman teyidi, FormSubmit gerçek gelen posta teslimi, ticari platform uygunluğu, resmî sosyal hesaplar ve Safari/üretim URL HTTP kontrolleri.
 
 Sonraki tek kullanıcı zorunlu adım: uygun barındırma hesabında (ör. Cloudflare Pages) kart sürprizi olmadan resmî preview yayını başlatmak ve gerçek bağlantısını vermek; kullanıcıdan parola/IBAN/kimlik isteme.
+
+
+## KAPANIŞ KAYDI — 19.10.2026 — HESAP SAHİBİ "GÜN 10 CLOSED"
+
+**Operasyon kararı:** Hesap sahibi tüm hazırlanan sosyal gönderileri yayımladığını ve "Gün 10 closed" kararını verdi. Bu kayıt, önceki "yayınlanmadı" gözlemlerinden **sonradır** ve sosyal statü için onları günceller. Tekil gönderi URL'si ve sosyal platform panel istatistiği sağlanmadığından bağımsız **yayın doğrulaması yapılmadı**. Hesap sahibinin beyanı ile dış kanıt kesinlikle karıştırılmaz.
+
+| Kanal | Kapanış statüsü | Kanıt düzeyi |
+|---|---|---|
+| LinkedIn Company Page karusel | Hesap sahibi yayımladığını bildirdi | Gönderi permalink / analytics BİLİNMİYOR |
+| Facebook kurumsal gönderi | Hesap sahibi yayımladığını bildirdi | Gönderi permalink / analytics BİLİNMİYOR |
+| Threads ilk gönderi | Hesap sahibi yayımladığını bildirdi | Gönderi permalink / analytics BİLİNMİYOR |
+| X ilk görselli gönderi | Hesap sahibi yayımladığını bildirdi | Gönderi permalink / analytics BİLİNMİYOR |
+| Instagram 6 sayfa karusel | Hesap sahibi yayımladığını bildirdi | Gönderi permalink / analytics BİLİNMİYOR |
+| Instagram Story 01/02 | Hesap sahibi yayımladığını bildirdi | Story URL / arşiv / analytics BİLİNMİYOR |
+| YouTube gerçek hazırlık skoru kaydı | Hesap sahibi yayımladığını bildirdi | Video URL / YouTube Studio ölçümü BİLİNMİYOR |
+
+**Yinelenen sosyal yayın YOK:** Kullanıcı zaten paylaştığını söyledi; platformlara tekrar gönderme, repost, otomatik gönderim veya takvim planlama yapılmaz. Gerçek gösterim, tıklama, nitelikli ziyaret, demo, gönderim girişimi, teyitli inbound, nitelikli lead, izinli teklif, fonlu sipariş, tahsilat ve net gelir ayrı tutulur; gerçek panel kaynağı yoksa **BİLİNMİYOR**.
+
+**Site/GitHub statüsü, sosyal kapanıştan BAĞIMSIZ:** `main` son doğrulanan SHA `fb7cbbd77abf2abe5cb0b201cec83799e9338558`. [PR #27](https://github.com/synapseautomate/synapseautomate.github.io/pull/27) iç QA/devir, [PR #28](https://github.com/synapseautomate/synapseautomate.github.io/pull/28) CRM premium sayfa + ana sayfa/Hizmetler/sitemap, [PR #29](https://github.com/synapseautomate/synapseautomate.github.io/pull/29) Instagram/Story/YouTube üretimi; üçü de DRAFT ve merge edilmemiştir. Kullanıcı Cloudflare testini başarıyla deploy ettiğini gösterdi, **kalıcı web sitesi için GitHub üzerinden devam etme kararı aldı**. Cloudflare test URL'si üretim sitesi sayılmaz.
+
+**Açık kapılar devrediliyor, kapatılmıyor:**
+- P0: GitHub Pages üzerinde mevcut ticari site kullanımına ilişkin uygunluk kararı; KVKK/çerez-rıza ve FormSubmit üçüncü taraf gerçek alım/teslim; vergi/fatura/KYC/ödeme iddiası.
+- P1 veya TEST EDİLEMEDİ: yeni CRM sayfasının gerçek `main`/canlı URL'ye geçmesi ve Safari/HTTP/UX doğrulaması, gerçek GA4/GSC/Sosyal analytics, YouTube/Instagram mobil uygulama önizleme QA.
+- Medya için bağımsız CI PASS: https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39263203148; PR #29 genel site QA hata statüsü medya PASS anlamına getirilmez. PR #28 staged QA PASS, production/site P0 kapatmaz.
+
+**Kapanış sınıflandırması:** `OWNER_CLOSED_SOCIAL_DELIVERABLES`, **`OVERALL_TECHNICAL_COMMERCIAL_CLOSURE=NOT_VERIFIED / DEFERRED`**. Gün 10 tekrar açılmaz veya numarası değiştirilmez; kalan doğrulama/hukuk/teknik riskler bir sonraki günün eksik işleri olarak taşınır. Plan günü 23.10.2026 iken bu oturumun fiili tarihi 19.10.2026 (4 gün erken) olarak kalır.
+
+**Gün 11'in tek önceliği:** Üretime/satışa geçmiş gibi davranmadan GitHub main, web P0 ve gerçek ölçüm sahiplik/kanıt durumunu doğrulayarak dar kapsamlı yayın-güvenlik kararını almak. Sosyal post tekrarı veya rakam uydurma YOK.
