@@ -1,0 +1,46 @@
+name: SYNAPSE V8 Instagram and Real YouTube Tool QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/v8_gun10_social_render.mjs'
+      - 'scripts/v8_gun10_youtube_tool_capture.mjs'
+      - 'operasyon/v8/gun-10/social/**'
+      - '.github/workflows/v8-gun10-social-media.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install official browser automation
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Render actual graphic files and record a functional site tool
+        shell: bash
+        run: |
+          set -euo pipefail
+          export SYNAPSE_MEDIA_DIR=/tmp/synapse-social-v8-g10
+          node scripts/v8_gun10_social_render.mjs
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/synapse-video-test-http.log 2>&1 &
+          sleep 3
+          node scripts/v8_gun10_youtube_tool_capture.mjs
+          command -v ffmpeg
+          ffmpeg -hide_banner -loglevel error -y -i "$SYNAPSE_MEDIA_DIR/SYNAPSE_GERCEK_ARAC_SENTETIK_KAYIT.webm" -c:v libx264 -pix_fmt yuv420p -movflags +faststart -crf 23 "$SYNAPSE_MEDIA_DIR/SYNAPSE_YOUTUBE_GERCEK_ARAC_1920x1080.mp4"
+          ffprobe -v error -show_entries stream=codec_name,width,height -of csv=p=0 "$SYNAPSE_MEDIA_DIR/SYNAPSE_YOUTUBE_GERCEK_ARAC_1920x1080.mp4"
+          test -s "$SYNAPSE_MEDIA_DIR/SYNAPSE_YOUTUBE_GERCEK_ARAC_1920x1080.mp4"
+      - name: Upload QA render package (private to this draft PR)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: SYNAPSE-Instagram-Story-YouTube-Genuine-Tool
+          path: /tmp/synapse-social-v8-g10/
+          if-no-files-found: error
+          retention-days: 30
