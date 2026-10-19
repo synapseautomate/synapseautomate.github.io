@@ -46,11 +46,21 @@ jobs:
             --exclude '__pycache__/' \
             --exclude 'scripts/' \
             --exclude 'docs/' \
+            --exclude 'operasyon/' \
+            --exclude 'tests/' \
+            --exclude 'node_modules/' \
             --exclude '*.zip' \
             --exclude '*.sha256' \
             --exclude '*.py' \
+            --exclude 'RULES.md' \
+            --exclude 'CONTRIBUTING.md' \
             --exclude 'README*.md' \
             --exclude 'DEPLOYMENT.md'
+          ! test -e _site/RULES.md
+          ! test -e _site/CONTRIBUTING.md
+          ! test -e _site/operasyon
+          ! test -e _site/scripts
+          ! test -e _site/.github
           python scripts/day28_release_gate.py --artifact _site
 
       - name: Mobile visual and local media QA
@@ -63,6 +73,16 @@ jobs:
           sleep 3
           node scripts/day28_browser_smoke.mjs
           node scripts/day1_browser_funnel.mjs
+          node scripts/qa_consent_local.mjs
+
+      - name: Upload static public preview artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synapse-public-preview-no-internal
+          path: _site/
+          if-no-files-found: error
+          include-hidden-files: false
 
       - name: Upload mobile QA captures
         if: always()

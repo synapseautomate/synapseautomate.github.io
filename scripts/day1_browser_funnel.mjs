@@ -17,6 +17,15 @@ try {
   await page.goto(base+'/talep-alindi.html?submitted=process_analysis',{waitUntil:'networkidle'});
   let events=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('__day1_test_events')||'[]'));
   expect(events.filter(x=>x==='generate_lead').length===0,'Direct thank-you visit generated a false lead');
+  // An explicitly granted consent is now mandatory for analytics events.
+  // The first direct visit must be safe without consent; exercise opt-in before synthetic form route.
+  await page.getByRole('button',{name:'İzin ver'}).click();
+  await page.waitForLoadState('networkidle');
+  const consent=await page.evaluate(()=>localStorage.getItem('synapse_analytics_consent_v1'));
+  expect(consent==='granted','Expected an explicit opt-in before measuring synthetic lead');
+  await page.goto(base+'/talep-alindi.html?submitted=process_analysis',{waitUntil:'domcontentloaded'});
+  events=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('__day1_test_events')||'[]'));
+  expect(events.filter(x=>x==='generate_lead').length===0,'Opted-in direct thank-you visit created a false lead');
   for(const path of ['/sektorler/e-ticaret.html','/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html','/urunler.html']) {
     await page.goto(base+path,{waitUntil:'domcontentloaded'});
     const anchor=page.locator('a[href*="teklif/e-ticaret-surec-analizi.html"]').first();

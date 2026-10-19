@@ -17,8 +17,8 @@ if(form){
   addHidden('_honey','');
   const honey=form.querySelector('input[name="_honey"]');if(honey)honey.style.display='none';
   const submit=form.querySelector('button[type="submit"]');if(submit)submit.textContent='Talebi Gönder';
-  const note=submit&&submit.parentElement?submit.parentElement.querySelector('small'):null;if(note)note.textContent='Talebiniz doğrudan Synapse Automate ekibine iletilir. Ücretli çalışma yalnız kapsam ve ticari koşullar açıkça onaylandıktan sonra başlar.';
-  const consent=form.querySelector('.consent label');if(consent){const link=consent.querySelector('a');consent.childNodes.forEach(n=>{if(n.nodeType===Node.TEXT_NODE)n.textContent=' Bu bilgilerin iletişim talebimin yanıtlanması amacıyla iletilmesini onaylıyorum. ';});if(link){consent.appendChild(link);consent.appendChild(document.createTextNode('.'));}}
+  const note=submit&&submit.parentElement?submit.parentElement.querySelector('small'):null;if(note)note.textContent='Gönderim üçüncü taraf FormSubmit aracılığıyla yapılır. Talebin gerçekten teslimi ayrıca doğrulanır; ücretli çalışma yalnız kapsam ve ticari koşullar onaylandıktan sonra başlar.';
+  const consent=form.querySelector('.consent label');if(consent){const link=consent.querySelector('a');consent.childNodes.forEach(n=>{if(n.nodeType===Node.TEXT_NODE)n.textContent=' Talebimin yanıtlanması için bilgilerin üçüncü taraf FormSubmit üzerinden iletilmesini onaylıyorum. ';});if(link){consent.appendChild(link);consent.appendChild(document.createTextNode('.'));}}
 }
 const canvas=document.querySelector('#hero-canvas');
 if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
