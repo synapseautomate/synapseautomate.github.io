@@ -28,3 +28,12 @@
 - **Ertesi tek öncelik:** Hesap sahibinin resmî panelde uygun barındırma (ör. Cloudflare Pages statik) ve veri-hukuk/test yetkisini çözmesiyle, aynı PR#28 önizlemesini canlı doğru platformda üretim dışı test et; P0 kapanınca onaylı deployment, HTTP/GA4/sosyal URL arşivle.
 ## Yapılmayanlar
 - main merge, canlı site dağıtımı, hesap açma, ücretli işlem, FormSubmit gerçek posta, gerçek müşteri DM, Instagram/YouTube diğer platform postları ve ödeme yapılmadı.
+
+## Nihai ek QA / 19.10.2026 saatlik kaynak güncellemesi
+- Web PR#28 son doğrulanan head: `16a5b533dda256963877c1226d76be1a2dad7d92`; GitHub Actions üç kontrolün üçü de başarılı: https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39239458222.
+- Gerçek Chromium altı kritik genişlik staged PASS; consent opt-in, kullanıcı reddi/geri çekme ve sentetik mock lead CI PASS; gerçek canlı inbox/GA4 panel/SEO verisi hâlâ BİLİNMİYOR.
+- Yayın için GitHub Actions `synapse-public-preview-no-internal` artefaktı oluşturuldu (artifact 12180681388); konteynere indirilmiş statik ZIP yeniden incelendi: 280 dosya, index/hizmetler/CRM/sitemap ve measurement var, operasyon ve devir klasörü yok.
+- GitHub Pages dağıtım workflow PR#28'de `operasyon`, `tests`, `docs`, `.github` dışarıda tutan güvenlik kapısıyla güncellendi; **main merge yok, canlı URL yayımlanmadı**.
+- Instagram hazır 1080×1350 6 görselin ayrı paket kopyası yerelde; mevcut sentetik kaynak görselleri kullanır, yeni resmî gönderi/yeni müşteri demosu değildir; Instagram/Youtube/Facebook/Threads/X postları yapılmadı.
+- Gerçek kullanıcı onayının kapsamı: site güncellemesi ve ek kanallar için çalışma; fakat hesaplara fiilen bağlanma/yayın tarihi, veri aktarımları, resmî barındırma/uyum kapıları ayrıca doğrulanır.
+- Gün 10 son karar: staged teknik kaynak GEÇTİ, gerçek üretim sitesi ve sosyal diğer kanallar hâlâ YAYINLANMADI. Satışa açık / tahsilat var iddiası YOK.
