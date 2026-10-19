@@ -63,6 +63,7 @@ jobs:
           sleep 3
           node scripts/day28_browser_smoke.mjs
           node scripts/day1_browser_funnel.mjs
+          node scripts/qa_consent_local.mjs
 
       - name: Upload mobile QA captures
         if: always()
