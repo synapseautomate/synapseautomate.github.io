@@ -100,3 +100,10 @@ Sonraki tek kullanıcı zorunlu adım: uygun barındırma hesabında (ör. Cloud
 - Gerçek Pages workflow: https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39272522492 **SUCCESS**, staged Chromium/QA ve GitHub Runner üzerinde HTTP `/`, `/kaynaklar.html`, `/surec-analizi.html`, `/hizmetler.html`, `/cozumler/roofing-ev-hizmetleri.html`, `/sitemap.xml` **PASS**.
 - **Yayımlanmayanlar:** premium CRM sayfası ve homepage/Hizmetler bağlantıları PR #28'de kalıyor; Gün10 iç dosyaları PR #27 draft; sosyal medya üretimi PR #29 draft. Yasal/hosting GitHub Pages ticari kullanım P0, KVKK uzman/doğrulanmış FormSubmit teslimi P0, satış/KYC P0 açık. Yayınla ilgili açık kullanıcı talebi bu koşulların hukuki onayını ispatlamaz.
 - Canlı kök: https://synapseautomate.github.io/ . Site URL'leri için canlı HTTP 200 kanıtı Actions logudur; üretim gerçek form iletimi ve GA4 panel kanıtı değildir.
+
+## Ek yayın sonucu — 19.10.2026 / PR #31
+- Kullanıcının CRM devir bilgilendirme sayfası, ana sayfa/Hizmetler görünür bağlantısı ve sitemap yayın isteği yerine getirildi. PR https://github.com/synapseautomate/synapseautomate.github.io/pull/31 MERGED, `main` SHA `cfbcd0c4bb9c084771b9562291b52a95a2c2c339`.
+- Yeni canlı bilgi sayfası: https://synapseautomate.github.io/cozumler/satis-talep-teklif-takibi.html ; ana sayfa: https://synapseautomate.github.io/ ; Hizmetler: https://synapseautomate.github.io/hizmetler.html .
+- Kanıt: https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39273931721 SUCCESS, post-publish HTTP 200 `/`, `/hizmetler.html`, `/cozumler/satis-talep-teklif-takibi.html`, `/sitemap.xml`; Chromium yeni sayfa 320/375/390/768/1024/1440 ve site integrity/SEO PASS.
+- Kamuya yalnız bilgilendirme sayfası/sentetik süreç açıklaması ve site içi bağlantılar gitti; fiyat, ödeme/checkout, KVKK hukuk uygunluğu veya çalışan CRM/API yeteneği iddiası eklenmedi. Operasyonel PR #27 / medya üretim PR #29 içerikleri kamu sitesine aktarılmadı.
+- Açık hukuki/platform ve gerçek ölçüm P0/P1 başka ekip/uzman kararı bekler; canlı yayın bu kapıları PASS yapmaz. Gün 10 sahibinin CLOSED kararı korunur.
