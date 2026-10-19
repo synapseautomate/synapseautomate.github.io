@@ -19,3 +19,9 @@
 - LinkedIn: kullanıcı tarafından yayınlandığı bildirildi, gerçek URL/panel BİLİNMİYOR.
 - Instagram, YouTube ve başka platformlar: gerçek hesap/kreatif/video kanıtı olmadan YAYINLANMADI.
 - Sonuç: Staged frontend teknik QA GEÇTİ; hukuki/ticari üretim QA BEKLEMEDE; kayıtlar gün devrine aktarıldı.
+
+## Son yayın QA ve geri alma / 19.10.2026
+- Kullanıcının kamuya göstermeme talebi gözetildi: indirilen 280 dosyalık yayın artefaktında operasyon/Gün10/devir bulunmadı.
+- Site PR#28 browser smoke + Lighthouse olmayan Chromium staged PASS; canlı Safari, prod HTTP, ekran okuyucu, gerçek form teslimi TEST_EDİLEMEDİ.
+- Yalnız tanıtım/analiz yönlendirmesi, checkout ve canlı CRM yok. GitHub Pages'in online iş barındırmasına ilişkin resmî risk değerlendirmesi P0 kaldı.
+- Kullanıcı site merge istemini açıkça verdi ama hukuki/platform QA engeli kapanmadan MERGE YAPILMADI; geri alma, GitHub revert/hosting rollback ile mümkündür.
