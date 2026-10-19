@@ -18,3 +18,9 @@ Gün 11 için tek öncelik: kullanıcı/hukuk ayrı onay kapısıyla FormSubmit 
 - GitHub Actions PR #28: **Site Integrity QA PASS; Synapse Release Preflight PASS; Day 8 Commercial SEO Quality PASS**. Kaynak/routing başarılı olması gerçek responsive Safari/HTML canlı test PASS anlamına gelmez.
 - Kullanıcı site ve LinkedIn yayını istedi; ancak gerçek canlı HTTP/tarayıcı 320–1440 testleri TEST EDİLEMEDİ, GA4/KVKK, FormSubmit gerçek teslimi ve GitHub Pages ticari hosting uygunluğu P0 açık. Bu nedenle **PR draft**, main MERGE YOK, sosyal POST YOK, aktif satış YOK.
 - LinkedIn paylaşım tarihi ve doğru admin bağlantısı kullanıcı hesabında doğrulanmalı; 0 TL peşin/soğuk mesaj yasağı sürer. Bir sonraki tek adım yetkili tarayıcı/izin ve hesap doğrulaması.
+
+## Sonradan doğrulanan gerçek görsel QA / 19.10.2026
+- [PR #28 staging Chromium GitHub Actions](https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39230568739) `status: PASS`, toplam `tested: 26`, `issues: []`.
+- Yeni CRM devir sayfası staged HTTP'de gerçek Playwright ile **320 / 375 / 390 / 768 / 1024 / 1440 px** ekran görüntüsü, overflow, yerel görsel, H1/canonical, CTA minimum dokunma alanı ve içerik kutusu taşması negatif testleri **PASS**. Ekran kanıtı Actions artefaktı `preflight-mobile-screenshots`.
+- Ana sayfanın 390px staged screenshot'u yeni doğrudan CRM devir kartını gösteriyor. Site Integrity, Day8 SEO ve Release Preflight kontrolü **PASS**.
+- **Ayrım:** Staging Chromium PASS, üretim URL/Safari/Lighthouse/KVKK/FormSubmit gerçek teslimi PASS değildir. Canlı yayına alınmadı; LinkedIn SYNAPSE şirket admin erişimi doğrulanmadı.
