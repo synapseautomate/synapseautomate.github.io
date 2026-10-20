@@ -57,3 +57,22 @@
 - GitHub Actions `site_qa.py` çıkış 1, **191 bulgu**: 130 jargon, 11 eski navigasyon kuralı, 2 sitemap/index kuralı, 11 meta, 13 eski ürün, 17 eski müşteri sözleşmesi, 7 sektör metin kontrolü.
 - Tam yorum ve görevlendirme: [LEGACY_SITE_QA_191_BULGU_TRIYAJ.md](LEGACY_SITE_QA_191_BULGU_TRIYAJ.md). Otomatik regex sonucu, 191 doğrulanmış üretim hatası değildir; ama hepsi önemsiz diye de kapatılmıyor.
 - Yeni fatura sayfasındaki eski testin yakaladığı `ERP` kısaltması açıklayıcı Türkçe ile değiştirildi. Son CI gerçek sonucu yeniden okunmalı. Genel site QA PASS ilanı YASAK.
+
+
+## 20.10.2026 — Seçilen Gün 11 görevleri, site yayını ve premium Shorts sonrası güncel devir
+
+**Gün 11 statüsü:** Kısmi canlı site + medya DRAFT; CLOSED değil. Kullanıcı S2/S4/S5/S6/S7/S8/S10 ve G1–G8, 008/012/016/076/077/114/248/184 ile P1–P7 gruplarını seçti; kalan diğerleri PASS/kapsam dışı olarak belirtti.
+
+**Gerçek site yayını:** Gün 11 finans bilgi sayfası, hizmetler/finans sektörü iç bağlantıları ve tek sitemap URL'si PR #32 squash merge ile `main` commit `3f073ba38de1567775e4a166d92ae1719dd9363f` üzerinden yayımlandı. Canlı HTTPS sayfa: https://synapseautomate.github.io/cozumler/fatura-on-isleme-mutabakat-kontrolu.html . Pages release kanıtı: https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39394248773 . Daha sonra mevcut consent-gated ölçüm altyapısıyla `finance_checklist_click` CTA enstrümantasyonu PR #34 üzerinden `main`e alındı. GSC/GA4 gerçek panel sayıları BİLİNMİYOR; rıza/çerez hukuk denetimi P0 açık.
+
+**YouTube Shorts format düzeltmesi:** Eski 1920×1080 video `Shorts` diye yayımlanmadı. İki farklı 1080×1920, 24 fps, H.264 / AAC MP4 üretildi: A 27.1 s (sentetik 12.500–12.000=500 TL fark, neden BİLİNMİYOR), B 24.1 s (gerçek tarayıcıdan sekiz soruluk öz değerlendirme, sentetik 0/8→8/8). Kullanılan resmî logo `assets/brand/synapse-logo-clean.png`. Ses harici müzik kullanılmadan sentetik oluşturuldu ve her videoda yaklaşık -20.2 LUFS/≤-4.5 dBFS true peak'e normalize edildi. Kaynak ve tam QA paketleri yerel çalışma çıktısı: `SYNAPSE_GUN11_SHORTS_PREMIUM_SON_TESLIM.zip` ve `SYNAPSE_GUN11_TUM_SOSYAL_KREATIFLER_FINAL.zip`. Bunlar GitHub Actions artefaktı veya `main`de yayımlanmış medya dosyası değildir; kullanıcıya bu oturumda sandbox teslimi yapılmıştır.
+
+**Diğer sosyal dosyalar:** LinkedIn 6 sayfalık tek PDF (yeniden render edilip açıldı), Facebook 1080×1350, X 1200×675, Instagram 6×1080×1350, Story 2×1080×1920, Threads ayrı metin; YouTube iki Shorts. Her kanala özgü caption ve alt metin var. Statik kreatiflerdeki sentetik açıklama ilk QA'da fazla küçüktü → font büyütüldü; Story alt UI alanına yakın açıklama yukarı taşındı; `STORY 01/02` iç operasyon numaraları halka açık tasarımdan kaldırıldı; `HUMAN_REVIEW` anlatımı Türkçeleştirildi; doğrulanmamış Instagram bio bağlantısı iddiası kaldırıldı.
+
+**Ayrı QA turu A:** Gerçek finans web aracı 0/8–8/8 kaydı, klip codec/süre/boyut, MP4 baştan sona hata vermeden decode, PDF altı sayfa, 16 farklı sosyal görsel boyut/hash kontrolü, ZIP bütünlük doğrulaması PASS. Gün 11 SEO dar kapsamlı CI PASS, ancak eski `site_qa.py` FAIL değişmedi. Önceki `191 bulgu` sayısı bir toplam log başlığı dahilse 190 ayrı teşhis satırına düşer; genel site PASS diye kapatma, kaynak log satırlarını karşılaştır.
+
+**Ayrı QA turu B / önemli bekleyenler:** Gerçek YouTube Shorts/Instagram/Facebook/LinkedIn/X uygulamasında cihaz crop, tıklanabilir link/kapak, performans ve görünürlük testleri TEST EDİLEMEDİ. Statik görsellerdeki `wide_cinematic_futuristic_abstract_scene_on_a_dark.png` arka planın özgün üretim/lisans yetkisi dosya metadatasıyla bağımsız kanıtlanamadı; **telif P1 HOLD**. Gerçek izlenme, CTA, lead, para, satış BİLİNMİYOR. Hesap sahibi olmadan canlı gönderim veya kart işlemi yapılmadı.
+
+**Yayın yetkileri:** PR #33 yalnız **DRAFT** (gerçek finans kontrol aracı Chromium/video üretim kaynağı), main merge YOK; sosyal yayınlar hesabında YAPILMADI. İki Shorts ayrı onay gerektirir. Statik kreatiflerin telif kaynağı ve gerçek platform safe zone çözülmeden 'tam QA onaylı canlı' iddiası yok.
+
+**Gün 12'ye tek öncelik:** Statik görsellerin arka plan lisans/provenansını kanıtla ya da özgün/lisansı tartışmasız kaynakla değiştir; sonra fiziksel uygulama son önizleme ve kullanıcının her platforma açık paylaşım onayını al. GSC/GA4 panel erişimi olmadan KPI uydurma.
