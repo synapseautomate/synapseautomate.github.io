@@ -1,0 +1,11 @@
+sorgu_adayi,niyet,hangi_soruyu_yanitlar,sayfa_karari,kanit_turu
+"fatura ön işleme mutabakat kontrolü","DECISION","Karşılaştırma koşulları","TEK_YENI_SAYFA","HIPOTEZ_GSC_YOK"
+"fatura tutarı banka ile uyuşmuyor","DIAGNOSE","Kanıt ve belirsiz neden","TEK_YENI_SAYFA","HIPOTEZ_GSC_YOK"
+"fatura tutar farkı neden oluşur","INFORMATION","Dönem/kısmi ödeme/döviz istisnası","TEK_YENI_SAYFA","HIPOTEZ_GSC_YOK"
+"faturada eksik referans","DIAGNOSE","Eşleştirme anahtarı yokluğu","TEK_YENI_SAYFA","HIPOTEZ_GSC_YOK"
+"muhasebe mutabakat insan onayı","DECISION","Rol ve gate","TEK_YENI_SAYFA","HIPOTEZ_GSC_YOK"
+"fatura ön kontrol hangi alanlar","HOW_TO","Kimlik/tarih/para birimi/tutar","TEK_YENI_SAYFA","HIPOTEZ_GSC_YOK"
+"mutabakat istisna kuyruğu","HOW_TO","Belirsiz durum ve inceleme","TEK_YENI_SAYFA","HIPOTEZ_GSC_YOK"
+"fatura otomasyonu fiyat","BUYER","Fiyat doğrulama yok; özel taslakta yok","MEVCUT_FINANS_SATINALMA_REHBERI","HIPOTEZ_GSC_YOK"
+"e-fatura düzenleme programı","PRODUCT","Bu kabiliyet doğrulanmadı","KAPSAM_DISI","HIPOTEZ_GSC_YOK"
+"bankadan otomatik ödeme yapma","ACTION","Yüksek risk ve yetki","KAPSAM_DISI","HIPOTEZ_GSC_YOK"
