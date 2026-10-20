@@ -5,12 +5,34 @@ from pathlib import Path
 from html.parser import HTMLParser
 import csv,json,re,sys,xml.etree.ElementTree as ET
 from urllib.parse import urlparse,unquote
+from decimal import Decimal
 ROOT=Path(__file__).resolve().parents[1]
 OUT=Path('/tmp/synapse-v8-day11-evidence')
 OUT.mkdir(parents=True,exist_ok=True)
 target='cozumler/fatura-on-isleme-mutabakat-kontrolu.html'
 prefix='https://synapseautomate.github.io/'
 issues=[]
+fixture=ROOT/'operasyon/v8/gun-11/fatura-mutabakat-SENTETIK-ornek.csv'
+if not fixture.is_file():
+    issues.append('synthetic finance fixture missing')
+else:
+    with fixture.open(newline='',encoding='utf-8') as csvin:
+        rows=list(csv.DictReader(csvin))
+    bytype={row['source']:row for row in rows}
+    try:
+        inv=bytype['fatura']
+        book=bytype['muhasebe_taslak_kaydi']
+        bank=bytype['varsayilan_tek_odeme_satiri']
+        assert all(row['synthetic']=='EVET' for row in rows)
+        assert len(rows)==3
+        assert len({row['reference'] for row in rows})==1
+        assert len({row['currency'] for row in rows})==1
+        assert Decimal(inv['amount'])==Decimal(book['amount'])
+        assert Decimal(inv['amount'])-Decimal(bank['amount'])==Decimal('500')
+        # No automatic financial determination: difference is an INCONCLUSIVE human gate.
+        assert all(row['decision']=='HUMAN_REVIEW' for row in rows)
+    except (AssertionError, KeyError, ValueError, ArithmeticError) as exc:
+        issues.append('synthetic finance fixture fails source-reference/currency/500 TL calculation: '+str(exc))
 class Tags(HTMLParser):
     def __init__(self): super().__init__(convert_charrefs=True);self.h1=0;self.h2=0;self.links=[];self.meta=[];self.canon=[];self.title=False;self.images=[];self.breadcrumb=[]
     def handle_starttag(self,tag,attrs):
