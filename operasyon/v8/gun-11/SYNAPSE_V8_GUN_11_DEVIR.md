@@ -52,3 +52,8 @@
 ## 20.10.2026 — Ek açık web SERP araştırması
 - İlk 5 kaynak + resmî Google SEO belgeleri: [SERP_ACIK_KAYNAK_2026-10-20.md](SERP_ACIK_KAYNAK_2026-10-20.md). Gerçek GSC/lead/arama hacmi/ilk sayfa sırası sonucu yerine geçmez.
 - Klasik 'e-Fatura Mutabakatı' ile cari/banka mutabakatı daha geniş başlıklardır; yeni sayfanın tek farkı 500 TL sentetik kararda kanıt ve insan inceleme ön koşulunu açıklamasıdır.
+
+## Son ek QA triyajı — Eski testin gerçek 191 bulgusu
+- GitHub Actions `site_qa.py` çıkış 1, **191 bulgu**: 130 jargon, 11 eski navigasyon kuralı, 2 sitemap/index kuralı, 11 meta, 13 eski ürün, 17 eski müşteri sözleşmesi, 7 sektör metin kontrolü.
+- Tam yorum ve görevlendirme: [LEGACY_SITE_QA_191_BULGU_TRIYAJ.md](LEGACY_SITE_QA_191_BULGU_TRIYAJ.md). Otomatik regex sonucu, 191 doğrulanmış üretim hatası değildir; ama hepsi önemsiz diye de kapatılmıyor.
+- Yeni fatura sayfasındaki eski testin yakaladığı `ERP` kısaltması açıklayıcı Türkçe ile değiştirildi. Son CI gerçek sonucu yeniden okunmalı. Genel site QA PASS ilanı YASAK.
