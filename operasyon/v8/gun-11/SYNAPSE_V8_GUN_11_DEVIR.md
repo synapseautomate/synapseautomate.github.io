@@ -48,3 +48,7 @@
 
 ## Gün 12 sıfır bağlamlı sonraki tek öncelik
 Önce gerçek `main`/PR SHA, kullanıcı yayın izni, PR #32 QA kanıtı ve GSC erişimini doğrula. Eski `site_qa.py` kaynak borcunu ayrı ele al; yeni finans sayfasının yayın kapısını yalnız kullanıcının ayrı açık onayı ve hukuki/uyum kararlarıyla ilerlet. Sayfa paylaşımı/anahtar kelime kopyası üretme; kullanıcı onayı gelene kadar taslak korunur.
+
+## 20.10.2026 — Ek açık web SERP araştırması
+- İlk 5 kaynak + resmî Google SEO belgeleri: [SERP_ACIK_KAYNAK_2026-10-20.md](SERP_ACIK_KAYNAK_2026-10-20.md). Gerçek GSC/lead/arama hacmi/ilk sayfa sırası sonucu yerine geçmez.
+- Klasik 'e-Fatura Mutabakatı' ile cari/banka mutabakatı daha geniş başlıklardır; yeni sayfanın tek farkı 500 TL sentetik kararda kanıt ve insan inceleme ön koşulunu açıklamasıdır.
