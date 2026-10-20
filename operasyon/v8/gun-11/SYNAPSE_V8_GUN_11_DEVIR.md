@@ -76,3 +76,20 @@
 **Yayın yetkileri:** PR #33 yalnız **DRAFT** (gerçek finans kontrol aracı Chromium/video üretim kaynağı), main merge YOK; sosyal yayınlar hesabında YAPILMADI. İki Shorts ayrı onay gerektirir. Statik kreatiflerin telif kaynağı ve gerçek platform safe zone çözülmeden 'tam QA onaylı canlı' iddiası yok.
 
 **Gün 12'ye tek öncelik:** Statik görsellerin arka plan lisans/provenansını kanıtla ya da özgün/lisansı tartışmasız kaynakla değiştir; sonra fiziksel uygulama son önizleme ve kullanıcının her platforma açık paylaşım onayını al. GSC/GA4 panel erişimi olmadan KPI uydurma.
+
+## 20.10.2026 — Shorts A/B KALİTE RED VE TAM YENİDEN YAPIM
+
+Kullanıcı eski Shorts A/B'nin tamamını **RED / YAYINLANAMAZ** olarak reddetti: iç QA/operasyon etiketleri halka açık video karesine sızmıştı; logo beyaz kutuda/arka planı kötü görünüyordu; yaratıcı tasarım sadeydi ve istenen kalite standardını karşılamıyordu. Önceki `SYNAPSE_GUN11_SHORTS_PREMIUM_SON_TESLIM.zip` veya `SYNAPSE_GUN11_TUM_SOSYAL_KREATIFLER_FINAL.zip` içindeki **eski iki MP4 yayınlanmamalıdır**.
+
+İki Shorts **sıfırdan yeniden üretildi**. Yerel, bu oturumda gerçek üretilmiş yeni paket:
+`/mnt/data/SYNAPSE_GUN11_SHORTS_YENI_KURGU_INCELEME_PAKETI.zip`.
+- Shorts A: `PUBLIC_ASSETS/CREATIVE_A/SYNAPSE_SHORTS_A_1080x1920.mp4` — 26 saniye, h264/aac, 24 fps. 500 TL sentetik fark, neden belirsiz, kontrollü finans inceleme anlatımı.
+- Shorts B: `PUBLIC_ASSETS/CREATIVE_B/SYNAPSE_SHORTS_B_1080x1920.mp4` — 25 saniye, h264/aac, 24 fps. Gerçek web finans kontrol listesi; 0/8–8/8 sentetik seçimlerin kaynak ekranından kesin crop'ları. Fatura işleme ürünü/ERP/banka entegrasyonu değildir.
+- Orijinal **kullanıcının sağladığı RGBA resmî SYNAPSE logosu** (`CEC739BE-F31C-4D27-81B4-F1C871B7D750(1).png`) kaynak işlenip renk/deforme edilmeden doğrudan transparan yerleşti; beyaz logo plakası YOK.
+- İzleyiciye açık çerçevelerden `Gün 11`, `QA`, `PASS`, `render`, `test günlüğü`, sahte arayüz ve sahte müşteri/metrik bilgileri çıkarıldı. Zorunlu, halka açıklayıcı `SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL` korunuyor.
+- Dış stok arka plan/müzik kullanılmadı; tipografi Inter (OFL-1.1/Apache-2), sade düz arka plan ve kaynak logo. Öz üretim ses yaklaşık -19 LUFS/tepe -3 dBTP; ffmpeg baştan sona çözümleme PASS.
+- İki MP4, iki kapak, iki SRT, her platform caption ve `INTERNAL_OPERATIONS/QA_REPORTS/SON_QA_MANIFEST.json` ayrı dosyalarda. Kaynak program: `/mnt/data/synapse_short_rebuild.py`, paket programı: `/mnt/data/synapse_shorts_package.py`.
+- Kapak ve 18 ana MP4 karesi gerçek video çözümünden çıkarılarak incelendi. Gerçek YouTube uygulama içi safe-zone/kapak/tıklanabilir bağlantı önizlemesi **TEST EDİLEMEDİ**; son sanat yönetimi kararı **KULLANICI ONAYI BEKLİYOR**. Bu nedenle yeni paket **İNCELENECEK ADAY / HÂLÂ HOLD**, LIVE değildir.
+- Kullanıcının önceki ret kararı gelecekteki üretimde kalite eşiğidir. Eski MP4'leri ve eski QA PASS iddialarını yeniden kullanma.
+
+Yayın için iki Shorts ayrı ayrı spesifik onay gerektirir. PR #33 hâlâ DRAFT, site güncellemesi ve sosyal gönderim bu yeniden yapımda yapılmadı.
