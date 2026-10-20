@@ -1,0 +1,48 @@
+name: V8 Day11 Finance SEO Draft QA
+'on':
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cozumler/fatura-on-isleme-mutabakat-kontrolu.html'
+      - 'hizmetler.html'
+      - 'sektorler/finans-bankacilik.html'
+      - 'sitemap.xml'
+      - 'operasyon/v8/gun-11/**'
+      - 'scripts/v8_day11_*.py'
+      - 'scripts/v8_day11_*.mjs'
+      - '.github/workflows/v8-day11-finance-seo-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Existing site regression and SEO gates
+        run: |
+          set -euo pipefail
+          python scripts/site_integrity.py
+          python scripts/site_qa.py
+          python scripts/day8_quality_gate.py
+          python scripts/v8_day11_finance_qa.py
+      - name: Browser and accessibility smoke
+        run: |
+          set -euo pipefail
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/day11site.log 2>&1 &
+          sleep 3
+          node scripts/v8_day11_finance_browser.mjs
+      - name: Upload internal Day11 QA proof only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synapse-v8-day11-finance-seo-qa
+          path: /tmp/synapse-v8-day11-evidence/
+          if-no-files-found: warn
+          retention-days: 30
