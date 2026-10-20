@@ -11,6 +11,12 @@ let vpath;
 try{
   await page.route(/google-analytics\.com|googletagmanager\.com|formsubmit\.co/,r=>r.abort());
   await page.goto('http://127.0.0.1:8765/araclar/finans-surec-kontrol-listesi.html',{waitUntil:'domcontentloaded'});
+  // The real site uses consent-first analytics. Reject it in this synthetic demo.
+  // This prevents network tracking and avoids obscuring the lower screen.
+  await page.locator('[data-analytics-choice="denied"]').click();
+  const dismissed=await page.locator('[data-synapse-privacy-controls]').isHidden();
+  if(!dismissed)throw Error('Consent panel still covers screen');
+  await page.evaluate(()=>{ document.body.style.zoom='1.18'; });
   const count=await page.locator('[data-check]').count();
   if(count!==8)throw Error('Expected 8 real finance tool checkboxes, got '+count);
   const badge='SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL';
