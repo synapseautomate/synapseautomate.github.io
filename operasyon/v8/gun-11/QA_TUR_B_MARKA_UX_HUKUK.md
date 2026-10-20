@@ -13,3 +13,8 @@
 | Fiyat ve sahte müşteri | bulunmuyor; sentetik üst etiket var | KOD_PASS |
 | Canlı GSC / 404 / Lighthouse / form teslimi | hesap dışı veya yayınlanmamış URL | BİLİNMİYOR |
 | Canlı SEO yayın ve hukuk/host uygunluğu | kullanıcı ayrı spesifik yayına onay vermedi | ONAY BEKLİYOR |
+
+## Fiili QA sonucu ek kaydı — 20.10.2026
+- İlk gerçek Chromium denemesi 320/375/390 mobil yatay taşma ile **FAIL**; gerçek sonucu sakla. `minmax(0,1fr)`, `min-width:0` sonrası altı viewport, tek H1, görsel yüklenmesi/alt, 44px CTA, klavye skip, iki giriş bağlantısı ve 8 maddelik web aracı `0/8 -> 1/8` **PASS**. Kanıt ve screenshot: https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39386605289 .
+- Screenshotlar 375/390/1440 açılarak gözle incelendi; inceleme yalnız statik Chromium, resmî canlı Safari/Lighthouse veya GSC paneli PASS anlamına gelmez.
+- Yasa/hukuk, FormSubmit teslimi, tahsilat/fatura, index ve yayın **AÇIK**. Bu PR hâlâ DRAFT ve yayımlanmadı.
