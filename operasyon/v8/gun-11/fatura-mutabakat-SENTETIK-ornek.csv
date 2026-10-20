@@ -1,0 +1,4 @@
+source,reference,amount,currency,decision,synthetic,source_note
+fatura,TEST-FAT-021,12500,TRY,HUMAN_REVIEW,EVET,SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL
+muhasebe_taslak_kaydi,TEST-FAT-021,12500,TRY,HUMAN_REVIEW,EVET,SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL
+varsayilan_tek_odeme_satiri,TEST-FAT-021,12000,TRY,HUMAN_REVIEW,EVET,SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL
