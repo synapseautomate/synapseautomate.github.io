@@ -93,3 +93,9 @@ Kullanıcı eski Shorts A/B'nin tamamını **RED / YAYINLANAMAZ** olarak reddett
 - Kullanıcının önceki ret kararı gelecekteki üretimde kalite eşiğidir. Eski MP4'leri ve eski QA PASS iddialarını yeniden kullanma.
 
 Yayın için iki Shorts ayrı ayrı spesifik onay gerektirir. PR #33 hâlâ DRAFT, site güncellemesi ve sosyal gönderim bu yeniden yapımda yapılmadı.
+
+## 20.10.2026 — Kullanıcının Shorts A/B yaratıcı onayı
+- Hesap sahibi iki **yeniden üretilmiş** dikey YouTube Shorts'u görüntüledikten sonra “İnceledim pass” dedi. **İki kreatif için kullanıcı estetik/içerik onayı: APPROVED (user review)**. Önceki reddedilmiş sürümler onay kapsamında değildir.
+- Bu beyan **YouTube'a yükleme, paylaşma, zamanlama, yayına alma, hesap ayarı veya ödeme için izin değildir**. Yayın: **YAPILMADI / ayrı açık yayın onayı bekleniyor**.
+- Teknik yerel render/decode PASS; gerçek YouTube uygulaması içinde crop/link/kapak denetimi **TEST EDİLEMEDİ** olarak korunur. Platforma fiilî yükleme öncesi bu son denetimi tamamla.
+- Onaylanan teslim: `SYNAPSE_GUN11_SHORTS_YENI_KURGU_INCELEME_PAKETI.zip`, içindeki `PUBLIC_ASSETS/CREATIVE_A/SYNAPSE_SHORTS_A_1080x1920.mp4` ve `PUBLIC_ASSETS/CREATIVE_B/SYNAPSE_SHORTS_B_1080x1920.mp4`.
