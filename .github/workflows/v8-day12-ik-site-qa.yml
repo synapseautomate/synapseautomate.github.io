@@ -1,0 +1,52 @@
+name: V8 Day12 HR source and browser QA
+'on':
+  pull_request:
+    branches: [main]
+    paths:
+      - 'cozumler/ik-cv-on-eleme-insan-karari.html'
+      - 'hizmetler.html'
+      - 'iletisim.html'
+      - 'sitemap.xml'
+      - 'scripts/v8_day12_ik_*.py'
+      - 'scripts/v8_day12_ik_*.mjs'
+      - '.github/workflows/v8-day12-ik-site-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independent-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: QA A - real file references and claims
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/synapse-v8-day12-evidence
+          python scripts/v8_day12_ik_source_qa.py | tee /tmp/synapse-v8-day12-evidence/source-qa.log
+          set +e
+          python scripts/site_integrity.py > /tmp/synapse-v8-day12-evidence/legacy-integrity.log 2>&1
+          rc=$?
+          set -e
+          echo "$rc" > /tmp/synapse-v8-day12-evidence/legacy-integrity-exit-code.txt
+          echo "Existing site_integrity exit: $rc (report preserved, not disguised as PASS)"
+      - name: Browser tooling
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: QA B - browser render, keyboard, logo and mobile
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/synapse-v8-day12-evidence/webserver.log 2>&1 &
+          sleep 3
+          node scripts/v8_day12_ik_browser.mjs | tee /tmp/synapse-v8-day12-evidence/browser-qa.log
+      - name: Upload private working QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synapse-v8-day12-ik-evidence
+          path: /tmp/synapse-v8-day12-evidence/
+          if-no-files-found: warn
+          retention-days: 14
