@@ -24,7 +24,9 @@ try {
    const hero=document.querySelector('.mast');
    const consentInFlow=!!(panel&&panel.nextElementSibling===document.getElementById('main')&&getComputedStyle(panel).position!=='fixed');
    const consentOccludesHero=!!(panel&&!panel.hidden&&panel.getBoundingClientRect().bottom>hero.getBoundingClientRect().top);
-   return {overflow,logoLoaded:img.complete&&img.naturalWidth>0,headings:h1.length,ctaSize:[rect.width,rect.height],ctaVisible:rect.width>0,synthetic:document.body.textContent.includes('SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL'),match,consentInFlow,consentOccludesHero};
+   const toggle=document.querySelector('.synapse-privacy-toggle');
+   const toggleInFooter=!!(toggle&&toggle.parentElement?.classList.contains('wrap')&&toggle.closest('footer')&&getComputedStyle(toggle).position!=='fixed');
+   return {overflow,logoLoaded:img.complete&&img.naturalWidth>0,headings:h1.length,ctaSize:[rect.width,rect.height],ctaVisible:rect.width>0,synthetic:document.body.textContent.includes('SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL'),match,consentInFlow,consentOccludesHero,toggleInFooter};
   });
   assert.equal(data.headings,1,'H1 count '+width);
   assert.ok(data.overflow<=1,'horizontal overflow '+width+': '+data.overflow);
@@ -32,6 +34,7 @@ try {
   assert.ok(data.ctaVisible&&data.ctaSize[1]>=44,'CTA tap target '+width);
   assert.ok(data.synthetic,'synthetic disclaimer missing '+width);
   assert.ok(data.consentInFlow&&!data.consentOccludesHero,'consent overlaps hero '+width);
+  assert.ok(data.toggleInFooter,'measurement toggle overlays mobile content '+width);
   await page.screenshot({path:`${dir}/ik_${width}.png`,fullPage:true});
   await page.keyboard.press('Tab');
   const focus=await page.evaluate(()=>document.activeElement?.className||document.activeElement?.tagName);
