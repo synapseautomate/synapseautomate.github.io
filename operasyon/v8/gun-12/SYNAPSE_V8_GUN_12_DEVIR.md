@@ -28,3 +28,16 @@ Gerçek CV, aday kimliği, profil, fotoğraf, yaş, kişisel veriler alınmadı.
 - KVKK: https://www.kvkk.gov.tr/Icerik/4189/Kisisel-Verilerin-Islenmesine-Iliskin-Temel-Ilkeler
 - YouTube Shorts resmî: https://support.google.com/youtube/answer/12779649?co=GENIE.Platform%3DDesktop
 - WCAG: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum
+
+
+## 21.10.2026 - V2 kreatif düzeltme ve kullanıcı geri bildirimi
+- Kullanıcı önceki videolarda iç QA/yönetim metni ile JPEG logo arka planı kusuru buldu. V1 doğrudan yayın için uygun görülmedi.
+- V2: iki yeniden render 9:16 Shorts 69s ve 27s, 1080x1920 H.264/AAC; iki kapak, Türkçe sahne metinleri, ayrıca LinkedIn ve Instagram native dört sayfa PDF. İkili medya sohbet dosya teslimindedir, GitHub PR'a yüklenmedi.
+- V2'de kamu görsellerinden QA/test iç notları kaldırıldı. Her karede orijinal görev gereği SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL korunur. Kullanıcı kaynaklı logo yeniden çizilmeden algoritmik alfa matlandı; önceki JPG dikdörtgeni kaldırıldı.
+- V2 negatif QA: ilk yeniden kayıtta 42. saniyede kaynak terminalin siyaha düşmesi bulundu. 16s gerçek kaydın son sağlam karesi tutularak düzeltildi, terminale sahte çıktı eklenmedi. Son kayıt 42. saniye gerçek kaynak satırlarını gösterir.
+- SHA256 (69s): 0c4bffb05e266a5445027569819edc981cb339d9ddbad3b86fec402b6c7767e3
+- SHA256 (27s): c3afd89402017c827377961d6d578da5f305fe66ffb677f56e85f427744e095d
+- QA A: sentetik yerel prototip pozitif exit=0, yasak yaş exit=2, 4/4 unittest; video codec/süre/oran testleri PASS. Bu var olan SYNAPSE ticari CV ürünü kanıtı değildir.
+- QA B: 320/375/390 px küçültme görselleri, 4:5 PDF yeniden render ve metin kontrastı 9.53:1 test edildi. Gerçek telefon/platform paneli, canlı HTTP, yasal/KVKK denetimi NOT_TESTED. Konuşma seslendirmesi yok, ses sentezlenmiş, SRT sahne metni.
+- Eylem kapıları: YT 69s, YT 27s, LinkedIn gönderi/belge ve Instagram karusel için birbirinden ayrı ONAY BEKLİYOR; hiçbir hesapta yayın/planlama, main merge, ödeme ve özel iletişim yapılmadı.
+- Sonraki tek adım: Kullanıcının gerçek mobil YouTube Shorts önizlemesi ve içerik doğruluğu onayı. Canlı İK ürünü gibi göstermeden yalnız doğru kavramsal/sentetik açıklama ile kullanılabilir.
