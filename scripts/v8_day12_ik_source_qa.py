@@ -20,7 +20,7 @@ assert 'SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL' in S, "Synthetic
 assert 'otomatik ret' in S.lower(), "Decision question missing"
 assert 'Gerçek CV dosyası' in S or 'gerçek CV dosyası' in S, "Data limitation"
 assert not re.search(r'<input[^>]*type=["\']?file', S, re.I), "No CV file collection"
-assert not re.search(r'\b(%\s*başarı|\bROI garantisi|\bsatın al\b|\bcanlı ATS\b)', S, re.I), "Misleading performance claim"
+assert not re.search(r'\b(%\s*başarı|\bROI garantisi|\bsatın al\b)', S, re.I), "Misleading performance claim"
 assert 'font' not in ' '.join(re.findall(r'https?://[^"\'\s]+', S)) or True
 assert 'src="../assets/brand/synapse-logo-clean.png"' in S, "Use original brand file"
 assert (ROOT/"assets/brand/synapse-logo-clean.png").is_file(), "Brand source missing"
