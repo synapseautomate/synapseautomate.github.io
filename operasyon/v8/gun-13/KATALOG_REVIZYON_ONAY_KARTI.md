@@ -1,0 +1,5 @@
+# İlan revizyonu kararı — spesifik onay dosyası
+**Durum:** ONAY BEKLİYOR, Gönderilmedi. Gün08 kullanıcı kararı: Upwork hesabı açmamak ve katalog kanalını sonlandırmak. Yeni kullanıcı kararı olmadan bu kapanış tersine çevrilmez.
+**Revizyon taslağı:** tam iki CSV, R01–R04, koşullu R05; rapor ve tek sayfa özet; destek ve revizyon sınırı; gerçeği aşan süre, otomasyon, ROI ve veri işleme iddiasını kaldır; Upwork alıcısı asla site/IBAN'a yönlendirilmez.
+**P0:** aktif katalog ve hesap yetkisi BİLİNMİYOR; platform USD/komisyon/teslim/revizyon BİLİNMİYOR; hukuk/fatura kapısı açık. **P1:** galeride text-heavy thumbnail. İlan revizyonu ve incelemeye gönderim iki ayrı onaydır. İnceleme sonrası otomatik aktif risk: https://support.upwork.com/hc/en-us/articles/360057397533-How-to-create-a-project-in-Project-Catalog .
+**Yayına hazır: HAYIR.**
