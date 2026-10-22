@@ -44,3 +44,27 @@ Bu oturumdaki yeni peşin harcama **0 TL**, bu oturumdaki dış yayın **0 eylem
 Tüm izin ID'leri GUN13_METRIK_VE_ONAY_KAYDI.md içindedir; **ONAY BEKLİYOR**. Upwork revizyon, incelemeye gönderme/otomatik aktif risk, main/site, LinkedIn, iki YouTube Shorts, gerçek alıcı yanıtı ve tahsilat birbirinden ayrıdır. Metricool başka hesaplar olduğundan kullanılmadı. Hiçbir yayına gönderim, site merge, özel mesaj, satış, gerçek ödeme, KYC, komisyon veya Connects satın alma olmadı.
 **Sonraki tek öncelik:** Gün08 Upwork kapatma kararını koruyarak site Süreç Analizi (4.900 TL kaynak kod liste fiyatı) ile dar CSV kurulum TEST 4.900 TL ayrımını ve satış/fatura kapısını müşteri karşısında açık hale getirecek yalnız taslak teknik/hukuk revizyonunu değerlendir. Bütün P0/P1 kapanmadan yayıma geçme.
 **Son kanıt paketi güncellemesi (22.10.2026):** iki MP4 tekrar render edildi; 1080×1920, 24 fps, 12sn. Yerel ZIP'de PNG, Shorts, SRT, kaynak test kayıtları ve SHA256 manifest var. HEAD bu metni ekleyen commit SHA'dan sonra değişebilir; bundan sonraki operatör GitHub'dan main ve branch HEAD'i tekrar çekmelidir.
+
+
+---
+## 22.10.2026 — Kullanıcı final PASS / Gün 13 CLOSED (sonradan eklenen devir kararı)
+**Kesin operasyon kararı:** Kullanıcı “İnceledim pass gün 13 closed” dedi. Bu, **Gün 13 görev üretim ve teslimatlarının kullanıcı tarafından kabul edildiği, operasyonel Gün 13 = CLOSED** anlamındadır; ödeme, yasal uygunluk, gerçek alıcı veya erişilemeyen istatistikler için bağımsız test kanıtı değildir. Gün 13 plan tarihi 26.10.2026 idi; fiilî kapanış 22.10.2026, 4 gün erken.
+
+### Gerçek dış eylemler için sonradan kullanıcı beyanı
+- Kullanıcı iki Shorts'u PASS olarak onayladı ve Instagram, X, Threads, LinkedIn, Facebook, YouTube, TikTok, Pinterest dahil hazırlanan içerikleri **paylaştığını veya planladığını**, Story B dahil **eksiksiz PASS** olduğunu söyledi. Güncel gönderilerin tek tek **yayınlandı mı yoksa zamanlandı mı** ayrımı, permalink, analitik ve panel kanıtı bu görüşmede doğrulanmadı; **KULLANICI BEYANI / bağımsız teyit yok**.
+- Kamuya açık kreatif kitindeki tek görsele ait gereksiz 01 sayfa numarası, metin çakışmaları ve iç üretim notları temizlenerek yeni ZIP teslim edildi; kullanıcı son kreatifleri PASS saydı. Eski sürümü yeniden yayımlama.
+- Kullanıcı Gün 13'ün tüm ödevlerine PASS dedi; bu kullanıcı kabulüdür. FormSubmit gerçek teslim, bağımsız cihaz/Safari/Lighthouse testi, vergi/fatura/KVKK ve gelir/satış KPI'larının gerçek değerleri halen TEST_EDİLEMEDİ / BİLİNMİYOR.
+
+### İzin verilmiş tek site yayını ve doğrulanan geçiş
+- Kullanıcı açıkça **PR #38'i yayımlamayı onayladı**. PR #38 https://github.com/synapseautomate/synapseautomate.github.io/pull/38 → GitHub `MERGED`, squash commit `07040d2ed372df059c6d60d4567c270ad14655e4` (22.10.2026).
+- `main` üzerinde doğrulanan üç dosya: `cozumler/icerik-onay-zinciri.html`, `hizmetler.html` (Pazarlama & İçerik hizmet kartında bağlantı) ve `sitemap.xml`. Geçiş: `index.html → hizmetler.html → cozumler/icerik-onay-zinciri.html`. Canlı URL: https://synapseautomate.github.io/cozumler/icerik-onay-zinciri.html . **Kullanıcı canlı sayfayı kendisinin incelediğini ve PASS verdiğini beyan etti**. Bağımsız HTTP/Safari/Lighthouse/FormSubmit denetimi yapıldığı varsayılmaz.
+- PR #37 (katalog/SSS ve iç belgeler) `main`e alınmadı; iç taslak ve devir olarak saklanıyor. Upwork Gün 08 kararı değişmedi; Upwork katalog incelemesine gönderilmedi. Metricool başka hesap, kullanılmadı.
+- **İzin sınırı:** Gün 13 CLOSED yeni kampanya yayını, ödeme, gerçek müşteriye mesaj, başka PR merge veya Upwork aktifleştirme yetkisi değildir.
+
+### Kapanış sonrası açık bağımsız durumlar
+- Hukuk, vergi, faturalanabilir satıcı, KYC, KVKK ve iade: **doğrulanmadı**; ticari satış kapısı açılmış sayılmaz.
+- Canlı FormSubmit teslimi, GA4/GSC, gerçek inbound, katalog aktivasyonu, fonlanan sipariş, ücretli satış, iade ve net gelir: **BİLİNMİYOR**; bilinmeyenler sıfır değildir.
+- Galeri Upwork'e yüklenmedi; metin yoğunluğu P1 olarak tarihsel kayıtta kalır ancak kapatılmış Upwork kanalı için yayın görevi açılmaz.
+- GitHub `main` kapanış anındaki son doğrulanmış SHA: `07040d2ed372df059c6d60d4567c270ad14655e4`; bir sonraki operatör tekrar kontrol eder.
+
+**Gün 13 = CLOSED (kullanıcı kabulü; operasyonel).** Sonraki tek öncelik: Yeni görev gününün kendi talimatını açmadan önce `main` ve bağlı kanallarda mevcut durumu yeniden doğrula; Gün 13'ü tekrar yapma.
