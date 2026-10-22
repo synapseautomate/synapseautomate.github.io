@@ -1,0 +1,6 @@
+# Ayrı karar yolları — iç taslak
+## Upwork alıcısı (Gün08 sonrası pasif)
+Katalog varlığı/yetkili hesap BİLİNMİYOR → aktif değilse incelemeye gönderme → sözleşme öncesi yalnız Upwork Messages → Upwork içinde fiyat USD/teslim/revizyon onayı → veri izni/kabul → Upwork iş alanı üzerinden teslim → ödeme/iade Upwork içinde. **Site, IBAN, e-posta, WhatsApp'a yönlendirme YOK.** Katalog onaylandıktan sonra otomatik aktifleşebilir: https://support.upwork.com/hc/en-us/articles/360057397533-How-to-create-a-project-in-Project-Catalog .
+## Site organik gönüllü alıcısı
+index.html → teklif/e-ticaret-surec-analizi.html / surec-analizi.html veya iletisim.html → FormSubmit (kaynak kod var, gerçek e-posta teslim TEST EDİLEMEDİ) → yalnız süreç metadatası → hukuk/fatura/veri izni/kapsam/süre/revizyon yazılı teyit → **hesap sahibi tarafından yasal uygun tahsilat**. İlk mesajda gerçek müşteri CSV, gizli veri, banka/kimlik/parola YOK.
+**GitHub Pages ödeme barındırma P0:** https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits . Kullanıcı onayı yok; iş yapılmadı.
