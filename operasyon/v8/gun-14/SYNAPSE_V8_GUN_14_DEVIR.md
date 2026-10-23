@@ -62,3 +62,12 @@ Bunlar resmî genel kaynaklardır; Türkiye'de şirket/ödeme/LinkedIn uygunlukl
 
 ## H) Sonraki sıfır bağlamlı operatöre TEK adım
 **ÖNCE** izinli gerçek organik site → talep ölçümü olup olmadığını hesap sahibinin resmî GA4/GSC/FormSubmit ekranından kimliksiz biçimde belirle. Eğer panel/veri bulunmuyorsa **kazanan kanal BİLİNMİYOR** durumunu koru ve 15–21 deneyini HOLD tut; tek CTA değişkenini canlıya alma. Eğer veri gerçek ve satıcı yasal şartları uygun ise sonraki adım için ayrıca `WEB-CTA-TEKDEGISKEN-20261023` spesifik onayı istenebilir. Gün14 PR ve main SHA yeniden kontrol edilmeli. **Bu gün CLOSED değildir; hiçbir kamu yayın eylemi yapılmadı.**
+
+
+## Gün 14 ek site çalışması (23.10.2026) — PR #40 / YAYINLANMADI
+- Kullanıcı mevcut sitedeki eksikleri ve varsa bugünkü paylaşımları hazırlamamızı istedi. **Gün 14 sosyal paylaşım kotası yoktur; yeni kamu paylaşımı, video ve zamanlama yapılmadı**. Bu istek yeni hesap yayını için eylem bazlı izin sayılamaz.
+- Kaynak doğrulaması: `main` `hizmetler.html` hukuk kartında `sektorler/hukuk.html` sayfasına geçiş yoktu. `main` `sektorler/hukuk.html` zaten kapsamlı insan denetimli hukuk açıklaması içeriyordu; yinelenen yeni SEO sayfası açılmadı.
+- **[Draft PR #40](https://github.com/synapseautomate/synapseautomate.github.io/pull/40)**, dal `draft/v8-gun14-hukuk-madde-on-inceleme-site-20261023`, iki dosyalık değişiklik: `hizmetler.html` hizmet kartına var olan sayfaya ilgili bağlantı, `sektorler/hukuk.html` içinde sentetik bir fesih bildirimi maddesi → kaynak metni → insan incelemesi örnek kartı. Kamu metninde Gün/PR/QA bilgisi yok. Kartta `SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL` etiketi var, canlı ürün veya hukuki karar iddiası yok.
+- **QA A:** GitHub kaynak/link/kapsam/kamuya sızma denetimi 12/12 PASS, PR karşılaştırmasında yalnız iki HTML dosyası. **QA B:** yalnız yeni örnek bloğunun yerel Chromium önizlemesi 320/375/390/768/1024/1440: 6/6, yatay taşma 0; renk kontrastı metin >8:1. Tam canlı sayfa, Safari, Lighthouse, FormSubmit ve Pages HTTP bağımsız testleri TEST EDİLEMEDİ. Önizleme yerel ZIP tesliminde, birebir tam site screenshot'u değildir.
+- **Durum:** DRAFT / main merge ve kamu yayını **ONAY BEKLİYOR**. Mevcut `main` doğrulama başlangıç SHA `07040d2ed372df059c6d60d4567c270ad14655e4`. Gün14 ana kanal/funnel PR #39 draft duruyor, birleştirilmedi.
+- **Sonraki tek öncelik değişmedi:** GA4/GSC/FormSubmit/LinkedIn Services gerçek izinli nitelikli talep verisi olmadan kanal lideri ilan etme; site PR #40 onayı ayrı tutulur.
