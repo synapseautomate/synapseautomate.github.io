@@ -11,7 +11,7 @@ Tek kaynak kartı oluştur: Hukuk ön inceleme; alıcı hukuk operasyon sorumlus
 | konu | Sözleşme maddesi için kelime taraması, insan onayı | PASS |
 | primary evidence | HUKUK_ON_INCELEME_SENTETIK_KANIT_KARTI.md, demo JSON | 7/7 yerel test |
 | özgün sürüm | 2026-10-23 iç sentetik v0.1 | PASS |
-| marka varlık hakkı | SYNPASE repo kimliği, üçüncü taraf müşteri yok | PASS (yalnız iç metin) |
+| marka varlık hakkı | SYNAPSE repo kimliği, üçüncü taraf müşteri yok | PASS (yalnız iç metin) |
 | gerçek PDF/video | üretilmedi, storyboard önerisi var | BİLİNMİYOR değil: YAPILMADI |
 | yayın / gerçek sonuç | kullanıcı onayı / panel yok | ONAY BEKLİYOR / BİLİNMİYOR |
 
