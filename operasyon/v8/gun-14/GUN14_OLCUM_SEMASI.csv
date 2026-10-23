@@ -1,0 +1,11 @@
+tarih_utc3,kanal,olay_turu,unique_anonymized_lead_id,proven_event_value,unit,source_uri,evidence_level,verified_at,notes
+2026-10-23,site,organic_impressions,,BİLİNMİYOR,impression,,Ø,,GSC yetki paneli yok
+2026-10-23,site,consented_sessions,,BİLİNMİYOR,session,,Ø,,GA4 consent/panel yok
+2026-10-23,site,verified_form_delivery,,BİLİNMİYOR,event,,Ø,,FormSubmit gerçek e-posta teslimi görülmedi
+2026-10-23,site,qualified_unique_inbound,,BİLİNMİYOR,person,,Ø,,0 ile veri yok ayrı
+2026-10-23,linkedin,services_inbound,,BİLİNMİYOR,person,,Ø,,Services sayfası aktif mi bilinmiyor
+2026-10-23,upwork,funded_order,,BİLİNMİYOR,contract,,Ø,,Gün08 kararıyla kanal kapsam dışı
+2026-10-23,all,paid_completed_order,,BİLİNMİYOR,order,,Ø,,finansal işlem kaydı erişilemiyor
+2026-10-23,all,bank_collected,,BİLİNMİYOR,TRY,,Ø,,banka ekranı yok
+2026-10-23,all,refund,,BİLİNMİYOR,TRY,,Ø,,banka/platform iade ekranı yok
+2026-10-23,all,net_revenue,,BİLİNMİYOR,TRY,,Ø,,vergi/komisyon tahsilat bilinmiyor
