@@ -1,0 +1,10 @@
+tarih,ölçü,değer,birim,kaynak_türü,kanıt_url,kanıt_güveni,neden_kodu
+"2026-10-19","gercek_nitelikli_ziyaret","BİLİNMİYOR","oturum","GA4 / yetkili panel","","KANIT_YOK","PANEL_YOK"
+"2026-10-19","gonullu_talep","BİLİNMİYOR","tekil nitelikli talep","posta/CRM","","KANIT_YOK","TESLİM_KANITI_YOK"
+"2026-10-19","platformda_fonlanmis_siparis","BİLİNMİYOR","sipariş","ticaret/platform","","KANIT_YOK","UPWORK_KAPSAM_DISI_VE_HESAP_YOK"
+"2026-10-19","tahsil_edilen_ucretli_satis","BİLİNMİYOR","tahsilat","mali kayıt","","KANIT_YOK","YETKİLİ_MALİ_KAYIT_YOK"
+"2026-10-19","test_edilen_form_yolu","0","gerçek POST","bu operatör eylem günlüğü","https://github.com/synapseautomate/synapseautomate.github.io/pull/28","OPERATÖR_EYLEM_KAYDI","CANLI_POST_YAPILMADI"
+"2026-10-19","lead_form_submit","BİLİNMİYOR","GA4 olayı","gerçek GA4 paneli","","KANIT_YOK","RIZA_VE_GA4_PANEL_YOK"
+"2026-10-19","generate_lead","BİLİNMİYOR","GA4 olayı","gerçek GA4 paneli","","KANIT_YOK","RIZA_VE_GA4_PANEL_YOK"
+"2026-10-19","kaynakli_nitelikli_talep","BİLİNMİYOR","uygun tekil inbound","insan/posta teyidi","","KANIT_YOK","KANIT_YOK"
+"2026-10-19","bilinmeyen_kanal_sayisi","5","iç kanal statüsü","operasyon envanteri","","KANIT_YOK","İÇ_SAYIM_GERÇEK_TRAFİK_DEĞİL"
