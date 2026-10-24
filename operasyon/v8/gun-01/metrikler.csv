@@ -1,0 +1,19 @@
+tarih,kanal,olcu,tanim,deger,birim,kaynak,kanit_guveni
+önceki 27 gün,tüm kanallar,tahsil edilen ücretli satış,Önceki dönemdeki iddia,0,adet,kullanıcı beyanı,bağımsız teyitsiz
+14.10.2026–12.11.2026,site,gösterim,Yetkili analitik gösterim,BİLİNMİYOR,adet,GA4/GSC paneli yok,kanıt yok
+14.10.2026–12.11.2026,LinkedIn,gösterim,Yetkili şirket sayfası gösterim,BİLİNMİYOR,adet,LinkedIn admin paneli yok,kanıt yok
+14.10.2026–12.11.2026,Upwork,katalog gösterimi,Aktif katalog gösterim,BİLİNMİYOR,adet,Upwork hesabı okunmadı,kanıt yok
+14.10.2026–12.11.2026,site,nitelikli ziyaret,İhtiyaçla uyumlu gerçek oturum,BİLİNMİYOR,oturum,analitik panel yok,kanıt yok
+14.10.2026–12.11.2026,site,demo başlatma,Gerçek ürün demo olayı,BİLİNMİYOR,olay,ürün ve ölçüm doğrulanmadı,kanıt yok
+14.10.2026–12.11.2026,site ve platformlar,gönüllü talep,Alıcının başlattığı izinli talep,BİLİNMİYOR,adet,yetkili inbox yok,kanıt yok
+14.10.2026–12.11.2026,site ve platformlar,izinli teklif,Onayla gönderilmiş kapsamlı teklif,BİLİNMİYOR,adet,teklif kayıtları yok,kanıt yok
+14.10.2026–12.11.2026,Upwork,fonlanan sipariş,Escrow/funded ama tahsil değil,BİLİNMİYOR,adet,Upwork paneli yok,kanıt yok
+14.10.2026–12.11.2026,tüm kanallar,tahsil edilen satış,Doğrulanmış ücretli işlem,BİLİNMİYOR,adet,ödeme banka paneli yok,kanıt yok
+14.10.2026–12.11.2026,tüm kanallar,brüt gelir,Gerçek tahsilat,BİLİNMİYOR,TRY,ödeme banka paneli yok,kanıt yok
+14.10.2026–12.11.2026,tüm kanallar,iade,Gerçek doğrulanmış iade,BİLİNMİYOR,TRY,ödeme paneli yok,kanıt yok
+14.10.2026–12.11.2026,tüm kanallar,net gelir,Brüt eksi komisyon iade kesinti,BİLİNMİYOR,TRY,ödeme paneli yok,kanıt yok
+14.10.2026,ödeme,doğrulanmış ödeme kapısı,KYC ve ödeme teslim kanıtı,BİLİNMİYOR,evet/hayır/bilinmiyor,yetkili panel yok,kanıt yok
+14.10.2026,operasyon,açık P0,Gün 01 iç sınıflandırması,6,adet,blokajlar.md,iç denetim
+14.10.2026,operasyon,açık P1,Gün 01 iç sınıflandırması,3,adet,blokajlar.md,iç denetim
+14.10.2026,bu oturum,yapılan peşin harcama,Sadece bu çalışmadaki operatör harcaması,0,TRY,oturum eylem kaydı,oturum
+14.10.2026,bu oturum,yeni sosyal yayın,Sadece bu çalışmada oluşturulan yayın,0,adet,oturum eylem kaydı,oturum
