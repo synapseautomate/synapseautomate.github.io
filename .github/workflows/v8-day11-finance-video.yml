@@ -1,0 +1,46 @@
+name: V8 Day11 Real Finance Checklist Video (Draft Only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/v8-day11-finance-video.yml'
+      - 'scripts/v8_day11_youtube_finance_capture.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Real Chromium and Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Install system FFmpeg for offline local conversion
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Verify all eight real web control steps and record
+        shell: bash
+        run: |
+          set -euo pipefail
+          export SYNAPSE_MEDIA_DIR=/tmp/synapse-v8-day11-finans-youtube
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/day11-finance-server.log 2>&1 &
+          sleep 2
+          node scripts/v8_day11_youtube_finance_capture.mjs
+          ffmpeg -hide_banner -loglevel error -y -i "$SYNAPSE_MEDIA_DIR/FINANS_GERCEK_TARAYICI_HAM.webm" -c:v libx264 -crf 22 -pix_fmt yuv420p -movflags +faststart "$SYNAPSE_MEDIA_DIR/SYNAPSE_FINANS_GERCEK_ARAC_1920x1080.mp4"
+          test -s "$SYNAPSE_MEDIA_DIR/SYNAPSE_FINANS_GERCEK_ARAC_1920x1080.mp4"
+          ffprobe -v error -show_entries stream=codec_name,width,height -of csv=p=0 "$SYNAPSE_MEDIA_DIR/SYNAPSE_FINANS_GERCEK_ARAC_1920x1080.mp4"
+      - name: Proof and assets, not public site deployment
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synapse-v8-day11-real-finance-checklist-video
+          path: /tmp/synapse-v8-day11-finans-youtube/
+          if-no-files-found: error
+          retention-days: 30
