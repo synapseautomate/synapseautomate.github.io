@@ -1,0 +1,8 @@
+# 149 — Nedensellik: artış varsa bile neden kanıtı değil
+Varsayımsal `talepler↑` ve `gönderi kaydı↑` birlikte görülse dahi aynı kullanıcının niyeti, önceki içerikler, mevsim, rakip gündemi ve farklı kanal takipçileri etkileyebilir.
+**Deney mantığı:** mevcut `hizmetler.html` AI eğitim kartındaki link yok/kartta link var. Aynı hafta başka kartların veya navigasyonun değiştirilmesi karıştırıcı etkidir. İzlenebilir tek hedef bu karttır.
+**Örnek olay sözlüğü:** `asset_view`, önerilen `cta_click`, `lead_form_submit`, `generate_lead`; her biri ayrı adım. **Payload:** `{"page_path":"/hizmetler.html","event":"asset_view","experiment_id":"ai_readiness_1"}` yalnız sentetik etiketli taslak; GA4'e gönderilmedi.
+**Test URL:** `araclar/surecini-20-dakikada-haritala.html?utm_source=site&utm_medium=organic&utm_campaign=ai_readiness_g15`.
+**Kontrol:** değişmemiş benzer hizmet kartlarını açıklayıcı kontrol olarak incele; kıyaslar eşdeğer trafik olmadan neden sonucu değildir. Rıza ve PII kapısı, kart linki rollback.
+
+**Konu ve sınırlar (24.10.2026):** Kullanıcı öncelikli güncellemesi: **Yapay Zekâ Eğitimi ve Danışmanlık / AI okuryazarlığı ve otomasyona hazırlık**. Önceki CSV stok örneğini yeni gönderi diye çoğaltma. Site main `ca2a47a0c6cf22149a47b48b74c38c4a8a24cd96`; `hizmetler.html`, `araclar/surecini-20-dakikada-haritala.html`, `surec-analizi.html`, `iletisim.html`, `assets/js/synapse-measurement-v1.js` gerçekten okundu. Gerçek talep/GA4/LinkedIn paneli BİLİNMİYOR. Taslak dal dışına eylem YOK. **Sorumlu:** SYNAPSE operasyon + hesap sahibi; **izin:** WEB-G15-TEK-CTA-20261024 ayrıca gerekli.
