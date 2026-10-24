@@ -1,0 +1,13 @@
+tarih,metrik,deger,birim,kanit_durumu,kanit_url,sahip
+2026-10-13,onceki_27_gun_dogrulanmis_satis,0,adet,kullanici_beyani;odeme_kaydi_gorulmedi,,hesap_sahibi
+2026-10-13,yeni_donem_satis,bilinmiyor,adet,hesap_verisi_yok,,hesap_sahibi
+2026-10-13,yeni_donem_brut_tahsilat,bilinmiyor,TL,odeme_paneli_yok,,hesap_sahibi
+2026-10-13,yeni_donem_net_tahsilat,bilinmiyor,TL,odeme_paneli_yok,,hesap_sahibi
+2026-10-13,yeni_donem_iade,bilinmiyor,TL,odeme_paneli_yok,,hesap_sahibi
+2026-10-13,site_gosterim,bilinmiyor,adet,GA4_paneli_yok,https://github.com/synapseautomate/synapseautomate.github.io/blob/main/assets/js/synapse-measurement-v1.js,hesap_sahibi
+2026-10-13,site_ziyaret,bilinmiyor,oturum,GA4_paneli_yok,https://synapseautomate.github.io/,hesap_sahibi
+2026-10-13,cta_tik,bilinmiyor,adet,GA4_paneli_yok,https://synapseautomate.github.io/,hesap_sahibi
+2026-10-13,checkout_baslangici,bilinmiyor,adet,odeme_paneli_yok,,hesap_sahibi
+2026-10-13,linkedin_gosterim,bilinmiyor,adet,LinkedIn_paneli_yok,https://www.linkedin.com/company/synapseautomate/,hesap_sahibi
+2026-10-13,tam_akis_odeme_dogrulama,hayir,durum,islem_ve_panel_kaniti_yok,https://synapseautomate.github.io/surec-analizi.html,hesap_sahibi
+2026-10-13,acik_P0_satis_blokaji,4,adet,denetim_siniflandirmasi,https://github.com/synapseautomate/synapseautomate.github.io/blob/audit/gun-01-v6-evidence-20261013/operasyon/gun-01/blokajlar.md,operator
