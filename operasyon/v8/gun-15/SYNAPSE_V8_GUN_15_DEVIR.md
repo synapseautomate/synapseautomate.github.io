@@ -79,3 +79,53 @@ Yetkili gerçek GSC/GA4/FormSubmit/LinkedIn panel olmadan performans/deney zafer
 - **Gerçek video olmadığı için YouTube Shorts, Instagram Reels veya TikTok video yayını iddia edilmedi**; YouTube Topluluk fotoğrafı ve TikTok Fotoğraf Modu, yalnız hesapta özellik kullanılabiliyorsa. Metricool bağlantısı farklı hesaplara ait olduğu için kullanılmadı. Canlı LinkedIn/Meta/TikTok panel önizlemesi ve gerçek yayın metrikleri BİLİNMİYOR.
 - QA medya: ZIP dosya yolu, SHA256, 10 orijinal PNG bit eşitliği, iki PDF sayfa sayısı, 9 yuva ve 280 karakter altı X metni PASS; yerel tek ekran yayın masası 320/375/390/768/1024/1440 Chrome component testleri 6/6 PASS; gerçek hesap/yayın mobil crop PASS değildir. Kamuya görünen görsellerde gün/PR/QA notları bulunmaz. Saatler 2026 Buffer/Sprout gibi genel araştırmaların test hipotezidir, kullanıcıya ait hesap performans testi DEĞİL.
 - **Gün15 CLOSED ilan edilmedi**; gerçek paylaşımlar/performans ve açılmış P0/P1 belgeleri kullanıcı kabulünden ayrı kalır. PR41 arşiv çalışma dalı açık-HOLD'dur, şimdi site PR42 merge olmuş olsa da hiçbir iç belge main'e yüklenmedi.
+
+
+
+---
+## NİHAİ KAPANIŞ — 24.10.2026 | GÜN 15 CLOSED / 19-19 KULLANICI PASS
+**Karar tarihi:** 24 Ekim 2026, Europe/Istanbul. **Takvimde planlanan Gün 15:** 28 Ekim 2026; **fiilî operasyonel kapanış:** 24 Ekim 2026 (**4 gün erken**). Gün numarası **15** kalır.
+**Kullanıcı ifadesi:** 1–19 maddelerin tamamı tek tek **PASS**, işlerin kapanması kabul; PR #41'i `main`e birleştirme, yeni paylaşım, ödeme veya hesap işlemi yapma. Kapanışın niteliği **kullanıcı kabulü / operasyonel**; gerçek platform yükleme logu, metrik veya bağımsız dış cihaz testinin üretildiği anlamına GELMEZ.
+
+### Onaylanan 19 son kontrol
+| No | Kontrol | Kabul statüsü |
+|---|---|---|
+| 01 | LinkedIn yüklemesinin son durumu | **PASS (kullanıcı beyanı)** |
+| 02 | Tüm gönderilerin gerçek yayın durumu | **PASS (kullanıcı beyanı)** |
+| 03 | LinkedIn ve Instagram gerçek platform görünümü | **PASS (kullanıcı beyanı)** |
+| 04 | Instagram Story bağlantısı | **PASS (kullanıcı beyanı)** |
+| 05 | Diğer platformlarda format kontrolü | **PASS (kullanıcı beyanı)** |
+| 06 | Kamuya açık kreatiflerde marka ve telif | **PASS (kullanıcı beyanı)** |
+| 07 | Canlı site CTA testi | **PASS (kullanıcı beyanı)** |
+| 08 | Tam site mobil ve erişilebilirlik kontrolü | **PASS (kullanıcı beyanı)** |
+| 09 | Tek değişkenin korunduğunun kontrolü | **PASS (kullanıcı beyanı)** |
+| 10 | Rollback ve olası hata kapısı | **PASS (kullanıcı beyanı)** |
+| 11 | Beş günlük tek metrikli gözlem planı | **PASS (kullanıcı beyanı)** |
+| 12 | Kaynak ve gerçek talep ayrımı | **PASS (kullanıcı beyanı)** |
+| 13 | Veri eksikliği ve A/B yorumu | **PASS (kullanıcı beyanı)** |
+| 14 | QA A — son yayımlanan sürümün kaydı | **PASS (kullanıcı beyanı)** |
+| 15 | QA B — bağımsız marka ve kullanıcı deneyimi | **PASS (kullanıcı beyanı)** |
+| 16 | Gün 15 ek 10 yöntem dosyasının son kabulü | **PASS (kullanıcı beyanı)** |
+| 17 | PR #41'in arşiv kararı | **PASS (kullanıcı beyanı)** |
+| 18 | Gün 15 devir dosyasının güncellenmesi | **PASS (kullanıcı beyanı)** |
+| 19 | Gün 15 nihai CLOSED kararı | **PASS (kullanıcı beyanı)** |
+
+### Kapanışta geçerli GitHub ve üretim durumu
+- **Repo:** https://github.com/synapseautomate/synapseautomate.github.io
+- **`main` SHA (bu kapanışta GitHub'dan doğrulandı):** `4df7e2e7279c9e3f65c7ad1b1fabeb0fb08ff3d1`. 
+- **PR #42:** https://github.com/synapseautomate/synapseautomate.github.io/pull/42 — **MERGED**; yalnız `hizmetler.html` içindeki AI Eğitim hizmet kartından mevcut `araclar/surecini-20-dakikada-haritala.html` aracına CTA yayını. Sitenin gerçek mobil/erişilebilirlik kontrolü kullanıcı tarafından **PASS** olarak bildirildi. GitHub kaynak bağlantısı ve değişiklik ayrı doğrulandı; dışarıdan gerçek HTTP/Safari/Lighthouse ham raporu bu devirde yok.
+- **PR #41:** https://github.com/synapseautomate/synapseautomate.github.io/pull/41 — **iç çalışma arşivi, MERGE YOK**. İlk red verilen tasarım dosyaları asla yayın varlığı olarak tekrar kullanılmamalı. Bu PR dalı `operasyon/v8/gun-15/` iç devir ve 10 yöntem belgesini taşır. Kullanıcının 17 numaralı PASS kararıyla PR, `main`e alınmadan kapatılacak/kapalı durumu ayrıca teyit edilecek.
+- **Kabul edilmiş kreatifler:** iki ayrı tasarım A “Önce karar” / B “Dört eşik, tek karar”. Kullanıcı her iki yönü **PASS** olarak inceledi; ilk red verilen eski sürüm geçersizdir. Konu: “Yapay Zekâ Eğitimi ve Danışmanlık / AI okuryazarlığı ve otomasyona hazırlık”. Sentetik kanıt etiketi korunur.
+- **Kullanıcı yayın beyanı:** “Hepsini yayınladım planladım”; ayrıca LinkedIn yükleme sorunu sonrası 19 kontrolün hepsini **PASS** işaretledi. LinkedIn'in son başarılı formatı (tek PDF belge mi / çoklu fotoğraf mı), tüm platformlarda tek tek hangisinin **yayında** hangisinin **planlı** olduğu ve gerçek permalinkleri bu sohbet kaynaklarından belirlenemiyor; hesap paneli doğrulaması olmadan kesinleştirme. Paylaşım veya planlama fiilen kullanıcı tarafından yapıldı; operatör hiçbir sosyal hesaba gönderim yapmadı. Metricool bağlı olsa da başka hesaplara ait, kullanılmadı.
+
+### Kanıt sınıfları ve yanlış kapanışın önlenmesi
+1. **GitHub doğrulanmış:** PR #42 merge, `main` SHA ve devirin taslak dalında bulunması. 
+2. **Teknik dosya üretim kaydı:** eski üretim/kreatif yenileme paketleri önceki oturumda üretildi; yeni 19 maddelik kabul, otomatik yeni PDF render veya gerçek cihaz testini çalıştırmaz.
+3. **Kullanıcı PASS:** canlı site ve responsive, erişilebilirlik, platform crop, Story linki, telif/marka, iki QA turu, rollback ve paylaşım/planlama kontrolü. Ham ekran görüntüsü/cihaz logu burada bağımsız teyit edilmedi.
+4. **BİLİNMİYOR** kalacaklar: GA4/GSC/LinkedIn gerçek nitelikli ziyaretler, benzersiz inbound, CTA tıklaması, doğrulanmış FormSubmit teslimleri, beş günlük gözlem sonuçları, Upwork fonlu sipariş, banka tahsilatı, iade/net gelir. Bunlar 0 değildir ve PASS'ten gelir/satış sonucu türetilmez.
+5. **5 günlük test planı PASS = plan kabulü**, beş günün sonuçlarının bugün ölçüldüğü veya A/B kazanıldığı iddiası değildir. Aynı gün çoklu sosyal yayın nedenselliği karıştırabilir.
+6. **Hukukî/vergi/satıcı/KVKK/ödeme kapıları:** Gün15 operasyonel kapanışı bağımsız hukuki/finansal uygunluk kanıtı değildir. Gizli veri ve KYC/IBAN gönderilmedi; yeni ödeme açılmadı.
+7. **Bu kapanış sırasında yeni yayın, mesaj, ödeme, hesap kimlik işlemi, reklam, abonelik, main merge YOK.** 0 TL peşin harcama sınırı korundu.
+
+### Sonraki güne tek güvenli öncelik
+**Gün 16'nın kendi brifini sıfır bağlamla açarken `main` SHA ve gerçek kanal ölçüm erişimini yeniden doğrula.** Gün 15'te kabul edilmiş site ve kreatifleri yeniden üretme; her yeni kamu eylemi için belirli kullanıcı izni gerekir. **Gün 15 = CLOSED (operasyonel kullanıcı kabulü).**
