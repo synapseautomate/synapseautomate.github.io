@@ -1,0 +1,8 @@
+# 128 — İçerik laboratuvarı: falsifikasyon kapısı
+**X:** yalnız hizmet kartındaki bir CTA. **Y hedef kitle:** AI kullanımını değerlendiren B2B operasyon yöneticisi. **Z tek metrik:** gerçek, izinli, nitelikli süreç haritası sonrası talep oranı.
+**Yanlışlayacak bulgu:** güvenilir ve yeterli gerçek veriyle nitelikli talep değişmiyor / düşüyor, ya da kullanıcı deneyinde CTA işlevi belirsiz kalıyor. Önce gerçek örneklem, sonra yorum.
+**Kontrol değişkenleri:** aynı sayfa, fiyat, CSS, amaç, zaman penceresi, onay; kendi gösterim/kliklerini gerçek trafik sayma. Küçük örneklemde yayılım veya algoritma üstünlüğü yok.
+**Olay sözlüğü:** `asset_view` gözlem; `cta_click` önerilen (kodda YOK); `lead_form_submit` deneme; `generate_lead` redirect+oturumdan hesaplanan, gerçek e-posta paneli YOK.
+**Test URL + sentetik payload:** `?utm_source=site&utm_medium=organic&utm_campaign=ai_readiness_g15`, `{"event":"cta_click","cta_id":"ai_egitim_readiness"}`; gerçek event uydurulmadı. Consent kapısı, kişisel veri minimizasyonu ve tek link rollback uygulanır.
+
+**Konu ve sınırlar (24.10.2026):** Kullanıcı öncelikli güncellemesi: **Yapay Zekâ Eğitimi ve Danışmanlık / AI okuryazarlığı ve otomasyona hazırlık**. Önceki CSV stok örneğini yeni gönderi diye çoğaltma. Site main `ca2a47a0c6cf22149a47b48b74c38c4a8a24cd96`; `hizmetler.html`, `araclar/surecini-20-dakikada-haritala.html`, `surec-analizi.html`, `iletisim.html`, `assets/js/synapse-measurement-v1.js` gerçekten okundu. Gerçek talep/GA4/LinkedIn paneli BİLİNMİYOR. Taslak dal dışına eylem YOK. **Sorumlu:** SYNAPSE operasyon + hesap sahibi; **izin:** WEB-G15-TEK-CTA-20261024 ayrıca gerekli.

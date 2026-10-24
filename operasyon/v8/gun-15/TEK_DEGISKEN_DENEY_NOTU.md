@@ -1,0 +1,13 @@
+# Gün 15 — Tek değişkenli açıklık deneyi (taslak)
+**Gözlenmiş kaynak sürtünmesi:** `hizmetler.html` Yapay Zekâ Eğitimi ve Danışmanlık kartı kısa bir açıklamayla bitiyor, ilgili sonraki adım bağlantısı yok. Gözlenmiş *müşteri kaybı* veya kanal kazananı değildir.
+**Hipotez:** Eğitim kartından mevcut süreç haritası aracına tek, açık bağlantı eklemek, nitelikli ziyaretçinin bir sonraki adıma erişmesini kolaylaştırabilir; etkisi ölçülmedi.
+**Deney alanı:** Sadece bu hizmet kartında **1 CTA bağlantısı**. Başlık, açıklama, fiyat, görsel, diğer kartlar, tüm GA4 JS, checkout değişmez.
+**Önce:** `<h3>Yapay Zekâ Eğitimi ve Danışmanlık</h3><p>yapay zekâ okuryazarlığı, strateji danışmanlığı ve dijital dönüşüm yol haritası.</p>` (bağlantı yok).
+**Sonra:** aynı metnin ardına `<a class="more" href="araclar/surecini-20-dakikada-haritala.html">Otomasyona hazırlık için sürecini haritala</a>` eklenmesi. Repo draft dalı `draft/v8-gun-15-ai-egitim-tek-cta-20261024`; canlı DEĞİL.
+**Tek ana metrik / sonraki 5 gün:** Bu CTA üzerinden başlayan **doğrulanmış, gönüllü süreç-analizi talebi** / CTA'yı görmüş **nitelikli ziyaret**. Gerçek panel/consent/form teslimi olmadığı için tüm değerler BİLİNMİYOR ve test **HOLD**. Aracın açılması lead değildir; CTA tıklaması satış değildir.
+**Kontrol:** Fiyat, diğer trafik kaynakları, sayfa içeriği sabit tutulmalı. Karşılaştırma aynı dönem ve aynı hedef niyetle yapılmadan nedensellik iddia edilemez. Öncesi/sonrası tablosu boş tutuldu.
+**Durdur/geri al:** 404, yanlış niyet, klavye/kontrast regresyonu, yanıltıcı ürün/ödeme vaadi veya kullanıcı onayı olmaması → eski satırı GitHub draft üzerinden geri döndür. `main` değişmedi.
+**Tarih:** 24.10.2026; **Sorumlu:** SYNAPSE içerik/teknik; **izin:** `WEB-G15-TEK-CTA-20261024` ONAY BEKLİYOR.
+
+**Kısıt:** İç çalışma. Kazanan kanal BİLİNMİYOR, gerçek kullanıcı örneklemi BİLİNMİYOR, satış BİLİNMİYOR. Yalnız **Yapay Zekâ Eğitimi ve Danışmanlık — AI okuryazarlığı ve otomasyona hazırlık** konusu. CSV/stock önceki gün örnekleri yeni konu olarak kullanılmadı. Gerçek müşteri veya ürün demosu YOK. GitHub main/site, LinkedIn ve Instagram için yeni eylem onayı gerekir; hesap/ödeme/DM/uygulama YOK.
+**Dayanak:** Kaynak denetimi 24.10.2026: main ca2a47a0c6cf22149a47b48b74c38c4a8a24cd96; hizmetler.html, surec-analizi.html, iletisim.html, assets/styles-v33.css, assets/js/synapse-measurement-v1.js, araclar/surecini-20-dakikada-haritala.html; önceki Gün14 SYNAPSE_V8_GUN_14_DEVIR.md (#39 arşiv dalı). Resmî: https://developers.google.com/analytics/devguides/collection/ga4/reference/events ; https://www.linkedin.com/help/linkedin/answer/a518909 ; https://developers.google.com/search/docs/crawling-indexing/links-crawlable
