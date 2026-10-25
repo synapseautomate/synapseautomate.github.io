@@ -81,3 +81,9 @@ Asıl kullanıcı hesabında yayın öncesi final kreatif/kanal yükleme kontrol
 ---
 ## Son QA düzeltmesi — sentetik CSV etiketinin dosya düzeyinde açık olması
 **25.10.2026 — ikinci QA düzeltmesi:** İlk CSV tesliminde zorunlu `SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL` ibaresi dosyanın her satırında yoktu. Her iki GitHub CSV'ye `ornek_etiketi` sütunu eklendi, 5'er kurgusal satırın her birine açık etiket yazıldı, noktalı virgül geçen tek alan çift tırnakla doğru CSV sütununda tutuldu. **Gerçek çıktı:** yerel Python csv.DictReader iki dosyada 5 satır/5 etiket PASS, `python qa_test.py` tekrar QA_A=true ve QA_B=true. Bu yalnız teknik sentetik veri paket kontrolüdür, çalışan RAG/gerçek kişisel veri yetki testi değildir. Yeni GitHub değişiklikleri `90c0473b2533e693d9c599fe571ed7f785ef57d0` ve `a7b7f66067eb195492ca98227ec8fe1517ad623e` kaynak/sonuç CSV etiket düzeltmeleridir.
+
+
+---
+## 25.10.2026 — KULLANICI RED SONRASI YENİ KREATİF / SITE PR #44 MERGED
+
+**Bu bölüm önceki medya ve site taslağı durumlarının yerini alır.** Kullanıcı eski görsellerin simetri/grafik/iç not kusurlarını reddetti. Yeni sinematik/tipografik 5 PNG + tek 5 sayfa PDF + iki caption/alt metin ve erişilebilir web rehberi yeniden üretildi; son yaratıcı set kullanıcı PASS bekliyor. Tam liste ve QA: `GUN16_YENI_KREATIF_KAYNAK_BENCHMARK_QA_20261025.md`. Site için açık kullanıcı onayıyla temiz PR #44 **MERGED**: https://github.com/synapseautomate/synapseautomate.github.io/pull/44 ; yeni main SHA `0c9e4efc6b5e1ea10c93daf5a0992dc9639003ca`. Site iç yol `hizmetler.html` → Kuruma Özel Yapay Zekâ ve Bilgi Tabanı → Kaynaklı yanıt için 5 adımı incele → yeni rehber ve iki CSV. Eski draft PR #43 iç belgelerdir; kamu HTML versiyonunu yeniden merge ETME. Sosyal yayın/onay YOK, kanallar/gelir BİLİNMİYOR. Bu çalışma **Gün16 CLOSED değil**.
