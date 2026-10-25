@@ -101,3 +101,30 @@ Asıl kullanıcı hesabında yayın öncesi final kreatif/kanal yükleme kontrol
 - **Yayın izin statüsü:** WEB G16 renk düzeltmesi (PR45) daha önce açık kullanıcı izniyle yayımlandı. LinkedIn LI-G16-RAG-20261025, Instagram IG-G16-RAG-20261025 ve diğer ek mecralar için **yeniden, platform/tarih/gönderi bazlı ONAY BEKLİYOR**. Hiçbir sosyal hesaba gönderi/planlama yapılmadı. Metricool başka hesapları temsil eder, kullanılmadı.
 - Gün16 eski on iki yöntem dosyası içerikte vardı: 044,053,059,087,116,129,160,196,213,217,240,247; bunlar yayın postları değil, GitHub DRAFT iç prosedür ve karar metinleridir. E-posta izni ve gelir / müşteri metrikleri BİLİNMİYOR, ücretsiz rehber üye/telefon şartına bağlanmadı.
 - **Gün 16 CLOSED DEĞİL; yeni satın alma/onay/ödeme/hesap işlemi yapılmadı.** Sonraki tek öncelik yeni medyada kullanıcı tasarım incelemesi ve eylem bazlı sosyal onay, ardından gerçek platform QA.
+
+
+
+---
+## 25.10.2026 — İki bağımsız kısa film, son prodüksiyon devri
+
+**Kullanıcı emri:** Nike ve Pepsi'nin seçilebilir resmî kampanyalarını kalite disiplini olarak incele; gerçek, özgün iki hareketli SYNAPSE filmi üret, sentetik örnek etiketini koru, sıfır iç denetim notu kamu medya içine sızsın. **Kullanıcının bu mesajı yayına veya hesap eylemine onay DEĞİLDİR.**
+
+**Oturumdaki gerçek medya çıktıları (GitHub binary DEĞİL; sohbet teslimi):**
+- `SYNAPSE_FILM_01_AYNI_SORU_IKI_SURUM_SHORTS_1080x1920.mp4` — 19,20 s; 1080×1920; H.264, 24fps, AAC 48kHz; sentetik kaynak KB-OPS-01 eski v1 / güncel v2 örneği.
+- `SYNAPSE_FILM_02_YETKI_KAPISI_REELS_1080x1920.mp4` — 17,79 s; 1080×1920; H.264, 24fps, AAC 48kHz; sentetik erişim rolü/KB-IK-03 kısıtlı belge.
+- Her filme gerçek kareden türetilmiş PNG kapak, .srt/.vtt yardımcı altyazı ve erişilebilir metin, YouTube/Instagram/TikTok/LinkedIn/Facebook için gerçek caption taslakları.
+- **Kamu yayın paketi:** `SYNAPSE_GUN16_IKI_PREMIUM_VIDEO_TEMIZ_YAYIN_PAKETI.zip` (11.758.925 bayt, 12 dosya, tüm dosyalar PUBLIC altında; hiçbir INTERNAL/QA/betiği içermez).
+- Kamu görsellerinde zorunlu tam sentetik etiket `SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL`; var olan gerçek logo orantılı. Gerçek bir RAG arayüzü, müşteri vakası, fiyat/ROI ve sonuç garantisi YOK.
+
+**QA A — gerçekten yürütülen teknik denetim:** `python /mnt/data/SYNAPSE_G16_FILMS_20261025/INTERNAL/verify_films.py`: iki MP4 tüm kare/akış FFmpeg decode PASS; 1080×1920, H.264+AAC 48kHz 24fps, 2/2 PNG kapak doğru; manifest SHA256: Film1 `04c1c3288ab0166708a5ae990f26bef03a9954dad4ade31b8b73a1084a467031`, Film2 `92fe2d8b7bfaf3ee57177420336c7022601fee4f9a13331488692b09c2d46537`. `ffmpeg ... volumedetect`: iki filmde peak `-2.0 dB`, mean `-18.9 dB`. Son mux 48kHz AAC, ilk aşamadaki ekstra metin çıkarıldı. `zipfile.testzip()` PASS, kamu zip 12 dosya ve iç not/QA betiği içermiyor.
+**QA B — fiilî kare/görsel/sınır incelemesi:** film başına 5 ayrı gerçek MP4 karesi FFmpeg ile çıkarılıp 10 karelik bir yan-yana görselde optik inceleme; kaynak başlık, belge sürümü, erişim ve CTA tutarlı. Grafik ve logo çakışması tespit edilmedi. İç PR/gün/QA notları doğrudan filmlerde ve kapaklarda bulunmuyor. Gerçek iPhone/Android, YouTube/TikTok/Meta paneli, platform crop/thumbnail ve algoritmik performans test edilmedi — **TEST EDİLEMEDİ / BİLİNMİYOR**; sıfır kusur veya Nike/Pepsi eşdeğerliği kanıtlanmış sayılmaz.
+
+**Resmî seçilmiş benchmark kaynakları (hepsi değil):**
+- Nike So Win, 09.02.2025: https://about.nike.com/en/newsroom/releases/nike-so-win-brand-anthem/
+- Nike Rip The Script, 04.06.2026: https://about.nike.com/en/newsroom/releases/nike-debuts-rip-the-script-a-step-inside-the-universe-of-nike-football
+- Pepsi Thirsty For More, 25.04.2025: https://www.pepsico.com/newsroom/press-releases/2025/pepsi-is-back-with-a-new-chapter-of-thirsty-for-more-featuring-david-beckham
+- Pepsi Soccer Deserves Pepsi, 27.05.2026: https://www.pepsico.com/newsroom/press-releases/2026/pepsi-levels-up-soccer-match-day-food-making-every-bite-taste-better
+
+**Onay/kanal statüsü:** yeni iki film henüz hiçbir hesabın platformunda gönderilmedi/planlanmadı. Shorts, Reels, TikTok, Facebook Reels ve LinkedIn video yüklemesi için platform ve tarih/gönderi bazında ayrı kullanıcı onayı gerekir; Metricool diğer hesaplar olduğundan kullanılmadı. 0 TL yeni peşin harcama, main merge YOK, ödeme/KYC/DM YOK. Canlı RAG testi, gerçek müşteri, gelir ve dönüşüm hâlâ BİLİNMİYOR. Gün 16 CLOSED DEĞİL.
+
+**Sonraki tek öncelik:** Kullanıcının iki film için görsel/ses PASS onayı, ardından platform bazında ayrı sosyal yayın izinlerini değerlendirme; organik talebi gerçek panelden ölçebiliyorsak ölçmek. Eski fotoğraf/karuseller otomatik silinmez.
