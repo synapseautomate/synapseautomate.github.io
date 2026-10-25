@@ -1,0 +1,5 @@
+# Yöntem 196 — Kaynaklı sentetik veri seti
+
+**Kaynak envanteri:** `veri/rag_ornek_kaynak_envanteri.csv` (5 satır). Alan sözlüğü: `kaynak_id` benzersiz belge; `surum` sürüm; `gecerli_tarih` sentetik tarih; `erisim` rol; `durum` güncel/eski; `sahip` senaryo sorumlusu; `bolum` alıntı alanı; `metin` kurgusal metin. **Beklenen testler:** `veri/rag_beklenen_kontrol_sonuclari.csv` (5 satır). Telif: özgün kurgusal veri, üçüncü taraf lisanslı müşteri verisi yok. Google Dataset JSON-LD şimdilik EKLENMEDİ; canlı kanonik veri sayfası ve Rich Results panel doğrulanmadan indeks vaadi yok.
+
+**Kaynak / tarih:** 25.10.2026, main `4df7e2e7279c9e3f65c7ad1b1fabeb0fb08ff3d1`; gerçek hizmet `hizmetler.html` kuruma özel bilgi tabanı kartı; `kaynaklar.html`, `sablonlar/index.html`, `surec-analizi.html`. https://learn.microsoft.com/azure/ai-studio/concepts/retrieval-augmented-generation . **Yalnız sentetik örnek; canlı RAG/gerçek müşteri/satış YOK.** Sorumlu: SYNAPSE operasyon. Gerçek metrik BİLİNMİYOR; yayın WEB-G16-RAG-20261025 ONAY BEKLİYOR.

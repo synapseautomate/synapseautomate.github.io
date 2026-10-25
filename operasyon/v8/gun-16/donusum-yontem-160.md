@@ -1,0 +1,5 @@
+# Yöntem 160 — Ücretsiz teşhis ve ücretli hizmet ayrımı
+
+**Hedef:** kurumsal bilgi yöneticisi. **Önce:** hizmet kartı, kişiselleştirilmiş bilgi tabanı kurulumu anlatır. **Sonra:** kayıt gerektirmeyen beş denetim adımı (kaynak/sürüm/rol/alıntı/insan) ve tek açıklayıcı CTA. **Ücretsiz:** sentetik kontrol listesi. **Kapsam dışı:** gerçek belge yükleme, eğitim sertifikası, çalışan müşteri asistanı, gizli doğruluk yüzdesi. **Gerçek ek hizmet:** ancak kapsam ve hukuk/ödeme kapıları ayrı teyitle. Yerel 320/390/768/1440 PASS, canlı teslim BİLİNMİYOR.
+
+**Kaynak / tarih:** 25.10.2026, main `4df7e2e7279c9e3f65c7ad1b1fabeb0fb08ff3d1`; gerçek hizmet `hizmetler.html` kuruma özel bilgi tabanı kartı; `kaynaklar.html`, `sablonlar/index.html`, `surec-analizi.html`. https://learn.microsoft.com/azure/ai-studio/concepts/retrieval-augmented-generation . **Yalnız sentetik örnek; canlı RAG/gerçek müşteri/satış YOK.** Sorumlu: SYNAPSE operasyon. Gerçek metrik BİLİNMİYOR; yayın WEB-G16-RAG-20261025 ONAY BEKLİYOR.
