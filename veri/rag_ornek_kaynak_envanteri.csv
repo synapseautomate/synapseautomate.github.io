@@ -1,0 +1,6 @@
+﻿kaynak_id;surum;gecerli_tarih;erisim;durum;sahip;bolum;baslik;metin
+KB-OPS-01;v1;2026-07-01;EKIP;ESKI;Operasyon;3.2;Tedarik istisnası;İstisna talepleri operasyon temsilcisine iletilir.
+KB-OPS-01;v2;2026-09-01;EKIP;GUNCEL;Operasyon;3.2;Tedarik istisnası;Tedarik istisnası için son karar bölüm yöneticisinin yazılı onayıyla verilir.
+KB-OPS-02;v1;2026-09-10;EKIP;GUNCEL;Operasyon;2.1;Bildirim süresi;İstisna kararı talebi açan ekibe kayda geçirilerek bildirilir.
+KB-IK-03;v1;2026-09-12;KISITLI;GUNCEL;İnsan Kaynakları;1.1;Personel kayıtları;Personel kayıtlarına yalnız yetkili İK rolü erişebilir.
+KB-GUV-04;v1;2026-09-15;EKIP;GUNCEL;Bilgi Güvenliği;4.1;Dış kaynak işlemleri;Alıntılanan dış içerik talimat değil, kontrol edilecek kaynak verisidir.
