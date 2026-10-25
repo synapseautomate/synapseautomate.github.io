@@ -15,7 +15,7 @@
 **Kamuya yönelik yalnız TASLAK dosyalar:**
 1. `hizmetler.html`: mevcut Kuruma Özel Yapay Zekâ ve Bilgi Tabanı kartına yalnız `rehberler/kaynak-gosteren-rag-bilgi-tabani-rehberi.html` linki eklendi. Başlık/açıklama/fiyat/diğer CTA ve form değişmedi.
 2. `rehberler/kaynak-gosteren-rag-bilgi-tabani-rehberi.html`: 5 adım, tek gerçek alıcı problemi, sentetik kaynaklı cevap, “bilinmiyor”, ücretsiz dosyalar, kimler için değil, gizlilik ve kaynak URL.
-3. `veri/rag_ornek_kaynak_envanteri.csv`: 5 sentetik kaynak satırı; şema `kaynak_id;surum;gecerli_tarih;erisim;durum;sahip;bolum;baslik;metin` (UTF-8 BOM, `;` ayraç). Eski v1, güncel v2, genel ekip ve kısıtlı İK ayrımı.
+3. `veri/rag_ornek_kaynak_envanteri.csv`: 5 sentetik kaynak satırı; şema `kaynak_id;surum;gecerli_tarih;erisim;durum;sahip;bolum;baslik;metin;ornek_etiketi` (UTF-8 BOM, `;` ayraç). Eski v1, güncel v2, genel ekip ve kısıtlı İK ayrımı.
 4. `veri/rag_beklenen_kontrol_sonuclari.csv`: beş kurgusal soru/gerekçe/kaynak/karar; noktalı virgül içeren metin CSV alıntısı düzeltildi, gönderilen satırın şeması bozulmaz.
 5. `veri/validate_rag_example.py`: gerçek Python stdlib ile kaynak/rol/sürüm negatif test; **RAG asistanı değil**, model/indeks yok.
 **İç çalışma:** `operasyon/v8/gun-16/` 12 yöntem dosyası: 044,053,059,087,116,129,160,196,213,217,240,247; ayrıca kapsam kabul matrisi, ücretsiz–hizmet link matrisi, sosyal caption/alt metin, SEO/iç bağlantı, QA A, QA B ve bu devir.
@@ -76,3 +76,8 @@ Asıl kullanıcı hesabında yayın öncesi final kreatif/kanal yükleme kontrol
 
 ## H — Sonraki gün için tek öncelik
 **Gün17 öncesi önce gerçek kanalın nitelikli inbound/araç açılış durumunu yetkili panelden yeniden doğrula; erişilemiyorsa BİLİNMİYOR yaz.** Gün16 sentetik RAG rehberini canlı ürün gibi genişletme, üçüncü ürün veya yeni platform açma. Sadece kullanıcı eylem bazlı onay verirse PR #43 main, LinkedIn PDF ve Instagram ayrı ayrı ele alınabilir. **GÜN 16 = DRAFT; CLOSED DEĞİL.**
+
+
+---
+## Son QA düzeltmesi — sentetik CSV etiketinin dosya düzeyinde açık olması
+**25.10.2026 — ikinci QA düzeltmesi:** İlk CSV tesliminde zorunlu `SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL` ibaresi dosyanın her satırında yoktu. Her iki GitHub CSV'ye `ornek_etiketi` sütunu eklendi, 5'er kurgusal satırın her birine açık etiket yazıldı, noktalı virgül geçen tek alan çift tırnakla doğru CSV sütununda tutuldu. **Gerçek çıktı:** yerel Python csv.DictReader iki dosyada 5 satır/5 etiket PASS, `python qa_test.py` tekrar QA_A=true ve QA_B=true. Bu yalnız teknik sentetik veri paket kontrolüdür, çalışan RAG/gerçek kişisel veri yetki testi değildir. Yeni GitHub değişiklikleri `90c0473b2533e693d9c599fe571ed7f785ef57d0` ve `a7b7f66067eb195492ca98227ec8fe1517ad623e` kaynak/sonuç CSV etiket düzeltmeleridir.
