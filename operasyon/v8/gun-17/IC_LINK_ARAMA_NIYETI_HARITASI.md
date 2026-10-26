@@ -1,14 +1,16 @@
-# Gün 17 — SEO niyet ve iç bağlantı haritası
-| Mevcut URL | Niyet | Çakışma durumu | Karar |
-|---|---|---|---|
-| /rehberler/ai-surec-denetimi.html | AI süreç incelemesi nasıl yapılır? | **Birincil revizyon hedefi** | Yeni bilgi üç ölçüte daraltılır, URL korunur |
-| /cozumler/kurumsal-ai-operasyon-denetimi.html | Kurumsal hizmet kapsamı / yetki / ekonomi | Yakın, fakat ticari niyet | Yalnız ilgili bağlamsal bağlantı |
-| /rehberler/ai-otomasyon-guvenilirlik-testi.html | Güvenilirlik test vakaları | Güvenlik alt niyeti | Özgün test çerçevesi; yeni sayfada tekrar edilmez |
-| /kanit/100-vaka-ai-guvenilirlik-regresyon-raporu.html | Dondurulmuş sentetik regresyon yönteminin kanıtı | Performans iddiası hassas | 100 sentetik vaka, müşteri başarısı değil |
-| /rehberler/kaynak-gosteren-rag-bilgi-tabani-rehberi.html | Kurumsal bilgi tabanı kaynak kontrolü | Gün 16 farklı soru | Aynı konu yapılmaz; ayrı RAG ihtiyacı |
-| /hizmetler.html | 12 hizmetin üst vitrini | Keşif rotası | Ayrı fiyat/sosyal kanıt uydurulmaz |
-| /en/ecommerce-process-analysis.html | İngilizce e-ticaret kapsamı | Dil ve farklı dikey | Otomatik hreflang eşitleme yapma |
+# Gün 17 — konu çakışması ve gerçek iç link akışı
+**Öncelikli niyet:** AI sistemlerinde doğruluk, güvenlik ve maliyet denetimi — tek soruya yanıt. GSC gerçek sorgu verisi BİLİNMİYOR.
 
-Plan: index → Hizmetler (hizmet 09) → kurumsal denetim çözümü → ai-surec-denetimi (kaynak). Mevcut menü/site haritası yolu kontrolü repo ile yapılabilir; gerçek HTTP ziyaret/test ise BİLİNMİYOR.
+| Repo yolu | Arama / kullanıcı sorusu | Karar |
+|---|---|---|
+| `hizmetler.html` | Hangi hizmet? | kart 09'a draft olarak rehber linki eklendi |
+| `rehberler/ai-surec-denetimi.html` | Bir sistemi hangi kriterlerle incelemeli? | Mevcut kanonik üzerinde editoryal revizyon |
+| `cozumler/kurumsal-ai-operasyon-denetimi.html` | Bu incelemenin B2B hizmet kapsamı ne? | Bağlamsal link ile ayrılır; yeni fiyat iddiası yok |
+| `rehberler/ai-otomasyon-guvenilirlik-testi.html` | Risk kapıları ve regresyon testleri | Test yöntemi ayrık kalır |
+| `kanit/100-vaka-ai-guvenilirlik-regresyon-raporu.html` | Sentetik dondurulmuş test koşulları | Müşteri doğruluk yüzdesi gibi gösterilmez |
+| `rehberler/kaynak-gosteren-rag-bilgi-tabani-rehberi.html` | Bilgi tabanı kaynaklı RAG | Gün 16 farklı problem; aynı içerik çoğaltılmaz |
+| `en/ecommerce-process-analysis.html` | İngilizce e-ticaret süreci | Başka niyet; yanlış hreflang eşdeğeri kurma |
 
-Yeni URL/sitemap kaydı/yanlış page date/yeni Product schema yok. İçeriğin kaynaklı veri kazanımı: A02 eski sürüm = 'HOLD', A03 yetkisiz = 'STOP', A05 maliyet tavanı = 'HOLD' ayrımı.
+**Gerçek kaynak rotası (draft):** `/` → `hizmetler.html` → kart 09 linki → `rehberler/ai-surec-denetimi.html` → ilgili kurumsal denetim kapsamı.
+
+**Teknik not:** GitHub dosya ağacı ve link varlığı kaynakta doğrulandı; canlı HTTP/sitemap crawl ve tıklama akışı TEST EDİLEMEDİ. Devir sözleşmesi gereği onaysız main ve sitemap değişimi YOK.

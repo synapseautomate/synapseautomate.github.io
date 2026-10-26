@@ -1,49 +1,64 @@
-# SYNAPSE V8 MAX — Gün 17 sıfır bağlamlı tam devir
-**Çalışma tarihi:** 26.10.2026 Europe/Istanbul. **Plan tarihi:** 30.10.2026 (4 gün erken). Numara: 17/30, değiştirilmedi.
-**Gün adı:** Aynı çözümden ikinci niyet — **konu düzeltmesi:** AI Sistem İncelemesi ve Optimizasyonu / doğruluk, güvenlik, maliyet kararı.
-**Main SHA denetim anı:** `6de1c4ad10feef1fef37e93d2731dad5e7886574` · https://github.com/synapseautomate/synapseautomate.github.io
-**Branch:** `draft/v8-gun-17-ai-sistem-degerlendirmesi-20261026` · **PR #46:** https://github.com/synapseautomate/synapseautomate.github.io/pull/46 (OPEN/DRAFT/MERGED=false, GitHub'da kontrol edildi). İlk commit `2d7cf9a35ce3e1f8c78625ba3d8b900065f9bec8`; main'e merge yetkisi YOK.
-**Önceki karar:** Gün 16 kullanıcı PASS/CLOSED; platform bağlantı ve satış metrikleri kullanıcı beyanından bağımsız erişimle doğrulanmadı. Önceki Gün 16 devir: draft/v8-gun-16-rag-kaynakli-bilgi-tabani-20261025/operasyon/v8/gun-16/SYNAPSE_V8_GUN_16_DEVIR.md
+# SYNAPSE AUTOMATE V8 MAX — GÜN 17 SIFIR BAĞLAMLI DEVİR
 
-## A. Amaç ve veri
-- Alıcı rolü COO / BT güvenlik operasyonu. Sorun: AI asistanının doğru kaynağı kullanıp kullanmadığı, yetki sınırı ve kullanımı maliyeti gerçek kaynak olmadan karar verilemez.
-- Sitede tanımlı 09 hizmet: `hizmetler.html`. Mevcut denetim çözümü `cozumler/kurumsal-ai-operasyon-denetimi.html`.
-- Statik site ağacı: 428 dosya, 150 HTML. Önceki 144 HTML sayısı geçersiz. GSC/GA4/Upwork/ziyaret/satış/iade BİLİNMİYOR. 0 TL peşin harcama.
+**Gerçek çalışma tarihi:** 26.10.2026, Europe/Istanbul. **Plan günü:** 30.10.2026 (4 gün erken). **Gün:** 17/30; yeniden numaralandırma YOK. **Konu önceliği:** Yapay Zekâ Sistem İncelemesi ve Optimizasyonu — AI sistemlerinde doğruluk, güvenlik ve maliyet değerlendirmesi. Önceki Gün 16 için kullanıcı CLOSED/PASS bildirdi; hesap paneli sonuçlarını buradan bağımsız ölçemedik.
 
-## B. Gerçek yapılanlar
-- DRAFT: `rehberler/ai-surec-denetimi.html` üzerinde yeni h2 + üç değerlendirme ekseni + iki sentetik vaka, title/meta; mevcut canonical/H1 korunur. Yeni URL, sitemap ya da form açılmadı.
-- Tam yol envanteri `150-SAYFA-SEO-IDDA-CTA-ENVANTERI.csv`. **Sadece 14 sayfada tam kaynak HTML metadata okundu, 136 satır META_TEST_EDILEMEDI.**
-- `SEO-KANONIK-IDDA-KUSUR-DEFTERI.csv`, `KAYNAK_DENETIMI.md`, `IC_LINK_ARAMA_NIYETI_HARITASI.md`, `SEO_ONCE_SONRA_ONAY_TASLAGI.md`, `AI_SISTEM_SENTETIK_KONTROL_SATIRLARI.csv`, `AI_SISTEM_KARAR_MATRISI.md`, `METRIKLER_KANIT.csv`, 12 yöntem dosyası (010,011,013,069,075,120,121,169,188,193,195,245), QA A ve B ve onay kaydı üretildi.
-- İddia: Sentetik A01 PASS, A02/A05/A06 HOLD, A03/A04 STOP politika BEKLENENLERİ; canlı AI gerçek çalıştırma testi yok.
+**Repo:** https://github.com/synapseautomate/synapseautomate.github.io
+**Doğrulanmış `main` SHA:** `6de1c4ad10feef1fef37e93d2731dad5e7886574` (26.10.2026).
+**Taslak dal:** `draft/v8-gun-17-ai-sistem-degerlendirmesi-20261026`.
+**PR #46:** https://github.com/synapseautomate/synapseautomate.github.io/pull/46; DRAFT/OPEN, MERGED=false. Son dosya/commit SHA'sı GitHub'dan yeniden bakılmalı (bu dosya güncellenince head değişir). **Main merge ve canlı yayın YAPILMADI**.
 
-## C. Kusurlar ve eşikler
-- P0: Değişiklikte tespit edilen yok, ancak tüm site ve satış P0=0 kanıtı yok.
-- **P1 açık:** canlı/branch gerçek 6 viewport/keyboard/form/HTTP/performans QA TEST EDİLEMEDİ — teknik canlı yayın HOLD. Sahibi: teknik QA.
-- **P1 kapsam:** 150 HTML'den 136'sı semantik taranamadı, envanter dosya-ağacı düzeyinde. Sahibi: SEO QA.
-- P2: GSC sorgusu, organik CTR ve talep bilinmiyor; 'kazanan' yok.
-- Hukuk, şirket ve fatura, gerçek satış, Upwork kabulü, MoR/ödeme hesap kapıları bilinmiyor/HOLD.
+## A) Tek amaç, alıcı sorunu, müşteri etkisi ve gerçeklik
+Hedef alıcı: COO, BT/AI operasyon veya bilgi güvenliği sorumlusu. Tek problem: “Bir kurum içi AI yanıtına, *belge sürümü + rol yetkisi + kullanım maliyeti* denetlenmeden güvenilir denebilir mi?” Yanıt: üç koşul ve insan onayı ayrı değerlendirilir. Eğitim/ön inceleme, canlı ürün veya bağımsız sertifika değildir.
+- Ana hizmet kanıtı: https://synapseautomate.github.io/hizmetler.html (hizmet 09).
+- Ticari kapsam ilişkisi: https://synapseautomate.github.io/cozumler/kurumsal-ai-operasyon-denetimi.html.
+- Mevcut SEO kanoniği: https://synapseautomate.github.io/rehberler/ai-surec-denetimi.html. **URL şu anki canlı `main` sürümüne aittir, PR'daki yeni metin henüz canlı değil.**
+- V8 gerçek ziyaret, talep, satış, gelir, fonlu sipariş, iade ve net gelir **BİLİNMİYOR**; önceki 27 günün sıfır satış bilgisi yalnız kullanıcı beyanıdır.
+- Fiyatlar, satıcı uygunluğu, fatura, KYC, alan adı, ödeme hukuku yeni işlem kapsamı dışıdır. 0 TL peşin bütçe.
 
-## D. QA
-- QA A: `QA_TUR_A_KAYNAK_TEKNIK.md`: 27 kayıt için check-public-content-freshness mantığı eşdeğeri JS PASS, orijinal Python scripti bu turda **doğrudan çalıştırılmadı**.
-- QA B: `QA_TUR_B_MARKA_UX_HUKUK.md`: statik görsel/metin/sentetik/izin PASS, altı gerçek browser ekranı TEST EDİLEMEDİ. Gönderi güvenli üretim taslağıdır, canlı hazır denmez.
+## B) Gerçek değişiklikler, envanter ve kanıt
+1. **150 HTML / 428 dosya** sayısı main recursive GitHub ağacından doğrulandı; 16.10.2026 tarihli eski 144/389 rakamı kullanılmadı.
+2. **150/150 HTML** kaynak olarak okunup `150-SAYFA-SEO-IDDA-CTA-ENVANTERI.csv` dosyasına title/H1/canonical/robots/CTA ve iddia dili ön eşleşmeleri yazıldı. Bu link/JS/Safari/canlı HTTP tam denetimi değildir.
+3. Mevcut `rehberler/ai-surec-denetimi.html` için aynı URL üzerinde 3 eksenli doğruluk-güvenlik-maliyet karar matrisi, iki sentetik örnek, başlık ve meta açıklaması revizyonu taslağı. Self canonical ve tek H1 korundu.
+4. Gerçek ziyaretçi yolu eksikliği `hizmetler.html` hizmet 09 kartında görüldü; mevcut `rehberler/ai-surec-denetimi.html` bağlantısı **draft** olarak eklendi. Ana gidiş yolu: `/` → Hizmetler → hizmet 09 kart bağlantısı → AI süreç denetimi rehberi. Yeni URL/indeks/sitemap yaratılmadı.
+5. `AI_SISTEM_SENTETIK_KONTROL_SATIRLARI.csv`: 6 kurgusal politika durumu. A01 PASS, A02/A05/A06 HOLD, A03/A04 STOP **BEKLENEN ÖĞRETİCİ SONUÇ**, gerçek model çalıştırma sonucu değil.
+6. `AI_SISTEM_KARAR_MATRISI.md`, `IC_LINK_ARAMA_NIYETI_HARITASI.md`, `SEO_ONCE_SONRA_ONAY_TASLAGI.md`, `ONAY_KAYDI_VE_ROLLBACK.md`.
+7. 12 yönteme özgü teslim: 010/011/013/069/075/120/121/169/188/193/195/245 dosyaları bu klasörde. Yöntem 013 yalnız video storyboard ve transkripttir, video var/yayımlandı iddiası YOK.
+8. `QA_TUR_A_KAYNAK_TEKNIK.md`, `QA_TUR_B_MARKA_UX_HUKUK.md`, `METRIKLER_KANIT.csv`, `SEO-KANONIK-IDDA-KUSUR-DEFTERI.csv` ve bu devir güncellendi.
 
-## E. Metrikler
-- `METRIKLER_KANIT.csv`: gösterim/tıklama/oturum/CTA/form teslimi/benzersiz talep/funded/tahsilat/iade/net gelir BİLİNMİYOR; 6 sentetik vaka ≠ 6 müşteri.
-- GSC niyet adayı: “ai sistem denetimi doğruluk güvenlik maliyet” **HİPOTEZ**. İlgili sorgunun gösterimi veya hacmi ölçülmedi.
+## C) P0/P1/P2, engel ve karar
+- **P0:** 2 HTML dosyasına ait statik değişiklikte tespit edilmiş P0 yok; bütün site P0=0 veya para tahsilatına hazır olduğunu gösteren kanıt **YOK**.
+- **P1 doğrulama eksiği / teknik QA sahibi:** Gerçek 320/375/390/768/1024/1440 px render, tarayıcı klavyesi, ekran okuyucu, HTTP/404, gerçek form yönü ve Lighthouse saha testi bu çalışma ortamında yapılmadı. **Teknik yayın=HOLD.**
+- **P2 / SEO sahibi:** 150 kaynakta 18 noindex, 5 H1 eksik (4 özel noindex + 1 doğrulama dosyası), 3 özel canonical eksik, 4 explicit robots meta yok ve 8 ortak canonical grubu. Bunlar otomatik P0/P1 değildir; tarih, SEO niyet ve canonical seçimleri karşılıklı kontrol ister.
+- **Kanıtsız iddia:** 112 regex adayının içerik/yasal kanıtla ayrı eşleştirilmesi gerekir. **Kanıtsız gerçek iddia adedi BİLİNMİYOR**, 112 doğrulanmış ihlal diye raporlama.
+- **Ticari yayın/satış:** HOLD (yasal vergi/fatura/teslim/ödeme uygunluğu ve real-money kanıtı yok).
 
-## F. Kullanılabilir metin ve yetkiler
-- Mevcut rehber bağlantısı: https://synapseautomate.github.io/rehberler/ai-surec-denetimi.html **yalnız eski main sayfası yayında; taslak yeni içerik canlıda DEĞİL**.
-- `ONAY_KAYDI_VE_ROLLBACK.md`: web merge/yayın ayrı ONAY BEKLİYOR; yeni LinkedIn/YouTube/Instagram paylaşımı YOK; ödeme ve alıcı iletişimi YOK.
+## D) QA A / QA B (ayrılmış)
+**QA A — kaynak/teknik:**
+- 150/150 HTML title/H1/robots/canonical ve örnek iddia/CTA kaynak denetimi TAMAMLANDI.
+- 27 kayıt `check-public-content-freshness.py` mantığının eşdeğer JS kontrolü PASS; **orijinal Python komutu bu turda doğrudan çalıştırılmadı**. Sürüm kayıtlarının generated_at tarihi 2026-10-13 bırakıldı.
+- GitHub PR branch iki HTML'sinde **16/16 JS assert PASS**: tek H1, tek canonical, hizmet↔rehber bağlantıları, sentetik uyarı, yeni form yok, noindex eklenmedi, negatif vaka kararları doğru. Gerçek model testi olarak sunma.
+**QA B — marka, tasarım, erişim:**
+- Metin/telif ve örnek CSS renk ikilileri statik kontrolü PASS (örnek kontrast 17.69:1, 11.34:1, 8.34:1 ve 13.75:1), tam site/cihaz WCAG PASS değildir.
+- **Gerçek render, Safari, mobil taşma, klavye, 404, performans/CWV TEST EDİLEMEDİ**; hiçbir cihaz için “geçti” denmedi.
+- Kaynaklarda yeni “SYNAPSE / Automate”, iç operasyon notu, sahte müşteri/vaka, fiyat ve telifsiz görsel eklenmedi.
 
-## G. Kaynak ve kanıt
-- Google canonical: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
-- Helpful content: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
-- CWV: https://developers.google.com/search/docs/appearance/core-web-vitals
-- hreflang: https://developers.google.com/search/docs/specialty/international/localized-versions
-- Video: https://developers.google.com/search/docs/appearance/structured-data/video
-- Discover: https://developers.google.com/search/docs/appearance/google-discover
-- Repo içerik tarihi kayıtları main registry generated_at=2026-10-13, uzman dış incelemesi otomatik sayılmaz.
-- Yayına geçmeden gerçek PC/iOS altı ekran, bağlantı HTTP ve klavye, form hassas verisiz no-submit denetimi şart.
+## E) Metrik sözlüğü — veri yok ≠ sıfır
+`METRIKLER_KANIT.csv` ayrı kolonlarda tutar. Gerçek GSC gösterim/tıklama, doğru B2B kullanıcı, demo, gönüllü inbound, gönderilmiş izinli teklif, fonlanan platform siparişi, tahsil edilmiş satış, iade ve net gelir **BİLİNMİYOR**. 6 sentetik vaka = sıfır gerçek müşteri gösterimi kanıtı değildir. Başarı metriği, yayından sonra izinli ve kaynaklı `uygun ziyaretçi → doğrulanmış gönüllü talep` oranıdır; yayım öncesi karşılaştırma mümkün değil. Hipotez başarı oranı veya sıralama iddiası yok.
 
-## H. Gün 18 için TEK öncelik
-**Ölçülebilir veri yoksa yeni URL/çoklu platform açma: önce Gün 17 taslağının gerçek 6 viewport tarayıcı, klavye ve site içi erişim testini tamamla, tespit edilen P1'i düzelt; ardından ayrı web yayın onayı iste.** PR draft kalır, main merge YOK.
+## F) Yayın dosyaları, onay ID
+- **WEB-G17-SEO-001: ONAY BEKLİYOR** — PR #46 içindeki yalnız iki HTML değişikliğinin testler tamamlandıktan sonra ayrı açık onayla main merge/canlı yayın kararı.
+- **SOC-G17:** Gün 17 sosyal paylaşım kotası sıfır; yöntem 013 storyboard'u kamu videosu değildir. YouTube/LinkedIn/Instagram için ayrıca tek tek tarih ve eylem onayı gerekir; yapılmadı.
+- **PAY-G17 / KYC-G17 / UPWORK-G17 / CONTACT-G17:** YAPILMADI. Harcama=0 TL peşin; ücretsiz dış kayıt veya gerçek fon hareketi yapılmadı.
+- Ana sitenin bugün görünen URL'si güncellenmiş draft yayın bağlantısı değildir. PR dosyalarını GitHub üzerinden incele.
+
+## G) Kaynaklar ve güven düzeyleri
+- GitHub main ve PR: yukarıdaki SHA/URL. Kanıt gücü: repository source.
+- Mevcut tazelik kaynağı: `veri/public-content-version-registry-v1.json`, generated_at 2026-10-13; sorumlu alanı orada kayıtlı.
+- Resmî Google canonical: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+- Resmî CWV: https://developers.google.com/search/docs/appearance/core-web-vitals (LCP 2.5sn, INP 200ms, CLS 0.1 iyi sınırları; gerçek saha değerleri yok)
+- İçerik kalitesi: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+- Hreflang: https://developers.google.com/search/docs/specialty/international/localized-versions
+- **Dış/hesap kaynak erişimi olmadı:** GSC, GA4, FormSubmit, Upwork, Instagram, LinkedIn analytics, ödeme paneli. Kullanıcıdan parola/IBAN/kimlik isteme.
+
+## H) Gün 18 operatörüne TEK öncelik
+**Gerçek PR #46 branch sürümünü altı viewport, keyboard ve URL/404/form akışı üzerinde test et, P0/P1 kusurları varsa düzelt; ardından yalnız WEB-G17-SEO-001 için eylem bazlı yayın onayı iste.** Veri yokken yeni URL/sosyal gönderi üretme. Main merge ve otomatik yayın yapma. Gün 17 CLOSED **DEĞİL**; taslak QA sürüyor.

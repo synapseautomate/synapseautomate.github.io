@@ -1,12 +1,19 @@
-# Gün 17 — Dar SEO revizyonu (yayın taslağı)
-- **Önce:** `rehberler/ai-surec-denetimi.html` başlığı “AI process audit hangi soruları cevaplamalı?”; girdi, karar, çıktı, insan onayı ve hata koşulları. Güvenlik ve maliyet için ölçütler ayrıntısız.
-- **Sonra (taslak):** Aynı kanonik üzerinde “Bir AI sistemi ne zaman incelemeye alınmalı?” başlıklı üç eksenli bölüm: doğruluk (belge/sürüm), güvenlik (rol/eylem), maliyet (istek/token/tekrar). İki sentetik karar örneği. Tek H1 korunur.
-- **Başlık:** AI Süreç Denetimi: Doğruluk, Güvenlik ve Maliyet | Synapse Automate
-- **Meta:** Bir AI sistemini üç aşamada değerlendirin: kaynak doğruluğu, veri erişimi ve yetki güvenliği, kullanım maliyeti. Sentetik örnek, insan onayı ve kapsam sınırları.
-- **Canonical:** https://synapseautomate.github.io/rehberler/ai-surec-denetimi.html (değişmedi).
-- **Kanıt:** https://github.com/synapseautomate/synapseautomate.github.io/blob/main/hizmetler.html (AI sistemleri incelemesi hizmet açıklaması); https://github.com/synapseautomate/synapseautomate.github.io/blob/main/cozumler/kurumsal-ai-operasyon-denetimi.html. Google: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
-- **Örnek:** `AI_SISTEM_SENTETIK_KONTROL_SATIRLARI.csv`, müşteri verisi DEĞİL.
-- **Tek birincil CTA:** mevcut “Ücretsiz Hazırlık Taraması”; yeni bölüm içinde yalnız kurumsal denetim kapsamına yardımcı metin bağlantısı. İlgisiz ürün/ücret vaadi eklenmedi.
-- **Geri alma:** draft PR diff’ini geri çevir / `git checkout 6de1c4ad10feef1fef37e93d2731dad5e7886574 -- rehberler/ai-surec-denetimi.html`. main / sitemap / fiyat / analitik dokunulmaz.
-- **Ölçüm:** GSC sorgu + sayfa tıklama, UTM nitelikli form teslimi; gerçek değerler BİLİNMİYOR.
-- **Yetki:** Sayfanın canlı yayımlanması ve merge ONAY BEKLİYOR.
+# Gün 17 — Önce/sonra ve yayın öncesi onay taslağı
+**Tarih:** 26.10.2026 · **PR:** https://github.com/synapseautomate/synapseautomate.github.io/pull/46 — DRAFT / main merge YOK.
+
+| Konum | Önce (doğrulanan main) | Sonra (draft PR) | Kullanıcı niyeti |
+|---|---|---|---|
+| `hizmetler.html` kart 09 | 'Yapay Zekâ Sistem İncelemesi ve Optimizasyonu' hizmet açıklaması, **ilgili rehbere link yok** | Aynı kartın altında mevcut `rehberler/ai-surec-denetimi.html` bağlantısı, 'Doğruluk, güvenlik ve maliyet kontrolünü incele' | hizmet → somut eğitim yolu |
+| `rehberler/ai-surec-denetimi.html` | Genel 'AI process audit hangi soruları cevaplamalı?' tanıtımı ve 3 kart | aynı URL/title/meta yenileme; 3 ayrı ölçüt (kaynak sürümü, rol yetkisi, maliyet kapsamı), 2 sentetik vaka | karar sorusuna somut yanıt |
+| Canonical | https://synapseautomate.github.io/rehberler/ai-surec-denetimi.html | DEĞİŞMEDİ | çakışan yeni sayfa yok |
+| Birincil mevcut CTA | Ücretsiz Hazırlık Taraması | KORUNDU | gereksiz yeni form yok |
+| Fiyat, ödeme, analitik, sitemap | mevcut | DOKUNULMADI | güvenli küçük diff |
+
+### İddia sınırı
+SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL. Gerçek AI doğruluk testi, canlı güvenlik penetrasyon testi, oran, KYC veya finansal kazanım iddiası yok.
+
+### Kanıt ve ön şart
+Statik kaynak assert **16/16 PASS**; altı gerçek viewport, mobile Safari, keyboard, HTTP 200/404, FormSubmit ve GSC **TEST EDİLEMEDİ**. Bu sebeple P1 kapısı açık ve 'yayına hazır' değildir. Ayrı **WEB-G17-SEO-001** kullanıcı onayı ve canlı release kapısı beklenir.
+
+### Rollback
+Yanlış bir güncelleme yapılırsa PR diff'i geri alınır; eski sürüm `main@6de1c4ad10feef1fef37e93d2731dad5e7886574`. Main'e force push veya otomatik merge YOK.
