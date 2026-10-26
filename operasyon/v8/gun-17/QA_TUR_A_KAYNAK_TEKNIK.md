@@ -1,32 +1,35 @@
-# Gün 17 — QA TUR A: kaynak, teknik tutarlılık ve veri
-**Tarih:** 26.10.2026 | **Plan tarihi:** 30.10.2026. **Repo main:** 6de1c4ad10feef1fef37e93d2731dad5e7886574. **İnsan/dış model veya platform testi:** yapılmadı.
-## 1. Gerçek uygulanan kontroller
-1. GitHub recursive tree kaynağı 150 HTML / 428 dosya; eski 144 / 389 sayımı güncel değil. Tam envanter 150 dosya yolu + sha + boyut; **yalnız 14 HTML'nin meta/title/H1/canonical/CTA içeriği** incelendi, kalan 136 için 'META_TEST_EDILEMEDI' yazıldı. Bu tam 150 sayfa semantik QA tamamlandı iddiası DEĞİLDİR.
-2. `veri/public-content-version-registry-v1.json`: 27 asset, generated_at 2026-10-13. Depodaki `scripts/check-public-content-freshness.py` şartlarının JS ile eşdeğer kontrolü 26.10.2026 tarihinde **27/27 PASS**; review_due tarihi geçmiş current yok; external_expert_reviewed değerleri boolean. Python dosyasının kendisi bu çalışmada yerel olarak çalıştırılamadı; 'Python PASS' iddia edilmez.
-3. Sitemap XML `<loc>` sayımı 131; tek başına 150 HTML'nin indekslenmesi veya sitemap hatası değildir. Mevcut hedef `/rehberler/ai-surec-denetimi.html` sitemap içinde yer alıyor.
-4. Yeni taslak `rehberler/ai-surec-denetimi.html`: `<h1>` 1 adet, canonical 1 adet ve eski URL korunmuş, kendi meta title/description güncellenmiş; `index` robots korunmuş; yerel `../cozumler/kurumsal-ai-operasyon-denetimi.html` hedefi main'de mevcut; PUBLIC içerikte 'Gün 17', 'QA TUR', 'PR #' ibaresi yok.
-5. Sentetik altı senaryo veri negatif kural kontrolünde: eski sürüm PASS alamaz; ziyaretçi yetkisiz erişim PASS alamaz; varsayılan kullanım limiti üzerindeki vaka PASS alamaz. Sonuç: A01 PASS, A02/A05/A06 HOLD, A03/A04 STOP. Bunlar model inference sonuçları değil, test tasarımındaki beklenen politikalardır.
-6. Fiyat, ödeme, onay akışı, global JS, sitemap, schema, hizmet sayfaları ve Gün 01–07 dosyaları değiştirilmedi.
-7. GitHub statik sayfalarda kaynak karşılaştırmaları: doğruluk/güvenlik/maliyet sözcüklerinin varlığı yeterli değil; belgedeki örnek ilgili kaynak/rol/tavan koşullarını açıklıyor. Altı satırdan performans ölçüsü çıkarılmadı.
-8. Resmî teknik dayanak: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls ; https://developers.google.com/search/docs/fundamentals/creating-helpful-content ; https://developers.google.com/search/docs/appearance/core-web-vitals
+# SYNAPSE V8 Gün 17 — QA A: Kaynak, teknik kanıt, olumsuz testler
 
-## Gerçek sonuçlar
-| Kontrol | Sonuç | Kanıt |
-|---|---|---|
-| Dosya envanteri | PASS | 150 HTML satırı, GitHub main kaynak ağacı |
-| 150 HTML'nin tüm meta/görsel/CTA verileri | TEST EDİLEMEDİ | sadece 14 HTML açıldı |
-| Tazelik mantığı | PASS | 27 asset eşdeğer mantık kontrolü, Python komutu çalıştırılmadı |
-| Canonical/tek H1/yalnız bir URL | PASS | kaynak değişkenleri assert ile doğrulandı |
-| 6 sentetik karar kuralı | PASS | altı sentetik satır, negatif koşul |
-| Canlı ölçüm/GSC veya gerçek model testi | TEST EDİLEMEDİ | yetkili platform ve gerçek müşteri izni yok |
-| 150 sayfada kanıtsız iddia=0 | TEST EDİLEMEDİ | kapsam eksik |
+**Çalışma:** 26 Ekim 2026 · **Plan:** 30 Ekim 2026, Gün 17/30 (numara değiştirilmedi). **Main:** `6de1c4ad10feef1fef37e93d2731dad5e7886574`. **PR:** https://github.com/synapseautomate/synapseautomate.github.io/pull/46 (DRAFT).
 
-## Açık teknik kusur ve önlem
-- **P1 / SAHİP: Teknik QA:** Tam 150 HTML meta/idda/bağlantı kontrolü yapılmadı (136 eksik). Tamamlanmış denetim veya P0=0 site geneli ilan edilmez.
-- **P2 / SAHİP: SEO:** GSC sorgu örneklemi ve gerçek organik trafik BİLİNMİYOR; hipotez olarak kalır.
-- İlk 14 sayfanın bazı nicel kanıt cümleleri `SEO-KANONIK-IDDA-KUSUR-DEFTERI.csv` içinde inceleme adayı; sentetik vaka verisi üretim başarısı sayılamaz.
+## Gerçek yapılan tarama
+- GitHub recursive main tree: **428 dosya ve 150 HTML** (önceki 144/389 sayıları artık geçerli değil).
+- **150/150 HTML kaynak dosyası** Connector fetch ile açıldı; title, H1 sayısı/metni, canonical, robots, CTA düğme metni örnekleri ve iddia dilinin regex ön elemesi tabloya yazıldı: `150-SAYFA-SEO-IDDA-CTA-ENVANTERI.csv`.
+- Bu metaveri taraması, **tüm sayfalarda tam görsel, uluslararası hukuki veya çalışan form testi** değildir.
+- Sürüm registry `veri/public-content-version-registry-v1.json`: **27 varlık**, kayıt tarihi `2026-10-13`; 26 kayıt HTML yollarından biriyle eşleşti, tarihleri değiştirilmedi. `scripts/check-public-content-freshness.py` içindeki due/boolean kontrollerinin JS eşdeğeri PASS: 27 current kayıt üzerinden geçmiş due 0, yanlış tipli uzman incelemesi bayrağı 0. **Python betiğinin kendisi çalıştırılmadı.**
+- `sitemap.xml`: 131 `<loc>` girdisi ve mevcut `/rehberler/ai-surec-denetimi.html` kaydı; 150 HTML olması tek başına sitemap kusuru kanıtı değildir.
+- Statik HTML üzerinden `hizmetler.html` hizmet 09 için eksik rehber bağlantısı saptandı ve draft'a **tek bağlantı** eklendi.
+- Rehberde self canonical, tek H1 ve indeks meta korunarak doğruluk/güvenlik/maliyet bölümü eklendi; yeni URL, form, fiyat, ödeme, JS veya sitemap müdahalesi yok.
 
-## Tekrar edilebilir gerçek komutlar
-- `python3 scripts/check-public-content-freshness.py` — **ÖNERİLEN, BU OTURUMDA DOĞRUDAN ÇALIŞTIRILMADI**.
-- `python3 -m http.server 8000` ardından altı viewport + keyboard/URL istek testi — **ÖNERİLEN, HENÜZ ÇALIŞTIRILMADI**.
-- Bu turda icra edilen eşdeğer kaynak kontrolü: JS koşulu `status==="current" && review_due_at < "2026-10-26"` ve `typeof external_expert_reviewed === "boolean"`; 27 asset, uygunsuz=0.
+## Gerçek regresyon sonuçları
+16 kontrol **16/16 PASS**; GitHub PR branch kaynak dosyalarına karşı JS assert ile doğrulandı:
+(1) rehber tek H1, (2) tek canonical, (3) doğru self canonical, (4) hizmet→rehber, (5) rehber→denetim çözümü, (6) marka adında eğreti slash yok, (7) sentetik uyarı mevcut, (8) hizmet H1 tek, (9) yeni form yok, (10) index robots değişmedi, (11) sonuç yüzdesi uydurulmadı, (12) iç QA/PR notu müşteri metninde yok, (13) altı vaka mevcut, (14) A02 HOLD, (15) A03 STOP, (16) A05 HOLD.
+
+**Sentetik vakalar** gerçek AI inference/müşteri sonucu değildir: A01 PASS, A02/A05/A06 HOLD, A03/A04 STOP. Güvenlik sertifikası veya maliyet tasarrufu iddiasına dönüştürme.
+
+## Kaynaktan çıkan kusur adayları
+- **18 noindex HTML:** eski ürün köprüleri, doğrulama ve yardımcı dosyalar aynı sepete alınmadı; noindex içeren kaynakların otomatik indekslenmesi istenmez.
+- **H1 yok: 5 HTML**; içlerinden 4'ü noindex ve biri resmî Google doğrulama dosyası; bu sayıyı 5 adet müşteri URL hatası olarak sunma.
+- **Canonical meta yok: 3 dosya:** 404.html, `google9226ec2349a9441e.html`, `talep-alindi.html`; özel sayfalar, kesin arama sorunu hükmü YOK.
+- **Robots meta belirtilmeyen 4 dosya:** `cozumler/icerik-onay-zinciri.html`, `cozumler/siparis-stok-csv-kontrolu.html`, `google9226ec2349a9441e.html`, `rehberler/kaynak-gosteren-rag-bilgi-tabani-rehberi.html`. Varsayılan indeks davranışı ayrıca kontrol edilmeli.
+- **8 ortak canonical grubu:** çoğunlukla `noindex` köprüleri, varsayılan olarak çift indeks sorunu değildir.
+- **112 metin parçası iddia dili regex eşleşmesi:** 'müşteri' veya 'garanti değildir' gibi olumsuz/bağlamlı örnekleri de içeriyor; **kanıtsız iddia sayısı BİLİNMİYOR**, 112 kusur ilan edilmedi.
+- `SEO-KANONIK-IDDA-KUSUR-DEFTERI.csv` içinde 132 kayıt: ön eleme/inceleme adayları, **kesinleşmiş 132 SEO arızası değil**.
+
+## Test edilmemişler
+Gerçek Google kanonik seçimi, HTTP 200/404, 150 URL'nin istemci tarafı tüm linkleri, FormSubmit server cevabı, Safari/Firefox/gerçek cihaz, GSC/GA4, canlı model ve 2026-10-30 saha verileri **TEST EDİLEMEDİ / BİLİNMİYOR**. Bunlar PASS olarak gösterilemez.
+
+Resmî metod kaynakları:
+- https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+- https://developers.google.com/search/docs/appearance/core-web-vitals
+- https://developers.google.com/search/docs/fundamentals/creating-helpful-content

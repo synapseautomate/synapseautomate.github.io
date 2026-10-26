@@ -1,11 +1,11 @@
-# Gün 17 — Eylem bazlı onay ve geri alma
-- **WEB-G17-SEO-001:** `rehberler/ai-surec-denetimi.html` içerik/title/meta revizyonunun `main` dalına birleştirilmesi ve canlı yayın: **ONAY BEKLİYOR**. Sadece içerik değişikliği; fiyat, ödeme, formlar, analytics yok.
-- **SOC-G17-000:** Sosyal paylaşım üretim kotası yok; `video-yontem-013.md` storyboard ancak yeni video/gönderi onayı verilirse prodüksiyon ve paylaşım ayrı onay gerektirir. **ONAYSIZ/YAYINLANMADI**.
-- **UPWORK-G17-000:** Katalog ilan aktivasyonu/revizyon gönderimi/yanıt: **YAPILMADI**; ayrı izin.
-- **PAY-G17-000:** Ödeme/KYC/IBAN/gerçek test: **YAPILMADI**, satış uygunluğu yok.
-- **SEO-G17-INDEX-000:** Sitemap/robots/hreflang/schema değişimi: **YAPILMADI**, bugün gerek görülmedi.
-- **G17 draft PR:** Oluşturulan dal yalnız iç çalışma; otomatik merge yok.
+# Gün 17 — eylem bazlı onay + geri alma
+**WEB-G17-SEO-001: ONAY BEKLİYOR.** PR https://github.com/synapseautomate/synapseautomate.github.io/pull/46 (draft), sadece iki HTML kaynağı:
+1. `hizmetler.html` kart 09'a `rehberler/ai-surec-denetimi.html` bağlantısı (gerçek kullanıcı yolu).
+2. `rehberler/ai-surec-denetimi.html` title/meta ve doğruluk-güvenlik-maliyet değerlendirme metni, iki sentetik örnek; self canonical ve H1 korunmuş.
 
-**Geri alma (merge onaylanırsa):** `git checkout 6de1c4ad10feef1fef37e93d2731dad5e7886574 -- rehberler/ai-surec-denetimi.html` komutu yalnız eski kaynak sürümü örneğidir; sonradan değişen `main`e kör force-push yapma, ayrı ters commit/PR üret.
+**Yayın önkoşulu:** 320/375/390/768/1024/1440 ekranları gerçek render, klavye/erişilebilirlik, URL HTTP 200/404, link ve gizlilik, P0/P1=0 kanıtı. Bu koşullar henüz tamamlanmadığı için doğrudan merge/publish yetkisi kullanılmaz. Bireysel yayın onayı ayrıca alınır.
 
-**Ön yayın QA kapısı:** P0/P1 yeni kusur=0 gerçek render ve kullanıcı onayı, gizlilik/telif/ticari eylem sınırları; halen HOLD.
+**SOC-G17:** Gün 17 kamu sosyal kotası YOK; storyboard yalnız iç arşiv. Yeni LinkedIn/Instagram/YouTube için tarih+platform ayrı ONAY; şu an paylaşım yapılmadı.
+**PAY-G17, UPWORK-G17, KYC-G17:** YAPILMADI. Talep, fonlama, satış/tahsilat BİLİNMİYOR.
+
+**Rollback:** ana dalda birleştirilirse, main güncel SHA denetlenerek ayrı ters düzeltme PR'sı açılır; eski iki dosya `6de1c4ad10feef1fef37e93d2731dad5e7886574` kaynak sürümünde bulunur. Force-push YOK.

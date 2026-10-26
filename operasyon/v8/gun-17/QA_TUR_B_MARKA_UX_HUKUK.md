@@ -1,27 +1,25 @@
-# Gün 17 — QA TUR B: bağımsız okunabilirlik, marka, UX, hukuk ve yayım
-**Tarih:** 26.10.2026 · **Kamu yayını:** YAPILMADI.
+# SYNAPSE V8 Gün 17 — QA B: bağımsız marka, UX, erişilebilirlik, yayın kapısı
 
-| Alan | Statü | Gerçek gözlem / engel |
+**Tarih:** 26.10.2026. **Kamuya yazma/gönderme:** YAPILMADI.
+
+| Alan | Durum | Ölçülen veya incelenen |
 |---|---|---|
-| İçerik doğruluğu | PASS (editoryal kontrol) | Sentetik A01–A06 kapsamı, kaynak/sürüm/rol/tavan anlamları tutarlı; üretim performansı sonucu yok |
-| Marka doğruluğu | PASS (kaynak kontrolü) | Ana CSS token'ları ve logo path'i değiştirilmedi; hiçbir rakip/sertifika rozeti eklenmedi |
-| UX, H1/H2 ve tek eylem | PASS (statik kaynak) | tek H1; CTA mevcut, yeni bölümde bir bağlamsal link, yanıltıcı checkout yok |
-| Mobil: 320/375/390/768/1024/1440 px | **TEST EDİLEMEDİ** | gerçek branch HTML tarayıcı renderı yapılmadı |
-| Klavye/screen reader/touch target | **TEST EDİLEMEDİ** | cihaz, erişilebilirlik ağacı ve forma etkileşim yok |
-| Lighthouse / CWV saha | **TEST EDİLEMEDİ** | gerçek CrUX/GSC/yerel Lighthouse raporu yok |
-| URL HTTP 200 ve kırık dış bağlantılar | **TEST EDİLEMEDİ** | canlı GitHub Pages erişimi bu ortamda engellendi |
-| Statik rehber canonical | PASS (kaynak) | self canonical bozulmadı |
-| Telif / fotoğraf | PASS (yalnız bu metin) | yeni görsel, müzik veya font eklenmedi |
-| KVKK / kişisel veri | PASS (yeni değişiklik) | yeni form, dosya yükleme, veri aktarma veya çerez eklenmedi |
-| Platform/hukuk | HOLD | hizmet vaadi ve fiyat/teslim için hesap sahibi + uzman kontrolü gerekli; satış açılmadı |
-| Dönüşüm ve gerçek talep | BİLİNMİYOR | yetkili analitik veya FormSubmit teslim kaydı yok |
-| Gönderi / ödeme / main merge | YAPILMADI | ayrı açık kullanıcı onayı yok |
+| Teknik içerik doğru kapsam | GEÇTİ (statik kaynak) | Tek rol, doğru kaynak sürümü, yetki kontrolü, maliyet belirsizliği ve insan onayı anlatımı |
+| Sentetik etiket ve doğrulanmamış sonuç | GEÇTİ (statik kaynak) | 'SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL' mevcut; gerçek müşteri/ROI yüzdesi yok |
+| Marka/telif | GEÇTİ (yeni fark) | Rakip logosu, harici fotoğraf/müzik/font, iç QA notu veya eğreti 'SYNAPSE / Automate' kullanımı eklenmedi |
+| Kaynak H1, canonical, CTA | GEÇTİ (statik) | İki HTML H1 tek; rehberin self canonical'i sabit; hizmet 09 iç linki taslakta var |
+| Kontrast örnekleri | GEÇTİ (seçili CSS renk ikilileri) | normal metin #f2f8fb/#06111f **17.69:1**, paragraf #ccdae2/#0d2234 **11.34:1**, sessiz metin #a9bdc8/#0d2234 **8.34:1**, bağlantı #8cece4/#06111f **13.75:1**. Bu tam renk paleti/grafik WCAG sertifikası değildir |
+| Altı viewport: 320/375/390/768/1024/1440 px | **TEST EDİLEMEDİ** | Güncel PR branch gerçek tarayıcı görselleri oluşturulmadı |
+| Klavye ve ekran okuyucu | **TEST EDİLEMEDİ** | focus/Tab/Enter, touch target ve screen reader gerçek etkileşim testi yok |
+| HTTP, 404, site yönlendirmesi | **TEST EDİLEMEDİ** | site doğrudan web erişiminde hata; git dosya yolu bulunması HTTP başarısı değildir |
+| Lighthouse / gerçek LCP, INP, CLS | **TEST EDİLEMEDİ** | CrUX, PageSpeed saha verisi ve Lighthouse gerçek çıktısı yok |
+| Gizlilik / ölçüm | GEÇTİ (yeni kod farkı) | hiçbir yeni form, cookie, localStorage veya ileti izni uygulaması eklenmedi. Mevcut JS'nin tüm KVKK durumu ayrıca incelenmeli |
+| Sözleşme, gerçek KYC/IBAN, satış | HOLD | ürün/satış yetkisi, fatura ve platform gerçek onayı yok |
+| Algoritma/sıralama/ROI sonucu | **BİLİNMİYOR** | gerçek GSC/GA4/satış paneli erişimi yok |
 
-**P1 açığı / sahibi: QA sorumlusu:** Gerçek altı viewport render, klavye ve URL/http deneyimi olmadan 'teknik yayına hazır' denemez. Bu, *bulunmuş bir mobil kusur* değil, gerekli testin eksik olmasıdır.
+## Sınıflı açık kalemler
+- **P0**: Yeni iki sayfalık dar metin/link farkında kaynak kontrolünde saptanan P0 = 0; **tüm site için 0 P0 garantisi yok**.
+- **P1 doğrulama kapısı**: gerçek responsive, focus, görsel taşma, ekrandan erişim ve HTTP testi eksik. Sorumlu: UX+teknik QA. Belirlenmiş bir grafiksel taşma kusuru ile eksik test aynı şey değildir.
+- **P2**: geçmiş canonical/noindex köprüleri, belirsiz GSC organik talep, 112 regex iddia adayının insan kaynak incelemesi. Sorumlu: SEO/editoryal.
 
-**P0:** Dar taslakta kontrol edilen kritik alanlarda saptanmış P0 yok; sitenin tümünde P0=0 veya satışa uygunluk kanıtlanmadı.
-**P2:** Metinsel başlık düzenlemesinin gerçek CTR etkisi bilinmiyor; A/B üstünlük iddiası yok.
-
-**İkinci tur spesifik kırmızı çizgiler:** Yanlış test fiyatı, sahte AI model çıktısı, otomatik onay, logo değişimi, veri sızıntısı, sentetik etiket eksikliği, Upwork dışı ödeme CTA'sı, kopya SEO sayfası ve iç QA notunun müşteri metnine sızması. Bu değişiklikler statik kaynakta tespit edilmedi.
-
-**Yayım kararı:** Teknik statik taslak = oluşturuldu. Ticari satış = HOLD. Canlı site = ONAY BEKLİYOR, bunun öncesinde gerçek viewport/keyboard/HTTP testleri istenir. Sosyal = yeni gönderi YOK. 
+**QA kararı:** Statik taslak hazır. **Teknik canlı yayın = HOLD** (gerçek tarayıcı/URL testi eksik). **Ticari satış = HOLD**. **PR #46 draft; sosyal paylaşım kotası 0.** Yeni web eylemine ayrı onay yok.
