@@ -1,0 +1,12 @@
+# Gün 17 — Dar SEO revizyonu (yayın taslağı)
+- **Önce:** `rehberler/ai-surec-denetimi.html` başlığı “AI process audit hangi soruları cevaplamalı?”; girdi, karar, çıktı, insan onayı ve hata koşulları. Güvenlik ve maliyet için ölçütler ayrıntısız.
+- **Sonra (taslak):** Aynı kanonik üzerinde “Bir AI sistemi ne zaman incelemeye alınmalı?” başlıklı üç eksenli bölüm: doğruluk (belge/sürüm), güvenlik (rol/eylem), maliyet (istek/token/tekrar). İki sentetik karar örneği. Tek H1 korunur.
+- **Başlık:** AI Süreç Denetimi: Doğruluk, Güvenlik ve Maliyet | Synapse Automate
+- **Meta:** Bir AI sistemini üç aşamada değerlendirin: kaynak doğruluğu, veri erişimi ve yetki güvenliği, kullanım maliyeti. Sentetik örnek, insan onayı ve kapsam sınırları.
+- **Canonical:** https://synapseautomate.github.io/rehberler/ai-surec-denetimi.html (değişmedi).
+- **Kanıt:** https://github.com/synapseautomate/synapseautomate.github.io/blob/main/hizmetler.html (AI sistemleri incelemesi hizmet açıklaması); https://github.com/synapseautomate/synapseautomate.github.io/blob/main/cozumler/kurumsal-ai-operasyon-denetimi.html. Google: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
+- **Örnek:** `AI_SISTEM_SENTETIK_KONTROL_SATIRLARI.csv`, müşteri verisi DEĞİL.
+- **Tek birincil CTA:** mevcut “Ücretsiz Hazırlık Taraması”; yeni bölüm içinde yalnız kurumsal denetim kapsamına yardımcı metin bağlantısı. İlgisiz ürün/ücret vaadi eklenmedi.
+- **Geri alma:** draft PR diff’ini geri çevir / `git checkout 6de1c4ad10feef1fef37e93d2731dad5e7886574 -- rehberler/ai-surec-denetimi.html`. main / sitemap / fiyat / analitik dokunulmaz.
+- **Ölçüm:** GSC sorgu + sayfa tıklama, UTM nitelikli form teslimi; gerçek değerler BİLİNMİYOR.
+- **Yetki:** Sayfanın canlı yayımlanması ve merge ONAY BEKLİYOR.

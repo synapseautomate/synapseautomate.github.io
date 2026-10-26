@@ -1,0 +1,10 @@
+date,channel,metric,definition,value,unit,source,trust
+2026-10-26,GSC,organic_page_clicks,Search Console ilgili URL tıklama,BİLİNMİYOR,tıklama,GSC hesap erişimi yok,ERİŞİLMEDİ
+2026-10-26,site,unique_qualified_visit,uygun B2B niyetli tekil kullanıcı,BİLİNMİYOR,kişi,izinli analitik panel yok,ERİŞİLMEDİ
+2026-10-26,site,cta_verified_submit,FormSubmit sunucu başarı yanıtı,BİLİNMİYOR,olay,hesap/webhook erişimi yok,ERİŞİLMEDİ
+2026-10-26,service,unique_inbound,tekil gerçek inbound,BİLİNMİYOR,kişi,platform erişimi yok,ERİŞİLMEDİ
+2026-10-26,upwork,funded_order,gerçek fonlanmış sözleşme,BİLİNMİYOR,sipariş,Upwork paneli yok,ERİŞİLMEDİ
+2026-10-26,bank,paid_sale,gerçek tahsil edilen ücretli satış,BİLİNMİYOR,satış,banka erişimi yok,ERİŞİLMEDİ
+2026-10-26,bank,net_revenue,tahsilat eksi iade ve komisyon,BİLİNMİYOR,TRY,banka + fatura yok,ERİŞİLMEDİ
+2026-10-26,repo,html_total,main ağacında HTML,150,dosya,GitHub 6de1c4ad,DOĞRULANDI
+2026-10-26,synthetic,training_scenarios,ürün değildir öğretici satır,6,sentetik satır,AI_SISTEM_SENTETIK_KONTROL_SATIRLARI.csv,SENTETİK
