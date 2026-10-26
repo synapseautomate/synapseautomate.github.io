@@ -2,7 +2,7 @@
 **Çalışma tarihi:** 26.10.2026 Europe/Istanbul. **Plan tarihi:** 30.10.2026 (4 gün erken). Numara: 17/30, değiştirilmedi.
 **Gün adı:** Aynı çözümden ikinci niyet — **konu düzeltmesi:** AI Sistem İncelemesi ve Optimizasyonu / doğruluk, güvenlik, maliyet kararı.
 **Main SHA denetim anı:** `6de1c4ad10feef1fef37e93d2731dad5e7886574` · https://github.com/synapseautomate/synapseautomate.github.io
-**Branch:** `draft/v8-gun-17-ai-sistem-degerlendirmesi-20261026` · **PR:** oluşturulduktan sonra PR bağlantısından doğrula; main'e merge yetkisi YOK.
+**Branch:** `draft/v8-gun-17-ai-sistem-degerlendirmesi-20261026` · **PR #46:** https://github.com/synapseautomate/synapseautomate.github.io/pull/46 (OPEN/DRAFT/MERGED=false, GitHub'da kontrol edildi). İlk commit `2d7cf9a35ce3e1f8c78625ba3d8b900065f9bec8`; main'e merge yetkisi YOK.
 **Önceki karar:** Gün 16 kullanıcı PASS/CLOSED; platform bağlantı ve satış metrikleri kullanıcı beyanından bağımsız erişimle doğrulanmadı. Önceki Gün 16 devir: draft/v8-gun-16-rag-kaynakli-bilgi-tabani-20261025/operasyon/v8/gun-16/SYNAPSE_V8_GUN_16_DEVIR.md
 
 ## A. Amaç ve veri
