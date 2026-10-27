@@ -1,0 +1,4 @@
+senaryo,nitelikli_ziyaret_varsayim,talep_oran_varsayim,yasal_odeme_dogrulanmis_kapanma_orani_varsayim,hesaplanan_beklenen_tamamlanmis_satis,mevcut_durumda_yasal_kapi_notu,model_kaynagi,tarih
+Dusuk,70,0.04,0.15,0.42,kurulus_fatura_ve_odeme_kaniti_yok,kalibre_edilmemis_hipotez,2026-10-14
+V7_calisma,180,0.06,0.20,2.16,kurulus_fatura_ve_odeme_kaniti_yok,kalibre_edilmemis_hipotez,2026-10-14
+Guclu,300,0.07,0.25,5.25,kurulus_fatura_ve_odeme_kaniti_yok,kalibre_edilmemis_hipotez,2026-10-14
