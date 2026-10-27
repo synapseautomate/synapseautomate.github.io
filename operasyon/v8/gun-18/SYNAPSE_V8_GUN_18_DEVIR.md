@@ -72,3 +72,9 @@ Draft PR #47 içerisinde 9 değişiklikten oluşan içerik:
 - İlk iki 3-5 dakika CLI çekiminde CRLF/UTF8 terminal görsel çakışması P1 nedeniyle QA FAIL; kaynak kamuya alınmadı. Yerel 8 unittest PASS. Yeni çekim yeniden QA bekliyor.
 - Sosyal paylaşım, DM, reklam, ödeme, hesap oluşturma YAPILMADI. Her platformun zaman/caption bağlantısı manuel öneridir ve gerçek planlama kaydı değildir.
 - İlk tek öncelik: gerçek site URL 200/404, Safari ve mobil yol kontrolü; sonra sosyal medya gerçek yayın öncesi dosya/altyazı incelemesi.
+
+
+## 27.10.2026 — Uzun gerçek terminal kaydı tamamlandı (yerel, GitHub'a yüklenmedi)
+- Geçerli dosya: `/mnt/data/SYNAPSE_G18_SUREC_MADENCILIGI/PUBLIC_ASSETS/SYNAPSE_G18_GERCEK_CLI_YOUTUBE_1920x1080.mp4` — 194.005sn, 1920x1080, H.264 12fps, sessiz AAC, Türkçe gömülü altyazı, gerçek yerel Python/CSV testlerinin Xterm/Xvfb ekran kaydı. SHA256: `b98312ef810493ae232f5656b98165f457d30b47dd6a1c41dc82f0a0abc35980`. **Gerçek müşteri/SaaS entegrasyonu değil; sentetik veriyle kavramsal CLI.**
+- Gerçek video `ffprobe` ve ffmpeg tam decode hatasız; 7/87/183sn ekran karelerinde altyazı/kural/satır ve logo text görsel ön kontrolü. Bütün karelerin bağımsız insan QA'sı ve gerçek YouTube panel yüklemesi TEST EDİLEMEDİ. Önceki 3 hata barındıran çekimler REDDEDİLDİ; yalnız `...YOUTUBE_1920x1080.mp4` geçerli.
+- YouTube, LinkedIn, Instagram, TikTok, X, Threads, Pinterest, Facebook ve Bluesky **hesaplarından bu oturumda gönderi yapılmadı**. Kullanıcının yayın isteği ve site merge onayı sosyal gönderim eyleminin gerçekten yapıldığını kanıtlamaz. Bluesky hesap açılışı kullanıcı paneline bırakıldı.
