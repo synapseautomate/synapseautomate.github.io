@@ -1,0 +1,12 @@
+yontem,konu,artefakt,QA_A,QA_B,metrik,durum,kanit_url
+060,Ölçüm KPI,olcum-yontem-060.md,GEÇTİ,GERÇEK_PANEL_TEST_EDİLEMEDİ,BİLİNMİYOR,TASLAK,https://github.com/synapseautomate/synapseautomate.github.io/pull/28
+067,Marka arama,seo-yontem-067.md,GEÇTİ,CANLI_HTTP_GSC_TEST_EDİLEMEDİ,BİLİNMİYOR,TASLAK,https://github.com/synapseautomate/synapseautomate.github.io/pull/28
+068,Marka uyumu,strateji-yontem-068.md,GEÇTİ,MARKA_HESABI_TEST_EDİLEMEDİ,BİLİNMİYOR,TASLAK,https://www.linkedin.com/company/synapseautomate/
+144,Birinci taraf izin,strateji-yontem-144.md,GEÇTİ,KVKK_FORM_TESLİM_P0_AÇIK,BİLİNMİYOR,TASLAK,https://www.kvkk.gov.tr/Icerik/7353/Cerez-Uygulamalari-Hakkinda-Rehber
+147,Büyüme ağacı,strateji-yontem-147.md,GEÇTİ,PANEL_TEST_EDİLEMEDİ,BİLİNMİYOR,TASLAK,https://github.com/synapseautomate/synapseautomate.github.io/pull/27
+148,Kohort,olcum-yontem-148.md,GEÇTİ,GERÇEK_PANEL_TEST_EDİLEMEDİ,BİLİNMİYOR,TASLAK,https://github.com/synapseautomate/synapseautomate.github.io/pull/28
+229,Dark social,olcum-yontem-229.md,GEÇTİ,PANEL_TEST_EDİLEMEDİ,BİLİNMİYOR,TASLAK,https://github.com/synapseautomate/synapseautomate.github.io/pull/28
+230,UTM,olcum-yontem-230.md,GEÇTİ,GERÇEK_GA4_TEST_EDİLEMEDİ,BİLİNMİYOR,TASLAK,https://github.com/synapseautomate/synapseautomate.github.io/pull/28
+231,Gecikmeli marka arama,seo-yontem-231.md,GEÇTİ,GSC_TEST_EDİLEMEDİ,BİLİNMİYOR,TASLAK,https://github.com/synapseautomate/synapseautomate.github.io/pull/28
+232,Nitelikli lead,donusum-yontem-232.md,GEÇTİ,FORM_TESLİM_TEST_EDİLEMEDİ,BİLİNMİYOR,TASLAK,https://github.com/synapseautomate/synapseautomate.github.io/pull/28
+236,Veri kalitesi,olcum-yontem-236.md,STAGING_CI_PASS,GERÇEK_PANEL_KVKK_P0_AÇIK,BİLİNMİYOR,TASLAK,https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/39237109324
