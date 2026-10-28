@@ -9,6 +9,7 @@ on:
       - 'cozumler/sesli-yapay-zeka-randevu-insan-devri.html'
       - 'scripts/v8_gun19_browser_qa.py'
       - 'scripts/v8_gun19_before_after.py'
+      - 'scripts/v8_gun19_live_http.py'
       - '.github/workflows/v8-gun19-voice-journey-qa.yml'
   workflow_dispatch:
 permissions:
