@@ -5,10 +5,17 @@ name: Day19 Original Voice AI Concept Videos
       - release/g19-voice-video-assets-20261028
     paths:
       - '.github/workflows/g19-voice-social-assets.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/g19-voice-social-assets.yml'
+      - 'scripts/v8_g19_voice_media.py'
 permissions:
   contents: write
 jobs:
   render-and-commit:
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
