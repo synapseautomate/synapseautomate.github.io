@@ -85,3 +85,9 @@
 - İki sürümden Chromium gerçek render: main-before ↔ draft-after `hizmetler.html` ve `surec-analizi.html`, 320/390/768/1440, **16 gerçek PNG** ve `before-after-summary.json`.
 - [Commit e295052](https://github.com/synapseautomate/synapseautomate.github.io/commit/e295052a9476ac433afa828dbc46f48661ca9c6e) sonrası bağımsız CI workflow'ları: Site Integrity, Commercial SEO, Finance SEO, Day12 HR ve **Synapse Release Preflight = SUCCESS**, Gün19 Browser QA = SUCCESS. Önceki Release Preflight FAIL gerçek regresyondu, sonra yerel sentetik consent işaretlemesiyle düzeltildi; gerçek kullanıcı POST'u yok.
 - Gün19 canlı yeni sayfa yayımlanmadı. Form başarı/inbox, canlı draft sayfa 200, gerçek Safari ve ödeme hâlâ **TEST EDİLEMEDİ / HOLD**.
+
+
+## Son QA doğrulaması — 28.10.2026
+- Eklenen **klavye gerçek Tab odağı** (`#main` skip link) ve 44 px dokunmatik hedef kontrolü dahil final Day19 Browser QA **SUCCESS**, [run 40660651653](https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/40660651653); [artifact 12803034739](https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/40660651653/artifacts/12803034739). 42/42 Chromium ekran rotası ve 16 before-after PNG; gerçek Safari/VoiceOver henüz TEST_EDİLEMEDİ.
+- **Synapse Release Preflight SUCCESS**, [run 40660651781](https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/40660651781). Site Integrity, Commercial SEO, Finance SEO ve Day12 HR QA ayrıca SUCCESS. Başarısız önceki CI koşusu onay kutusu eklenmesine uyarlanan local simüle testle düzeltildi.
+- **GO kararı verilmedi**: gerçek FormSubmit teslimi / veri aktarımı ve genel kamu ticari hazırlık kanıtı eksik; Gün19 sayfası main'de değil. ONAY BEKLİYOR.
