@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sesli Yapay Zekâ: Randevu, Çağrı Yönlendirme ve İnsan Devri | Synapse Automate</title>
+<meta name="description" content="Sesli asistan hizmetinde randevu talebi, çağrı yönlendirme ve insan devri ne zaman uygundur? Kavramsal üç örnek, veri sınırları ve gönüllü kapsam talebi.">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://synapseautomate.github.io/cozumler/sesli-yapay-zeka-randevu-insan-devri.html">
+<style>
+:root{color-scheme:dark;--bg:#06111f;--panel:#102536;--text:#eef7fb;--muted:#bed0db;--cyan:#7cebe6;--border:#355a6e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.62 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--cyan)}a:focus-visible{outline:3px solid #fff;outline-offset:4px}.wrap{width:min(1100px,calc(100% - 32px));margin:auto}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:100;background:#fff;color:#06111f;padding:12px}
+header{border-bottom:1px solid var(--border);background:#071a2a}nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+nav img{display:block;width:min(190px,48vw);height:auto;max-height:58px;object-fit:contain}nav .links{display:flex;flex-wrap:wrap;gap:8px 22px}
+nav a{color:#f4fbff;font-weight:650;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:48px}
+.kicker{text-transform:uppercase;letter-spacing:.12em;color:var(--cyan);font-size:.79rem;font-weight:800}
+h1{font-size:clamp(2.3rem,5.1vw,4.65rem);line-height:1.07;letter-spacing:-.045em;margin:16px 0 22px}
+h2{font-size:clamp(1.65rem,3vw,2.55rem);line-height:1.19;letter-spacing:-.02em}
+h3{font-size:1.15rem}.lead{font-size:1.16rem;color:#d9e9f0;max-width:50ch}
+.flag{border:1px solid #8ca5b5;border-radius:8px;padding:8px 12px;display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.01em}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{min-height:48px;padding:12px 19px;display:inline-flex;align-items:center;justify-content:center;border-radius:9px;background:var(--cyan);color:#07111b;font-weight:800;text-decoration:none}
+.btn.secondary{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:28px}.panel h2{font-size:1.12rem;margin:0 0 20px}
+.step{border-left:3px solid var(--cyan);padding:7px 0 14px 16px;margin-left:5px}.step span{display:block;color:var(--muted);font-size:.89rem}
+.status{border-radius:10px;padding:14px;background:#1a3042;color:#f0f9fb;margin-top:14px}
+section{padding:52px 0;border-top:1px solid #254458}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{min-width:0;border:1px solid var(--border);background:var(--panel);padding:24px;border-radius:14px}.card p{color:var(--muted);margin-bottom:0}
+.id{font-size:.8rem;font-weight:800;color:var(--cyan);letter-spacing:.12em}.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.note{border-left:4px solid #f1c27c;padding:16px 20px;background:#172c3a}
+footer{padding:32px 0;border-top:1px solid var(--border);color:var(--muted)}
+@media(max-width:800px){.hero,.grid,.two{grid-template-columns:1fr}.hero{padding:44px 0;gap:24px}.panel{padding:22px}section{padding:40px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body><a class="skip" href="#main">İçeriğe geç</a>
+<header><nav class="wrap" aria-label="Ana gezinme">
+<a href="/index.html" aria-label="Synapse Automate ana sayfa"><img src="/assets/brand/synapse-logo-clean.png" alt="Synapse Automate"></a>
+<div class="links"><a href="/hizmetler.html">Hizmetler</a><a href="/surec-analizi.html">Süreç Analizi</a><a href="/iletisim.html">İletişim</a></div>
+</nav></header>
+<main id="main">
+<div class="wrap hero"><div><div class="kicker">Sesli Yapay Zekâ ve Çağrı Merkezi</div>
+<h1>Randevu talebini anlayın. Kararı insana bırakın.</h1>
+<p class="lead">Gelen çağrıda randevu isteği, doğru ekibe yönlendirme ve belirsizlikte insan devri için önce karar sınırlarını tanımlayın.</p>
+<p class="flag">SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL</p>
+<div class="actions"><a class="btn" href="#ornekler">Üç örneği incele</a><a class="btn secondary" href="#kapsam">Kapsam sınırları</a></div>
+</div><div class="panel" role="img" aria-label="Kavramsal yönlendirme: Çağrı talebi alınır, niyet belirlenir, belirsizlik veya kişisel hassas bilgi varsa insan temsilciye devredilir, uygun randevu yalnız yetkili teyidiyle kesinleşir.">
+<h2>Karar akışı · kavramsal</h2>
+<div class="step"><strong>1 · Talep</strong><span>Arayan: “Yarın için randevu uygun mu?”</span></div>
+<div class="step"><strong>2 · Niyet</strong><span>Randevu sorgusu / destek / operatör isteği ayrılır</span></div>
+<div class="step"><strong>3 · Sınır</strong><span>Belirsizlik veya hassas konu → insan devri</span></div>
+<div class="step"><strong>4 · Onay</strong><span>Takvim / kimlik / temsilci yetkisi doğrulanmadan rezervasyon kesinleşmez</span></div>
+<div class="status">Bu görsel çalışan telefon arayüzü veya gerçek çağrı kaydı değildir.</div></div></div>
+<section id="ornekler"><div class="wrap"><p class="kicker">Üç sentetik çağrı kararı</p><h2>Tek sorun: yanlış randevu ve yanlış aktarımı önlemek</h2>
+<div class="grid">
+<article class="card"><span class="id">SENARYO 01</span><h3>Randevu talebi</h3><p>“Salı 10.00 uygun mu?” → niyet anlaşılır; müsaitlik bilinmiyorsa saat sözü verilmez. Yetkili insan/takvim teyidi gerekir.</p></article>
+<article class="card"><span class="id">SENARYO 02</span><h3>Çağrı yönlendirme</h3><p>“Teknik destekle görüşeceğim.” → açık departman tercihine göre yönlendirme önerilir; otomatik aktarma canlı bir özellik olarak iddia edilmez.</p></article>
+<article class="card"><span class="id">SENARYO 03</span><h3>İnsan devri</h3><p>“İlaç kullanımımı değiştirmeli miyim?” → uzmanlık ve hassas veri sınırı nedeniyle yanıt verilmez; yetkili insan kanalına yönlendirilir.</p></article>
+</div></div></section>
+<section id="kapsam"><div class="wrap"><p class="kicker">Kapsam ve onay</p><h2>Teknoloji değil, önce karar hakkı.</h2>
+<div class="two"><article class="card"><h3>Kimin için?</h3><p>Çağrı merkezi operasyon yöneticisi veya randevu operasyon sorumlusu; yanlış yönlendirmeyi azaltmak ve insan devri eşiğini tanımlamak için.</p></article>
+<article class="card"><h3>Ön koşullar</h3><p>İzinli süreç haritası, niyet/konu listesi, görüşme saatleri, insan temsilci erişimi, randevu doğrulama politikası ve veri işleme aydınlatması.</p></article>
+<article class="card"><h3>İnsan onayı</h3><p>Randevu kesinleştirme, kişisel bilgi doğrulama, hassas konu, şikâyet/escalation ve kayıt saklama kuralları yetkililerce kararlaştırılır.</p></article>
+<article class="card"><h3>Kapsam dışı</h3><p>Canlı telefon numarası, çalışan ses botu, takvim/CRM entegrasyonu, otomatik rezervasyon, çağrı kaydı, kişisel veri işleme veya performans garantisi yok.</p></article></div>
+<p class="note"><strong>Kanıt niteliği:</strong> Anlatım, gerçek hizmet açıklamasından türetilmiş üç <strong>kavramsal sentetik karar örneğidir</strong>. Müşteri konuşması, telefon kaydı, ses tanıma ölçümü veya canlı yazılım testi değildir.</p>
+</div></section>
+<section id="talep"><div class="wrap"><p class="kicker">Gönüllü kapsam talebi</p><h2>Sizin akışınızda insan devri nerede olmalı?</h2>
+<p class="lead">Yalnızca iş hacmi, çağrı türleri ve karar sorumlusu gibi süreç metadatasını paylaşarak değerlendirme talep edebilirsiniz. Çağrı sesini, telefon numaralarını, müşteri adlarını veya sağlık verilerini ilk aşamada göndermeyin.</p>
+<div class="actions"><a class="btn" href="/iletisim.html?konu=sesli-yapay-zeka">Kapsam talebi oluştur</a><a class="btn secondary" href="/gizlilik.html">Veri işleme ve gizlilik</a></div>
+<p>Bu adım satın alma veya otomatik rezervasyon değildir. Gönderim üçüncü taraf FormSubmit aracılığıyla yapılır; teslim ve yanıt ayrıca doğrulanmalıdır.</p></div></section>
+</main><footer><div class="wrap">© 2026 Synapse Automate · İnsan denetimli süreç tasarımı.</div></footer>
+</body></html>
