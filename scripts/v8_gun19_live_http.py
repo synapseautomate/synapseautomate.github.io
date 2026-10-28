@@ -9,6 +9,8 @@ urls=[
 "https://synapseautomate.github.io/talep-alindi.html",
 "https://synapseautomate.github.io/404.html",
 "https://synapseautomate.github.io/cozumler/sesli-yapay-zeka-randevu-insan-devri.html",
+"https://synapseautomate.github.io/assets/media/g19/synapse-voice-human-handoff-horizontal.mp4",
+"https://synapseautomate.github.io/assets/media/g19/synapse-voice-human-handoff-vertical.mp4",
 "https://synapseautomate.github.io/bu-olmayan-gun19-sayfa-404-deneme.html"
 ]
 rows=[]
@@ -24,3 +26,6 @@ out=pathlib.Path("operasyon/v8/gun-19/qa-browser-artifacts")
 out.mkdir(parents=True,exist_ok=True)
 (out/"http-readonly-live-main.json").write_text(json.dumps({"date_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"scope":"LIVE CURRENT MAIN ONLY; NOT draft branch","results":rows},ensure_ascii=False,indent=2),encoding="utf-8")
 print(json.dumps(rows,ensure_ascii=False))
+required=[r for r in rows if "/assets/media/g19/" in r["url"] or "/cozumler/sesli-yapay-zeka-randevu-insan-devri.html" in r["url"]]
+fail=[r for r in required if r["status"]!=200 or (r["url"].endswith(".mp4") and "video/" not in (r.get("content_type") or ""))]
+if fail:raise SystemExit("LIVE NEW MEDIA QA FAILED: "+json.dumps(fail,ensure_ascii=False))
