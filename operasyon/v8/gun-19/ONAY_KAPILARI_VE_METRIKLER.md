@@ -22,3 +22,10 @@ Tarih: 28.10.2026 Europe/Istanbul (plan 01.11.2026).
 - `FORM-G19-20261028`: Gerçek test başvurusu ve alıcı inbox teslim kontrolü (kişisel veri/hukuk incelemesi sonrası); henüz izin yok.
 - `CHECKOUT-G19-20261028`: Gerçek ödeme/tahsilat; **AÇILMADI**, vergi/fatura/KYC/mesafeli satış ispatı gerekir.
 - Google Business Profile, yerel dizin, Merchant Center, Snapchat, harita hesap oluşturma: NO-GO; hesap sahibinin resmî uygunluk kanıtı olmadan açılmaz.
+
+
+## 28.10.2026 kaynak güncellemesi — CI ve HTTP doğrulaması
+- GÜNCEL ve üstün kanıt: GitHub Actions [run 40659965759](https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/40659965759); [artifact 12802534718](https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/40659965759/artifacts/12802534718). Gerçek **salt-okunur HTTPS GET main**: ana sayfa, hizmetler, surec-analizi, iletisim, talep-alindi ve 404.html 6/6 **HTTP 200**; bulunmayan URL **404**; **YENİ taslak sesli AI URL canlıda 404 (beklenen)**. Bu testler gerçek FormSubmit POST veya checkout değildir.
+- İki sürümden Chromium gerçek render: main-before ↔ draft-after `hizmetler.html` ve `surec-analizi.html`, 320/390/768/1440, **16 gerçek PNG** ve `before-after-summary.json`.
+- [Commit e295052](https://github.com/synapseautomate/synapseautomate.github.io/commit/e295052a9476ac433afa828dbc46f48661ca9c6e) sonrası bağımsız CI workflow'ları: Site Integrity, Commercial SEO, Finance SEO, Day12 HR ve **Synapse Release Preflight = SUCCESS**, Gün19 Browser QA = SUCCESS. Önceki Release Preflight FAIL gerçek regresyondu, sonra yerel sentetik consent işaretlemesiyle düzeltildi; gerçek kullanıcı POST'u yok.
+- Gün19 canlı yeni sayfa yayımlanmadı. Form başarı/inbox, canlı draft sayfa 200, gerçek Safari ve ödeme hâlâ **TEST EDİLEMEDİ / HOLD**.
