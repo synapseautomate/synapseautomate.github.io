@@ -27,6 +27,7 @@ jobs:
       - run: python -m playwright install --with-deps chromium
       - run: python scripts/v8_gun19_browser_qa.py
       - run: python scripts/v8_gun19_before_after.py
+      - run: python scripts/v8_gun19_live_http.py
       - name: Evidence screenshots + JSON
         if: always()
         uses: actions/upload-artifact@v4
