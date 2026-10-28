@@ -1,0 +1,24 @@
+# Gün19 — kaynaklı metrikler ve ayrı yetki kapıları
+Tarih: 28.10.2026 Europe/Istanbul (plan 01.11.2026).
+| Kanal | Metrik/tanım | Değer | Birim | Kaynak / kanıt güveni |
+|---|---|---|---|---|
+| Lokal PR Chromium | viewport_pass (6×7) | 42 | kontrol | GitHub Actions run 40659256869 / yüksek |
+| Lokal PR Chromium | ekran kanıtı | 42 | PNG | Artifact 12803231704 / yüksek |
+| Lokal PR Chromium | gözlenen JS pageerror | 0 | hata | Test betiği / test aralığıyla sınırlı |
+| GitHub kaynak | yeni hizmet href | 1 | bağlantı | Draft PR #49 / yüksek |
+| GitHub kaynak | zorunlu consent eklemesi | 1 | alan | Draft PR #49 / yüksek |
+| Canlı web | canlı 200/404 | BİLİNMİYOR | durum | Ortam HTTP kapalı; Actions read-only test ekli |
+| Canlı web | kırık kritik link adedi | BİLİNMİYOR | link | Canlı bağımsız doğrulama yok |
+| Gerçek FormSubmit | form_basari_kaynagi | BİLİNMİYOR | onay | Kullanıcı hesabına erişim yok; POST yok |
+| Gerçek Safari | safari_durumu | TEST_EDİLEMEDİ | motor | Chromium ≠ Safari |
+| Analitik | kanal gösterimi/nitelikli ziyaret | BİLİNMİYOR | gösterim/oturum | GA4 paneli yok |
+| Funnel | gönüllü talep/izinli teklif | BİLİNMİYOR | lead/teklif | Gerçek panel yok |
+| Satış | fonlanmış sipariş/tahsil edilmiş satış/iade/net gelir | BİLİNMİYOR | sipariş/TL | Finansal kaynak yok |
+| Operasyon | bu oturum dış gönderim/ödeme | 0 | eylem/TL | Operatör işlem günlüğü |
+
+## ONAY BEKLİYOR (ayrı yetkiler)
+- `WEB-G19-20261028`: PR #49'in **main'e merge / canlı yayın** izni. Henüz verilmedi; kullanıcı yalnız Gün18 için yayın izni vermişti.
+- `LI-G19-20261028`, `YT-G19-20261028`, `IG-G19-20261028`, `X-G19-20261028`, `TT-G19-20261028`, `FB-G19-20261028`, `TH-G19-20261028`, `PIN-G19-20261028`, `BS-G19-20261028`: sosyal paylaşımların her biri ayrı açık onay ister; bugünkü politika **SOSYAL YAYIN YOK**.
+- `FORM-G19-20261028`: Gerçek test başvurusu ve alıcı inbox teslim kontrolü (kişisel veri/hukuk incelemesi sonrası); henüz izin yok.
+- `CHECKOUT-G19-20261028`: Gerçek ödeme/tahsilat; **AÇILMADI**, vergi/fatura/KYC/mesafeli satış ispatı gerekir.
+- Google Business Profile, yerel dizin, Merchant Center, Snapchat, harita hesap oluşturma: NO-GO; hesap sahibinin resmî uygunluk kanıtı olmadan açılmaz.
