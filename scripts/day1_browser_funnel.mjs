@@ -53,6 +53,8 @@ try {
   await page.locator('#volume').fill('Haftada on iade incelemesi');
   await page.locator('#loss').fill('Görev sahipliği karışıyor');
   await page.locator('#owner').fill('İşletme sahibi');
+  // Day19 privacy fix: test explicit user consent in the LOCAL SIMULATED route; never POST real data.
+  await page.locator('input#explicit-consent[name="consent"][required]').check();
   await Promise.all([page.waitForURL('**/talep-alindi.html**',{timeout:15000}),page.locator('button[type=submit]').click()]);
   await page.waitForTimeout(250);
   events=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('__day1_test_events')||'[]'));
