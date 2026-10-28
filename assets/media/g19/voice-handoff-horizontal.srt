@@ -1,0 +1,18 @@
+1
+00:00:00,000 --> 00:00:06,000
+Bir konuşmayı anlamak, randevuyu onaylamak değildir.
+2
+00:00:06,000 --> 00:00:12,000
+Yarın saat on için uygunluk teyit edilmeden söz verilmez.
+3
+00:00:12,000 --> 00:00:18,000
+Destek talebi ilgili ekibe aktarılmak üzere sınıflandırılır.
+4
+00:00:18,000 --> 00:00:24,000
+Hassas veya belirsiz bir soruda insan temsilci devralır.
+5
+00:00:24,000 --> 00:00:30,000
+Otomatik rezervasyon ve gerçek çağrı kaydı gösterilmiyor.
+6
+00:00:30,000 --> 00:00:36,000
+SYNAPSE Automate: Karar hakkı sizde.

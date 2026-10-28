@@ -1,0 +1,18 @@
+1
+00:00:00,000 --> 00:00:05,000
+Bir konuşmayı anlamak, randevuyu onaylamak değildir.
+2
+00:00:05,000 --> 00:00:10,000
+Takvim teyidi yoksa rezervasyon kesinleşmez.
+3
+00:00:10,000 --> 00:00:15,000
+Destek talebi yetkili ekibe yönlendirilir.
+4
+00:00:15,000 --> 00:00:20,000
+Belirsizlikte insan temsilci devralır.
+5
+00:00:20,000 --> 00:00:25,000
+Bu sentetik kavramsal örnektir.
+6
+00:00:25,000 --> 00:00:30,000
+SYNAPSE Automate: Karar hakkı sizde.
