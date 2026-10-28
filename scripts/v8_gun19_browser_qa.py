@@ -51,6 +51,15 @@ try:
      if page.locator('form[data-synapse-lead="process_analysis"] input[name="consent"][required]').count()!=1:failures.append({"test":"process form consent","width":width})
     if route=="cozumler/sesli-yapay-zeka-randevu-insan-devri.html":
      if page.locator('a[href="/iletisim.html?konu=sesli-yapay-zeka"]').count()!=1:failures.append({"test":"voice CTA missing","width":width})
+     # Real keyboard focus test (no pointer click): first tab must reach skip-to-content link.
+     page.keyboard.press("Tab")
+     focus=page.evaluate("() => ({tag:document.activeElement?.tagName, href:document.activeElement?.getAttribute('href')})")
+     if focus.get("href")!="#main":failures.append({"test":"skip-link keyboard focus","width":width,"actual":focus})
+     # Primary mobile actions and menu links have at least 44px actual bounding height.
+     for selector in [".actions .btn","nav .links a"]:
+      for element in page.locator(selector).all():
+       rect=element.bounding_box()
+       if rect and rect["height"]<44:failures.append({"test":"touch target", "selector":selector,"width":width,"height":rect["height"]})
     if route=="hizmetler.html":
      if page.locator('a[href="cozumler/sesli-yapay-zeka-randevu-insan-devri.html"]').count()!=1:failures.append({"test":"service->voice link","width":width})
    if page_errors:failures.append({"width":width,"js_errors":page_errors})
