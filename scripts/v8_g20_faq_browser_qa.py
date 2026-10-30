@@ -45,14 +45,19 @@ with tempfile.TemporaryDirectory(prefix="synapse-g20-baseline-") as t:
       page.keyboard.press("Enter")
      info=page.evaluate("""() => ({h1:document.querySelectorAll('h1').length, imagesWithoutAlt:document.querySelectorAll('img:not([alt])').length, scrollWidth:document.documentElement.scrollWidth, title:document.title, hrefs:[...document.querySelectorAll('a[href]')].length})""")
      shot=f"{label}-{w}.png";page.screenshot(path=str(ART/shot),full_page=True,animations="disabled")
-     okay=response.status==200 and info["h1"]==1 and info["imagesWithoutAlt"]==0 and info["scrollWidth"]<=w+1 and not errs
+     okay=response.status==200 and info["h1"]==1 and info["imagesWithoutAlt"]==0 and not errs
      if not okay:failures.append({"label":label,"width":w,"issue":"render/check fail","status":response.status,"info":info,"js":errs})
-     results.append({"kind":label,"width":w,"status":response.status,"h1":info["h1"],"horizontalOverflow":max(0,info["scrollWidth"]-w),"missingAlt":info["imagesWithoutAlt"],"FAQCount":count,"jsErrors":len(errs),"screenshot":shot,"result":"PASS" if okay else "FAIL"})
+     results.append({"kind":label,"width":w,"status":response.status,"h1":info["h1"],"horizontalOverflow":max(0,info["scrollWidth"]-w),"missingAlt":info["imagesWithoutAlt"],"FAQCount":count,"jsErrors":len(errs),"screenshot":shot,"result":("FAIL" if not okay else ("BASELINE_P1" if info["scrollWidth"]>w+1 else "PASS"))})
      page.close();context.close()
     srv.shutdown()
    browser.close()
  finally:subprocess.run(["git","worktree","remove","--force",str(old)],cwd=ROOT,check=False)
+for w in WIDTHS:
+ before=next(q for q in results if q["kind"]=="before_main" and q["width"]==w)
+ after=next(q for q in results if q["kind"]=="after_draft" and q["width"]==w)
+ if after["horizontalOverflow"]>before["horizontalOverflow"]:
+  failures.append({"width":w,"issue":"NEW overflow regression","before":before["horizontalOverflow"],"after":after["horizontalOverflow"]})
 report={"date":"2026-10-30","scope":"Chromium from checked out source; NOT real Safari, real FormSubmit, Search Console or field conversion.","main_sha":MAIN_SHA,"QA_turn":"Independent browser and source-regression","cases":results,"failures":failures}
 (ART/"g20-qa-results.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
-print(json.dumps({"browserCases":len(results),"passed":sum(r["result"]=="PASS" for r in results),"failed":len(failures),"failures":failures},ensure_ascii=False))
+print(json.dumps({"browserCases":len(results),"passed":sum(r["result"]=="PASS" for r in results),"existingP1":sum(r["result"]=="BASELINE_P1" for r in results),"failed":len(failures),"failures":failures},ensure_ascii=False))
 sys.exit(1 if failures else 0)
