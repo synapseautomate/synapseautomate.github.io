@@ -1,0 +1,22 @@
+name: Day20 Pricing 320 Mobile Overflow Fix QA
+on:
+  pull_request:
+    branches: [main]
+    paths: ['rehberler/ai-otomasyon-fiyatlari.html','scripts/g20_mobile_fix_test.py','.github/workflows/g20-mobile-fix.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - run: python -m pip install playwright && python -m playwright install --with-deps chromium
+    - run: python scripts/g20_mobile_fix_test.py
+    - if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: g20-320-mobile-qa
+        path: qa/g20-mobile-fix/
