@@ -46,6 +46,8 @@ with tempfile.TemporaryDirectory(prefix="synapse-g20-baseline-") as t:
      if w==320:
       overflow=page.evaluate("""() => [...document.querySelectorAll('body *')].map(el=>({tag:el.tagName,classes:el.className?.toString().slice(0,65),text:el.textContent?.trim().slice(0,60),right:Math.ceil(el.getBoundingClientRect().right),left:Math.floor(el.getBoundingClientRect().left),width:Math.ceil(el.getBoundingClientRect().width)})).filter(x=>x.right>321 && x.width>0).sort((a,b)=>b.right-a.right).slice(0,18)""")
       print("OVERFLOW_ELEMENTS",label,json.dumps(overflow,ensure_ascii=False))
+      nested=page.evaluate("""() => [...document.querySelectorAll('body *')].map(el=>({tag:el.tagName,class:el.className?.toString().slice(0,50),ownScroll:el.scrollWidth,client:el.clientWidth,excess:el.scrollWidth-el.clientWidth,text:el.textContent?.trim().slice(0,50)})).filter(x=>x.excess>2).sort((a,b)=>b.excess-a.excess).slice(0,22)""")
+      print("NESTED_OVERFLOW",label,json.dumps(nested,ensure_ascii=False))
      info=page.evaluate("""() => ({h1:document.querySelectorAll('h1').length, imagesWithoutAlt:document.querySelectorAll('img:not([alt])').length, scrollWidth:document.documentElement.scrollWidth, title:document.title, hrefs:[...document.querySelectorAll('a[href]')].length})""")
      shot=f"{label}-{w}.png";page.screenshot(path=str(ART/shot),full_page=True,animations="disabled")
      okay=response.status==200 and info["h1"]==1 and info["imagesWithoutAlt"]==0 and not errs
