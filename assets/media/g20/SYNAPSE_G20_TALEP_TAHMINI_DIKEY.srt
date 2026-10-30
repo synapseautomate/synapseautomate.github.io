@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:06,000
+GÖRÜLEN SATIŞ. TALEP Mİ?. Satışın sıfır olduğu gün, stokta yokluk olup olmadığına bakın.
+
+2
+00:00:06,000 --> 00:00:12,000
+VERİ KONTROLÜ. EKSİK DÖNEM. Tarihli kayıt ve ürün kimliği olmadan tahmin güvencesi verilmez.
+
+3
+00:00:12,000 --> 00:00:18,000
+BAĞLAM KONTROLÜ. KAMPANYA. Özel dönemlerin etkisini temel talepten ayırmayı planlayın.
+
+4
+00:00:18,000 --> 00:00:24,000
+KARŞILAŞTIRMA. REFERANS MODEL. Basit yöntemle zaman içinde, gelecek görmeyen test gerekir.
+
+5
+00:00:24,000 --> 00:00:30,000
+BELİRSİZLİK. TEK SAYI DEĞİL. Aralık ve sınır raporlanır, sipariş kararı insanda kalır.
