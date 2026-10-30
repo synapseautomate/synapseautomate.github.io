@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 ART=ROOT/"operasyon/v8/gun-20/browser-evidence"
 ART.mkdir(parents=True,exist_ok=True)
-MAIN_SHA="05bd1f2a31d36fe92134e756e485a104337fbe9f"
+MAIN_SHA="13fe8c24a2b2ec5cc45d1f3e00478cd3db319a3c"
 WIDTHS=[320,375,390,768,1024,1440]
 class Server(socketserver.ThreadingMixIn,http.server.HTTPServer):
  daemon_threads=True
