@@ -76,3 +76,20 @@ Komut: `python scripts/v8_g20_faq_browser_qa.py`. [GitHub Actions run 4103382011
 
 ## Ertesi günün TEK önceliği
 320px fiyat rehberi mevcut taşmasını kök öğesi ile tam belirle, tek regresyon düzeltmesini ayrıca taslakla, gerçek Safari/cihaz test yolunu doğrula; yeni fiyat beyanlarını ve tüketici/fatura durumunu satışa hazır sanma. Gün20 PR #52 otomatik merge edilmez; açık `WEB-G20-20261030` izni yalnız spesifik kullanıcı eylemiyle alınır.
+
+
+## 30.10.2026 — Kullanıcının özel site yayın onayı sonrası doğrulanmış değişiklik
+**Önceki durum kayıtları silinmedi; aşağıdaki daha yeni statü geçerlidir.** Kullanıcı 30.10.2026 tekil olarak Gün20 site yayınını onayladı.
+- PR #53 https://github.com/synapseautomate/synapseautomate.github.io/pull/53 — 320px H1 taşma için bağımsız CSS düzeltmesi, gerçek Chromium 6/6 PASS, main merge SHA `13fe8c24a2b2ec5cc45d1f3e00478cd3db319a3c`. 320px eski P1 kapatıldı, Safari gerçek cihaz QA hâlâ TEST EDİLEMEDİ.
+- Eski PR #52 kayıt/devir arşividir; ayrı P1 CSS düzeltmesi sonrasında merge conflict doğdu, **kamuya alınmadı**.
+- Temiz kamu PR #54 https://github.com/synapseautomate/synapseautomate.github.io/pull/54 — yalnız tek yeni TEST FİYATI/belirsizlik FAQ; Site Integrity, Mobile Browser QA ve Release Preflight SUCCESS, main merge SHA `be72e255803ed6dd8de6c9197fab639da5a0a209`.
+- Medya PR #55 https://github.com/synapseautomate/synapseautomate.github.io/pull/55 — iki özgün sentetik kavramsal talep tahmin videosu resmî repo logo varlığıyla üretildi; GH Actions tam H264/AAC decode + ffprobe + 2 kare QA artifact 12967944836; bir defalık yazma workflow'u yayın paketinden çıkarıldı. Main merge SHA `f7c48b7f20a0b7b661a8ab0e1ecb0f3af9ad0e90`. Gerçek tahmin sistemi/vaka/performans iddiası yok.
+- Site fiyat/belirsizlik canlı URL: https://synapseautomate.github.io/rehberler/ai-otomasyon-fiyatlari.html#fiyat-etkenleri
+- Yatay video: https://synapseautomate.github.io/assets/media/g20/SYNAPSE_G20_TALEP_TAHMINI_YATAY.mp4 (1920×1080; 36s; ~1,088,691 bytes).
+- Dikey video: https://synapseautomate.github.io/assets/media/g20/SYNAPSE_G20_TALEP_TAHMINI_DIKEY.mp4 (1080×1920; 30s; ~1,078,656 bytes).
+- **Bağımsız canlı internet kontrolü** PR #56 https://github.com/synapseautomate/synapseautomate.github.io/pull/56 , [Actions 41037896222](https://github.com/synapseautomate/synapseautomate.github.io/actions/runs/41037896222): **5/5 PASS** (ana sayfa/süreç analizi/fiyat rehberi/yatay MP4/dikey MP4 HTTP 200; MIME video/mp4 ve MP4 ftyp; yeni FAQ metni canlıda ve süreç analizinden fiyat rehberi dahili linki var). PR #56 yalnız QA, ana dala alınmasına gerek yok.
+- Yeni yazılı ve görsel kaynaklar: yerel 1920x1080 ve 1080x1350 PNG, 5 sayfalı LinkedIn PDF ayrıca oluşturuldu, bunlar 30.10.2026 tüketiciye yayınlanmadı. GitHub video SRT'leri repo main'de mevcut.
+- Yayın izni ayrımı: **WEB-G20-20261030 = ONAY VERİLDİ ve main'e uygulandı**; **SOCIAL-LI / YT / IG / TT / X / Threads / Facebook / Pinterest / Bluesky = HESAPLARA GÖNDERİM YAPILMADI**, platform kullanıcısı manuel yayımlayacak, otomatik post/takvimleme yok. Günün özgün planında organik sosyal kota 0; sonraki talepte manuel gönderi paketleri hazırlandı.
+- Güncel açık P0: gerçek vergi/fatura/ödeme/real account delivery kanıtı eksik, satış NO-GO. Açık P1: farklı eski fiyat meta/FAQ schema test niteliği yanlış algılanabilir; gerçek iPhone/safari/test post QA yok. 320px H1 P1 düzeltildi (Chromium), genel sitede tüm P1'lerin sıfırlandığı iddia edilmez.
+- Ölçü: gerçek son 7 gün inbound/CTA→lead/paid sales, GA4, video izlenme, net gelir **BİLİNMİYOR**. Kendi araç üretimimiz GitHub medya renderi gerçekte yapıldı, gerçek müşteri demosu değildir.
+- Tek sonraki öncelik: 3 farklı canlı fiyat beyanını aynı TEST FİYATI/satış kapısı diline getirecek ayrı onaylı, ölçülebilir revizyon taslağı. Sosyal otomatik yayın yetkisi YOK.
