@@ -1,0 +1,4 @@
+# Gün21 QA tur A (31.10.2026)
+GitHub main başlangıç f7c48b7f20a0b7b661a8ab0e1ecb0f3af9ad0e90; hizmetler.html kart #01 ve veri/offer-ladder.json gerçek kaynak okundu. Upwork freelancer 0-15% sözleşme bazlı satıcı bedeli, Paddle Checkout 5% + $0.50 ayrı kanallar. 990/4.900/24.900 TL yalnız test fiyatı; USD 149/750/449 ayrı JSON liste, kur çevrimi YOK.
+Yerel artifact_tool Excel senaryo hücreleri: 0/126.65/379.95 USD hipotetik net komisyon sonrası, kâr veya satış değil; #REF/#DIV0/#VALUE/#NAME/#N/A tarama eşleşmesi 0. Kaynak: https://support.upwork.com/hc/en-us/articles/211062538-Learn-about-the-Freelancer-Service-Fee ; https://www.paddle.com/pricing ; https://istanbul.gib.gov.tr/mevzuat/kanun/433 .
+FormSubmit, GA4, banka, Upwork/KYC, gerçek sözleşme, fatura, gelir, iade, teslim saatleri TEST EDİLEMEDİ. Bunlar 0 değil BİLİNMİYOR. Çalışan müşteri asistanı örneği YOK, 3 senaryo kavramsal. P0 satış/hukuk AÇIK. Sorumlu: operasyon, mali müşavir + hesap sahibi.
