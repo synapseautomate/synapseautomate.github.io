@@ -83,6 +83,7 @@ jobs:
           path: _site/
           if-no-files-found: error
           include-hidden-files: false
+          retention-days: 1
 
       - name: Upload mobile QA captures
         if: always()
@@ -91,3 +92,4 @@ jobs:
           name: preflight-mobile-screenshots
           path: /tmp/synapse-mobile-qa/
           if-no-files-found: ignore
+          retention-days: 1

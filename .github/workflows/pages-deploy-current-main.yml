@@ -165,6 +165,7 @@ jobs:
           name: release-mobile-screenshots
           path: /tmp/synapse-mobile-qa/
           if-no-files-found: ignore
+          retention-days: 1
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
