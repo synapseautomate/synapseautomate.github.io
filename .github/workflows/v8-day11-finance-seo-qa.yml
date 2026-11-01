@@ -53,4 +53,4 @@ jobs:
           name: synapse-v8-day11-finance-seo-qa
           path: /tmp/synapse-v8-day11-evidence/
           if-no-files-found: warn
-          retention-days: 30
+          retention-days: 1
