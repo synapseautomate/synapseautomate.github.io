@@ -46,14 +46,14 @@ These packages expose synthetic, methodology and control-policy evidence. They a
 
 - Human approval remains mandatory for critical commercial, legal, financial and sensitive decisions.
 - Claims, metrics and outcomes are not presented as verified unless supported by evidence.
-- Customer data, secrets and credentials are not published in this repository.
+- Customer data, secrets and credentials must not be committed. Automated checks do not guarantee that historical commits and pull requests contain no sensitive material.
 - Search and AI discovery resources are maintained separately from the primary customer navigation.
 
 © 2026 Synapse Automate
 
 ## Reusable delivery IP boundary
 
-Public reusable templates contain generic delivery structures only. Customer data, credentials, confidential customer configuration and unpermissioned customer material are excluded. Real project ownership and licensing are defined in written scope or contract.
+Public reusable templates are intended to contain generic delivery structures only. Customer data, credentials, confidential customer configuration and unpermissioned customer material must be kept in an access-restricted location. Real project ownership and licensing are defined in written scope or contract.
 
 ## Public versioning & freshness
 - Release notes: https://synapseautomate.github.io/degisiklikler.html
@@ -61,7 +61,7 @@ Public reusable templates contain generic delivery structures only. Customer dat
 - 7/14-day value review template: https://synapseautomate.github.io/rehberler/7-14-gun-deger-gozden-gecirme.html
 - Machine-readable version registry: https://synapseautomate.github.io/veri/public-content-version-registry-v1.json
 
-Internal editorial review is not presented as external expert review. Public knowledge assets carry review dates and a stale/deprecation policy.
+Automated tests and AI-generated drafts are not independent human or external expert reviews. Human editorial sign-off has not been independently verified for this repository. Public knowledge assets carry version dates and a stale/deprecation policy; those dates are not evidence of human review.
 
 ## Public discovery
 - Resource Center: https://synapseautomate.github.io/kaynaklar.html

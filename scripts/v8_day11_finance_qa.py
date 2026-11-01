@@ -12,7 +12,7 @@ OUT.mkdir(parents=True,exist_ok=True)
 target='cozumler/fatura-on-isleme-mutabakat-kontrolu.html'
 prefix='https://synapseautomate.github.io/'
 issues=[]
-fixture=ROOT/'operasyon/v8/gun-11/fatura-mutabakat-SENTETIK-ornek.csv'
+fixture=ROOT/'tests/fixtures/day11/fatura-mutabakat-SENTETIK-ornek.csv'
 if not fixture.is_file():
     issues.append('synthetic finance fixture missing')
 else:

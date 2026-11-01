@@ -7,7 +7,7 @@ name: V8 Day11 Finance SEO Draft QA
       - 'hizmetler.html'
       - 'sektorler/finans-bankacilik.html'
       - 'sitemap.xml'
-      - 'operasyon/v8/gun-11/**'
+      - 'tests/fixtures/day11/**'
       - 'scripts/v8_day11_*.py'
       - 'scripts/v8_day11_*.mjs'
       - '.github/workflows/v8-day11-finance-seo-qa.yml'
