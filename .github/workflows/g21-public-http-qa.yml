@@ -12,6 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 7
     steps:
+      - uses: actions/checkout@v4
+      - name: Install Playwright for live browser QA
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install chromium
+      - name: G21 Chromium 6-width real responsive test
+        run: node scripts/g21-viewport-live-qa.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: g21-viewport-evidence
+          path: g21-viewport-evidence/
+          if-no-files-found: warn
       - name: Verify published G21 guide, entry links and metadata
         run: |
           python3 - <<'PY'
