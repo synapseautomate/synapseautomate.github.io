@@ -10,6 +10,7 @@ import sys
 root = Path(__file__).resolve().parents[1]
 errors = []
 banned_dirs = ("operasyon/", ".github/internal/", "internal/", "private/", "secrets/")
+private_methods = {"kinetra-studios/opportunity-scorecard.md", "kinetra-studios/returnops-prompts-v1.md", "kinetra-studios/returnops-bakeoff-v1.csv"}
 text_suffixes = {".html", ".js", ".mjs", ".md", ".txt", ".json", ".jsonl", ".csv", ".xml", ".yml", ".yaml", ".py", ".srt"}
 secret_rules = [
     re.compile(r"ghp_[A-Za-z0-9]{25,}"),
@@ -29,7 +30,7 @@ for p in root.rglob("*"):
     rel = p.relative_to(root).as_posix()
     if any(part in {".git", "_site", "node_modules", "__pycache__"} for part in p.relative_to(root).parts):
         continue
-    if rel.startswith(banned_dirs) or "/.env" in "/" + rel or rel == ".env" or re.search(r"\.(?:pem|p12|pfx|key)$", rel, re.I):
+    if rel.startswith(banned_dirs) or rel in private_methods or "/.env" in "/" + rel or rel == ".env" or re.search(r"\.(?:pem|p12|pfx|key)$", rel, re.I):
         errors.append(f"Private source path in public repository: {rel}")
         continue
     if p.suffix.lower() not in text_suffixes:
