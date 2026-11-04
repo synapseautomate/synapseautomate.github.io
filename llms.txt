@@ -170,3 +170,5 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - [AI social content and short video](https://synapseautomate.github.io/cozumler/ai-icerik-video-uretimi.html)
 - [B2B demand generation and appointment system](https://synapseautomate.github.io/cozumler/b2b-talep-randevu-sistemi.html)
 - [Marketing performance and analytics](https://synapseautomate.github.io/cozumler/pazarlama-performans-analitigi.html)
+
+- [Yeni Bir Dönem — Synapse Automate service portfolio announcement](https://synapseautomate.github.io/yeni-bir-donem.html): Official November 4, 2026 announcement of AI growth, creative, B2B lead and measurement services.

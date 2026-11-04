@@ -1,0 +1,58 @@
+
+/* Synapse / New Era · editorial launch language */
+.new-era-banner{background:#071724;border-top:1px solid #275660;border-bottom:1px solid #275660;position:relative;overflow:hidden}
+.new-era-banner:before{content:"";position:absolute;right:-4%;top:-72%;width:48%;height:230%;border-radius:50%;border:1px solid rgba(106,220,195,.18);box-shadow:0 0 0 46px rgba(87,199,184,.015),0 0 0 104px rgba(92,202,187,.015);pointer-events:none}
+.new-era-banner-inner{padding-top:68px;padding-bottom:65px;display:flex;align-items:flex-end;justify-content:space-between;gap:36px;position:relative}
+.new-era-banner h2{font-size:clamp(2.5rem,4.9vw,5rem);line-height:1.08;max-width:880px}
+.new-era-banner p{color:#bed0d8;max-width:710px;font-size:1.08rem;line-height:1.7;margin-bottom:0}
+.new-era-banner-actions{display:flex;flex-direction:column;gap:13px;flex-shrink:0}
+.growth-site .g-newera-link{color:#93e7d8;font-size:.9rem;font-weight:760;padding:10px 0;text-decoration:underline;text-underline-offset:5px}
+.era-site{background:#05131f;color:#f2f7f7;margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.era-site *{box-sizing:border-box}
+.era-site a{color:inherit}
+.era-site .era-wrap{width:min(1160px,calc(100% - 42px));margin:auto}
+.era-site .era-top{position:sticky;top:0;background:rgba(5,18,30,.94);backdrop-filter:blur(14px);border-bottom:1px solid #2b4858;z-index:20}
+.era-site .era-nav{min-height:82px;display:flex;align-items:center;gap:20px;justify-content:space-between}
+.era-site .era-nav img{width:230px;height:auto;display:block}
+.era-site .era-nav-links{display:flex;align-items:center;gap:24px}
+.era-site .era-nav a{text-decoration:none;font-size:.92rem;font-weight:760}
+.era-site .era-nav a:hover{color:#72e6d1}
+.era-site .era-hero{padding:112px 0 108px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 84% 55%,rgba(39,126,122,.14),transparent 40%)}
+.era-site .era-hero::after{content:"";position:absolute;right:-13%;top:14%;width:520px;height:520px;border:1px solid rgba(66,225,203,.25);transform:rotate(-16deg);border-radius:50%;pointer-events:none}
+.era-site .era-eyebrow{font-size:.79rem;letter-spacing:.17em;text-transform:uppercase;color:#79e4d5;font-weight:850}
+.era-site .era-head{max-width:1030px;font-size:clamp(3.6rem,7.9vw,8rem);letter-spacing:-.075em;line-height:.98;margin:27px 0 31px;font-weight:850}
+.era-site .era-head span{color:#78ead9}
+.era-site .era-lead{font-size:clamp(1.15rem,2vw,1.47rem);line-height:1.7;color:#c0d2df;max-width:760px}
+.era-site .era-hero-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:33px}
+.era-site .era-button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;border-radius:100px;padding:0 25px;font-weight:830;text-decoration:none;border:1px solid #5dd8c7}
+.era-site .era-button.primary{background:#78e7d0;color:#06202b}
+.era-site .era-button.ghost{color:#d6eeed}
+.era-site .era-kickerline{margin-top:65px;padding-top:22px;border-top:1px solid #315464;display:flex;flex-wrap:wrap;gap:12px 30px;color:#a9becb;font-size:.84rem;font-weight:690}
+.era-site .era-section{padding:95px 0}
+.era-site .era-section.alt{background:#0a1c2a}
+.era-site .era-section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:37px}
+.era-site .era-section-head h2{font-size:clamp(2.4rem,5vw,5.1rem);line-height:1.05;letter-spacing:-.055em;margin:14px 0 0;max-width:640px}
+.era-site .era-section-head p{max-width:420px;color:#b2cad4;line-height:1.7}
+.era-site .era-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.era-site .era-card{min-width:0;padding:31px;border:1px solid #2d5161;border-radius:21px;background:#112a39;text-decoration:none;display:flex;flex-direction:column;min-height:348px;transition:border-color .15s,transform .15s}
+.era-site .era-card:hover{border-color:#6ad4bf;transform:translateY(-3px)}
+.era-site .era-card .num{font-size:.84rem;color:#7ae9d6;letter-spacing:.12em;font-weight:850}
+.era-site .era-card h3{font-size:1.65rem;line-height:1.22;letter-spacing:-.025em;margin:51px 0 14px}
+.era-site .era-card p{color:#b7cbd5;line-height:1.7;margin:0 0 21px}
+.era-site .era-card .more{color:#8cebdc;margin-top:auto;font-weight:830;font-size:.9rem}
+.era-site .era-bridge{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.era-site .era-bridge h2{font-size:clamp(2.3rem,4.5vw,4.2rem);line-height:1.08;letter-spacing:-.05em}
+.era-site .era-bridge p{color:#b8ced7;line-height:1.8}
+.era-site .era-nodes{border:1px solid #306270;border-radius:24px;background:#0a2533;padding:23px;display:grid;gap:11px}
+.era-site .era-node{border:1px solid #35616f;padding:16px 20px;background:#102f3b;border-radius:13px}
+.era-site .era-node small{display:block;color:#7ae7d4;font-weight:850;letter-spacing:.1em}
+.era-site .era-subcta{border:1px solid #3b796f;border-radius:26px;padding:45px;background:#10313b}
+.era-site .era-subcta h2{font-size:clamp(2.3rem,4vw,4rem);letter-spacing:-.045em}
+.era-site .era-subcta p{color:#bfd3d9}
+.era-site .era-foot{border-top:1px solid #234655;padding:35px 0;color:#99b1bd}
+.era-site .era-foot-flex{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.era-site .era-foot a{margin-right:22px;text-decoration:none}
+.era-site .era-main{scroll-margin-top:90px}
+@media(max-width:900px){.era-site .era-grid{grid-template-columns:1fr 1fr}.era-site .era-bridge{grid-template-columns:1fr}.era-site .era-section-head{display:block}.new-era-banner-inner{display:block}.new-era-banner-actions{margin-top:25px;flex-direction:row}}
+@media(max-width:650px){.era-site .era-hero{padding:77px 0}.era-site .era-grid{grid-template-columns:1fr}.era-site .era-card{min-height:250px}.era-site .era-card h3{margin-top:25px}.era-site .era-section{padding:64px 0}.era-site .era-nav-links{gap:9px}.era-site .era-nav img{width:165px}.era-site .era-nav-links a{font-size:.76rem}.era-site .era-hero::after{display:none}.era-site .era-hero-acts .era-button{width:100%}.new-era-banner-inner{padding:51px 0}.new-era-banner-actions{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.era-site .era-card{transition:none}}
