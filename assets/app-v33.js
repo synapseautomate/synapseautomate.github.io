@@ -153,3 +153,6 @@ if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cleanPublicSurface);
   else cleanPublicSurface();
 })();
+
+/* GROWTH_NAV_GLOBAL */
+(function(){var mount=function(){document.querySelectorAll('nav.nav-links').forEach(function(nav){if(Array.from(nav.querySelectorAll('a')).some(function(a){return (a.getAttribute('href')||'').indexOf('pazarlama-buyume.html')!==-1}))return;var a=document.createElement('a');a.href='/pazarlama-buyume.html';a.textContent='Büyüme & AI';var s=Array.from(nav.querySelectorAll('a')).find(function(x){return (x.getAttribute('href')||'').indexOf('hizmetler.html')!==-1});if(s)s.insertAdjacentElement('afterend',a);else nav.prepend(a);});};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();})();

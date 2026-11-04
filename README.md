@@ -70,3 +70,12 @@ Automated tests and AI-generated drafts are not independent human or external ex
 - Technical evidence index: https://synapseautomate.github.io/kanit/teknik-kanit-indeksi.html
 
 Legacy Synapse product paths are retained only for backward compatibility and are no longer active offer surfaces.
+
+## AI growth & marketing
+
+- https://synapseautomate.github.io/pazarlama-buyume.html
+- https://synapseautomate.github.io/cozumler/ai-icerik-video-uretimi.html
+- https://synapseautomate.github.io/cozumler/b2b-talep-randevu-sistemi.html
+- https://synapseautomate.github.io/cozumler/pazarlama-performans-analitigi.html
+
+Growth services connect to established content-approval and CRM workflows. No invented results, customer references or performance guarantees.

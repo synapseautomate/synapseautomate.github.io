@@ -164,3 +164,9 @@ Brand relationship: Synapse Automate is part of the Kinetra Group portfolio.
 - Property Management synthetic maintenance proof: https://synapseautomate.github.io/kanit/gayrimenkul-bakim-onceliklendirme-before-after-spec.html
 - Traffic, form and paid-conversion results are not inferred from instrumentation alone; unobserved outcome metrics remain unmeasured.
 
+
+## Growth & AI marketing offerings (TR)
+- [AI growth and marketing services](https://synapseautomate.github.io/pazarlama-buyume.html)
+- [AI social content and short video](https://synapseautomate.github.io/cozumler/ai-icerik-video-uretimi.html)
+- [B2B demand generation and appointment system](https://synapseautomate.github.io/cozumler/b2b-talep-randevu-sistemi.html)
+- [Marketing performance and analytics](https://synapseautomate.github.io/cozumler/pazarlama-performans-analitigi.html)
