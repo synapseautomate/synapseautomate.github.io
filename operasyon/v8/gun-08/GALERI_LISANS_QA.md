@@ -1,0 +1,2 @@
+# Gallery evidence notice
+Actual PNG/PDF and scripts are in separately provided downloadable local package, NOT uploaded in this text-only draft PR. Upwork 4:3 image 1200x900 PNG; 320x240 visual check image; internal 4:5 1200x1500; 4-page 1080x1350/page LinkedIn PDF, all labeled SENTETİK ÖRNEK / GERÇEK MÜŞTERİ VERİSİ DEĞİL. Original graphics generated in Pillow/ReportLab; system DejaVu license documented. Real brand PNG was not embedded, P1 OPEN. Real original v0.1 CLI not available; G08 separate synthetic test only. Public panel preview TEST EDİLEMEDİ.

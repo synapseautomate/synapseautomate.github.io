@@ -1,0 +1,2 @@
+# QA A, 16 Oct 2026
+GitHub source main a513b508c07ad26eb1b9493d01453f35e7845d24 / 389 files / 144 HTML / 36 rehberler / 29 kanit. Previous Day01-07 handoffs read on draft branches, not main. New independent G08 synthetic fixture: R01-R04 produce row evidence, R05 safe NOT EVALUATED; unittest 8/8 PASS; duplicate index bug fixed then re-tested. This does NOT retest historical v0.1 release. Official Upwork rule verified. Live seller/fees/revenue BİLİNMİYOR. Public release QA FAIL/HOLD.
