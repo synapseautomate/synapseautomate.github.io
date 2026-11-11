@@ -1,0 +1,3 @@
+# Gün 05 iki QA turu
+Tur 1: gerçek Gün 04 CSV CLI temiz dizin PASS, 25/25 unittest, 3 R02/R03 sentetik bulgusu; R05 değerlendirilmedi. Chromium 320/375/390/768/1024/1440 render: 6/6 yatay taşma yok, tek H1, kırık resim 0. Dört 1080x1350 karusel ve 1080x1920 dikey görsel gerçek render edildi.
+Tur 2: premium B2B marka ve hizmet önceliği; gerçek müşteri/ROI iddiası yok, her görselde sentetik etiketi, harici logo/font yok. Bağımsız WCAG ekran okuyucu/Lighthouse, canlı HTTP, LinkedIn paneli TEST EDİLEMEDİ. Taslak QA var; dış yayın OPEN.
