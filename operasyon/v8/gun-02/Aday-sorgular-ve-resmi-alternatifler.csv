@@ -1,0 +1,19 @@
+tip,ad_veya_sorgu,resmi_url,arama_hacmi,not
+ADAY_SORGU,sipariş stok csv karşılaştırma,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,stok csv sku eşleşmiyor çözüm,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,excel sipariş stok karşılaştırma,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,sipariş csv mükerrer kayıt bulma,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,e ticaret stok tutarsızlığı kontrolü,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,stok csv eksik sku tespiti,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,sipariş stok excel mutabakatı,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,stok yetersizliği csv raporu,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,sipariş csv hata kontrol aracı,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,excel stok ve sipariş eşleştirme,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,e ticaret csv stok kontrol programı,,BİLİNMİYOR,Alıcı niyeti hipotezi
+ADAY_SORGU,sipariş dosyası ürün kodu uyuşmazlığı,,BİLİNMİYOR,Alıcı niyeti hipotezi
+RESMI_ALTERNATIF,Shopify,https://www.shopify.com/tr/pricing,UYGULANMAZ,SaaS veya ERP yerel tek seferlik ürünle eşdeğer değil
+RESMI_ALTERNATIF,ikas,https://ikas.com/tr/e-ticaret-paketleri,UYGULANMAZ,SaaS veya ERP yerel tek seferlik ürünle eşdeğer değil
+RESMI_ALTERNATIF,Sortly,https://www.sortly.com/pricing/,UYGULANMAZ,SaaS veya ERP yerel tek seferlik ürünle eşdeğer değil
+RESMI_ALTERNATIF,inFlow,https://www.inflowinventory.com/software-pricing-inflow,UYGULANMAZ,SaaS veya ERP yerel tek seferlik ürünle eşdeğer değil
+RESMI_ALTERNATIF,Cin7,https://www.cin7.com/pricing/,UYGULANMAZ,SaaS veya ERP yerel tek seferlik ürünle eşdeğer değil
+RESMI_ALTERNATIF,Odoo,https://www.odoo.com/pricing,UYGULANMAZ,SaaS veya ERP yerel tek seferlik ürünle eşdeğer değil

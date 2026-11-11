@@ -1,0 +1,2 @@
+# Gün 02 açık kayıtlar
+Belge araştırması CLOSED; gerçek müşteri ürün kabulü, teslim, gizlilik, satış aktivasyonu OPEN. Metrikler bilinmiyor. GitHub main merge, canlı web, LinkedIn/YouTube/Instagram, Upwork aktivasyon, gerçek müşteri mesajı yapılmadı. Her canlı işlem için somut kapsam ve yetki kontrolü. Shopier hariç. Gün 03 için SKU, stok zamanı, depo, rezervasyon yanlış pozitifleri aktarılır.
