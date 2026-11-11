@@ -1,0 +1,5 @@
+# SYNAPSE V8 Gün 04 — devir
+Plan tarihi 17.10.2026; fiili çalışma 15.10.2026, iki gün erken. Gün 01–03 devirleri ve Gün 03 kaynakları incelendi. main baz `bc79409c8f672884a00dcdb89b0b6119cac42f6c`.
+Yerel ZIP `SYNAPSE_V8_GUN_04_YEREL_CLI_KANIT.zip`: `csv_validator.py`, `synapse_cli.py`, 25 unittest, 3+ sentetik CSV çifti, rapor.csv, demo_rapor.csv, QA logları, README, SHA256SUMS. `python -m unittest discover -s tests -v` → 25/25 PASS. Demo R03/R02/R03 üç bulgu, R05 değerlendirilmedi. Python audit socket olayı 0; OS paket testi yapılmadı. Gün 04 yerel CLI/test kapsamı CLOSED; gerçek Windows `.exe`, müşteri kabulü, satış/yayın OPEN.
+Öncelik değişimi: Kullanıcı ilk müşteri talebini ürünleştirmeden önce istiyor; SYNAPSE yalnız CSV değildir. LinkedIn ve dar B2B hizmet vitrini hazırlığı bir sonraki güvenli iş. Harcama 0, yayın 0, gerçek trafik/talep/satış BİLİNMİYOR. main merge yok.
+Tek sonraki adım: Gün 05 sentetik demo ve alıcı niyetli marka vitrini taslağı, gerçek tarayıcı QA; kamu eylemi için somut varlık ve onay.

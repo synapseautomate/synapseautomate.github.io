@@ -1,0 +1,3 @@
+# Gün 04 QA
+Tur 1: 25/25 unittest PASS; 3 sentetik demo bulgusu beklendiği gibi, R05 değerlendirilmedi.
+Tur 2: sentetik etiket satır numarası offset kusuru bulundu ve düzeltildi; CSV formül enjeksiyonu, girdi üzerine yazmama, mevcut raporu ezmeme, alıntılı çok satırlı hücre, BOM, negatif stok ve fail-closed regresyon PASS. Python audit hook socket olayı 0; OS paket izleme, Windows .exe, gerçek müşteri kabulü TEST EDİLEMEDİ. Yerel tam kaynak ve loglar ZIP'te. GitHub PR'da kodun tamamı yok.
