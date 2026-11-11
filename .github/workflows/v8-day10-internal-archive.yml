@@ -1,0 +1,56 @@
+name: V8 Day 10 Internal Archive QA
+
+'on':
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'operasyon/v8/gun-10/**'
+      - '.github/workflows/v8-day10-internal-archive.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  internal-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate 11 methods and source-bounded funnel
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import csv,pathlib
+          base=pathlib.Path('operasyon/v8/gun-10')
+          assert base.is_dir()
+          expected=[
+            'olcum-yontem-060.md','seo-yontem-067.md','strateji-yontem-068.md',
+            'strateji-yontem-144.md','strateji-yontem-147.md','olcum-yontem-148.md',
+            'olcum-yontem-229.md','olcum-yontem-230.md','seo-yontem-231.md',
+            'donusum-yontem-232.md','olcum-yontem-236.md'
+          ]
+          for name in expected:
+              p=base/name
+              assert p.is_file() and p.stat().st_size>100,name
+              t=p.read_text(encoding='utf-8')
+              assert 'BİLİNMİYOR' in t or 'TEST_EDİLEMEDİ' in t,name
+          with (base/'kaynak_bazli_huni.csv').open(encoding='utf-8',newline='') as f:rows=list(csv.DictReader(f))
+          assert len(rows)==84,len(rows)
+          assert all('ölçü_tanımı' in row and row['ölçü_tanımı'] for row in rows)
+          assert all(row['değer']=='BİLİNMİYOR' for row in rows)
+          assert 'SYNAPSE_V8_GUN_10_DEVIR.md' in [p.name for p in base.iterdir()]
+          assert (base/'yontem-kabul-izleme.csv').is_file()
+          assert (base/'QA_TUR_A_KAYNAK_TEKNOLOJI.md').is_file()
+          assert (base/'QA_TUR_B_MARKA_UX_HUKUK.md').is_file()
+          print('PASS: 11 method files; 84 unknown metrics; QA rounds; handoff')
+          PY
+      - name: Upload day 10 evidence files (not a public Pages artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: synapse-v8-day10-internal-archive
+          path: operasyon/v8/gun-10/
+          if-no-files-found: error
+          retention-days: 14

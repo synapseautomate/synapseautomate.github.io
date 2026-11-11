@@ -1,0 +1,17 @@
+# Gün 10 — kaynaklı huni, güven ve küçük örneklem kararı
+- Plan tarihi 23.10.2026, fiilî 19.10.2026 (4 gün erken).
+- **Tek darboğaz:** izne bağlı gerçek ölçüm panelleri ve gelen e-posta/teklif/tahsilat kanıtına erişim yok; sıfır trafik veya kötü teklif kararı verilemez.
+- Veri satırları: `kaynak_bazli_huni.csv` (84 satır, 6 kanal, 14 ölçü), `gun10_kpi_belirsizlik.csv`; her satır ölçü tanımı, birim, kaynak URL, veri güveni ve eksik neden kodu taşır.
+- Gösterim→tıklama = kanalın kendi doğru tıklaması / aynı tanımlı gösterimi; **BİLİNMİYOR**.
+- Tıklama→nitelikli ziyaret = onamlı ilgili oturum / gerçekten izlenen site tıklaması; **BİLİNMİYOR**.
+- Ziyaret→demo = gerçek çalışan demo / doğrulanmış nitelikli ziyaret; çalışan CRM demosu yok, **BİLİNMİYOR**; demo kanalının kendisi henüz aktif olmayabilir.
+- Demo→teyitli talep = gerçek inbox teyitli tekil inbound / gerçek demo; **BİLİNMİYOR**.
+- Talep→izinli teklif = insan onaylı ilgili teklif / gerçek değerlendirilebilir talep; **BİLİNMİYOR**.
+- Teklif→fonlanmış sipariş = yetkili platform fonlu iş / teklifi alan uygun talep; **BİLİNMİYOR**.
+- Fonlu iş→tahsilat = gerçek satış tahsilat belgesi / fonlu iş; **BİLİNMİYOR**.
+- **Payda kanıtlı 0 ise oran hesaplanmaz; erişim yoksa pay/payda BİLİNMİYOR.** LinkedIn, YouTube, Instagram gösterimlerini toplam tekil insana çevirmek yasak.
+- Upwork Gün08 nihai kararla kapsam dışı: `AKTİF DEĞİL, ÖLÇÜLEMEZ`; sıfır trafik teşhisi değil.
+- 30 gerçek nitelikli ziyaret altına ürün başarısızlığı hükmü yok; yeni CTA hipotezi ancak gerçek panel, tek değişkenli kontrol, kullanıcı onayı ve hukuk P0 kapandığında başlar.
+- Tek değişkenli aday: 'Süreç Analizi İste' ↔ 'Teklif onaylandı. CRM kaydı hazır mı?' başlık etkisi. Ancak farklı sayfa/kreatif eşanlı değişirse nedensellik çıkarılamaz.
+- Gün11: consent + veri; Gün12: gerçek teslim (ayrı yetki); Gün13: küçük örneklemde mutlak sayı; Gün14: ≥30 kanıt varsa tek CTA karar tablosu.
+- P0 hukuki/ödeme açıkken tahsilat aktivasyon HEDEFİ koşullu 0 TL, gerçek tahsilat 0 ölçümü değil.

@@ -1,0 +1,12 @@
+id,senaryo,statik_qa,canli_qa
+F01,Süreç JS açık,KOD_KONTROLU,AĞ_TEST_EDİLEMEDİ
+F02,Süreç JS kapalı,KOD_KONTROLU,BROWSER_TEST_EDİLEMEDİ
+F03,İletişim JS açık,KOD_KONTROLU,AĞ_TEST_EDİLEMEDİ
+F04,İletişim JS kapalı action yok,P0_FAIL,TEST_EDİLEMEDİ
+M01,GA4 rıza öncesi,P0_FAIL,HUKUK_TEST_EDİLEMEDİ
+M02,UTM case/kişisel veri,P1_RISK,TEST_EDİLEMEDİ
+M03,First/last localStorage retention,P1_RISK,TEST_EDİLEMEDİ
+M04,30dk pending süresi,KOD_KONTROLU,BROWSER_TEST_EDİLEMEDİ
+M05,çift lead/direkt teşekkür,P1_RISK,PANEL_TEST_EDİLEMEDİ
+M06,referral/dark social,P1_RISK,PANEL_TEST_EDİLEMEDİ
+M07,gerçek teslim/teşekkür,P0_RISK,GERÇEK_POST_YAPILMADI
