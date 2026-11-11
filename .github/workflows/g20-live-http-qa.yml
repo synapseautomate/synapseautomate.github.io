@@ -1,0 +1,17 @@
+name: Day20 Live Read Only HTTP QA
+on:
+  pull_request:
+    branches: [main]
+    paths: ['scripts/v8_g20_live_http_verify.py','.github/workflows/g20-live-http-qa.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/v8_g20_live_http_verify.py
