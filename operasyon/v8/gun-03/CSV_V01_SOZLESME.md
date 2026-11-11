@@ -1,0 +1,4 @@
+# CSV v0.1 sözleşmesi
+Sipariş zorunlu: siparis_id, sku, miktar, siparis_tarihi, durum. Stok zorunlu: sku, mevcut_stok, depo, stok_tarihi. UTF-8/BOM; virgül/noktalı virgül. Sayılar tam sayı; boş, negatif, ondalık, eksik/çift başlık, geçersiz tarih hatadır.
+R01 boş SKU; R02 tekrar siparis_id+sku; R03 eşleşmeyen SKU; R04 negatif stok; R05 ancak depo/zaman/rezervasyon koşulları doğrulanırsa miktar>stok. R02/R03/R05 kesin hüküm değil İNCELEME GEREKİR. Çoklu depo/rezervasyon belirsizliğinde R05 uygulanmaz.
+Sürüm v0.1 DRAFT; tam çalışır referans CLI, 3 sentetik CSV çifti, 7 unittest ve kanıt paketi yerel arşivde. Müşteri verisi yok.
