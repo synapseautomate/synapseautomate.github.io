@@ -1,0 +1,15 @@
+tarih,metrik,deger,birim,kanit_durumu,kaynak,sahip
+2026-10-14,birincil_urun_hipotezi,1,adet,belgeyle_dogrulandi,04-urun-hipotezi-karsilastirma.md,operator
+2026-10-14,alternatif_hipotez_sayisi,2,adet,belgeyle_dogrulandi,04-urun-hipotezi-karsilastirma.md,operator
+2026-10-14,alici_niyetli_aday_arama_ifadesi,12,adet,uzman_turevli_hacim_dogrulanmadi,02-alici-niyetli-arama-ifadeleri.md,operator
+2026-10-14,gercek_resmi_kaynakli_alternatif,6,urun,uretici_fiyat_sayfasi,03-bes-alternatif-fiyat-kaynaklari.md,operator
+2026-10-14,uc_alici_sorusuna_yanit,3,adet,hipotez_yanitlari,01-icp-problem-brifi.md,operator
+2026-10-14,tek_cumle_urun_vaadi,1,cumle,belgeyle_dogrulandi,01-icp-problem-brifi.md,operator
+2026-10-14,deneysel_fiyat_sayisi,3,etiket,test_fiyati_satis_degil,05-fiyat-ve-kapsam-varsayimi.md,operator
+2026-10-14,site_gosterim,bilinmiyor,adet,analitik_panel_erisimi_yok,https://synapseautomate.github.io/,hesap_sahibi
+2026-10-14,site_ziyaret,bilinmiyor,oturum,analitik_panel_erisimi_yok,https://synapseautomate.github.io/,hesap_sahibi
+2026-10-14,cta_tiklama,bilinmiyor,adet,analitik_panel_erisimi_yok,https://synapseautomate.github.io/,hesap_sahibi
+2026-10-14,odeme_baslangic,bilinmiyor,adet,odeme_paneli_erisimi_yok,,hesap_sahibi
+2026-10-14,yeni_donem_ucretli_satis,bilinmiyor,adet,odeme_paneli_erisimi_yok,,hesap_sahibi
+2026-10-14,net_tahsilat,bilinmiyor,TL,odeme_paneli_erisimi_yok,,hesap_sahibi
+2026-10-14,acik_satis_P0_blokaji,4,adet,gun01_sureklilik_kaydi,https://github.com/synapseautomate/synapseautomate.github.io/pull/10,operator
