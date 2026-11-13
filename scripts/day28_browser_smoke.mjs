@@ -24,7 +24,7 @@ const issues = [];
 try {
   await fs.mkdir("/tmp/synapse-mobile-qa",{recursive:true});
   for(const path of paths) {
-    for(const viewport of (path === focusPath ? focusSizes : sizes)) {
+    for(const viewport of ((path === focusPath || path === "/") ? focusSizes : sizes)) {
       const page = await browser.newPage({viewport,deviceScaleFactor:1});
       await page.route(/https?:\/\/(?:www\.)?(?:googletagmanager\.com|google-analytics\.com|analytics\.google\.com)\//, route => route.abort());
       const url = base+path, label=path.replace(/[^a-z0-9]/gi,"_") || "home";
@@ -58,5 +58,5 @@ try {
     }
   }
 } finally {await browser.close();}
-console.log(JSON.stringify({status:issues.length?"FAIL":"PASS",tested:paths.length*sizes.length,issues},null,2));
+console.log(JSON.stringify({status:issues.length?"FAIL":"PASS",tested:paths.reduce((n,p)=>n+((p===focusPath||p==="/")?focusSizes.length:sizes.length),0),issues},null,2));
 if(issues.length) process.exit(1);

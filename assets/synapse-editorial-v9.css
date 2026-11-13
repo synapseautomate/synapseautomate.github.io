@@ -1,0 +1,26 @@
+
+/* SYNAPSE — Precision editorial system. No tracking or third-party dependencies. */
+.synapse-edition{position:relative;isolation:isolate;overflow:hidden;background:#07121e;color:#f5fbff;padding:0;border-bottom:1px solid #254654;min-height:0}
+.synapse-edition:before{content:"";position:absolute;inset:0;background:linear-gradient(108deg,#07121e 0%,#07121e 44%,#0b1d29 100%);z-index:-1}
+.synapse-edition .container{width:min(1320px,calc(100% - 48px))}
+.synapse-edition__grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:center;min-height:708px;gap:24px}
+.synapse-edition__copy{padding:70px 0 82px;position:relative;z-index:2;min-width:0}
+.synapse-edition__kicker{display:flex;align-items:center;gap:16px;color:#9ddbd4;text-transform:uppercase;font-size:12px;line-height:1.5;letter-spacing:.19em;font-weight:760;margin:0 0 32px}
+.synapse-edition__kicker:before{content:"";display:inline-block;width:40px;height:2px;flex:none;background:#55e5ca}
+.synapse-edition h1{font-size:clamp(48px,5.8vw,94px);line-height:1.025;letter-spacing:-.064em;max-width:760px;font-weight:800;margin:0 0 28px;overflow-wrap:normal}
+.synapse-edition h1 .synapse-edition__accent{color:#72ead2}
+.synapse-edition__intro{max-width:550px;color:#c6d8e1;font-size:clamp(17px,1.35vw,20px);line-height:1.7;margin:0 0 36px}
+.synapse-edition__cta{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:60px;padding:14px 26px;background:#b6f2de;color:#09202a;border:1px solid #b6f2de;border-radius:3px;font-size:16px;font-weight:800;line-height:1.35;text-decoration:none;transition:background .2s ease,transform .2s ease;box-shadow:none}
+.synapse-edition__cta:hover{background:#e3ffec;transform:translateY(-1px);color:#09202a}
+.synapse-edition__cta:focus-visible,.synapse-edition a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.synapse-edition__cta span{font-size:23px;font-weight:400}
+.synapse-edition__proof{font-size:14px;display:inline-block;margin:24px 0 0;color:#9fbdc8;text-decoration-thickness:1px;text-underline-offset:4px}
+.synapse-edition__proof:hover{color:#fff}
+.synapse-edition__limits{display:flex;flex-wrap:wrap;gap:10px 22px;border-top:1px solid #26414c;max-width:550px;margin-top:48px;padding-top:20px;color:#aac2cd;font-size:12px;letter-spacing:.045em}
+.synapse-edition__limits span{white-space:normal}
+.synapse-edition__visual{min-width:0;position:relative;display:grid;align-items:center;justify-items:center;min-height:600px;align-self:stretch}
+.synapse-edition__visual svg{width:112%;max-width:none;height:auto;display:block;filter:drop-shadow(0 30px 35px rgba(0,0,0,.28))}
+.synapse-edition__visual small{position:absolute;bottom:25px;right:0;color:#aed4cf;font-size:10px;letter-spacing:.055em;text-align:right;max-width:270px;line-height:1.5}
+@media(max-width:960px){.synapse-edition__grid{grid-template-columns:1fr;gap:0}.synapse-edition__copy{padding:65px 0 20px}.synapse-edition h1{max-width:780px}.synapse-edition__visual{min-height:330px;max-height:540px;overflow:hidden}.synapse-edition__visual svg{max-width:720px;width:100%}.synapse-edition__visual small{bottom:10px}}
+@media(max-width:600px){.synapse-edition .container{width:calc(100% - 32px)}.synapse-edition__kicker{letter-spacing:.11em;font-size:10px;margin-bottom:24px;gap:10px}.synapse-edition__kicker:before{width:23px}.synapse-edition__copy{padding:54px 0 12px}.synapse-edition h1{font-size:clamp(40px,11.4vw,64px);letter-spacing:-.06em;line-height:1.055;margin-bottom:22px}.synapse-edition__intro{font-size:16px;line-height:1.65;margin-bottom:26px}.synapse-edition__cta{width:100%;min-height:58px;gap:12px;font-size:15px;padding:12px}.synapse-edition__proof{font-size:13px}.synapse-edition__limits{margin-top:32px;gap:10px 16px}.synapse-edition__visual{min-height:260px;max-height:360px}.synapse-edition__visual svg{width:118%;margin-left:-8%}.synapse-edition__visual small{font-size:9px;right:8px;bottom:12px;max-width:230px}}
+@media(prefers-reduced-motion:reduce){.synapse-edition__cta{transition:none}}
