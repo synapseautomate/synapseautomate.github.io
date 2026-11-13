@@ -1,0 +1,10 @@
+period,channel,metric,value,unit,source,status
+2026-10-14_2026-11-12,LinkedIn,qualified_inbound,BİLİNMİYOR,lead,panel_unavailable,NOT_VERIFIED
+2026-10-14_2026-11-12,Upwork,funded_contracts,BİLİNMİYOR,contract,panel_unavailable,NOT_VERIFIED
+2026-10-14_2026-11-12,website,confirmed_form_submissions,BİLİNMİYOR,submission,FormSubmit_unavailable,NOT_VERIFIED
+2026-10-14_2026-11-12,all,paid_orders,BİLİNMİYOR,order,payment_unavailable,NOT_VERIFIED
+2026-10-14_2026-11-12,all,collected_revenue,BİLİNMİYOR,TRY,payment_unavailable,NOT_VERIFIED
+2026-10-14_2026-11-12,all,commission,BİLİNMİYOR,TRY,payment_unavailable,NOT_VERIFIED
+2026-10-14_2026-11-12,all,refunds,BİLİNMİYOR,TRY,payment_unavailable,NOT_VERIFIED
+2026-10-14_2026-11-12,all,net_revenue,BİLİNMİYOR,TRY,payment_unavailable,NOT_VERIFIED
+previous_27_day_period,all,paid_sales_owner_statement,0,sales,owner_statement_only,OUT_OF_V8
