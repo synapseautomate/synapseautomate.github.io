@@ -180,7 +180,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for route in / /kaynaklar.html /surec-analizi.html /hizmetler.html /cozumler/satis-talep-teklif-takibi.html /cozumler/roofing-ev-hizmetleri.html /sitemap.xml; do
+          for route in / /cozumler/siparis-stok-csv-kontrolu.html /teklif/e-ticaret-surec-analizi.html /surec-analizi.html /iletisim.html /kanit/stok-farki-baglam-kontrolu.html /kaynaklar.html /hizmetler.html /cozumler/satis-talep-teklif-takibi.html /cozumler/roofing-ev-hizmetleri.html /sitemap.xml; do
             ok=0
             for attempt in $(seq 1 12); do
               if curl --fail --silent --show-error --max-time 15 "https://synapseautomate.github.io$route" > /tmp/synapse-live-page.html; then
