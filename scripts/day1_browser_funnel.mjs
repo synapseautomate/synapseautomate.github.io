@@ -36,10 +36,18 @@ try {
     }
   }
   await page.goto(base+'/',{waitUntil:'domcontentloaded'});
-  const homePrimary=page.locator('.hero .actions .btn-primary').first();
-  expect((await homePrimary.getAttribute('href'))==='teklif/e-ticaret-surec-analizi.html','Home primary CTA missing e-commerce offer');
+  // The focused homepage has one clear CSV information CTA; the legacy offer remains separately reachable.
+  const homePrimary=page.locator('.synapse-edition__cta').first();
+  expect((await homePrimary.getAttribute('href'))==='cozumler/siparis-stok-csv-kontrolu.html','Home primary CTA missing focused CSV page');
   await homePrimary.click();
-  expect(new URL(page.url()).pathname==='/teklif/e-ticaret-surec-analizi.html','Home CTA does not open offer');
+  expect(new URL(page.url()).pathname==='/cozumler/siparis-stok-csv-kontrolu.html','Home CTA does not open CSV page');
+  const csvIntake=page.locator('a[href="../surec-analizi.html"]').first();
+  expect(await csvIntake.count()===1,'CSV page has no central intake CTA');
+  await page.goto(base+'/',{waitUntil:'domcontentloaded'});
+  const secondaryOffer=page.locator('.synapse-edition__proof[href="teklif/e-ticaret-surec-analizi.html"]').first();
+  expect(await secondaryOffer.count()===1,'Existing e-commerce offer route not preserved');
+  await secondaryOffer.click();
+  expect(new URL(page.url()).pathname==='/teklif/e-ticaret-surec-analizi.html','Secondary home offer link is broken');
   const offerLink=page.locator('a[href^="../surec-analizi.html"]').first();
   await offerLink.click();
   expect(new URL(page.url()).pathname==='/surec-analizi.html','Offer CTA does not open single form');
