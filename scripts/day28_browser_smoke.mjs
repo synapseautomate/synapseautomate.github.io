@@ -13,6 +13,7 @@ const paths = [
   "/rehberler/e-ticaret-ai-otomasyon-satin-alma-rehberi.html",
   "/urunler.html",
   "/kanit/ev-hizmetleri-talep-yonlendirme-ornek-akis.html",
+  "/kampanyalar/gorunmeyen-bekleme.html",
   "/teklif/ev-hizmetleri-surec-analizi.html"
 ];
 const sizes = [{width: 360,height: 740}, {width: 390,height: 844}];
