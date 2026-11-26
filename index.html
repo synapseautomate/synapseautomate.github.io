@@ -78,7 +78,59 @@
 <nav aria-label="Ana menü" class="nav-links"><a href="hizmetler.html">Hizmetler</a><a href="cozumler/musteri-asistani-sss-insan-devri.html">Müşteri asistanı</a><a href="urunler.html">Çözümler</a><a href="sektorler.html">Sektörler</a><a href="kaynaklar.html">Kaynaklar</a><a href="hakkimizda.html">Hakkımızda</a></nav>
 <a class="nav-cta" href="surec-analizi.html">Süreç Analizi İste</a>
 </div></header>
-<main id="main"><style id="role-education-spotlight-css">
+<main id="main">
+<section class="synapse-edition" aria-labelledby="synapse-edition-title">
+<div class="container synapse-edition__grid">
+<div class="synapse-edition__copy">
+<p class="synapse-edition__kicker">E-ticaret / veri bütünlüğü</p>
+<h2 id="synapse-edition-title" style="font-size:clamp(48px,5.8vw,94px);line-height:1.025;letter-spacing:-.064em;max-width:760px;font-weight:800;margin:0 0 28px;color:#f5fbff">İki dosya.<br><span class="synapse-edition__accent">Tek net operasyon.</span></h2>
+<p class="synapse-edition__intro">Sipariş ve stok dışa aktarımlarındaki SKU, depo ve kayıt uyuşmazlıklarını görünür kılın. Kapsamı açık, insan denetimli CSV incelemesiyle sonraki adımı netleştirin.</p>
+<a class="synapse-edition__cta" href="cozumler/siparis-stok-csv-kontrolu.html">CSV kontrol kapsamını inceleyin <span aria-hidden="true">→</span></a>
+<a class="synapse-edition__proof" href="teklif/e-ticaret-surec-analizi.html">E-ticaret süreç analizini inceleyin →</a>
+<div class="synapse-edition__limits"><span>İki kaynak dosyası</span><span>Kuralı tanımlı kontroller</span><span>İnsan denetimi</span></div>
+<p style="margin:22px 0 0;font-size:13px;line-height:1.7;color:#a9c3cf">Ayrıca: <a href="kampanyalar/gorunmeyen-bekleme.html" style="color:#9debdc;text-underline-offset:4px">Süreç madenciliği ve RPA ile görünmeyen beklemeyi keşfedin →</a></p>
+</div>
+<div class="synapse-edition__visual" role="img" aria-label="Sipariş ve stok dosyalarının SKU, depo ve tekrar kontrollerinden geçtiğini gösteren temsili veri akışı">
+<svg viewBox="0 0 720 620" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+<defs>
+<linearGradient id="csvGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#82e8dc"/><stop offset="1" stop-color="#65b7d9"/></linearGradient>
+<linearGradient id="csvPanel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#183747"/><stop offset="1" stop-color="#0b1e2d"/></linearGradient>
+</defs>
+<rect x="24" y="28" width="672" height="548" rx="22" fill="url(#csvPanel)" stroke="#355767" stroke-width="2"/>
+<text x="58" y="76" fill="#a8c5ce" font-size="13" font-family="Arial,sans-serif" letter-spacing="2">DOSYALAR / VERİ EŞLEŞMESİ</text>
+<g>
+<rect x="62" y="112" width="252" height="132" rx="12" fill="#0b1d2b" stroke="#4b7884" stroke-width="2"/>
+<path d="M90 145h34l12 12h72v49H90z" fill="none" stroke="url(#csvGlow)" stroke-width="3"/>
+<text x="154" y="222" fill="#eff9f7" font-size="18" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">SİPARİŞ.csv</text>
+<rect x="406" y="112" width="252" height="132" rx="12" fill="#0b1d2b" stroke="#4b7884" stroke-width="2"/>
+<path d="M434 145h34l12 12h72v49H434z" fill="none" stroke="url(#csvGlow)" stroke-width="3"/>
+<text x="532" y="222" fill="#eff9f7" font-size="18" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">STOK.csv</text>
+</g>
+<path d="M314 178h90" stroke="#73e0d2" stroke-width="4" stroke-linecap="round"/>
+<path d="M390 166l14 12-14 12" fill="none" stroke="#73e0d2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#0b1e2b" stroke="#4f7a89" stroke-width="1.5">
+<rect x="62" y="286" width="596" height="62" rx="8"/>
+<rect x="62" y="366" width="596" height="62" rx="8"/>
+<rect x="62" y="446" width="596" height="62" rx="8"/>
+</g>
+<g fill="#edf7f7" font-family="Arial,sans-serif" font-size="18" font-weight="700">
+<text x="88" y="324">01</text><text x="150" y="324">SKU eşleşmesi</text>
+<text x="88" y="404">02</text><text x="150" y="404">Depo kontrolü</text>
+<text x="88" y="484">03</text><text x="150" y="484">Yinelenen kayıtlar</text>
+</g>
+<g fill="#8be6c9" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1">
+<text x="612" y="324" text-anchor="end">KONTROL</text>
+<text x="612" y="404" text-anchor="end">KONTROL</text>
+<text x="612" y="484" text-anchor="end">KONTROL</text>
+</g>
+<path d="M360 509v28" stroke="#72e5d2" stroke-width="3"/>
+<rect x="214" y="537" width="292" height="25" rx="12" fill="#123b3c"/>
+<text x="360" y="554" fill="#b5f1df" font-family="Arial,sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">BULGU + KURAL + KAYNAK</text>
+</svg>
+<small>Temsili veri akışı. Gerçek müşteri verisi kullanılmaz.</small>
+</div>
+</div>
+</section><style id="role-education-spotlight-css">
 #role-education-spotlight{background:#09202b;color:#f5f9f8;border-bottom:1px solid #2d5358;isolation:isolate}
 #role-education-spotlight *{box-sizing:border-box}
 #role-education-spotlight .re-wrap{width:min(1180px,calc(100% - 48px));margin:auto;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,5vw,74px);align-items:center;padding:clamp(40px,6vw,72px) 0}
