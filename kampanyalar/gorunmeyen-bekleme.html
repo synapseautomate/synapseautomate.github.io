@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>İşlem Sürüyor, Ama İş Neden İlerlemiyor? | Synapse Automate</title>
+<meta name="description" content="Süreç madenciliğiyle bekleyen geçişleri görünür kılın. Tekrarlanan görevleri haritalayın, RPA uygunluğunu insan denetimiyle değerlendirin.">
+<link rel="canonical" href="https://synapseautomate.github.io/kampanyalar/gorunmeyen-bekleme.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#071321">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Synapse Automate">
+<meta property="og:title" content="İşlem sürüyor, ama iş neden ilerlemiyor?">
+<meta property="og:description" content="Hız sorunu bazen işlemde değil, adımlar arasındaki boşluktadır.">
+<meta property="og:url" content="https://synapseautomate.github.io/kampanyalar/gorunmeyen-bekleme.html">
+<meta property="og:image" content="https://synapseautomate.github.io/assets/og-synapse.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="İşlem sürüyor, ama iş neden ilerlemiyor?">
+<meta name="twitter:description" content="Görünmeyen beklemeyi görünür yapın.">
+<meta name="twitter:image" content="https://synapseautomate.github.io/assets/og-synapse.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"İşlem sürüyor, ama iş neden ilerlemiyor?","url":"https://synapseautomate.github.io/kampanyalar/gorunmeyen-bekleme.html","description":"Süreç madenciliği, tekrarlanan görev haritalama ve RPA uygunluk değerlendirmesi hakkında Synapse Automate kampanya sayfası.","isPartOf":{"@type":"WebSite","name":"Synapse Automate","url":"https://synapseautomate.github.io/"},"about":{"@type":"Service","name":"Süreç madenciliği ve RPA danışmanlığı","provider":{"@type":"Organization","name":"Synapse Automate","url":"https://synapseautomate.github.io/"}}}
+</script>
+<style>
+:root{color-scheme:dark;--bg:#071321;--bg2:#0a1d2c;--panel:#102536;--panel2:#0c1e2d;--line:#294454;--text:#f3f7f8;--muted:#b0c1c8;--teal:#65decf;--green:#8bdcb4;--amber:#e6bd78;--coral:#e58e85;--max:1200px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 75% 8%,#14313d 0,transparent 32%),linear-gradient(180deg,var(--bg),#091925 55%,var(--bg));color:var(--text);font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.6}
+a{color:inherit}
+.container{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
+.topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid #223a49;background:#071321ed;backdrop-filter:blur(18px)}
+.nav{min-height:76px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;min-width:0;margin-right:auto}
+.brand img{display:block;width:198px;height:auto;max-width:100%}
+.navlinks{display:flex;align-items:center;gap:24px;color:#c1d0d5;font-size:13px}
+.navlinks a{text-decoration:none;white-space:nowrap}.navlinks a:hover{color:var(--teal)}
+.navcta,.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:5px;text-decoration:none;font-weight:750;font-size:14px;letter-spacing:.01em;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.navcta,.button.primary{background:var(--teal);color:#071923;border:1px solid #a0f0e2}
+.button.secondary{border:1px solid #547180;background:#0a1b28;color:#dce9ea}
+.navcta:hover,.button:hover{transform:translateY(-1px)}
+.hero{padding:clamp(68px,8vw,116px) 0 78px;border-bottom:1px solid #213947;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(440px,1.02fr);gap:clamp(36px,5vw,76px);align-items:center}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--teal);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin:0 0 25px}
+.eyebrow:before{content:"";width:26px;height:1px;background:var(--teal)}
+h1{font-size:clamp(44px,5.3vw,78px);line-height:1.02;letter-spacing:-.065em;font-weight:760;margin:0 0 24px;max-width:720px}
+h1 em{font-style:normal;color:var(--teal)}
+.lead{font-size:clamp(18px,1.65vw,22px);line-height:1.55;color:#d3e0e3;max-width:620px;margin:0 0 18px}
+.support{font-size:14px;line-height:1.75;color:var(--muted);max-width:590px;margin:0}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero-note{font-size:11px;color:#92a9b3;letter-spacing:.06em;margin-top:28px}
+.visual{position:relative;min-width:0;padding:26px;border:1px solid #31505e;border-radius:14px;background:linear-gradient(145deg,#102a39,#0a1a28 65%);box-shadow:0 38px 90px #0007;isolation:isolate}
+.visual:before{content:"";position:absolute;inset:0;border-radius:14px;background:linear-gradient(120deg,#76e4d51b,transparent 38%,transparent 75%,#86d9b412);pointer-events:none;z-index:-1}
+.visual-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:0 0 18px;border-bottom:1px solid #31505e;color:#a8c0c7;font-size:10px;font-weight:800;letter-spacing:.13em}
+.live-dot{display:inline-flex;align-items:center;gap:8px;color:#b8d8ce}.live-dot:before{content:"";width:7px;height:7px;border-radius:50%;background:#e7bd7c;box-shadow:0 0 0 4px #e7bd7c20}
+.department-row{display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;gap:5px;align-items:center;padding:28px 0 20px}
+.dept{min-height:116px;padding:14px 10px;border:1px solid #345666;border-radius:8px;background:#0a1b29;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.dept small{color:#9eb4bd;font-size:9px;letter-spacing:.12em;font-weight:800}
+.dept strong{font-size:13px;line-height:1.3;font-weight:750}
+.dept .state{font-size:10px;color:var(--green)}
+.dept.waiting{border-color:#ba9160;background:linear-gradient(180deg,#392f26,#1a2530)}
+.dept.waiting .state{color:var(--amber)}
+.arrow{height:1px;background:#5ccfbe;position:relative}
+.arrow:after{content:"";position:absolute;right:0;top:-3px;width:6px;height:6px;border-top:1px solid #5ccfbe;border-right:1px solid #5ccfbe;transform:rotate(45deg)}
+.blocked{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 18px;border:1px solid #a77d55;border-radius:7px;background:#1e2830}
+.blocked-label{font-size:10px;letter-spacing:.12em;color:var(--amber);font-weight:850}
+.blocked strong{display:block;font-size:15px;line-height:1.35;color:#f4e4ca}
+.hourglass{width:40px;height:40px;flex:0 0 40px;border:1px solid #bc9669;border-radius:50%;display:grid;place-items:center;color:var(--amber);font-size:20px}
+.visual-foot{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:16px;color:#9db2ba;font-size:10px;letter-spacing:.04em}
+.visual-foot b{color:var(--teal);font-weight:750}
+.statement{padding:clamp(72px,9vw,122px) 0;text-align:center;border-bottom:1px solid #203a49}
+.statement .eyebrow{justify-content:center;margin-bottom:22px}
+.statement h2{max-width:920px;margin:0 auto;font-size:clamp(32px,4.4vw,60px);line-height:1.1;letter-spacing:-.055em;font-weight:680}
+.statement h2 span{color:var(--teal)}
+.statement p{max-width:690px;margin:24px auto 0;color:#b4c7cd;font-size:16px;line-height:1.75}
+.section{padding:82px 0;border-bottom:1px solid #203a49}
+.section-head{max-width:770px;margin-bottom:36px}
+.section-head h2{font-size:clamp(30px,3.5vw,48px);line-height:1.1;letter-spacing:-.05em;margin:0 0 14px}
+.section-head p{color:var(--muted);font-size:16px;line-height:1.75;margin:0}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.step{min-height:220px;padding:26px 24px;border:1px solid #2b4656;border-radius:10px;background:linear-gradient(180deg,#102536,#0b1d2b)}
+.step-num{font-size:11px;color:var(--teal);font-weight:850;letter-spacing:.15em}
+.step h3{font-size:22px;letter-spacing:-.025em;margin:28px 0 10px}
+.step p{font-size:14px;line-height:1.7;color:#b7c8ce;margin:0}
+.candidate-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);gap:clamp(32px,6vw,84px);align-items:start}
+.candidates{display:grid;gap:10px}
+.candidate{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;border:1px solid #345362;border-radius:7px;background:#0c2030}
+.candidate span{font-weight:700;font-size:14px}.candidate b{font-size:10px;letter-spacing:.09em;color:var(--teal);white-space:nowrap}
+.human-gate{padding:26px;border:1px solid #8a754f;border-radius:10px;background:linear-gradient(145deg,#2d2b26,#13202c)}
+.human-gate .eyebrow{color:var(--amber);letter-spacing:.12em;margin-bottom:16px}
+.human-gate h3{font-size:25px;line-height:1.18;letter-spacing:-.04em;margin:0 0 12px}
+.human-gate p{font-size:14px;line-height:1.75;color:#d4c9b6;margin:0}
+.cta-band{padding:clamp(56px,7vw,90px) 0;background:linear-gradient(110deg,#0d2634,#102b34 50%,#0b1b29)}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta-inner h2{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.05em;max-width:650px;margin:0 0 12px}
+.cta-inner p{font-size:14px;color:#c2d3d7;margin:0;max-width:620px}
+.cta-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}
+footer{padding:32px 0;color:#91a8b2;font-size:12px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-brand img{width:172px;height:auto;display:block}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{color:#c0d0d5;text-decoration:none}
+:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.visual{max-width:700px}.candidate-wrap{grid-template-columns:1fr}.cta-inner{align-items:flex-start;flex-direction:column}}
+@media(max-width:650px){.container{width:min(var(--max),calc(100% - 32px))}.nav{min-height:66px}.brand img{width:160px}.navlinks{display:none}.navcta{min-height:42px;padding:9px 12px;font-size:12px}.hero{padding:58px 0 58px}.hero-grid{gap:40px}h1{font-size:clamp(42px,12vw,60px)}.visual{padding:16px}.department-row{grid-template-columns:1fr;gap:7px;padding:18px 0}.arrow{width:1px;height:16px;margin:auto;background:#5ccfbe}.arrow:after{right:-3px;top:auto;bottom:0;transform:rotate(135deg)}.dept{min-height:80px}.steps{grid-template-columns:1fr}.step{min-height:0}.statement{padding:64px 0}.section{padding:62px 0}.candidate{align-items:flex-start;flex-direction:column;gap:7px}.footer-inner{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="container nav">
+<a class="brand" href="../index.html" aria-label="Synapse Automate ana sayfa"><img src="../assets/brand/synapse-logo-clean.png" alt="Synapse Automate" width="198" height="60"></a>
+<nav class="navlinks" aria-label="Ana gezinme"><a href="../hizmetler.html">Hizmetler</a><a href="../sektorler.html">Sektörler</a><a href="../pazarlama-buyume.html">Büyüme</a></nav>
+<a class="navcta" href="../cozumler/rpa-danismanlik.html">RPA danışmanlığı</a>
+</div></header>
+<main>
+<section class="hero"><div class="container hero-grid">
+<div>
+<p class="eyebrow">Süreç madenciliği · RPA danışmanlığı</p>
+<h1>İşlem sürüyor.<br><em>Ama iş neden ilerlemiyor?</em></h1>
+<p class="lead">Bir belge üç departmandan geçebilir. Fakat tek bir geçişte beklediğinde, bütün iş akışı yavaşlar.</p>
+<p class="support">Süreç madenciliği; tamamlanan adımları, bekleyen geçişleri ve tekrar eden görevleri aynı resimde görmenize yardımcı olur. Ardından hangi işlerin RPA için uygun olabileceği değerlendirilir.</p>
+<div class="actions"><a class="button primary" href="../cozumler/rpa-danismanlik.html">RPA danışmanlığını inceleyin</a><a class="button secondary" href="../araclar/otomasyon-deger-hesaplayici.html">Operasyon değerini hesaplayın</a></div>
+<p class="hero-note">ÖNCE SÜRECİ GÖRÜN. SONRA DOĞRU OTOMASYON ADAYINI SEÇİN.</p>
+</div>
+<div class="visual" aria-label="Üç departman arasındaki bekleyen belge geçişinin temsili süreç haritası" role="img">
+<div class="visual-head"><span>İŞ AKIŞI / TEMSİLİ SENARYO</span><span class="live-dot">GEÇİŞ BEKLİYOR</span></div>
+<div class="department-row">
+<div class="dept"><small>01 / SATIN ALMA</small><strong>Belge kaydı</strong><span class="state">✓ İşlendi</span></div><span class="arrow" aria-hidden="true"></span>
+<div class="dept waiting"><small>02 / OPERASYON</small><strong>Devir noktası</strong><span class="state">◷ Beklemede</span></div><span class="arrow" aria-hidden="true"></span>
+<div class="dept"><small>03 / FİNANS</small><strong>Sonraki işlem</strong><span class="state">Henüz başlamadı</span></div>
+</div>
+<div class="blocked"><div><span class="blocked-label">BEKLEYEN GEÇİŞ</span><strong>İşlem tamamlandı. Devir henüz gerçekleşmedi.</strong></div><span class="hourglass" aria-hidden="true">⌛</span></div>
+<div class="visual-foot"><span>İŞLENEN ADIMLAR</span><b>≠</b><span>İŞİN İLERLEMESİ</span></div>
+</div>
+</div></section>
+<section class="statement"><div class="container">
+<p class="eyebrow">Asıl darboğazı bulun</p>
+<h2>Hız sorunu bazen işlemin kendisinde değil, <span>adımlar arasındaki boşluktadır.</span></h2>
+<p>Bir adımın hızlı tamamlanması, işin bir sonraki adıma geçtiği anlamına gelmez. Bekleme süresini görünür kılmak, yanlış problemi otomatikleştirmeyi önler.</p>
+</div></section>
+<section class="section"><div class="container">
+<div class="section-head"><p class="eyebrow">Nasıl yaklaşılır?</p><h2>Önce akışı görün. Sonra tekrarları ayırın.</h2><p>Süreç madenciliği ve RPA danışmanlığı, birbirini tamamlayan iki ayrı değerlendirme adımıdır.</p></div>
+<div class="steps">
+<article class="step"><span class="step-num">01 / GÖRÜNÜR KILIN</span><h3>Bekleyen geçişi bulun</h3><p>Süreç adımlarını ve aralarındaki beklemeleri haritalayın. İşlenen adımlarla henüz ilerlemeyen noktaları birbirinden ayırın.</p></article>
+<article class="step"><span class="step-num">02 / TEKRARI AYIRIN</span><h3>Görevleri haritalayın</h3><p>Sık tekrarlanan, kuralı belirli ve ölçülebilir görevleri diğer işlerden ayırarak değerlendirme alanını netleştirin.</p></article>
+<article class="step"><span class="step-num">03 / UYGUNLUĞU DEĞERLENDİRİN</span><h3>RPA adayını seçin</h3><p>Veri erişimi, işlem hacmi, risk ve insan onayı ihtiyacını birlikte ele alın. Her tekrarlanan iş otomasyona uygun değildir.</p></article>
+</div>
+</div></section>
+<section class="section"><div class="container candidate-wrap">
+<div><div class="section-head"><p class="eyebrow">Tekrarlanan görevler</p><h2>RPA için değerlendirilebilecek işler</h2><p>Bu örnekler, işin tamamının otomatikleştirileceği anlamına gelmez. Önce görev sınırı, kurallar, veri erişimi ve istisnalar incelenir.</p></div>
+<div class="candidates">
+<div class="candidate"><span>Tekrarlanan veri girişi</span><b>RPA ADAYI OLARAK DEĞERLENDİRİLEBİLİR</b></div>
+<div class="candidate"><span>Dosya ve panel birleştirme</span><b>RPA ADAYI OLARAK DEĞERLENDİRİLEBİLİR</b></div>
+<div class="candidate"><span>Kural tabanlı kayıt kontrolleri</span><b>RPA ADAYI OLARAK DEĞERLENDİRİLEBİLİR</b></div>
+<div class="candidate"><span>Belge ve görev akışı güncellemeleri</span><b>RPA ADAYI OLARAK DEĞERLENDİRİLEBİLİR</b></div>
+</div></div>
+<aside class="human-gate"><p class="eyebrow">İnsan denetimi</p><h3>Son karar, yetkili kişide kalır.</h3><p>İstisnalar, kritik onaylar ve yetki gerektiren kararlar insan denetimiyle ele alınır. Amaç her şeyi otomatikleştirmek değil; doğru görevi doğru sınırlarla değerlendirmektir.</p></aside>
+</div></section>
+<section class="cta-band"><div class="container cta-inner">
+<div><h2>Görünmeyen beklemeyi görünür yapın.</h2><p>Sürecinizin nerede beklediğini ve hangi tekrarlanan görevlerin RPA için değerlendirilebileceğini birlikte netleştirin.</p></div>
+<div class="cta-actions"><a class="button primary" href="../cozumler/rpa-danismanlik.html">RPA danışmanlığını inceleyin</a><a class="button secondary" href="../araclar/otomasyon-deger-hesaplayici.html">Hesaplayıcıyı açın</a></div>
+</div></section>
+</main>
+<footer><div class="container footer-inner"><a class="footer-brand" href="../index.html"><img src="../assets/brand/synapse-logo-clean.png" alt="Synapse Automate"></a><div>İnsan denetimli AI, RPA ve süreç otomasyonu · İstanbul</div><nav class="footer-links" aria-label="Alt gezinme"><a href="../hizmetler.html">Hizmetler</a><a href="../sektorler.html">Sektörler</a><a href="../iletisim.html">İletişim</a></nav></div></footer>
+</body>
+</html>
