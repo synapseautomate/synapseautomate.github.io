@@ -170,11 +170,14 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: synapse-pages-public
           path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: synapse-pages-public
 
       - name: Post-publish live smoke
         shell: bash
