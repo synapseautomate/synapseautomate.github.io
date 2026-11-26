@@ -112,6 +112,7 @@ jobs:
           test -f _site/assets/day3/day3.css
           test -f _site/sitemap.xml
           test -f _site/robots.txt
+          test -f _site/kampanyalar/gorunmeyen-bekleme.html
 
           # Explicitly exclude private operational source paths from publicly served files.
           ! test -e _site/operasyon
@@ -183,7 +184,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for route in / /cozumler/siparis-stok-csv-kontrolu.html /teklif/e-ticaret-surec-analizi.html /surec-analizi.html /iletisim.html /kanit/stok-farki-baglam-kontrolu.html /kaynaklar.html /hizmetler.html /cozumler/satis-talep-teklif-takibi.html /cozumler/roofing-ev-hizmetleri.html /sitemap.xml; do
+          for route in / /cozumler/siparis-stok-csv-kontrolu.html /teklif/e-ticaret-surec-analizi.html /surec-analizi.html /iletisim.html /kanit/stok-farki-baglam-kontrolu.html /kaynaklar.html /hizmetler.html /cozumler/satis-talep-teklif-takibi.html /cozumler/roofing-ev-hizmetleri.html /kampanyalar/gorunmeyen-bekleme.html /sitemap.xml; do
             ok=0
             for attempt in $(seq 1 12); do
               if curl --fail --silent --show-error --max-time 15 "https://synapseautomate.github.io$route" > /tmp/synapse-live-page.html; then
