@@ -4,155 +4,160 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Tahmine Dayalı Analitik | Synapse Automate</title>
-<meta name="description" content="Talep tahmini, müşteri kaybı riski, stok projeksiyonu ve karar desteği için olasılıkları görünür kılan tahmine dayalı analitik yaklaşımı.">
+<meta name="description" content="Talep tahmini, müşteri kaybı riski ve stok projeksiyonlarını farklı senaryolar, belirsizlik aralıkları ve açık varsayımlarla karar desteğine dönüştürün.">
 <link rel="canonical" href="https://synapseautomate.github.io/kampanyalar/tahmine-dayali-analitik.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#061521">
+<meta name="theme-color" content="#071521">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="Synapse Automate">
 <meta property="og:title" content="Tek rakam geleceği anlatmaya yetmez. | Synapse Automate">
 <meta property="og:description" content="Tahmin, kesinlik değil; olasılıklar üzerinden karar desteğidir.">
 <meta property="og:url" content="https://synapseautomate.github.io/kampanyalar/tahmine-dayali-analitik.html">
-<meta property="og:image" content="https://synapseautomate.github.io/assets/og-synapse.png">
+<meta property="og:image" content="https://synapseautomate.github.io/assets/media/forecast-branching-hero.svg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tek rakam geleceği anlatmaya yetmez.">
 <meta name="twitter:description" content="Geleceği vaat etmeyin; olasılıkları gösterin.">
-<meta name="twitter:image" content="https://synapseautomate.github.io/assets/og-synapse.png">
+<meta name="twitter:image" content="https://synapseautomate.github.io/assets/media/forecast-branching-hero.svg">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/styles-v33.css">
 <style>
-:root{--ta-bg:#061521;--ta-panel:#0b2534;--ta-line:#285361;--ta-text:#f4f8fa;--ta-muted:#b3c7cf;--ta-teal:#78e4d0;--ta-cyan:#47cde6;--ta-green:#68e4ac}
+:root{--f-bg:#061521;--f-panel:#0a2231;--f-panel2:#0d2937;--f-edge:#294e5e;--f-text:#f4f8fa;--f-muted:#a9c0ca;--f-teal:#70e5d2;--f-cyan:#4acbe7;--f-mint:#89e6ad;--f-amber:#f1be80}
 *{box-sizing:border-box}
-body{margin:0;background:var(--ta-bg);color:var(--ta-text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--f-bg);color:var(--f-text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.58;overflow-x:hidden}
 a{color:inherit}
-.ta-wrap{width:min(1160px,calc(100% - 40px));margin:auto}
-.ta-nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px;border-bottom:1px solid #244452}
-.ta-logo img{width:220px;max-width:48vw;height:auto;display:block}
-.ta-navlinks{display:flex;gap:23px;flex-wrap:wrap}
-.ta-navlinks a{font-size:14px;font-weight:750;text-decoration:none;color:#d7e6eb}
-.ta-navlinks a:hover{color:var(--ta-teal)}
-.ta-hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 35%,rgba(28,174,183,.17),transparent 33%),linear-gradient(120deg,#061521,#081e2c 62%,#0a2430);border-bottom:1px solid #214654}
-.ta-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.96fr);gap:48px;align-items:center;padding:88px 0 82px}
-.ta-eyebrow{color:var(--ta-teal);font-size:12px;font-weight:850;letter-spacing:.16em;text-transform:uppercase;margin:0 0 22px}
-.ta-hero h1{font-size:clamp(44px,6.2vw,82px);line-height:.99;letter-spacing:-.065em;margin:0 0 24px;font-weight:850;max-width:740px}
-.ta-hero h1 span{color:var(--ta-teal)}
-.ta-lead{font-size:clamp(18px,2vw,23px);line-height:1.55;color:#d1e0e5;max-width:600px;margin:0 0 30px}
-.ta-actions{display:flex;gap:12px;flex-wrap:wrap}
-.ta-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:13px 21px;border-radius:6px;background:var(--ta-teal);color:#06202a;font-weight:850;text-decoration:none}
-.ta-btn.secondary{background:transparent;color:#e4f3f4;border:1px solid #47717b}
-.ta-chart{position:relative;min-width:0;padding:28px;border:1px solid #376674;border-radius:18px;background:linear-gradient(155deg,rgba(16,54,67,.88),rgba(6,22,35,.96));box-shadow:0 30px 90px rgba(0,0,0,.32)}
-.ta-chart-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
-.ta-chart-head strong{font-size:14px;letter-spacing:.11em;color:#b9d6dd}
-.ta-tag{border:1px solid #3e7783;color:#9ce9d9;border-radius:30px;padding:5px 10px;font-size:11px;font-weight:800}
-.ta-svg{width:100%;height:auto;display:block}
-.ta-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}
-.ta-legend span{display:flex;align-items:center;gap:7px;color:#c4d6dc;font-size:12px}
-.ta-dot{display:inline-block;width:9px;height:9px;border-radius:50%}
-.ta-note{color:#94b0ba;font-size:12px;margin:18px 0 0}
-.ta-section{padding:72px 0}
-.ta-section.alt{background:#081c29;border-block:1px solid #1d3d4c}
-.ta-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.7fr);gap:42px;align-items:end;margin-bottom:30px}
-.ta-kicker{color:var(--ta-teal);font-size:11px;font-weight:850;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px}
-.ta-head h2{font-size:clamp(32px,4vw,52px);line-height:1.08;letter-spacing:-.045em;margin:0}
-.ta-head p{margin:0;color:var(--ta-muted);font-size:16px}
-.ta-scenarios{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.ta-card{padding:26px;border:1px solid var(--ta-line);border-radius:13px;background:linear-gradient(155deg,#0e2d3b,#091c29);min-width:0}
-.ta-card small{display:block;color:#a7c2ca;font-size:11px;font-weight:850;letter-spacing:.12em;margin-bottom:13px}
-.ta-card strong{display:block;font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-.04em;margin-bottom:8px}
-.ta-card p{margin:0;color:var(--ta-muted);font-size:14px}
-.ta-card.high strong{color:var(--ta-green)}
-.ta-card.base strong{color:var(--ta-cyan)}
-.ta-card.low strong{color:#8ebef7}
-.ta-services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.ta-service{padding:23px 20px;border-top:2px solid var(--ta-cyan);background:#0b2230;min-width:0}
-.ta-service b{display:block;font-size:18px;margin:0 0 10px}
-.ta-service p{margin:0;color:var(--ta-muted);font-size:14px;line-height:1.65}
-.ta-assumptions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.ta-assumptions div{padding:16px;border:1px solid #315b69;border-radius:8px;color:#d8e7ea;background:#0a202e;text-align:center;font-size:14px;font-weight:700}
-.ta-callout{padding:30px;border-left:4px solid var(--ta-teal);background:#0b2634;border-radius:0 12px 12px 0;color:#d9e8eb;font-size:16px}
-.ta-callout strong{color:var(--ta-teal)}
-.ta-final{padding:82px 0;text-align:center;background:radial-gradient(ellipse at 50% 20%,rgba(30,178,184,.15),transparent 55%),#061521}
-.ta-final h2{font-size:clamp(34px,5vw,60px);line-height:1.08;letter-spacing:-.045em;margin:0 auto 22px;max-width:850px}
-.ta-final h2 span{color:var(--ta-teal)}
-.ta-final p{color:var(--ta-muted);max-width:680px;margin:0 auto 26px}
-.ta-foot{padding:25px 0;border-top:1px solid #1f4351;color:#8ba5af;font-size:13px}
-.ta-footrow{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media(max-width:850px){.ta-hero-grid,.ta-head{grid-template-columns:1fr}.ta-scenarios{grid-template-columns:1fr}.ta-services{grid-template-columns:repeat(2,minmax(0,1fr))}.ta-assumptions{grid-template-columns:repeat(2,minmax(0,1fr))}.ta-navlinks{display:none}}
-@media(max-width:520px){.ta-wrap{width:calc(100% - 30px)}.ta-hero-grid{padding:60px 0;gap:32px}.ta-section{padding:52px 0}.ta-services{grid-template-columns:1fr}.ta-chart{padding:15px}.ta-logo img{width:190px}}
+.f-wrap{width:min(1180px,calc(100% - 44px));margin-inline:auto}
+.f-top{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(125,190,205,.18)}
+.f-logo img{width:205px;max-width:44vw;height:auto;display:block}
+.f-nav{display:flex;align-items:center;gap:25px}
+.f-nav a{font-size:13px;text-decoration:none;color:#c9dbe1;font-weight:700}
+.f-nav a:hover{color:var(--f-teal)}
+.f-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 19px;border-radius:5px;background:var(--f-teal);color:#06212b;text-decoration:none;font-weight:850;letter-spacing:.01em}
+.f-cta.ghost{background:transparent;color:#e5f1f4;border:1px solid #436a78}
+.f-hero{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid #244655;background:radial-gradient(ellipse at 75% 42%,rgba(30,151,163,.17),transparent 32%),linear-gradient(115deg,#061521 0%,#0a1f2c 58%,#0b2532 100%)}
+.f-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,18,29,.15),rgba(5,18,29,0) 55%,rgba(5,18,29,.18));pointer-events:none}
+.f-hero-grid{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:38px;align-items:center;padding:72px 0 70px}
+.f-eyebrow,.f-kicker{margin:0 0 18px;color:var(--f-teal);font-size:11px;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+.f-hero h1{margin:0 0 22px;max-width:670px;font-size:clamp(45px,6.2vw,82px);font-weight:850;line-height:.98;letter-spacing:-.065em}
+.f-hero h1 span{color:var(--f-teal)}
+.f-lead{margin:0 0 27px;max-width:560px;color:#c7d8de;font-size:clamp(17px,1.8vw,21px);line-height:1.55}
+.f-actions{display:flex;gap:12px;flex-wrap:wrap}
+.f-art{min-width:0;position:relative}
+.f-art img{display:block;width:100%;height:auto;border:1px solid #315a69;border-radius:16px;box-shadow:0 28px 90px rgba(0,0,0,.38)}
+.f-art-note{position:absolute;right:17px;bottom:17px;padding:7px 10px;border:1px solid rgba(119,224,211,.45);border-radius:3px;background:rgba(5,22,32,.88);color:#bcefe5;font-size:10px;font-weight:800;letter-spacing:.11em}
+.f-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.f-metric{padding:15px 17px;border:1px solid var(--f-edge);border-radius:8px;background:rgba(8,31,44,.72);min-width:0}
+.f-metric small{display:block;margin-bottom:5px;color:var(--f-muted);font-size:10px;font-weight:800;letter-spacing:.12em}
+.f-metric b{display:block;font-size:clamp(25px,3vw,36px);letter-spacing:-.04em}
+.f-metric.high b{color:var(--f-mint)}.f-metric.base b{color:var(--f-cyan)}.f-metric.low b{color:#a9cafa}
+.f-disclose{margin:12px 0 0;color:#88a5b2;font-size:11px}
+.f-section{padding:76px 0}
+.f-section.alt{background:#081b28;border-block:1px solid #1d3b49}
+.f-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.62fr);gap:40px;align-items:end;margin-bottom:30px}
+.f-head h2{margin:0;max-width:750px;font-size:clamp(32px,4.2vw,54px);line-height:1.05;letter-spacing:-.048em}
+.f-head p{margin:0;color:var(--f-muted);font-size:15px}
+.f-grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.f-service{min-width:0;min-height:174px;padding:22px 20px;border:1px solid #244c5b;border-top:3px solid var(--f-cyan);border-radius:8px;background:linear-gradient(160deg,#0d2938,#091c29)}
+.f-service:nth-child(2){border-top-color:var(--f-teal)}.f-service:nth-child(3){border-top-color:#9fc4f3}.f-service:nth-child(4){border-top-color:var(--f-amber)}
+.f-no{display:block;margin-bottom:18px;color:#8faeba;font-size:10px;font-weight:850;letter-spacing:.16em}
+.f-service h3{margin:0 0 9px;font-size:18px;line-height:1.2}
+.f-service p{margin:0;color:#a9c0ca;font-size:13px;line-height:1.6}
+.f-two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:30px;align-items:stretch}
+.f-band{padding:28px;border:1px solid #2a5060;border-radius:11px;background:linear-gradient(150deg,#0c2635,#081c29)}
+.f-band h3{margin:0 0 18px;font-size:23px;letter-spacing:-.025em}
+.f-chart{display:block;width:100%;height:auto}
+.f-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:13px;color:#b6cbd3;font-size:12px}
+.f-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+.f-assumptions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:18px}
+.f-assumptions span{padding:12px 14px;border:1px solid #2a5262;border-radius:5px;color:#d5e5e9;background:#0a202e;font-size:13px;font-weight:700}
+.f-quote{display:flex;flex-direction:column;justify-content:space-between;padding:30px;border-left:3px solid var(--f-teal);border-radius:0 10px 10px 0;background:#0a2634}
+.f-quote strong{display:block;margin-bottom:14px;color:var(--f-teal);font-size:11px;letter-spacing:.15em}
+.f-quote blockquote{margin:0;font-size:clamp(24px,3vw,37px);font-weight:780;line-height:1.17;letter-spacing:-.035em}
+.f-quote p{margin:24px 0 0;color:var(--f-muted);font-size:13px}
+.f-final{padding:84px 0;text-align:center;background:radial-gradient(ellipse at 50% 15%,rgba(38,167,174,.16),transparent 52%),#061521}
+.f-final h2{max-width:890px;margin:0 auto 18px;font-size:clamp(35px,5vw,62px);line-height:1.04;letter-spacing:-.05em}
+.f-final h2 span{color:var(--f-teal)}
+.f-final p{max-width:660px;margin:0 auto 25px;color:var(--f-muted);font-size:16px}
+.f-foot{padding:24px 0;border-top:1px solid #1e4150;color:#8da6b1;font-size:12px}
+.f-footrow{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+@media(max-width:900px){.f-hero-grid,.f-head,.f-two{grid-template-columns:1fr}.f-grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.f-art{max-width:760px}}
+@media(max-width:620px){.f-wrap{width:calc(100% - 30px)}.f-top{height:72px}.f-nav{display:none}.f-logo img{width:180px}.f-hero-grid{padding:55px 0 48px;gap:26px}.f-hero h1{font-size:clamp(43px,12vw,60px)}.f-metrics{gap:7px}.f-metric{padding:12px 10px}.f-metric small{font-size:8px}.f-metric b{font-size:23px}.f-section{padding:54px 0}.f-head{gap:13px}.f-grid4{grid-template-columns:1fr}.f-service{min-height:0}.f-band{padding:18px}.f-assumptions span{font-size:12px;padding:11px}.f-quote{padding:24px}.f-final{padding:64px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"Tahmine Dayalı Analitik","provider":{"@type":"Organization","name":"Synapse Automate","url":"https://synapseautomate.github.io/"},"serviceType":"Talep tahmini, müşteri kaybı riski, stok projeksiyonu ve karar desteği","url":"https://synapseautomate.github.io/kampanyalar/tahmine-dayali-analitik.html","areaServed":{"@type":"Country","name":"Türkiye"}}
 </script>
 </head>
 <body>
-<header class="ta-wrap ta-nav">
-<a class="ta-logo" href="/" aria-label="Synapse Automate ana sayfa"><img src="/assets/brand/synapse-logo-clean.png" alt="Synapse Automate"></a>
-<nav class="ta-navlinks" aria-label="Ana menü"><a href="/hizmetler.html">Hizmetler</a><a href="/sektorler.html">Sektörler</a><a href="/pazarlama-buyume.html">Büyüme</a></nav>
-<a class="ta-btn secondary" href="/hizmetler.html">Hizmet kataloğu</a>
+<header class="f-wrap f-top">
+<a class="f-logo" href="/" aria-label="Synapse Automate ana sayfa"><img src="/assets/brand/synapse-logo-clean.png" alt="Synapse Automate"></a>
+<nav class="f-nav" aria-label="Ana menü"><a href="/hizmetler.html">Hizmetler</a><a href="/sektorler.html">Sektörler</a><a href="/pazarlama-buyume.html">Büyüme</a></nav>
+<a class="f-cta ghost" href="/hizmetler.html">Hizmet kataloğu</a>
 </header>
 <main>
-<section class="ta-hero">
-<div class="ta-wrap ta-hero-grid">
+<section class="f-hero">
+<div class="f-wrap f-hero-grid">
 <div>
-<p class="ta-eyebrow">Tahmine dayalı analitik</p>
+<p class="f-eyebrow">Tahmine dayalı analitik</p>
 <h1>Tek rakam geleceği <span>anlatmaya yetmez.</span></h1>
-<p class="ta-lead">Bir tahmini tek bir sayıya indirgemek yerine, farklı olasılıkları ve bu olasılıkların arkasındaki varsayımları görünür kılın.</p>
-<div class="ta-actions"><a class="ta-btn" href="/hizmetler.html">Hizmet kapsamını inceleyin →</a><a class="ta-btn secondary" href="/sektorler.html">Sektörleri keşfedin</a></div>
+<p class="f-lead">Bir tahmini tek bir sayıya indirgemeyin. Olası yönleri, belirsizlik aralığını ve kararın hangi varsayımlara dayandığını birlikte görün.</p>
+<div class="f-actions"><a class="f-cta" href="/hizmetler.html">Hizmet kapsamını inceleyin <span aria-hidden="true">&nbsp;→</span></a><a class="f-cta ghost" href="/sektorler.html">Sektörleri keşfedin</a></div>
+<div class="f-metrics" aria-label="Temsili talep senaryoları">
+<div class="f-metric high"><small>YÜKSEK SENARYO</small><b>15.600</b></div>
+<div class="f-metric base"><small>TEMEL SENARYO</small><b>12.480</b></div>
+<div class="f-metric low"><small>DÜŞÜK SENARYO</small><b>9.400</b></div>
 </div>
-<div class="ta-chart">
-<div class="ta-chart-head"><strong>TALEP SENARYOLARI</strong><span class="ta-tag">TEMSİLİ SENARYO</span></div>
-<svg class="ta-svg" viewBox="0 0 640 360" role="img" aria-label="Yüksek, temel ve düşük talep senaryolarının örnek karşılaştırması">
-<defs><linearGradient id="band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5ce0b4" stop-opacity=".28"/><stop offset="1" stop-color="#5ce0b4" stop-opacity=".02"/></linearGradient></defs>
-<g stroke="#294c5b" stroke-width="1"><path d="M50 55H615M50 120H615M50 185H615M50 250H615M50 315H615"/><path d="M50 35V315M160 35V315M270 35V315M380 35V315M490 35V315M600 35V315"/></g>
-<path d="M50 264 C120 252 160 232 220 221 S340 185 400 143 S510 102 600 52 L600 143 C510 170 460 196 400 211 S280 251 220 265 S110 282 50 291Z" fill="url(#band)"/>
-<path d="M50 276 C120 257 160 239 220 228 S340 186 400 151 S510 108 600 70" fill="none" stroke="#6ce5ad" stroke-width="5" stroke-linecap="round"/>
-<path d="M50 276 C120 257 160 247 220 240 S340 213 400 196 S510 177 600 163" fill="none" stroke="#4bd1ec" stroke-width="5" stroke-linecap="round"/>
-<path d="M50 276 C120 273 160 267 220 263 S340 270 400 274 S510 283 600 294" fill="none" stroke="#77aefa" stroke-width="5" stroke-linecap="round"/>
-<g fill="#f1f7f9" font-family="Arial,sans-serif" font-size="15"><text x="50" y="342">Bugün</text><text x="560" y="342">Dönem</text></g>
+<p class="f-disclose">Temsili senaryo. Gerçek müşteri, satış veya stok verisi değildir.</p>
+</div>
+<div class="f-art">
+<img src="/assets/media/forecast-branching-hero.svg" alt="Tek bir talep sinyalinin yüksek, temel ve düşük senaryoları temsil eden üç farklı tedarik rotasına ayrılmasını gösteren özgün illüstrasyon">
+<span class="f-art-note">OLASILIKLARIN GÖRSELLEŞTİRİLMESİ</span>
+</div>
+</div>
+</section>
+<section class="f-section">
+<div class="f-wrap">
+<div class="f-head"><div><p class="f-kicker">Analitikten karara</p><h2>Önce olasılıkları görün. Sonra seçiminizi yapın.</h2></div><p>Planlama, satın alma ve ticari analiz ekipleri için tek bir tahmin noktasından daha fazlası gerekir: seçenekleri karşılaştırabilecekleri açık bir karar çerçevesi.</p></div>
+<div class="f-grid4">
+<article class="f-service"><span class="f-no">01 / TALEP</span><h3>Talep tahmini</h3><p>Talep eğilimlerini ve farklı dönemlerde ortaya çıkabilecek senaryoları değerlendirin.</p></article>
+<article class="f-service"><span class="f-no">02 / MÜŞTERİ</span><h3>Müşteri kaybı riski</h3><p>Kayba işaret edebilecek sinyalleri görünür kılarak değerlendirmeyi erkene taşıyın.</p></article>
+<article class="f-service"><span class="f-no">03 / STOK</span><h3>Stok projeksiyonu</h3><p>Stok seviyelerini ve tedarik seçeneklerini olası talep değişimleriyle birlikte ele alın.</p></article>
+<article class="f-service"><span class="f-no">04 / KARAR</span><h3>Karar desteği</h3><p>Varsayımları ve alternatifleri aynı çerçevede karşılaştırarak karara hazırlanın.</p></article>
+</div>
+</div>
+</section>
+<section class="f-section alt">
+<div class="f-wrap f-two">
+<div class="f-band">
+<p class="f-kicker">Belirsizlik saklanmaz</p><h3>Tek çizgi değil, bir aralık.</h3>
+<svg class="f-chart" viewBox="0 0 720 300" role="img" aria-label="Yüksek, temel ve düşük senaryo için temsili eğriler ve belirsizlik bandı">
+<defs><linearGradient id="uncertainty" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#66e4cf" stop-opacity=".24"/><stop offset="1" stop-color="#66e4cf" stop-opacity=".02"/></linearGradient></defs>
+<g stroke="#274b5a" stroke-width="1"><path d="M30 45H690M30 105H690M30 165H690M30 225H690M30 275H690"/><path d="M30 25V275M195 25V275M360 25V275M525 25V275M690 25V275"/></g>
+<path d="M30 238 C125 230 160 207 250 195 S405 165 470 120 S600 78 690 35 L690 146 C610 177 545 190 470 204 S330 238 250 248 S112 268 30 270Z" fill="url(#uncertainty)"/>
+<path d="M30 254 C125 239 160 218 250 208 S405 167 470 142 S600 116 690 78" fill="none" stroke="#8de6b2" stroke-width="5" stroke-linecap="round"/>
+<path d="M30 254 C125 239 160 229 250 226 S405 212 470 199 S600 186 690 178" fill="none" stroke="#51cde5" stroke-width="5" stroke-linecap="round"/>
+<path d="M30 254 C125 250 160 246 250 248 S405 256 470 261 S600 265 690 268" fill="none" stroke="#a9c9f5" stroke-width="5" stroke-linecap="round"/>
+<g fill="#d9e8ed" font-family="Inter,Arial,sans-serif" font-size="15"><text x="30" y="295">BUGÜN</text><text x="620" y="295">GELECEK DÖNEM</text></g>
 </svg>
-<div class="ta-legend"><span><i class="ta-dot" style="background:#6ce5ad"></i>Yüksek</span><span><i class="ta-dot" style="background:#4bd1ec"></i>Temel</span><span><i class="ta-dot" style="background:#77aefa"></i>Düşük</span></div>
-<p class="ta-note">Şema ve eğriler kavramsal gösterimdir; tahmin sonucu veya müşteri verisi değildir.</p>
+<div class="f-legend"><span><i style="background:#8de6b2"></i>Yüksek</span><span><i style="background:#51cde5"></i>Temel</span><span><i style="background:#a9c9f5"></i>Düşük</span></div>
+<p class="f-disclose">Şematik gösterimdir; tahmin sonucu, garanti veya müşteri verisi değildir.</p>
+</div>
+<div class="f-quote">
+<div><strong>TAHMİNİN ARKASINDAKİ KOŞULLAR</strong><blockquote>Varsayımlar görünür değilse, tahminin sınırları da görünmez.</blockquote></div>
+<div><p>Talep eğilimi · mevsimsellik · kampanya planı · tedarik kapasitesi</p><p>Gerçek koşullar değiştikçe senaryolar ve varsayımlar yeniden değerlendirilir. Nihai planlama ve satın alma kararı yetkili ekipte kalır.</p></div>
 </div>
 </div>
 </section>
-<section class="ta-section">
-<div class="ta-wrap">
-<div class="ta-head"><div><p class="ta-kicker">Tek sayı yerine karşılaştırma</p><h2>Aynı veri, farklı senaryolar.</h2></div><p>Planlama ve satın alma kararlarını tek bir tahmin noktasına bağlamak yerine, olası aralıkları birlikte değerlendirin.</p></div>
-<div class="ta-scenarios">
-<article class="ta-card high"><small>YÜKSEK SENARYO · TEMSİLİ</small><strong>15.600</strong><p>adet · daha yüksek talep varsayımı</p></article>
-<article class="ta-card base"><small>TEMEL SENARYO · TEMSİLİ</small><strong>12.480</strong><p>adet · ana örnek tahmin</p></article>
-<article class="ta-card low"><small>DÜŞÜK SENARYO · TEMSİLİ</small><strong>9.400</strong><p>adet · daha düşük talep varsayımı</p></article>
-</div>
-</div>
-</section>
-<section class="ta-section alt">
-<div class="ta-wrap">
-<div class="ta-head"><div><p class="ta-kicker">Nerede kullanılır?</p><h2>Öngörüyü iş kararına bağlayın.</h2></div><p>Analitik çıktılar, karar vericiye seçenekleri karşılaştırabileceği ortak bir çerçeve sunar; yetkili kararlar insan denetiminde kalır.</p></div>
-<div class="ta-services">
-<article class="ta-service"><b>Talep tahmini</b><p>Talep eğilimlerini ve farklı dönem senaryolarını değerlendirin.</p></article>
-<article class="ta-service"><b>Müşteri kaybı riski</b><p>Kayba işaret edebilecek erken sinyalleri görünür kılın.</p></article>
-<article class="ta-service"><b>Stok projeksiyonu</b><p>Stok seviyesi ve tedarik seçeneklerini öngörü çerçevesinde karşılaştırın.</p></article>
-<article class="ta-service"><b>Karar desteği</b><p>Varsayımları ve alternatifleri aynı karar çerçevesinde ele alın.</p></article>
-</div>
-</div>
-</section>
-<section class="ta-section">
-<div class="ta-wrap">
-<div class="ta-head"><div><p class="ta-kicker">Belirsizliği açıkça ele alın</p><h2>Tahmini şekillendiren varsayımlar.</h2></div><p>Senaryonun arkasındaki koşullar görünür olduğunda, değişen şartların karara etkisini tartışmak kolaylaşır.</p></div>
-<div class="ta-assumptions"><div>Talep eğilimi</div><div>Mevsimsellik</div><div>Tedarik kapasitesi</div><div>Kampanya planı</div></div>
-<div class="ta-callout" style="margin-top:22px"><strong>Tahmin, kesinlik değildir.</strong> Tahmine dayalı analitik, olasılıklar üzerinden karar desteği sağlar; gerçek koşullar değiştikçe varsayımlar ve senaryolar yeniden değerlendirilmelidir.</div>
-<p class="ta-note">Bu sayfadaki rakamlar ve grafikler temsili senaryodur; gerçek müşteri, satış, stok veya operasyon verisi içermez.</p>
-</div>
-</section>
-<section class="ta-final">
-<div class="ta-wrap">
-<p class="ta-kicker">Synapse Automate</p>
+<section class="f-final">
+<div class="f-wrap">
+<p class="f-kicker">Synapse Automate</p>
 <h2>Geleceği vaat etmeyin; <span>olasılıkları gösterin.</span></h2>
-<p>Talep tahmini, müşteri kaybı riski, stok projeksiyonu ve karar desteği hizmet kapsamını inceleyin.</p>
-<a class="ta-btn" href="/hizmetler.html">Hizmet kataloğuna gidin →</a>
+<p>Tahmin, kesinlik değil; olasılıklar üzerinden karar desteğidir. Talep tahmini, müşteri kaybı riski, stok projeksiyonu ve karar desteği hizmet kapsamını inceleyin.</p>
+<a class="f-cta" href="/hizmetler.html">Tahmine dayalı analitik hizmetini inceleyin <span aria-hidden="true">&nbsp;→</span></a>
 </div>
 </section>
 </main>
-<footer class="ta-foot"><div class="ta-wrap ta-footrow"><span>© 2026 Synapse Automate</span><span>İnsan denetimli analitik ve otomasyon çözümleri</span><a href="/">Ana sayfa</a></div></footer>
-</body></html>
+<footer class="f-foot"><div class="f-wrap f-footrow"><span>© 2026 Synapse Automate</span><span>İnsan denetimli analitik ve otomasyon çözümleri</span><a href="/">Ana sayfa</a></div></footer>
+</body>
+</html>
