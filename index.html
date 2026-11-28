@@ -37,7 +37,8 @@ footer{background:#050e18;padding:48px 0 24px}.footgrid{display:grid;grid-templa
 @media(max-width:760px){.container{width:calc(100% - 34px)}.nav{min-height:70px;flex-wrap:wrap;gap:10px}.brand{width:190px}.menubtn{display:block;margin-left:auto}.navcta{display:none}.navlinks{display:none;order:3;width:100%;margin:0;padding:0 0 16px;flex-direction:column;align-items:flex-start;gap:0}.navlinks.open{display:flex}.navlinks a{width:100%;padding:12px 0;border-top:1px solid rgba(78,118,132,.2);font-size:14px}.hero{padding-top:52px}.herogrid{grid-template-columns:1fr}.hero h1{font-size:clamp(42px,11vw,63px)}.heroart{min-height:0}.sectionhead{display:block}.sectionhead>p{margin-top:15px}.cards{grid-template-columns:1fr}.card{min-height:250px}.cardmeta{margin-bottom:25px}.split{grid-template-columns:1fr;gap:24px}.sectorband,.ctainner{display:block}.sectorband .btn,.ctainner .btn{margin-top:23px}.footgrid{grid-template-columns:1fr 1fr}.footgrid>div:first-child{grid-column:1/-1}}
 @media(max-width:460px){.proofpoints{gap:10px 14px}.principle{padding:16px 9px;font-size:11px}.principle:first-child{padding-left:0}.steps{grid-template-columns:1fr}.step{min-height:150px}.step small{margin-bottom:16px}.heroart{padding:12px}.artlabel{font-size:9px}.footgrid{gap:18px}.copy{display:block;line-height:1.7}.copy span{display:block}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
-</style>
+
+.readinggrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;border-top:1px solid var(--line)}.reading{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:17px 2px;border-bottom:1px solid var(--line);color:#d5e4e8;text-decoration:none;font-size:14px;font-weight:700;line-height:1.45}.reading span:last-child{color:var(--mint);font-size:18px;flex:none}.reading:hover{color:var(--mint)}@media(max-width:760px){.readinggrid{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <a class="skip" href="#main">İçeriğe geç</a>
@@ -120,7 +121,14 @@ footer{background:#050e18;padding:48px 0 24px}.footgrid{display:grid;grid-templa
 </div></section>
 <section class="section alt"><div class="container"><div class="sectorband"><div><p class="kicker">Sektöre göre uyarlama</p><h2>Aynı teknoloji, her sektörde aynı kontrol modelini kullanmaz.</h2><p>Veri erişimi, süreç hacmi ve risk seviyesi değişir. Çözüm mimarisi de buna göre uyarlanır.</p><div class="tags"><span>Sağlık</span><span>Finans</span><span>E-ticaret</span><span>Emlak</span><span>Hizmet operasyonları</span></div></div><a class="btn primary" href="sektorler.html">Sektör çözümlerini görün ↗</a></div></div></section>
 <section class="cta"><div class="container ctainner"><div><p class="kicker">Bir sonraki adım</p><h2>Hangi iş akışının otomasyona uygun olduğunu birlikte netleştirelim.</h2><p>Önce ihtiyacı ve sınırları tanımlayın. Sonra doğru çözümü seçin.</p></div><a class="btn primary" href="surec-analizi.html">Süreç analizi isteyin ↗</a></div></section>
-</main>
+<section class="section"><div class="container"><div class="sectionhead"><div><p class="kicker">İş akışı örnekleri</p><h2>Farklı operasyonlar. Aynı netlik ilkesi.</h2></div><p>Veri kalitesinden çok dilli müşteri iletişimine kadar, otomasyonun sınırlarını gerçek iş ihtiyaçları üzerinden düşünün.</p></div><div class="readinggrid">
+<a class="reading" href="cozumler/siparis-stok-csv-kontrolu.html">Sipariş ve stok dosyalarında uyuşmazlık kontrolü <span>↗</span></a>
+<a class="reading" href="kampanya/bir-ozgecmis-dosyasinda-gorunmeyen-bilgi.html">Bir özgeçmiş dosyasında görünmeyen bilgi <span>↗</span></a>
+<a class="reading" href="kampanya/marka-sesi-film-seridi.html">Yüz farklı gönderi, tek bir kişilik mi? <span>↗</span></a>
+<a class="reading" href="kampanyalar/ayni-soru-uc-dil.html">Aynı soru. Üç farklı dil. <span>↗</span></a>
+<a class="reading" href="kampanyalar/basvuru-formu-ne-zaman-engel-olur.html">Bir başvuru formu ne zaman engel olur? <span>↗</span></a>
+<a class="reading" href="sozlesmede-degisen-tek-satir.html">Sözleşmede değişen tek satır nerede? <span>↗</span></a>
+</div></div></section></main>
 <footer><div class="container"><div class="footgrid">
 <div><a class="brand footbrand" href="/" aria-label="Synapse Automate ana sayfa"><img src="assets/brand/synapse-logo-clean.png" alt="Synapse Automate"></a><p>İstanbul merkezli, insan denetimli AI, RPA ve iş akışı otomasyonu. Kritik kararlar ve istisnalar için açık insan kontrolü.</p></div>
 <div><h4>Hizmetler</h4><a href="hizmetler.html">Tüm hizmetler</a><a href="cozumler/sesli-yapay-zeka-randevu-insan-devri.html">Sesli AI ve çağrı merkezi</a><a href="pazarlama-buyume.html">Büyüme ve AI pazarlama</a><a href="sektorler.html">Sektör çözümleri</a></div>
